@@ -56,12 +56,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/2023/10/04/%E8%8D%89%E7%A8%BF%E6%B5%8B%E8%AF%95/</loc>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/2021/12/18/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/</loc>
          <lastmod>2024-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/2023/10/05/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/</loc>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/2022/06/06/2022%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/</loc>
+         <lastmod>2024-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/2023/12/21/2023%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/</loc>
+         <lastmod>2024-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/2024/01/01/2024%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/</loc>
          <lastmod>2024-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -146,7 +156,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/archive/2024/</loc>
+         <lastmod>2024-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://wcowin.work/Mkdocs-Wcowin/blog/archive/2023/</loc>
+         <lastmod>2024-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/archive/2022/</loc>
+         <lastmod>2024-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/archive/2021/</loc>
          <lastmod>2024-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -156,7 +181,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/category/hello/</loc>
+         <loc>http://wcowin.work/Mkdocs-Wcowin/blog/category/hello-world/</loc>
          <lastmod>2024-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
