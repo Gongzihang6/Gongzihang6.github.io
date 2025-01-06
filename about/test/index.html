@@ -54,8 +54,6 @@
     
       <link rel="stylesheet" href="../../stylesheets/customize.css">
     
-      <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -1475,6 +1473,8 @@
       
         
       
+        
+      
     
     
       
@@ -1509,6 +1509,29 @@
             归档
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2025
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2163,7 +2186,7 @@ and running in minutes</p>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="hll">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
 </span><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
 </span><a id="__codelineno-2-4" name="__codelineno-2-4"></a>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
@@ -2280,7 +2303,7 @@ purus auctor massa, nec semper lorem quam in massa.</p>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="hll">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
 </span><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
 </span><a id="__codelineno-3-4" name="__codelineno-3-4"></a>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
@@ -2290,7 +2313,7 @@ purus auctor massa, nec semper lorem quam in massa.</p>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
