@@ -77,7 +77,16 @@
     
     <link rel="stylesheet" href="../../../assets/stylesheets/custom.00c04c01.min.css">
   
-  </head>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -672,7 +681,7 @@
         
   
   <span class="md-ellipsis">
-    1. 利用mkdocs部署静态网页至GitHub pages
+    1. 利用mkdocs部署个人静态博客网页至GitHub pages
   </span>
   
 
@@ -2021,7 +2030,7 @@
 
   <h1>添加404页面</h1>
 
-<p><img alt="" src="https://s1.imagehub.cc/images/2024/02/02/b94cdf67258487f737cfa29829629157.png" /></p>
+<p><a class="glightbox" href="https://s1.imagehub.cc/images/2024/02/02/b94cdf67258487f737cfa29829629157.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://s1.imagehub.cc/images/2024/02/02/b94cdf67258487f737cfa29829629157.png" /></a></p>
 <p>docs/overrides文件下新建404.html即可  </p>
 <p>树状结构如下  </p>
 <p>树状结构如下:<br />
@@ -2482,5 +2491,7 @@
     
     <script src="../../../assets/javascripts/custom.9458f965.min.js"></script>
   
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

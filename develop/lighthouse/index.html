@@ -77,7 +77,16 @@
     
     <link rel="stylesheet" href="../../assets/stylesheets/custom.00c04c01.min.css">
   
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -666,7 +675,7 @@
         
   
   <span class="md-ellipsis">
-    1. 利用mkdocs部署静态网页至GitHub pages
+    1. 利用mkdocs部署个人静态博客网页至GitHub pages
   </span>
   
 
@@ -2021,8 +2030,8 @@
 
   <h1>利用Lighthouse测试网站性能</h1>
 
-<p><img alt="image.png" src="https://s2.loli.net/2024/02/04/yxwcmJLXADqMa8P.png" /></p>
-<p><img width="1363" alt="image" src="https://s2.loli.net/2025/01/02/VHeITXxJgwOKSsu.jpg">
+<p><a class="glightbox" href="https://s2.loli.net/2024/02/04/yxwcmJLXADqMa8P.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="image.png" src="https://s2.loli.net/2024/02/04/yxwcmJLXADqMa8P.png" /></a></p>
+<p><a class="glightbox" href="https://s2.loli.net/2025/01/02/VHeITXxJgwOKSsu.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img width="1363" alt="image" src="https://s2.loli.net/2025/01/02/VHeITXxJgwOKSsu.jpg"></a>
 可以看到我的网站性能还是不错的，如果你想测试自己的网站性能，可以尝试一下  </p>
 <p>打开谷歌或者Edge浏览器，按F12，在右侧点"➕"找到Lighthouse,点击分析页面载即可    </p>
 <!--
@@ -2450,5 +2459,7 @@
     
     <script src="../../assets/javascripts/custom.9458f965.min.js"></script>
   
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

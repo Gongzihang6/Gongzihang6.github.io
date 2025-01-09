@@ -77,7 +77,16 @@
     
     <link rel="stylesheet" href="../../assets/stylesheets/custom.00c04c01.min.css">
   
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -671,7 +680,7 @@
         
   
   <span class="md-ellipsis">
-    1. 利用mkdocs部署静态网页至GitHub pages
+    1. 利用mkdocs部署个人静态博客网页至GitHub pages
   </span>
   
 
@@ -2142,7 +2151,7 @@
 <h2 id="_2">关于我<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <html lang="en">
 <p style="text-align: center; margin: 0px;" markdown>
-  <img src="https://s1.imagehub.cc/images/2025/01/04/158948b0002cdac6e9ff43986648cb83.png" alt="arv-anshul" style="width: 300px; border-radius: 50%;" />
+  <a class="glightbox" href="https://s1.imagehub.cc/images/2025/01/04/158948b0002cdac6e9ff43986648cb83.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://s1.imagehub.cc/images/2025/01/04/158948b0002cdac6e9ff43986648cb83.png" alt="arv-anshul" style="width: 300px; border-radius: 50%;" /></a>
   <!-- ![image](https://s1.imagehub.cc/images/2025/01/04/158948b0002cdac6e9ff43986648cb83.png) -->
   <p style="text-align: center; font-size: 30px; margin: 0px;"><strong>A college student in Chongqing</strong></p>
     <head>
@@ -2150,7 +2159,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
         <link rel="stylesheet" href="../assets/stylesheets/portfolio.css">
-    </head>
+     <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
     <body>
         <main class="main">
             <section class="about section" id="about">
@@ -2172,7 +2190,9 @@
                             </div>
                         </div>
             </section>
-                </body>
+                <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
 <p><center><a class="md-button" href="../%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.pdf" target="“_blank”">下载简历 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v242.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"/></svg></span></a></center></p>
 <hr />
@@ -2261,7 +2281,9 @@
                         </div>
       </div>
     </section>
-</body>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
 
 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#608DBD,direction:145,strength:15)" width="100%" color=#608DBD SIZE=1>
@@ -2282,11 +2304,11 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 读书明志可识春秋;诗词爱好者,喜欢村上春树，擅长羽毛球</li>
 </ul>
 </div>
-<p><img class="img1" src="https://s2.loli.net/2024/02/01/AgiGpYk38C6ctJV.jpg"></p>
+<p><a class="glightbox" href="https://s2.loli.net/2024/02/01/AgiGpYk38C6ctJV.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img class="img1" src="https://s2.loli.net/2024/02/01/AgiGpYk38C6ctJV.jpg"></a></p>
 <h2 id="_4">联系我<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="https://s1.imagehub.cc/images/2024/02/02/bb9ee71b03ee7a3b87caad5cc4bcebff.jpeg" target="_blank">
  <center>
-  <img class="img1" src="https://s1.imagehub.cc/images/2024/02/02/bb9ee71b03ee7a3b87caad5cc4bcebff.jpeg" style="width: 450px; height: auto;">
+  <a class="glightbox" href="https://s1.imagehub.cc/images/2024/02/02/bb9ee71b03ee7a3b87caad5cc4bcebff.jpeg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img class="img1" src="https://s1.imagehub.cc/images/2024/02/02/bb9ee71b03ee7a3b87caad5cc4bcebff.jpeg" style="width: 450px; height: auto;"></a>
     <div style="color:orange; 
     color: #999;
     padding: 2px;">我的Wechat</div>
@@ -2294,7 +2316,7 @@
 </a></p>
 <p><a href="https://t.me/wecowin" target="_blank">
  <center>
-  <img class="img1" src="https://s1.imagehub.cc/images/2025/01/04/ece1374f25a07c060978165ada287fae.png" style="width: 450px; height: auto;">
+  <a class="glightbox" href="https://s1.imagehub.cc/images/2025/01/04/ece1374f25a07c060978165ada287fae.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img class="img1" src="https://s1.imagehub.cc/images/2025/01/04/ece1374f25a07c060978165ada287fae.png" style="width: 450px; height: auto;"></a>
     <div style="color:orange; 
     color: #999;
     padding: 2px;">我的TG</div>
@@ -2303,7 +2325,7 @@
 <details class="tip">
 <summary>公众号</summary>
 <p><figure markdown >
-<img alt="Image title" class="img1" src="https://s1.imagehub.cc/images/2025/01/04/ac7fda1814bb1e18714f9dd9f5d87636.png" />
+<a class="glightbox" href="https://s1.imagehub.cc/images/2025/01/04/ac7fda1814bb1e18714f9dd9f5d87636.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image title" class="img1" src="https://s1.imagehub.cc/images/2025/01/04/ac7fda1814bb1e18714f9dd9f5d87636.png" /></a>
 <figcaption>公众号</figcaption>
 </figure></p>
 </details>

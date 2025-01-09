@@ -77,7 +77,16 @@
     
     <link rel="stylesheet" href="../../assets/stylesheets/custom.00c04c01.min.css">
   
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -671,7 +680,7 @@
         
   
   <span class="md-ellipsis">
-    1. 利用mkdocs部署静态网页至GitHub pages
+    1. 利用mkdocs部署个人静态博客网页至GitHub pages
   </span>
   
 
@@ -2027,7 +2036,16 @@ e.type='text/javascript';e.async=!0;
 e.src='https://static.howxm.com/sdk.js';
 t.parentNode.insertBefore(e,t)}})();
 </script>
-</head> -->
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head> -->
 
 <!-- <div class="markdown-content">
     <h2>欢迎加入友链(不分先后)</h2>
@@ -2039,7 +2057,7 @@ t.parentNode.insertBefore(e,t)}})();
   <div class="links-content"> 
    <div class="link-navigation"> 
     <div class="card"> 
-     <img class="ava" src="https://s1.imagehub.cc/images/2025/01/05/64eafdf8c27f482c7ecb83003d460d6a.webp" /> 
+     <a class="glightbox" href="https://s1.imagehub.cc/images/2025/01/05/64eafdf8c27f482c7ecb83003d460d6a.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img class="ava" src="https://s1.imagehub.cc/images/2025/01/05/64eafdf8c27f482c7ecb83003d460d6a.webp" /></a> 
      <div class="card-header"> 
       <div> 
        <a href="https://wcowin.work/ " target="_blank">Wcowin's Web</a> 
@@ -2076,7 +2094,7 @@ t.parentNode.insertBefore(e,t)}})();
   <div class="links-content"> 
    <div class="link-navigation"> 
    <div class="card"> 
-     <img class="ava" src="https://agentestudio.com/uploads/post/image/69/main_how_to_design_404_page.png" /> 
+     <a class="glightbox" href="https://agentestudio.com/uploads/post/image/69/main_how_to_design_404_page.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img class="ava" src="https://agentestudio.com/uploads/post/image/69/main_how_to_design_404_page.png" /></a> 
      <div class="card-header"> 
       <div> 
        <a href="http://liis.cc" target="_blank">郝宇博客</a> 
@@ -2096,7 +2114,7 @@ t.parentNode.insertBefore(e,t)}})();
 </div>
 
 <!-- <div class="card">
-   <img class="ava" src="{avatarurl}" />
+   <a class="glightbox" href="{avatarurl}" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img class="ava" src="{avatarurl}" /></a>
    <div class="card-header">
       <div>
          <a href="{link}">{name}</a>
@@ -2113,7 +2131,7 @@ t.parentNode.insertBefore(e,t)}})();
 <li>未添加友链或申请未通过，评论留言会被隐藏。</li>
 </ul>
 <p>本站已经加入<a href="https://www.foreverblog.cn/">十年之约</a>：
-<a href="https://www.foreverblog.cn/" target="_blank" > <img src="https://img.foreverblog.cn/logo_en_default.png" alt="" style="width:auto;height:16px;"> </a>请放心添加本站友链</p>
+<a href="https://www.foreverblog.cn/" target="_blank" > <a class="glightbox" href="https://img.foreverblog.cn/logo_en_default.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://img.foreverblog.cn/logo_en_default.png" alt="" style="width:auto;height:16px;"></a> </a>请放心添加本站友链</p>
 <hr />
 <p><strong>友链格式示例/本站信息:</strong></p>
 <!-- >名称: Wcowin's Web  
@@ -2537,5 +2555,7 @@ t.parentNode.insertBefore(e,t)}})();
     
     <script src="../../assets/javascripts/custom.9458f965.min.js"></script>
   
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
