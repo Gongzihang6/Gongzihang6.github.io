@@ -6,7 +6,7 @@
   <link href="https://gongzihang6.github.io/atom.xml" rel="self"/>
   
   <link href="https://gongzihang6.github.io/"/>
-  <updated>2025-02-28T12:24:06.893Z</updated>
+  <updated>2025-02-28T12:45:13.175Z</updated>
   <id>https://gongzihang6.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://gongzihang6.github.io/2025/02/28/zui-qiang-zong-jie-shi-da-ju-lei-suan-fa/"/>
-    <id>https://gongzihang6.github.io/2025/02/28/zui-qiang-zong-jie-shi-da-ju-lei-suan-fa/</id>
-    <published>2025-02-28T11:53:59.205Z</published>
-    <updated>2025-02-28T12:24:06.893Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;最强总结！十大聚类算法-！！&quot;&gt;&lt;a href=&quot;#最强总结！十大聚类算法-！！&quot; class=&quot;headerlink&quot; title=&quot;最强总结！十大聚类算法 ！！&quot;&gt;&lt;/a&gt;最强总结！十大聚类算法</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>十大聚类算法介绍</title>
@@ -66,17 +45,19 @@
   
   <entry>
     <title></title>
-    <link href="https://gongzihang6.github.io/2024/04/10/jing-dian-juan-ji-shen-jing-wang-luo/"/>
-    <id>https://gongzihang6.github.io/2024/04/10/jing-dian-juan-ji-shen-jing-wang-luo/</id>
-    <published>2024-04-10T12:59:26.256Z</published>
-    <updated>2024-04-13T16:21:14.170Z</updated>
+    <link href="https://gongzihang6.github.io/2024/07/16/jing-dian-juan-ji-shen-jing-wang-luo/"/>
+    <id>https://gongzihang6.github.io/2024/07/16/jing-dian-juan-ji-shen-jing-wang-luo/</id>
+    <published>2024-07-16T15:39:21.376Z</published>
+    <updated>2024-04-26T07:35:54.751Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;经典卷积神经网络&quot;&gt;&lt;a href=&quot;#经典卷积神经网络&quot; class=&quot;headerlink&quot; title=&quot;经典卷积神经网络&quot;&gt;&lt;/a&gt;经典卷积神经网络&lt;/h3&gt;&lt;h4 id=&quot;1、AlexNet（2012）&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;经典卷积神经网络&quot;&gt;经典卷积神经网络&lt;/h3&gt;
+&lt;h4 id=&quot;alexnet2012&quot;&gt;1、AlexNet（2012）&lt;/h4&gt;
+&lt;p&gt;ImageNet Classification with Deep Convolutional Neural</summary>
         
       
     
@@ -93,9 +74,9 @@
   
   <entry>
     <title>正则表达式</title>
-    <link href="https://gongzihang6.github.io/2024/04/08/zheng-ze-biao-da-shi/"/>
-    <id>https://gongzihang6.github.io/2024/04/08/zheng-ze-biao-da-shi/</id>
-    <published>2024-04-08T14:03:11.686Z</published>
+    <link href="https://gongzihang6.github.io/2024/07/16/zheng-ze-biao-da-shi/"/>
+    <id>https://gongzihang6.github.io/2024/07/16/zheng-ze-biao-da-shi/</id>
+    <published>2024-07-16T15:39:21.374Z</published>
     <updated>2024-04-13T15:13:48.595Z</updated>
     
     
@@ -103,7 +84,10 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;一、正则表达式&quot;&gt;&lt;a href=&quot;#一、正则表达式&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;一正则表达式&quot;&gt;一、正则表达式&lt;/h3&gt;
+&lt;p&gt;​
+简单理解正则表达式就是用来匹配一段字符串中自己想要的部分的匹配规则，从一段长字符串中抽取想要的关键信息&lt;/p&gt;
+&lt;h4</summary>
         
       
     
@@ -120,17 +104,42 @@
   
   <entry>
     <title></title>
-    <link href="https://gongzihang6.github.io/2024/04/08/latex-ru-men-xue-xi/"/>
-    <id>https://gongzihang6.github.io/2024/04/08/latex-ru-men-xue-xi/</id>
-    <published>2024-04-08T13:59:22.314Z</published>
-    <updated>2024-04-13T16:32:45.322Z</updated>
+    <link href="https://gongzihang6.github.io/2024/07/16/yolov5s-wang-luo-jie-gou/"/>
+    <id>https://gongzihang6.github.io/2024/07/16/yolov5s-wang-luo-jie-gou/</id>
+    <published>2024-07-16T15:39:21.372Z</published>
+    <updated>2024-04-06T09:17:06.316Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;前言：排版工具与书写工具的讨论&quot;&gt;&lt;a href=&quot;#前言：排版工具与书写工具的讨论&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h5 id=&quot;yolov5s-网络结构&quot;&gt;yolov5s 网络结构&lt;/h5&gt;
+&lt;p&gt;Parameter name: epoch Parameter value:-1 Parameter name: best_fitness
+Parameter value:[</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://gongzihang6.github.io/2024/07/16/latex-ru-men-xue-xi/"/>
+    <id>https://gongzihang6.github.io/2024/07/16/latex-ru-men-xue-xi/</id>
+    <published>2024-07-16T15:39:21.367Z</published>
+    <updated>2025-02-28T12:46:46.494Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言排版工具与书写工具的讨论&quot;&gt;前言：排版工具与书写工具的讨论&lt;/h3&gt;
+&lt;p&gt;LaTeX是一种“非所见即所得”的排版系统，用户需要输入特定的代码，保存在后缀为.tex的文件中，通过编译得到所需的pdf文件，例如以下代码：&lt;/p&gt;
+&lt;figure</summary>
         
       
     
@@ -148,31 +157,10 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://gongzihang6.github.io/2024/04/03/yolov5s-wang-luo-jie-gou/"/>
-    <id>https://gongzihang6.github.io/2024/04/03/yolov5s-wang-luo-jie-gou/</id>
-    <published>2024-04-03T11:01:16.411Z</published>
-    <updated>2024-04-06T09:17:06.316Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h5 id=&quot;yolov5s-网络结构&quot;&gt;&lt;a href=&quot;#yolov5s-网络结构&quot; class=&quot;headerlink&quot; title=&quot;yolov5s 网络结构&quot;&gt;&lt;/a&gt;yolov5s 网络结构&lt;/h5&gt;&lt;p&gt;Parameter name: epoch   </summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
-    <link href="https://gongzihang6.github.io/2024/04/03/hello-world/"/>
-    <id>https://gongzihang6.github.io/2024/04/03/hello-world/</id>
-    <published>2024-04-03T09:08:17.679Z</published>
+    <link href="https://gongzihang6.github.io/2024/07/16/hello-world/"/>
+    <id>https://gongzihang6.github.io/2024/07/16/hello-world/</id>
+    <published>2024-07-16T15:39:21.365Z</published>
     <updated>2024-04-03T09:08:17.679Z</updated>
     
     
@@ -180,7 +168,8 @@
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very
+first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
         
       
     
@@ -201,7 +190,8 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;yolo网络结构详解&quot;&gt;&lt;a href=&quot;#yolo网络结构详解&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h3 id=&quot;yolo网络结构详解&quot;&gt;yolo网络结构详解&lt;/h3&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;&lt;mjx-container class=&quot;MathJax&quot; jax=&quot;SVG&quot; display=&quot;true&quot;&gt;&lt;svg</summary>
         
       
     
