@@ -460,7 +460,7 @@
 </ul>
 <h5 id="5、SPPF"><a href="#5、SPPF" class="headerlink" title="5、SPPF"></a>5、<strong>SPPF</strong></h5><p>​		SSPF模块将经过CBS的x、一次池化后的y1、两次池化后的y2和3次池化后的self.m(y2)先进行拼接，然后再CBS提取特征。 仔细观察不难发现，虽然SSPF对特征图进行了多次池化，但是特征图尺寸并未发生变化，通道数更不会变化，所以后续的4个输出能够在channel维度进行融合。这一模块的主要作用是对高层特征进行提取并融合，在融合的过程中作者多次运用最大池化，尽可能多的去提取高层次的语义特征。</p>
 <p><img src="/2023/04/06/understanding-of-yolo-network-structure-1/SSPF.jpg" alt="SSPF示意图"></p>
-<p>​		第三个C3模块结束后，进入SSPF模块，输入为20* 20* 20* 1024，先经过一个卷积cv1，       		变为20* 20* 512，然后顺序经过kernel_size为5、9、13的最大池化层并依次输出，图像大小和高宽均不发生变化，最后将这四个输出在通道维concat起来，四个20* 20 <em>512，拼接起来得到			20 * 20</em> 2048，然后经过cv2，变为20* 20* 1024</p>
+<p>​		第三个C3模块结束后，进入SSPF模块，输入为20* 20* 1024，先经过一个卷积cv1， 变为20* 20* 512，然后顺序经过kernel_size为5、9、13的最大池化层并依次输出，图像大小和高宽均不发生变化，最后将这四个输出在通道维concat起来，四个20* 20 <em>512，拼接起来得到			20 * 20</em> 2048，然后经过cv2，变为20* 20* 1024</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(8): SPP(</span><br><span class="line">  (cv1): Conv(</span><br><span class="line">    (conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1))</span><br><span class="line">    (act): SiLU(inplace=True)</span><br><span class="line">  )</span><br><span class="line">  (cv2): Conv(</span><br><span class="line">    (conv): Conv2d(2048, 1024, kernel_size=(1, 1), stride=(1, 1))</span><br><span class="line">    (act): SiLU(inplace=True)</span><br><span class="line">  )</span><br><span class="line">  (m): ModuleList(</span><br><span class="line">    (0): MaxPool2d(kernel_size=5, stride=1, padding=2, dilation=1, ceil_mode=False)</span><br><span class="line">    (1): MaxPool2d(kernel_size=9, stride=1, padding=4, dilation=1, ceil_mode=False)</span><br><span class="line">    (2): MaxPool2d(kernel_size=13, stride=1, padding=6, dilation=1, ceil_mode=False)</span><br><span class="line">  )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <p>​		至此，整个BackBone结构完毕，接下来分别是从第二个C3模块结束、第三个C3模块结束、SPPF模块结束引出的连接BackBone和Head(检测层)的Neck</p>
@@ -908,7 +908,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2024</span>
+                <span id="year">2024-2025</span>
             
             <a href="/about" target="_blank">gzh</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
