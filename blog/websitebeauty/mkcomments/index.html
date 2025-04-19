@@ -2055,6 +2055,8 @@
       
         
       
+        
+      
     
     
     
@@ -2138,6 +2140,36 @@
     个人简历
     
   </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
   
 
       </a>
@@ -2348,13 +2380,13 @@
 </ul>
 <p>言归正传</p>
 <h2 id="_1">第一步<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>mkdocs.yml中添加
+<p>mkdocs.yml中添加custom_dir
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>theme:
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>  name: material
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>  custom_dir: docs/overrides  #主要是这一行
-</code></pre></div></td></tr></table></div>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="hll">  custom_dir: docs/overrides  #主要是这一行
+</span></code></pre></div></td></tr></table></div>
 参考下图新建overrides文件，在此文件下参考下图新建覆盖html文件<br />
 树状结构如下:<br />
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -2379,16 +2411,16 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a>│       └── PublishMySite.yml
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>├── docs
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a>│   └── index.md
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>│   └──overrides
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>│       └──assets
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>│       └──main.html
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>│       └──partials
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>│          └──comments.html
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>│
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="hll">│   └──overrides
+</span><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="hll">│       └──assets
+</span><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="hll">│       └──main.html
+</span><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="hll">│       └──partials
+</span><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="hll">│          └──comments.html
+</span><a id="__codelineno-1-14" name="__codelineno-1-14"></a>│
 <a id="__codelineno-1-15" name="__codelineno-1-15"></a>└── mkdocs.yml
 </code></pre></div></td></tr></table></div></p>
 <p><img alt="img" src="https://s1.imagehub.cc/images/2024/02/02/214447b92070792905259a843de3e233.png" /></p>
-<p>在comments.html中</p>
+<p>在comments.html中先复制粘贴下面的代码，后文会说怎么修改</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -2531,7 +2563,7 @@
 <a id="__codelineno-3-14" name="__codelineno-3-14"></a>        <span class="na">async</span><span class="p">&gt;</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
-<p>复制将此代码，替换最上面👆🏻comments.html中高亮的代码</p>
+<p>复制此代码，替换最上面👆🏻comments.html中高亮的代码</p>
 <p>终端里<code>mkdocs server</code>一下</p>
 <h2 id="_3">最后<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在你想插入评论的地方的元数据：<code>comments: true</code></p>
@@ -2550,8 +2582,8 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>  #  - toc #显示左
 <a id="__codelineno-4-6" name="__codelineno-4-6"></a>  #  - footer
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a>  #  - feedback  
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>comments: true  #默认不开启评论
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>---
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="hll">comments: true  #默认不开启评论
+</span><a id="__codelineno-4-9" name="__codelineno-4-9"></a>---
 </code></pre></div></td></tr></table></div>
 <h2 id="_4">效果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>完美!快速相应  </p>
@@ -2697,7 +2729,7 @@ twikoo.init({
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2024年4月22日 08:31:43">2024-04-22</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月19日 06:56:23">2025-04-19</span>
   </span>
 
     

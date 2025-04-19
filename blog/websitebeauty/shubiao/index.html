@@ -1975,6 +1975,8 @@
       
         
       
+        
+      
     
     
     
@@ -2058,6 +2060,36 @@
     个人简历
     
   </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
   
 
       </a>
@@ -2201,12 +2233,9 @@
   <h1>JS实现鼠标样式</h1>
 
 <p>不建议更改，因为默认就是最简洁</p>
-<p><head>
-<link rel="stylesheet" type="text/css" href="/stylesheets/shubiao.css"></p>
-<script src="/javascripts/shubiao.js"></script>
-<p></head></p>
-<p><img alt="" src="https://s1.vika.cn/space/2022/11/25/7b84e20eee214a5b956f2c96bcc115f4" /><br />
-在<code>docs/javascripts/extra.js</code>下复制粘贴：
+<!-- ![](https://s1.vika.cn/space/2022/11/25/7b84e20eee214a5b956f2c96bcc115f4)   -->
+
+<p>在<code>docs/javascripts/extra.js</code>下复制粘贴：
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -2374,7 +2403,7 @@
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="p">})();</span>
 </code></pre></div></td></tr></table></div>
 其中比较重要的参数就是鼠标的尺寸和颜色，已经在上图中标出，目前发现颜色只支持RGB写法和固有名称写法（例如red这种），其他参数也可以自行摸索：  </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="n">cursor</span><span class="p">:</span><span class="w"> </span><span class="n">url</span><span class="p">(</span><span class="s">&quot;data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 8 8&#39; width=&#39;8px&#39; height=&#39;8px&#39;&gt;&lt;circle cx=&#39;4&#39; cy=&#39;4&#39; r=&#39;4&#39; opacity=&#39;1.0&#39; fill=&#39;rgb(57, 197, 187)&#39;/&gt;&lt;/svg&gt;&quot;</span><span class="p">)</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">auto</span><span class="p">}</span><span class="err">`</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="nx">cursor</span><span class="o">:</span><span class="w"> </span><span class="nx">url</span><span class="p">(</span><span class="s2">&quot;data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 8 8&#39; width=&#39;8px&#39; height=&#39;8px&#39;&gt;&lt;circle cx=&#39;4&#39; cy=&#39;4&#39; r=&#39;4&#39; opacity=&#39;1.0&#39; fill=&#39;rgb(57, 197, 187)&#39;/&gt;&lt;/svg&gt;&quot;</span><span class="p">)</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">auto</span><span class="p">}</span><span class="sb">`</span>
 </code></pre></div></td></tr></table></div>
 <p>在docs/stylesheets/extra.css添加如下代码：
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -2539,7 +2568,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2023年10月13日 19:17:27">2023-10-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月19日 06:56:23">2025-04-19</span>
   </span>
 
     
