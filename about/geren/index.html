@@ -15,14 +15,14 @@
         <link rel="canonical" href="http://wcowin.work/Mkdocs-Wcowin/about/geren/">
       
       
-        <link rel="prev" href="../link/">
+        <link rel="prev" href="../../link/">
       
       
         <link rel="next" href="../resume/">
       
       
       <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -51,6 +51,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/extra.css">
     
@@ -411,7 +413,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../link/" class="md-tabs__link">
+        <a href="../../link/" class="md-tabs__link">
           
   
   
@@ -462,6 +464,25 @@
     
   
   个人博客
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://wcowin.work/Personal-Profile/#" class="md-tabs__link">
+        
+  
+  
+    
+  
+  个人简介
 
       </a>
     </li>
@@ -2027,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../link/" class="md-nav__link">
+      <a href="../../link/" class="md-nav__link">
         
   
   
@@ -2344,6 +2365,28 @@
   
   
     <li class="md-nav__item">
+      <a href="https://wcowin.work/Personal-Profile/#" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="https://github.com/new?template_name=Mkdocs-Wcowin&template_owner=Wcowin" class="md-nav__link">
         
   
@@ -2477,8 +2520,8 @@
 
 <div class="flip-container">
 <div class="image-container">
-    <img src="https://picx.zhimg.com/v2-fb22186d2490043435a72876950492f5_1440w.jpg" alt="Front Image">
-    <img src="https://pic4.zhimg.com/v2-a0456a5f527c1923f096759f2926012f_1440w.jpg" alt="Back Image">
+    <img src="https://free.wmhua.cn/2025/05/09/681d7016db8dc.png" alt="Back Image">
+    <img src="https://free.wmhua.cn/2025/05/09/681d7015ed864.jpeg" alt="Front Image">
 </div>
 </div>
 <style>
@@ -2492,40 +2535,43 @@
     /* 对齐顶部 */
     justify-content: flex-end;
     /* 将文字放置右上角 */
-}
-.image-container {
-    position: relative;
-    position: relative;
-    width: 290px;
-    height: 290px;
-}
-.image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: block;
-    transition: all 1s;
-}
-.image-container img:first-child {
-    z-index: 1;
-    backface-visibility: hidden;
-}
-.image-container img:last-child {
-    z-index: 0;
-    transform: rotateY(180deg);
-    backface-visibility: hidden;
-}
-.image-container:hover img:first-child {
-    transform: rotateY(180deg);
-    z-index: 2;
-}
-.image-container:hover img:last-child {
-    transform: rotateY(0deg);
-    z-index: 3;
-}
+    }
+    .image-container {
+        position: relative;
+        position: relative;
+        width: 290px;
+        height: 290px;
+    }
+    .image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;    /* 图片填满容器 */
+        border-radius: 50%;
+        border: 4px solid #ffffff; /* 白色边框 */
+        box-shadow: 0 8px 24px rgba(14, 30, 37, 0.15); /* 阴影 */
+        backface-visibility: hidden; /* 隐藏背面 */
+        transition: transform 0.6s ease-in-out; /* 仅对transform过渡 */
+    }
+    .image-container img:first-child {
+        z-index: 1;
+        backface-visibility: hidden;
+    }
+    .image-container img:last-child {
+        z-index: 0;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+    }
+    .image-container:hover img:first-child {
+        transform: rotateY(180deg);
+        z-index: 2;
+    }
+    .image-container:hover img:last-child {
+        transform: rotateY(0deg);
+        z-index: 3;
+    }
 </style>
 
 <!-- <center>  
@@ -2600,84 +2646,80 @@
 
 <hr />
 <h2 id="_3">我的履历<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<html lang="en">
-<body>
-    <section class="qualification section">
-        <div class="qualification__container container">
-            <div class="qualification__tabs">
-                <div class="qualification__button button--flex qualification__active" data-target='#education'>
-                    <iconify-icon icon="fluent:hat-graduation-12-regular" class="qualification__icon"></iconify-icon>
-                    来时路
+<section class="qualification section">
+    <div class="qualification__container container">
+        <div class="qualification__tabs">
+            <div class="qualification__button button--flex qualification__active" data-target='#education'>
+                <iconify-icon icon="fluent:hat-graduation-12-regular" class="qualification__icon"></iconify-icon>
+                来时路
+            </div>
+        </div>       
+        <div class="qualification__sections">
+            <!-- 教育经历时间线 -->
+            <div class="qualification__content qualification__active" data-content id="education">
+                <!-- 时间线项目 -->
+                <div class="qualification__data">
+                    <div>
+                        <h3 class="qualification__title">漯河高中</h3>
+                        <span class="qualification__subtitle">平凡的三年</span>
+                        <div class="qualification__calendar">
+                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
+                            <span class="qualification__date">2018 - 2021</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
                 </div>
-            </div>       
-            <div class="qualification__sections">
-                <!-- 教育经历时间线 -->
-                <div class="qualification__content qualification__active" data-content id="education">
-                    <!-- 高中 -->
-                    <div class="qualification__data">
-                        <div>
-                            <h3 class="qualification__title">漯河高中</h3>
-                            <span class="qualification__subtitle">平凡的三年</span>
-                            <div class="qualification__calendar">
-                                <font color= #757575><iconify-icon icon="tabler:calendar"></iconify-icon>
-                                2018 - 2021</font>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="qualification__rounder"></span>
-                            <span class="qualification__line"></span>
+                <div class="qualification__data">
+                    <div></div>
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                        <h3 class="qualification__title">CTBU</h3>
+                        <span class="qualification__subtitle">电子信息工程专业学士</span>
+                        <div class="qualification__calendar">
+                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
+                            <span class="qualification__date">2021 - 2025</span>
                         </div>
                     </div>
-                    <div class="qualification__data">
-                        <div></div>
-                        <div>
-                            <span class="qualification__rounder"></span>
-                            <span class="qualification__line"></span>
-                        </div>
-                        <div>
-                            <h3 class="qualification__title">CTBU</h3>
-                            <span class="qualification__subtitle">电子信息工程专业学士</span>
-                            <div class="qualification__calendar">
-                                <font color= #757575><iconify-icon icon="tabler:calendar"></iconify-icon>
-                                2021 - 2025</font>
-                            </div>
+                </div>
+                <div class="qualification__data">
+                    <div>
+                        <h3 class="qualification__title">家里蹲大学</h3>
+                        <span class="qualification__subtitle">密码学硕士研究生</span>
+                        <div class="qualification__calendar">
+                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
+                            <span class="qualification__date">2026 - 2029</span>
                         </div>
                     </div>
-                    <div class="qualification__data">
-                        <div>
-                            <h3 class="qualification__title">家里蹲大学</h3>
-                            <span class="qualification__subtitle">密码学硕士研究生</span>
-                            <div class="qualification__calendar">
-                                <font color= #757575><iconify-icon icon="tabler:calendar"></iconify-icon>
-                                2026 - 2029</font>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="qualification__rounder"></span>
-                            <span class="qualification__line"></span>
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                </div>
+                <div class="qualification__data">
+                    <div></div>
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                        <h3 class="qualification__title">未完待续</h3>
+                        <span class="qualification__subtitle">于道各努力，千里自同风</span>
+                        <div class="qualification__calendar">
+                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
+                            <span class="qualification__date">Before - After</span>
                         </div>
                     </div>
-                    <div class="qualification__data">
-                        <div></div>
-                        <div>
-                            <span class="qualification__rounder"></span>
-                            <span class="qualification__line"></span>
-                        </div>
-                        <div>
-                            <h3 class="qualification__title">未完待续</h3>
-                            <span class="qualification__subtitle">于道各努力，千里自同风</span>
-                            <div class="qualification__calendar">
-                                <font color= #757575><iconify-icon icon="tabler:calendar"></iconify-icon>
-                                Before - After</font>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- 闭合 qualification__content -->
-            </div> <!-- 闭合 qualification__sections -->
-        </div> <!-- 闭合 qualification__container -->
-    </section>
-</body>
-</html>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#608DBD,direction:145,strength:15)" width="100%" color=#608DBD SIZE=1>
 
@@ -2690,7 +2732,7 @@
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Hey, I'm <a href="https://wcowin.work/VitePress/" target="“_blank”">Wcowin</a>~</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 咖啡重度爱好者 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 热爱(xiā)折腾技术/Math，目前的研究领域是<a href="https://ctf-wiki.org/crypto/introduction/" target="“_blank”">密码学</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 热爱(xiā)折腾技术/Math，目前的研究领域是<a href="../blog/Cryptography/index.md">密码学</a></li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 读书明志可识春秋;诗词爱好者;喜欢村上春树;擅长羽毛球</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 清醒，知趣，明得失，知进退 </li>
 </ul>
@@ -2866,7 +2908,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月8日 00:42:37">2025-05-08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月11日 08:19:22">2025-05-11</span>
   </span>
 
     
@@ -3014,7 +3056,7 @@
         
           
           <a
-            href="../link/"
+            href="../../link/"
             class="md-footer__link md-footer__link--prev"
             aria-label="上一页: 友链"
           >
@@ -3167,16 +3209,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="https://github.com/Wcowin/Wcowin.github.io/blob/main/docs/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
