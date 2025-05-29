@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
-    <meta name="description" content="yolov5s 网络结构Parameter name: epoch    Parameter value:-1Parameter name: best_fitness     Parameter value:[    0.65574]Par">
+    <meta name="keywords" content="正则表达式, Blog of gzh">
+    <meta name="description" content="强大的正则表达式">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,9 +16,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-    <title>Hexo</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <title>正则表达式 | Blog of gzh</title>
+    <link rel="icon" type="image/png" href="/gzh.png">
     
 
 
@@ -52,7 +63,8 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Blog of gzh" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -64,7 +76,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Hexo</span>
+                    <span class="logo-span">Blog of gzh</span>
                 </a>
             </div>
             
@@ -168,7 +180,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Hexo</div>
+        <div class="logo-name">Blog of gzh</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -258,7 +270,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Gongzihang6" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -315,7 +327,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Gongzihang6" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -334,12 +346,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">正则表达式</h1>
                 </div>
             </div>
         </div>
@@ -361,12 +373,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
+                            </a>
+                        
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Markdown/" class="post-category">
+                                Markdown
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -375,7 +404,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-03
+                    2024-07-16
                 </div>
                 
 
@@ -396,8 +425,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="yolov5s-网络结构"><a href="#yolov5s-网络结构" class="headerlink" title="yolov5s 网络结构"></a>yolov5s 网络结构</h5><p>Parameter name: epoch    Parameter value:-1<br>Parameter name: best_fitness     Parameter value:[    0.65574]<br>Parameter name: training_results         Parameter value:None<br>Parameter name: model    Parameter value:Model(<br>  (model): Sequential(<br>    (0): Focus(<br>      (conv): Conv(<br>        (conv): Conv2d(12, 32, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(32, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>    )<br>    (1): Conv(<br>      (conv): Conv2d(32, 64, kernel_size&#x3D;(3, 3), stride&#x3D;(2, 2), padding&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (2): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(64, 32, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(32, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(64, 32, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(32, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(64, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(32, 32, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(32, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(32, 32, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(32, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (3): Conv(<br>      (conv): Conv2d(64, 128, kernel_size&#x3D;(3, 3), stride&#x3D;(2, 2), padding&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (4): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(128, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(128, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(128, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>        (1): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>        (2): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (5): Conv(<br>      (conv): Conv2d(128, 256, kernel_size&#x3D;(3, 3), stride&#x3D;(2, 2), padding&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (6): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(256, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(256, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(256, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>        (1): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>        (2): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (7): Conv(<br>      (conv): Conv2d(256, 512, kernel_size&#x3D;(3, 3), stride&#x3D;(2, 2), padding&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(512, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (8): SPP(<br>      (cv1): Conv(<br>        (conv): Conv2d(512, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(1024, 512, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(512, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): ModuleList(<br>        (0): MaxPool2d(kernel_size&#x3D;5, stride&#x3D;1, padding&#x3D;2, dilation&#x3D;1, ceil_mode&#x3D;False)<br>        (1): MaxPool2d(kernel_size&#x3D;9, stride&#x3D;1, padding&#x3D;4, dilation&#x3D;1, ceil_mode&#x3D;False)<br>        (2): MaxPool2d(kernel_size&#x3D;13, stride&#x3D;1, padding&#x3D;6, dilation&#x3D;1, ceil_mode&#x3D;False)<br>      )<br>    )<br>    (9): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(512, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(512, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(512, 512, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(512, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(256, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(256, 256, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (10): Conv(<br>      (conv): Conv2d(512, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (11): Upsample(scale_factor&#x3D;2.0, mode&#x3D;’nearest’)<br>    (12): Concat()<br>    (13): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(512, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(512, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(256, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (14): Conv(<br>      (conv): Conv2d(256, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (15): Upsample(scale_factor&#x3D;2.0, mode&#x3D;’nearest’)<br>    (16): Concat()<br>    (17): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(256, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(256, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(128, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(64, 64, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(64, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (18): Conv(<br>      (conv): Conv2d(128, 128, kernel_size&#x3D;(3, 3), stride&#x3D;(2, 2), padding&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (19): Concat()<br>    (20): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(256, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(256, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(256, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(128, 128, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(128, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (21): Conv(<br>      (conv): Conv2d(256, 256, kernel_size&#x3D;(3, 3), stride&#x3D;(2, 2), padding&#x3D;(1, 1), bias&#x3D;False)<br>      (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>      (act): SiLU()<br>    )<br>    (22): Concat()<br>    (23): C3(<br>      (cv1): Conv(<br>        (conv): Conv2d(512, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv2): Conv(<br>        (conv): Conv2d(512, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (cv3): Conv(<br>        (conv): Conv2d(512, 512, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>        (bn): BatchNorm2d(512, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>        (act): SiLU()<br>      )<br>      (m): Sequential(<br>        (0): Bottleneck(<br>          (cv1): Conv(<br>            (conv): Conv2d(256, 256, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>          (cv2): Conv(<br>            (conv): Conv2d(256, 256, kernel_size&#x3D;(3, 3), stride&#x3D;(1, 1), padding&#x3D;(1, 1), bias&#x3D;False)<br>            (bn): BatchNorm2d(256, eps&#x3D;0.001, momentum&#x3D;0.03, affine&#x3D;True, track_running_stats&#x3D;True)<br>            (act): SiLU()<br>          )<br>        )<br>      )<br>    )<br>    (24): Detect(<br>      (m): ModuleList(<br>        (0): Conv2d(128, 21, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1))<br>        (1): Conv2d(256, 21, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1))<br>        (2): Conv2d(512, 21, kernel_size&#x3D;(1, 1), stride&#x3D;(1, 1))<br>      )<br>    )<br>  )<br>)<br>Parameter name: ema      Parameter value:None<br>Parameter name: updates          Parameter value:None<br>Parameter name: optimizer        Parameter value:None<br>Parameter name: wandb_id         Parameter value:None</p>
-<p>model.0.conv.conv.weight         torch.Size([32, 12, 3, 3])<br>model.0.conv.conv.bias   torch.Size([32])<br>model.1.conv.weight      torch.Size([64, 32, 3, 3])<br>model.1.conv.bias        torch.Size([64])<br>model.2.cv1.conv.weight          torch.Size([32, 64, 1, 1])<br>model.2.cv1.conv.bias    torch.Size([32])<br>model.2.cv2.conv.weight          torch.Size([32, 64, 1, 1])<br>model.2.cv2.conv.bias    torch.Size([32])<br>model.2.cv3.conv.weight          torch.Size([64, 64, 1, 1])<br>model.2.cv3.conv.bias    torch.Size([64])<br>model.2.m.0.cv1.conv.weight      torch.Size([32, 32, 1, 1])<br>model.2.m.0.cv1.conv.bias        torch.Size([32])<br>model.2.m.0.cv2.conv.weight      torch.Size([32, 32, 3, 3])<br>model.2.m.0.cv2.conv.bias        torch.Size([32])<br>model.3.conv.weight      torch.Size([128, 64, 3, 3])<br>model.3.conv.bias        torch.Size([128])<br>model.4.cv1.conv.weight          torch.Size([64, 128, 1, 1])<br>model.4.cv1.conv.bias    torch.Size([64])<br>model.4.cv2.conv.weight          torch.Size([64, 128, 1, 1])<br>model.4.cv2.conv.bias    torch.Size([64])<br>model.4.cv3.conv.weight          torch.Size([128, 128, 1, 1])<br>model.4.cv3.conv.bias    torch.Size([128])<br>model.4.m.0.cv1.conv.weight      torch.Size([64, 64, 1, 1])<br>model.4.m.0.cv1.conv.bias        torch.Size([64])<br>model.4.m.0.cv2.conv.weight      torch.Size([64, 64, 3, 3])<br>model.4.m.0.cv2.conv.bias        torch.Size([64])<br>model.4.m.1.cv1.conv.weight      torch.Size([64, 64, 1, 1])<br>model.4.m.1.cv1.conv.bias        torch.Size([64])<br>model.4.m.1.cv2.conv.weight      torch.Size([64, 64, 3, 3])<br>model.4.m.1.cv2.conv.bias        torch.Size([64])<br>model.4.m.2.cv1.conv.weight      torch.Size([64, 64, 1, 1])<br>model.4.m.2.cv1.conv.bias        torch.Size([64])<br>model.4.m.2.cv2.conv.weight      torch.Size([64, 64, 3, 3])<br>model.4.m.2.cv2.conv.bias        torch.Size([64])<br>model.5.conv.weight      torch.Size([256, 128, 3, 3])<br>model.5.conv.bias        torch.Size([256])<br>model.6.cv1.conv.weight          torch.Size([128, 256, 1, 1])<br>model.6.cv1.conv.bias    torch.Size([128])<br>model.6.cv2.conv.weight          torch.Size([128, 256, 1, 1])<br>model.6.cv2.conv.bias    torch.Size([128])<br>model.6.cv3.conv.weight          torch.Size([256, 256, 1, 1])<br>model.6.cv3.conv.bias    torch.Size([256])<br>model.6.m.0.cv1.conv.weight      torch.Size([128, 128, 1, 1])<br>model.6.m.0.cv1.conv.bias        torch.Size([128])<br>model.6.m.0.cv2.conv.weight      torch.Size([128, 128, 3, 3])<br>model.6.m.0.cv2.conv.bias        torch.Size([128])<br>model.6.m.1.cv1.conv.weight      torch.Size([128, 128, 1, 1])<br>model.6.m.1.cv1.conv.bias        torch.Size([128])<br>model.6.m.1.cv2.conv.weight      torch.Size([128, 128, 3, 3])<br>model.6.m.1.cv2.conv.bias        torch.Size([128])<br>model.6.m.2.cv1.conv.weight      torch.Size([128, 128, 1, 1])<br>model.6.m.2.cv1.conv.bias        torch.Size([128])<br>model.6.m.2.cv2.conv.weight      torch.Size([128, 128, 3, 3])<br>model.6.m.2.cv2.conv.bias        torch.Size([128])<br>model.7.conv.weight      torch.Size([512, 256, 3, 3])<br>model.7.conv.bias        torch.Size([512])<br>model.8.cv1.conv.weight          torch.Size([256, 512, 1, 1])<br>model.8.cv1.conv.bias    torch.Size([256])<br>model.8.cv2.conv.weight          torch.Size([512, 1024, 1, 1])<br>model.8.cv2.conv.bias    torch.Size([512])<br>model.9.cv1.conv.weight          torch.Size([256, 512, 1, 1])<br>model.9.cv1.conv.bias    torch.Size([256])<br>model.9.cv2.conv.weight          torch.Size([256, 512, 1, 1])<br>model.9.cv2.conv.bias    torch.Size([256])<br>model.9.cv3.conv.weight          torch.Size([512, 512, 1, 1])<br>model.9.cv3.conv.bias    torch.Size([512])<br>model.9.m.0.cv1.conv.weight      torch.Size([256, 256, 1, 1])<br>model.9.m.0.cv1.conv.bias        torch.Size([256])<br>model.9.m.0.cv2.conv.weight      torch.Size([256, 256, 3, 3])<br>model.9.m.0.cv2.conv.bias        torch.Size([256])<br>model.10.conv.weight     torch.Size([256, 512, 1, 1])<br>model.10.conv.bias       torch.Size([256])<br>model.13.cv1.conv.weight         torch.Size([128, 512, 1, 1])<br>model.13.cv1.conv.bias   torch.Size([128])<br>model.13.cv2.conv.weight         torch.Size([128, 512, 1, 1])<br>model.13.cv2.conv.bias   torch.Size([128])<br>model.13.cv3.conv.weight         torch.Size([256, 256, 1, 1])<br>model.13.cv3.conv.bias   torch.Size([256])<br>model.13.m.0.cv1.conv.weight     torch.Size([128, 128, 1, 1])<br>model.13.m.0.cv1.conv.bias       torch.Size([128])<br>model.13.m.0.cv2.conv.weight     torch.Size([128, 128, 3, 3])<br>model.13.m.0.cv2.conv.bias       torch.Size([128])<br>model.14.conv.weight     torch.Size([128, 256, 1, 1])<br>model.14.conv.bias       torch.Size([128])<br>model.17.cv1.conv.weight         torch.Size([64, 256, 1, 1])<br>model.17.cv1.conv.bias   torch.Size([64])<br>model.17.cv2.conv.weight         torch.Size([64, 256, 1, 1])<br>model.17.cv2.conv.bias   torch.Size([64])<br>model.17.cv3.conv.weight         torch.Size([128, 128, 1, 1])<br>model.17.cv3.conv.bias   torch.Size([128])<br>model.17.m.0.cv1.conv.weight     torch.Size([64, 64, 1, 1])<br>model.17.m.0.cv1.conv.bias       torch.Size([64])<br>model.17.m.0.cv2.conv.weight     torch.Size([64, 64, 3, 3])<br>model.17.m.0.cv2.conv.bias       torch.Size([64])<br>model.18.conv.weight     torch.Size([128, 128, 3, 3])<br>model.18.conv.bias       torch.Size([128])<br>model.20.cv1.conv.weight         torch.Size([128, 256, 1, 1])<br>model.20.cv1.conv.bias   torch.Size([128])<br>model.20.cv2.conv.weight         torch.Size([128, 256, 1, 1])<br>model.20.cv2.conv.bias   torch.Size([128])<br>model.20.cv3.conv.weight         torch.Size([256, 256, 1, 1])<br>model.20.cv3.conv.bias   torch.Size([256])<br>model.20.m.0.cv1.conv.weight     torch.Size([128, 128, 1, 1])<br>model.20.m.0.cv1.conv.bias       torch.Size([128])<br>model.20.m.0.cv2.conv.weight     torch.Size([128, 128, 3, 3])<br>model.20.m.0.cv2.conv.bias       torch.Size([128])<br>model.21.conv.weight     torch.Size([256, 256, 3, 3])<br>model.21.conv.bias       torch.Size([256])<br>model.23.cv1.conv.weight         torch.Size([256, 512, 1, 1])<br>model.23.cv1.conv.bias   torch.Size([256])<br>model.23.cv2.conv.weight         torch.Size([256, 512, 1, 1])<br>model.23.cv2.conv.bias   torch.Size([256])<br>model.23.cv3.conv.weight         torch.Size([512, 512, 1, 1])<br>model.23.cv3.conv.bias   torch.Size([512])<br>model.23.m.0.cv1.conv.weight     torch.Size([256, 256, 1, 1])<br>model.23.m.0.cv1.conv.bias       torch.Size([256])<br>model.23.m.0.cv2.conv.weight     torch.Size([256, 256, 3, 3])<br>model.23.m.0.cv2.conv.bias       torch.Size([256])<br>model.24.m.0.weight      torch.Size([21, 128, 1, 1])<br>model.24.m.0.bias        torch.Size([21])<br>model.24.m.1.weight      torch.Size([21, 256, 1, 1])<br>model.24.m.1.bias        torch.Size([21])<br>model.24.m.2.weight      torch.Size([21, 512, 1, 1])<br>model.24.m.2.bias        torch.Size([21])</p>
+                <h3 id="一正则表达式">一、正则表达式</h3>
+<p>​
+简单理解正则表达式就是用来匹配一段字符串中自己想要的部分的匹配规则，从一段长字符串中抽取想要的关键信息</p>
+<h4 id="字符组">1、字符组</h4>
+<p>​
+字符组用[]括起来。在[]中出现的内容会被匹配，例如[abc]匹配a或b或c，字符组内容过多时还可以使用-，例如[a-z]表示a到z之间所有小写字母，[0-9]表示匹配0到9的所有阿拉伯数字</p>
+<h4 id="简单元字符">2、简单元字符</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.	匹配除了换行符以外的任意字符</span><br><span class="line">\w	匹配字母、数字、下划线</span><br><span class="line">\s	匹配任意的空白符</span><br><span class="line">\d	匹配数字</span><br><span class="line">\n	匹配一个换行符</span><br><span class="line">\t	匹配一个制表符</span><br><span class="line"></span><br><span class="line">^	匹配字符串的开始</span><br><span class="line">$	匹配字符串的结尾</span><br><span class="line"></span><br><span class="line">\W	匹配非 字母、数字、下划线（和\w相反）</span><br><span class="line">\D	匹配非数字</span><br><span class="line">\S	匹配非空白符</span><br><span class="line">a|b	匹配字符a或字符b</span><br><span class="line">()	匹配括号内的表达式，也表示一个组</span><br><span class="line">[...]	匹配字符组中的字符</span><br><span class="line">[^...]	匹配除了字符组中字符	的所有字符</span><br></pre></td></tr></table></figure>
+<h4 id="量词">3、量词<a id="量词"></a></h4>
+<p>控制前面的元字符出现的次数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*	重复零次或更多次</span><br><span class="line">+	重复一次或更多次</span><br><span class="line">？	重复零次或一次</span><br><span class="line">&#123;n&#125;	重复n次</span><br><span class="line">&#123;n,&#125; 重复n次或更多次</span><br><span class="line">&#123;n,m&#125; 重复n到m次</span><br></pre></td></tr></table></figure>
+<h4 id="惰性匹配与贪婪匹配">4、惰性匹配与贪婪匹配</h4>
+<p>​ 量词中的？、*、+、{}都属于贪婪匹配，就是尽可能多的匹配到结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line">str: 玩儿吃鸡游戏, 晚上一起上游戏, 干嘛呢? 打游戏啊</span><br><span class="line">reg: 玩儿.*游戏</span><br><span class="line"></span><br><span class="line">此时匹配的是: 玩儿吃鸡游戏, 晚上一起上游戏, 干嘛呢? 打游戏</span><br></pre></td></tr></table></figure>
+<p>​ 在使用.*后面如果加了？则是表示尽可能少匹配，表示惰性匹配</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">str: 玩儿吃鸡游戏, 晚上一起上游戏, 干嘛呢? 打游戏啊</span><br><span class="line">reg: 玩儿.*?游戏</span><br><span class="line"></span><br><span class="line">此时匹配的是: 玩儿吃鸡游戏</span><br><span class="line"></span><br><span class="line">str: &lt;div&gt;胡辣汤&lt;/div&gt;</span><br><span class="line">reg: &lt;.*&gt;</span><br><span class="line">结果: &lt;div&gt;胡辣汤&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">str: &lt;div&gt;胡辣汤&lt;/div&gt;</span><br><span class="line">reg: &lt;.*?&gt;</span><br><span class="line">结果: </span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">str: &lt;div&gt;胡辣汤&lt;/div&gt;&lt;span&gt;饭团&lt;/span&gt;</span><br><span class="line">reg: &lt;div&gt;.*?&lt;/div&gt;</span><br><span class="line">结果:</span><br><span class="line">    &lt;div&gt;胡辣汤&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>.*?x的含义，找到最近的x</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str: abcdefgxhijklmn</span><br><span class="line">reg: .*?x</span><br><span class="line">结果:abcdefgx</span><br></pre></td></tr></table></figure>
+<h4 id="分组">5、分组</h4>
+<p>在正则中使用()进行分组. 比如. 我们要匹配一个相对复杂的身份证号.
+身份证号分成两种. 老的身份证号有15位. 新的身份证号有18位.
+并且新的身份证号结尾有可能是x.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">身份证号  15位, 18位</span><br><span class="line">^[1-9]\d&#123;13,16&#125;[0-9x]$</span><br><span class="line">^[1-9]\d&#123;14&#125;(\d&#123;2&#125;[0-9x])?$			√</span><br><span class="line">^([1-9]\d&#123;16&#125;[0-9x]|[1-9]\d&#123;14&#125;)$</span><br></pre></td></tr></table></figure>
+<p>最后，推荐一个可以练习正则表达式的网站<a target="_blank" rel="noopener" href="https://tool.chinaz.com/regex/">正则表达式在线测试 - 站长工具
+(chinaz.com)</a></p>
+<p><a href="#量词">量词</a></p>
 
                 
             </div>
@@ -414,7 +467,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">John Doe</a>
+                    <a href="/about" rel="external nofollow noreferrer">gzh</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -424,7 +477,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gongzihang6.github.io/2024/04/03/yolov5s%20%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/">https://gongzihang6.github.io/2024/04/03/yolov5s%20%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/</a>
+                    <a href="https://gongzihang6.github.io/2024/07/16/zheng-ze-biao-da-shi/">https://gongzihang6.github.io/2024/07/16/zheng-ze-biao-da-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -437,7 +490,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">John Doe</a>
+                    <a href="/about" target="_blank">gzh</a>
                     !
                 </span>
             </div>
@@ -461,7 +514,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
+                                </a>
+                            
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -538,12 +599,63 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/07/16/jing-dian-juan-ji-shen-jing-wang-luo/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            介绍了AlexNet、ZFNet、VGG、GoogLeNet、ResNet等经典卷积神经网络。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/deeplearing/" class="post-category">
+                                    deeplearing
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/deeplearning/">
+                        <span class="chip bg-color">deeplearning</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">卷积神经网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/04/03/yolov5s%20%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/">
+                <a href="/2024/07/16/yolov5s-wang-luo-jie-gou/">
                     <div class="card-image">
                         
                         
@@ -560,50 +672,12 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            John Doe
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/04/03/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            John Doe
+                            gzh
                             
                         </span>
                     </div>
@@ -665,7 +739,7 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
+            collapseDepth: Number('2'),
             headingSelector: 'h2, h3, h4'
         });
 
@@ -786,13 +860,13 @@
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2024</span>
+                <span id="year">2024-2025</span>
             
-            <a href="/about" target="_blank">John Doe</a>
+            <a href="/about" target="_blank">gzh</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             
@@ -817,6 +891,60 @@
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2024";
+                        var startMonth = "4";
+                        var startDate = "5";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             
@@ -1012,6 +1140,15 @@ $(function () {
     
     
     
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
 
     <!-- 雪花特效 -->
     
@@ -1060,6 +1197,8 @@ $(function () {
 
     
 
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
