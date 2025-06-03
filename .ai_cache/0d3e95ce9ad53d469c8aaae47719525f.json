@@ -1,7 +1,7 @@
 {
-  "summary": "以Tidio为例,Tidio免费版已经完全够用且无需梯子\n\n访问Tidio官网\n\n要在您的网站上使用 javascript 代码方法安装 Tidio，您需要创建一个 Tidio 帐户.",
-  "service": "fallback",
+  "summary": "Tidio提供免费、无需梯子的在线聊天解决方案，适合网站快速集成。用户只需注册账号，从设置中获取专属JavaScript代码，将其嵌入网站指定位置即可完成部署。该工具安装简便，仅需单行代码即可实现实时聊天功能，适用于各类网站提升用户互动体验。",
+  "service": "deepseek",
   "page_title": "添加在线聊天",
-  "timestamp": "2025-06-03T17:43:39.099350",
+  "timestamp": "2025-06-03T17:49:39.839561",
   "language": "zh"
 }

@@ -1,7 +1,7 @@
 {
-  "summary": "这个项目利用MkDocs hooks，为您的技术文档和博客添加AI驱动的摘要生成和智能阅读统计功能.MkDocs AI Hooks\n\n仓库地址：https://github.",
-  "service": "fallback",
+  "summary": "该项目为MkDocs文档系统提供AI驱动的智能摘要和阅读统计功能，支持OpenAI、DeepSeek等多API服务。核心特性包括自动生成80-120字多语言摘要、智能内容清理、缓存优化及精准阅读时间估算。通过hooks机制实现灵活配置，支持文件夹和页面级控制，并采用LRU缓存提升性能。安装简便，适合技术文档和博客，能有效提升文档可读性和用户体验。",
+  "service": "deepseek",
   "page_title": "MkDocs文档AI摘要",
-  "timestamp": "2025-06-03T17:43:38.844668",
+  "timestamp": "2025-06-03T17:48:19.290580",
   "language": "zh"
 }

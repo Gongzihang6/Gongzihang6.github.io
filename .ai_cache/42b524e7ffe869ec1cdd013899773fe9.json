@@ -1,7 +1,7 @@
 {
-  "summary": "png]\n\ndocs/overrides下新建main.html文件    \n树状结构如下:  \n``[代码]`[代码]`[代码]``\n\n在main.",
-  "service": "fallback",
+  "summary": "本文介绍如何在文档项目中添加顶部公告栏，通过修改`docs/overrides/main.html`文件实现自定义公告内容。操作步骤包括创建指定目录结构，编辑HTML文件进行个性化配置。该方法适用于需要突出显示重要通知的技术文档网站，具有修改灵活、部署简单的特点，无需改动核心代码即可实现公告功能。",
+  "service": "deepseek",
   "page_title": "添加顶部公告栏",
-  "timestamp": "2025-06-03T17:43:38.974842",
+  "timestamp": "2025-06-03T17:48:58.818728",
   "language": "zh"
 }

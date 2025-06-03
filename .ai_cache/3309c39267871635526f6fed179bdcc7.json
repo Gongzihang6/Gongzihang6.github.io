@@ -1,7 +1,7 @@
 {
-  "summary": "Note\n\n以下代码均在[代码]下复制粘贴\n\n// 在LocalStorage中设置不显示雪花效果的标志\nlocalStorage.",
-  "service": "fallback",
+  "summary": "该技术文档介绍了三种网页背景特效的实现方法：雪花、樱花和粒子效果。核心是通过JavaScript动态加载特效脚本，并利用LocalStorage控制特效的显示状态。代码示例展示了如何通过创建script元素并设置src属性来引入外部特效脚本，适用于需要动态美化网页界面的场景。",
+  "service": "deepseek",
   "page_title": "背景特效",
-  "timestamp": "2025-06-03T17:43:38.917603",
+  "timestamp": "2025-06-03T17:48:44.779996",
   "language": "zh"
 }
