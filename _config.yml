@@ -137,7 +137,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-matery
+# theme: hexo-theme-matery
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -145,3 +146,12 @@ deploy:
   type: git
   repo: git@github.com:Gongzihang6/Gongzihang6.github.io.git
   branch: main
+
+
+
+
+# search: 
+# path: search.xml 
+# field: post 
+# format: html 
+# limit: 10000
