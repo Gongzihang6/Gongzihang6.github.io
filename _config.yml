@@ -138,7 +138,8 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: hexo-theme-matery
-theme: hexo-theme-next
+# theme: hexo-theme-next
+theme: Hacker
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
