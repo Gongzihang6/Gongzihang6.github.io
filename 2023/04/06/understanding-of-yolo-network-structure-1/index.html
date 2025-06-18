@@ -1,104 +1,50 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.1.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/uploads/logo.png" color="#222">
+  <meta charset="utf-8">
+  
+  <title>YOLOv5网络结构详解 | Blog of gzh | Welcome to Blog of gzh</title>
 
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"gongzihang6.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null,"position":"right"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta name="description" content="yolo网络结构详解  先来放上整个网络结构的示意图，图中所示为yolov5l的网络结构图   yolov5l整体网络结构(部分参数不正确，以文中介绍为准)   一、Backbone结构 1、Focus模块 ​ 进入backbone之前，对原始输入图像进行切片操作，每隔一个像素取一个值，图像高宽减半，通道数变为原来4倍，信息基本没有丢失，以yolov5s为例，输入图像640">
-<meta property="og:type" content="article">
-<meta property="og:title" content="YOLOv5网络结构详解">
-<meta property="og:url" content="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/index.html">
-<meta property="og:site_name" content="Blog of gzh">
-<meta property="og:description" content="yolo网络结构详解  先来放上整个网络结构的示意图，图中所示为yolov5l的网络结构图   yolov5l整体网络结构(部分参数不正确，以文中介绍为准)   一、Backbone结构 1、Focus模块 ​ 进入backbone之前，对原始输入图像进行切片操作，每隔一个像素取一个值，图像高宽减半，通道数变为原来4倍，信息基本没有丢失，以yolov5s为例，输入图像640">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/yolov5.jpeg">
-<meta property="og:image" content="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/Focus.png">
-<meta property="og:image" content="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/BottleNeck.png">
-<meta property="og:image" content="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/C3.png">
-<meta property="og:image" content="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/SSPF.jpg">
-<meta property="article:published_time" content="2023-04-06T15:18:00.000Z">
-<meta property="article:modified_time" content="2025-06-18T08:53:39.184Z">
-<meta property="article:author" content="gzh">
-<meta property="article:tag" content="yolo">
-<meta property="article:tag" content="yolov5">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/yolov5.jpeg">
-
-<link rel="canonical" href="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>YOLOv5网络结构详解 | Blog of gzh</title>
+  
+  <meta name="author" content="gzh">
   
 
+  
+  <meta name="description" content="yolo网络结构详解
 
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?c7246ef14d47aff6bd8299bb69fb7610";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
+先来放上整个网络结构的示意图，图中所示为yolov5l的网络结构图
 
 
-  <script>
-    !function(e,t,n,g,i){e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=('https:'==document.location.protocol?'https://':'http://')+g,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.growingio.com/2.1/gio.js","gio");
-    gio('init', 'G-40HC6RYSR1', {});
-    gio('send');
-  </script>
+yolov5l整体网络结构(部分参数不正确，以文中介绍为准)
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+一、Backbone结构
+1、Focus模块
+​
+进入backbone之前，对原始输入图像进行切片操作，每隔一个像素">
+  
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
+  
+  
+  <meta name="keywords" content="yolo,yolov5">
+  
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<style>mjx-container[jax="SVG"] {
+  <meta property="og:title" content="YOLOv5网络结构详解"/>
+
+  <meta property="og:site_name" content="Blog of gzh"/>
+
+  
+  <meta property="og:image" content="true" />
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Blog of gzh" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -210,151 +156,55 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style><link rel="alternate" href="/atom.xml" title="Blog of gzh" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</style><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Blog of gzh</a>
+    </h1>
+    <p class="site-description">Welcome to Blog of gzh</p>
   </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
 
-  <div class="site-meta">
+    <main class="site-main posts-loop">
+    <article>
 
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Blog of gzh</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">Welcome to Blog of gzh</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
+  
     
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
+    <h3 class="article-title"><span>YOLOv5网络结构详解</span></h3>
     
   
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/04/06/understanding-of-yolo-network-structure-1/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-04-06T15:18:00.000Z">
+          2023-04-06
+        </time>
+      </a>
+    </span>
+  </div>
+
+
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gzh.jpg">
-      <meta itemprop="name" content="gzh">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog of gzh">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          YOLOv5网络结构详解
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-06 23:18:00" itemprop="dateCreated datePublished" datetime="2023-04-06T23:18:00+08:00">2023-04-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-06-18 16:53:39" itemprop="dateModified" datetime="2025-06-18T16:53:39+08:00">2025-06-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/deep-learing/" itemprop="url" rel="index"><span itemprop="name">deep learing</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span><br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span></span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>NaN:aN</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+  <div class="article-content">
+    <div class="entry">
       
         <h3 id="yolo网络结构详解">yolo网络结构详解</h3>
 <p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.016ex;" xmlns="http://www.w3.org/2000/svg" width="6.359ex" height="4.545ex" role="img" focusable="false" viewbox="0 -1118 2810.6 2009"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mi" transform="translate(220,676)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g><g data-mml-node="mi" transform="translate(261,-686)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><rect width="772" height="60" x="120" y="220"/></g><g data-mml-node="mo" transform="translate(1289.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="mi" transform="translate(2345.6,0)"><path data-c="1D467" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"/></g></g></g></svg></mjx-container></span></p>
@@ -467,263 +317,98 @@ SSPF模块将经过CBS的x、一次池化后的y1、两次池化后的y2和3次�
 <p>​ 分类和 bbox
 检测等都是在同一个卷积的不同通道中完成，预测结果在通道维得到。</p>
 
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/deep-learing/">deep learing</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/yolo/">yolo</a><a href="/tags/yolov5/">yolov5</a>
+    </span>
+    
+
     </div>
 
     
-    
-    
-        
-
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>gzh
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/" title="YOLOv5网络结构详解">https://gongzihang6.github.io/2023/04/06/understanding-of-yolo-network-structure-1/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
-
-
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/yolo/" rel="tag"><i class="fa fa-tag"></i> yolo</a>
-              <a href="/tags/yolov5/" rel="tag"><i class="fa fa-tag"></i> yolov5</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item"></div>
-      <div class="post-nav-item">
-    <a href="/2024/07/16/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
   </div>
+</article>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#yolo%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">yolo网络结构详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80backbone%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">一、Backbone结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#focus%E6%A8%A1%E5%9D%97"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、Focus模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bottleneck%E6%A8%A1%E5%9D%97"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、BottleNeck模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c3%E6%A8%A1%E5%9D%97"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、C3模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E7%BD%91%E7%BB%9C%E8%B5%B0%E5%90%91"><span class="nav-number">1.1.4.</span> <span class="nav-text">4、后续网络走向</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sppf"><span class="nav-number">1.1.5.</span> <span class="nav-text">5、SPPF</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8Cneck%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">二、Neck结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#sppf%E6%A8%A1%E5%9D%97%E5%BC%95%E5%87%BA%E7%9A%84neck"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、SPPF模块引出的neck</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89head%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">三、Head结构</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="gzh"
-      src="/images/gzh.jpg">
-  <p class="site-author-name" itemprop="name">gzh</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">7</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/Gongzihang6" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Gongzihang6" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/601049742@qq.com" title="E-Mail → 601049742@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/zihanggong24@gmail.com" title="Google → zihanggong24@gmail.com"><i class="fa fa-fw fa-google"></i>Google</a>
-      </span>
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'Gongzihang6',
+			repo: '',
+			oauth: {
+				client_id: 'gzh6',
+				client_secret: 'gzh601049742',
+			},
+		})
+		gitment.render('gitment')
+	</script>
 
 
 
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
 
-      </div>
+
+
+
     </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2025 gzh
+    
+  </p>
+</footer>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-40HC6RYSR1');
+</script>
 
-        
+    
+<script>
+    var _hmt = _hmt || [];
+    ( function () {
+        var hm = document.createElement( "script" );
+        hm.src = "https://hm.baidu.com/hm.js?c7246ef14d47aff6bd8299bb69fb7610";
+        var s = document.getElementsByTagName( "script" )[ 0 ];
+        s.parentNode.insertBefore( hm, s );
+    } )();
+</script>
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">gzh</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    <span title="站点总字数">NaNm</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">NaN:aN</span>
-</div>
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
   </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+</div>
 </body>
 </html>
