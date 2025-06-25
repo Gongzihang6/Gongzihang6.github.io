@@ -52,6 +52,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css">
+    
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="../../../stylesheets/extra2.css">
@@ -2792,7 +2794,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>5879</strong> | 有效代码行数：<strong>1</strong></p>
+<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>5879</strong></p>
 </div>
 <h1 id="_1">模型评估与多分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">泛化性能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -2805,10 +2807,11 @@
 <p>由于事先并不知道“新样本”的信息，我们只能努力使经验误差最小化，并将测试集上的“测试误差”作为泛化误差的近似，所以测试集要和训练集中的样本尽可能互斥；</p>
 <h3 id="_3">误差分解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>“偏差-方差分解”（bias-variance decomposition）是解释机器学习算法泛化性能的一种重要工具；</p>
-<p>对测试样本 <span class="arithmatex">\(x\)</span>，令 <span class="arithmatex">\(y_D\)</span> 为 <span class="arithmatex">\(x\)</span> 在数据集中的标记，<span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(x\)</span> 的真实标记，<span class="arithmatex">\(f(x;D)\)</span> 为训练集 D 上学到的模型 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x\)</span> 上的预测输出，以回归任务为例，学习算法的期望预测为<span style="color:#d59bf6;">（这里指的是同一个学习算法在<strong>样本数相同的训练集</strong>上训练出来的模型的产生的预测的期望值）</span></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>\bar{f}(x)= E_D [f(x; D)]
-</code></pre></div></td></tr></table></div>
-<p>使用样本数相同的不同训练集产生的方差为
+<p>对测试样本 <span class="arithmatex">\(x\)</span>，令 <span class="arithmatex">\(y_D\)</span> 为 <span class="arithmatex">\(x\)</span> 在数据集中的标记，<span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(x\)</span> 的真实标记，<span class="arithmatex">\(f(x;D)\)</span> 为训练集 D 上学到的模型 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x\)</span> 上的预测输出，以回归任务为例，学习算法的期望预测为<span style="color:#d59bf6;">（这里指的是同一个学习算法在<strong>样本数相同的训练集</strong>上训练出来的模型的产生的预测的期望值）</span>
+$$
+\bar{f}(x)= E_D [f(x; D)]
+$$
+使用样本数相同的不同训练集产生的方差为
 $$
 var(x)= E_D [(f(x; D)-\bar{f}(x))^2]
 $$
@@ -2901,9 +2904,9 @@ $$
 E(f; D)=\frac{1}{m}\sum_{i = 1}<sup>m(f(x_i)-y_i)</sup>2
 $$
 更一般的，对于数据分布 <span class="arithmatex">\(\mathcal{D}\)</span> 和概率密度函数 <span class="arithmatex">\(p(\cdot)\)</span>，均方误差可描述为</p>
-<p>$$
+<div class="arithmatex">\[
 E(f; \mathcal{D}) = \int_{x \sim \mathcal{D}} (f(x) - y)^2 p(x) \mathrm{d}x.
-$$</p>
+\]</div>
 <h3 id="_10">错误率与精度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>错误率
 $$
@@ -2917,15 +2920,15 @@ $$
 \end{aligned}
 $$
 更一般的，对于数据分布 <span class="arithmatex">\(\mathcal{D}\)</span> 和概率密度函数 <span class="arithmatex">\(p(\cdot)\)</span>，错误率与精度可分别描述为</p>
-<p>$$
+<div class="arithmatex">\[
 E(f; \mathcal{D}) = \int_{x \sim \mathcal{D}} \mathbb{I}(f(x) \neq y) p(x) \mathrm{d}x 
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \begin{aligned}
-\text{acc}(f; \mathcal{D}) &amp;= \int_{x \sim \mathcal{D}} \mathbb{I}(f(x) = y) p(x) \mathrm{d}x \
+\text{acc}(f; \mathcal{D}) &amp;= \int_{x \sim \mathcal{D}} \mathbb{I}(f(x) = y) p(x) \mathrm{d}x \\
 &amp;= 1 - E(f; \mathcal{D}) \, .
 \end{aligned}
-$$</p>
+\]</div>
 <h3 id="f1">查准率、查全率与 F1<a class="headerlink" href="#f1" title="Permanent link">&para;</a></h3>
 <p>查准率亦称“准确率”，指的是查出来的<span style="color:#d59bf6;">有多少是我想要的</span>，<strong>我想要的</strong><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">占</span><strong>你查出来的</strong>多少百分比；(预测为正的样例中真正是正例的样本占多少)</p>
 <p>查全率亦称“召回率”，指的是<span style="color:#d59bf6;">我想要的有多少被查出来了</span>，也就是<strong>你查出来的我想要的</strong><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">占</span><strong>全部我想要的</strong>的百分比；（真正的正例样本有多少被预测出来了）</p>
@@ -2953,25 +2956,25 @@ F_{\beta}=\frac{(1+\beta^2)\times P \times R}{(\beta^2\times P)+R}
 $$
 其中<span class="arithmatex">\(\beta&gt;0\)</span>度量了查全率对查准率的相对重要性，<span class="arithmatex">\(\beta=1\)</span>退化为标准的F1，<span class="arithmatex">\(\beta&gt;1\)</span>是查全率有更大影响；<span class="arithmatex">\(\beta&lt;1\)</span>时查准率有更大影响</p>
 <p>一种直接的做法是先在各混淆矩阵上分别计算出查准率和查全率，记为 <span class="arithmatex">\((P_1, R_1), (P_2, R_2), \ldots, (P_n, R_n)\)</span>，再计算平均值，这样就得到“宏查准率” (macro-<span class="arithmatex">\(P\)</span>)、“宏查全率” (macro-<span class="arithmatex">\(R\)</span>)，以及相应的“宏<span class="arithmatex">\(F1\)</span>” (macro-<span class="arithmatex">\(F1\)</span>):</p>
-<p>$$
+<div class="arithmatex">\[
 \text{macro-}P = \frac{1}{n} \sum_{i=1}^{n} P_i 
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \text{macro-}R = \frac{1}{n} \sum_{i=1}^{n} R_i 
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \text{macro-}F1 = \frac{2 \times \text{macro-}P \times \text{macro-}R}{\text{macro-}P + \text{macro-}R}
-$$</p>
+\]</div>
 <p>还可将各混淆矩阵的对应元素进行平均，得到 <span class="arithmatex">\(TP\)</span>、<span class="arithmatex">\(FP\)</span>、<span class="arithmatex">\(TN\)</span>、<span class="arithmatex">\(FN\)</span> 的平均值，分别记为 <span class="arithmatex">\(\overline{TP}\)</span>、<span class="arithmatex">\(\overline{FP}\)</span>、<span class="arithmatex">\(\overline{TN}\)</span>、<span class="arithmatex">\(\overline{FN}\)</span>，再基于这些平均值计算出“微查准率” (micro-<span class="arithmatex">\(P\)</span>)、“微查全率” (micro-<span class="arithmatex">\(R\)</span>) 和“微<span class="arithmatex">\(F1\)</span>” (micro-<span class="arithmatex">\(F1\)</span>):</p>
-<p>$$
+<div class="arithmatex">\[
 \text{micro-}P = \frac{\overline{TP}}{\overline{TP} + \overline{FP}} 
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \text{micro-}R = \frac{\overline{TP}}{\overline{TP} + \overline{FN}} 
-$$</p>
-<p>$$
+\]</div>
+<div class="arithmatex">\[
 \text{micro-}F1 = \frac{2 \times \text{micro-}P \times \text{micro-}R}{\text{micro-}P + \text{micro-}R}
-$$</p>
+\]</div>
 <h3 id="roc-auc">ROC 与 AUC<a class="headerlink" href="#roc-auc" title="Permanent link">&para;</a></h3>
 <p>很多学习器是为测试样本产生一个实值或概率预测，然后将这个预测值与一个分类与之（threshold）进行比较，若大于阈值则分为正类，否则为反类；实际上，根据这个实值或者概率预测结果，我们可以将测试样本进行排序，“最可能”是正例的排在最前面，“最不可能”是正例的排在最后面，这样分类过程就相当于在这个排序中以某个截断点将样本分为两个部分，前一部分为正例，后一部分为反例；</p>
 <p>在不同任务中，我们可根据任务需求来采用不同的截断点，如果我们更重视查准率，则我们应该选择排序中靠前的位置来进行截断，如果我们更重视查全率，则我们应该选择排序中靠后的位置进行截断；</p>
@@ -3666,15 +3669,9 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
     
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
-      
         <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

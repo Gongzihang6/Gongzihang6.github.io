@@ -50,6 +50,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.css">
+    
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="../../../stylesheets/extra2.css">
@@ -3246,7 +3248,7 @@
 <h2 id="_1">面向对象<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2"><strong>对象</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>对象是一种特殊的数据结构，可以用来记住一个事物的数据，从而代表该事物。java 中万物皆对象，任何事物都可以用一个对象、类来表示。如 Person、Student 等等。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -3337,7 +3339,7 @@
 <p>1、类中的成员变量全部私有，并提供 public 的 getter/setter 方法</p>
 <p>2、类中需要提供一个无参数构造器，（有参构造器可选，可有可无）</p>
 <p>满足 1、2 的就是实体类，主要作用是用于存储数据和获取数据，实现数据存取和数据处理业务的分离。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -3660,7 +3662,7 @@
 <hr />
 <h4 id="java-main">深入解析 Java 的 <code>main</code> 方法<a class="headerlink" href="#java-main" title="Permanent link">&para;</a></h4>
 <h5 id="1-main">1. <code>main</code> 方法的本质<a class="headerlink" href="#1-main" title="Permanent link">&para;</a></h5>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
@@ -3760,7 +3762,7 @@
 <p>❌ 错误：静态初始化块先于 main 执行</p>
 </li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
@@ -3783,7 +3785,7 @@
 </ul>
 <h5 id="5">5. 高级特性<a class="headerlink" href="#5" title="Permanent link">&para;</a></h5>
 <p><strong>多入口支持</strong>（需要自定义启动器）：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span>
@@ -3800,7 +3802,7 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>JEP 445 预览</strong>（Java 21+）：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1">// 未来可能简化的入口（预览特性）</span>
@@ -3840,7 +3842,7 @@
 </blockquote>
 <h4 id="java_1">Java 创建子类的完整过程详解<a class="headerlink" href="#java_1" title="Permanent link">&para;</a></h4>
 <p>在 Java 中创建子类对象时，<strong>必须首先创建父类对象</strong>。这个过程是递归进行的，直到顶层的 <code>Object</code> 类。以下是详细的创建过程：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
@@ -3882,7 +3884,7 @@
 <li>在堆内存中为整个对象分配空间（包含父类+子类的所有字段）</li>
 <li>
 <p>内存结构示例：
-     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>[对象头]
 <a id="__codelineno-7-2" name="__codelineno-7-2"></a>[Animal 字段]  // 父类部分
@@ -3916,7 +3918,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <ol>
 <li>
 <p><strong>隐式 <code>super()</code> 调用</strong>：
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+   <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
@@ -3933,7 +3935,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </li>
 <li>
 <p><strong>显式 <code>super</code> 调用</strong>（必须第一行）：
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+   <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
@@ -3952,7 +3954,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </li>
 </ol>
 <h4 id="_9">内存模型图解<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
@@ -3986,7 +3988,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>子类构造器 <strong>必须</strong> 直接或间接调用父类构造器</li>
 <li>
 <p>如果父类 <strong>没有无参构造器</strong>，子类 <strong>必须显式调用</strong> <code>super(...)</code>
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+   <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
 <span class="normal"><a href="#__codelineno-11-4">4</a></span>
@@ -4007,7 +4009,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </li>
 <li>
 <p><strong>初始化顺序</strong>：
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+   <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
@@ -4071,7 +4073,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </li>
 <li><code>this()</code>（调用本类其他构造器）和 <code>super()</code> 不能共存</li>
 <li>解决方法：通过 <code>this()</code> 调用的构造器最终必须调用 <code>super()</code>
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+   <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
@@ -4101,7 +4103,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </li>
 <li>
 <p><strong>多态基础</strong>：
-   <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+   <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">Animal</span><span class="w"> </span><span class="n">animal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span><span class="w"> </span><span class="c1">// 子类对象可视为父类类型</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">animal</span><span class="p">.</span><span class="na">eat</span><span class="p">();</span><span class="w"> </span><span class="c1">// 实际调用 Dog 的 eat() 方法</span>
 </code></pre></div></td></tr></table></div></p>
@@ -4116,7 +4118,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>确保对象从根类（Object）到子类完全构造</li>
 </ol>
 <h4 id="_12">特殊案例：抽象父类<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
@@ -4201,7 +4203,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <p><strong>this(...)调用兄弟构造器</strong></p>
 <p>任意类的构造器中，都可以通过this来调用该类的其他构造器</p>
 <p>this(…) 、super(…) 都只能放在构造器的第一行，因此，有了this(…)就不能写super(…)了，反之亦然</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
@@ -4337,7 +4339,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </code></pre></div></td></tr></table></div>
 <h3 id="_17">多态<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>多态是在继承/实现情况下的一种现象，表现为：对象多态、行为多态</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
@@ -4473,7 +4475,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <p>多态的问题：多态左边的变量是用父类声明的，无法使用子类独有的功能；</p>
 <h4 id="_18">多态下的类型转换问题<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
 <p>当对象之间存在==继承/实现==关系时，就可以实现强制类型转换，编译阶段不会报错</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-18-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-18-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-18-4"> 4</a></span>
@@ -4787,7 +4789,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>定义一个public的静态方法，返回前面静态变量保存的该类的一个对象；（向外面暴露一个获取该唯一实例对象的接口）</li>
 </ul>
 <p>饿汉式单例，在单例类中类加载时就已经创建好了唯一的实例对象，调用获取实例对象时，对象已经创建好，直接返回即可；</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
@@ -4824,7 +4826,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <a id="__codelineno-19-18" name="__codelineno-19-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>懒汉式单例，单例类中类加载时不会创建唯一的实例对象，而是在调用getInstance()方法时，如果是第一次调用，才正式创建实例对象，后续调用，会直接返回第一次创建的实例对象；</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
@@ -4874,7 +4876,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>枚举类中的第一行，只能写枚举类的对象名称，且要用逗号隔开；</li>
 <li>这些名称，本质是常量，每个常量都记住了枚举类的一个对象；</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
@@ -5040,7 +5042,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <p>它们 <strong>不是</strong> 字符串 (<code>String</code>) 或整数 (<code>int</code>)，尽管它们可以与这些类型的数据关联。</p>
 <h5 id="_26">示例说明<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h5>
 <p>让我们来看一个简单的 <code>Color</code> 枚举：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
 <span class="normal"><a href="#__codelineno-22-2">2</a></span>
 <span class="normal"><a href="#__codelineno-22-3">3</a></span>
 <span class="normal"><a href="#__codelineno-22-4">4</a></span>
@@ -5059,12 +5061,12 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li><code>BLUE</code> 的数据类型是 <code>Color</code>。</li>
 </ul>
 <p>您可以像这样使用它：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="n">Color</span><span class="w"> </span><span class="n">myColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="na">RED</span><span class="p">;</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="n">Color</span><span class="w"> </span><span class="n">myColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="na">RED</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>在这个例子中，变量 <code>myColor</code> 的类型是 <code>Color</code>，它被赋予了 <code>Color.RED</code> 这个值，而 <code>Color.RED</code> 本身就是一个 <code>Color</code> 类型的对象。</p>
 <h5 id="_27">带有属性的复杂示例<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h5>
 <p>枚举的强大之处在于可以为其常量关联额外的数据。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
@@ -5108,7 +5110,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>每个对象都有一个私有的、不可变的 <code>description</code> 字符串属性，该属性通过构造函数在创建时被初始化。</li>
 <li>我们可以通过调用 <code>getDescription()</code> 方法来获取每个枚举常量关联的描述信息。</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
 <span class="normal"><a href="#__codelineno-25-2">2</a></span>
 <span class="normal"><a href="#__codelineno-25-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="n">TrafficLight</span><span class="w"> </span><span class="n">currentLight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TrafficLight</span><span class="p">.</span><span class="na">GREEN</span><span class="p">;</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">currentLight</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出: GREEN</span>
@@ -5127,7 +5129,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>一个类继承抽象类，必须重写抽象类的全部抽象方法，否则这个类也必须被定义为抽象类；</li>
 </ul>
 <p>使用抽象类的好处：父类知道每个子类都要做某个行为，但每个子类要做的情况不一样，父类就定义成抽象方法，交给子类去重写实现，我们设计这样的抽象类，就是为了更好的支持多态。</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-26-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-26-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-26-4"> 4</a></span>
@@ -5187,7 +5189,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </code></pre></div></td></tr></table></div>
 <h4 id="_29">模板方法设计模式<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
 <p>通过抽象方法，实现模板中特异的、每个人不同的地方，每个人相同的地方直接在抽象类中用普通方法实现，然后在普通方法中调用抽象方法，类似模板中的×××，用抽象类的子类重写抽象方法来填×××</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
@@ -5285,7 +5287,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </li>
 <li>让程序可以面向接口编程，这样程序员就可以灵活方便的切换各种业务实现（更有利于程序的解耦合，例如提供一套完整的接口，可以让不同公司实现，切换时）；</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
@@ -5390,7 +5392,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>静态方法，使用<code>static</code>修饰，默认会被加上<code>public</code>修饰，<strong>只能用接口名来调用</strong>（静态方法属于接口本身）；</li>
 </ul>
 <p>接口中新增这些方法，增强了接口的能力，更便于项目的扩展和维护；</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
@@ -5471,7 +5473,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>一个类继承了父类，又同时实现了接口，如果父类和接口中有同名的默认方法，实现类会优先用父类的（父类是亲爹，接口是干爹）；</li>
 <li>一个类实现了多个接口，如果多个接口中存在同名的默认方法，可以不冲突，这个类重写该方法即可；</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
@@ -5665,7 +5667,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <ul>
 <li>就是类中的一个普通成员，类似前面学过的普通的成员变量、成员方法；</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-31-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-31-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-31-4"> 4</a></span>
@@ -5758,7 +5760,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>成员内部类可以直接访问外部类的实例成员、静态成员</li>
 <li>成员内部类的实例方法中，可以直接拿到当前外部类对象，格式是外部类类名.this</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
@@ -5824,7 +5826,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>静态内部类可以直接访问外部类的静态成员，但是不可以直接访问外部类的实例成员（因为外部类可能还没有实例）；</li>
 </ul>
 <p>静态内部类类创建对象的方式和成员内部类不同，<code>Outer.Inner inner = new Outer.Inner();</code>只需要new Outer.Inner()即可；</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-33-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-33-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-33-4"> 4</a></span>
@@ -5901,7 +5903,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>特点：匿名内部类本质就是一个子类，并会立即创建出一个子类对象；</li>
 <li>作用：用于更方便的创建一个子类对象；</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-34-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-34-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-34-4"> 4</a></span>
@@ -5944,7 +5946,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>通常作为一个对象参数传输给方法；</li>
 <li>需求：学生、老师都要参加游泳比赛；</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-35-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-35-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-35-4"> 4</a></span>
@@ -6014,7 +6016,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 </code></pre></div></td></tr></table></div>
 <p>匿名内部类使用场景：自定义sort函数比较规则；</p>
 <p><strong>调用别人提供的方法实现需求时，这个方法正好可以让我们传输一个匿名内部类对象给其使用；</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-36-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-36-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-36-4"> 4</a></span>
@@ -6177,7 +6179,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <li>有且仅有一个抽象方法的接口；</li>
 <li>注意：将来我们见到的大部分函数式接口，上面都可能会有一个<code>@FunctionalInterface</code>的注解，该注解用于约束当前接口必须是函数式接口。</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-37-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-37-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-37-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-37-4"> 4</a></span>
@@ -6270,7 +6272,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <a id="__codelineno-37-46" name="__codelineno-37-46"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>静态方法引用：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-38-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-38-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-38-4"> 4</a></span>
@@ -6419,7 +6421,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <a id="__codelineno-38-74" name="__codelineno-38-74"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>特定类型方法引用</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-39-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-39-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-39-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-39-4"> 4</a></span>
@@ -6482,7 +6484,7 @@ D --&gt; E[子类构造器]</code></pre></li>
 <a id="__codelineno-39-31" name="__codelineno-39-31"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>构造器引用</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-40-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-40-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-40-4"> 4</a></span>
@@ -6905,15 +6907,9 @@ D --&gt; E[子类构造器]</code></pre></li>
     
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
-      
         <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
