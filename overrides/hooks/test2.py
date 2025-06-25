@@ -45,8 +45,8 @@ class AISummaryGenerator:
         # 🤖 多AI服务配置
         self.ai_services = {
             'deepseek': {
-                'url': 'https://api.deepseek.com/v1/chat/completions',
-                'model': 'deepseek-chat',
+                'url': 'https://api.siliconflow.cn/v1/chat/completions',
+                'model': 'deepseek-ai/DeepSeek-V3',
                 'api_key': os.getenv('DEEPSEEK_API_KEY', ),
                 'max_tokens': 150,
                 'temperature': 0.3
