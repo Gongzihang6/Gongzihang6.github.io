@@ -2792,7 +2792,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>5879</strong></p>
+<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>5879</strong> | 有效代码行数：<strong>1</strong></p>
 </div>
 <h1 id="_1">模型评估与多分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">泛化性能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -2805,11 +2805,10 @@
 <p>由于事先并不知道“新样本”的信息，我们只能努力使经验误差最小化，并将测试集上的“测试误差”作为泛化误差的近似，所以测试集要和训练集中的样本尽可能互斥；</p>
 <h3 id="_3">误差分解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>“偏差-方差分解”（bias-variance decomposition）是解释机器学习算法泛化性能的一种重要工具；</p>
-<p>对测试样本 <span class="arithmatex">\(x\)</span>，令 <span class="arithmatex">\(y_D\)</span> 为 <span class="arithmatex">\(x\)</span> 在数据集中的标记，<span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(x\)</span> 的真实标记，<span class="arithmatex">\(f(x;D)\)</span> 为训练集 D 上学到的模型 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x\)</span> 上的预测输出，以回归任务为例，学习算法的期望预测为<span style="color:#d59bf6;">（这里指的是同一个学习算法在<strong>样本数相同的训练集</strong>上训练出来的模型的产生的预测的期望值）</span>
-$$
-\bar{f}(x)= E_D [f(x; D)]
-$$
-使用样本数相同的不同训练集产生的方差为
+<p>对测试样本 <span class="arithmatex">\(x\)</span>，令 <span class="arithmatex">\(y_D\)</span> 为 <span class="arithmatex">\(x\)</span> 在数据集中的标记，<span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(x\)</span> 的真实标记，<span class="arithmatex">\(f(x;D)\)</span> 为训练集 D 上学到的模型 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x\)</span> 上的预测输出，以回归任务为例，学习算法的期望预测为<span style="color:#d59bf6;">（这里指的是同一个学习算法在<strong>样本数相同的训练集</strong>上训练出来的模型的产生的预测的期望值）</span></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>\bar{f}(x)= E_D [f(x; D)]
+</code></pre></div></td></tr></table></div>
+<p>使用样本数相同的不同训练集产生的方差为
 $$
 var(x)= E_D [(f(x; D)-\bar{f}(x))^2]
 $$
@@ -2842,7 +2841,7 @@ $$
 <p>其中，偏差度量了学习算法的期望预测与数据集标记的偏离程度，刻画了学习算法本身的拟合能力（因为学习算法的目标是向着数据集的标记靠近）；方差度量了同样大小的训练集的变动导致的学习性能的变化，刻画了数据扰动对算法学习性能的影响；噪声则表达了在当前任务下任何学习算法所能达到的期望泛化误差的下界，即刻画了学习问题本身的难度；</p>
 <p>偏差-方差分解说明，泛化性能是由学习算法的能力、数据的充分性以及学习任务本身的难度共同决定的。</p>
 <p>给定学习任务，为了取得好的泛化性能，则需要使偏差比较小，即能够充分拟合数据，并且使方差小，即使得数据扰动产生的影响小；</p>
-<p><img alt="偏差-方差窘境" src="F:\software\Typora\images\image-20250619211138029.png" /></p>
+<p><img alt="偏差-方差窘境" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250619211138029.png" /></p>
 <p>图一说明，给定学习任务，假定我们能控制学习算法的训练程度，则在训练不足时，学习器的拟合能力不够强，训练数据的扰动不足以使学习器产生显著变化（也就是同样大小，给我不同的训练集，我的拟合能力比较差，学出来没有什么太大区别，主要是学的太差，和真实答案相距太远），此时偏差主导了泛化错误率；随着训练程度的加深，学习器的拟合能力逐渐增强，训练数据发生的扰动渐渐能被学习器学到，方差逐渐主导了泛化错误率；在训练程度充足后，学习器的拟合能力已非常强，训练数据发生的轻微扰动都会导致学习器发生显著变化，若训练数据自身的、非全局的特性被学习器学到了，则将发生过拟合。</p>
 <h3 id="_4">过拟合与欠拟合<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>过拟合：指的是学习器把训练样本学的“太好了”的时候，很可能已经把训练样本自身的一些独有的特点当作了所有潜在样本都会具有的一般性质，这样就会导致泛化性能的下降；</p>
@@ -2855,7 +2854,7 @@ $$
 <li>决策树：拓展分支，增强模型学习能力；</li>
 <li>神经网络：增加训练轮数，加深模型学习程度</li>
 </ul>
-<p><img alt="过拟合、欠拟合的直观类比" src="F:\software\Typora\images\image-20250619211807194.png" /></p>
+<p><img alt="过拟合、欠拟合的直观类比" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250619211807194.png" /></p>
 <h2 id="_5">评估方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="_6">留出法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>将数据集 D 划分为两个互斥的集合，其中一个集合作为训练集 S，另一个作为测试集 T，即 <span class="arithmatex">\(D=S \cup T\)</span>，<span class="arithmatex">\(S\cap T=\varnothing\)</span>，在 S 上训练出模型后，用 T 来评估其测试误差，作为对泛化误差的估计</p>
@@ -2871,7 +2870,7 @@ $$
 </ul>
 <h3 id="_7">交叉验证法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>交叉验证法（cross validation）先将数据集 D 划分为 k 个大小相似的互斥子集，即 <span class="arithmatex">\(D=D_1 \cup D_2 \cup \dots \cup D_k\)</span>，<span class="arithmatex">\(D_i \cap D_j=\varnothing\)</span> <span class="arithmatex">\((i \neq j)\)</span>，每个子集 <span class="arithmatex">\(D_i\)</span> 都尽可能保持数据分布的一致性，即从 D 中分层采样得到，然后用其中 k-1 个子集作为训练集，剩下一个子集作为测试集，这样就可以获得 k 组训练集/测试集，从而可以进行 k 次训练和测试，最终返回的是这 k 个测试结果的平均值；</p>
-<p><img alt="10 折交叉验证示意图" src="F:\software\Typora\images\image-20250619213314549.png" /></p>
+<p><img alt="10 折交叉验证示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250619213314549.png" /></p>
 <p>假定数据集 <span class="arithmatex">\(D\)</span> 中包含 <span class="arithmatex">\(m\)</span> 个样本，若令 <span class="arithmatex">\(k=m\)</span>，则得到了交叉验证法的一个特例：留一法（Leave-One-Out，简称 LOO）</p>
 <p>留一法的优点：</p>
 <ul>
@@ -2932,7 +2931,7 @@ $$</p>
 <p>查全率亦称“召回率”，指的是<span style="color:#d59bf6;">我想要的有多少被查出来了</span>，也就是<strong>你查出来的我想要的</strong><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">占</span><strong>全部我想要的</strong>的百分比；（真正的正例样本有多少被预测出来了）</p>
 <p>根据实际场景的不同，对这两个指标的重视程度也不一样；</p>
 <p>对于二分类问题，可以将样例根据其真实类别与学习器预测的类别，分为真正例（true positive，真阳性，标记为真的同时学习器预测也为真，TP），假正例（false positive，假阳性，标记为假的同时但是学习器预测为真，FP），真反例（true negative，真阴性，标记为假的同时学习器预测也为假），假反例（false negative，假阴性，标记为真的同时但是学习器预测为假），显然有<code>TP+FP+TN+FN=样例总数</code>，可以用混淆矩阵来描述这个结果</p>
-<p><img alt="二分类结果混淆矩阵" src="F:\software\Typora\images\image-20250621094040885.png" /></p>
+<p><img alt="二分类结果混淆矩阵" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250621094040885.png" /></p>
 <p>根据前面的定义，查准率P和查全率R分别定义为：
 $$
 P=\frac{TP}{TP+FP}  \ \
@@ -2941,7 +2940,7 @@ $$
 查准率和查全率是一对矛盾的变量；一般来说，查准率高时，查全率往往偏低，而查全率高时，查准率往往偏低；例如，如果希望查准率高，也就是挑选出来的西瓜中好瓜比例尽可能高，则学习器就会只挑选最有把握的瓜，但这样就难免会漏掉不少好瓜，使得查全率比较低；如果希望查全率高，也就是所有的好瓜都尽可能地被选出来，则学习器可以通过增加选瓜地数量地来实现，极端情况就是将所有地瓜都选上，那所有的好瓜自然都被选上了，查全率为100%，但是查准率就比较低了；</p>
 <p>在很多情形下，我们可根据学习器的预测结果对样例进行排序，排在前面的是学习器认为“最可能”是正例的样本，排在最后的则是学习器认为“最不可能”是正例的样本，按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率。</p>
 <p>以查全率为横轴、查准率为纵轴作图，就得到PR曲线</p>
-<p><img src="F:\software\Typora\images\image-20250621102915213.png" alt="PR曲线与平衡点示意图" style="zoom:80%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250621102915213.png" alt="PR曲线与平衡点示意图" style="zoom:80%;" /></p>
 <p>PR图直观的显示出学习器在样本总体上的查全率、查准率；在进行比较时，如果一个学习器的PR曲线被另一个学习器完全“包住”，则可断言后者的性能优于前者，如图中A的性能优于C，可以这么理解，在绘图过程中，我们是按照学习器的预测结果对样例进行排序的，从第一个样本开始，每预测一个样本，如果这个样本预测正确了，则查准率为100%，查全率也从0开始增加到非0，并逐渐增加，如果这个样本预测错误了，则查准率开始下降，而查全率不变，显示在PR图上就是曲线开始下降，因此C下降速度明显比A快，说明C有更多样本预测错误；</p>
 <p>A和B学习器的性能度量就要通过平衡点（Break-Event Point，简称BEP），它是查准率=查全率时的取值，例如图中的学习器C的BEP是0.64，基于BEP的比较，可认为学习器A优于B，但是BEP还是过于简化了，更常用的是F1度量
 $$
@@ -2986,7 +2985,7 @@ TPR=\frac{TP}{TP+FN}
 $$
 TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是总的正例样本的数量，因此TPR表示总的正例样本中预测正确的比例；</p>
 <p>绘制出如下图所示的近似ROC曲线。绘图过程很简单：给定 <span class="arithmatex">\(m^+\)</span> 个正例和 <span class="arithmatex">\(m^-\)</span> 个反例，根据学习器预测结果对样例进行排序，然后把分类阈值设为最大，即把所有样例均预测为反例，此时真正例率和假正例率均为 0，在坐标 <span class="arithmatex">\((0,0)\)</span> 处标记一个点。然后，将分类阈值依次设为每个样例的预测值，即依次将每个样例划分为正例。设前一个标记点坐标为 <span class="arithmatex">\((x,y)\)</span>，当前若为真正例，则对应标记点的坐标为 <span class="arithmatex">\((x, y + \frac{1}{m^+})\)</span>；当前若为假正例，则对应标记点的坐标为 <span class="arithmatex">\((x + \frac{1}{m^-}, y)\)</span>，然后用线段连接相邻点即得。</p>
-<p><img alt="ROC曲线与AUC示意图" src="F:\software\Typora\images\image-20250622122355434.png" /></p>
+<p><img alt="ROC曲线与AUC示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250622122355434.png" /></p>
 <p>如何根据ROC曲线比较学习器性能的优劣？与PR曲线类似，若一个学习器的ROC曲线被另一个学习器的曲线完全包住，则可以断言后者的性能优于前者；若两个学习器的ROC曲线发生交叉，则难以一般性的断言两者孰优孰劣，可以通过比较ROC曲线下的面积，即AUC（Area Under ROC Curve）</p>
 <p>好的，这张图片是来自一本关于机器学习的经典教材（很可能是周志华老师的《机器学习》，俗称“西瓜书”），它讨论了ROC曲线和AUC的定义与计算。</p>
 <p>我会结合图片中的内容，用一个通俗易懂的例子，为你详细解释ROC曲线和AUC的实际意义。</p>
