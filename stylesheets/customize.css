@@ -128,7 +128,7 @@ figcaption::before {
 
 /* 代码块主题 */
 /* 顶部 */
-.md-fences {
+/* .md-fences {
     color: #c5c8c6;
     background-color: #21252b;
     border-radius: 5px;
@@ -147,7 +147,62 @@ figcaption::before {
     margin-top: -20px;
     position: absolute;
     width: 12px;
+} */
+
+
+.md-fences {
+    position: relative; /* 确保伪元素可以相对于代码块定位 */
+    color: #c5c8c6;
+    background-color: #21252b;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
+    padding-top: 30px;
+    font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
 }
+
+.md-fences::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.md-fences::before {
+    width: 12px;
+    height: 12px;
+    background-color: #fc625d;
+    border-radius: 50%;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+}
+
+.md-fences::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    width: 12px;
+    height: 12px;
+    background-color: #fdbc40;
+    border-radius: 50%;
+}
+
+.md-fences .circle-3 {
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    width: 12px;
+    height: 12px;
+    background-color: #35cd4b;
+    border-radius: 50%;
+}
+
+/* ... existing code ... */
+.md-button:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+
+
 
 
 h1 {
