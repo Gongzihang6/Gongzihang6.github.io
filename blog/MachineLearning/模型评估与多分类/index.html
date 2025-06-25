@@ -2844,10 +2844,10 @@ $$
 $$</p>
 <p>期望输出与真实标记的差别称为偏差（bias），即
 $$
-bias<sup>2(x)=(\bar{f}(x)-f(x))</sup>2
+\text{bias}<sup>2{(x)}=(\bar{f}(x)-f(x))</sup>2
 $$
-为了便于讨论，假定噪声期望为 0，即 <span class="arithmatex">\(E_D[y_D-y]=0\)</span>，通过简单的多项式展开合并，可以对算法的期望泛化误差进行分解：
-$$
+为了便于讨论，假定噪声期望为 0，即 <span class="arithmatex">\(E_D[y_D-y]=0\)</span>，通过简单的多项式展开合并，可以对算法的期望泛化误差进行分解：</p>
+<p>$$
 \begin{aligned}
 E(f; D) &amp;= \mathbb{E}_D \left [ (f(x; D) - y_D)^2 \right] \
 &amp;= \mathbb{E}_D \left [ (f(x; D) - \bar{f}(x) + \bar{f}(x) - y_D)^2 \right] \
