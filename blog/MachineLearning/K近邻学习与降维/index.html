@@ -2843,8 +2843,8 @@ $$
 <p>令 <span class="arithmatex">\(c^*=\mathop{\arg\max}\limits_{c\in y}P(c|x)\)</span> 表示贝叶斯最优分类器的结果，也就是给定测试样本，它属于 <span class="arithmatex">\(c^*\)</span> 类的概率最大；有
 $$
 \begin{aligned} P(err)&amp;= 1-\sum\limits_{c\in y}P(c|x)P(c|z) \approx 1-\sum\limits_{c\in y}P^2(c|x)  \
-&amp;\leq 1-P<sup>2(c</sup><em>|x)=(1+P(c<sup>*|x))(1-P(c</sup></em>|x)) \
-&amp;\leq 2\times (1-P(c^*|x)). \end{aligned}
+&amp;\leq 1-P^2(c^<em>|x)=(1+P(c^</em>|x))(1-P(c^<em>|x)) \
+&amp;\leq 2\times (1-P(c^</em>|x)). \end{aligned}
 $$</p>
 <p>第一行的约等于是因为 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(z\)</span> 是可以任意近的，因为它们之间的距离小于任意正数<span class="arithmatex">\(\delta\)</span>，所以它们属于任意同一类别 <span class="arithmatex">\(c\)</span> 的概率可以认为很接近（这也是 k 近邻的核心思想）；<span class="arithmatex">\(c^*\)</span> 是测试样本 <span class="arithmatex">\(x\)</span> 最可能属于的类别，因此 <span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)&gt;=P(c^*|x)\)</span></p>
 <p>公式（2）说明，最近邻分类虽然简单，但在距离度量合适、训练样本足够密集的假设下，它的泛化错误率不超过贝叶斯最优分类器的两倍；</p>
@@ -2989,13 +2989,13 @@ $$
 <p>根据矩阵迹的性质，<span class="arithmatex">\(-2\sum\limits_{i=1}^mz_i^TW^Tx_i=-2\sum\limits_{i=1}^mx_i^TWW^Tx_i=-2tr(\sum\limits_{i=1}^mx_i^TWW^Tx_i)=-2tr(W^T(\sum\limits_{i=1}^mx_ix_i^T)W)\)</span></p>
 <p>所以优化目标可以写成：
 $$
-\mathop{\max}\limits_{W} \quad tr(W<sup>TXX</sup>TW) \
+\mathop{\max}\limits_{W} \quad tr(W^TXX^TW) \
 s.t. \quad W^TW = I
 $$
 其中 <span class="arithmatex">\(W=[w_1, w_2, \dots, w_{d^\prime}] \in \mathbb{R}^{d\times d^\prime}\)</span>，<span class="arithmatex">\(X=[x_1, x_2, \dots, x_m]\in \mathbb{R}^{d\times m}\)</span></p>
 <p>用拉格朗日乘子法求解上述优化问题，定义拉格朗日函数 <span class="arithmatex">\(\mathcal{L}\)</span> 如下：
 $$
-\mathcal{L}(W,\Lambda)= tr(W<sup>TXX</sup>TW)-tr(\Lambda<sup>T(W</sup>TW-I))
+\mathcal{L}(W,\Lambda)= tr(W^TXX^TW)-tr(\Lambda^T(W^TW-I))
 $$
 其中 <span class="arithmatex">\(\Lambda\)</span> 是拉格朗日乘子矩阵，与约束 <span class="arithmatex">\(W^TW=I\)</span> 相关联</p>
 <p>接下来对 <span class="arithmatex">\(W\)</span> 和 <span class="arithmatex">\(\Lambda\)</span> 求导，令导数为 0 得到极值点，
@@ -3470,10 +3470,6 @@ M = (I - W)^T(I - W) \, , \tag{10.30}
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/config_mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

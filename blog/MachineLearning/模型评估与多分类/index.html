@@ -2844,7 +2844,7 @@ $$
 $$</p>
 <p>期望输出与真实标记的差别称为偏差（bias），即
 $$
-\text{bias}<sup>2{(x)}=(\bar{f}(x)-f(x))</sup>2
+\text{bias}^2{(x)}=(\bar{f}(x)-f(x))^2
 $$
 为了便于讨论，假定噪声期望为 0，即 <span class="arithmatex">\(E_D[y_D-y]=0\)</span>，通过简单的多项式展开合并，可以对算法的期望泛化误差进行分解：</p>
 <p>$$
@@ -2861,7 +2861,7 @@ E(f; D) &amp;= \mathbb{E}_D \left [ (f(x; D) - y_D)^2 \right] \
 $$
 所以，
 $$
-E(f; D)= var<sup>2(x)+bias</sup>2(x)+\epsilon^2
+E(f; D)= var^2(x)+bias^2(x)+\epsilon^2
 $$
 即泛化误差可以分解为：方差、偏差、噪声之和；</p>
 <p>其中，偏差度量了学习算法的期望预测与数据集标记的偏离程度，刻画了学习算法本身的拟合能力（因为学习算法的目标是向着数据集的标记靠近）；方差度量了同样大小的训练集的变动导致的学习性能的变化，刻画了数据扰动对算法学习性能的影响；噪声则表达了在当前任务下任何学习算法所能达到的期望泛化误差的下界，即刻画了学习问题本身的难度；</p>
@@ -2924,7 +2924,7 @@ $$
 <p>在预测任务中，给定样例集 <span class="arithmatex">\(D={(x_1,y_1),(x_2,y_2),\dots,(x_m,y_m)}\)</span>，其中 <span class="arithmatex">\(y_i\)</span> 是示例 <span class="arithmatex">\(x_i\)</span> 的真实标记，通过比较学习器的预测结果 f(x)与真实标记 y 来评估模型的性能</p>
 <p>对于回归任务，常用均方误差
 $$
-E(f; D)=\frac{1}{m}\sum_{i = 1}<sup>m(f(x_i)-y_i)</sup>2
+E(f; D)=\frac{1}{m}\sum_{i = 1}^m(f(x_i)-y_i)^2
 $$
 更一般的，对于数据分布 <span class="arithmatex">\(\mathcal{D}\)</span> 和概率密度函数 <span class="arithmatex">\(p(\cdot)\)</span>，均方误差可描述为</p>
 <div class="arithmatex">\[
@@ -3693,10 +3693,6 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../../javascripts/config_mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
