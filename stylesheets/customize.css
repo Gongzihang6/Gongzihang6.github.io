@@ -85,3 +85,22 @@
   transition: border-radius 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
   overflow: hidden;
 }
+
+
+/*为所有figure元素添加编号并显示题注*/
+/* a.css */
+/* 为所有 figure 元素启动一个名为 'figure' 的计数器 */
+body {
+    counter-reset: figure;
+}
+
+/* 为页面中每个 figcaption 元素增加计数器的值 */
+figcaption {
+    counter-increment: figure;
+}
+
+/* 在每个 figcaption 的内容前插入 "图 X: " */
+figcaption::before {
+    content: "图 " counter(figure) ": ";
+    font-weight: bold; /* 让编号加粗，更醒目 */
+}
