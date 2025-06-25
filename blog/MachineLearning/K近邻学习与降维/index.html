@@ -2842,9 +2842,11 @@ $$
 <p>假设样本独立同分布，且对任意 <span class="arithmatex">\(x\)</span> 和任意小整数<span class="arithmatex">\(\delta\)</span>，在 <span class="arithmatex">\(x\)</span> 附近<span class="arithmatex">\(\delta\)</span> 距离范围内总能找到一个训练样本（也就是训练样本足够密集）；换言之，对任意训练样本，总能在任意近的范围内找到一个训练样本 z，使得对该测试样本预测错误的概率为 <span class="arithmatex">\(P(err)= 1-\sum\limits_{c\in y}P(c|x)P(c|z)\)</span></p>
 <p>令 <span class="arithmatex">\(c^*=\mathop{\arg\max}\limits_{c\in y}P(c|x)\)</span> 表示贝叶斯最优分类器的结果，也就是给定测试样本，它属于 <span class="arithmatex">\(c^*\)</span> 类的概率最大；有</p>
 <div class="arithmatex">\[
-\begin{aligned} P(err)&amp;= 1-\sum\limits_{c\in y}P(c|x)P(c|z) \approx 1-\sum\limits_{c\in y}P^2(c|x)  \\
+\begin{aligned} 
+P(err)&amp;= 1-\sum\limits_{c\in y}P(c|x)P(c|z) \approx 1-\sum\limits_{c\in y}P^2(c|x)  \\
 &amp;\leq 1-P^2(c^*|x)=(1+P(c^*|x))(1-P(c^*|x)) \\
-&amp;\leq 2\times (1-P(c^*|x)). \end{aligned}
+&amp;\leq 2\times (1-P(c^*|x)). 
+\end{aligned}
 \]</div>
 <p>第一行的约等于是因为 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(z\)</span> 是可以任意近的，因为它们之间的距离小于任意正数<span class="arithmatex">\(\delta\)</span>，所以它们属于任意同一类别 <span class="arithmatex">\(c\)</span> 的概率可以认为很接近（这也是 k 近邻的核心思想）；<span class="arithmatex">\(c^*\)</span> 是测试样本 <span class="arithmatex">\(x\)</span> 最可能属于的类别，因此 <span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)&gt;=P(c^*|x)\)</span></p>
 <p>公式（2）说明，最近邻分类虽然简单，但在距离度量合适、训练样本足够密集的假设下，它的泛化错误率不超过贝叶斯最优分类器的两倍；</p>
