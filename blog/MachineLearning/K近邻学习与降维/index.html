@@ -2483,7 +2483,7 @@
 <h3 id="_1">基本思想<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><strong>近朱者赤，近墨者黑；</strong> k 近邻（k-Nearnes Neighbor，简称 kNN）学习是一种常用的<span style="color:#3490de;">监督学习</span>方法；</p>
 <p>工作机制：给定测试样本，基于某种 <strong>距离度量</strong>，找出训练集中与其最靠近的 k 个训练样本，然后基于这 k 个“邻居”的信息来进行预测；</p>
-<p><img alt="kNN 工作机制解释图" src="F:\software\Typora\images\image-20250613153215328.png" /></p>
+<p><img alt="kNN 工作机制解释图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250613153215328.png" /></p>
 <h4 id="knn">kNN 实现步骤<a class="headerlink" href="#knn" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
@@ -2635,7 +2635,7 @@ $$
 <ul>
 <li>数据样本虽然是高维的，但与学习任务密切相关的也许仅是某个低维分布，即高维空间中的一个 <strong>低维嵌入 （embedding )</strong>，因而可以对数据进行有效的降维。</li>
 </ul>
-<p><img alt="低维嵌入示意图" src="F:\software\Typora\images\image-20250614124849333.png" /></p>
+<p><img alt="低维嵌入示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250614124849333.png" /></p>
 <p>如上图所示，虽然样本点维度为 3 维，但决定样本点维度的特征可能主要由其中两个维度决定，将 3 维的样本映射到二维的子空间中，更容易学习到分类特征；</p>
 <h2 id="_3">降维<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>降维的目的就是解决高维情况下出现的数据样本稀疏、距离计算困难等问题，但解决这些问题的同时，我们希望数据的结构不要有太大的变化，比如要求 <strong>降维后样本之间的距离和原始空间中样本之间的距离要差不多</strong>，就得到“多维缩放”（Multiple Dimensional Scaling，简称 MDS）降维算法。</p>
@@ -2712,7 +2712,7 @@ Z = \Lambda_*^{1/2} V_*^T \in \mathbb{R}^{d^* \times m} \, .
 Z = \tilde{\Lambda}^{1/2} \tilde{V}^T \in \mathbb{R}^{d' \times m} \, .
 \tag{10.12}
 \]</div>
-<p>下图给出了 MDS 算法的描述。<img alt="MDS 算法描述" src="F:\software\Typora\images\image-20250616193015341.png" /></p>
+<p>下图给出了 MDS 算法的描述。<img alt="MDS 算法描述" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250616193015341.png" /></p>
 <h3 id="principal-compoent-analysispca">主成分分析（Principal Compoent Analysis，PCA）<a class="headerlink" href="#principal-compoent-analysispca" title="Permanent link">&para;</a></h3>
 <p>PCA 是最常用的一种降维方法，在模式识别、金融、生物信息学等各个领域均得到广泛应用。</p>
 <ul>
@@ -2779,7 +2779,7 @@ $$</p>
 <blockquote>
 <p>实践中通常对 <span class="arithmatex">\(XX^T\)</span> 进行奇异值分解来代替协方差矩阵的特征值分解</p>
 </blockquote>
-<p><img alt="PCA 算法步骤" src="F:\software\Typora\images\image-20250616110753732.png" /></p>
+<p><img alt="PCA 算法步骤" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250616110753732.png" /></p>
 <p>降维后低维空间的维数 <span class="arithmatex">\(d^\prime\)</span> 通常是由用户事先指定，或通过在值 <span class="arithmatex">\(d^\prime\)</span> 不同的低维空间中对 k 近邻分类器(或其他开销较小的学习器) 进行交叉验证来选取较好的 <span class="arithmatex">\(d^\prime\)</span> 值. 对 PCA，还可从重构的角度设置一个重构阈值，例如 ( t = 95% )，然后选取使下式成立的最小 <span class="arithmatex">\(d^\prime\)</span> 值：</p>
 <div class="arithmatex">\[
 \frac{\sum_{i = 1}^{d'} \lambda_i}{\sum_{i = 1}^{d} \lambda_i} \geq t \tag{10.18}
@@ -2792,11 +2792,11 @@ $$</p>
 <h4 id="isometric-mapping-isomap">等度量映射（Isometric Mapping，简称 Isomap）<a class="headerlink" href="#isometric-mapping-isomap" title="Permanent link">&para;</a></h4>
 <p>基本思想：希望在映射过程中保持测地线的距离。（这里面分析的降维方法都是为了更好的进行 k 近邻分类，方便距离的计算，因此为了满足 k 近邻分类的基本假设“近朱者赤，近墨者黑”，我们都希望降维前后，原来距离近的样本降维后还是近，原来距离远的样本降维后还是远）；</p>
 <p>Isomap 在流形结构未知的情况下，采用构造邻接图（Graph）来通过有限的数据来估算流形上的测地线；</p>
-<p><img src="F:\software\Typora\images\image-20250616195144452.png" alt="使用图结构来估算测地线" style="zoom:50%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250616195144452.png" alt="使用图结构来估算测地线" style="zoom:50%;" /></p>
 <p>如图所示，在数据有限的情况下，我们无法获取流形的真实结构，即表面的真实曲率、是否有空洞等等，所以我们无法获得流形上真实的测地线距离；所以 Isomap 通过将有限的数据样本点连接为图结构，具体操作为：对每一个样本点 <span class="arithmatex">\(x_i\)</span>，确定 <span class="arithmatex">\(x_i\)</span> 的 k 近邻，将 <span class="arithmatex">\(x_i\)</span> 与 k 近邻点之间的距离设置为欧式距离，与其他点的距离设置为无穷大；然后连接 <span class="arithmatex">\(x_i\)</span> 与它的 k 近邻点，这样就形成了如图所示的图结构。</p>
 <p>之后任意两个点之间的测地距离就可以通过图中这两个点之间的最短路径距离来近似了。</p>
 <p>Isomap 算法描述如下：</p>
-<p><img alt="Isomap 算法描述" src="F:\software\Typora\images\image-20250616195816976.png" /></p>
+<p><img alt="Isomap 算法描述" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250616195816976.png" /></p>
 <p>对近邻图的构建通常有两种做法，一种是指定近邻点个数，例如欧氏距离最近的 <span class="arithmatex">\(k\)</span> 个点为近邻点，这样得到的近邻图称为 <span class="arithmatex">\(k\)</span> 近邻图；另一种是指定距离阈值 <span class="arithmatex">\(\epsilon\)</span>，距离小于 <span class="arithmatex">\(\epsilon\)</span> 的点被认为是近邻点，这样得到的近邻图称为 <span class="arithmatex">\(\epsilon\)</span> 近邻图。两种方式均有不足，例如若 <strong>近邻范围指定得较大，则距离很远的点可能被误认为近邻</strong>，这样就出现 <strong>“短路”</strong> 问题；<strong>近邻范围指定得较小，则图中有些区域可能与其他区域不存在连接</strong>，这样就出现 <strong>“断路”</strong> 问题。短路与断路都会给后续的最短路径计算造成误导。</p>
 <blockquote>
 <p><strong>邻接图构建：为何先用欧式距离？</strong></p>
@@ -2821,7 +2821,7 @@ $$</p>
 <li><strong>全局非线性降维</strong>：通过保留这些局部线性关系，将数据映射到低维空间，同时避免直接计算全局距离（如 Isomap 的测地线距离）</li>
 </ul>
 <p>算法流程如下：</p>
-<p><img alt="高维空间中的样本重构关系在低维空间中得以保持" src="F:\software\Typora\images\image-20250616201911786.png" /></p>
+<p><img alt="高维空间中的样本重构关系在低维空间中得以保持" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250616201911786.png" /></p>
 <p>假定样本点 <span class="arithmatex">\(x_i\)</span> 的坐标能够通过它的邻域样本 <span class="arithmatex">\(x_j，x_k，x_l\)</span> 的坐标通过线性组合而重构出来，即
 $$
 x_i = w_{ij}x_j+w_{ik}x_k+w_{il}x_l
@@ -2852,7 +2852,7 @@ M = (I - W)^T(I - W) \, , \tag{10.30}
 <p>s.t. <span class="arithmatex">\(ZZ^T = I\)</span>。</p>
 <p>式(10.31)可通过特征值分解求解：M 最小的 <span class="arithmatex">\(d'\)</span> 个特征值对应的特征向量组成的矩阵即为 <span class="arithmatex">\(Z^T\)</span>。</p>
 <p>LLE 的算法描述如下图所示。算法第 4 行显示出：对于不在样本 <span class="arithmatex">\(x_i\)</span> 邻域区域的样本 <span class="arithmatex">\(x_j\)</span>，无论其如何变化都对 <span class="arithmatex">\(x_i\)</span> 和 <span class="arithmatex">\(z_i\)</span> 没有任何影响；这种将变动限制在局部的思想在许多地方都有用</p>
-<p><img alt="LLE算法步骤描述" src="F:\software\Typora\images\image-20250616205231610.png" /></p>
+<p><img alt="LLE算法步骤描述" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250616205231610.png" /></p>
 <p>Isomap vs LLE</p>
 <p>相同点：</p>
 <ul>
@@ -2870,6 +2870,7 @@ M = (I - W)^T(I - W) \, , \tag{10.30}
 <p>然而 Isomap 的 全局 方法有一个很大的问题就是要考虑任意两点之间的关系，这个数量将随着数据点数量的增多而爆炸性增长，从而使得计算难以负荷。因此，以 LLE 为开端的局部分析方法的变种和相关的理论基础研究逐渐受到更多的关注。</p>
 <h4 id="lelaplacian-eigenmap">LE（Laplacian Eigenmap）<a class="headerlink" href="#lelaplacian-eigenmap" title="Permanent link">&para;</a></h4>
 <p>Laplacian Eigenmap (LE ) 希望保持流形的近邻关系 : 将原始空间中相近的点映射成目标空间中相近的点。</p>
+<p><img alt="image-20250625120829043" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pcitures@main/Medias/image-20250625120829043.png" /></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
