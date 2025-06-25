@@ -2600,21 +2600,19 @@
 </ul>
 <h3 id="1-nn">1-NN 二分类错误率<a class="headerlink" href="#1-nn" title="Permanent link">&para;</a></h3>
 <p>暂且假设距离计算是“恰当的”，即能够恰当的找出 k 个近邻，对“最近邻分类器”（1-NN）在二分类问题上的性能进行讨论；</p>
-<p>给定测试样本 x，若其最近邻样本为 z，则最近邻出错的概率就是 x 与 z 类别标记不同的概率，即
+<p>给定测试样本 <span class="arithmatex">\(x\)</span>，若其最近邻样本为 <span class="arithmatex">\(z\)</span>，则最近邻出错的概率就是 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(z\)</span> 类别标记不同的概率，即
 $$
 P(err)= 1-\sum_{c\in y}P(c|x)P(c|z)
 $$
-其中 <span class="arithmatex">\(y=\{1,-1\}\)</span>，<span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)P(c|z)\)</span> 表示测试样本 x 和最近邻样本 z 属于同一类的概率，由于没有指定具体的类别 c，因此需要对所有类别求和，即考虑“属于任意相同类”的总概率；</p>
-<p>假设样本独立同分布，且对任意 x 和任意小整数\delta，在 x 附近\delta 距离范围内总能找到一个训练样本（也就是训练样本足够密集）；换言之，对任意训练样本，总能在任意近的范围内找到一个训练样本 z，使得对该测试样本预测错误的概率为 P(err)= 1-\sum\limits_{c\in y}P(c|x)P(c|z)</p>
+其中 <span class="arithmatex">\(y=\{1,-1\}\)</span>，<span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)P(c|z)\)</span> 表示测试样本 <span class="arithmatex">\(x\)</span> 和最近邻样本 <span class="arithmatex">\(z\)</span> 属于同一类的概率，由于没有指定具体的类别 c，因此需要对所有类别求和，即考虑“属于任意相同类”的总概率；</p>
+<p>假设样本独立同分布，且对任意 <span class="arithmatex">\(x\)</span> 和任意小整数<span class="arithmatex">\(\delta\)</span>，在 <span class="arithmatex">\(x\)</span> 附近<span class="arithmatex">\(\delta\)</span> 距离范围内总能找到一个训练样本（也就是训练样本足够密集）；换言之，对任意训练样本，总能在任意近的范围内找到一个训练样本 z，使得对该测试样本预测错误的概率为 <span class="arithmatex">\(P(err)= 1-\sum\limits_{c\in y}P(c|x)P(c|z)\)</span></p>
 <p>令 <span class="arithmatex">\(c^*=\mathop{\arg\max}\limits_{c\in y}P(c|x)\)</span> 表示贝叶斯最优分类器的结果，也就是给定测试样本，它属于 <span class="arithmatex">\(c^*\)</span> 类的概率最大；有
 $$
-\begin{aligned}
-P(err)&amp;= 1-\sum\limits_{c\in y}P(c|x)P(c|z) \approx 1-\sum\limits_{c\in y}P^2(c|x)  \
+\begin{aligned}P(err)&amp;= 1-\sum\limits_{c\in y}P(c|x)P(c|z) \approx 1-\sum\limits_{c\in y}P^2(c|x)   \
 &amp;\leq 1-P<sup>2(c</sup><em>|x)=(1+P(c<sup>*|x))(1-P(c</sup></em>|x)) \
-&amp;\leq 2\times (1-P(c^*|x)).</p>
-<p>\end{aligned}
+&amp;\leq 2\times (1-P(c^*|x)).\end{aligned}
 $$
-第一行的约等于是因为 x 和 z 是可以任意近的，因为它们之间的距离小于任意正数\delta，所以它们属于任意同一类别 c 的概率可以认为很接近（这也是 k 近邻的核心思想）；<span class="arithmatex">\(c^*\)</span> 是测试样本 x 最可能属于的类别，因此 <span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)&gt;=P(c^*|x)\)</span></p>
+第一行的约等于是因为 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(z\)</span> 是可以任意近的，因为它们之间的距离小于任意正数<span class="arithmatex">\(\delta\)</span>，所以它们属于任意同一类别 <span class="arithmatex">\(c\)</span> 的概率可以认为很接近（这也是 k 近邻的核心思想）；<span class="arithmatex">\(c^*\)</span> 是测试样本 <span class="arithmatex">\(x\)</span> 最可能属于的类别，因此 <span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)&gt;=P(c^*|x)\)</span></p>
 <p>公式（2）说明，最近邻分类虽然简单，但在距离度量合适、训练样本足够密集的假设下，它的泛化错误率不超过贝叶斯最优分类器的两倍；</p>
 <h3 id="_2">维数灾难<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>上述讨论基于一个重要的假设：任意测试样本 <span class="arithmatex">\(x\)</span> 附近的任意小的 <span class="arithmatex">\(\delta\)</span> 距离范围内总能找到一个训练样本，即训练样本的采样密度足够大，或称为“密采样”。然而，这个假设在现实任务中通常很难满足:</p>
