@@ -14,8 +14,8 @@ class AISummaryGenerator:
         
         # DeepSeek API配置
         self.api_config = {
-            'url': 'https://api.deepseek.com/v1/chat/completions',
-            'model': 'deepseek-chat',
+            'url': 'https://api.siliconflow.cn/v1/chat/completions',
+            'model': 'deepseek-ai/DeepSeek-V3',
             'headers': {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer sk-'
