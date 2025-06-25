@@ -2371,10 +2371,6 @@
 
   <h1>为MKdocs添加文章修订时间戳</h1>
 
-<div class="admonition info">
-<p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>203</strong> | 有效代码行数：<strong>51</strong></p>
-</div>
 <p><img alt="img" src="https://cn.mcecy.com/image/20240106/ee0ece547112ac1b67fb61ac7f9c1a90.png" />  </p>
 <p>参考方法：<a href="https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#revisioning">git 修订日期本地化</a></p>
 <p>利用<a href="https://github.com/timvink/mkdocs-git-revision-date-localized-plugin">git -revision-date-localized插件</a>添加了对添加上次更新日期和在每个页面底部创建文档的支持</p>
@@ -2484,93 +2480,21 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="hll"><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kt">!ENV</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CI</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">false</span><span class="p p-Indicator">]</span>
 </span></code></pre></div></td></tr></table></div>
 修改enabled的策略，这样就不会每次本地渲染都检查所有文件的git历史记录，渲染速度会明显加快，发布网站时候会正常显示。</p>
-<!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-<!-- Render date of last update -->
 
 
-<!-- Render date of creation -->
 
 
-<!-- ---------------------------------------------------------------------- -->
-
-<!-- Render authors -->
 
 
-<!-- ---------------------------------------------------------------------- -->
-
-<!-- Render committers from GitHub -->
-
-
-<!-- Render committers from GitLab -->
-
-
-<!-- Render committers -->
-
-
-<!-- ---------------------------------------------------------------------- -->
-
-<!-- Determine date of last update -->
 
   
-
-  <!-- Determine date of creation -->
   
 
 
-<!-- Source file information -->
-
-<!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-<!-- Determine feedback configuration -->
 
   
 
 
-<!-- Determine whether to show feedback -->
-
-
-<!-- Was this page helpful? -->
 
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
@@ -2578,54 +2502,42 @@
         此页面有帮助吗？
       </legend>
       <div class="md-feedback__inner">
-
-        <!-- Feedback ratings -->
         <div class="md-feedback__list">
           
-            <button
-              class="md-feedback__icon md-icon"
-              type="submit"
-              title="This page was helpful"
-              data-md-value="1"
-            >
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
             </button>
           
-            <button
-              class="md-feedback__icon md-icon"
-              type="submit"
-              title="This page could be improved"
-              data-md-value="0"
-            >
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
             </button>
           
         </div>
-
-        <!-- Feedback rating notes (shown after submission) -->
         <div class="md-feedback__note">
           
             <div data-md-value="1" hidden>
               
-
-              <!-- Determine title -->
               
                 
               
-
-              <!-- Replace {url} and {title} placeholders in note -->
+              
+              
+                
+                
+              
               谢谢你的反馈！
             </div>
           
             <div data-md-value="0" hidden>
               
-
-              <!-- Determine title -->
               
                 
               
-
-              <!-- Replace {url} and {title} placeholders in note -->
+              
+              
+                
+                
+              
               Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
             </div>
           
@@ -2633,33 +2545,6 @@
       </div>
     </fieldset>
   </form>
-
-<!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-<!-- Comment system -->
-
-
-
 
 
                 
@@ -2680,27 +2565,14 @@
         
       </main>
       
-        <!-- Footer -->
-<footer class="md-footer">
-
-  <!-- Link to previous and/or next page -->
+        <footer class="md-footer">
   
     
       
-      <nav
-        class="md-footer__inner md-grid"
-        aria-label="页脚"
-        
-      >
-
-        <!-- Link to previous page -->
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a
-            href="../404/"
-            class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 添加404页面"
-          >
+          <a href="../404/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 添加404页面">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -2713,18 +2585,11 @@
                 添加404页面
               </div>
             </div>
-            
           </a>
         
-
-        <!-- Link to next page -->
         
           
-          <a
-            href="../footer/"
-            class="md-footer__link md-footer__link--next"
-            aria-label="下一页: 页脚设置"
-          >
+          <a href="../footer/" class="md-footer__link md-footer__link--next" aria-label="下一页: 页脚设置">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
@@ -2742,8 +2607,6 @@
       </nav>
     
   
-
-  <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2759,23 +2622,6 @@
     </a>
   
 </div>
-   
-    <font color="#B9B9B9">
-      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;">
-    本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
-    <span id="finicount_views"></span>    &nbsp;|&nbsp;
-    <footer>
-      <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
-    </footer>
-  </div>
-      </font>
-
-      <style>
-        .footer-visit-count {
-            height: fit-content;
-            min-height: 55px; /* 根据实际情况调整此高度 */
-        }
-        </style>
       
         <div class="md-social">
   
