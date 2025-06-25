@@ -23,6 +23,9 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex"
+  },
+  loader: {
+    load: ['[tex]/tagformat', '[tex]/mathtools', '[tex]/mhchem']
   }
 };
 
