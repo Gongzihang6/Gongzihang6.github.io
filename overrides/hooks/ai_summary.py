@@ -970,7 +970,7 @@ ai_summary_generator = AISummaryGenerator()
 # 🔧 配置函数
 def configure_ai_summary(enabled_folders=None, exclude_patterns=None, exclude_files=None, 
                         ai_service=None, service_config=None, language='zh',
-                        ci_enabled=None, local_enabled=None, ci_only_cache=None, ci_fallback=None, cache_enabled=None):
+                        ci_enabled=None, local_enabled=True, ci_only_cache=None, ci_fallback=None, cache_enabled=True):
     """
     配置AI摘要功能（支持CI和本地环境分别配置）
     
