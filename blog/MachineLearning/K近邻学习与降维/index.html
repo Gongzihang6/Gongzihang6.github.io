@@ -12,13 +12,9 @@
         <meta name="author" content="gzh">
       
       
-        <link rel="canonical" href="https://gongzihang6.github.io/blog/2024/01/01/2024%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/">
       
       
-        <link rel="prev" href="../../../../2023/12/21/2023%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">
-      
-      
-        <link rel="next" href="../../../../2025/01/01/2025%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">
       
       
       <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
@@ -26,14 +22,14 @@
     
     
       
-        <title>2024网站更新记录 - Blog of GZH</title>
+        <title>K近邻学习与降维 - Blog of GZH</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,17 +48,17 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra2.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../stylesheets/customize.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -98,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2024-12-24" class="md-skip">
+        <a href="#k" class="md-skip">
           跳转至
         </a>
       
@@ -112,7 +108,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+    <a href="../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -137,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2024网站更新记录
+              K近邻学习与降维
             
           </span>
         </div>
@@ -299,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../MachineLearning/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -321,7 +317,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../MIT/" class="md-tabs__link">
+        <a href="../../MIT/" class="md-tabs__link">
           
   
   
@@ -341,7 +337,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../tag/" class="md-tabs__link">
+      <a href="../../../tag/" class="md-tabs__link">
         
   
   
@@ -360,7 +356,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../liuyanban/" class="md-tabs__link">
+      <a href="../../../liuyanban/" class="md-tabs__link">
         
   
   
@@ -377,13 +373,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -405,7 +399,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../about/geren/" class="md-tabs__link">
+        <a href="../../../about/geren/" class="md-tabs__link">
           
   
   
@@ -468,9 +462,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -481,7 +473,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+    <a href="../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -565,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MachineLearning/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -648,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MIT/" class="md-nav__link">
+      <a href="../../MIT/" class="md-nav__link">
         
   
   
@@ -733,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Mkdocs/mkfirst/" class="md-nav__link">
+      <a href="../../Mkdocs/mkfirst/" class="md-nav__link">
         
   
   
@@ -756,7 +748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Mkdocs/mkdocs1/" class="md-nav__link">
+      <a href="../../Mkdocs/mkdocs1/" class="md-nav__link">
         
   
   
@@ -779,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Mkdocs/mkdocs2/" class="md-nav__link">
+      <a href="../../Mkdocs/mkdocs2/" class="md-nav__link">
         
   
   
@@ -802,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Mkdocs/mkdocs3/" class="md-nav__link">
+      <a href="../../Mkdocs/mkdocs3/" class="md-nav__link">
         
   
   
@@ -916,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/Mkdocs-AI-Summary/" class="md-nav__link">
+      <a href="../../websitebeauty/Mkdocs-AI-Summary/" class="md-nav__link">
         
   
   
@@ -946,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/reading_time/" class="md-nav__link">
+      <a href="../../websitebeauty/reading_time/" class="md-nav__link">
         
   
   
@@ -976,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Mkdocs/mkdocsblog/" class="md-nav__link">
+      <a href="../../Mkdocs/mkdocsblog/" class="md-nav__link">
         
   
   
@@ -999,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Mkdocs/linktech/" class="md-nav__link">
+      <a href="../../Mkdocs/linktech/" class="md-nav__link">
         
   
   
@@ -1022,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/yuanjiaohua/" class="md-nav__link">
+      <a href="../../websitebeauty/yuanjiaohua/" class="md-nav__link">
         
   
   
@@ -1045,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/mkcomments/" class="md-nav__link">
+      <a href="../../websitebeauty/mkcomments/" class="md-nav__link">
         
   
   
@@ -1068,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/webtalknow/" class="md-nav__link">
+      <a href="../../websitebeauty/webtalknow/" class="md-nav__link">
         
   
   
@@ -1091,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/linktech/" class="md-nav__link">
+      <a href="../../websitebeauty/linktech/" class="md-nav__link">
         
   
   
@@ -1114,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/header/" class="md-nav__link">
+      <a href="../../websitebeauty/header/" class="md-nav__link">
         
   
   
@@ -1137,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/mkdocsfont/" class="md-nav__link">
+      <a href="../../websitebeauty/mkdocsfont/" class="md-nav__link">
         
   
   
@@ -1160,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/shubiao/" class="md-nav__link">
+      <a href="../../websitebeauty/shubiao/" class="md-nav__link">
         
   
   
@@ -1183,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/backgroud/" class="md-nav__link">
+      <a href="../../websitebeauty/backgroud/" class="md-nav__link">
         
   
   
@@ -1206,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/mkpdf/" class="md-nav__link">
+      <a href="../../websitebeauty/mkpdf/" class="md-nav__link">
         
   
   
@@ -1229,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/Relativeaddress/" class="md-nav__link">
+      <a href="../../websitebeauty/Relativeaddress/" class="md-nav__link">
         
   
   
@@ -1252,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/404/" class="md-nav__link">
+      <a href="../../websitebeauty/404/" class="md-nav__link">
         
   
   
@@ -1275,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/time/" class="md-nav__link">
+      <a href="../../websitebeauty/time/" class="md-nav__link">
         
   
   
@@ -1298,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/footer/" class="md-nav__link">
+      <a href="../../websitebeauty/footer/" class="md-nav__link">
         
   
   
@@ -1321,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../websitebeauty/accelerate/" class="md-nav__link">
+      <a href="../../websitebeauty/accelerate/" class="md-nav__link">
         
   
   
@@ -1359,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../tag/" class="md-nav__link">
+      <a href="../../../tag/" class="md-nav__link">
         
   
   
@@ -1381,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../liuyanban/" class="md-nav__link">
+      <a href="../../../liuyanban/" class="md-nav__link">
         
   
   
@@ -1400,8 +1392,6 @@
       
   
   
-    
-  
   
   
     
@@ -1419,23 +1409,22 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -1448,13 +1437,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             博客
@@ -1488,13 +1477,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1503,7 +1489,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   
@@ -1532,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2025/" class="md-nav__link">
+      <a href="../../archive/2025/" class="md-nav__link">
         
   
   
@@ -1557,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2024/" class="md-nav__link">
+      <a href="../../archive/2024/" class="md-nav__link">
         
   
   
@@ -1582,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2023/" class="md-nav__link">
+      <a href="../../archive/2023/" class="md-nav__link">
         
   
   
@@ -1607,7 +1593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2022/" class="md-nav__link">
+      <a href="../../archive/2022/" class="md-nav__link">
         
   
   
@@ -1632,7 +1618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2021/" class="md-nav__link">
+      <a href="../../archive/2021/" class="md-nav__link">
         
   
   
@@ -1675,13 +1661,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -1690,7 +1673,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   
@@ -1719,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/hello-world/" class="md-nav__link">
+      <a href="../../category/hello-world/" class="md-nav__link">
         
   
   
@@ -1744,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/" class="md-nav__link">
+      <a href="../../category/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/" class="md-nav__link">
         
   
   
@@ -1837,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/geren/" class="md-nav__link">
+      <a href="../../../about/geren/" class="md-nav__link">
         
   
   
@@ -1867,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/resume/" class="md-nav__link">
+      <a href="../../../about/resume/" class="md-nav__link">
         
   
   
@@ -1890,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/zcw/" class="md-nav__link">
+      <a href="../../../about/zcw/" class="md-nav__link">
         
   
   
@@ -1920,7 +1903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/test/" class="md-nav__link">
+      <a href="../../../about/test/" class="md-nav__link">
         
   
   
@@ -1995,8 +1978,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2006,6 +1987,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2014,209 +1997,200 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2024-12-24" class="md-nav__link">
+  <a href="#k_1" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-12-24
+      K 近邻
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K 近邻">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本思想
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本思想">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      kNN 实现步骤
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="kNN 实现步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kd-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kd-Tree
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-12-10" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#kd-ball" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-12-10
+      Kd-Ball
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-07-21" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knn_1" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-07-21
+      kNN 的特点
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-07-21_1" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#1-nn" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-07-21
+      1-NN 二分类错误率
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-06-27" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-06-27
+      维数灾难
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-06-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-06-20
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2024-06-19" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-06-19
+      降维
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="降维">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-dimensional-scaling-mds" class="md-nav__link">
+    <span class="md-ellipsis">
+      多维缩放（Multiple Dimensional Scaling，简称 MDS）
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-06-2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#principal-compoent-analysispca" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-06-2
+      主成分分析（Principal Compoent Analysis，PCA）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="主成分分析（Principal Compoent Analysis，PCA）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要思想
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-06-2_1" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-06-2
+      算法推导
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-05-15" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pca" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-05-15
+      核化 PCA
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-05-05" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-05-05
+      流形降维
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流形降维">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isometric-mapping-isomap" class="md-nav__link">
+    <span class="md-ellipsis">
+      等度量映射（Isometric Mapping，简称 Isomap）
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-04-22" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#locally-linear-embedding-lle" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-04-22
+      局部线性嵌入（Locally Linear Embedding，简称 LLE）
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-04-22_1" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#lelaplacian-eigenmap" class="md-nav__link">
     <span class="md-ellipsis">
-      2024-04-22
+      LE（Laplacian Eigenmap）
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-04-13" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-04-13
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-04-12" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-04-12
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-04-06" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-04-06
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-04-02" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-04-02
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-03-14" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-03-14
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-02-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-02-20
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-02-02" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-02-02
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-02-01" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-02-01
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-01-30" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-01-30
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2024-01-05" class="md-nav__link">
-    <span class="md-ellipsis">
-      2024-01-05
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2229,100 +2203,14 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    回到主页
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-              <div class="md-post__authors md-typeset">
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="https://pic4.zhimg.com/80/v2-a0456a5f527c1923f096759f2926012f_1440w.webp" alt="gzh">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          gzh
-                        
-                      </strong>
-                      <br>
-                      Free and casual
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    元数据
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-01-01 00:00:00+00:00" class="md-ellipsis">2024年1月1日星期一</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            分类于
-                            
-                              <a href="../../../../category/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">网站更新记录</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              需要 2 分钟阅读时间
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
-  
-
+                  
 
 
   
-    <a href="https://github.com/Wcowin/Mkdocs-Wcowin/edit/main/docs/blog/posts/update2024.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/Wcowin/Mkdocs-Wcowin/edit/main/docs/blog/MachineLearning/K近邻学习与降维.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2331,252 +2219,410 @@
     
       
     
-    <a href="https://github.com/Wcowin/Mkdocs-Wcowin/raw/main/docs/blog/posts/update2024.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/Wcowin/Mkdocs-Wcowin/raw/main/docs/blog/MachineLearning/K近邻学习与降维.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h2 id="2024-12-24"></p><h1 id="01" name="01"><strong>2024-12-24</strong></h1><p><a class="headerlink" href="#2024-12-24" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>5962</strong></p>
+</div>
+<p>[toc]</p>
+<h1 id="k">K 近邻学习与降维<a class="headerlink" href="#k" title="Permanent link">&para;</a></h1>
+<h2 id="k_1">K 近邻<a class="headerlink" href="#k_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">基本思想<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><strong>近朱者赤，近墨者黑；</strong> k 近邻（k-Nearnes Neighbor，简称 kNN）学习是一种常用的<span style="color:#3490de;">监督学习</span>方法；</p>
+<p>工作机制：给定测试样本，基于某种 <strong>距离度量</strong>，找出训练集中与其最靠近的 k 个训练样本，然后基于这 k 个“邻居”的信息来进行预测；</p>
+<p><img alt="kNN 工作机制解释图" src="F:\software\Typora\images\image-20250613153215328.png" /></p>
+<h4 id="knn">kNN 实现步骤<a class="headerlink" href="#knn" title="Permanent link">&para;</a></h4>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>优化了注脚显示效果</li>
-<li>删除了一些冗余代码</li>
-</ul>
-<h2 id="2024-12-10"></p><h1 id="01" name="01"><strong>2024-12-10</strong></h1><p><a class="headerlink" href="#2024-12-10" title="Permanent link">&para;</a></h2>
+<li>
+<p>确定训练样本，以及某种距离度量；</p>
+</li>
+<li>
+<p>对于某个给定的测试样本，找到训练集中距离最近的 k 个样本</p>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>启用 CDN 加速</li>
+<li>对于分类为题使用“投票法”获得预测结果；</li>
+<li>对于回归问题使用“平均法”获得预测结果；</li>
+<li>也可基于距离远近进行<span style="color:#d59bf6;"><strong>加权平均或加权投票</strong></span></li>
 </ul>
-<h2 id="2024-07-21"></p><h1 id="01" name="01"><strong>2024-07-21</strong></h1><p><a class="headerlink" href="#2024-07-21" title="Permanent link">&para;</a></h2>
+</li>
+<li>
+<p>投票法：选择这 k 个样本中出现最多的类别标记作为预测结果；</p>
+</li>
+<li>
+<p>平均法：将这 k 个样本的标签的平均值作为测试样本的预测结果；</p>
+<blockquote>
+<p><strong>缺点是计算开销比较大，对于每个待测试样本，都要计算其与整个训练集中所有样本的距离，特别是维度比较高时计算开销更大</strong></p>
+</blockquote>
+</li>
+</ul>
+<p>两种特殊的数据结构提前对训练集进行优化存储，提高对新样本预测的效率；</p>
+<hr />
+<h5 id="kd-tree">Kd-Tree<a class="headerlink" href="#kd-tree" title="Permanent link">&para;</a></h5>
 <ul>
-<li>优化网站流畅度（玄学）</li>
+<li><span style="color:#d59bf6;">Kd-Tree，kd树是一种对k维特征空间中的实例点进行存储以便对其快速检索的树形结构；</span></li>
 </ul>
-<h2 id="2024-07-21_1"></p><h1 id="01" name="01"><strong>2024-07-21</strong></h1><p><a class="headerlink" href="#2024-07-21_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>优化了网站的UI和访问速度，启用 CDN 加速</li>
-<li>学业繁重</li>
-</ul>
-<h2 id="2024-06-27"></p><h1 id="01" name="01"><strong>2024-06-27</strong></h1><p><a class="headerlink" href="#2024-06-27" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>美化了Blog页面, 使更加简洁美观,如你所见</li>
-<li>内心丰盈者，独行也独众，心有山海，静而不争</li>
-</ul>
-<h2 id="2024-06-20"></p><h1 id="01" name="01"><strong>2024-06-20</strong></h1><p><a class="headerlink" href="#2024-06-20" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>优化多处UI</li>
-<li>删减了部分拖慢网站速度的JS/CSS代码</li>
-<li>更新了<a href="https://blog.csdn.net/m0_63203517/article/details/139814216?spm=1001.2014.3001.5501">MKdocs补充系列教程</a></li>
-<li>近期略有时间，所以更文变得高产</li>
-</ul>
-<h2 id="2024-06-19"></p><h1 id="01" name="01"><strong>2024-06-19</strong></h1><p><a class="headerlink" href="#2024-06-19" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>期末结束</li>
-<li>删减了冗余代码</li>
-</ul>
-<h2 id="2024-06-2"></p><h1 id="01" name="01"><strong>2024-06-2</strong></h1><p><a class="headerlink" href="#2024-06-2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>近期学业繁重</li>
-</ul>
-<h2 id="2024-06-2_1"></p><h1 id="01" name="01"><strong>2024-06-2</strong></h1><p><a class="headerlink" href="#2024-06-2_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>过了六一</li>
-</ul>
-<h2 id="2024-05-15"></p><h1 id="01" name="01"><strong>2024-05-15</strong></h1><p><a class="headerlink" href="#2024-05-15" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>全站引入自动在新标签页打开，仓库地址：<a href="https://newtab.kubaandrysek.cz/">mkdocs-open-in-new-tab</a></li>
-</ul>
-<details><summary>Show source code</summary>
-<p>
-
-Look at this source <a href="https://github.com/JakubAndrysek/mkdocs-open-in-new-tab/blob/main/open_in_new_tab/js/open_in_new_tab.js">open_in_new_tab.js</a>:
-
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// Description: Open external links in a new tab and PDF links in a new tab</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">// Source: https://jekyllcodex.org/without-plugin/new-window-fix/</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">//open external links in a new window</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">external_new_window</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">),</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="nx">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">a</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">c</span><span class="p">[</span><span class="nx">a</span><span class="p">];</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">hostname</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">            </span><span class="nx">b</span><span class="p">.</span><span class="nx">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_blank&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">            </span><span class="nx">b</span><span class="p">.</span><span class="nx">rel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;noopener&quot;</span><span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="c1">//open PDF links in a new window</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="kd">function</span><span class="w"> </span><span class="nx">pdf_new_window</span><span class="w"> </span><span class="p">()</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">{</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">links</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">eleLink</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">eleLink</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">links</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">eleLink</span><span class="w"> </span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="nx">links</span><span class="p">[</span><span class="nx">eleLink</span><span class="p">].</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;.pdf&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="nx">links</span><span class="p">[</span><span class="nx">eleLink</span><span class="p">].</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;.doc&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="nx">links</span><span class="p">[</span><span class="nx">eleLink</span><span class="p">].</span><span class="nx">href</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;.docx&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">        </span><span class="nx">links</span><span class="p">[</span><span class="nx">eleLink</span><span class="p">].</span><span class="nx">onclick</span><span class="w"> </span><span class="o">=</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">        </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">            </span><span class="nb">window</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="p">}</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="kd">function</span><span class="w"> </span><span class="nx">apply_rules</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">    </span><span class="nx">external_new_window</span><span class="p">();</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">    </span><span class="nx">pdf_new_window</span><span class="p">();</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="p">}</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nb">document</span><span class="nx">$</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;undefined&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">    </span><span class="c1">// compatibility with mkdocs-material&#39;s instant loading feature</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">    </span><span class="c1">// based on code from https://github.com/timvink/mkdocs-charts-plugin</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">    </span><span class="c1">// Copyright (c) 2021 Tim Vink - MIT License</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">    </span><span class="c1">// fixes [Issue #2](https://github.com/JakubAndrysek/mkdocs-open-in-new-tab/issues/2)</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">    </span><span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">        </span><span class="nx">apply_rules</span><span class="p">();</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Applying rules&quot;</span><span class="p">);</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">    </span><span class="p">})</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="p">}</span>
+<p>kd 树可以理解为 k 叉树，核心思想是对 k 维特征空间中的样本点进行不断划分，来构造树结构。具体构造过程如下：1、对整个样本空间，计算所有样本点每一维坐标的方差，每次选择维度坐标方差最大的维度进行划分，具体划分点选择该维坐标的中位数（选择方差最大的坐标维度，可以最大程度的区分开左右子树节点内的样本点）；2、重复步骤 1，选择方差第二大的坐标维度的中位数进行划分，直到左右子树中只有一个样本点，也就是划分到叶子节点；</p>
+<p>kd 树构造完成后，给出一个测试样本 <span class="arithmatex">\(t\)</span>，如何在训练集中检索距离测试样本最近的 k 个训练样本呢？具体过程如下：</p>
+<p>1、从根节点出发，递归地向下访问 kd 树，如果测试样本当前维度的坐标值小于切分值（也就是所有训练样本中该维坐标的中位数），则向下访问左子树，否则向下访问右子树，直至到达叶节点 <span class="arithmatex">\(x\)</span>；以该叶节点为当前测试样本的“最近点”；</p>
+<p>2、记录测试样本 <span class="arithmatex">\(t\)</span> 到当前“最近点”<span class="arithmatex">\(x\)</span> 的距离 <span class="arithmatex">\(d\)</span>，如果该距离 <span class="arithmatex">\(d\)</span> 比“最近点”<span class="arithmatex">\(x\)</span> 到父节点 <span class="arithmatex">\(f(x)\)</span> 的距离小，则说明 <span class="arithmatex">\(x\)</span> 的兄弟节点中不存在到测试样本 <span class="arithmatex">\(t\)</span> 距离更近的样本点，可以直接跳过搜索（否则不能跳过，必须一一计算测试样本 <span class="arithmatex">\(t\)</span> 到兄弟节点中所有样本点的距离，看是否有距离比 <span class="arithmatex">\(d\)</span> 小的，如果有就更新“最近点”），此时回退到父节点 <span class="arithmatex">\(f(x)\)</span> 的兄弟节点树，通过判断 <span class="arithmatex">\(d\)</span> 和 <strong>测试样本到父节点的兄弟节点树的根节点的距离</strong> 的大小，如果 <span class="arithmatex">\(d\)</span> 更小，则该兄弟节点树也可以跳过(否则必须一一计算距离判断和 <span class="arithmatex">\(d\)</span> 的大小关系)，然后继续判断 d 和父节点的父节点的距离大小关系，来决定是否剪枝；</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>1、从根结点出发，递归地向下访问kd树。若预测样本 S 的坐标在当前维小于切分点，则向左访问，反之，向右访问，直到访问到叶节点，取该叶节点作为当前 S 的最近邻点。
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>2、以 S 和当前最近邻点做圆。
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>3、从当前叶节点回退父节点，并访问父节点的另一个分支，检查该节点或者子空间是否与圆相交
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>4、若相交，则需要往下访问子节点，查找是否存在比当前最近邻点更近的节点
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>5、若存在更近的样本，则更新最近邻点，并重复步骤2
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>6、若不存在，则重复步骤3
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>7、若不相交，则不需要访问这一分支，继续回退到上一层父节点，重复步骤3
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>8、退回到根节点后结束搜索过程，并获得最近邻点。
 </code></pre></div></td></tr></table></div>
-</p>
-</details>
-
-<h2 id="2024-05-05"></p><h1 id="01" name="01"><strong>2024-05-05</strong></h1><p><a class="headerlink" href="#2024-05-05" title="Permanent link">&para;</a></h2>
+<p>这里“检查该节点或者子空间是否与圆相交”的方法就是判断 <span class="arithmatex">\(d\)</span> 和 <strong>当前“最近点”到分割点的距离</strong> 的大小关系，如果 <span class="arithmatex">\(d\)</span> 小，则说明不相交，可以跳过，提高搜索效率；否则不能跳过；</p>
+<p>以上步骤实现了搜索距离测试样本 <strong>最近点</strong>，如何实现前 k 个最近点的搜索呢？用最大堆实现。用前面的算法从上至下搜索到的第一个叶子节点作为最大堆的第一个节点，在往上回退的过程当中：</p>
 <ul>
-<li>发布<a href="https://github.com/Wcowin/Mkdocs-Wcowin/releases/tag/3.0" target="“_blank”">Mkdocs-Wcowin主题|3.0版本</a>！！！</li>
-<li>优化网站流畅度（玄学）</li>
-<li>和小王一起吃了好吃的</li>
-<li>感谢王鹏老哥的打赏</li>
+<li>如果出现不能跳过的区域，将测试样本点和该区域中的训练样本点计算出的距离，逐步向大根堆中添加，如果大根堆中节点数量还不足 k 个，则直接增加一个节点并排序，如果已经有 k 个，则对比该距离值和大根堆中根节点值，如果大于根节点值，则不改变大根堆，如果小于根节点值，则替换大根堆根节点并重新排序；</li>
 </ul>
-<h2 id="2024-04-22"></p><h1 id="01" name="01"><strong>2024-04-22</strong></h1><p><a class="headerlink" href="#2024-04-22" title="Permanent link">&para;</a></h2>
+<p>这样回退到 Kd-Tree 的根节点后，大根堆中维护的就是距离测试样本最近的 k 个训练样本，就可以通过这 k 个训练样本预测测试样本的标签；</p>
+<blockquote>
+<p>kd 树在维度小于 20 时效率最高，一般适用于训练实例数远大于空间维数时的 k 近邻搜索，当空间维数接近训练实例数时，它的效率会迅速下降，几乎接近线性扫描</p>
+</blockquote>
+<h5 id="kd-ball">Kd-Ball<a class="headerlink" href="#kd-ball" title="Permanent link">&para;</a></h5>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>看了更多的猫咪</li>
-<li>优化布局</li>
-<li>新增圆角化设计教程</li>
+<li>Kd-Ball，为了解决 kd 树在样本特征维度很高时效率低下的问题，研究人员提出了“球树“（BallTree）。KD 树沿坐标轴分割数据，<strong>BallTree 则在一系列嵌套的超球面上分割数据，即使用超球面而不是超矩形划分区域。</strong></li>
 </ul>
-<h2 id="2024-04-22_1"></p><h1 id="01" name="01"><strong>2024-04-22</strong></h1><p><a class="headerlink" href="#2024-04-22_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>网站全面贴合圆角设计，非常好看</li>
+<p>Ball-Tree 构建过程如下：</p>
+<ol>
+<li><strong>构建根节点球体</strong>：首先，计算一个能够包含所有训练样本的最小超球面，作为根节点。</li>
+<li><strong>选择分裂点</strong>：从球中选择一个离球心最远的点，再选择一个离该点最远的点，这两个点可以作为初始的两个簇心。</li>
+<li><strong>划分数据</strong>：将球内的所有点分配给离它最近的簇心，形成两个子集。</li>
+<li><strong>生成子球体</strong>：为这两个子集分别计算最小的包围超球面，形成两个子节点。</li>
+<li><strong>递归构建</strong>：对这两个子球体递归地执行以上划分过程，直到叶子节点包含的样本数小于某个阈值。</li>
+</ol>
+<p>优化 kNN 的搜索过程：</p>
+<ol>
+<li>向下搜索：从根节点（最大的球）开始，判断查询点距离左子球球心更近还是距离右子球球心更近，选择更近的子球向下搜索；</li>
+<li>更新最近邻：向下搜索，直到叶子节点，以该叶子节点为“最近点”，然后和 kd 树一样，向上回退，维护一个大小为 k 的大根堆，直到回退到根节点；</li>
+<li>剪枝：在向上回退过程中，在决定是否要进入一个子球体进行搜索之前，线计算查询样本点到该球体边界的最小距离<ul>
+<li>如果这个最小距离已经大于大根堆中根节点值，那么这个球体内不可能存在更近的邻居，可以直接跳过；</li>
+<li>否则，计算查询样本点和该子球体中所有样本的距离，和大根堆根节点值进行判断，尝试更新大根堆；</li>
 </ul>
-<h2 id="2024-04-13"></p><h1 id="01" name="01"><strong>2024-04-13</strong></h1><p><a class="headerlink" href="#2024-04-13" title="Permanent link">&para;</a></h2>
+</li>
+<li>完成搜索：回退到根节点时，搜索结束，大根堆中维护的 k 个节点就是所求结果；</li>
+</ol>
+<hr />
+<h3 id="knn_1">kNN 的特点<a class="headerlink" href="#knn_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>重写主页index.md,更加美观，贴合圆角设计</li>
+<li>是一种基于实例的学习，需要一个邻近性度量来确定实例间的相似性或距离；</li>
+<li>不需要建立模型，但分类一个测试样例开销很大（尤其是样本特征维度很大、实例很多的时候），需要计算测试样例和所有训练实例之间的距离；</li>
+<li><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">基于局部信息进行预测，对噪声非常敏感；</span></li>
+<li>kNN 分类器可以生成 <strong>任意形状</strong> 的决策边界；<ul>
+<li>决策树和基于规则的分类器通常是直线决策边界；</li>
 </ul>
-<h2 id="2024-04-12"></p><h1 id="01" name="01"><strong>2024-04-12</strong></h1><p><a class="headerlink" href="#2024-04-12" title="Permanent link">&para;</a></h2>
-<ul>
-<li>优化网站流畅度（玄学）</li>
-<li>感谢W1ndys提出的<a href="https://github.com/Wcowin/Mkdocs-Wcowin/pull/9">使用软编码配置友链界面</a>，使得友链添加更加规范化</li>
+</li>
+<li>需要适当的邻近性度量和数据预处理；如数据标准化等，防止邻近性度量被某个属性主导；</li>
 </ul>
-<h2 id="2024-04-06"></p><h1 id="01" name="01"><strong>2024-04-06</strong></h1><p><a class="headerlink" href="#2024-04-06" title="Permanent link">&para;</a></h2>
+<p>急切学习（Eager Learner）</p>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>主页引入天气组件，搜索框/按钮圆角化</li>
-<li>删除冗余JS/CSS文件</li>
-<li>感谢<a href="https://arv-anshul.github.io/">Anshul Raj Verma</a>在<a href="https://github.com/Wcowin/Wcowin.github.io/discussions/7">Discussions#7</a>上提出的网站优化建议</li>
+<li>
+<p>使用特定模型，对训练样本进行训练和学习，从中发现数据规律/模式，训练开销大；推理相对开销小；</p>
+</li>
+<li>
+<p>两步过程：（1）归纳  （2）演绎</p>
+</li>
 </ul>
-<h2 id="2024-04-02"></p><h1 id="01" name="01"><strong>2024-04-02</strong></h1><p><a class="headerlink" href="#2024-04-02" title="Permanent link">&para;</a></h2>
+<p>惰性学习（Lazy Learner）</p>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>在mkdocs.yml的plugins模块中引入<code>!ENV [CI, false]</code>语句，极大缩短<code>mkdocs serve</code>静态预览时间（3-5s）</li>
-<li>本Mkdocs-Wcowin主题得到以下两位的使用：<ul>
-<li><a href="https://lennychen.top">Lenny's Web</a> </li>
-<li><a href="https://tkqtang.site/">tkqtang's Web</a></li>
+<li>此类学习技术在训练阶段仅仅是把样本保存起来，训练时间开销为零，待收到测试样本后再进行处理。</li>
+<li>Rote-learner（死记硬背）<ul>
+<li>记住所有的训练数据，仅当测试样本的属性值与一个训练样本完全匹配才对它分类；</li>
+</ul>
+</li>
+<li>最近邻（Nearest Neighbor）<ul>
+<li>使用最近的 k 个点（最近邻）进行分类；</li>
 </ul>
 </li>
 </ul>
-<h2 id="2024-03-14"></p><h1 id="01" name="01"><strong>2024-03-14</strong></h1><p><a class="headerlink" href="#2024-03-14" title="Permanent link">&para;</a></h2>
+<h3 id="1-nn">1-NN 二分类错误率<a class="headerlink" href="#1-nn" title="Permanent link">&para;</a></h3>
+<p>暂且假设距离计算是“恰当的”，即能够恰当的找出 k 个近邻，对“最近邻分类器”（1-NN）在二分类问题上的性能进行讨论；</p>
+<p>给定测试样本 x，若其最近邻样本为 z，则最近邻出错的概率就是 x 与 z 类别标记不同的概率，即
+$$
+P(err)= 1-\sum_{c\in y}P(c|x)P(c|z)
+$$
+其中 <span class="arithmatex">\(y=\{1,-1\}\)</span>，<span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)P(c|z)\)</span> 表示测试样本 x 和最近邻样本 z 属于同一类的概率，由于没有指定具体的类别 c，因此需要对所有类别求和，即考虑“属于任意相同类”的总概率；</p>
+<p>假设样本独立同分布，且对任意 x 和任意小整数\delta，在 x 附近\delta 距离范围内总能找到一个训练样本（也就是训练样本足够密集）；换言之，对任意训练样本，总能在任意近的范围内找到一个训练样本 z，使得对该测试样本预测错误的概率为 P(err)= 1-\sum\limits_{c\in y}P(c|x)P(c|z)</p>
+<p>令 <span class="arithmatex">\(c^*=\mathop{\arg\max}\limits_{c\in y}P(c|x)\)</span> 表示贝叶斯最优分类器的结果，也就是给定测试样本，它属于 <span class="arithmatex">\(c^*\)</span> 类的概率最大；有
+$$
+\begin{aligned}
+P(err)&amp;= 1-\sum\limits_{c\in y}P(c|x)P(c|z) \approx 1-\sum\limits_{c\in y}P^2(c|x)  \
+&amp;\leq 1-P<sup>2(c</sup><em>|x)=(1+P(c<sup>*|x))(1-P(c</sup></em>|x)) \
+&amp;\leq 2\times (1-P(c^*|x)).</p>
+<p>\end{aligned}
+$$
+第一行的约等于是因为 x 和 z 是可以任意近的，因为它们之间的距离小于任意正数\delta，所以它们属于任意同一类别 c 的概率可以认为很接近（这也是 k 近邻的核心思想）；<span class="arithmatex">\(c^*\)</span> 是测试样本 x 最可能属于的类别，因此 <span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)&gt;=P(c^*|x)\)</span></p>
+<p>公式（2）说明，最近邻分类虽然简单，但在距离度量合适、训练样本足够密集的假设下，它的泛化错误率不超过贝叶斯最优分类器的两倍；</p>
+<h3 id="_2">维数灾难<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>上述讨论基于一个重要的假设：任意测试样本 <span class="arithmatex">\(x\)</span> 附近的任意小的 <span class="arithmatex">\(\delta\)</span> 距离范围内总能找到一个训练样本，即训练样本的采样密度足够大，或称为“密采样”。然而，这个假设在现实任务中通常很难满足:</p>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>3月14日（March 14<sup>th</sup>）是公历一年中的第73天（闰年第74天），离全年的结束还有292天。是国际圆周率日。其中历史上发生的大事件有阿尔伯特·爱因斯坦的出生。 [10]卡尔·马克思、斯蒂芬·威廉·霍金的逝世。</li>
+<li>若属性维数为 1，当 <span class="arithmatex">\(\delta=0.001\)</span>，仅考虑单个属性，则仅需 1000 个样本点平均分布在归一化后的属性取值范围内，即可使得任意测试样本在其附近 0.001 距离范围内总能找到一个训练样本，此时最近邻分类器的错误率不超过贝叶斯最优分类器的错误率的两倍。若属性维数为 20，若样本满足密采样条件，则至少需要 <span class="arithmatex">\((10^3)^{20}=10^{60}\)</span> 个样本。</li>
+<li><strong>现实应用中属性维数经常成千上万，要满足密采样条件所需的样本数</strong>
+    <strong>目是无法达到的天文数字。</strong> 许多学习方法都涉及距离计算，而高维空
+    间会给距离计算带来很大的麻烦，例如当维数很高时甚至连计算内积
+    都不再容易。</li>
+<li><span style="color:#d59bf6;">在高维情形下出现的数据样本稀疏、距离计算困难等问题，是所有机</span>
+    <span style="color:#d59bf6;">器学习方法共同面临的严重障碍，被称为“维数灾难”。</span></li>
 </ul>
-<h2 id="2024-02-20"></p><h1 id="01" name="01"><strong>2024-02-20</strong></h1><p><a class="headerlink" href="#2024-02-20" title="Permanent link">&para;</a></h2>
+<p>缓解维数灾难的一个重要途径是降维（dimension reduction）</p>
 <ul>
-<li>优化页脚“本站访问量和萌ICP备20230640号”显示方式</li>
-<li>优化网站流畅度（玄学）</li>
+<li>即通过某种数学变换，将原始高位属性空间转变为一个低维“子空间”（subspace）在这个子空间中样本密度大幅度提高，距离计算也变得更为容易；</li>
 </ul>
-<h2 id="2024-02-02"></p><h1 id="01" name="01"><strong>2024-02-02</strong></h1><p><a class="headerlink" href="#2024-02-02" title="Permanent link">&para;</a></h2>
+<p>为什么能进行降维？</p>
 <ul>
-<li>网站图片全部迁移至<a href="https://smms.app/">smms</a>(更加稳定流畅)</li>
-<li>着手改写MKdocs教程，使得条理更加清晰</li>
-<li>优化网站流畅度（玄学）</li>
-<li>删除大量繁琐无用代码</li>
+<li>数据样本虽然是高维的，但与学习任务密切相关的也许仅是某个低维分布，即高维空间中的一个 <strong>低维嵌入 （embedding )</strong>，因而可以对数据进行有效的降维。</li>
 </ul>
-<h2 id="2024-02-01"></p><h1 id="01" name="01"><strong>2024-02-01</strong></h1><p><a class="headerlink" href="#2024-02-01" title="Permanent link">&para;</a></h2>
+<p><img alt="低维嵌入示意图" src="F:\software\Typora\images\image-20250614124849333.png" /></p>
+<p>如上图所示，虽然样本点维度为 3 维，但决定样本点维度的特征可能主要由其中两个维度决定，将 3 维的样本映射到二维的子空间中，更容易学习到分类特征；</p>
+<h2 id="_3">降维<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>降维的目的就是解决高维情况下出现的数据样本稀疏、距离计算困难等问题，但解决这些问题的同时，我们希望数据的结构不要有太大的变化，比如要求 <strong>降维后样本之间的距离和原始空间中样本之间的距离要差不多</strong>，就得到“多维缩放”（Multiple Dimensional Scaling，简称 MDS）降维算法。</p>
+<h3 id="multiple-dimensional-scaling-mds">多维缩放（Multiple Dimensional Scaling，简称 MDS）<a class="headerlink" href="#multiple-dimensional-scaling-mds" title="Permanent link">&para;</a></h3>
+<p>假定 <span class="arithmatex">\(m\)</span> 个样本在原始空间的距离矩阵为 <span class="arithmatex">\(D \in \mathbb{R}^{m \times m}\)</span>，其第 <span class="arithmatex">\(i\)</span> 行 <span class="arithmatex">\(j\)</span> 列的元素 <span class="arithmatex">\(dist_{ij}\)</span> 为样本 <span class="arithmatex">\(x_i\)</span> 到 <span class="arithmatex">\(x_j\)</span> 的距离。我们的目标是获得样本在 <span class="arithmatex">\(d^\prime\)</span> 维空间的表示 <span class="arithmatex">\(Z \in \mathbb{R}^{d' \times m}\)</span>，<span class="arithmatex">\(d' \leq d\)</span>，且任意两个样本在 <span class="arithmatex">\(d^\prime\)</span> 维空间中的欧氏距离等于原始空间中的距离，即 <span class="arithmatex">\(\|z_i - z_j\| = dist_{ij}\)</span>。</p>
+<p>令 <span class="arithmatex">\(B = Z^TZ \in \mathbb{R}^{m \times m}\)</span>，其中 <span class="arithmatex">\(B\)</span> 为降维后样本的内积矩阵，<span class="arithmatex">\(b_{ij} = z_i^T z_j\)</span>，有</p>
+<div class="arithmatex">\[
+dist_{ij}^2 = \|z_i\|^2 + \|z_j\|^2 - 2z_i^T z_j \\
+= b_{ii} + b_{jj} - 2b_{ij} \, .
+\tag{10.3}
+\]</div>
+<p>为便于讨论，令降维后的样本 <span class="arithmatex">\(Z\)</span> 被中心化，即 <span class="arithmatex">\(\sum\limits_{i=1}^m z_i = 0\)</span>。显然，矩阵 <span class="arithmatex">\(B\)</span> 的行与列之和均为零，即 <span class="arithmatex">\(\sum\limits_{i=1}^m b_{ij} = \sum\limits_{j=1}^m b_{ij} = 0\)</span>。易知</p>
+<div class="arithmatex">\[
+\sum_{i = 1}^m dist_{ij}^2 = \text{tr}(B) + mb_{jj} \, , 
+\tag{10.4}
+\]</div>
+<div class="arithmatex">\[
+\sum_{j = 1}^m dist_{ij}^2 = \text{tr}(B) + mb_{ii} \, ,
+\tag{10.5}
+\]</div>
+<div class="arithmatex">\[
+\sum_{i = 1}^m \sum_{j = 1}^m dist_{ij}^2 = 2m \, \text{tr}(B) \, .
+\tag{10.6}
+\]</div>
+<p>其中 <span class="arithmatex">\(\text{tr}(\cdot)\)</span> 表示矩阵的迹（trace），<span class="arithmatex">\(\text{tr}(B) = \sum\limits_{i=1}^m \|z_i\|^2\)</span>。<strong>令</strong></p>
+<div class="arithmatex">\[
+dist_{i \cdot }^2 = \frac{1}{m} \sum_{j = 1}^m dist_{ij}^2 \, ,
+\tag{10.7}
+\]</div>
+<div class="arithmatex">\[
+dist_{\cdot j}^2 = \frac{1}{m} \sum_{i = 1}^m dist_{ij}^2 \, ,
+\tag{10.8}
+\]</div>
+<div class="arithmatex">\[
+dist_{\cdot\cdot}^2 = \frac{1}{m^2} \sum_{i = 1}^m \sum_{j = 1}^m dist_{ij}^2 \,
+\tag{10.9}
+\]</div>
+<p><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">由式(10.3)和式(10.4)~(10.9)可得</span>
+$$
+b_{ij} = -\frac{1}{2}(dist_{ij}^2 - dist_{i \cdot}^2 - dist_{\cdot j}^2 + dist_{\cdot\cdot}^2) \, ,
+\tag{10.10}
+$$</p>
+<p>式（10.10）推导过程如下：</p>
 <ul>
-<li>改进网页代码显示效果</li>
-<li>优化网站流畅度（玄学）</li>
-</ul>
-<h2 id="2024-01-30"></p><h1 id="01" name="01"><strong>2024-01-30</strong></h1><p><a class="headerlink" href="#2024-01-30" title="Permanent link">&para;</a></h2>
+<li>
+<p>由式（10.6），<span class="arithmatex">\(\frac{1}{m}tr(B)=\frac{1}{2m^2}\sum\limits_{i=1}^m\sum\limits_{j=1}^mdist_{ij}^2=\frac{1}{2}dist_{\cdot \cdot}^2\)</span></p>
+</li>
+<li>
+<p>由式（10.3），<span class="arithmatex">\(b_{ij}=\frac{1}{2}(b_{ii}+b_{jj}-dist_{ij}^2)\)</span></p>
+</li>
+<li>
+<p>由式（10.4）、（10.5）</p>
 <ul>
-<li>友链数量达到16位</li>
-<li>修复了一些bugs</li>
-<li>本网站已经被百度/谷歌收录（确信，使用百度/谷歌搜索Wcowin字样即可）</li>
-<li>优化网站流畅度（玄学）</li>
+<li>
+<div class="arithmatex">\[
+    b_{ii}=\frac{1}{m}\sum\limits_{j = 1}^mdist_{ij}^2-\frac{1}{m}tr(B)= dist_{i \cdot}^2-\frac{1}{2}dist_{\cdot \cdot}^2   \\
+    b_{jj}=\frac{1}{m}\sum\limits_{i = 1}^mdist_{ij}^2-\frac{1}{m}tr(B)= dist_{ \cdot j}^2-\frac{1}{2}dist_{\cdot \cdot}^2  \\
+    \]</div>
+</li>
 </ul>
-<h2 id="2024-01-05"></p><h1 id="01" name="01"><strong>2024-01-05</strong></h1><p><a class="headerlink" href="#2024-01-05" title="Permanent link">&para;</a></h2>
+</li>
+<li>
+<p>所以：<span class="arithmatex">\(b_{ij}=\frac{1}{2}(dist_{i \cdot}^2+dist_{\cdot j}^2-dist_{ij}^2-dist_{\cdot \cdot}^2)\)</span></p>
+</li>
+</ul>
+<p>由此即可通过降维前后保持不变的距离矩阵 <span class="arithmatex">\(D\)</span> 求取内积矩阵 <span class="arithmatex">\(B\)</span>。</p>
+<p>对矩阵 <span class="arithmatex">\(B\)</span> 做特征值分解(eigenvalue decomposition)，<span class="arithmatex">\(B = V \Lambda V^T\)</span>，其中 <span class="arithmatex">\(\Lambda = \text{diag}(\lambda_1, \lambda_2, \ldots, \lambda_d)\)</span> 为特征值构成的对角矩阵，<span class="arithmatex">\(\lambda_1 \geq \lambda_2 \geq \ldots \geq \lambda_d\)</span>，<span class="arithmatex">\(V\)</span> 为特征向量矩阵。假定其中有 <span class="arithmatex">\(d^*\)</span> 个非零特征值，它们构成对角矩阵 <span class="arithmatex">\(\Lambda_* = \text{diag}(\lambda_1, \lambda_2, \ldots, \lambda_{d^*})\)</span>，令 <span class="arithmatex">\(V_*\)</span> 表示相应的特征向量矩阵，则 <span class="arithmatex">\(Z\)</span> 可表达为</p>
+<div class="arithmatex">\[
+Z = \Lambda_*^{1/2} V_*^T \in \mathbb{R}^{d^* \times m} \, .
+\tag{10.11}
+\]</div>
+<p>在现实应用中为了有效降维，往往仅需降维后的距离与原始空间中的距离尽可能接近，而不必严格相等。此时可取 <span class="arithmatex">\(d' \ll d\)</span> 个最大特征值构成对角矩阵 <span class="arithmatex">\(\tilde{\Lambda} = \text{diag}(\lambda_1, \lambda_2, \ldots, \lambda_{d'})\)</span>，令 <span class="arithmatex">\(\tilde{V}\)</span> 表示相应的特征向量矩阵，则 <span class="arithmatex">\(Z\)</span> 可表达为</p>
+<div class="arithmatex">\[
+Z = \tilde{\Lambda}^{1/2} \tilde{V}^T \in \mathbb{R}^{d' \times m} \, .
+\tag{10.12}
+\]</div>
+<p>下图给出了 MDS 算法的描述。<img alt="MDS 算法描述" src="F:\software\Typora\images\image-20250616193015341.png" /></p>
+<h3 id="principal-compoent-analysispca">主成分分析（Principal Compoent Analysis，PCA）<a class="headerlink" href="#principal-compoent-analysispca" title="Permanent link">&para;</a></h3>
+<p>PCA 是最常用的一种降维方法，在模式识别、金融、生物信息学等各个领域均得到广泛应用。</p>
 <ul>
-<li>优化网站流畅度（玄学）</li>
-<li>引入<a href="https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/">git-revision-date-localized-plugin</a>插件，以便记录文档创建和最后一次修改时间</li>
-<li>和小王一起看了更多的猫咪  </li>
+<li>在机器学习本身的众多场景中也通常被用作数据预处理的首要方法；</li>
+<li>发展出了各种变种（例如 Sparse PCA 、 Online PCA 、 Robust PCA 、Probabilistic PCA 等）和扩展工作；</li>
+<li>当数据呈线性时， PCA 得到的结果是最优的；</li>
 </ul>
-<p><a class="md-button" href="https://twitter.com/intent/tweet?text=2024%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95%0A&amp;url=https://gongzihang6.github.io/blog/2024/01/01/2024%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span></a>
-<a class="md-button" href="https://www.facebook.com/sharer/sharer.php?u=https://gongzihang6.github.io/blog/2024/01/01/2024%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">Share on <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"/></svg></span></a></p>
+<h4 id="_4">主要思想<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>通过线性组合方式快速提取变量的信息。当第一个线性组合不能提取更多的信息时，再用第二个线性组合继续提取，...，直到所提取的信息与原指标的信息差不多为止；主成分分析中的信息指的是变量（某一维度坐标）的变异性，用标准差或者方差衡量；</p>
+</li>
+<li>
+<p>降维后的点需要能够对原始的样本点进行恰当的表达，因此 PCA 作为一种线性降维的方法，应该具有这样的性质：</p>
+<ul>
+<li>最近重构性：样本点到这个超平面的距离足够近；</li>
+<li>最大可分性：样本点在这个超平面上的投影尽可能分开；</li>
+</ul>
+</li>
+</ul>
+<h4 id="_5">算法推导<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>PCA 降维的第一步是对样本进行标准化，即 <span class="arithmatex">\(\sum_i x_i=0\)</span>，<span class="arithmatex">\(var(x_i)=1\)</span>，再假定这一组样本经过投影变换后得到的新坐标系为 <span class="arithmatex">\(\{w_1, w_2, \dots, w_d\}\)</span>，其中 <span class="arithmatex">\(w_i\)</span> 是<span style="color:#d59bf6;">标准正交基向量</span>，即 <span class="arithmatex">\(||w_i||_2=1\)</span>，<span class="arithmatex">\(w_i^Tw_j=0 \quad(i\neq j)\)</span>，若丢弃新坐标系中的部分坐标，将维度降低到 <span class="arithmatex">\(d^\prime&lt;d\)</span>，则样本点 <span class="arithmatex">\(x_i\)</span> 在低维坐标系中的投影是 <span class="arithmatex">\(z_i=(z_{i1}; z_{i2}; \dots; z_{id^\prime})\)</span>，其中 <span class="arithmatex">\(z_{ij}=w_j^Tx_i\)</span> （即 <span class="arithmatex">\(x_i\)</span> 在 <span class="arithmatex">\(w_j\)</span> 方向上的投影）是 <span class="arithmatex">\(x_i\)</span> 在新坐标系下第 <span class="arithmatex">\(j\)</span> 维的坐标，若基于 <span class="arithmatex">\(z_i\)</span> 来重构 <span class="arithmatex">\(x_i\)</span>，则会得到 <span class="arithmatex">\(\hat{x_i}=\sum\limits_{j=1}^{d^{\prime}}z_{ij}w_j\)</span></p>
+<blockquote>
+<p>注意我们的优化目标是要找到一个新的坐标系 <span class="arithmatex">\(\{w_1, w_2, \dots, w_{d^\prime}\}\)</span>，也就是降维得到的低维空间的一个坐标系，即降维后的点 <span class="arithmatex">\(z_i\)</span> 所在的空间的坐标系</p>
+</blockquote>
+<p>考虑整个训练集，原样本点 <span class="arithmatex">\(x_i\)</span> 与基于投影重构的样本点 <span class="arithmatex">\(\hat{x_i}\)</span> 之间的距离为，我们的优化目标就是要最小化这个距离（等价于最小化降维带来的信息损失，因为如果不降维即 <span class="arithmatex">\(d^\prime=d\)</span>，<span class="arithmatex">\(z_i\)</span> 可以完全重构 <span class="arithmatex">\(x_i\)</span>，让 <span class="arithmatex">\(\hat{x_i}=x_i\)</span>）
+$$
+\sum_{i = 1}^{m} \left| \sum_{j = 1}^{d'} z_{ij} w_j - x_i \right|<em i="i">2^2 = \sum</em>}^{m} {z<em i="i">i^\mathrm{T} {z}_i - 2 \sum</em>}^{m} {z}_i^\mathrm{T} {W}^\mathrm{T} {x}_i + \text{const</p>
+<p>\propto -\text{tr} \left( {W}^\mathrm{T} \left( \sum_{i = 1}^{m} {x}_i {x}_i^\mathrm{T} \right) {W} \right).
+$$
+推导过程：</p>
+<ul>
+<li>重构点 <span class="arithmatex">\(\hat{x_i}=\sum\limits_{j=1}^{d^\prime}z_{ij}w_j=Wz_i\)</span>，其中 <span class="arithmatex">\(W=[w_1, w_2, \dots, w_{d^\prime}] \in \mathbb{R}^{d\times d^\prime}\)</span></li>
+<li>
+<p>利用 <span class="arithmatex">\(z_{ij}=w_j^Tx_i\)</span>，可得：<span class="arithmatex">\(\hat{x_i}=\sum\limits_{j=1}^{d^\prime}w_jw_j^Tx_i=WW^Tx_i\)</span>，    <span class="arithmatex">\(z_i=W^Tx_i\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(W^TW=I\)</span>，因为 <span class="arithmatex">\(w_j\)</span> 是正交单位向量；所以 <span class="arithmatex">\(WW^TWW^T=WW^T\)</span>;</p>
+</li>
+</ul>
+<p>所以 <span class="arithmatex">\(\sum\limits_{i=1}^{m} \left\| \sum\limits_{j=1}^{d'} z_{ij} w_j - x_i \right\|_2^2 = \sum\limits_{i=1}^m\left\|Wz_i-x_i\right\|_2^2\)</span>，即可得到式（5）的结果</p>
+<p>根据矩阵迹的性质，<span class="arithmatex">\(-2\sum\limits_{i=1}^mz_i^TW^Tx_i=-2\sum\limits_{i=1}^mx_i^TWW^Tx_i=-2tr(\sum\limits_{i=1}^mx_i^TWW^Tx_i)=-2tr(W^T(\sum\limits_{i=1}^mx_ix_i^T)W)\)</span></p>
+<p>所以优化目标可以写成：
+$$
+\mathop{\max}\limits_{W} \quad tr(W<sup>TXX</sup>TW) \
+s.t. \quad W^TW = I
+$$
+其中 <span class="arithmatex">\(W=[w_1, w_2, \dots, w_{d^\prime}] \in \mathbb{R}^{d\times d^\prime}\)</span>，<span class="arithmatex">\(X=[x_1, x_2, \dots, x_m]\in \mathbb{R}^{d\times m}\)</span></p>
+<p>用拉格朗日乘子法求解上述优化问题，定义拉格朗日函数 <span class="arithmatex">\(\mathcal{L}\)</span> 如下：
+$$
+\mathcal{L}(W,\Lambda)= tr(W<sup>TXX</sup>TW)-tr(\Lambda<sup>T(W</sup>TW-I))
+$$
+其中 <span class="arithmatex">\(\Lambda\)</span> 是拉格朗日乘子矩阵，与约束 <span class="arithmatex">\(W^TW=I\)</span> 相关联</p>
+<p>接下来对 <span class="arithmatex">\(W\)</span> 和 <span class="arithmatex">\(\Lambda\)</span> 求导，令导数为 0 得到极值点，
+$$
+\frac{\partial \mathcal{L}}{\partial W}= 2XX^TW-2\Lambda W = 0  \
+==&gt; \quad XX^TW =\Lambda W
+$$</p>
+<div class="arithmatex">\[
+\frac{\partial \mathcal{L}}{\partial \Lambda}= W^TW-I = 0   \\
+==&gt; \quad W^TW = I
+\]</div>
+<p>对于式（8），由于 <span class="arithmatex">\(XX^T\)</span> 是对称矩阵，同时 W 又是正交矩阵，所以可以将式（8）看成矩阵特征值问题，我们只需要对协方差矩阵 XX^T 进行特征值分解，将求得的特征值排序：<span class="arithmatex">\(\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_d\)</span>，再取前 <span class="arithmatex">\(d^\prime\)</span> 个特征值对应的特征向量构成 <span class="arithmatex">\(W=(w_1, w_2, \dots, w_{d^\prime})\)</span>，就是该优化问题的解</p>
+<blockquote>
+<p>实践中通常对 <span class="arithmatex">\(XX^T\)</span> 进行奇异值分解来代替协方差矩阵的特征值分解</p>
+</blockquote>
+<p><img alt="PCA 算法步骤" src="F:\software\Typora\images\image-20250616110753732.png" /></p>
+<p>降维后低维空间的维数 <span class="arithmatex">\(d^\prime\)</span> 通常是由用户事先指定，或通过在值 <span class="arithmatex">\(d^\prime\)</span> 不同的低维空间中对 k 近邻分类器(或其他开销较小的学习器) 进行交叉验证来选取较好的 <span class="arithmatex">\(d^\prime\)</span> 值. 对 PCA，还可从重构的角度设置一个重构阈值，例如 ( t = 95% )，然后选取使下式成立的最小 <span class="arithmatex">\(d^\prime\)</span> 值：</p>
+<div class="arithmatex">\[
+\frac{\sum_{i = 1}^{d'} \lambda_i}{\sum_{i = 1}^{d} \lambda_i} \geq t \tag{10.18}
+\]</div>
+<h3 id="pca">核化 PCA<a class="headerlink" href="#pca" title="Permanent link">&para;</a></h3>
+<h3 id="_6">流形降维<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>“流形”是在局部与欧式空间同胚的空间。流形的本质是局部平坦，全局弯曲，整体上可能有曲率、洞或复杂结构，欧式距离无法反映真实“最短路径”，但 <strong>局部每一点附件都可以近似为欧式空间，可以用欧式距离来度量最短路径</strong>；</p>
+<p>给降维带来的启发：若低维流形嵌入到高维空间中，则数据样本在高维空间的分布虽然看上去非常复杂，但在局部仍具有欧式空间的性质，因此可以容易的在局部建立降维映射关系，然后再设法将局部映射关系推广到全局。</p>
+<p>这里介绍两种著名的流形学习方法，等度量映射和局部线性嵌入。</p>
+<h4 id="isometric-mapping-isomap">等度量映射（Isometric Mapping，简称 Isomap）<a class="headerlink" href="#isometric-mapping-isomap" title="Permanent link">&para;</a></h4>
+<p>基本思想：希望在映射过程中保持测地线的距离。（这里面分析的降维方法都是为了更好的进行 k 近邻分类，方便距离的计算，因此为了满足 k 近邻分类的基本假设“近朱者赤，近墨者黑”，我们都希望降维前后，原来距离近的样本降维后还是近，原来距离远的样本降维后还是远）；</p>
+<p>Isomap 在流形结构未知的情况下，采用构造邻接图（Graph）来通过有限的数据来估算流形上的测地线；</p>
+<p><img src="F:\software\Typora\images\image-20250616195144452.png" alt="使用图结构来估算测地线" style="zoom:50%;" /></p>
+<p>如图所示，在数据有限的情况下，我们无法获取流形的真实结构，即表面的真实曲率、是否有空洞等等，所以我们无法获得流形上真实的测地线距离；所以 Isomap 通过将有限的数据样本点连接为图结构，具体操作为：对每一个样本点 <span class="arithmatex">\(x_i\)</span>，确定 <span class="arithmatex">\(x_i\)</span> 的 k 近邻，将 <span class="arithmatex">\(x_i\)</span> 与 k 近邻点之间的距离设置为欧式距离，与其他点的距离设置为无穷大；然后连接 <span class="arithmatex">\(x_i\)</span> 与它的 k 近邻点，这样就形成了如图所示的图结构。</p>
+<p>之后任意两个点之间的测地距离就可以通过图中这两个点之间的最短路径距离来近似了。</p>
+<p>Isomap 算法描述如下：</p>
+<p><img alt="Isomap 算法描述" src="F:\software\Typora\images\image-20250616195816976.png" /></p>
+<p>对近邻图的构建通常有两种做法，一种是指定近邻点个数，例如欧氏距离最近的 <span class="arithmatex">\(k\)</span> 个点为近邻点，这样得到的近邻图称为 <span class="arithmatex">\(k\)</span> 近邻图；另一种是指定距离阈值 <span class="arithmatex">\(\epsilon\)</span>，距离小于 <span class="arithmatex">\(\epsilon\)</span> 的点被认为是近邻点，这样得到的近邻图称为 <span class="arithmatex">\(\epsilon\)</span> 近邻图。两种方式均有不足，例如若 <strong>近邻范围指定得较大，则距离很远的点可能被误认为近邻</strong>，这样就出现 <strong>“短路”</strong> 问题；<strong>近邻范围指定得较小，则图中有些区域可能与其他区域不存在连接</strong>，这样就出现 <strong>“断路”</strong> 问题。短路与断路都会给后续的最短路径计算造成误导。</p>
+<blockquote>
+<p><strong>邻接图构建：为何先用欧式距离？</strong></p>
+<ul>
+<li><strong>输入</strong>：高维数据集 <span class="arithmatex">\(D={x_1,x_2,...,x_m}\)</span>，近邻参数 k。</li>
+<li>操作：</li>
+<li><strong>计算欧式距离</strong>：对每个点 <span class="arithmatex">\(x_i\)</span>，计算它与所有其他点的欧式距离 <span class="arithmatex">\(d_E(x_i,x_j)\)</span>。</li>
+<li><strong>选择 k 近邻</strong>：保留距离最近的 k 个点作为邻居，其他点的距离设为无穷大（即不直接连接）。</li>
+<li><strong>输出</strong>：得到一个稀疏的邻接图，边权为欧式距离（仅限 k 近邻之间）。</li>
+</ul>
+<p><strong>关键点</strong>：</p>
+<ul>
+<li><strong>局部合理性</strong>：在足够小的邻域内，流形近似平坦，欧式距离误差较小。</li>
+<li><strong>计算效率</strong>：欧式距离计算简单，适合快速构建初始图结构。</li>
+</ul>
+</blockquote>
+<h4 id="locally-linear-embedding-lle">局部线性嵌入（Locally Linear Embedding，简称 LLE）<a class="headerlink" href="#locally-linear-embedding-lle" title="Permanent link">&para;</a></h4>
+<p>基本思想：与 <strong>Isomap 试图保持近邻样本之间的距离</strong> 不同，局部线性嵌入（Locally Linear Embedding，简称 LLE）<strong>试图保持邻域内样本之间的线性关系。</strong></p>
+<p>“流形在局部可以近似等价于欧氏空间”便是 LLE 分析方法的出发点。LLE 和 Isomap 类似，都基于局部同胚于欧氏空间的假设</p>
+<ul>
+<li><strong>局部线性假设</strong>：流形在局部邻域内近似为欧式空间，样本点与其近邻点可通过线性组合表示（如平面上的点可用相邻点加权求和表示）</li>
+<li><strong>全局非线性降维</strong>：通过保留这些局部线性关系，将数据映射到低维空间，同时避免直接计算全局距离（如 Isomap 的测地线距离）</li>
+</ul>
+<p>算法流程如下：</p>
+<p><img alt="高维空间中的样本重构关系在低维空间中得以保持" src="F:\software\Typora\images\image-20250616201911786.png" /></p>
+<p>假定样本点 <span class="arithmatex">\(x_i\)</span> 的坐标能够通过它的邻域样本 <span class="arithmatex">\(x_j，x_k，x_l\)</span> 的坐标通过线性组合而重构出来，即
+$$
+x_i = w_{ij}x_j+w_{ik}x_k+w_{il}x_l
+$$
+LLE 希望式(9)的关系在低维空间中得以保持。</p>
+<p>LLE 先为每个样本 <span class="arithmatex">\(x_i\)</span> 找到其近邻下标集合 <span class="arithmatex">\(Q_i\)</span>，然后计算出基于 <span class="arithmatex">\(Q_i\)</span> 中的样本点对 <span class="arithmatex">\(x_i\)</span> 进行线性重构的系数 <span class="arithmatex">\(w_i\)</span>：</p>
+<div class="arithmatex">\[
+\min_{w_1, w_2, \ldots, w_m} \sum_{i = 1}^m \left\| x_i - \sum_{j \in Q_i} w_{ij} x_j \right\|_2^2 \tag{10.27}
+\]</div>
+<p>s.t. <span class="arithmatex">\(\sum_{j \in Q_i} w_{ij} = 1\)</span>,</p>
+<p>其中 <span class="arithmatex">\(x_i\)</span> 和 <span class="arithmatex">\(x_j\)</span> 均为已知，令 <span class="arithmatex">\(C_{jk} = (x_i - x_j)^T(x_i - x_k)\)</span>，<span class="arithmatex">\(w_{ij}\)</span> 有闭式解</p>
+<div class="arithmatex">\[
+w_{ij} = \frac{\sum_{k \in Q_i} C_{jk}^{-1}}{\sum_{l, s \in Q_i} C_{ls}^{-1}} \, . \tag{10.28}
+\]</div>
+<p>LLE 在低维空间中保持 <span class="arithmatex">\(w_i\)</span> 不变，于是 <span class="arithmatex">\(x_i\)</span> 对应的低维空间坐标 <span class="arithmatex">\(z_i\)</span> 可通过下式求解：</p>
+<div class="arithmatex">\[
+\min_{z_1, z_2, \ldots, z_m} \sum_{i = 1}^m \left\| z_i - \sum_{j \in Q_i} w_{ij} z_j \right\|_2^2 \, . \tag{10.29}
+\]</div>
+<p>式(10.27)与(10.29)的优化目标同形，唯一的区别是式(10.27)中需确定的是 <span class="arithmatex">\(w_i\)</span>，而式(10.29) 中需确定的是 <span class="arithmatex">\(x_i\)</span> 对应的低维空间坐标 <span class="arithmatex">\(z_i\)</span>。</p>
+<p>令 <span class="arithmatex">\(Z = (z_1, z_2, \ldots, z_m) \in \mathbb{R}^{d' \times m}\)</span>，<span class="arithmatex">\((W)_{ij} = w_{ij}\)</span>，</p>
+<div class="arithmatex">\[
+M = (I - W)^T(I - W) \, , \tag{10.30}
+\]</div>
+<p>则式(10.29)可重写为</p>
+<div class="arithmatex">\[
+\min_Z \text{tr}(ZMZ^T) \, , \tag{10.31}
+\]</div>
+<p>s.t. <span class="arithmatex">\(ZZ^T = I\)</span>。</p>
+<p>式(10.31)可通过特征值分解求解：M 最小的 <span class="arithmatex">\(d'\)</span> 个特征值对应的特征向量组成的矩阵即为 <span class="arithmatex">\(Z^T\)</span>。</p>
+<p>LLE 的算法描述如下图所示。算法第 4 行显示出：对于不在样本 <span class="arithmatex">\(x_i\)</span> 邻域区域的样本 <span class="arithmatex">\(x_j\)</span>，无论其如何变化都对 <span class="arithmatex">\(x_i\)</span> 和 <span class="arithmatex">\(z_i\)</span> 没有任何影响；这种将变动限制在局部的思想在许多地方都有用</p>
+<p><img alt="LLE算法步骤描述" src="F:\software\Typora\images\image-20250616205231610.png" /></p>
+<p>Isomap vs LLE</p>
+<p>相同点：</p>
+<ul>
+<li>Isomap 和 LLE 从不同的出发点来实现同一个目标，它们都能从某种程度上发现并在映射的过程中保持流形的几何性质。</li>
+</ul>
+<p>不同点：</p>
+<ul>
+<li>
+<p>Isomap 希望保持任意两点之间的测地线距离； LLE 希望保持局部线性关系。</p>
+</li>
+<li>
+<p>从保持几何的角度来看， Isomap 保持了更多的信息量</p>
+</li>
+</ul>
+<p>然而 Isomap 的 全局 方法有一个很大的问题就是要考虑任意两点之间的关系，这个数量将随着数据点数量的增多而爆炸性增长，从而使得计算难以负荷。因此，以 LLE 为开端的局部分析方法的变种和相关的理论基础研究逐渐受到更多的关注。</p>
+<h4 id="lelaplacian-eigenmap">LE（Laplacian Eigenmap）<a class="headerlink" href="#lelaplacian-eigenmap" title="Permanent link">&para;</a></h4>
+<p>Laplacian Eigenmap (LE ) 希望保持流形的近邻关系 : 将原始空间中相近的点映射成目标空间中相近的点。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2625,11 +2671,6 @@ Look at this source <a href="https://github.com/JakubAndrysek/mkdocs-open-in-new
 
 <!-- Determine date of last update -->
 
-  
-
-  <!-- Determine date of creation -->
-  
-
 
 <!-- Source file information -->
 
@@ -2661,8 +2702,6 @@ Look at this source <a href="https://github.com/JakubAndrysek/mkdocs-open-in-new
 
 
 <!-- Determine whether to show feedback -->
-
-  
 
 
 <!-- Was this page helpful? -->
@@ -2757,10 +2796,10 @@ Look at this source <a href="https://github.com/JakubAndrysek/mkdocs-open-in-new
 
 
 
-      
-    </article>
-  </div>
-
+                
+              </article>
+            </div>
+          
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -2780,63 +2819,6 @@ Look at this source <a href="https://github.com/JakubAndrysek/mkdocs-open-in-new
 
   <!-- Link to previous and/or next page -->
   
-    
-      
-        
-      
-      <nav
-        class="md-footer__inner md-grid"
-        aria-label="页脚"
-        
-      >
-
-        <!-- Link to previous page -->
-        
-          
-          <a
-            href="../../../../2023/12/21/2023%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/"
-            class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 2023网站更新记录"
-          >
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                2023网站更新记录
-              </div>
-            </div>
-            
-          </a>
-        
-
-        <!-- Link to next page -->
-        
-          
-          <a
-            href="../../../../2025/01/01/2025%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/"
-            class="md-footer__link md-footer__link--next"
-            aria-label="下一页: 2025网站更新记录"
-          >
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                2025网站更新记录
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
 
@@ -2947,14 +2929,14 @@ Look at this source <a href="https://github.com/JakubAndrysek/mkdocs-open-in-new
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="../../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
