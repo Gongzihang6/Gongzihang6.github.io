@@ -104,3 +104,164 @@ figcaption::before {
     content: "图 " counter(figure) ": ";
     font-weight: bold; /* 让编号加粗，更醒目 */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*迁移ladder.css中的样式*/
+/* Java 关键字 */  
+.md-fences[lang="java"] .cm-keyword {  
+    color: #569cd6 !important; /* 蓝色 */  
+    font-weight: bold;  
+}  
+  
+/* Java 类型（String, int, etc） */  
+.md-fences[lang="java"] .cm-type {  
+    color: #4ec9b0 !important; /* 青色 */  
+}  
+  
+/* Java 方法调用 */  
+.md-fences[lang="java"] .cm-property {  
+    color: #dada3e !important; /* 黄色 */  
+}  
+  
+/* Java 字符串 */  
+.md-fences[lang="java"] .cm-string {  
+    color: #ce9178 !important; /* 橙色 */  
+}  
+  
+/* Java 注释 */  
+.md-fences[lang="java"] .cm-comment {  
+    color: #6a9955 !important; /* 绿色 */  
+    font-style: italic;  
+}  
+  
+/* Java 数字 */  
+.md-fences[lang="java"] .cm-number {  
+    color: #b5cea8 !important; /* 浅绿色 */  
+}
+.cm-operator{
+    color: #ced340;
+}
+
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+  color: #f07178 !important;
+}
+/* 代码块主题 */
+/* 顶部 */
+.md-fences {
+    color: #c5c8c6;
+    background-color: #21252b;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
+    padding-top: 30px;
+    font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
+}
+ 
+.md-fences::before {
+    background: #fc625d;
+    border-radius: 50%;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    content: ' ';
+    height: 12px;
+    left: 12px;
+    margin-top: -20px;
+    position: absolute;
+    width: 12px;
+}
+
+
+h1 {
+color: #0077bb; /* 将标题改为蓝色 */
+}
+h2{
+color:#6A5ACD
+}
+h3{
+color: rgb(26, 143, 55)
+}
+h4{
+color: #87CEFA
+}
+h5{
+color:#87CEFA
+}
+strong {
+    color: #FF5733;
+    font-weight: bold; /* 确保文字加粗 */
+    /* background-color: #ffff99; 添加背景高亮 */
+    padding: 2px 4px; /* 添加内边距让背景更明显 */
+    border-radius: 3px; /* 可选：添加圆角 */
+}
+
+
+
+/*==背景高亮==*/
+mark {
+    background: #ffffff;
+    color: #db3f1e;
+    font-weight: bold;
+    border-bottom: 0px solid #ffffff;
+    padding: 0.0px;
+    margin: 0 0px;
+    
+}
+ 
+::selection {
+    background-color: #d59ceb4d;
+    border-radius: 4px !important;
+    padding: 2px 4px;  
+}
+::-moz-selection {  
+    /* background-color: #3390FF;   */
+    border-radius: 6px !important;  
+    padding: 2px 4px;  
+}
+
+
+
+.md-toc {
+    margin: 0 auto;      /* 使整个目录块级元素水平居中 */
+    width: fit-content;  /* 自适应内容宽度，避免撑满 */
+    /*设置目录层级缩进距离*/
+    --toc-indent: 40px;
+}
+
+.md-toc a {
+    color: #3490de; /* 自定义 TOC 链接颜色 */
+    font-size: 24px;
+}
+
+
+.md-toc a:hover {
+    color: #e01958; /* 自定义 TOC 链接悬停颜色 */
+}
+
+
+/* 添加过渡动画（可选） */
+.md-toc a {
+    transition: all 0.2s ease;
+}
+
+/* 悬停放大效果（可选） */
+.md-toc a:hover {
+    transform: scale(1.05);
+}
