@@ -2611,8 +2611,8 @@ $$
 \begin{aligned} P(err)&amp;= 1-\sum\limits_{c\in y}P(c|x)P(c|z) \approx 1-\sum\limits_{c\in y}P^2(c|x)  \
 &amp;\leq 1-P<sup>2(c</sup><em>|x)=(1+P(c<sup>*|x))(1-P(c</sup></em>|x)) \
 &amp;\leq 2\times (1-P(c^*|x)). \end{aligned}
-$$
-第一行的约等于是因为 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(z\)</span> 是可以任意近的，因为它们之间的距离小于任意正数<span class="arithmatex">\(\delta\)</span>，所以它们属于任意同一类别 <span class="arithmatex">\(c\)</span> 的概率可以认为很接近（这也是 k 近邻的核心思想）；<span class="arithmatex">\(c^*\)</span> 是测试样本 <span class="arithmatex">\(x\)</span> 最可能属于的类别，因此 <span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)&gt;=P(c^*|x)\)</span></p>
+$$</p>
+<p>第一行的约等于是因为 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(z\)</span> 是可以任意近的，因为它们之间的距离小于任意正数<span class="arithmatex">\(\delta\)</span>，所以它们属于任意同一类别 <span class="arithmatex">\(c\)</span> 的概率可以认为很接近（这也是 k 近邻的核心思想）；<span class="arithmatex">\(c^*\)</span> 是测试样本 <span class="arithmatex">\(x\)</span> 最可能属于的类别，因此 <span class="arithmatex">\(\sum\limits_{c\in y}P(c|x)&gt;=P(c^*|x)\)</span></p>
 <p>公式（2）说明，最近邻分类虽然简单，但在距离度量合适、训练样本足够密集的假设下，它的泛化错误率不超过贝叶斯最优分类器的两倍；</p>
 <h3 id="_2">维数灾难<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>上述讨论基于一个重要的假设：任意测试样本 <span class="arithmatex">\(x\)</span> 附近的任意小的 <span class="arithmatex">\(\delta\)</span> 距离范围内总能找到一个训练样本，即训练样本的采样密度足够大，或称为“密采样”。然而，这个假设在现实任务中通常很难满足:</p>
@@ -2640,37 +2640,37 @@ $$
 <h3 id="multiple-dimensional-scaling-mds">多维缩放（Multiple Dimensional Scaling，简称 MDS）<a class="headerlink" href="#multiple-dimensional-scaling-mds" title="Permanent link">&para;</a></h3>
 <p>假定 <span class="arithmatex">\(m\)</span> 个样本在原始空间的距离矩阵为 <span class="arithmatex">\(D \in \mathbb{R}^{m \times m}\)</span>，其第 <span class="arithmatex">\(i\)</span> 行 <span class="arithmatex">\(j\)</span> 列的元素 <span class="arithmatex">\(dist_{ij}\)</span> 为样本 <span class="arithmatex">\(x_i\)</span> 到 <span class="arithmatex">\(x_j\)</span> 的距离。我们的目标是获得样本在 <span class="arithmatex">\(d^\prime\)</span> 维空间的表示 <span class="arithmatex">\(Z \in \mathbb{R}^{d' \times m}\)</span>，<span class="arithmatex">\(d' \leq d\)</span>，且任意两个样本在 <span class="arithmatex">\(d^\prime\)</span> 维空间中的欧氏距离等于原始空间中的距离，即 <span class="arithmatex">\(\|z_i - z_j\| = dist_{ij}\)</span>。</p>
 <p>令 <span class="arithmatex">\(B = Z^TZ \in \mathbb{R}^{m \times m}\)</span>，其中 <span class="arithmatex">\(B\)</span> 为降维后样本的内积矩阵，<span class="arithmatex">\(b_{ij} = z_i^T z_j\)</span>，有</p>
-<div class="arithmatex">\[
-dist_{ij}^2 = \|z_i\|^2 + \|z_j\|^2 - 2z_i^T z_j \\
+<p>$$
+dist_{ij}^2 = |z_i|^2 + |z_j|^2 - 2z_i^T z_j \
 = b_{ii} + b_{jj} - 2b_{ij} \, .
 \tag{10.3}
-\]</div>
+$$</p>
 <p>为便于讨论，令降维后的样本 <span class="arithmatex">\(Z\)</span> 被中心化，即 <span class="arithmatex">\(\sum\limits_{i=1}^m z_i = 0\)</span>。显然，矩阵 <span class="arithmatex">\(B\)</span> 的行与列之和均为零，即 <span class="arithmatex">\(\sum\limits_{i=1}^m b_{ij} = \sum\limits_{j=1}^m b_{ij} = 0\)</span>。易知</p>
-<div class="arithmatex">\[
+<p>$$
 \sum_{i = 1}^m dist_{ij}^2 = \text{tr}(B) + mb_{jj} \, , 
 \tag{10.4}
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 \sum_{j = 1}^m dist_{ij}^2 = \text{tr}(B) + mb_{ii} \, ,
 \tag{10.5}
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 \sum_{i = 1}^m \sum_{j = 1}^m dist_{ij}^2 = 2m \, \text{tr}(B) \, .
 \tag{10.6}
-\]</div>
+$$</p>
 <p>其中 <span class="arithmatex">\(\text{tr}(\cdot)\)</span> 表示矩阵的迹（trace），<span class="arithmatex">\(\text{tr}(B) = \sum\limits_{i=1}^m \|z_i\|^2\)</span>。<strong>令</strong></p>
-<div class="arithmatex">\[
+<p>$$
 dist_{i \cdot }^2 = \frac{1}{m} \sum_{j = 1}^m dist_{ij}^2 \, ,
 \tag{10.7}
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 dist_{\cdot j}^2 = \frac{1}{m} \sum_{i = 1}^m dist_{ij}^2 \, ,
 \tag{10.8}
-\]</div>
-<div class="arithmatex">\[
+$$</p>
+<p>$$
 dist_{\cdot\cdot}^2 = \frac{1}{m^2} \sum_{i = 1}^m \sum_{j = 1}^m dist_{ij}^2 \,
 \tag{10.9}
-\]</div>
+$$</p>
 <p><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">由式(10.3)和式(10.4)~(10.9)可得</span>
 $$
 b_{ij} = -\frac{1}{2}(dist_{ij}^2 - dist_{i \cdot}^2 - dist_{\cdot j}^2 + dist_{\cdot\cdot}^2) \, ,
@@ -2687,12 +2687,10 @@ $$</p>
 <li>
 <p>由式（10.4）、（10.5）</p>
 <ul>
-<li>
-<div class="arithmatex">\[
-    b_{ii}=\frac{1}{m}\sum\limits_{j = 1}^mdist_{ij}^2-\frac{1}{m}tr(B)= dist_{i \cdot}^2-\frac{1}{2}dist_{\cdot \cdot}^2   \\
-    b_{jj}=\frac{1}{m}\sum\limits_{i = 1}^mdist_{ij}^2-\frac{1}{m}tr(B)= dist_{ \cdot j}^2-\frac{1}{2}dist_{\cdot \cdot}^2  \\
-    \]</div>
-</li>
+<li>$$
+    b_{ii}=\frac{1}{m}\sum\limits_{j = 1}<sup>mdist_{ij}</sup>2-\frac{1}{m}tr(B)= dist_{i \cdot}^2-\frac{1}{2}dist_{\cdot \cdot}^2   \
+    b_{jj}=\frac{1}{m}\sum\limits_{i = 1}<sup>mdist_{ij}</sup>2-\frac{1}{m}tr(B)= dist_{ \cdot j}^2-\frac{1}{2}dist_{\cdot \cdot}^2  \
+    $$</li>
 </ul>
 </li>
 <li>
@@ -2701,15 +2699,15 @@ $$</p>
 </ul>
 <p>由此即可通过降维前后保持不变的距离矩阵 <span class="arithmatex">\(D\)</span> 求取内积矩阵 <span class="arithmatex">\(B\)</span>。</p>
 <p>对矩阵 <span class="arithmatex">\(B\)</span> 做特征值分解(eigenvalue decomposition)，<span class="arithmatex">\(B = V \Lambda V^T\)</span>，其中 <span class="arithmatex">\(\Lambda = \text{diag}(\lambda_1, \lambda_2, \ldots, \lambda_d)\)</span> 为特征值构成的对角矩阵，<span class="arithmatex">\(\lambda_1 \geq \lambda_2 \geq \ldots \geq \lambda_d\)</span>，<span class="arithmatex">\(V\)</span> 为特征向量矩阵。假定其中有 <span class="arithmatex">\(d^*\)</span> 个非零特征值，它们构成对角矩阵 <span class="arithmatex">\(\Lambda_* = \text{diag}(\lambda_1, \lambda_2, \ldots, \lambda_{d^*})\)</span>，令 <span class="arithmatex">\(V_*\)</span> 表示相应的特征向量矩阵，则 <span class="arithmatex">\(Z\)</span> 可表达为</p>
-<div class="arithmatex">\[
-Z = \Lambda_*^{1/2} V_*^T \in \mathbb{R}^{d^* \times m} \, .
+<p>$$
+Z = \Lambda_<em>^{&frac12;} V_</em>^T \in \mathbb{R}<sup>{d</sup>* \times m} \, .
 \tag{10.11}
-\]</div>
+$$</p>
 <p>在现实应用中为了有效降维，往往仅需降维后的距离与原始空间中的距离尽可能接近，而不必严格相等。此时可取 <span class="arithmatex">\(d' \ll d\)</span> 个最大特征值构成对角矩阵 <span class="arithmatex">\(\tilde{\Lambda} = \text{diag}(\lambda_1, \lambda_2, \ldots, \lambda_{d'})\)</span>，令 <span class="arithmatex">\(\tilde{V}\)</span> 表示相应的特征向量矩阵，则 <span class="arithmatex">\(Z\)</span> 可表达为</p>
-<div class="arithmatex">\[
-Z = \tilde{\Lambda}^{1/2} \tilde{V}^T \in \mathbb{R}^{d' \times m} \, .
+<p>$$
+Z = \tilde{\Lambda}^{&frac12;} \tilde{V}^T \in \mathbb{R}^{d' \times m} \, .
 \tag{10.12}
-\]</div>
+$$</p>
 <p>下图给出了 MDS 算法的描述。<img alt="MDS 算法描述" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250616193015341.png" /></p>
 <h3 id="principal-compoent-analysispca">主成分分析（Principal Compoent Analysis，PCA）<a class="headerlink" href="#principal-compoent-analysispca" title="Permanent link">&para;</a></h3>
 <p>PCA 是最常用的一种降维方法，在模式识别、金融、生物信息学等各个领域均得到广泛应用。</p>
@@ -2769,19 +2767,19 @@ $$
 \frac{\partial \mathcal{L}}{\partial W}= 2XX^TW-2\Lambda W = 0  \
 ==&gt; \quad XX^TW =\Lambda W
 $$</p>
-<div class="arithmatex">\[
-\frac{\partial \mathcal{L}}{\partial \Lambda}= W^TW-I = 0   \\
+<p>$$
+\frac{\partial \mathcal{L}}{\partial \Lambda}= W^TW-I = 0   \
 ==&gt; \quad W^TW = I
-\]</div>
+$$</p>
 <p>对于式（8），由于 <span class="arithmatex">\(XX^T\)</span> 是对称矩阵，同时 W 又是正交矩阵，所以可以将式（8）看成矩阵特征值问题，我们只需要对协方差矩阵 XX^T 进行特征值分解，将求得的特征值排序：<span class="arithmatex">\(\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_d\)</span>，再取前 <span class="arithmatex">\(d^\prime\)</span> 个特征值对应的特征向量构成 <span class="arithmatex">\(W=(w_1, w_2, \dots, w_{d^\prime})\)</span>，就是该优化问题的解</p>
 <blockquote>
 <p>实践中通常对 <span class="arithmatex">\(XX^T\)</span> 进行奇异值分解来代替协方差矩阵的特征值分解</p>
 </blockquote>
 <p><img alt="PCA 算法步骤" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250616110753732.png" /></p>
 <p>降维后低维空间的维数 <span class="arithmatex">\(d^\prime\)</span> 通常是由用户事先指定，或通过在值 <span class="arithmatex">\(d^\prime\)</span> 不同的低维空间中对 k 近邻分类器(或其他开销较小的学习器) 进行交叉验证来选取较好的 <span class="arithmatex">\(d^\prime\)</span> 值. 对 PCA，还可从重构的角度设置一个重构阈值，例如 ( t = 95% )，然后选取使下式成立的最小 <span class="arithmatex">\(d^\prime\)</span> 值：</p>
-<div class="arithmatex">\[
+<p>$$
 \frac{\sum_{i = 1}^{d'} \lambda_i}{\sum_{i = 1}^{d} \lambda_i} \geq t \tag{10.18}
-\]</div>
+$$</p>
 <h3 id="pca">核化 PCA<a class="headerlink" href="#pca" title="Permanent link">&para;</a></h3>
 <h3 id="_6">流形降维<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>“流形”是在局部与欧式空间同胚的空间。流形的本质是局部平坦，全局弯曲，整体上可能有曲率、洞或复杂结构，欧式距离无法反映真实“最短路径”，但 <strong>局部每一点附件都可以近似为欧式空间，可以用欧式距离来度量最短路径</strong>；</p>
@@ -2826,27 +2824,27 @@ x_i = w_{ij}x_j+w_{ik}x_k+w_{il}x_l
 $$
 LLE 希望式(9)的关系在低维空间中得以保持。</p>
 <p>LLE 先为每个样本 <span class="arithmatex">\(x_i\)</span> 找到其近邻下标集合 <span class="arithmatex">\(Q_i\)</span>，然后计算出基于 <span class="arithmatex">\(Q_i\)</span> 中的样本点对 <span class="arithmatex">\(x_i\)</span> 进行线性重构的系数 <span class="arithmatex">\(w_i\)</span>：</p>
-<div class="arithmatex">\[
-\min_{w_1, w_2, \ldots, w_m} \sum_{i = 1}^m \left\| x_i - \sum_{j \in Q_i} w_{ij} x_j \right\|_2^2 \tag{10.27}
-\]</div>
+<p>$$
+\min_{w_1, w_2, \ldots, w_m} \sum_{i = 1}^m \left| x_i - \sum_{j \in Q_i} w_{ij} x_j \right|_2^2 \tag{10.27}
+$$</p>
 <p>s.t. <span class="arithmatex">\(\sum_{j \in Q_i} w_{ij} = 1\)</span>,</p>
 <p>其中 <span class="arithmatex">\(x_i\)</span> 和 <span class="arithmatex">\(x_j\)</span> 均为已知，令 <span class="arithmatex">\(C_{jk} = (x_i - x_j)^T(x_i - x_k)\)</span>，<span class="arithmatex">\(w_{ij}\)</span> 有闭式解</p>
-<div class="arithmatex">\[
+<p>$$
 w_{ij} = \frac{\sum_{k \in Q_i} C_{jk}^{-1}}{\sum_{l, s \in Q_i} C_{ls}^{-1}} \, . \tag{10.28}
-\]</div>
+$$</p>
 <p>LLE 在低维空间中保持 <span class="arithmatex">\(w_i\)</span> 不变，于是 <span class="arithmatex">\(x_i\)</span> 对应的低维空间坐标 <span class="arithmatex">\(z_i\)</span> 可通过下式求解：</p>
-<div class="arithmatex">\[
-\min_{z_1, z_2, \ldots, z_m} \sum_{i = 1}^m \left\| z_i - \sum_{j \in Q_i} w_{ij} z_j \right\|_2^2 \, . \tag{10.29}
-\]</div>
+<p>$$
+\min_{z_1, z_2, \ldots, z_m} \sum_{i = 1}^m \left| z_i - \sum_{j \in Q_i} w_{ij} z_j \right|_2^2 \, . \tag{10.29}
+$$</p>
 <p>式(10.27)与(10.29)的优化目标同形，唯一的区别是式(10.27)中需确定的是 <span class="arithmatex">\(w_i\)</span>，而式(10.29) 中需确定的是 <span class="arithmatex">\(x_i\)</span> 对应的低维空间坐标 <span class="arithmatex">\(z_i\)</span>。</p>
 <p>令 <span class="arithmatex">\(Z = (z_1, z_2, \ldots, z_m) \in \mathbb{R}^{d' \times m}\)</span>，<span class="arithmatex">\((W)_{ij} = w_{ij}\)</span>，</p>
-<div class="arithmatex">\[
+<p>$$
 M = (I - W)^T(I - W) \, , \tag{10.30}
-\]</div>
+$$</p>
 <p>则式(10.29)可重写为</p>
-<div class="arithmatex">\[
+<p>$$
 \min_Z \text{tr}(ZMZ^T) \, , \tag{10.31}
-\]</div>
+$$</p>
 <p>s.t. <span class="arithmatex">\(ZZ^T = I\)</span>。</p>
 <p>式(10.31)可通过特征值分解求解：M 最小的 <span class="arithmatex">\(d'\)</span> 个特征值对应的特征向量组成的矩阵即为 <span class="arithmatex">\(Z^T\)</span>。</p>
 <p>LLE 的算法描述如下图所示。算法第 4 行显示出：对于不在样本 <span class="arithmatex">\(x_i\)</span> 邻域区域的样本 <span class="arithmatex">\(x_j\)</span>，无论其如何变化都对 <span class="arithmatex">\(x_i\)</span> 和 <span class="arithmatex">\(z_i\)</span> 没有任何影响；这种将变动限制在局部的思想在许多地方都有用</p>
@@ -3214,15 +3212,7 @@ M = (I - W)^T(I - W) \, , \tag{10.30}
     
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
-      
-        <script src="../../../javascripts/mathjax.js"></script>
-      
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js"></script>
       
     
   </body>

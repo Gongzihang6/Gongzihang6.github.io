@@ -10,6 +10,17 @@
 }  */
 
 
+/* 确保行间公式换行和间距 */
+div.arithmatex {
+  overflow-x: auto;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+
+
+
+
 
 button.md-top {
   font-family: LXGW WenKai; /* 修改字体 */
