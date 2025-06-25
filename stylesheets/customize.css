@@ -35,7 +35,7 @@
 }
 
 /* 可选：如需恢复代码块、警告框等样式，取消注释即可 */
-/*
+
 .highlight span.filename {
   border-bottom: none;
   border-radius: var(--base-border-radius);
@@ -59,7 +59,7 @@
   border-radius: 0.2rem;
   border-left-width: var(--admonition-border-left-width);
 }
-*/
+
 
 /* 可选：博客相关样式，按需启用 */
 
@@ -125,46 +125,7 @@ figcaption::before {
 
 
 /*迁移ladder.css中的样式*/
-/* Java 关键字 */  
-.md-fences[lang="java"] .cm-keyword {  
-    color: #569cd6 !important; /* 蓝色 */  
-    font-weight: bold;  
-}  
-  
-/* Java 类型（String, int, etc） */  
-.md-fences[lang="java"] .cm-type {  
-    color: #4ec9b0 !important; /* 青色 */  
-}  
-  
-/* Java 方法调用 */  
-.md-fences[lang="java"] .cm-property {  
-    color: #dada3e !important; /* 黄色 */  
-}  
-  
-/* Java 字符串 */  
-.md-fences[lang="java"] .cm-string {  
-    color: #ce9178 !important; /* 橙色 */  
-}  
-  
-/* Java 注释 */  
-.md-fences[lang="java"] .cm-comment {  
-    color: #6a9955 !important; /* 绿色 */  
-    font-style: italic;  
-}  
-  
-/* Java 数字 */  
-.md-fences[lang="java"] .cm-number {  
-    color: #b5cea8 !important; /* 浅绿色 */  
-}
-.cm-operator{
-    color: #ced340;
-}
 
-
-.cm-s-inner .cm-variable-3,
-.cm-s-inner .cm-type {
-  color: #f07178 !important;
-}
 /* 代码块主题 */
 /* 顶部 */
 .md-fences {
