@@ -1773,363 +1773,411 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>655</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>452</strong></p>
 </div>
 <!-- docs/resume.md -->
 
 <!-- 
-  CSS样式：负责简历的所有视觉表现，包括布局、颜色、字体和动画。
+  CSS样式：仿照目标风格，负责简历的所有视觉表现。
 -->
 <style>
-    /* --- 全局与字体设定 --- */
+    /* --- Google Fonts for a modern look (optional but recommended) --- */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    /* --- CSS Variables for easy theme customization --- */
     :root {
-        --primary-color: #2c7a7b; /* 借鉴原简历，选择一个更沉稳的蓝绿色 */
-        --secondary-color: #4a5568;
-        --bg-color: #f7fafc;
-        --card-bg-color: #ffffff;
-        --border-color: #e2e8f0;
-        --text-color: #2d3748;
-        --subtle-text-color: #718096;
+        --primary-color: #4f46e5; /* A nice, modern blue/purple */
+        --primary-color-light: #e0e7ff;
+        --text-color-dark: #111827;
+        --text-color-medium: #4b5563;
+        --text-color-light: #6b7280;
+        --bg-color-light: #f9fafb;
+        --bg-color-white: #ffffff;
+        --border-color: #e5e7eb;
     }
 
-    /* 移除MkDocs默认的一些边距和背景，让我们的简历全屏展示 */
-    .md-main__inner {
-        margin: 0;
-        padding: 0;
-    }
-    .md-content {
-        padding: 0;
+    /* --- Reset MkDocs default styles for a clean slate --- */
+    .md-main__inner { margin: 0; padding: 0; }
+    .md-content { padding: 0; }
+    article h1, article h2, article h3 { border: none; }
+
+    /* --- Main Page Wrapper --- */
+    .resume-page {
+        font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg-color-white);
+        color: var(--text-color-dark);
     }
 
-    .resume-page-wrapper {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        line-height: 1.7;
-        padding: 3rem 1rem;
-    }
-
-    /* --- 核心布局 --- */
-    .resume-container {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: flex;
-        background: var(--card-bg-color);
-        border-radius: 12px;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        overflow: hidden;
-    }
-
-    /* --- 左侧边栏 --- */
-    .resume-sidebar {
-        width: 320px;
-        background: linear-gradient(135deg, var(--primary-color) 0%, #2c5282 100%);
-        color: white;
-        padding: 2.5rem;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .resume-sidebar .profile-pic {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 5px solid rgba(255, 255, 255, 0.8);
-        object-fit: cover;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .resume-sidebar h1 {
-        font-size: 2.2rem;
-        margin: 0;
-        font-weight: 600;
-        color: white;
-        border: none;
-        padding: 0;
-    }
-
-    .resume-sidebar .tagline {
-        font-size: 1rem;
-        margin-top: 0.5rem;
-        color: rgba(255, 255, 255, 0.85);
-        font-style: italic;
-    }
-
-    .contact-info {
-        list-style: none;
-        padding: 0;
-        margin-top: 2rem;
-        width: 100%;
-    }
-
-    .contact-info li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-        word-break: break-all;
-    }
-
-    .contact-info i {
-        font-size: 1.1rem;
-        width: 25px;
-        text-align: center;
-        margin-right: 12px;
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* --- 右侧主内容区 --- */
-    .resume-main {
-        flex: 1;
-        padding: 3rem;
-        box-sizing: border-box;
-    }
-
-    .resume-section {
-        margin-bottom: 3rem;
-    }
-
-    .resume-section:last-child {
-        margin-bottom: 0;
-    }
-
-    .resume-section h2 {
-        font-size: 1.8rem;
-        color: var(--primary-color);
-        border-bottom: 3px solid var(--primary-color);
-        padding-bottom: 0.6rem;
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-    }
-
-    .resume-section h2 i {
-        margin-right: 1rem;
-    }
-
-    .resume-item h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.2rem;
-        font-weight: 600;
+    /* --- Sticky Header --- */
+    .resume-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-
-    .resume-item .date {
+    .resume-header .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    .resume-header nav a {
+        margin-left: 1.5rem;
         font-size: 0.9rem;
-        font-weight: normal;
-        color: var(--subtle-text-color);
-    }
-
-    .resume-item .subtitle {
-        font-size: 1rem;
-        font-weight: bold;
-        color: var(--secondary-color);
-        margin-bottom: 0.8rem;
-    }
-
-    .resume-main ul {
-        list-style: none;
-        padding-left: 1.5rem;
-    }
-
-    .resume-main ul li {
-        position: relative;
-        margin-bottom: 0.75rem;
-    }
-
-    .resume-main ul li::before {
-        content: '✓';
-        position: absolute;
-        left: -1.5rem;
-        top: 2px;
-        color: var(--primary-color);
-        font-weight: bold;
-    }
-
-    .personal-links a {
-        color: var(--primary-color);
-        text-decoration: none;
         font-weight: 500;
+        color: var(--text-color-medium);
+        text-decoration: none;
+        transition: color 0.2s ease;
     }
-    .personal-links a:hover {
-        text-decoration: underline;
+    .resume-header nav a:hover {
+        color: var(--primary-color);
     }
 
-    /* --- 动画效果 --- */
-    .fade-in-up {
+    /* --- General Section Styling --- */
+    .resume-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+    }
+    .section-title {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .section-title-underline {
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-color);
+        margin-bottom: 3rem;
+        border-radius: 2px;
+    }
+
+    /* --- Hero (About Me) Section --- */
+    .hero-section {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+    }
+    .hero-avatar img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 0 8px rgba(79, 70, 229, 0.1);
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    .hero-content .tagline {
+        font-size: 1.1rem;
+        color: var(--text-color-medium);
+        font-weight: 500;
+        margin-top: 0.5rem;
+    }
+    .hero-content .description {
+        margin-top: 1.5rem;
+        line-height: 1.8;
+        color: var(--text-color-light);
+    }
+    .hero-stats {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2.5rem;
+    }
+    .stat-card {
+        flex: 1;
+        background: var(--bg-color-light);
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid var(--border-color);
+    }
+    .stat-card .stat-number {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+    .stat-card .stat-label {
+        font-size: 0.8rem;
+        color: var(--text-color-light);
+    }
+
+    /* --- Timeline Section --- */
+    .timeline {
+        position: relative;
+        padding-left: 3rem; /* Space for the line and dots */
+    }
+    .timeline::before { /* The vertical line */
+        content: '';
+        position: absolute;
+        left: 11px; /* (dot width / 2) - (line width / 2) */
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        background-color: var(--border-color);
+    }
+    .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+    }
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+    .timeline-item::before { /* The dot */
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--bg-color-white);
+        border: 2px solid var(--primary-color);
+    }
+    .timeline-card {
+        background: var(--bg-color-light);
+        border: 1px solid var(--border-color);
+        padding: 1.5rem;
+        border-radius: 12px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .timeline-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+    }
+    .timeline-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0;
+    }
+    .timeline-card .date {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--text-color-light);
+        margin: 0.5rem 0 1rem 0;
+    }
+    .timeline-card .date i {
+        margin-right: 0.5rem;
+        color: var(--text-color-medium);
+    }
+    .timeline-card ul {
+        list-style: none;
+        padding-left: 1.25rem;
+        margin: 0;
+    }
+    .timeline-card ul li {
+        position: relative;
+        margin-bottom: 0.5rem;
+        color: var(--text-color-medium);
+    }
+    .timeline-card ul li:last-child { margin-bottom: 0; }
+    .timeline-card ul li::before {
+        content: '▹';
+        position: absolute;
+        left: -1.25rem;
+        color: var(--primary-color);
+    }
+
+    /* --- Animation --- */
+    .animate-on-scroll {
         opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-
-    .fade-in-up.is-visible {
+    .animate-on-scroll.is-visible {
         opacity: 1;
         transform: translateY(0);
     }
 
-    /* --- 响应式设计 --- */
-    @media (max-width: 900px) {
-        .resume-container {
-            flex-direction: column; /* 垂直堆叠 */
-        }
-        .resume-sidebar {
-            width: 100%;
-            border-radius: 12px 12px 0 0;
-        }
-        .resume-main {
-            border-radius: 0 0 12px 12px;
-        }
-    }
-
-    @media (max-width: 500px) {
-        .resume-page-wrapper {
-            padding: 1rem 0;
-        }
-        .resume-container {
-            border-radius: 0;
-        }
-        .resume-sidebar, .resume-main {
-            padding: 1.5rem;
-        }
-        .resume-item h3 {
+    /* --- Responsive Design --- */
+    @media (max-width: 768px) {
+        .hero-section {
             flex-direction: column;
-            align-items: flex-start;
+            text-align: center;
+            gap: 2rem;
         }
-        .resume-item .date {
-            margin-top: 0.25rem;
+        .hero-stats {
+            flex-direction: column;
         }
+        .resume-header {
+            padding: 1rem;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .resume-header nav a { margin: 0 0.75rem; }
     }
 </style>
 
-<div class="resume-page-wrapper">
-    <div class="resume-container">
-        <!-- 左侧边栏：个人信息 -->
-        <aside class="resume-sidebar">
-            <!-- 
-              重要提示: 
-              请将 'path/to/your/photo.jpg' 替换为您的照片路径。
-              推荐做法: 在 docs 文件夹下创建 assets 文件夹, 将照片放进去, 路径写为 'assets/your_photo.jpg'
-            -->
-            <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E9%BE%9A%E5%AD%90%E8%88%AA.jpg" alt="个人照片" class="profile-pic">
+<div class="resume-page">
+    <header class="resume-header">
+        <div class="logo">个人简介</div>
+        <nav>
+            <a href="#about">关于我</a>
+            <a href="#education">教育背景</a>
+            <a href="#projects">项目经历</a>
+            <a href="#skills">专业技能</a>
+        </nav>
+    </header>
 
-            <h1>龚子航</h1>
-            <p class="tagline">细心从每一个小细节开始</p>
-
-            <ul class="contact-info">
-                <li><i class="fas fa-phone-alt"></i><span>18571206208</span></li>
-                <li><i class="fas fa-envelope"></i><span>601049742@qq.com</span></li>
-                <li><i class="fas fa-map-marker-alt"></i><span>中国·湖北</span></li>
-                <li><i class="fas fa-university"></i><span>华中农业大学</span></li>
-                <li><i class="fas fa-graduation-cap"></i><span>硕士 (学硕)</span></li>
-            </ul>
-        </aside>
-
-        <!-- 右侧主内容区 -->
-        <main class="resume-main">
-            <!-- 教育背景 -->
-            <section class="resume-section fade-in-up">
-                <h2><i class="fas fa-user-graduate"></i> 教育背景</h2>
-                <div class="resume-item">
-                    <h3>华中农业大学 <span class="date">2021.09 - 至今</span></h3>
-                    <p class="subtitle">数学 (学硕)</p>
-                    <ul>
-                        <li><strong>主修课程:</strong> 运筹与优化、最优化理论与算法、机器学习、统计计算、数字信息与处理、现实应用与分析、矩阵计算、随机信号分析等。</li>
-                        <li><strong>智能农业核心方向:</strong> 计算机视觉、智能优化与决策。</li>
-                        <li><strong>自学掌握:</strong> 数据结构与算法、计算机组成原理、操作系统、计算机网络、Java 基础、JavaWeb 开发。</li>
-                    </ul>
+    <main>
+        <!-- Section: About Me -->
+        <section id="about" class="resume-section hero-section">
+            <div class="hero-avatar animate-on-scroll">
+                 <!-- 
+                  重要提示: 
+                  请将 'path/to/your/avatar.jpg' 替换为您的头像路径。
+                  推荐: 在 docs/assets/ 目录下放您的头像文件, 路径写为 'assets/avatar.jpg'
+                -->
+                <img src="![](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E9%BE%9A%E5%AD%90%E8%88%AA.jpg)" alt="龚子航 头像">
+            </div>
+            <div class="hero-content animate-on-scroll">
+                <h1>龚子航</h1>
+                <p class="tagline">计算机视觉研究者 · 算法工程师 · 开源爱好者</p>
+                <p class="description">
+                    “观史知今，当思进退，读书明志可识春秋” <br>
+                    对技术充满热情，坚信技术的温度蕴藏在解决实际问题的细节里。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">核心项目经验</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">数学建模奖项</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">核心技术栈</div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- 项目经历 -->
-            <section class="resume-section fade-in-up">
-                <h2><i class="fas fa-code-branch"></i> 项目经历</h2>
-                <div class="resume-item">
-                    <h3>基于 YOLO 的通用目标检测与计数</h3>
-                    <ul>
-                        <li>开发了一套基于 YOLO (v5/v8) 的通用目标检测追踪与计数解决方案，综合 ByteTrack、IO、BoT-SORT 等跟踪算法，实现高性能目标计数。</li>
-                        <li>通过数据增强技术提升模型鲁棒性，摆脱固定场景限制。项目采用 PyTorch 和 OpenCV 框架，引入多线程优化 I/O，并修复了 YOLOv8 的重复检测 Bug，显著提升了工作效率。</li>
-                    </ul>
+        <!-- Section: Education -->
+        <section id="education" class="resume-section animate-on-scroll">
+            <h2 class="section-title">教育背景</h2>
+            <span class="section-title-underline"></span>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>华中农业大学</h3>
+                        <p class="date"><i class="fas fa-calendar-alt"></i> 2021 - 至今</p>
+                        <ul>
+                            <li><strong>专业学位:</strong> 数学 (学硕)，主攻计算机视觉与智能优化决策方向。</li>
+                            <li><strong>核心课程:</strong> 机器学习、最优化理论、计算机视觉、数据结构与算法等。</li>
+                        </ul>
+                    </div>
                 </div>
-                 <div class="resume-item" style="margin-top: 2rem;">
-                    <h3>基于多模态视觉的智慧办公票据重构系统</h3>
-                    <ul>
-                        <li>针对传统票据识别痛点，设计并实现了高效的办公场景票据重构与版面还原系统，可处理相机采集的倾斜、弯曲票据。</li>
-                        <li>采用 PCL 和 ICP 算法实现三维点云数据配准，并结合 PointNet++ 拓展设计点云语义分割模型，精准还原票据版面，有效取代人工流程，缩短处理周期。</li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- Section: Projects -->
+        <section id="projects" class="resume-section animate-on-scroll">
+            <h2 class="section-title">项目经历</h2>
+            <span class="section-title-underline"></span>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>基于 YOLO 的通用目标检测与计数系统</h3>
+                        <p class="date"><i class="fas fa-code"></i> 技术栈: PyTorch, OpenCV, YOLOv8</p>
+                        <ul>
+                            <li>开发了一套可扩展的目标检测与追踪解决方案，集成多种跟踪算法 (如 ByteTrack)。</li>
+                            <li>通过数据增强提升模型鲁棒性，并利用多线程优化I/O，显著提升处理效率。</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>智慧办公票据重构与版面还原系统</h3>
+                        <p class="date"><i class="fas fa-code"></i> 技术栈: PCL, PointNet++, ResNet</p>
+                        <ul>
+                            <li>针对倾斜、弯曲票据，设计并实现了基于三维点云的版面还原方案。</li>
+                            <li>结合深度学习模型进行点云语义分割，精准还原票据结构，有效替代人工流程。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- 专业技能 -->
-            <section class="resume-section fade-in-up">
-                <h2><i class="fas fa-cogs"></i> 专业技能</h2>
-                <ul>
-                    <li><strong>深度学习框架:</strong> 熟练掌握 PyTorch，能灵活搭建与实现各类算法。</li>
-                    <li><strong>机器学习:</strong> 熟悉常见机器学习模型（如分类、回归、聚类等）的原理与应用。</li>
-                    <li><strong>编程与工具:</strong> 熟练掌握 Python、C++，及 NumPy, Pandas, OpenCV, Matplotlib 等数据科学库。</li>
-                </ul>
-            </section>
-
-            <!-- 荣誉奖项 -->
-            <section class="resume-section fade-in-up">
-                <h2><i class="fas fa-trophy"></i> 荣誉奖项</h2>
-                <ul>
-                    <li><strong>国家级:</strong> 研究生数学建模竞赛国家二等奖、全国大学生数学竞赛一等奖。</li>
-                    <li><strong>国际/区域级:</strong> 美国大学生数学建模竞赛 H/M 奖、Mathor Cup 数学建模挑战赛一等奖等。</li>
-                    <li><strong>语言能力:</strong> 大学英语四/六级 (CET-4/6)，具备良好的专业文献阅读和理解能力。</li>
-                </ul>
-            </section>
-
-            <!-- 个人博客 -->
-            <section class="resume-section fade-in-up personal-links">
-                <h2><i class="fas fa-link"></i> 个人链接</h2>
-                <p><i class="fab fa-github" style="margin-right: 8px;"></i> <strong>GitHub:</strong> <a href="https://github.com/jiangcailin" target="_blank">github.com/jiangcailin</a></p>
-                <p><i class="fab fa-cuttlefish" style="margin-right: 8px;"></i> <strong>CSDN:</strong> <a href="https://blog.csdn.net/qq_19981124?spm=1000.2115.3001.5343" target="_blank">blog.csdn.net/qq_19981124</a></p>
-            </section>
-        </main>
-    </div>
+        <!-- Section: Skills & Awards -->
+        <section id="skills" class="resume-section animate-on-scroll">
+            <h2 class="section-title">专业技能与奖项</h2>
+            <span class="section-title-underline"></span>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>核心技能</h3>
+                         <ul>
+                            <li><strong>深度学习:</strong> 熟练掌握 PyTorch，能灵活搭建与实现算法。</li>
+                            <li><strong>编程语言:</strong> 熟练掌握 Python, C++ 及相关数据科学库 (NumPy, Pandas, OpenCV)。</li>
+                            <li><strong>计算机基础:</strong> 掌握数据结构、操作系统、计算机网络等核心知识。</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>荣誉奖项</h3>
+                         <ul>
+                             <li><strong>国家级:</strong> 研究生数模国赛二等奖、全国大学生数学竞赛一等奖。</li>
+                             <li><strong>国际/区域级:</strong> 美赛 H/M 奖、Mathor Cup 一等奖等。</li>
+                             <li><strong>语言能力:</strong> 大学英语六级 (CET-6)，具备出色的专业文献阅读能力。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </div>
 
 <!-- 
-  JavaScript: 负责实现滚动时的入场动画。
+  JavaScript: 负责实现滚动动画和导航平滑滚动。
 -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // 确保在MkDocs的AJAX加载后也能正确执行
+    // --- Scroll Animation Logic ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Animate only once
             }
         });
     }, {
-        threshold: 0.1 // 元素进入视口 10% 时触发
+        threshold: 0.1
     });
 
-    // 监听 MkDocs 页面加载完成事件
-    const content = document.querySelector(".md-content");
-    if (content) {
-        const sections = content.querySelectorAll('.fade-in-up');
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+    elementsToAnimate.forEach(el => observer.observe(el));
 
-        // 如果使用了 instant loading, 页面切换时需要重新观察
-        const mutationObserver = new MutationObserver(() => {
-            const newSections = content.querySelectorAll('.fade-in-up');
-            newSections.forEach(section => {
-                observer.observe(section);
-            });
-        });
+    // --- Smooth Scrolling for Nav Links ---
+    const navLinks = document.querySelectorAll('.resume-header nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Adjust for sticky header height
+                const headerOffset = 80; 
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        mutationObserver.observe(content, { childList: true });
-    }
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 });
 </script>
 <!--
