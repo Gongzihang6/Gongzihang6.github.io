@@ -1785,7 +1785,7 @@
         --primary-color: #4a6cfd; /* 主题蓝色 */
         --title-color: #1f2937;    /* 标题深色 */
         --text-color: #6b7280;     /* 普通文本浅灰色 */
-        --body-bg-color: #f9fafb;  /* 页面背景色 */
+        --body-bg-color:rgba(190, 97, 148, 0.99);  /* 页面背景色 */
         --card-bg-color: #ffffff;  /* 卡片背景白色 */
         --border-color: #e5e7eb;   /* 边框颜色 */
     }
@@ -1842,17 +1842,78 @@
         z-index: 1;
     }
 
+    /* 1. 调整时间线本身的样式 (加粗 + 渐变) */
     .qualification__line {
         display: block;
-        width: 2px;
+        width: 4px; /* <--- 在这里调整粗细 (例如从 2px 增加到 4px) */
         height: 100%;
-        background-color: var(--border-color);
+
+        /* 使用线性渐变替换单色背景 */
+        background: linear-gradient(
+            to top, /* 渐变方向：从下到上 */
+          #a5b4fc, /* 起始颜色 (底部/过去)，一个柔和的淡紫色 */
+            var(--primary-color) /* 结束颜色 (顶部/未来)，使用您的主题蓝色 */
+        );
+
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
         z-index: 0;
     }
+    /* 2. 【新增】为最顶部的时间线添加一个箭头 */
+    /* 我们选择第一个时间点 (未来的那个)，并为其线的容器添加一个伪元素 */
+    .qualification__container .qualification__data:first-child > div:nth-child(2)::before {
+        content: '';
+        position: absolute;
+
+        /* 定位到圆点的正上方 */
+        top: -10px; /* 向上偏移，数值越大箭头越高 */
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* --- CSS 三角形/箭头核心技巧 --- */
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;  /* 左边框透明 */
+        border-right: 8px solid transparent; /* 右边框透明 */
+        border-bottom: 12px solid var(--primary-color); /* 
+            底边框有颜色，形成一个向上的箭头。
+            这里的颜色就是箭头的颜色。
+        */
+    }
+
+    /* 3. (可选但推荐) 让圆点与加粗的线更协调 */
+    .qualification__rounder {
+        display: inline-block;
+        width: 22px; /* 轻微增大 */
+        height: 22px;/* 轻微增大 */
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        /* 边框也加粗，看起来更和谐 */
+        border: 4px solid var(--body-bg-color); 
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 这是一个V形空心箭头 */
+    .selector::before {
+        content: '';
+        position: absolute;
+        width: 10px;  /* 边框宽度 */
+        height: 10px; /* 边框高度 */
+        border: 3px solid var(--primary-color); /* 边框粗细和颜色 */
+        border-bottom: none; /* 移除两条边框形成V形 */
+        border-left: none;
+        transform: translateX(-50%) rotate(45deg); /* 旋转45度 */
+        top: -10px;
+        left: 50%;
+    }
+
+
+
+
+
 
     /* --- 内容卡片样式 --- */
     .qualification__content {
