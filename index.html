@@ -1748,50 +1748,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      关于我
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      个人简介
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      人生态度
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      联系我
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1811,17 +1767,149 @@
   
 
 
-<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-
 <h1 id="_1"><span id="jinrishici-sentence">今日诗词</span><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">关于我<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_2">关于我<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<!-- 添加到 <head> 或 <body> 底部 -->
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
 <div class="flip-container">
 <div class="image-container">
-    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg" alt="Back Image">
-    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/3f58b6cea54d446e22107fde739e843.jpg" alt="Front Image">
+    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg" alt="Front Image">
+    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/3f58b6cea54d446e22107fde739e843.jpg" alt="Back Image">
 </div>
 </div>
 <style>
+/* --- 变量定义，方便修改主题 --- */
+    :root {
+        --primary-color: #4a6cfd; /* 主题蓝色 */
+        --title-color: #1f2937;    /* 标题深色 */
+        --text-color: #6b7280;     /* 普通文本浅灰色 */
+        --body-bg-color: #f9fafb;  /* 页面背景色 */
+        --card-bg-color: #ffffff;  /* 卡片背景白色 */
+        --border-color: #e5e7eb;   /* 边框颜色 */
+    }
+
+    /* --- 区域和标题样式 --- */
+    .qualification-section {
+        padding: 4rem 1rem;
+        background-color: var(--body-bg-color);
+        text-align: center; /* 让标题居中 */
+    }
+
+    .section__title {
+        font-size: 2.25rem; /* 36px */
+        font-weight: 700;
+        color: var(--title-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .section__subtitle-underline {
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary-color);
+        margin: 0 auto 3.5rem auto; /* 居中并添加底部间距 */
+        border-radius: 2px;
+    }
+
+    /* --- 时间线容器和网格布局 --- */
+    .qualification__container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .qualification__data {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr; /* 三列布局：左侧内容 | 中间线 | 右侧内容 */
+        column-gap: 1.5rem; /* 列间距 */
+        align-items: start; /* 顶部对齐 */
+    }
+
+    /* --- 时间线的圆点和竖线 --- */
+    .qualification__data > div:nth-child(2) {
+        position: relative; /* 作为圆点和线的定位父级 */
+    }
+
+    .qualification__rounder {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        border: 3px solid var(--body-bg-color); /* 用背景色做边框，产生镂空感 */
+        position: relative;
+        z-index: 1;
+    }
+
+    .qualification__line {
+        display: block;
+        width: 2px;
+        height: 100%;
+        background-color: var(--border-color);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+    }
+
+    /* --- 内容卡片样式 --- */
+    .qualification__content {
+        background-color: var(--card-bg-color);
+        border: 1px solid var(--border-color);
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem; /* 12px */
+        text-align: left;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .qualification__title {
+        font-size: 1.125rem; /* 18px */
+        font-weight: 600;
+        color: var(--title-color);
+        margin: 0 0 0.25rem 0;
+    }
+
+    .qualification__subtitle {
+        display: inline-block;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+    }
+
+    .qualification__calendar {
+        display: flex;
+        align-items: center;
+        font-size: 0.875rem; /* 14px */
+        color: var(--text-color);
+    }
+
+    .qualification__calendar iconify-icon {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+    }
+
+    /* --- 响应式设计：在小屏幕上变成单列 --- */
+    @media screen and (max-width: 768px) {
+        .qualification__data {
+            grid-template-columns: auto 1fr; /* 两列布局：线 | 内容 */
+            column-gap: 1rem;
+        }
+
+        /* 在小屏幕上，所有内容都在右侧，所以隐藏掉用于左侧占位的空div */
+        .qualification__data > div:first-child:empty {
+            display: none;
+        }
+    }
+
+
+
+
+
+
+
     .flip-container {
     position: relative;
     width: 280px;
@@ -1880,7 +1968,7 @@
 
 <hr />
 <center>
-<a href="../个人简历.pdf" target="_blank" class="md-button">下载简历</a>
+<a href="docs/about/算法方向.pdf" target="_blank" class="md-button">下载简历</a>
 </center>
 
 <h2 id="_3">个人简介<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -1917,64 +2005,87 @@
         来时路
     </div>
 </div>
-<div class="qualification__data">
-    <div>
-        <h3 class="qualification__title">汉川一中</h3>
-        <span class="qualification__subtitle">平凡普通的三年</span>
-        <div class="qualification__calendar">
-            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-            <span>2017 - 2020</span>
+<!-- 放置在您页面的主体部分 -->
+<section class="qualification-section">
+    <!-- 1. 区域标题 -->
+    <h2 class="section__title">教育背景</h2>
+    <span class="section__subtitle-underline"></span>
+
+    <!-- 2. 时间线容器 -->
+    <div class="qualification__container">
+
+        <!-- 未来规划 (最顶端) -->
+        <div class="qualification__data">
+            <!-- 这是右侧的卡片 -->
+            <div></div> 
+            <div>
+                <span class="qualification__rounder"></span>
+                <span class="qualification__line"></span>
+            </div>
+            <div class="qualification__content">
+                <h3 class="qualification__title">未完待续</h3>
+                <span class="qualification__subtitle">于道各努力，千里自同风</span>
+                <div class="qualification__calendar">
+                    <iconify-icon icon="tabler:calendar-time"></iconify-icon>
+                    <span>未来</span>
+                </div>
+            </div>
         </div>
-    </div>
-    <div>
-        <span class="qualification__rounder"></span>
-        <span class="qualification__line"></span>
-    </div>
-</div>
-<div class="qualification__data">
-    <div></div>
-    <div>
-        <span class="qualification__rounder"></span>
-        <span class="qualification__line"></span>
-    </div>
-    <div>
-        <h3 class="qualification__title">HZAU</h3>
-        <span class="qualification__subtitle">设施农业科学与工程学士</span>
-        <div class="qualification__calendar">
-            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-            <span>2020 - 2024</span>
+
+        <!-- 硕士 (中间) -->
+        <div class="qualification__data">
+            <!-- 这是左侧的卡片 -->
+            <div class="qualification__content">
+                <h3 class="qualification__title">HZAU (华中农业大学)</h3>
+                <span class="qualification__subtitle">数学硕士</span>
+                <div class="qualification__calendar">
+                    <iconify-icon icon="tabler:calendar"></iconify-icon>
+                    <span>2024 - 2027 (规划)</span>
+                </div>
+            </div>
+            <div>
+                <span class="qualification__rounder"></span>
+                <span class="qualification__line"></span>
+            </div>
         </div>
-    </div>
-</div>
-<div class="qualification__data">
-    <div>
-        <h3 class="qualification__title">HZAU</h3>
-        <span class="qualification__subtitle">数学硕士</span>
-        <div class="qualification__calendar">
-            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-            <span>2024 - 2027</span>
+
+        <!-- 学士 (中间) -->
+        <div class="qualification__data">
+            <!-- 这是右侧的卡片 -->
+            <div></div>
+            <div>
+                <span class="qualification__rounder"></span>
+                <span class="qualification__line"></span>
+            </div>
+            <div class="qualification__content">
+                <h3 class="qualification__title">HZAU (华中农业大学)</h3>
+                <span class="qualification__subtitle">设施农业科学与工程学士</span>
+                <div class="qualification__calendar">
+                    <iconify-icon icon="tabler:calendar"></iconify-icon>
+                    <span>2020 - 2024</span>
+                </div>
+            </div>
         </div>
-    </div>
-    <div>
-        <span class="qualification__rounder"></span>
-        <span class="qualification__line"></span>
-    </div>
-</div>
-<div class="qualification__data">
-    <div></div>
-    <div>
-        <span class="qualification__rounder"></span>
-        <span class="qualification__line"></span>
-    </div>
-    <div>
-        <h3 class="qualification__title">未完待续</h3>
-        <span class="qualification__subtitle">于道各努力，千里自同风</span>
-        <div class="qualification__calendar">
-            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-            <span>Before - After</span>
+
+        <!-- 高中 (最底端) -->
+        <div class="qualification__data">
+            <!-- 这是左侧的卡片 -->
+            <div class="qualification__content">
+                <h3 class="qualification__title">汉川一中</h3>
+                <span class="qualification__subtitle">平凡普通的三年</span>
+                <div class="qualification__calendar">
+                    <iconify-icon icon="tabler:calendar"></iconify-icon>
+                    <span>2017 - 2020</span>
+                </div>
+            </div>
+            <div>
+                <span class="qualification__rounder"></span>
+                <!-- 最底部的项目不需要向下的线 -->
+            </div>
         </div>
+
     </div>
-</div>
+</section>
 
 <h2 id="_4">人生态度<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p style="text-align: center; font-size: 25px; margin: 0px;"><strong>𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩</strong></p>
