@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 全局样式与变量 --- */
+        :root {
+            --primary-color: #4361ee; /* 一个现代、活力的蓝色 */
+            --text-dark: #0f172a;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+        
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- 悬浮导航栏 --- */
+        .resume-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+        .header-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .header-nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-medium);
+            text-decoration: none;
+            margin-left: 2rem;
+            padding-bottom: 22px; /* 为了下划线 */
+            position: relative;
+            transition: color 0.3s;
+        }
+        .header-nav a:hover, .header-nav a.active {
+            color: var(--primary-color);
+        }
+        .header-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* --- 主内容与分区 --- */
+        main {
+            padding-top: 2rem;
+        }
+        .resume-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .title-underline {
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 0 auto 3.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* --- 个人简介 (Hero) --- */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        .hero-avatar img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .hero-content h1 {
+            font-size: 2.25rem;
+            margin: 0;
+        }
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin: 0.5rem 0 1.5rem 0;
+        }
+        .hero-content .description {
+            color: var(--text-light);
+            font-style: italic;
+            border-left: 3px solid var(--border-color);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 1rem;
+        }
+        .stat-card {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+        
+        /* --- 时间线样式 (之前已优化) --- */
+        .timeline-container { position: relative; padding-left: 2rem; }
+        .timeline-container::before { content: ''; position: absolute; left: 9px; top: 5px; bottom: 5px; width: 2px; background: var(--border-color); }
+        .timeline-item { position: relative; margin-bottom: 2rem; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: 5px; width: 20px; height: 20px; border-radius: 50%; background: var(--bg-white); border: 2px solid var(--primary-color); }
+        .timeline-card { background: var(--bg-white); border: 1px solid var(--border-color); padding: 1.25rem 1.5rem; border-radius: 12px; }
+        .timeline-card h3 { font-size: 1.1rem; margin: 0; }
+        .timeline-card .subtitle { color: var(--text-medium); font-size: 0.9rem; margin: 0.25rem 0 0.75rem 0; }
+        .timeline-card .date { color: var(--text-light); font-size: 0.85rem; display: flex; align-items: center; }
+        .timeline-card .date i { margin-right: 0.5rem; }
+
+        /* --- 核心技能样式 --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+        .skill-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            background-color: #eef2ff;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        /* --- 动效 --- */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 响应式 --- */
+        @media (max-width: 768px) {
+            .header-nav { display: none; } /* 简化，移动端隐藏文字导航 */
+            .hero-section { flex-direction: column; text-align: center; gap: 2.5rem; }
+            .hero-stats { justify-content: center; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="resume-header">
+        <div class="header-container">
+            <div class="header-logo">个人简介</div>
+            <nav class="header-nav">
+                <a href="#about" class="active">关于我</a>
+                <a href="#education">教育背景</a>
+                <a href="#skills">核心技能</a>
+                <a href="#projects">代表项目</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section: About Me -->
+        <section id="about" class="resume-section hero-section fade-in-up">
+            <div class="hero-avatar">
+                <!-- 请替换成您的头像链接 -->
+                <img src="https://i.pravatar.cc/300?u=jiangcailin" alt="蒋才林 头像">
+            </div>
+            <div class="hero-content">
+                <!-- 填写您的姓名 -->
+                <h1>蒋才林</h1>
+                <!-- 填写您的标签 -->
+                <p class="tagline">计算机视觉研究者 · 算法工程师 · 开源爱好者</p>
+                <!-- 填写您的简介 -->
+                <p class="description">
+                    "观史知今，当思进退，读书明志可识春秋"
+                    <br>
+                    对技术充满热情，坚信技术的温度蕴藏在解决实际问题的细节里。
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-card"><div class="stat-number">2+</div><div class="stat-label">核心项目</div></div>
+                    <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">建模奖项</div></div>
+                    <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label">核心技术栈</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Education -->
+        <section id="education" class="resume-section fade-in-up">
+            <h2 class="section-title">教育背景</h2>
+            <span class="title-underline"></span>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>华中农业大学</h3>
+                        <p class="subtitle">数学硕士 (规划)</p>
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2024 - 2027</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>华中农业大学</h3>
+                        <p class="subtitle">设施农业科学与工程学士</p>
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2020 - 2024</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <h3>汉川一中</h3>
+                        <p class="subtitle">平凡普通的三年</p>
+                        <div class="date"><i class="fas fa-calendar-alt"></i> 2017 - 2020</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Skills -->
+        <section id="skills" class="resume-section fade-in-up">
+            <h2 class="section-title">核心技能</h2>
+            <span class="title-underline"></span>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>深度学习</h3>
+                    <p>熟练掌握 PyTorch，能灵活搭建与实现各类CV算法，对模型优化有深入理解。</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>编程与算法</h3>
+                    <p>熟练掌握 Python、C++，及 NumPy, Pandas, OpenCV 等库，数据结构与算法基础扎实。</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>问题解决</h3>
+                    <p>具备优秀的逻辑思维和分析能力，擅长从复杂的实际问题中抽象建模，并找到创新解决方案。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Projects (Placeholder) -->
+        <section id="projects" class="resume-section fade-in-up">
+            <h2 class="section-title">代表项目</h2>
+            <span class="title-underline"></span>
+            <!-- 您可以在这里仿照 Education 部分的 timeline 样式来添加您的项目 -->
+            <p style="text-align:center; color: var(--text-light);">项目经历正在整理中，敬请期待...</p>
+        </section>
+        
+        <!-- (可选) 如果你还想显示 简历.md 文件里写的内容，可以加上下面这行 -->
+        <div class="resume-section">
+            {{ page.content }}
+        </div>
+
+    </main>
+
+    <script>
+        // --- 滚动动画 Intersection Observer ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // 可选: 动画只播放一次
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- 导航栏高亮与平滑滚动 ---
+        const sections = document.querySelectorAll('.resume-section');
+        const navLinks = document.querySelectorAll('.header-nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 70) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        navLinks.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
