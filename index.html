@@ -1842,115 +1842,96 @@
         z-index: 1;
     }
 
-    /* 1. 调整时间线本身的样式 (加粗 + 渐变) */
-    .qualification__line {
-        display: block;
-        width: 4px; /* <--- 在这里调整粗细 (例如从 2px 增加到 4px) */
-        height: 100%;
-
-        /* 使用线性渐变替换单色背景 */
-        background: linear-gradient(
-            to top, /* 渐变方向：从下到上 */
-          #a5b4fc, /* 起始颜色 (底部/过去)，一个柔和的淡紫色 */
-            var(--primary-color) /* 结束颜色 (顶部/未来)，使用您的主题蓝色 */
-        );
-
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 0;
+    /* 1. 时间线容器：这是关键！我们让它成为定位上下文 */
+    .qualification__container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative; /* 关键：为伪元素提供定位锚点 */
+        padding-top: 2rem;  /* 为顶部的箭头留出空间 */
     }
-    /* 2. 【新增】为最顶部的时间线添加一个箭头 */
-    /* 我们选择第一个时间点 (未来的那个)，并为其线的容器添加一个伪元素 */
-    .qualification__container .qualification__data:first-child > div:nth-child(2)::before {
+
+    /* 2. 生成单根、连续、贯穿全场的垂直线 */
+    .qualification__container::before {
         content: '';
         position: absolute;
-
-        /* 定位到圆点的正上方 */
-        top: -10px; /* 向上偏移，数值越大箭头越高 */
         left: 50%;
+        top: 0;
+        bottom: 0;
         transform: translateX(-50%);
+        width: 4px; /* <--- 在这里调整线的粗细 */
+        z-index: 0; /* 确保线在最底层 */
 
-        /* --- CSS 三角形/箭头核心技巧 --- */
-        width: 0;
-        height: 0;
-        border-left: 8px solid transparent;  /* 左边框透明 */
-        border-right: 8px solid transparent; /* 右边框透明 */
-        border-bottom: 12px solid var(--primary-color); /* 
-            底边框有颜色，形成一个向上的箭头。
-            这里的颜色就是箭头的颜色。
-        */
+    /* 从下到上的优雅渐变 */
+    background: linear-gradient(
+            to top,
+            var(--gradient-start-color),
+            var(--primary-color)
+        );
     }
 
-    /* 3. (可选但推荐) 让圆点与加粗的线更协调 */
-    .qualification__rounder {
-        display: inline-block;
-        width: 22px; /* 轻微增大 */
-        height: 22px;/* 轻微增大 */
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        /* 边框也加粗，看起来更和谐 */
-        border: 4px solid var(--body-bg-color); 
-        position: relative;
+    /* 3. 网格布局和内容卡片 (基本不变) */
+    .qualification__data {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        column-gap: 1.5rem;
+        position: relative; /* 确保内容在最上层 */
         z-index: 1;
     }
-
-    /* 这是一个V形空心箭头 */
-    .selector::before {
-        content: '';
-        position: absolute;
-        width: 10px;  /* 边框宽度 */
-        height: 10px; /* 边框高度 */
-        border: 3px solid var(--primary-color); /* 边框粗细和颜色 */
-        border-bottom: none; /* 移除两条边框形成V形 */
-        border-left: none;
-        transform: translateX(-50%) rotate(45deg); /* 旋转45度 */
-        top: -10px;
-        left: 50%;
-    }
-
-
-
-
-
-
-    /* --- 内容卡片样式 --- */
     .qualification__content {
         background-color: var(--card-bg-color);
         border: 1px solid var(--border-color);
         padding: 1rem 1.5rem;
-        border-radius: 0.75rem; /* 12px */
+        border-radius: 0.75rem;
         text-align: left;
         margin-bottom: 2rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    }
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
-    .qualification__title {
-        font-size: 1.125rem; /* 18px */
-        font-weight: 600;
-        color: var(--title-color);
-        margin: 0 0 0.25rem 0;
-    }
-
-    .qualification__subtitle {
-        display: inline-block;
-        font-size: 0.9rem;
-        color: var(--text-color);
-        margin-bottom: 1rem;
-    }
-
-    .qualification__calendar {
         display: flex;
         align-items: center;
-        font-size: 0.875rem; /* 14px */
-        color: var(--text-color);
+        justify-content: flex-start; /* 或 center，根据需求调整水平对齐 */
+
     }
 
-    .qualification__calendar iconify-icon {
-        font-size: 1.2rem;
-        margin-right: 0.5rem;
+    /* 4. 【重要】隐藏掉旧的、分散的线 */
+    .qualification__line {
+        display: none;
     }
+
+    /* 5. 时间点圆圈样式 */
+    .qualification__rounder {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: var(--primary-color);
+        border: 4px solid var(--body-bg-color); /* 用背景色做边框，产生镂空感 */
+        border-radius: 50%;
+        position: relative; /* 确保它在 z-index 堆叠中被考虑 */
+    }
+
+    /* 6. 【新增】手绘 SVG 箭头 */
+    .qualification__container .qualification__data:first-child > div:nth-child(2)::before {
+        content: '';
+        position: absolute;
+        top: -16px; /* <--- 调整箭头距离顶部圆圈的距离 */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16px;  /* <--- 调整箭头宽度 */
+        height: 16px; /* <--- 调整箭头高度 */
+
+        /* 嵌入URL编码后的SVG作为背景图片 */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234a6cfd' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41z'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /* --- (可选) 其他内容样式，保持不变 --- */
+    .qualification__title { font-size: 1.125rem; font-weight: 600; color: var(--title-color); margin: 0 0 0.25rem 0; }
+    .qualification__subtitle { display: inline-block; font-size: 0.9rem; color: var(--text-color); margin-bottom: 1rem; }
+    .qualification__calendar { display: flex; align-items: center; font-size: 0.875rem; color: var(--text-color); }
+    .qualification__calendar iconify-icon { font-size: 1.2rem; margin-right: 0.5rem; }
+
+
 
     /* --- 响应式设计：在小屏幕上变成单列 --- */
     @media screen and (max-width: 768px) {
