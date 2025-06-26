@@ -60,6 +60,8 @@
     
       <link rel="stylesheet" href="stylesheets/customize.css">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -1745,8 +1747,41 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      个人简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      人生态度
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      联系我
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1767,11 +1802,18 @@
   
 
 
-<h1 id="_1"><span id="jinrishici-sentence">今日诗词</span><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h1 id="_2">关于我<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-<!-- 添加到 <head> 或 <body> 底部 -->
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <h1>关于我</h1>
+
+<!-- ## 关于我 -->
+<!-- # <span id="jinrishici-sentence">今日诗词</span> -->
+
+<!-- 新的、统一的今日诗词 HTML 结构 -->
+<div class="poem-card">
+    <div class="poem-seal"></div>
+    <div id="jinrishici-container">
+        <!-- 今日诗词 SDK 会自动将内容填入这里 -->
+    </div>
+</div>
 
 <div class="flip-container">
 <div class="image-container">
@@ -1780,13 +1822,16 @@
 </div>
 </div>
 <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
 /* --- 变量定义，方便修改主题 --- */
     :root {
-        --primary-color: #4a6cfd; /* 主题蓝色 */
-        --title-color: #1f2937;    /* 标题深色 */
-        --text-color: #6b7280;     /* 普通文本浅灰色 */
+        --primary-color: #4a6cfd;      /* 主题蓝色 */
+        --gradient-start-color: #a5b4fc; /* 渐变起始色 (底部) */
+        --title-color: #1f2937;
+        --text-color: #6b7280;
         --body-bg-color: #f9fafb;  /* 页面背景色 */
-        --card-bg-color: #a6e3e9;  /* 卡片背景白色 */
+        --card-bg-color: #ffffff;  /* 卡片背景白色 */
         --border-color: #e5e7eb;   /* 边框颜色 */
     }
 
@@ -1794,11 +1839,11 @@
     .qualification-section {
         padding: 4rem 1rem;
         background-color: var(--body-bg-color);
-        text-align: center; /* 让标题居中 */
+        text-align: center;
     }
 
     .section__title {
-        font-size: 2.25rem; /* 36px */
+        font-size: 2.25rem;
         font-weight: 700;
         color: var(--title-color);
         margin-bottom: 0.5rem;
@@ -1809,48 +1854,19 @@
         width: 60px;
         height: 4px;
         background-color: var(--primary-color);
-        margin: 0 auto 3.5rem auto; /* 居中并添加底部间距 */
+        margin: 0 auto 3.5rem auto;
         border-radius: 2px;
     }
 
-    /* --- 时间线容器和网格布局 --- */
+    /* --- 时间线容器：这是关键！--- */
     .qualification__container {
         max-width: 800px;
         margin: 0 auto;
-    }
-
-    .qualification__data {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr; /* 三列布局：左侧内容 | 中间线 | 右侧内容 */
-        column-gap: 1.5rem; /* 列间距 */
-        align-items: start; /* 顶部对齐 */
-    }
-
-    /* --- 时间线的圆点和竖线 --- */
-    .qualification__data > div:nth-child(2) {
-        position: relative; /* 作为圆点和线的定位父级 */
-    }
-
-    .qualification__rounder {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        border: 3px solid var(--body-bg-color); /* 用背景色做边框，产生镂空感 */
-        position: relative;
-        z-index: 1;
-    }
-
-    /* 1. 时间线容器：这是关键！我们让它成为定位上下文 */
-    .qualification__container {
-        max-width: 800px;
-        margin: 0 auto;
-        position: relative; /* 关键：为伪元素提供定位锚点 */
+        position: relative; /* 【最关键的属性】为伪元素提供定位锚点 */
         padding-top: 2rem;  /* 为顶部的箭头留出空间 */
     }
 
-    /* 2. 生成单根、连续、贯穿全场的垂直线 */
+    /* --- 生成单根、连续、贯穿全场的垂直线 --- */
     .qualification__container::before {
         content: '';
         position: absolute;
@@ -1858,92 +1874,84 @@
         top: 0;
         bottom: 0;
         transform: translateX(-50%);
-        width: 4px; /* <--- 在这里调整线的粗细 */
+        width: 4px; /* 线的粗细 */
         z-index: 0; /* 确保线在最底层 */
-
-    /* 从下到上的优雅渐变 */
-    background: linear-gradient(
-            to top,
-            var(--gradient-start-color),
-            var(--primary-color)
-        );
+        background: linear-gradient(to top, var(--gradient-start-color), var(--primary-color));
     }
 
-    /* 3. 网格布局和内容卡片 (基本不变) */
+    /* --- 网格布局 --- */
     .qualification__data {
         display: grid;
         grid-template-columns: 1fr auto 1fr;
         column-gap: 1.5rem;
-        position: relative; /* 确保内容在最上层 */
+        position: relative; /* 确保内容在 z-index 堆叠中 */
         z-index: 1;
     }
+
+    /* --- 内容卡片样式（包含居中）--- */
     .qualification__content {
         background-color: var(--card-bg-color);
         border: 1px solid var(--border-color);
-        padding: 1rem 1.5rem;
+        padding: 1.5rem;
         border-radius: 0.75rem;
-        text-align: left;
         margin-bottom: 2rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
+        /* 【新增】Flexbox 居中样式 */
+        min-height: 150px; /* 设定最小高度以实现垂直居中 */
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        justify-content: flex-start; /* 或 center，根据需求调整水平对齐 */
-
     }
 
-    /* 4. 【重要】隐藏掉旧的、分散的线 */
+    .qualification__content h3, 
+    .qualification__content span,
+    .qualification__content div {
+      text-align: center; /* 确保多行文本也能居中 */
+    }
+
+
+    /* --- 【重要】隐藏掉旧的、分散的线 --- */
     .qualification__line {
         display: none;
     }
 
-    /* 5. 时间点圆圈样式 */
+    /* --- 时间点圆圈样式 --- */
     .qualification__rounder {
         display: inline-block;
         width: 20px;
         height: 20px;
         background-color: var(--primary-color);
-        border: 4px solid var(--body-bg-color); /* 用背景色做边框，产生镂空感 */
+        border: 4px solid var(--body-bg-color);
         border-radius: 50%;
-        position: relative; /* 确保它在 z-index 堆叠中被考虑 */
     }
 
-    /* 6. 【新增】手绘 SVG 箭头 */
+    /* --- 手绘 SVG 箭头 --- */
     .qualification__container .qualification__data:first-child > div:nth-child(2)::before {
         content: '';
         position: absolute;
-        top: -16px; /* <--- 调整箭头距离顶部圆圈的距离 */
+        top: -16px; 
         left: 50%;
         transform: translateX(-50%);
-        width: 16px;  /* <--- 调整箭头宽度 */
-        height: 16px; /* <--- 调整箭头高度 */
-
-        /* 嵌入URL编码后的SVG作为背景图片 */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234a6cfd' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41z'/%3E%3C/svg%3E");
+        width: 16px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234a6cfd' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41z'/%3E%3C/svg%3E");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
     }
 
-    /* --- (可选) 其他内容样式，保持不变 --- */
+    /* --- 其他文本和图标样式 --- */
     .qualification__title { font-size: 1.125rem; font-weight: 600; color: var(--title-color); margin: 0 0 0.25rem 0; }
     .qualification__subtitle { display: inline-block; font-size: 0.9rem; color: var(--text-color); margin-bottom: 1rem; }
     .qualification__calendar { display: flex; align-items: center; font-size: 0.875rem; color: var(--text-color); }
     .qualification__calendar iconify-icon { font-size: 1.2rem; margin-right: 0.5rem; }
 
-
-
-    /* --- 响应式设计：在小屏幕上变成单列 --- */
+    /* --- 响应式设计 --- */
     @media screen and (max-width: 768px) {
-        .qualification__data {
-            grid-template-columns: auto 1fr; /* 两列布局：线 | 内容 */
-            column-gap: 1rem;
-        }
-
-        /* 在小屏幕上，所有内容都在右侧，所以隐藏掉用于左侧占位的空div */
-        .qualification__data > div:first-child:empty {
-            display: none;
-        }
+        .qualification__data { grid-template-columns: auto 1fr; column-gap: 1rem; }
+        .qualification__data > div:first-child:empty { display: none; }
     }
 
 
@@ -1953,15 +1961,15 @@
 
 
     .flip-container {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    margin: 10px auto;
-    display: flex;
-    align-items: flex-start;
-    /* 对齐顶部 */
-    justify-content: flex-end;
-    /* 将文字放置右上角 */
+        position: relative;
+        width: 280px;
+        height: 280px;
+        margin: 10px auto;
+        display: flex;
+        align-items: flex-start;
+        /* 对齐顶部 */
+        justify-content: flex-end;
+        /* 将文字放置右上角 */
     }
     .image-container {
         position: relative;
@@ -2013,10 +2021,129 @@
         margin-right: 0.5rem;
         vertical-align: middle;
     }
+
+
+
+
+
+
+    /* --- 全新的“山水意境卡片”样式 --- */
+
+    /* 1. 【核心】修改卡片主容器，使其成为一个 Flex 容器 */
+    .poem-card {
+        max-width: 700px;
+        margin: 2.5rem auto;
+        padding: 2rem; /* 可以适当调整内边距 */
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        background-color: #f9fafb;
+        background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%B1%B1%E6%B0%B4%E6%84%8F%E5%A2%83%E5%9B%BE.jpg');
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: luminosity;
+
+        /* --- 新增 Flexbox 属性以实现完美居中 --- */
+        display: flex;
+        align-items: center;    /* 垂直居中 */
+        justify-content: center; /* 水平居中 */
+        min-height: 200px;       /* 确保卡片有足够的高度来居中，可自行调整 */
+    }
+
+    /* 悬停效果保持不变 */
+    .poem-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* 2. 简化诗词容器的样式 */
+    #jinrishici-container {
+        font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
+        font-size: 2.0rem;
+        font-weight: normal;
+        color: #374151;
+        line-height: 2.2;
+        text-align: center;
+
+        /* 以下属性不再需要，可以删除或注释掉 */
+        /* display: inline-block; */
+        /* position: relative; */
+        /* padding: 0; */
+        /* margin: 0 1rem; */
+
+        transition: all 0.3s ease;
+    }
+
+    /* 悬停效果保持不变 */
+    .poem-card:hover #jinrishici-container {
+        transform: scale(1.03); /* 可以换成轻微放大的效果 */
+        color: #111;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+
+
+
+    /* 6. 装饰性元素：红色印章 */
+    .poem-seal {
+        position: absolute;
+
+        /* 关键修改：将 top 改为 bottom，实现右下角定位 */
+        bottom: 1.5rem; /* 从顶部移动到底部 */
+        right: 1.5rem;  /* 右侧位置保持不变 */
+
+        /* 其他样式保持不变... */
+        width: 40px;
+        height: 40px;
+        background-color: #c93c3c;
+        border: 2px solid #a63232;
+        border-radius: 4px;
+        opacity: 0.85; /* 可以稍微调高一点不透明度 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease; /* 为悬停效果添加过渡 */
+    }
+
+    /* (可选) 为印章添加悬停效果 */
+    .poem-seal:hover {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    /* 2. 印章文字：统一字体 */
+    .poem-seal::after {
+        content: '雅'; /* 您可以改成任何想要的字 */
+
+        /* 关键修改：使用和诗词一样的字体 */
+        font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
+
+        /* 调整字号以适应书法字体，使其清晰可辨 */
+        font-size: 1.2rem; 
+
+        /* 保留并优化其他样式 */
+        font-weight: 600; /* 对于书法字体，600比700可能更自然 */
+        color: white; /* 确保文字是白色的 */
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 7. 响应式设计，在小屏幕上调整内边距 */
+    @media (max-width: 768px) {
+        .poem-card {
+            padding: 2rem 1.5rem;
+        }
+        #jinrishici-container {
+            font-size: 1.1rem;
+        }
+    }
+
+
 </style>
 
-<p><br>
-<br></p>
+<p><br></p>
 <center><font size=6rem color= #757575>
       永远保持谦逊  
 <br>
@@ -2028,7 +2155,7 @@
 <a href="docs/about/算法方向.pdf" target="_blank" class="md-button">下载简历</a>
 </center>
 
-<h2 id="_3">个人简介<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_1">个人简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <!-- <p style="text-align: center; font-size: 25px; margin: 0px;"><strong>𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩</strong></p> -->
 
 <div class="admonition pied-piper1">
@@ -2054,7 +2181,7 @@
 
 <hr />
 <h2 id="_3">我的履历<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
 <p><link rel="stylesheet" href="../sty/portfolio.css"></p>
 
 <!-- 增大字号 -->
@@ -2066,20 +2193,17 @@
 </div>
 <!-- 放置在您页面的主体部分 -->
 <section class="qualification-section">
-    <!-- 1. 区域标题 -->
     <h2 class="section__title">教育背景</h2>
     <span class="section__subtitle-underline"></span>
 
-    <!-- 2. 时间线容器 -->
     <div class="qualification__container">
 
         <!-- 未来规划 (最顶端) -->
         <div class="qualification__data">
-            <!-- 这是右侧的卡片 -->
             <div></div> 
             <div>
                 <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
+                <span class="qualification__line"></span> <!-- 这个会被CSS隐藏 -->
             </div>
             <div class="qualification__content">
                 <h3 class="qualification__title">未完待续</h3>
@@ -2093,7 +2217,6 @@
 
         <!-- 硕士 (中间) -->
         <div class="qualification__data">
-            <!-- 这是左侧的卡片 -->
             <div class="qualification__content">
                 <h3 class="qualification__title">HZAU (华中农业大学)</h3>
                 <span class="qualification__subtitle">数学硕士</span>
@@ -2104,17 +2227,16 @@
             </div>
             <div>
                 <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
+                <span class="qualification__line"></span> <!-- 这个会被CSS隐藏 -->
             </div>
         </div>
 
         <!-- 学士 (中间) -->
         <div class="qualification__data">
-            <!-- 这是右侧的卡片 -->
             <div></div>
             <div>
                 <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span>
+                <span class="qualification__line"></span> <!-- 这个会被CSS隐藏 -->
             </div>
             <div class="qualification__content">
                 <h3 class="qualification__title">HZAU (华中农业大学)</h3>
@@ -2128,7 +2250,6 @@
 
         <!-- 高中 (最底端) -->
         <div class="qualification__data">
-            <!-- 这是左侧的卡片 -->
             <div class="qualification__content">
                 <h3 class="qualification__title">汉川一中</h3>
                 <span class="qualification__subtitle">平凡普通的三年</span>
@@ -2139,14 +2260,13 @@
             </div>
             <div>
                 <span class="qualification__rounder"></span>
-                <!-- 最底部的项目不需要向下的线 -->
             </div>
         </div>
 
     </div>
 </section>
 
-<h2 id="_4">人生态度<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_2">人生态度<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p style="text-align: center; font-size: 25px; margin: 0px;"><strong>𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩</strong></p>
 
 <!-- <img class="img1" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/IMG_20250626_101151.webp"> -->
@@ -2238,7 +2358,7 @@
 </div>
 </div> -->
 
-<h2 id="_5">联系我<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_3">联系我<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">💬 微信</label><label for="__tabbed_1_2">📧 邮箱</label><label for="__tabbed_1_3">🌐 社交</label><label for="__tabbed_1_4">📍 其他</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2332,6 +2452,20 @@
 </div>
 </div>
 </div>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+<!-- 放在 .poem-card 的后面 -->
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+jinrishici.load(function(result) {
+    // 这个函数会在成功获取诗词后执行
+    var container = document.getElementById("jinrishici-container");
+    if (container) {
+        // 我们手动将诗词内容填充到指定的 div 中
+        container.innerHTML = result.data.content;
+    }
+});
+</script>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
