@@ -22,25 +22,32 @@
         
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* --- 悬浮导航栏 --- */
+        /* --- 悬浮导航栏 (优化版) --- */
         .resume-header {
             position: sticky;
             top: 0;
             width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+        }
+
+        /* 【新增】滚动后的导航栏样式 */
+        .resume-header.scrolled {
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 添加轻微阴影 */
         }
+
         .header-container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 1.5rem;
             display: flex;
@@ -48,31 +55,34 @@
             align-items: center;
             height: 64px;
         }
+
         .header-logo {
-            font-size: 1.25rem;
+            font-size: 1.35rem; /* <--- 增大左侧 Logo 字号 */
             font-weight: 700;
         }
+
         .header-nav a {
-            font-size: 0.9rem;
+            font-size: 1rem; /* <--- 增大右侧导航项字号 */
             font-weight: 500;
             color: var(--text-medium);
             text-decoration: none;
-            margin-left: 2rem;
-            padding-bottom: 22px; /* 为了下划线 */
+            margin-left: 2.5rem; /* <--- 稍微增加间距 */
+            padding: 0.5rem 1rem; /* 【新增】为背景色添加内边距 */
+            border-radius: 8px;   /* 【新增】圆角 */
             position: relative;
-            transition: color 0.3s;
+            transition: color 0.3s, background-color 0.3s;
         }
+
+        /* 移除旧的下划线样式，因为现在用背景色了 */
+        .header-nav a.active::after {
+            /* content: none; */
+            display: none;
+        }
+
+        /* 【修改】高亮状态变为背景色 */
         .header-nav a:hover, .header-nav a.active {
             color: var(--primary-color);
-        }
-        .header-nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: var(--primary-color);
+            background-color: #eef2ff; /* 一个非常淡的蓝色背景 */
         }
 
         /* --- 主内容与分区 --- */
@@ -1888,6 +1898,30 @@
     </main>
 
     <script>
+        // --- 1. 页面加载后自动平滑滚动到 #about 部分 ---
+        window.addEventListener('load', () => {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                // 使用 setTimeout 稍微延迟滚动，给页面渲染留出时间，效果更平滑
+                setTimeout(() => {
+                    aboutSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100); // 延迟100毫秒
+            }
+        });
+
+        // --- 2. 监听滚动，为 header 添加 scrolled 类 ---
+        const header = document.querySelector('.resume-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) { // 向下滚动超过10px时触发
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
         // --- 滚动动画 Intersection Observer ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
