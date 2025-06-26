@@ -612,3 +612,18 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   height: 30rem;
 }
 
+
+
+
+/* 对文章内容区域的所有段落 <p> 应用首行缩进 */
+.md-content .md-typeset p {
+  text-indent: 2em;
+}
+
+/* 
+   可选：取消列表项内部段落的缩进，
+   否则列表中的文字也会缩进，看起来会很奇怪。
+*/
+.md-content .md-typeset li p {
+  text-indent: 0;
+}

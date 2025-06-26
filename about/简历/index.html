@@ -1773,303 +1773,363 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>766</strong></p>
+<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>655</strong></p>
 </div>
 <!-- docs/resume.md -->
 
+<!-- 
+  CSS样式：负责简历的所有视觉表现，包括布局、颜色、字体和动画。
+-->
 <style>
-/* --- 全局与字体 --- */
-:root {
-    --primary-color: #008080; /* 主题色，从您的简历中提取的蓝绿色 */
-    --text-color: #333;
-    --secondary-text-color: #555;
-    --bg-color: #f9f9f9;
-    --container-bg-color: #ffffff;
-    --border-color: #e0e0e0;
-}
+    /* --- 全局与字体设定 --- */
+    :root {
+        --primary-color: #2c7a7b; /* 借鉴原简历，选择一个更沉稳的蓝绿色 */
+        --secondary-color: #4a5568;
+        --bg-color: #f7fafc;
+        --card-bg-color: #ffffff;
+        --border-color: #e2e8f0;
+        --text-color: #2d3748;
+        --subtle-text-color: #718096;
+    }
 
-.resume-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.7;
-    padding: 2rem 0;
-}
+    /* 移除MkDocs默认的一些边距和背景，让我们的简历全屏展示 */
+    .md-main__inner {
+        margin: 0;
+        padding: 0;
+    }
+    .md-content {
+        padding: 0;
+    }
 
-/* --- 主容器与布局 --- */
-.resume-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: var(--container-bg-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap; /* 允许换行以实现响应式 */
-}
+    .resume-page-wrapper {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.7;
+        padding: 3rem 1rem;
+    }
 
-/* --- 侧边栏 --- */
-.resume-sidebar {
-    width: 300px;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 2rem;
-    box-sizing: border-box;
-}
-
-.resume-sidebar .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid white;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 1.5rem;
-}
-
-.resume-sidebar h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: white;
-    border: none;
-    padding: 0;
-}
-
-.resume-sidebar .contact-info p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-}
-
-.resume-sidebar .contact-info i {
-    width: 20px;
-    text-align: center;
-    margin-right: 10px;
-}
-
-/* --- 主内容区 --- */
-.resume-main {
-    flex: 1; /* 占据剩余空间 */
-    padding: 2.5rem;
-    box-sizing: border-box;
-    min-width: 300px; /* 避免在小屏幕上被过度挤压 */
-}
-
-.resume-section {
-    margin-bottom: 2.5rem;
-}
-
-.resume-section h2 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.resume-section h2 i {
-    margin-right: 12px;
-}
-
-.resume-section h3 {
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-.resume-section h3 .date {
-    float: right;
-    font-size: 0.9rem;
-    font-weight: normal;
-    color: var(--secondary-text-color);
-}
-
-
-.resume-main ul {
-    list-style-type: none;
-    padding-left: 1.5rem;
-}
-
-.resume-main ul li {
-    position: relative;
-    margin-bottom: 0.8rem;
-    padding-left: 5px;
-}
-
-.resume-main ul li::before {
-    content: '•'; /* 使用圆点作为列表标记 */
-    position: absolute;
-    left: -1.2rem;
-    top: -2px;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
-.resume-main p {
-    margin: 0.5rem 0;
-    color: var(--secondary-text-color);
-}
-
-.resume-main .skills-list {
-    padding-left: 0;
-}
-.resume-main .skills-list li::before {
-    content: '✓'; /* 技能列表用对勾 */
-    top: 0;
-}
-
-.personal-links {
-    word-break: break-all;
-}
-.personal-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-.personal-links a:hover {
-    text-decoration: underline;
-}
-
-
-/* --- 动画效果 --- */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* --- 响应式设计 --- */
-@media (max-width: 860px) {
+    /* --- 核心布局 --- */
     .resume-container {
-        flex-direction: column; /* 垂直堆叠 */
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        background: var(--card-bg-color);
+        border-radius: 12px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        overflow: hidden;
     }
+
+    /* --- 左侧边栏 --- */
     .resume-sidebar {
+        width: 320px;
+        background: linear-gradient(135deg, var(--primary-color) 0%, #2c5282 100%);
+        color: white;
+        padding: 2.5rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .resume-sidebar .profile-pic {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 5px solid rgba(255, 255, 255, 0.8);
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .resume-sidebar h1 {
+        font-size: 2.2rem;
+        margin: 0;
+        font-weight: 600;
+        color: white;
+        border: none;
+        padding: 0;
+    }
+
+    .resume-sidebar .tagline {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-style: italic;
+    }
+
+    .contact-info {
+        list-style: none;
+        padding: 0;
+        margin-top: 2rem;
         width: 100%;
-        border-radius: 10px 10px 0 0;
     }
+
+    .contact-info li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+
+    .contact-info i {
+        font-size: 1.1rem;
+        width: 25px;
+        text-align: center;
+        margin-right: 12px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* --- 右侧主内容区 --- */
     .resume-main {
-        border-radius: 0 0 10px 10px;
+        flex: 1;
+        padding: 3rem;
+        box-sizing: border-box;
     }
-    .resume-section h3 .date {
-        float: none;
-        display: block;
-        margin-top: 0.2rem;
+
+    .resume-section {
+        margin-bottom: 3rem;
     }
-}
+
+    .resume-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .resume-section h2 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        border-bottom: 3px solid var(--primary-color);
+        padding-bottom: 0.6rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+    }
+
+    .resume-section h2 i {
+        margin-right: 1rem;
+    }
+
+    .resume-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.2rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .resume-item .date {
+        font-size: 0.9rem;
+        font-weight: normal;
+        color: var(--subtle-text-color);
+    }
+
+    .resume-item .subtitle {
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--secondary-color);
+        margin-bottom: 0.8rem;
+    }
+
+    .resume-main ul {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .resume-main ul li {
+        position: relative;
+        margin-bottom: 0.75rem;
+    }
+
+    .resume-main ul li::before {
+        content: '✓';
+        position: absolute;
+        left: -1.5rem;
+        top: 2px;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .personal-links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .personal-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* --- 动画效果 --- */
+    .fade-in-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .fade-in-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* --- 响应式设计 --- */
+    @media (max-width: 900px) {
+        .resume-container {
+            flex-direction: column; /* 垂直堆叠 */
+        }
+        .resume-sidebar {
+            width: 100%;
+            border-radius: 12px 12px 0 0;
+        }
+        .resume-main {
+            border-radius: 0 0 12px 12px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .resume-page-wrapper {
+            padding: 1rem 0;
+        }
+        .resume-container {
+            border-radius: 0;
+        }
+        .resume-sidebar, .resume-main {
+            padding: 1.5rem;
+        }
+        .resume-item h3 {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .resume-item .date {
+            margin-top: 0.25rem;
+        }
+    }
 </style>
 
-<div class="resume-body">
+<div class="resume-page-wrapper">
     <div class="resume-container">
-        <!-- 侧边栏：个人信息 -->
+        <!-- 左侧边栏：个人信息 -->
         <aside class="resume-sidebar">
             <!-- 
-              提示: 
+              重要提示: 
               请将 'path/to/your/photo.jpg' 替换为您的照片路径。
-              您可以将照片放在 `docs/assets` 目录下，路径就是 `assets/photo.jpg`。
+              推荐做法: 在 docs 文件夹下创建 assets 文件夹, 将照片放进去, 路径写为 'assets/your_photo.jpg'
             -->
-            <img src="https://i.imgur.com/example-profile.jpeg" alt="个人照片" class="profile-pic">
-            <h1>蒋才林</h1>
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> 18571206208</p>
-                <p><i class="fas fa-envelope"></i> 601049742@qq.com</p>
-                <p><i class="fas fa-university"></i> 华中农业大学</p>
-                <p><i class="fas fa-graduation-cap"></i> 硕士 (2023年毕业)</p>
-            </div>
+            <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E9%BE%9A%E5%AD%90%E8%88%AA.jpg" alt="个人照片" class="profile-pic">
+
+            <h1>龚子航</h1>
+            <p class="tagline">细心从每一个小细节开始</p>
+
+            <ul class="contact-info">
+                <li><i class="fas fa-phone-alt"></i><span>18571206208</span></li>
+                <li><i class="fas fa-envelope"></i><span>601049742@qq.com</span></li>
+                <li><i class="fas fa-map-marker-alt"></i><span>中国·湖北</span></li>
+                <li><i class="fas fa-university"></i><span>华中农业大学</span></li>
+                <li><i class="fas fa-graduation-cap"></i><span>硕士 (学硕)</span></li>
+            </ul>
         </aside>
 
-        <!-- 主内容区 -->
+        <!-- 右侧主内容区 -->
         <main class="resume-main">
             <!-- 教育背景 -->
-            <section class="resume-section fade-in-section">
+            <section class="resume-section fade-in-up">
                 <h2><i class="fas fa-user-graduate"></i> 教育背景</h2>
-                <h3>华中农业大学 <span class="date">2021.09 - 至今</span></h3>
-                <p><strong>硕士 (学位)</strong></p>
-                <ul>
-                    <li><strong>主修课程:</strong> 运筹与优化、最优化理论与算法、机器学习、统计计算、数字信息与处理、现实应用与分析、矩阵计算、随机信号分析等。</li>
-                    <li><strong>智能农业中的核心选修方向:</strong> 计算机视觉、智能优化与决策。</li>
-                    <li><strong>自学课程:</strong> 数据结构与算法、计算机组成原理、操作系统、计算机网络、Java 基础、JavaWeb 开发。</li>
-                </ul>
+                <div class="resume-item">
+                    <h3>华中农业大学 <span class="date">2021.09 - 至今</span></h3>
+                    <p class="subtitle">数学 (学硕)</p>
+                    <ul>
+                        <li><strong>主修课程:</strong> 运筹与优化、最优化理论与算法、机器学习、统计计算、数字信息与处理、现实应用与分析、矩阵计算、随机信号分析等。</li>
+                        <li><strong>智能农业核心方向:</strong> 计算机视觉、智能优化与决策。</li>
+                        <li><strong>自学掌握:</strong> 数据结构与算法、计算机组成原理、操作系统、计算机网络、Java 基础、JavaWeb 开发。</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- 项目经历 -->
-            <section class="resume-section fade-in-section">
-                <h2><i class="fas fa-tasks"></i> 项目经历</h2>
-                <h3>基于 YOLO-X 的通用目标检测与计数 <span class="date"></span></h3>
-                <ul>
-                    <li>开发了一套基于 YOLO (v5/v8) 的通用目标检测追踪项目与计数解决方案，综合 ByteTrack、IO、BoT-SORT 等跟踪算法，实现高性能目标计数，可摆脱固定场景多种限制因素，通过数据增强技术提升了模型鲁棒性。</li>
-                    <li>项目基于 PyTorch, OpenCV 等框架搭建，引入多线程计算机制完成中间处理和结果 I/O 交换，并改进了 YOLOv8 有重复目标下不易去除的 bug，显著提升了工作效率，为智能安防及交通领域提供解决方案。</li>
-                </ul>
-                <h3>基于多模态视觉信息的智慧办公票据重构与版面还原系统 <span class="date"></span></h3>
-                <ul>
-                    <li>针对传统票据识别与还原的性能瓶颈，设计并实现了一套高效的办公场景票据重构、通过相机应用采集的倾斜、弯曲 PC、移动端 ICP 算法实现版面的三维点云数据配准。</li>
-                    <li>并结合 PointNet++ 的拓展设计点云语义分割模型，实现单张票据口 U-Net、基于 ResNet 或者自研、自动寻路算法实现文本行自动寻路等。</li>
-                    <li>该系统可取代人工流程，有效缩短处理周期和成本，为提升数据质量提供支持。</li>
-                </ul>
+            <section class="resume-section fade-in-up">
+                <h2><i class="fas fa-code-branch"></i> 项目经历</h2>
+                <div class="resume-item">
+                    <h3>基于 YOLO 的通用目标检测与计数</h3>
+                    <ul>
+                        <li>开发了一套基于 YOLO (v5/v8) 的通用目标检测追踪与计数解决方案，综合 ByteTrack、IO、BoT-SORT 等跟踪算法，实现高性能目标计数。</li>
+                        <li>通过数据增强技术提升模型鲁棒性，摆脱固定场景限制。项目采用 PyTorch 和 OpenCV 框架，引入多线程优化 I/O，并修复了 YOLOv8 的重复检测 Bug，显著提升了工作效率。</li>
+                    </ul>
+                </div>
+                 <div class="resume-item" style="margin-top: 2rem;">
+                    <h3>基于多模态视觉的智慧办公票据重构系统</h3>
+                    <ul>
+                        <li>针对传统票据识别痛点，设计并实现了高效的办公场景票据重构与版面还原系统，可处理相机采集的倾斜、弯曲票据。</li>
+                        <li>采用 PCL 和 ICP 算法实现三维点云数据配准，并结合 PointNet++ 拓展设计点云语义分割模型，精准还原票据版面，有效取代人工流程，缩短处理周期。</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- 专业技能 -->
-            <section class="resume-section fade-in-section">
+            <section class="resume-section fade-in-up">
                 <h2><i class="fas fa-cogs"></i> 专业技能</h2>
-                <ul class="skills-list">
-                    <li>熟悉 PyTorch 框架，能灵活搭建与实现算法</li>
-                    <li>熟悉常见机器学习模型</li>
-                    <li>熟练掌握 Python、C++ 编程语言，熟练使用 NumPy, Pandas, OpenCV, Matplotlib 等数据处理与可视化工具。</li>
+                <ul>
+                    <li><strong>深度学习框架:</strong> 熟练掌握 PyTorch，能灵活搭建与实现各类算法。</li>
+                    <li><strong>机器学习:</strong> 熟悉常见机器学习模型（如分类、回归、聚类等）的原理与应用。</li>
+                    <li><strong>编程与工具:</strong> 熟练掌握 Python、C++，及 NumPy, Pandas, OpenCV, Matplotlib 等数据科学库。</li>
                 </ul>
             </section>
 
             <!-- 荣誉奖项 -->
-            <section class="resume-section fade-in-section">
+            <section class="resume-section fade-in-up">
                 <h2><i class="fas fa-trophy"></i> 荣誉奖项</h2>
                 <ul>
-                    <li>研究生数学建模竞赛国家二等奖</li>
-                    <li>美国大学生数学建模竞赛 H/M 奖</li>
-                    <li>Mathor Cup 数学建模挑战赛一等奖</li>
-                    <li>全国大学生数学竞赛一等奖</li>
-                    <li>五一/APMCM/华中杯数学建模竞赛三等奖</li>
-                    <li>大学英语四/六级（CET-4/6），良好的内容阅读理解能力、快速抓取文献重要专业词汇及内容</li>
+                    <li><strong>国家级:</strong> 研究生数学建模竞赛国家二等奖、全国大学生数学竞赛一等奖。</li>
+                    <li><strong>国际/区域级:</strong> 美国大学生数学建模竞赛 H/M 奖、Mathor Cup 数学建模挑战赛一等奖等。</li>
+                    <li><strong>语言能力:</strong> 大学英语四/六级 (CET-4/6)，具备良好的专业文献阅读和理解能力。</li>
                 </ul>
             </section>
 
             <!-- 个人博客 -->
-            <section class="resume-section fade-in-section personal-links">
+            <section class="resume-section fade-in-up personal-links">
                 <h2><i class="fas fa-link"></i> 个人链接</h2>
-                <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/jiangcailin" target="_blank">https://github.com/jiangcailin</a></p>
-                <p><i class="fas fa-blog"></i> <strong>CSDN:</strong> <a href="https://blog.csdn.net/qq_19981124?spm=1000.2115.3001.5343" target="_blank">https://blog.csdn.net/qq_19981124</a></p>
-                <p>不断整理开发和学习中自己的学习历程，分享经验。</p>
+                <p><i class="fab fa-github" style="margin-right: 8px;"></i> <strong>GitHub:</strong> <a href="https://github.com/jiangcailin" target="_blank">github.com/jiangcailin</a></p>
+                <p><i class="fab fa-cuttlefish" style="margin-right: 8px;"></i> <strong>CSDN:</strong> <a href="https://blog.csdn.net/qq_19981124?spm=1000.2115.3001.5343" target="_blank">blog.csdn.net/qq_19981124</a></p>
             </section>
         </main>
     </div>
 </div>
 
+<!-- 
+  JavaScript: 负责实现滚动时的入场动画。
+-->
 <script>
-// 使用 Intersection Observer 实现滚动动画
 document.addEventListener("DOMContentLoaded", function() {
+    // 确保在MkDocs的AJAX加载后也能正确执行
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // 可选: 一旦可见就停止观察，以节省资源
-                observer.unobserve(entry.target);
             }
         });
     }, {
-        rootMargin: '0px',
         threshold: 0.1 // 元素进入视口 10% 时触发
     });
 
-    // 获取所有需要动画的 section
-    const sections = document.querySelectorAll('.fade-in-section');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    // 监听 MkDocs 页面加载完成事件
+    const content = document.querySelector(".md-content");
+    if (content) {
+        const sections = content.querySelectorAll('.fade-in-up');
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // 如果使用了 instant loading, 页面切换时需要重新观察
+        const mutationObserver = new MutationObserver(() => {
+            const newSections = content.querySelectorAll('.fade-in-up');
+            newSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        mutationObserver.observe(content, { childList: true });
+    }
 });
 </script>
 <!--
