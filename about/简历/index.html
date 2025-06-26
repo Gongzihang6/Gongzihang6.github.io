@@ -101,11 +101,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -1663,21 +1658,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    个人简历
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1690,79 +1670,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      基本信息
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      教育背景
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      项目经历
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      专业技能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      技能证书
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      个人博客
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1846,70 +1753,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      基本信息
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      教育背景
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      项目经历
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      专业技能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      技能证书
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      个人博客
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1930,125 +1773,305 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>677</strong></p>
+<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>766</strong></p>
 </div>
-<h1 id="_1">个人简历<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="resume-header">
-    <div class="header-title">
-        <h1>个人简历</h1>
-        <p>细心从每一个小细节开始。</p>
-        <h2>Personal resume</h2>
-    </div>
-    <div class="header-icons">
-        <img src="your/icons/graduation-cap.png" alt="学位">
-        <img src="your/icons/email.png" alt="邮箱">
-        <img src="your/icons/document.png" alt="文档">
-    </div>
-</div>
+<!-- docs/resume.md -->
 
-<h2 id="_2">基本信息<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="resume-section">
-    <div class="section-title">基本信息</div>
-    <div class="section-content">
-        <div class="basic-info">
-            <div class="info-item">
-                <span class="label">姓 名：</span>
-                <span class="value">龚子航</span>
+<style>
+/* --- 全局与字体 --- */
+:root {
+    --primary-color: #008080; /* 主题色，从您的简历中提取的蓝绿色 */
+    --text-color: #333;
+    --secondary-text-color: #555;
+    --bg-color: #f9f9f9;
+    --container-bg-color: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+.resume-body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    padding: 2rem 0;
+}
+
+/* --- 主容器与布局 --- */
+.resume-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--container-bg-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap; /* 允许换行以实现响应式 */
+}
+
+/* --- 侧边栏 --- */
+.resume-sidebar {
+    width: 300px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.resume-sidebar .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1.5rem;
+}
+
+.resume-sidebar h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: white;
+    border: none;
+    padding: 0;
+}
+
+.resume-sidebar .contact-info p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.resume-sidebar .contact-info i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* --- 主内容区 --- */
+.resume-main {
+    flex: 1; /* 占据剩余空间 */
+    padding: 2.5rem;
+    box-sizing: border-box;
+    min-width: 300px; /* 避免在小屏幕上被过度挤压 */
+}
+
+.resume-section {
+    margin-bottom: 2.5rem;
+}
+
+.resume-section h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.resume-section h2 i {
+    margin-right: 12px;
+}
+
+.resume-section h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.resume-section h3 .date {
+    float: right;
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: var(--secondary-text-color);
+}
+
+
+.resume-main ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.resume-main ul li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 5px;
+}
+
+.resume-main ul li::before {
+    content: '•'; /* 使用圆点作为列表标记 */
+    position: absolute;
+    left: -1.2rem;
+    top: -2px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.resume-main p {
+    margin: 0.5rem 0;
+    color: var(--secondary-text-color);
+}
+
+.resume-main .skills-list {
+    padding-left: 0;
+}
+.resume-main .skills-list li::before {
+    content: '✓'; /* 技能列表用对勾 */
+    top: 0;
+}
+
+.personal-links {
+    word-break: break-all;
+}
+.personal-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.personal-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- 动画效果 --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- 响应式设计 --- */
+@media (max-width: 860px) {
+    .resume-container {
+        flex-direction: column; /* 垂直堆叠 */
+    }
+    .resume-sidebar {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    .resume-main {
+        border-radius: 0 0 10px 10px;
+    }
+    .resume-section h3 .date {
+        float: none;
+        display: block;
+        margin-top: 0.2rem;
+    }
+}
+</style>
+
+<div class="resume-body">
+    <div class="resume-container">
+        <!-- 侧边栏：个人信息 -->
+        <aside class="resume-sidebar">
+            <!-- 
+              提示: 
+              请将 'path/to/your/photo.jpg' 替换为您的照片路径。
+              您可以将照片放在 `docs/assets` 目录下，路径就是 `assets/photo.jpg`。
+            -->
+            <img src="https://i.imgur.com/example-profile.jpeg" alt="个人照片" class="profile-pic">
+            <h1>蒋才林</h1>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> 18571206208</p>
+                <p><i class="fas fa-envelope"></i> 601049742@qq.com</p>
+                <p><i class="fas fa-university"></i> 华中农业大学</p>
+                <p><i class="fas fa-graduation-cap"></i> 硕士 (2023年毕业)</p>
             </div>
-            <div class="info-item">
-                <span class="label">出生年月：</span>
-                <span class="value">2002-10</span>
-            </div>
-            <div class="info-item">
-                <span class="label">电 话：</span>
-                <span class="value">18371208200</span>
-            </div>
-            <div class="info-item">
-                <span class="label">政治面貌：</span>
-                <span class="value">中共党员</span>
-            </div>
-            <div class="info-item">
-                <span class="label">邮 箱：</span>
-                <span class="value">601049742@qq.com</span>
-            </div>
-            <div class="info-item">
-                <span class="label">毕业院校：</span>
-                <span class="value">华中农业大学</span>
-            </div>
-            <div class="info-item">
-                <span class="label">学 历：</span>
-                <span class="value">硕士</span>
-            </div>
-        </div>
-        <div class="profile-image">
-            <img src="your/photo/path.jpg" alt="个人照片" class="photo" />
-        </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="resume-main">
+            <!-- 教育背景 -->
+            <section class="resume-section fade-in-section">
+                <h2><i class="fas fa-user-graduate"></i> 教育背景</h2>
+                <h3>华中农业大学 <span class="date">2021.09 - 至今</span></h3>
+                <p><strong>硕士 (学位)</strong></p>
+                <ul>
+                    <li><strong>主修课程:</strong> 运筹与优化、最优化理论与算法、机器学习、统计计算、数字信息与处理、现实应用与分析、矩阵计算、随机信号分析等。</li>
+                    <li><strong>智能农业中的核心选修方向:</strong> 计算机视觉、智能优化与决策。</li>
+                    <li><strong>自学课程:</strong> 数据结构与算法、计算机组成原理、操作系统、计算机网络、Java 基础、JavaWeb 开发。</li>
+                </ul>
+            </section>
+
+            <!-- 项目经历 -->
+            <section class="resume-section fade-in-section">
+                <h2><i class="fas fa-tasks"></i> 项目经历</h2>
+                <h3>基于 YOLO-X 的通用目标检测与计数 <span class="date"></span></h3>
+                <ul>
+                    <li>开发了一套基于 YOLO (v5/v8) 的通用目标检测追踪项目与计数解决方案，综合 ByteTrack、IO、BoT-SORT 等跟踪算法，实现高性能目标计数，可摆脱固定场景多种限制因素，通过数据增强技术提升了模型鲁棒性。</li>
+                    <li>项目基于 PyTorch, OpenCV 等框架搭建，引入多线程计算机制完成中间处理和结果 I/O 交换，并改进了 YOLOv8 有重复目标下不易去除的 bug，显著提升了工作效率，为智能安防及交通领域提供解决方案。</li>
+                </ul>
+                <h3>基于多模态视觉信息的智慧办公票据重构与版面还原系统 <span class="date"></span></h3>
+                <ul>
+                    <li>针对传统票据识别与还原的性能瓶颈，设计并实现了一套高效的办公场景票据重构、通过相机应用采集的倾斜、弯曲 PC、移动端 ICP 算法实现版面的三维点云数据配准。</li>
+                    <li>并结合 PointNet++ 的拓展设计点云语义分割模型，实现单张票据口 U-Net、基于 ResNet 或者自研、自动寻路算法实现文本行自动寻路等。</li>
+                    <li>该系统可取代人工流程，有效缩短处理周期和成本，为提升数据质量提供支持。</li>
+                </ul>
+            </section>
+
+            <!-- 专业技能 -->
+            <section class="resume-section fade-in-section">
+                <h2><i class="fas fa-cogs"></i> 专业技能</h2>
+                <ul class="skills-list">
+                    <li>熟悉 PyTorch 框架，能灵活搭建与实现算法</li>
+                    <li>熟悉常见机器学习模型</li>
+                    <li>熟练掌握 Python、C++ 编程语言，熟练使用 NumPy, Pandas, OpenCV, Matplotlib 等数据处理与可视化工具。</li>
+                </ul>
+            </section>
+
+            <!-- 荣誉奖项 -->
+            <section class="resume-section fade-in-section">
+                <h2><i class="fas fa-trophy"></i> 荣誉奖项</h2>
+                <ul>
+                    <li>研究生数学建模竞赛国家二等奖</li>
+                    <li>美国大学生数学建模竞赛 H/M 奖</li>
+                    <li>Mathor Cup 数学建模挑战赛一等奖</li>
+                    <li>全国大学生数学竞赛一等奖</li>
+                    <li>五一/APMCM/华中杯数学建模竞赛三等奖</li>
+                    <li>大学英语四/六级（CET-4/6），良好的内容阅读理解能力、快速抓取文献重要专业词汇及内容</li>
+                </ul>
+            </section>
+
+            <!-- 个人博客 -->
+            <section class="resume-section fade-in-section personal-links">
+                <h2><i class="fas fa-link"></i> 个人链接</h2>
+                <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/jiangcailin" target="_blank">https://github.com/jiangcailin</a></p>
+                <p><i class="fas fa-blog"></i> <strong>CSDN:</strong> <a href="https://blog.csdn.net/qq_19981124?spm=1000.2115.3001.5343" target="_blank">https://blog.csdn.net/qq_19981124</a></p>
+                <p>不断整理开发和学习中自己的学习历程，分享经验。</p>
+            </section>
+        </main>
     </div>
 </div>
 
-<h2 id="_3">教育背景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="resume-section">
-    <div class="section-title">教育背景</div>
-    <div class="section-content">
-        <strong>2024.09 - 华中农业大学 数学（学硕）</strong>
-        <p>主修课程：泛函分析、高等数理统计、矩阵计算、数学挖掘与建模、应用回归分析、随机过程、偏微分方程基础、智能制造中的大数据分析、计算机视觉、智能优化方法；</p>
-        <p>自修课程：数据结构与算法、计算机组成原理、操作系统、计算机网络、Java 基础、JavaWeb 开发；</p>
-    </div>
-</div>
+<script>
+// 使用 Intersection Observer 实现滚动动画
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // 可选: 一旦可见就停止观察，以节省资源
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.1 // 元素进入视口 10% 时触发
+    });
 
-<h2 id="_4">项目经历<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="resume-section">
-    <div class="section-title">项目经历</div>
-
-    <div class="project-item">
-        <div class="project-title">基于 YOLO 的番茄识别与计数</div>
-        <div class="project-content">
-            <p>开发了一种基于 YOLO（v5/v8）算法的自动番茄识别与计数系统，结合 ByteTrack 和 Bot-SORT 跟踪算法，实现精准的番茄计数。收集和处理多样化的数据集，通过数据增强技术提升模型鲁棒性。通过该项目，增强了对 Torch、OpenCV 等库的掌握，深入理解计算机视觉中的目标检测和分类算法。实验显示 YOLOv8 在复杂环境下表现优越，显著提升工作效率，为智能农业发展提供解决方案。</p>
-        </div>
-    </div>
-
-    <div class="project-item">
-        <div class="project-title">基于多视角深度相机的猪体三维重建与精准测量系统</div>
-        <div class="project-content">
-            <p>针对传统养殖行业动物体尺测量痛点，设计并实现了一套创新的点云三维重建系统。通过多机位深度相机阵列，使用 PCL 库和 ICP 算法实现多视角点云精确配准，并结合基于 PointNet++ 的深度学习点云语义分割模型，实现猪体各部位（头部、躯干、四肢）精准分割。项目构建了厘米级体尺测量方案，相比传统人工测量，有效降低动物应激反应，为精准养殖提供数据支持。</p>
-        </div>
-    </div>
-</div>
-
-<h2 id="_5">专业技能<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="resume-section">
-    <div class="section-title">专业技能</div>
-    <div class="section-content">
-        <ul>
-            <li>熟悉 pytorch 框架，主流目标检测算法；</li>
-            <li>熟悉常用机器学习模型；</li>
-            <li>熟练掌握 Python、C++编程语言，熟练使用 NumPy、Pandas、OpenCV、Matplotlib 等数据处理与可视化工具。</li>
-        </ul>
-    </div>
-</div>
-
-<h2 id="_6">技能证书<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="resume-section">
-    <div class="section-title">技能证书</div>
-    <div class="section-content">
-        <ul>
-            <li>华为杯研究生数学建模竞赛国家二等奖、美国大学生数学建模竞赛 HM 奖、Mather Cup 数学建模挑战赛三等奖、全国大学生数学竞赛一等奖、正大杯市场经济社会调查大赛国家三等奖；</li>
-            <li>大学英语四/六级（CET-4/6），良好的听说读写能力，快速浏览英语专业文件及书籍；</li>
-        </ul>
-    </div>
-</div>
-
-<h2 id="_7">个人博客<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<div class="resume-section">
-    <div class="section-title">个人博客</div>
-    <div class="section-content">
-        <div class="blog-links">
-            <a href="https://gongzihang6.github.io/" target="_blank">https://gongzihang6.github.io/</a>
-            <a href="https://mpbeta.csdn.net/?spm=1000.2115.3001.10461" target="_blank">https://mpbeta.csdn.net/?spm=1000.2115.3001.10461</a>
-        </div>
-        <p>不定期在博客平台记录自己学习历程，分享经验</p>
-    </div>
-</div>
+    // 获取所有需要动画的 section
+    const sections = document.querySelectorAll('.fade-in-section');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
