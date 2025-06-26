@@ -1785,8 +1785,8 @@
         --primary-color: #4a6cfd; /* 主题蓝色 */
         --title-color: #1f2937;    /* 标题深色 */
         --text-color: #6b7280;     /* 普通文本浅灰色 */
-        --body-bg-color:rgba(190, 97, 148, 0.99);  /* 页面背景色 */
-        --card-bg-color: #ffffff;  /* 卡片背景白色 */
+        --body-bg-color: #f9fafb;  /* 页面背景色 */
+        --card-bg-color: #a6e3e9;  /* 卡片背景白色 */
         --border-color: #e5e7eb;   /* 边框颜色 */
     }
 
@@ -2018,6 +2018,20 @@
         transform: rotateY(0deg);
         z-index: 3;
     }
+
+
+    .qualification__button {
+        font-size: 1.2rem;
+        padding: 0.6rem 1rem; /* 可选：增加按钮内边距 */
+    }
+
+    .qualification__icon {
+        font-size: 1.5rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+    }
 </style>
 
 <center><font size=6rem color= #757575>
@@ -2060,6 +2074,8 @@
 <h2 id="_3">我的履历<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <p><link rel="stylesheet" href="../sty/portfolio.css"></p>
+
+<!-- 增大字号 -->
 <div class="qualification__tabs">
     <div class="qualification__button qualification__active" data-target='#education'>
         <iconify-icon icon="fluent:hat-graduation-12-regular" class="qualification__icon"></iconify-icon>
