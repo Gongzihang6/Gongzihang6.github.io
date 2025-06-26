@@ -77,12 +77,26 @@
 
         /* --- 主内容与分区 --- */
         main {
-            padding-top: 2rem;
+            padding-top: 0;
         }
         .resume-section {
+            /* max-width: 900px; */
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+        }
+        /* 【新增】一个包装器来让内容居中 */
+        .section-wrapper {
             max-width: 900px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+        }
+        /* 让奇数和偶数 section 有不同的背景色，增加区分度 */
+        .resume-section:nth-child(even) {
+            background-color: var(--bg-white);
+        }
+
+        /* 为第一个 section 增加额外的顶部间距，避免被导航栏遮挡 */
+        main > .resume-section:first-child {
+            padding-top: 5rem; /* <--- 增加顶部间距 */
         }
         .section-title {
             font-size: 2rem;
@@ -234,53 +248,57 @@
     <main>
         <!-- Section: About Me -->
         <section id="about" class="resume-section hero-section fade-in-up">
-            <div class="hero-avatar">
-                <!-- 请替换成您的头像链接 -->
-                <img src="https://i.pravatar.cc/300?u=jiangcailin" alt="蒋才林 头像">
-            </div>
-            <div class="hero-content">
-                <!-- 填写您的姓名 -->
-                <h1>蒋才林</h1>
-                <!-- 填写您的标签 -->
-                <p class="tagline">计算机视觉研究者 · 算法工程师 · 开源爱好者</p>
-                <!-- 填写您的简介 -->
-                <p class="description">
-                    "观史知今，当思进退，读书明志可识春秋"
-                    <br>
-                    对技术充满热情，坚信技术的温度蕴藏在解决实际问题的细节里。
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-card"><div class="stat-number">2+</div><div class="stat-label">核心项目</div></div>
-                    <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">建模奖项</div></div>
-                    <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label">核心技术栈</div></div>
+            <div class="section-wrapper">
+                <div class="hero-avatar">
+                    <!-- 请替换成您的头像链接 -->
+                    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FGZH.webp" alt="gzh 头像">
+                </div>
+                <div class="hero-content">
+                    <!-- 填写您的姓名 -->
+                    <h1>龚子航</h1>
+                    <!-- 填写您的标签 -->
+                    <p class="tagline">计算机视觉研究者 · 算法工程师 · 开源爱好者</p>
+                    <!-- 填写您的简介 -->
+                    <p class="description">
+                        "观史知今，当思进退，读书明志可识春秋"
+                        <br>
+                        对技术充满热情，坚信技术的温度蕴藏在解决实际问题的细节里。
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-card"><div class="stat-number">2+</div><div class="stat-label">核心项目</div></div>
+                        <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">建模奖项</div></div>
+                        <div class="stat-card"><div class="stat-number">3+</div><div class="stat-label">核心技术栈</div></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Section: Education -->
         <section id="education" class="resume-section fade-in-up">
-            <h2 class="section-title">教育背景</h2>
-            <span class="title-underline"></span>
-            <div class="timeline-container">
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <h3>华中农业大学</h3>
-                        <p class="subtitle">数学硕士 (规划)</p>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> 2024 - 2027</div>
+            <div class="section-wrapper">
+                <h2 class="section-title">教育背景</h2>
+                <span class="title-underline"></span>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <h3>华中农业大学</h3>
+                            <p class="subtitle">数学硕士 (规划)</p>
+                            <div class="date"><i class="fas fa-calendar-alt"></i> 2024 - 2027</div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <h3>华中农业大学</h3>
-                        <p class="subtitle">设施农业科学与工程学士</p>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> 2020 - 2024</div>
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <h3>华中农业大学</h3>
+                            <p class="subtitle">设施农业科学与工程学士</p>
+                            <div class="date"><i class="fas fa-calendar-alt"></i> 2020 - 2024</div>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <h3>汉川一中</h3>
-                        <p class="subtitle">平凡普通的三年</p>
-                        <div class="date"><i class="fas fa-calendar-alt"></i> 2017 - 2020</div>
+                    <div class="timeline-item">
+                        <div class="timeline-card">
+                            <h3>汉川一中</h3>
+                            <p class="subtitle">平凡普通的三年</p>
+                            <div class="date"><i class="fas fa-calendar-alt"></i> 2017 - 2020</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -288,38 +306,43 @@
 
         <!-- Section: Skills -->
         <section id="skills" class="resume-section fade-in-up">
-            <h2 class="section-title">核心技能</h2>
-            <span class="title-underline"></span>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <h3>深度学习</h3>
-                    <p>熟练掌握 PyTorch，能灵活搭建与实现各类CV算法，对模型优化有深入理解。</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <h3>编程与算法</h3>
-                    <p>熟练掌握 Python、C++，及 NumPy, Pandas, OpenCV 等库，数据结构与算法基础扎实。</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>问题解决</h3>
-                    <p>具备优秀的逻辑思维和分析能力，擅长从复杂的实际问题中抽象建模，并找到创新解决方案。</p>
+            <div class="section-wrapper">
+                <h2 class="section-title">核心技能</h2>
+                <span class="title-underline"></span>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                        <h3>深度学习</h3>
+                        <p>熟练掌握 PyTorch，能灵活搭建与实现各类CV算法，对模型优化有深入理解。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>编程与算法</h3>
+                        <p>熟练掌握 Python、C++，及 NumPy, Pandas, OpenCV 等库，数据结构与算法基础扎实。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>问题解决</h3>
+                        <p>具备优秀的逻辑思维和分析能力，擅长从复杂的实际问题中抽象建模，并找到创新解决方案。</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Section: Projects (Placeholder) -->
         <section id="projects" class="resume-section fade-in-up">
-            <h2 class="section-title">代表项目</h2>
-            <span class="title-underline"></span>
-            <!-- 您可以在这里仿照 Education 部分的 timeline 样式来添加您的项目 -->
-            <p style="text-align:center; color: var(--text-light);">项目经历正在整理中，敬请期待...</p>
+            <div class="section-wrapper">
+                <h2 class="section-title">代表项目</h2>
+                <span class="title-underline"></span>
+                <!-- 您可以在这里仿照 Education 部分的 timeline 样式来添加您的项目 -->
+                <p style="text-align:center; color: var(--text-light);">项目经历正在整理中，敬请期待...</p>
+            </div>
         </section>
         
         <!-- (可选) 如果你还想显示 简历.md 文件里写的内容，可以加上下面这行 -->
         <div class="resume-section">
-            <div class="admonition info">
+            <div class="section-wrapper">
+                <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1050</strong></p>
 </div>
@@ -1859,6 +1882,7 @@
     </script>
 </body>
 </html>
+            </div>
         </div>
 
     </main>
