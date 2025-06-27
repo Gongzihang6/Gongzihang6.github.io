@@ -1817,7 +1817,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>985</strong></p>
+<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>905</strong></p>
 </div>
 <!-- ## 关于我 -->
 <!-- # <span id="jinrishici-sentence">今日诗词</span> -->
@@ -2490,105 +2490,6 @@ jinrishici.load(function(result) {
         container.innerHTML = result.data.content;
     }
 });
-</script>
-
-<!-- ============================================= -->
-<!-- ========= 3D 旋转相册 JS【开始】 ========= -->
-<!-- ============================================= -->
-<script>
-(function() {
-    // 使用 querySelectorAll 来确保即使页面上有多个轮播，我们也能精确控制这一个
-    const container = document.querySelector('.carousel-section .carousel-container');
-    if (!container) return; // 如果找不到容器，则不执行任何操作
-
-    const carousel = container.querySelector('.carousel');
-    const cells = Array.from(container.querySelectorAll('.carousel__cell'));
-    const prevButton = document.querySelector('#carousel-prev-button');
-    const nextButton = document.querySelector('#carousel-next-button');
-
-    if (!carousel || cells.length === 0) {
-        console.error("轮播组件初始化失败：缺少 .carousel 或 .carousel__cell 元素。");
-        return;
-    }
-
-    const cellCount = cells.length;
-    const theta = 360 / cellCount;
-    const cellWidth = carousel.offsetWidth;
-    const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
-
-    carousel.style.setProperty('--carousel-radius', `-${radius}px`);
-    cells.forEach((cell, index) => {
-        const angle = theta * index;
-        cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
-    });
-
-    let selectedIndex = 0;
-    let autoplayTimeout;
-    let isDragging = false;
-    let startX, startAngle;
-
-    function updateCarouselState() {
-        const angle = theta * selectedIndex * -1;
-        carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
-        carousel.style.animation = 'none';
-        clearTimeout(autoplayTimeout);
-        autoplayTimeout = setTimeout(() => {
-            carousel.style.transition = 'none';
-            void carousel.offsetWidth;
-            carousel.style.animation = `carousel_rotation 30s infinite linear`;
-            const progress = (angle % 360) / 360;
-            carousel.style.animationDelay = `${progress * -30}s`;
-            carousel.style.animationPlayState = 'running';
-        }, 2000);
-    }
-
-    // 按钮方向: prev (‹) 逆时针, next (›) 顺时针
-    prevButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
-    nextButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') { selectedIndex--; updateCarouselState(); } 
-        else if (e.key === 'ArrowRight') { selectedIndex++; updateCarouselState(); }
-    });
-
-    container.addEventListener('mousedown', e => {
-        e.preventDefault();
-        isDragging = true;
-        container.style.cursor = 'grabbing';
-        startX = e.pageX;
-        carousel.style.animationPlayState = 'paused';
-        clearTimeout(autoplayTimeout);
-        const computedStyle = window.getComputedStyle(carousel);
-        const transformMatrix = new DOMMatrix(computedStyle.transform);
-        startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
-    });
-
-    document.addEventListener('mousemove', e => {
-        if (!isDragging) return;
-        const moveX = e.pageX - startX;
-        const dragAngle = (moveX / container.offsetWidth) * 180;
-        // 左滑(负) -> 顺时针 ; 右滑(正) -> 逆时针 (已修正)
-        const newAngle = startAngle - dragAngle;
-        carousel.style.transition = 'none';
-        carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
-    });
-
-    function endDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        container.style.cursor = 'grab';
-        const computedStyle = window.getComputedStyle(carousel);
-        const transformMatrix = new DOMMatrix(computedStyle.transform);
-        const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
-        selectedIndex = Math.round(currentAngle / theta);
-        updateCarouselState();
-    }
-
-    document.addEventListener('mouseup', endDrag);
-    document.addEventListener('mouseleave', endDrag);
-
-})();
 </script>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>

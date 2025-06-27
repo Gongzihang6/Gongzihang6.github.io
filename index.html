@@ -2153,6 +2153,30 @@
         }
     }
 
+    .contact-container {
+        display: flex;            /* 启用 Flexbox 布局 */
+        justify-content: center;  /* 水平居中 */
+        align-items: flex-start;  /* 顶部对齐 */
+        gap: 25px;                /* 设置项目之间的间距 */
+        flex-wrap: wrap;          /* 在小屏幕上允许换行 */
+        text-align: center;       /* 内部文字居中 */
+      }
+      .contact-item {
+        width: 200px; /* 控制每个二维码的宽度，可以根据需要调整 */
+      }
+      .contact-item img {
+        width: 100%;              /* 图片宽度占满其容器 */
+        height: auto;             /* 高度自动，保持比例 */
+        border-radius: 12px;
+        border: 3px solid white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 添加一点阴影让效果更好 */
+      }
+      .contact-item p {
+        margin-top: 10px;
+        font-size: 15px;
+        color: #333;
+        line-height: 1.5;
+      }
 
 </style>
 
@@ -2372,15 +2396,26 @@
 </div> -->
 
 <h2 id="_3">联系我<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">💬 微信</label><label for="__tabbed_1_2">📧 邮箱</label><label for="__tabbed_1_3">🌐 社交</label><label for="__tabbed_1_4">📍 其他</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">💬 联系方式 Contact</label><label for="__tabbed_1_2">📧 邮箱</label><label for="__tabbed_1_3">🌐 社交</label><label for="__tabbed_1_4">📍 其他</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><center>
-<img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" style="width: 280px; height: auto; border-radius: 12px; border: 3px solid white;">
-<br>
-扫一扫上面的二维码图案<br>
-加我为朋友
-</center></p>
+<p><div class="contact-container">
+  <div class="contact-item">
+    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" alt="微信二维码">
+    <p>
+      <b>💬 微信</b><br>
+      扫码加我为朋友
+    </p>
+  </div>
+  <div class="contact-item">
+    <!-- 在这里替换成你的QQ二维码图片地址 -->
+    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FQQ%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="QQ二维码">
+    <p>
+      <b>🐧 QQ</b><br>
+      扫码加我为好友
+    </p>
+  </div>
+</div></p>
 </div>
 <div class="tabbed-block">
 <p><div style="text-align: center; padding: 20px 0px;">

@@ -504,17 +504,13 @@
 
 
         <!-- ============================================= -->
-        <!-- ========= 3D 旋转相册 HTML【开始】 ========= -->
+        <!-- ========= 【第一个相册】荣誉证书 ========= -->
         <!-- ============================================= -->
-
-        <div class="carousel-section">
-            <h2 class="carousel-title">我的荣誉与作品</h2>
+        <div class="carousel-section" id="honors-carousel">
+            <h2 class="carousel-title">我的荣誉证书</h2>
             <span class="carousel-subtitle-underline"></span>
-            
             <div class="carousel-container">
                 <div class="carousel">
-                    <!-- 在这里自由增删图片，JS会自动适配 -->
-                    <!-- draggable="false" 是防止浏览器默认拖拽行为的关键 -->
                     <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%A6%88%E5%A6%88%E6%9D%AF.jpg" alt="妈妈杯证书" draggable="false"></figure>
                     <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%AD%A3%E5%A4%A7%E6%9D%AF%E5%9B%BD%E5%AE%B6%E4%B8%89%E7%AD%89%E5%A5%96.jpg" alt="正大杯国赛三等奖" draggable="false"></figure>
                     <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%8D%8E%E4%B8%BA%E6%9D%AF%E4%BA%8C%E7%AD%89%E5%A5%96.jpg" alt="华为杯二等奖" draggable="false"></figure>
@@ -525,16 +521,34 @@
                     <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E7%BE%8E%E8%B5%9BHM%E5%A5%96" alt="美赛HM奖" draggable="false"></figure>
                 </div>
             </div>
-
             <div class="carousel-controls">
-                <button id="carousel-prev-button">‹</button>
-                <button id="carousel-next-button">›</button>
+                <button class="carousel-prev-button">‹</button>
+                <button class="carousel-next-button">›</button>
             </div>
         </div>
 
         <!-- ============================================= -->
-        <!-- ========= 3D 旋转相册 HTML【结束】 ========= -->
+        <!-- ========= 【第二个相册】课外生活 ========= -->
         <!-- ============================================= -->
+        <div class="carousel-section" id="life-carousel">
+            <h2 class="carousel-title">我的课外生活</h2>
+            <span class="carousel-subtitle-underline"></span>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- 替换成您的生活照片 -->
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250510_170835.jpg" alt="社团活动" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20230915_174751.jpg" alt="旅行风景" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250417_085601.jpg" alt="团队合影" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" alt="羽毛球" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240809_190138.jpg" alt="个人摄影" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="志愿者活动" draggable="false"></figure>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev-button">‹</button>
+                <button class="carousel-next-button">›</button>
+            </div>
+        </div>
 
 
         <!-- Section: Education -->
@@ -799,103 +813,119 @@
     </script>
 
     <!-- ============================================= -->
-    <!-- ========= 3D 旋转相册 JS【开始】 ========= -->
+    <!-- ========= 3D 旋转相册 JS (重构版) ========= -->
     <!-- ============================================= -->
     <script>
-    (function() {
-        // 使用 querySelectorAll 来确保即使页面上有多个轮播，我们也能精确控制这一个
-        const container = document.querySelector('.carousel-section .carousel-container');
-        if (!container) return; // 如果找不到容器，则不执行任何操作
+    document.addEventListener('DOMContentLoaded', () => {
 
-        const carousel = container.querySelector('.carousel');
-        const cells = Array.from(container.querySelectorAll('.carousel__cell'));
-        const prevButton = document.querySelector('#carousel-prev-button');
-        const nextButton = document.querySelector('#carousel-next-button');
+        /**
+         * @function initializeCarousel
+         * @description 初始化一个3D旋转相册组件
+         * @param {HTMLElement} carouselSection - 包含相册所有元素的根容器 (.carousel-section)
+         */
+        function initializeCarousel(carouselSection) {
+            const container = carouselSection.querySelector('.carousel-container');
+            if (!container) return;
 
-        if (!carousel || cells.length === 0) {
-            console.error("轮播组件初始化失败：缺少 .carousel 或 .carousel__cell 元素。");
-            return;
-        }
+            const carousel = container.querySelector('.carousel');
+            const cells = Array.from(container.querySelectorAll('.carousel__cell'));
+            // 关键改动：使用class而不是ID来查找按钮，确保作用域正确
+            const prevButton = carouselSection.querySelector('.carousel-prev-button');
+            const nextButton = carouselSection.querySelector('.carousel-next-button');
 
-        const cellCount = cells.length;
-        const theta = 360 / cellCount;
-        const cellWidth = carousel.offsetWidth;
-        const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
+            if (!carousel || cells.length === 0 || !prevButton || !nextButton) {
+                console.error("轮播组件初始化失败，在", carouselSection, "中缺少必要的元素。");
+                return;
+            }
 
-        carousel.style.setProperty('--carousel-radius', `-${radius}px`);
-        cells.forEach((cell, index) => {
-            const angle = theta * index;
-            cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
-        });
+            const cellCount = cells.length;
+            const theta = 360 / cellCount;
+            const cellWidth = carousel.offsetWidth;
+            const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
 
-        let selectedIndex = 0;
-        let autoplayTimeout;
-        let isDragging = false;
-        let startX, startAngle;
+            carousel.style.setProperty('--carousel-radius', `-${radius}px`);
+            cells.forEach((cell, index) => {
+                const angle = theta * index;
+                cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+            });
 
-        function updateCarouselState() {
-            const angle = theta * selectedIndex * -1;
-            carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
-            carousel.style.animation = 'none';
-            clearTimeout(autoplayTimeout);
-            autoplayTimeout = setTimeout(() => {
+            let selectedIndex = 0;
+            let autoplayTimeout;
+            let isDragging = false;
+            let startX, startAngle;
+
+            function updateCarouselState() {
+                const angle = theta * selectedIndex * -1;
+                carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
+                carousel.style.animation = 'none';
+                clearTimeout(autoplayTimeout);
+                autoplayTimeout = setTimeout(() => {
+                    carousel.style.transition = 'none';
+                    void carousel.offsetWidth;
+                    carousel.style.animation = `carousel_rotation 30s infinite linear`;
+                    const progress = (angle % 360) / 360;
+                    carousel.style.animationDelay = `${progress * -30}s`;
+                    carousel.style.animationPlayState = 'running';
+                }, 2000);
+            }
+
+            prevButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
+            nextButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
+            
+            // 键盘事件是全局的，但我们只在页面聚焦时做响应，这里简化处理
+            // 如果需要更复杂的，可以检查哪个carousel在视口内再响应
+            document.addEventListener('keydown', (e) => {
+                if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+                if (e.key === 'ArrowLeft') prevButton.click();
+                else if (e.key === 'ArrowRight') nextButton.click();
+            });
+
+            container.addEventListener('mousedown', e => {
+                e.preventDefault();
+                isDragging = true;
+                container.style.cursor = 'grabbing';
+                startX = e.pageX;
+                carousel.style.animationPlayState = 'paused';
+                clearTimeout(autoplayTimeout);
+                const computedStyle = window.getComputedStyle(carousel);
+                const transformMatrix = new DOMMatrix(computedStyle.transform);
+                startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+            });
+            
+            document.addEventListener('mousemove', e => {
+                if (!isDragging || e.target.closest('.carousel-section') !== carouselSection) return;
+                const moveX = e.pageX - startX;
+                const dragAngle = (moveX / container.offsetWidth) * 180;
+                const newAngle = startAngle - dragAngle;
                 carousel.style.transition = 'none';
-                void carousel.offsetWidth;
-                carousel.style.animation = `carousel_rotation 30s infinite linear`;
-                const progress = (angle % 360) / 360;
-                carousel.style.animationDelay = `${progress * -30}s`;
-                carousel.style.animationPlayState = 'running';
-            }, 2000);
-        }
-        
-        // 按钮方向: prev (‹) 逆时针, next (›) 顺时针
-        prevButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
-        nextButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') { selectedIndex++; updateCarouselState(); } 
-            else if (e.key === 'ArrowRight') { selectedIndex--; updateCarouselState(); }
-        });
+                carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
+            });
 
-        container.addEventListener('mousedown', e => {
-            e.preventDefault();
-            isDragging = true;
-            container.style.cursor = 'grabbing';
-            startX = e.pageX;
-            carousel.style.animationPlayState = 'paused';
-            clearTimeout(autoplayTimeout);
-            const computedStyle = window.getComputedStyle(carousel);
-            const transformMatrix = new DOMMatrix(computedStyle.transform);
-            startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
-        });
-        
-        document.addEventListener('mousemove', e => {
-            if (!isDragging) return;
-            const moveX = e.pageX - startX;
-            const dragAngle = (moveX / container.offsetWidth) * 180;
-            // 左滑(负) -> 顺时针 ; 右滑(正) -> 逆时针 (已修正)
-            // const newAngle = startAngle - dragAngle;
-            const newAngle = dragAngle - startAngle;
-            carousel.style.transition = 'none';
-            carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
-        });
+            function endDrag(e) {
+                // 只有当拖动的是当前实例时才响应
+                if (!isDragging || e.target.closest('.carousel-section') !== carouselSection && e.type !== 'mouseleave') return;
 
-        function endDrag() {
-            if (!isDragging) return;
-            isDragging = false;
-            container.style.cursor = 'grab';
-            const computedStyle = window.getComputedStyle(carousel);
-            const transformMatrix = new DOMMatrix(computedStyle.transform);
-            const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
-            selectedIndex = Math.round(currentAngle / theta);
-            updateCarouselState();
+                isDragging = false;
+                container.style.cursor = 'grab';
+                const computedStyle = window.getComputedStyle(carousel);
+                const transformMatrix = new DOMMatrix(computedStyle.transform);
+                const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+                selectedIndex = Math.round(currentAngle / theta);
+                updateCarouselState();
+            }
+
+            document.addEventListener('mouseup', endDrag);
+            document.addEventListener('mouseleave', endDrag);
         }
 
-        document.addEventListener('mouseup', endDrag);
-        document.addEventListener('mouseleave', endDrag);
+        // --- 自动初始化页面上所有的轮播组件 ---
+        const allCarousels = document.querySelectorAll('.carousel-section');
+        allCarousels.forEach(carousel => {
+            initializeCarousel(carousel);
+        });
 
-    })();
+    });
     </script>
 
 
