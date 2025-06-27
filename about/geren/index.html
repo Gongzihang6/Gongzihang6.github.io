@@ -1899,7 +1899,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>869</strong></p>
+<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>905</strong></p>
 </div>
 <!-- ## 关于我 -->
 <!-- # <span id="jinrishici-sentence">今日诗词</span> -->
@@ -2033,12 +2033,18 @@
         transform: translateX(-50%);
         width: 120px;
         height: 120px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234a6cfd' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41z'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a6cfd' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'%3E%3C/polyline%3E%3C/svg%3E");
+
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        /* (可选) 添加一个微妙的动画，让它更生动 */
+        transition: transform 0.3s ease;
     }
-
+    /* (可选) 添加一个简单的悬停动效，让箭头轻微上浮 */
+    .qualification__data:hover > div:nth-child(2)::before {
+        transform: translateX(-50%) translateY(-3px);
+    }
     /* --- 其他文本和图标样式 --- */
     .qualification__title { font-size: 1.125rem; font-weight: 600; color: var(--title-color); margin: 0 0 0.25rem 0; }
     .qualification__subtitle { display: inline-block; font-size: 0.9rem; color: var(--text-color); margin-bottom: 1rem; }
