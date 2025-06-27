@@ -1796,11 +1796,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了如何通过CSS实现古典诗词的垂直排版效果，重点解析了<code>.poem-card-full</code>容器的响应式设计，包括背景图设置、悬停动画和印章特效。关键技术点涵盖<code>writing-mode: vertical-rl</code>实现右至左竖排文字，配合自定义字体和间距优化可读性，同时通过绝对定位的红色印章元素增强传统美学表现。该方案适用于需要展示中文古典文学内容的网页设计场景。</p>
+<p>本文介绍了一种基于CSS的古典诗词网页展示方案，通过垂直排版（writing-mode: vertical-rl）和手写字体（Zhi Mang Xing）还原传统竖排样式。采用Flexbox实现内容居中，配合背景图片、阴影过渡和悬浮动画增强视觉表现，并设计了仿古印章交互元素。该技术方案适用于构建具有中国传统文化特色的网页诗词展示组件，支持响应式布局和动态效果。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>471</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>472</strong></p>
 </div>
 <h1 id="_1">虞美人·玉阑干外清江浦<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>玉阑干外清江浦，渺渺天涯雨。好风如扇雨如帘，时见岸花汀草、涨痕添。</p>
@@ -1858,9 +1858,9 @@
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6); /* 加一点白色文字阴影，让字在背景上更清晰 */
 
     /* 布局和间距 */
-    line-height: 2.5; /* 控制“行”间距（在垂直模式下是列间距）*/
-    letter-spacing: 4px; /* 控制字间距 */
-    height: 380px; /* 【重要】给一个固定的高度，防止文字溢出 */
+    line-height: 1.2; /* 控制“行”间距（在垂直模式下是列间距）*/
+    letter-spacing: 1.5px; /* 控制字间距 */
+    height: 800px; /* 【重要】给一个固定的高度，防止文字溢出 */
     text-align: center; /* 使每列文字在自己的空间里居中 */
 }
 
@@ -1901,11 +1901,11 @@
 /* 印章里的文字 */
 .poem-seal-full::after {
     /* --- 在这里修改印章里的字 --- */
-    content: '轼';
+    content: '苏轼';
 
     /* 样式 */
     font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: white;
 
