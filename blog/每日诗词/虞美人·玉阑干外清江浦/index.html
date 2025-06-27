@@ -1796,11 +1796,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了一种基于CSS的古典诗词网页展示方案，通过垂直排版（writing-mode: vertical-rl）和手写字体（Zhi Mang Xing）还原传统竖排样式。采用Flexbox实现内容居中，配合背景图片、阴影过渡和悬浮动画增强视觉表现，并设计了仿古印章交互元素。该技术方案适用于构建具有中国传统文化特色的网页诗词展示组件，支持响应式布局和动态效果。</p>
+<p>该CSS代码实现了一个自适应古典诗词卡片组件，采用inline-flex布局确保宽度由内容决定，通过min/max-width实现响应式约束（300px-90vw）。核心特性包括竖排文字（writing-mode: vertical-rl）、书法字体（Zhi Mang Xing）、动态背景图和悬停动画效果，同时移除固定尺寸改用弹性布局，兼顾美学展示与多设备适配。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>472</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>359</strong></p>
 </div>
 <h1 id="_1">虞美人·玉阑干外清江浦<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>玉阑干外清江浦，渺渺天涯雨。好风如扇雨如帘，时见岸花汀草、涨痕添。</p>
@@ -1808,113 +1808,104 @@
 <!-- ↓↓↓ 将下面整块代码复制到你的Typora中 ↓↓↓ -->
 
 <!-- 1. 引入需要的外部书法字体 -->
+<p>/* ↓↓↓ 完整替换你之前的 <style> 内容 ↓↓↓ */</p>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
 
-/* --- 诗词卡片容器 --- */
-.poem-card-full {
-    /* 基础布局和尺寸 */
-    max-width: 650px; /* 你可以根据诗词长度调整宽度 */
-    min-height: 450px; /* 和高度 */
-    margin: 2.5rem auto;
-    padding: 2.5rem;
-    position: relative; /* 关键：为印章定位提供锚点 */
+/* --- 【核心】自适应诗词卡片容器 --- */
+.poem-card-adaptive {
+    /* --- 关键修改 1: 使用 inline-flex --- */
+    /* 这让容器宽度由内容决定，而不是占满整行 */
+    display: inline-flex; 
 
-    /* 背景和边框 */
+    /* 居中显示 */
+    /* 我们需要一个包装器来实现水平居中 */
+
+    /* 保留你的美学设计 */
+    padding: 2.5rem;
+    position: relative;
     border-radius: 12px;
-    overflow: hidden; /* 隐藏超出圆角的部分 */
+    overflow: visible; /* 为了印章可以稍微出界，更有感觉 */
     border: 1px solid #e5e7eb;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-
-    /* --- 【核心】背景图片 --- */
-    /* 在这里替换为你喜欢的背景图片URL */
     background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fssyjt.jpg');
     background-size: cover;
     background-position: center;
-
-    /* 交互效果 */
     transition: all 0.3s ease;
 
-    /* 使用Flexbox让诗词内容在卡片中垂直和水平居中 */
-    display: flex;
+    /* --- 关键修改 2: 移除固定的宽度和高度 --- */
+    /* 我们用 min/max 作为“护栏”，而不是写死尺寸 */
+    min-width: 300px; /* 防止诗词太短时卡片过小 */
+    max-width: 90vw;  /* 防止诗词太长时超出屏幕宽度 */
+    min-height: 250px; /* 保证一个最小的美学高度 */
+
+    /* Flexbox 居中子元素（诗词内容） */
     align-items: center;
     justify-content: center;
 }
-
-.poem-card-full:hover {
+.poem-card-adaptive:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* --- 诗词内容容器 (负责垂直排版) --- */
-.poem-content {
-    /* --- 【核心】垂直从右到左排版 --- */
+/* --- 【核心】自适应诗词内容 --- */
+.poem-content-adaptive {
     writing-mode: vertical-rl;
-
-    /* 字体和颜色 */
     font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-    font-size: 1.8rem; /* 调整为你认为合适的字体大小 */
-    color: #333; /* 深灰色比纯黑更柔和 */
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6); /* 加一点白色文字阴影，让字在背景上更清晰 */
+    color: #333;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+    text-align: center;
 
-    /* 布局和间距 */
-    line-height: 1.2; /* 控制“行”间距（在垂直模式下是列间距）*/
-    letter-spacing: 1.5px; /* 控制字间距 */
-    height: 800px; /* 【重要】给一个固定的高度，防止文字溢出 */
-    text-align: center; /* 使每列文字在自己的空间里居中 */
+    /* 在这里微调你的字体和间距 */
+    font-size: 1.7rem;      
+    line-height: 2.2;       
+    letter-spacing: 3px;    
+
+    /* --- 关键修改 3: 移除固定的 height --- */
+    /* height: 360px;  <-- 注释或删除这一行！*/
 }
 
-/* 单独控制标题样式 */
-.poem-content .poem-title {
-    font-size: 2.2rem;
+/* 标题和作者样式微调 */
+.poem-content-adaptive .poem-title {
+    font-size: 2.1rem;
     font-weight: bold;
-    letter-spacing: 8px; /* 标题字间距可以更大 */
-    line-height: 3;
+    letter-spacing: 7px;
+    line-height: 2.8;
 }
-
-/* 单独控制作者样式 */
-.poem-content .poem-author {
-    font-size: 1.4rem;
-    margin-top: 1em; /* 在垂直模式下，margin-top 会将作者推向“下方”（即左侧）*/
+.poem-content-adaptive .poem-author {
+    font-size: 1.3rem;
+    margin-top: 1em;
     color: #555;
 }
 
-/* --- 红色印章样式 (借鉴你的风格) --- */
-.poem-seal-full {
+/* 印章样式保持不变 */
+.poem-seal-adaptive {
     position: absolute;
-    bottom: 2rem; /* 定位在右下角 */
-    right: 2.5rem;
+    bottom: 1.5rem;
+    right: 2rem;
     width: 45px;
     height: 45px;
     background-color: #c93c3c;
     border: 2px solid #a63232;
     border-radius: 4px;
     opacity: 0.9;
-    transition: all 0.3s ease;
 }
-
-.poem-seal-full:hover {
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-/* 印章里的文字 */
-.poem-seal-full::after {
-    /* --- 在这里修改印章里的字 --- */
+.poem-seal-adaptive::after {
     content: '苏轼';
-
-    /* 样式 */
     font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: 1.8rem;
     color: white;
-
-    /* 居中显示 */
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+}
+
+/* 用于居中 inline-flex 容器的包装器 */
+.card-wrapper {
+    text-align: center; /* 让内部的 inline-block/inline-flex 元素居中 */
+    margin: 2.5rem auto;
 }
 </style>
 
