@@ -77,7 +77,19 @@ img.twitter {
   font-size: large;
   
 }
-.md-typeset .pied-piper > .admonition-title,
+/* .md-typeset .pied-piper > .admonition-title, */
+/* 1. 修改所有 admonition 的标题字体大小 */
+.md-typeset .admonition-title {
+  font-size: 18px; /* 你可以根据需要调整这个值，例如 1.1em, 20px */
+}
+/* 2. 修改所有 admonition 的内容字体大小 */
+/*    内容是 <p> 标签，所以我们选择它 */
+.md-typeset .admonition p {
+  font-size: 16px; /* 你可以根据需要调整这个值 */
+}
+
+
+
 .md-typeset .pied-piper > summary {
   background-color: rgba(43, 155, 70, 0.1);
 }
@@ -632,10 +644,13 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 .ai-summary {
   font-size: 16px !important; /* 按需调整数值 */
 }
-.md-nav__link {
+.md-nav__title {
   font-size: 24px !important; /* 主导航项 */
 }
 
-.md-nav__item--section {
+.md-ellipsis {
   font-size: 18px !important; /* 子标题 */
+}
+.md-nav__list {
+  font-size: 18px !important; /* 主导航项 */
 }
