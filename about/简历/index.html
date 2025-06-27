@@ -850,12 +850,12 @@
         }
         
         // 按钮方向: prev (‹) 逆时针, next (›) 顺时针
-        prevButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
-        nextButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
+        prevButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
+        nextButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
         
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') { selectedIndex--; updateCarouselState(); } 
-            else if (e.key === 'ArrowRight') { selectedIndex++; updateCarouselState(); }
+            if (e.key === 'ArrowLeft') { selectedIndex++; updateCarouselState(); } 
+            else if (e.key === 'ArrowRight') { selectedIndex--; updateCarouselState(); }
         });
 
         container.addEventListener('mousedown', e => {
@@ -875,7 +875,8 @@
             const moveX = e.pageX - startX;
             const dragAngle = (moveX / container.offsetWidth) * 180;
             // 左滑(负) -> 顺时针 ; 右滑(正) -> 逆时针 (已修正)
-            const newAngle = startAngle - dragAngle;
+            // const newAngle = startAngle - dragAngle;
+            const newAngle = dragAngle - startAngle;
             carousel.style.transition = 'none';
             carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
         });
