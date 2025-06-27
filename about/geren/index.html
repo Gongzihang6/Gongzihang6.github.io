@@ -1817,7 +1817,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1089</strong></p>
+<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>985</strong></p>
 </div>
 <!-- ## 关于我 -->
 <!-- # <span id="jinrishici-sentence">今日诗词</span> -->
@@ -2163,123 +2163,7 @@
 
 
 
-    /* ============================================= */
-    /* ========= 3D 旋转相册样式【开始】 ========= */
-    /* ============================================= */
 
-    .carousel-section {
-        /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 */
-        /* 保留flex布局用于居中内容 */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 4rem 1rem; /* 与其他部分保持一致的上下边距 */
-        /* 背景色可以设为透明或与页面背景一致 */
-        background-color: transparent; 
-        overflow: hidden;
-    }
-
-    .carousel-title {
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: var(--title-color);
-        margin-bottom: 0.5rem;
-    }
-
-    .carousel-subtitle-underline {
-        display: block;
-        width: 60px;
-        height: 4px;
-        background-color: var(--primary-color);
-        margin: 0 auto 3.5rem auto;
-        border-radius: 2px;
-    }
-
-    .carousel-container {
-        width: 450px;
-        height: 280px;
-        position: relative;
-        perspective: 1000px;
-        margin-bottom: 2.5rem;
-        user-select: none;
-        -webkit-user-select: none;
-        cursor: grab;
-    }
-    .carousel-container:active {
-        cursor: grabbing;
-    }
-
-    .carousel {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transform-style: preserve-3d;
-        animation: carousel_rotation 30s infinite linear;
-        animation-play-state: running;
-    }
-
-    .carousel-container:hover .carousel {
-        animation-play-state: paused;
-    }
-
-    /* 动画命名加上前缀以防冲突 */
-    @keyframes carousel_rotation {
-        from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
-        to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
-    }
-
-    .carousel__cell {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background: black;
-        border: solid 4px white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .carousel__cell img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        pointer-events: none;
-        filter: grayscale(1);
-        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .carousel__cell:hover img {
-        filter: grayscale(0);
-        transform: scale(1.15);
-    }
-
-    .carousel-controls {
-        display: flex;
-        gap: 1.5rem;
-    }
-    .carousel-controls button {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: 2px solid white;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        font-size: 28px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    .carousel-controls button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        transform: scale(1.1);
-    }
-
-    /* ============================================= */
-    /* ========= 3D 旋转相册样式【结束】 ========= */
-    /* ============================================= */
 
 </style>
 
@@ -2310,39 +2194,6 @@
 </li>
 </ul>
 </div>
-<!-- ============================================= -->
-<!-- ========= 3D 旋转相册 HTML【开始】 ========= -->
-<!-- ============================================= -->
-
-<div class="carousel-section">
-    <h2 class="carousel-title">我的荣誉与作品</h2>
-    <span class="carousel-subtitle-underline"></span>
-
-    <div class="carousel-container">
-        <div class="carousel">
-            <!-- 在这里自由增删图片，JS会自动适配 -->
-            <!-- draggable="false" 是防止浏览器默认拖拽行为的关键 -->
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%A6%88%E5%A6%88%E6%9D%AF.jpg" alt="妈妈杯证书" draggable="false"></figure>
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%AD%A3%E5%A4%A7%E6%9D%AF%E5%9B%BD%E5%AE%B6%E4%B8%89%E7%AD%89%E5%A5%96.jpg" alt="正大杯国赛三等奖" draggable="false"></figure>
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%8D%8E%E4%B8%BA%E6%9D%AF%E4%BA%8C%E7%AD%89%E5%A5%96.jpg" alt="华为杯二等奖" draggable="false"></figure>
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD%E4%B8%80%E7%AD%89%E5%A5%96.jpg" alt="英语口语一等奖" draggable="false"></figure>
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B%E4%B8%80%E7%AD%89%E5%A5%96.jpg" alt="数学竞赛一等奖" draggable="false"></figure>
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2022%E4%BC%98%E7%A7%80%E5%9B%A2%E5%91%98.jpg" alt="优秀团员" draggable="false"></figure>
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2020-2021%E6%9C%AC%E7%A7%91%E4%B8%89%E5%A5%BD%E5%AD%A6%E7%94%9F.jpg" alt="三好学生" draggable="false"></figure>
-            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E7%BE%8E%E8%B5%9BHM%E5%A5%96" alt="美赛HM奖" draggable="false"></figure>
-        </div>
-    </div>
-
-    <div class="carousel-controls">
-        <button id="carousel-prev-button">‹</button>
-        <button id="carousel-next-button">›</button>
-    </div>
-</div>
-
-<!-- ============================================= -->
-<!-- ========= 3D 旋转相册 HTML【结束】 ========= -->
-<!-- ============================================= -->
-
 <!-- <div class="card2 file-block" markdown="1">
 <div class="file-icon"><img src="https://pic4.zhimg.com/80/v2-98f918276ecbc6d549fa6a5d1238e713_1440w.webp" style="height: 3em;"></div>
 <div class="file-body">
