@@ -2178,6 +2178,124 @@
         line-height: 1.5;
       }
 
+      /* ============================================= */
+        /* ========= 3D 旋转相册样式【开始】 ========= */
+        /* ============================================= */
+
+        .carousel-section {
+            /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 */
+            /* 保留flex布局用于居中内容 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1rem; /* 与其他部分保持一致的上下边距 */
+            /* 背景色可以设为透明或与页面背景一致 */
+            background-color: transparent; 
+            overflow: hidden;
+        }
+
+        .carousel-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-subtitle-underline {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0 auto 3.5rem auto;
+            border-radius: 2px;
+        }
+
+        .carousel-container {
+            width: 450px;
+            height: 280px;
+            position: relative;
+            perspective: 1000px;
+            margin-bottom: 2.5rem;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: grab;
+        }
+        .carousel-container:active {
+            cursor: grabbing;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: carousel_rotation 30s infinite linear;
+            animation-play-state: running;
+        }
+
+        .carousel-container:hover .carousel {
+            animation-play-state: paused;
+        }
+
+        /* 动画命名加上前缀以防冲突 */
+        @keyframes carousel_rotation {
+            from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
+            to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
+        }
+
+        .carousel__cell {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: black;
+            border: solid 4px white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel__cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            filter: grayscale(0);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel__cell:hover img {
+            filter: grayscale(0);
+            transform: scale(1.15);
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 2px solid white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* ============================================= */
+        /* ========= 3D 旋转相册样式【结束】 ========= */
+        /* ============================================= */
+
 </style>
 
 <p><br></p>
@@ -2207,111 +2325,6 @@
 </li>
 </ul>
 </div>
-<p>/* ============================================= <em>/
-/</em> ========= 3D 旋转相册样式【开始】 ========= <em>/
-/</em> ============================================= */</p>
-<p>.carousel-section {
-    /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 <em>/
-    /</em> 保留flex布局用于居中内容 <em>/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 1rem; /</em> 与其他部分保持一致的上下边距 <em>/
-    /</em> 背景色可以设为透明或与页面背景一致 */
-    background-color: transparent; 
-    overflow: hidden;
-}</p>
-<p>.carousel-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: var(--title-color);
-    margin-bottom: 0.5rem;
-}</p>
-<p>.carousel-subtitle-underline {
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--primary-color);
-    margin: 0 auto 3.5rem auto;
-    border-radius: 2px;
-}</p>
-<p>.carousel-container {
-    width: 450px;
-    height: 280px;
-    position: relative;
-    perspective: 1000px;
-    margin-bottom: 2.5rem;
-    user-select: none;
-    -webkit-user-select: none;
-    cursor: grab;
-}
-.carousel-container:active {
-    cursor: grabbing;
-}</p>
-<p>.carousel {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    animation: carousel_rotation 30s infinite linear;
-    animation-play-state: running;
-}</p>
-<p>.carousel-container:hover .carousel {
-    animation-play-state: paused;
-}</p>
-<p>/* 动画命名加上前缀以防冲突 */
-@keyframes carousel_rotation {
-    from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
-    to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
-}</p>
-<p>.carousel__cell {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: black;
-    border: solid 4px white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}</p>
-<p>.carousel__cell img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-    filter: grayscale(0);
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}</p>
-<p>.carousel__cell:hover img {
-    filter: grayscale(0);
-    transform: scale(1.15);
-}</p>
-<p>.carousel-controls {
-    display: flex;
-    gap: 1.5rem;
-}
-.carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: 2px solid white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    font-size: 28px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.carousel-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    transform: scale(1.1);
-}</p>
-<p>/* ============================================= <em>/
-/</em> ========= 3D 旋转相册样式【结束】 ========= <em>/
-/</em> ============================================= */</p>
 <!-- ============================================= -->
 <!-- ========= 【第二个相册】课外生活 ========= -->
 <!-- ============================================= -->
