@@ -1796,7 +1796,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该CSS代码实现了一个古典诗词展示卡片，采用竖排文字布局和仿古设计风格。核心功能包括自适应卡片容器、竖排诗词文本展示以及动态红色印章效果，通过背景图片、阴影和悬停动画增强视觉表现。技术亮点在于使用writing-mode实现竖排文本，结合aspect-ratio保持印章比例，并运用响应式单位确保多设备适配。适用于文化类网站的诗文展示场景，兼具美学价值与交互体验。</p>
+<p>该文章展示了一个古典诗词的CSS样式实现方案，通过响应式设计创建具有中国风美感的诗词卡片。核心包括垂直排版的诗词内容、背景图片适配以及动态红色印章效果，使用writing-mode实现竖排文字，结合阴影和过渡动画增强视觉体验。技术亮点在于利用aspect-ratio保持印章比例，并通过em单位实现组件自适应，适用于文化类网页的优雅展示需求。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -1846,18 +1846,18 @@
     color: #333;
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
     text-align: center;
-    font-size: 1.7rem;      
-    line-height: 2.2;       
+    font-size: 1.6rem;      
+    line-height: 1.2;       
     letter-spacing: 3px;    
 }
 .poem-content-adaptive .poem-title {
-    font-size: 2.1rem;
+    font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 7px;
-    line-height: 2.8;
+    line-height: 1.2;
 }
 .poem-content-adaptive .poem-author {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 1em;
     color: #555;
 }
@@ -1882,14 +1882,14 @@
 
     /* --- 字体和颜色 --- */
     /* 建议为印章使用更硬朗的字体，如仿宋(FangSong)或黑体(SimHei) */
-    font-family: 'FangSong', 'SimHei', 'Noto Serif SC', sans-serif;
+    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
     font-size: 1.1rem;          /* 控制印章文字大小，进而控制印章整体大小 */
     color: white;
 
     /* --- 印章外观 --- */
     background-color: #c93c3c;
     border: 2px solid #a63232;
-    border-radius: 4px;
+    border-radius: 16px;
     opacity: 0.9;
     transition: all 0.3s ease;
 }
