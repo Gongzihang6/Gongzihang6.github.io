@@ -2207,6 +2207,263 @@
 </li>
 </ul>
 </div>
+<p>/* ============================================= <em>/
+/</em> ========= 3D 旋转相册样式【开始】 ========= <em>/
+/</em> ============================================= */</p>
+<p>.carousel-section {
+    /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 <em>/
+    /</em> 保留flex布局用于居中内容 <em>/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem; /</em> 与其他部分保持一致的上下边距 <em>/
+    /</em> 背景色可以设为透明或与页面背景一致 */
+    background-color: transparent; 
+    overflow: hidden;
+}</p>
+<p>.carousel-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--title-color);
+    margin-bottom: 0.5rem;
+}</p>
+<p>.carousel-subtitle-underline {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0 auto 3.5rem auto;
+    border-radius: 2px;
+}</p>
+<p>.carousel-container {
+    width: 450px;
+    height: 280px;
+    position: relative;
+    perspective: 1000px;
+    margin-bottom: 2.5rem;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
+}
+.carousel-container:active {
+    cursor: grabbing;
+}</p>
+<p>.carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: carousel_rotation 30s infinite linear;
+    animation-play-state: running;
+}</p>
+<p>.carousel-container:hover .carousel {
+    animation-play-state: paused;
+}</p>
+<p>/* 动画命名加上前缀以防冲突 */
+@keyframes carousel_rotation {
+    from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
+    to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
+}</p>
+<p>.carousel__cell {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: black;
+    border: solid 4px white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}</p>
+<p>.carousel__cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    filter: grayscale(0);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}</p>
+<p>.carousel__cell:hover img {
+    filter: grayscale(0);
+    transform: scale(1.15);
+}</p>
+<p>.carousel-controls {
+    display: flex;
+    gap: 1.5rem;
+}
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 2px solid white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}</p>
+<p>/* ============================================= <em>/
+/</em> ========= 3D 旋转相册样式【结束】 ========= <em>/
+/</em> ============================================= */</p>
+<!-- ============================================= -->
+<!-- ========= 【第二个相册】课外生活 ========= -->
+<!-- ============================================= -->
+<div class="carousel-section" id="life-carousel">
+    <h2 class="carousel-title">我的课外生活</h2>
+    <span class="carousel-subtitle-underline"></span>
+    <div class="carousel-container">
+        <div class="carousel">
+            <!-- 替换成您的生活照片 -->
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250510_170835.jpg" alt="社团活动" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20230915_174751.jpg" alt="旅行风景" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250417_085601.jpg" alt="团队合影" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" alt="羽毛球" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240809_190138.jpg" alt="个人摄影" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="志愿者活动" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="7" draggable="false"></figure>      111
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240808_190022.jpg" alt="8" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240730_192249.jpg" alt="9" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240729_185903.jpg" alt="10" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111630.jpg" alt="11" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_124404.jpg" alt="12" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_120923.jpg" alt="13" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_081247.jpg" alt="14" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111718.jpg" alt="15" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250119_183726.jpg" alt="16" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20241224_172745.jpg" alt="17" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240726_190230.jpg" alt="18" draggable="false"></figure>
+
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button class="carousel-prev-button">‹</button>
+        <button class="carousel-next-button">›</button>
+    </div>
+</div>
+
+<!-- ============================================= -->
+<!-- ========= 3D 旋转相册 JS (重构版) ========= -->
+<!-- ============================================= -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    /**
+        * @function initializeCarousel
+        * @description 初始化一个3D旋转相册组件
+        * @param {HTMLElement} carouselSection - 包含相册所有元素的根容器 (.carousel-section)
+        */
+    function initializeCarousel(carouselSection) {
+        const container = carouselSection.querySelector('.carousel-container');
+        if (!container) return;
+
+        const carousel = container.querySelector('.carousel');
+        const cells = Array.from(container.querySelectorAll('.carousel__cell'));
+        // 关键改动：使用class而不是ID来查找按钮，确保作用域正确
+        const prevButton = carouselSection.querySelector('.carousel-prev-button');
+        const nextButton = carouselSection.querySelector('.carousel-next-button');
+
+        if (!carousel || cells.length === 0 || !prevButton || !nextButton) {
+            console.error("轮播组件初始化失败，在", carouselSection, "中缺少必要的元素。");
+            return;
+        }
+
+        const cellCount = cells.length;
+        const theta = 360 / cellCount;
+        const cellWidth = carousel.offsetWidth;
+        const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
+
+        carousel.style.setProperty('--carousel-radius', `-${radius}px`);
+        cells.forEach((cell, index) => {
+            const angle = theta * index;
+            cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+        });
+
+        let selectedIndex = 0;
+        let autoplayTimeout;
+        let isDragging = false;
+        let startX, startAngle;
+
+        function updateCarouselState() {
+            const angle = theta * selectedIndex * -1;
+            carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
+            carousel.style.animation = 'none';
+            clearTimeout(autoplayTimeout);
+            autoplayTimeout = setTimeout(() => {
+                carousel.style.transition = 'none';
+                void carousel.offsetWidth;
+                carousel.style.animation = `carousel_rotation 30s infinite linear`;
+                const progress = (angle % 360) / 360;
+                carousel.style.animationDelay = `${progress * -30}s`;
+                carousel.style.animationPlayState = 'running';
+            }, 2000);
+        }
+
+        prevButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
+        nextButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
+
+        // 键盘事件是全局的，但我们只在页面聚焦时做响应，这里简化处理
+        // 如果需要更复杂的，可以检查哪个carousel在视口内再响应
+        document.addEventListener('keydown', (e) => {
+            if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+            if (e.key === 'ArrowLeft') prevButton.click();
+            else if (e.key === 'ArrowRight') nextButton.click();
+        });
+
+        container.addEventListener('mousedown', e => {
+            e.preventDefault();
+            isDragging = true;
+            container.style.cursor = 'grabbing';
+            startX = e.pageX;
+            carousel.style.animationPlayState = 'paused';
+            clearTimeout(autoplayTimeout);
+            const computedStyle = window.getComputedStyle(carousel);
+            const transformMatrix = new DOMMatrix(computedStyle.transform);
+            startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+        });
+
+        document.addEventListener('mousemove', e => {
+            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection) return;
+            const moveX = e.pageX - startX;
+            const dragAngle = (moveX / container.offsetWidth) * 180;
+            const newAngle = startAngle - dragAngle;
+            carousel.style.transition = 'none';
+            carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
+        });
+
+        function endDrag(e) {
+            // 只有当拖动的是当前实例时才响应
+            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection && e.type !== 'mouseleave') return;
+
+            isDragging = false;
+            container.style.cursor = 'grab';
+            const computedStyle = window.getComputedStyle(carousel);
+            const transformMatrix = new DOMMatrix(computedStyle.transform);
+            const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+            selectedIndex = Math.round(currentAngle / theta);
+            updateCarouselState();
+        }
+
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('mouseleave', endDrag);
+    }
+
+    // --- 自动初始化页面上所有的轮播组件 ---
+    const allCarousels = document.querySelectorAll('.carousel-section');
+    allCarousels.forEach(carousel => {
+        initializeCarousel(carousel);
+    });
+
+});
+</script>
+
 <!-- <div class="card2 file-block" markdown="1">
 <div class="file-icon"><img src="https://pic4.zhimg.com/80/v2-98f918276ecbc6d549fa6a5d1238e713_1440w.webp" style="height: 3em;"></div>
 <div class="file-body">
