@@ -2430,7 +2430,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDragging || e.target.closest('.carousel-section') !== carouselSection) return;
             const moveX = e.pageX - startX;
             const dragAngle = (moveX / container.offsetWidth) * 180;
-            const newAngle = startAngle - dragAngle;
+            // const newAngle = startAngle - dragAngle;
+            const newAngle = dragAngle - startAngle;
             carousel.style.transition = 'none';
             carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
         });
