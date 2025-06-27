@@ -224,6 +224,40 @@
             font-size: 0.9rem;
             color: var(--text-light);
             margin: 0;
+            flex-grow: 1; /* 让描述部分占据多余空间，确保标签在底部对齐 */
+        }
+
+        /* --- 【新增】项目标签样式 --- */
+        .project-tags {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .project-tags span {
+            background-color: #eef2ff;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px; /* 胶囊形状 */
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* --- 页脚样式 --- */
+        .resume-footer {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            background-color: var(--bg-white);
+        }
+        .resume-footer p {
+            margin: 0.5rem 0;
+        }
+        .resume-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
         }
         
         /* --- 动效 --- */
@@ -244,6 +278,54 @@
             .hero-stats { justify-content: center; }
         }
 
+        .flip-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 10px auto;
+            display: flex;
+            align-items: flex-start;
+            /* 对齐顶部 */
+            justify-content: flex-end;
+            /* 将文字放置右上角 */
+        }
+        .image-container {
+            position: relative;
+            position: relative;
+            width: 290px;
+            height: 290px;
+        }
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;    /* 图片填满容器 */
+            border-radius: 50%;
+            border: 4px solid #ffffff; /* 白色边框 */
+            box-shadow: 0 8px 24px rgba(14, 30, 37, 0.15); /* 阴影 */
+            backface-visibility: hidden; /* 隐藏背面 */
+            transition: transform 0.6s ease-in-out; /* 仅对transform过渡 */
+        }
+        .image-container img:first-child {
+            z-index: 1;
+            backface-visibility: hidden;
+        }
+        .image-container img:last-child {
+            z-index: 0;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+        }
+        .image-container:hover img:first-child {
+            transform: rotateY(180deg);
+            z-index: 2;
+        }
+        .image-container:hover img:last-child {
+            transform: rotateY(0deg);
+            z-index: 3;
+        }
+
     </style>
 </head>
 <body>
@@ -256,6 +338,8 @@
                 <a href="#education">教育背景</a>
                 <a href="#skills">核心技能</a>
                 <a href="#projects">代表项目</a>
+                <a href="#hobbies">兴趣爱好</a>
+                <a href="#contact">联系我</a>
             </nav>
         </div>
     </header>
@@ -268,6 +352,17 @@
                     <!-- 请替换成您的头像链接 -->
                     <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FGZH.webp" alt="gzh 头像">
                 </div>
+
+                <div class="flip-container">
+                    <div class="image-container">
+                        <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg" alt="Front Image">
+                        <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/3f58b6cea54d446e22107fde739e843.jpg" alt="Back Image">
+                    </div>
+                </div>
+
+
+
+
                 <div class="hero-content">
                     <!-- 填写您的姓名 -->
                     <h1>龚子航</h1>
@@ -344,15 +439,111 @@
             </div>
         </section>
 
-        <!-- Section: Projects (Placeholder) -->
+        <!-- Section: Projects (更新后的内容) -->
         <section id="projects" class="resume-section fade-in-up">
             <div class="section-wrapper">
                 <h2 class="section-title">代表项目</h2>
                 <span class="title-underline"></span>
-                <!-- 您可以在这里仿照 Education 部分的 timeline 样式来添加您的项目 -->
-                <p style="text-align:center; color: var(--text-light);">项目经历正在整理中，敬请期待...</p>
+                <div class="skills-grid">
+                    <!-- 项目一 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-seedling"></i></div>
+                        <h3>基于YOLO的番茄识别与计数</h3>
+                        <p>开发了一套基于YOLO v8的自动番茄识别与计数系统，结合ByteTrack和Bot-SORT跟踪算法，实现了复杂环境下的精准番茄计数，为智能农业发展提供高效解决方案。</p>
+                        <div class="project-tags">
+                            <span>YOLOv8</span>
+                            <span>PyTorch</span>
+                            <span>OpenCV</span>
+                            <span>目标跟踪</span>
+                        </div>
+                    </div>
+                    <!-- 项目二 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <h3>猪体三维重建与精准测量系统</h3>
+                        <p>针对传统养殖痛点，设计并实现一套创新的点云三维重建系统。通过多相机与PointNet++等深度学习模型，实现猪体各部位的厘米级精准测量，有效降低动物应激反应。</p>
+                        <div class="project-tags">
+                            <span>三维重建</span>
+                            <span>点云处理</span>
+                            <span>PointNet++</span>
+                            <span>PCL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
+        
+        <!-- START: 新增模块 -->
+        <!-- Section: Hobbies -->
+        <section id="hobbies" class="resume-section fade-in-up">
+            <div class="section-wrapper">
+                <h2 class="section-title">兴趣爱好</h2>
+                <span class="title-underline"></span>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>学习</h3>
+                        <p>知足且上进，温柔且坚定。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-coffee"></i></div>
+                        <h3>咖啡</h3>
+                        <p>咖啡重度爱好者。</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-book-open"></i></div>
+                        <h3>阅读</h3>
+                        <p>喜欢诗词与村上春树。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contact Me -->
+        <section id="contact" class="resume-section fade-in-up">
+            <div class="section-wrapper">
+                <h2 class="section-title">联系我</h2>
+                <span class="title-underline"></span>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-envelope"></i></div>
+                        <h3>工作邮箱</h3>
+                        <p><a href="mailto:wcowin@qq.com" style="color: inherit;">wcowin@qq.com</a></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-weixin"></i></div>
+                        <h3>微信</h3>
+                        <p>Wcowin_ (备注: 姓名+事由)</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-github"></i></div>
+                        <h3>GitHub</h3>
+                        <p><a href="https://github.com/Wcowin" target="_blank" rel="noopener noreferrer" style="color: inherit;">github.com/Wcowin</a></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-telegram"></i></div>
+                        <h3>Telegram</h3>
+                        <p><a href="https://t.me/wecowin" target="_blank" rel="noopener noreferrer" style="color: inherit;">t.me/wecowin</a></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-twitter"></i></div>
+                        <h3>Twitter</h3>
+                        <p><a href="https://twitter.com/Wcowin_" target="_blank" rel="noopener noreferrer" style="color: inherit;">@Wcowin_</a></p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-rss"></i></div>
+                        <h3>公众号</h3>
+                        <p>TechWonders</p>
+                    </div>
+                </div>
+                <p style="text-align:center; color: var(--text-light); margin-top: 3rem; font-style: italic;">
+                    "Don't care about worldly eyes to pursue your own light"
+                </p>
+            </div>
+        </section>
+        <!-- END: 新增模块 -->
+
         
         <!-- (可选) 如果你还想显示 简历.md 文件里写的内容，可以加上下面这行 -->
         <div class="resume-section">
@@ -360,6 +551,20 @@
                 
             </div>
         </div>
+
+    </main>
+
+    <!-- START: 新增页脚 -->
+    <footer class="resume-footer">
+        <div class="footer-wrapper">
+            <p>© 2025 Wcowin</p>
+            <p>清醒，知趣，明得失，知进退</p>
+            <p style="margin-top: 1.5rem; opacity: 0.7;">
+                <i class="fa-solid fa-comment-dots"></i> 我电话号码的MD5码: 7037F514864088F907CC921687B670EE (破解有奖 吗)
+            </p>
+        </div>
+    </footer>
+    <!-- END: 新增页脚 -->
 
     </main>
 
