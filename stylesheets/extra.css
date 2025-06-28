@@ -695,7 +695,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 /* --- 自适应诗词内容 --- */
 .poem-content-adaptive {
     writing-mode: vertical-rl;
-    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
+    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif !important;
     color: #333;
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
     text-align: center;
@@ -735,7 +735,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
     /* --- 字体和颜色 --- */
     /* 建议为印章使用更硬朗的字体，如仿宋(FangSong)或黑体(SimHei) */
-    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
+    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif !important;
     font-size: 1.1rem;          /* 控制印章文字大小，进而控制印章整体大小 */
     color: white;
     
