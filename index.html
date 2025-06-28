@@ -1830,6 +1830,15 @@
 <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+
+    /* 强制重置相册样式 */
+    #life-carousel .carousel__cell img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        aspect-ratio: 450/280 !important; /* 强制横屏比例 */
+    }
+
 /* --- 变量定义，方便修改主题 --- */
     :root {
         --primary-color: #4a6cfd;      /* 主题蓝色 */
