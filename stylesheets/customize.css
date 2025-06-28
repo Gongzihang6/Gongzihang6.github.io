@@ -127,7 +127,7 @@ figcaption::before {
 /* --- 变量定义，方便全局修改 --- */
 :root {
   --mac-window-bg: #f3f4f6;          /* 窗口/标题栏的整体背景 (浅灰) */
-  --mac-linenos-bg: #e5e7eb;        /* 行号栏的背景 (稍深一点的灰) */
+  --mac-linenos-bg: #fdfdfe;        /* 行号栏的背景 (稍深一点的灰) */
   --mac-code-bg: #fdfdfe;            /* 代码区的背景 (几乎是白色) */
   --mac-border-color: #d1d5db;      /* 分隔线颜色 */
   --mac-window-radius: 10px;        /* 窗口圆角 */
@@ -183,7 +183,7 @@ figcaption::before {
 .md-typeset .highlight[data-lang] .linenos::before {
   content: attr(data-lang);
   position: absolute;
-  top: 5px; /* 定位在顶部留出的空白区域 */
+  top: 0px; /* 定位在顶部留出的空白区域 */
   left: 5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.9em;
