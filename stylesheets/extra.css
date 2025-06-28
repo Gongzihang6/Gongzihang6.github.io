@@ -762,67 +762,97 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
-/* --- macOS 风格代码块样式 --- */
-
-/* 定义变量，方便修改 */
+/* --- 变量定义，方便全局修改 --- */
 :root {
-  --mac-bar-height: 40px;
-  --mac-bar-background: #3c3c3c;
-  --mac-code-background: #2d2d2d;
-  --mac-window-radius: 8px;
-  --mac-lang-color: rgba(255, 255, 255, 0.5);
+  --mac-bar-bg: #3c3c3c;             /* 顶部深灰色标题栏背景 */
+  --mac-content-bg: #ffffff;         /* 代码区域的纯白背景 */
+  --mac-linenos-bg: #f3f4f6;         /* 行号栏的浅灰色背景 (tailwindcss gray-100) */
+  --mac-linenos-border: #e5e7eb;     /* 行号栏右侧的边框颜色 (tailwindcss gray-200) */
+  --mac-bar-height: 50px;            /* 标题栏高度 */
+  --mac-window-radius: 10px;         /* 窗口圆角大小 */
+  --mac-tab-color: #333;             /* 语言标签文字颜色 */
 }
 
-/* 1. 主容器样式 (充当窗口和标题栏) */
+/* --- 1. 主容器，即整个“窗口” --- */
 .md-typeset .highlight {
   position: relative;
-  background-color: var(--mac-bar-background); /* 标题栏背景色 */
+  background-color: var(--mac-bar-bg); /* 背景是标题栏的颜色 */
   border-radius: var(--mac-window-radius);
   padding-top: var(--mac-bar-height); /* 为标题栏留出空间 */
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.3); /* 更柔和的阴影 */
+  overflow: hidden; /* 隐藏内部超出的部分，特别是表格的尖角 */
 }
 
-/* 2. 内部代码区域样式 */
-.md-typeset .highlight pre {
-  margin: 0;
-  padding: 1.2em 1em; /* 给代码一些内边距 */
-  background-color: var(--mac-code-background); /* 代码区背景色 */
-  border-radius: 0 0 var(--mac-window-radius) var(--mac-window-radius); /* 只有下方有圆角 */
-}
-
-/* 3. 创建左上角的三个彩色圆点 */
+/* --- 2. 左上角的 macOS 三色圆点 --- */
 .md-typeset .highlight::before {
   content: ' ';
   position: absolute;
-  top: 14px; /* (40px - 12px) / 2 -> 14px 垂直居中 */
-  left: 15px;
+  top: calc(var(--mac-bar-height) / 2 - 6px); /* 垂直居中 */
+  left: 20px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #ff5f56; /* 红色 */
-  /* 使用 box-shadow 高效绘制另外两个点 */
+  background: #ff5f56;
   box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-  z-index: 1; /* 确保在最上层 */
+  z-index: 2; /* 确保在最上层 */
 }
 
-/* 4. 在右上角显示代码语言 */
+/* --- 3. 语言“标签页” (最关键的部分) --- */
 .md-typeset .highlight[data-lang]::after {
-  content: attr(data-lang); /* 读取语言属性 */
+  content: attr(data-lang); /* 读取语言属性，如 'java' */
   position: absolute;
-  top: 0;
-  right: 50px; /* 为复制按钮留出空间 (约50px) */
-  height: var(--mac-bar-height);
-  line-height: var(--mac-bar-height); /* 垂直居中 */
-  padding: 0 15px;
-  color: var(--mac-lang-color);
+  top: var(--mac-bar-height); /* 定位在标题栏正下方 */
+  left: 20px;
+  z-index: 1; /* 层级介于圆点和内容之间 */
+  
+  background-color: var(--mac-content-bg); /* 白色背景 */
+  color: var(--mac-tab-color);
   font-family: "SF Mono", "Consolas", "Roboto Mono", monospace;
-  font-size: 0.8em;
-  text-transform: uppercase; /* e.g., "java" -> "JAVA" */
+  font-size: 0.9em;
+  font-weight: 600;
+  text-transform: capitalize; /* "java" -> "Java" */
+
+  padding: 6px 15px;
+  border-radius: 6px 6px 0 0; /* 只有左上和右上是圆角 */
+  
+  /* 制作与下方内容区域无缝连接的效果 */
+  border: 1px solid var(--mac-linenos-border);
+  border-bottom: 1px solid var(--mac-content-bg); /* 底部边框和背景同色，实现“镂空”效果 */
 }
 
-/* 5. 调整 Material 主题的复制按钮位置和样式 */
+/* --- 4. 处理由 line_nums 生成的表格 --- */
+.md-typeset .highlight table {
+  width: 100%;
+  border-spacing: 0;
+  /* 表格本身用白色背景，这样代码和行号都能继承 */
+  background-color: var(--mac-content-bg);
+}
+
+/* --- 5. 行号列的样式 --- */
+.md-typeset .highlight .linenos {
+  background-color: var(--mac-linenos-bg); /* 行号列使用浅灰色背景 */
+  padding: 1.2em 0.8em;
+  border-right: 1px solid var(--mac-linenos-border);
+  color: rgba(0,0,0,0.3);
+  text-align: right;
+  user-select: none; /* 禁止选中行号 */
+}
+
+/* --- 6. 代码列的样式 --- */
+.md-typeset .highlight .code {
+  padding: 1.2em 1em;
+}
+/* 覆盖 <pre> 标签可能带来的额外样式 */
+.md-typeset .highlight .code pre {
+  margin: 0;
+  padding: 0;
+  background-color: transparent !important; /* 极其重要！让 pre 透明，显示其父容器的白色背景 */
+  white-space: pre;
+}
+
+/* --- 7. 调整复制按钮 --- */
 .md-typeset .highlight .md-clipboard {
   position: absolute;
   top: 0;
@@ -832,10 +862,10 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent; /* 移除默认背景 */
-  border-radius: 0 var(--mac-window-radius) 0 0;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6); /* 按钮图标颜色 */
+  z-index: 2;
 }
-
-.md-typeset .highlight .md-clipboard svg {
-    color: var(--mac-lang-color); /* 统一图标颜色 */
+.md-typeset .highlight .md-clipboard:hover {
+  color: white;
 }
