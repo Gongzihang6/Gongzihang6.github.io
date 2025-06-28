@@ -762,110 +762,25 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
-/* --- 变量定义，方便全局修改 --- */
-:root {
-  --mac-bar-bg: #3c3c3c;             /* 顶部深灰色标题栏背景 */
-  --mac-content-bg: #ffffff;         /* 代码区域的纯白背景 */
-  --mac-linenos-bg: #f3f4f6;         /* 行号栏的浅灰色背景 (tailwindcss gray-100) */
-  --mac-linenos-border: #e5e7eb;     /* 行号栏右侧的边框颜色 (tailwindcss gray-200) */
-  --mac-bar-height: 50px;            /* 标题栏高度 */
-  --mac-window-radius: 10px;         /* 窗口圆角大小 */
-  --mac-tab-color: #333;             /* 语言标签文字颜色 */
+/* 代码块主题 */
+/* 顶部 */
+.md-fences {
+    color: #c5c8c6;
+    background-color: #21252b;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
+    padding-top: 30px;
+    font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
 }
-
-/* --- 1. 主容器，即整个“窗口” --- */
-.md-typeset .highlight {
-  position: relative;
-  background-color: var(--mac-bar-bg); /* 背景是标题栏的颜色 */
-  border-radius: var(--mac-window-radius);
-  padding-top: var(--mac-bar-height); /* 为标题栏留出空间 */
-  margin-top: 2em;
-  margin-bottom: 2em;
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.3); /* 更柔和的阴影 */
-  overflow: hidden; /* 隐藏内部超出的部分，特别是表格的尖角 */
-}
-
-/* --- 2. 左上角的 macOS 三色圆点 --- */
-.md-typeset .highlight::before {
-  content: ' ';
-  position: absolute;
-  top: calc(var(--mac-bar-height) / 2 - 6px); /* 垂直居中 */
-  left: 20px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ff5f56;
-  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-  z-index: 2; /* 确保在最上层 */
-}
-
-/* --- 3. 语言“标签页” (最关键的部分) --- */
-.md-typeset .highlight[data-lang]::after {
-  content: attr(data-lang); /* 读取语言属性，如 'java' */
-  position: absolute;
-  top: var(--mac-bar-height); /* 定位在标题栏正下方 */
-  left: 20px;
-  z-index: 1; /* 层级介于圆点和内容之间 */
-  
-  background-color: var(--mac-content-bg); /* 白色背景 */
-  color: var(--mac-tab-color);
-  font-family: "SF Mono", "Consolas", "Roboto Mono", monospace;
-  font-size: 0.9em;
-  font-weight: 600;
-  text-transform: capitalize; /* "java" -> "Java" */
-
-  padding: 6px 15px;
-  border-radius: 6px 6px 0 0; /* 只有左上和右上是圆角 */
-  
-  /* 制作与下方内容区域无缝连接的效果 */
-  border: 1px solid var(--mac-linenos-border);
-  border-bottom: 1px solid var(--mac-content-bg); /* 底部边框和背景同色，实现“镂空”效果 */
-}
-
-/* --- 4. 处理由 line_nums 生成的表格 --- */
-.md-typeset .highlight table {
-  width: 100%;
-  border-spacing: 0;
-  /* 表格本身用白色背景，这样代码和行号都能继承 */
-  background-color: var(--mac-content-bg);
-}
-
-/* --- 5. 行号列的样式 --- */
-.md-typeset .highlight .linenos {
-  background-color: var(--mac-linenos-bg); /* 行号列使用浅灰色背景 */
-  padding: 1.2em 0.8em;
-  border-right: 1px solid var(--mac-linenos-border);
-  color: rgba(0,0,0,0.3);
-  text-align: right;
-  user-select: none; /* 禁止选中行号 */
-}
-
-/* --- 6. 代码列的样式 --- */
-.md-typeset .highlight .code {
-  padding: 1.2em 1em;
-}
-/* 覆盖 <pre> 标签可能带来的额外样式 */
-.md-typeset .highlight .code pre {
-  margin: 0;
-  padding: 0;
-  background-color: transparent !important; /* 极其重要！让 pre 透明，显示其父容器的白色背景 */
-  white-space: pre;
-}
-
-/* --- 7. 调整复制按钮 --- */
-.md-typeset .highlight .md-clipboard {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: var(--mac-bar-height);
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.6); /* 按钮图标颜色 */
-  z-index: 2;
-}
-.md-typeset .highlight .md-clipboard:hover {
-  color: white;
+ 
+.md-fences::before {
+    background: #fc625d;
+    border-radius: 50%;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    content: ' ';
+    height: 12px;
+    left: 12px;
+    margin-top: -20px;
+    position: absolute;
+    width: 12px;
 }

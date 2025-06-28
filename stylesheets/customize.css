@@ -36,7 +36,7 @@
 
 /* 可选：如需恢复代码块、警告框等样式，取消注释即可 */
 
-.highlight span.filename {
+/* .highlight span.filename {
   border-bottom: none;
   border-radius: var(--base-border-radius);
   display: inline;
@@ -58,7 +58,7 @@
 [dir="ltr"] .md-typeset blockquote {
   border-radius: 0.2rem;
   border-left-width: var(--admonition-border-left-width);
-}
+} */
 
 
 /* 可选：博客相关样式，按需启用 */
