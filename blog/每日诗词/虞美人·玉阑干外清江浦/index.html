@@ -1851,106 +1851,12 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该CSS代码实现了一个具有中国古典风格的诗词展示卡片，采用竖排文字布局和印章元素设计。关键技术包括：使用writing-mode实现竖排文本，通过position:absolute定位自适应印章，运用background-image添加古风背景。卡片具有悬停动画效果，并采用响应式设计确保多设备适配。整体设计融合了传统书法美学与现代CSS技术，适用于展示古典诗词等文化内容。</p>
+<p>这首词描绘春夏之交的雨景，通过"好风如扇雨如帘"等新颖比喻展现细腻意境。上片写景，下片抒情，由眼前烟雨引发怀人之思，以"霎时凉梦到南州"作结，余韵悠长。全词格调清朗疏淡，突破传统相思词凄清风格，艺术上层次分明，景情对比强烈，展现了李廌独特的词境开拓。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1212</strong></p>
+<p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1016</strong></p>
 </div>
-<!-- ↓↓↓ 完整复制这段最终代码 ↓↓↓ -->
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
-  /* (可选) 如果想让印章字体更有篆刻感，可以引入一个仿宋或篆体字体 */
-  /* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap'); */
-
-/* --- 卡片居中包装器 --- */
-.card-wrapper {
-    text-align: center;
-    margin: 2.5rem auto;
-}
-
-/* --- 自适应诗词卡片 --- */
-.poem-card-adaptive {
-    display: inline-flex; 
-    min-width: 300px;
-    max-width: 90vw;
-    min-height: 250px;
-    padding: 2.5rem 3rem; /* 左右内边距可以稍大一些 */
-    position: relative;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fssyjt.jpg');
-    background-size: cover;
-    background-position: center;
-    transition: all 0.3s ease;
-    align-items: center;
-    justify-content: center;
-}
-.poem-card-adaptive:hover {
-    transform: translateY(-8px);
-}
-
-/* --- 自适应诗词内容 --- */
-.poem-content-adaptive {
-    writing-mode: vertical-rl;
-    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-    color: #333;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
-    text-align: center;
-    font-size: 1.6rem;      
-    line-height: 1.2;       
-    letter-spacing: 3px;    
-}
-.poem-content-adaptive .poem-title {
-    font-size: 1.6rem;
-    font-weight: bold;
-    letter-spacing: 7px;
-    line-height: 1.2;
-}
-.poem-content-adaptive .poem-author {
-    font-size: 1.6rem;
-    margin-top: 1em;
-    color: #555;
-}
-
-/* --- 【核心】自适应红色印章 --- */
-.poem-seal-final {
-    /* 定位 */
-    position: absolute;
-    bottom: 1.5rem;
-    right: 2rem;
-
-    /* --- 尺寸自适应的关键 --- */
-    display: inline-flex;       /* 使其包裹内容 */
-    padding: 0.2em;             /* 使用em单位，让边距随字号缩放 */
-    aspect-ratio: 1 / 1;      /* 强制保持1:1的正方形比例 */
-
-    /* --- 文字和布局 --- */
-    writing-mode: vertical-rl;  /* 让多字竖排 */
-    text-orientation: mixed;    /* 确保字符是正的 */
-    align-items: center;        /* 垂直居中（在竖排模式下是水平） */
-    justify-content: center;    /* 水平居中（在竖排模式下是垂直） */
-
-    /* --- 字体和颜色 --- */
-    /* 建议为印章使用更硬朗的字体，如仿宋(FangSong)或黑体(SimHei) */
-    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-    font-size: 1.1rem;          /* 控制印章文字大小，进而控制印章整体大小 */
-    color: white;
-
-    /* --- 印章外观 --- */
-    background-color: #c93c3c;
-    border: 2px solid #a63232;
-    border-radius: 16px;
-    opacity: 0.9;
-    transition: all 0.3s ease;
-}
-.poem-seal-final:hover {
-    transform: scale(1.1);
-    opacity: 1;
-}
-</style>
-
 <div class="card-wrapper">
     <div class="poem-card-adaptive">
 
