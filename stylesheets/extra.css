@@ -822,5 +822,5 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 /* (可选) 6. 在页脚顶部添加一条分隔线 */
 /* 由于页脚和正文现在都是白色，添加一条线可以更好地区分它们 */
 .md-footer {
-    border-top: .05rem solid #e0e0e0; /* 添加一个浅灰色的上边框 */
+    border-top: .05rem solid #948383; /* 添加一个浅灰色的上边框 */
 }
