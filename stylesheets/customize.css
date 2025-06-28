@@ -141,7 +141,7 @@ figcaption::before {
   border-radius: var(--mac-window-radius);
   padding-top: var(--mac-bar-height);      /* 仅为顶部的标题栏留出空间 */
   margin: 0 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* 关键：隐藏内部超出圆角的部分 */
 }
 
@@ -169,13 +169,13 @@ figcaption::before {
 /* --- 4. 左侧行号列 --- */
 .md-typeset .highlight .linenos {
   position: relative; /* 为语言标签定位提供基准 */
-  background-color: var(--mac-linenos-bg);
+  background-color: var(--mac-border-color);
   /* 顶部留出空间放语言标签，其余内边距正常 */
-  padding: 25px 0.8em 1.2em 0.8em;
+  padding: 5px 0.8em 1.2em 0.8em;
   color: rgba(0, 0, 0, 0.4);
   text-align: right;
   user-select: none;
-  border-right: 1px solid var(--mac-border-color);
+  /* border-right: 1px solid var(--mac-border-color); */
   vertical-align: top; /* 确保内容从顶部对齐 */
 }
 
@@ -183,8 +183,8 @@ figcaption::before {
 .md-typeset .highlight[data-lang] .linenos::before {
   content: attr(data-lang);
   position: absolute;
-  top: 15px; /* 定位在顶部留出的空白区域 */
-  left: 15px;
+  top: 5px; /* 定位在顶部留出的空白区域 */
+  left: 5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 0.9em;
   font-weight: 600;
