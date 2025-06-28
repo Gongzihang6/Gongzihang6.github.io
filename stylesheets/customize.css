@@ -124,77 +124,70 @@ figcaption::before {
 
 
 
-/*迁移ladder.css中的样式*/
+/* 1. 主容器样式 (我们用 .highlight 替代 .md-fences) */
+.md-typeset .highlight {
+  position: relative; /* 必须，为伪元素的 absolute 定位提供基准 */
+  
+  /* --- 从 ladder.css 迁移过来的视觉样式 --- */
+  background-color: #dce1e8; /* 深色背景 */
+  color: #151615;             /* 默认文字颜色 */
+  border-radius: 5px;         /* 圆角 */
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4); /* 阴影 */
+  font-family: "SF Mono", "Consolas", "Roboto Mono", monospace; /* 字体 */
 
-/* 代码块主题 */
-/* 顶部 */
-.md-fences {
-    color: #c5c8c6;
-    background-color: #21252b;
-    border-radius: 5px;
-    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
-    padding-top: 30px;
-    font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
-}
- 
-.md-fences::before {
-    background: #fc625d;
-    border-radius: 50%;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-    content: ' ';
-    height: 12px;
-    left: 12px;
-    margin-top: -20px;
-    position: absolute;
-    width: 12px;
+  /* --- 采用更稳健的布局方式 --- */
+  padding-top: 40px; /* 留出 40px 高的顶部空间作为“标题栏” */
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
+/* 2. 使用一个 ::before 伪元素和 box-shadow 高效创建三个圆点 */
+.md-typeset .highlight::before {
+  content: ' ';
+  position: absolute;
+  top: 14px;      /* 在 40px 的标题栏内垂直居中 (40-12)/2 = 14 */
+  left: 15px;     /* 左边距 */
+  width: 12px;
+  height: 12px;
 
-.md-fences {
-    position: relative; /* 确保伪元素可以相对于代码块定位 */
-    color: #c5c8c6;
-    background-color: #21252b;
-    border-radius: 5px;
-    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
-    padding-top: 30px;
-    font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
+  /* --- 从 ladder.css 迁移过来的圆点颜色 --- */
+  background-color: #fc625d; /* 红色圆点 */
+  border-radius: 50%;
+  /* 使用 box-shadow 创建黄色和绿色的圆点 */
+  box-shadow: 20px 0 0 #fdbc40, 40px 0 0 #35cd4b;
 }
 
-.md-fences::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 10px;
+/* 3. 确保内部的 <pre> 元素样式正确 */
+.md-typeset .highlight pre {
+  /* 移除 <pre> 可能自带的边距和背景，让它完全融入我们的窗口 */
+  margin: 0;
+  padding: 0 1.2em 1.2em 1.2em; /* 顶部不需要内边距，左右下需要 */
+  background-color: transparent !important;
 }
 
-.md-fences::before {
-    width: 12px;
-    height: 12px;
-    background-color: #fc625d;
-    border-radius: 50%;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+/* 4. 如果使用了行号，需要对表格进行微调 */
+.md-typeset .highlight table {
+  width: 100%;
+  border-spacing: 0;
+}
+.md-typeset .highlight .linenos,
+.md-typeset .highlight .code {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.md-fences::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 30px;
-    width: 12px;
-    height: 12px;
-    background-color: #fdbc40;
-    border-radius: 50%;
+/* 5. (可选) 调整右上角的复制按钮，使其在深色背景下可见 */
+.md-typeset .highlight .md-clipboard {
+  top: 5px;
+  right: 5px;
+  color: rgba(255,255,255,0.6);
+}
+.md-typeset .highlight .md-clipboard:hover {
+  color: #fff;
 }
 
-.md-fences .circle-3 {
-    position: absolute;
-    top: -10px;
-    left: 50px;
-    width: 12px;
-    height: 12px;
-    background-color: #35cd4b;
-    border-radius: 50%;
-}
+
+
 
 /* ... existing code ... */
 .md-button:hover {
