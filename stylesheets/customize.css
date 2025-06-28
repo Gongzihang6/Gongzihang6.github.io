@@ -131,7 +131,7 @@ figcaption::before {
   --mac-code-bg: #fdfdfe;            /* 代码区的背景 (几乎是白色) */
   --mac-border-color: #d1d5db;      /* 分隔线颜色 */
   --mac-window-radius: 10px;        /* 窗口圆角 */
-  --mac-bar-height: 40px;           /* 标题栏高度 */
+  --mac-bar-height: 15px;           /* 标题栏高度 */
 }
 
 /* --- 1. 主容器，即整个“窗口” --- */
@@ -140,7 +140,7 @@ figcaption::before {
   background-color: var(--mac-window-bg); /* 整个容器是浅灰色 */
   border-radius: var(--mac-window-radius);
   padding-top: var(--mac-bar-height);      /* 仅为顶部的标题栏留出空间 */
-  margin: 2em 0;
+  margin: 0 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* 关键：隐藏内部超出圆角的部分 */
 }
@@ -171,7 +171,7 @@ figcaption::before {
   position: relative; /* 为语言标签定位提供基准 */
   background-color: var(--mac-linenos-bg);
   /* 顶部留出空间放语言标签，其余内边距正常 */
-  padding: 45px 0.8em 1.2em 0.8em;
+  padding: 25px 0.8em 1.2em 0.8em;
   color: rgba(0, 0, 0, 0.4);
   text-align: right;
   user-select: none;
@@ -197,7 +197,7 @@ figcaption::before {
 .md-typeset .highlight .code {
   position: relative; /* 为复制按钮定位提供基准 */
   background-color: var(--mac-code-bg);
-  padding: 1.2em 1em;
+  padding: 0em 0em;
   vertical-align: top;
 }
 
