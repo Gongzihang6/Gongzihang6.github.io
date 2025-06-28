@@ -128,7 +128,7 @@ figcaption::before {
 
 /* 代码块主题 */
 /* 顶部 */
-/* .md-fences {
+.md-fences {
     color: #c5c8c6;
     background-color: #21252b;
     border-radius: 5px;
@@ -147,7 +147,7 @@ figcaption::before {
     margin-top: -20px;
     position: absolute;
     width: 12px;
-} */
+}
 
 
 .md-fences {
