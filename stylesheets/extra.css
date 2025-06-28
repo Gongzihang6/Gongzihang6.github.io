@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+
+
 :root > * {
   --md-primary-fg-color:        #4c94cb;
   --md-primary-fg-color--light:#4c94cb;
@@ -660,7 +663,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap'); */
 /* (可选) 如果想让印章字体更有篆刻感，可以引入一个仿宋或篆体字体 */
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap'); */
 
