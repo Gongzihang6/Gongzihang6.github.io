@@ -2213,133 +2213,138 @@
     }
 
 
-        /* ============================================= */
-        /* ========= 3D 旋转相册样式【开始】 ========= */
-        /* ============================================= */
+    /* ============================================= */
+    /* ========= 3D 旋转相册样式 (已优化) ========= */
+    /* ============================================= */
 
-        .carousel-section {
-            /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 */
-            /* 保留flex布局用于居中内容 */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 4rem 1rem; /* 与其他部分保持一致的上下边距 */
-            /* 背景色可以设为透明或与页面背景一致 */
-            background-color: transparent; 
-            overflow: hidden;
-        }
+    .carousel-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem 1rem;
+        background-color: transparent;
+        overflow: hidden;
+        position: relative; /* 用于全宽出血布局 */
+        width: 100%;
+    }
 
-        .carousel-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: var(--title-color);
-            margin-bottom: 0.5rem;
-        }
+    .carousel-title {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: var(--title-color);
+        margin-bottom: 0.5rem;
+    }
 
-        .carousel-subtitle-underline {
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            margin: 0 auto 3.5rem auto;
-            border-radius: 2px;
-        }
+    .carousel-subtitle-underline {
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary-color);
+        margin: 0 auto 3.5rem;
+        border-radius: 2px;
+    }
 
-        .carousel-container {
-            width: 450px;
-            height: 280px;
-            position: relative;
-            perspective: 1000px;
-            margin-bottom: 2.5rem;
-            user-select: none;
-            -webkit-user-select: none;
-            cursor: grab;
-        }
-        .carousel-container:active {
-            cursor: grabbing;
-        }
+    .carousel-container {
+        width: 450px;
+        max-width: 90vw; /* 在小屏幕上防止溢出 */
+        height: 280px;
+        position: relative;
+        perspective: 1000px;
+        margin-bottom: 2.5rem;
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: grab;
+    }
 
-        .carousel {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            transform-style: preserve-3d;
-            animation: carousel_rotation 30s infinite linear;
-            animation-play-state: running;
-        }
+    .carousel-container:active {
+        cursor: grabbing;
+    }
 
-        .carousel-container:hover .carousel {
-            animation-play-state: paused;
-        }
+    .carousel {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: carousel_rotation 30s infinite linear;
+        animation-play-state: running;
 
-        /* 动画命名加上前缀以防冲突 */
-        @keyframes carousel_rotation {
-            from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
-            to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
-        }
+        /* 【优化1】开启GPU加速，性能提升的关键 */
+        will-change: transform;
+    }
 
-        .carousel__cell {
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            background: black;
-            border: solid 4px white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
+    .carousel-container:hover .carousel {
+        animation-play-state: paused;
+    }
 
-        .carousel__cell img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-            filter: grayscale(0);
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
+    @keyframes carousel_rotation {
+        from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
+        to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
+    }
 
-        .carousel__cell:hover img {
-            filter: grayscale(0);
-            transform: scale(1.15);
-        }
+    .carousel__cell {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: black;
+        border: 4px solid white;
+        border-radius: 10px;
+        overflow: hidden;
 
-        .carousel-controls {
-            display: flex;
-            gap: 1.5rem;
-        }
-        .carousel-controls button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: 2px solid white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 28px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .carousel-controls button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
-        }
-        /* --- 【核心修改点 1】新增全宽出血样式 --- */
-        .full-width-bleed {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            /* 为左右可能产生的滚动条留出空间，如果您不希望有内边距可以设为0 */
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
+        /* 【优化3】稍微简化阴影以降低绘制成本 */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 
-        /* ============================================= */
-        /* ========= 3D 旋转相册样式【结束】 ========= */
-        /* ============================================= */
+        /* 【优化1】为每个面板也开启硬件加速 */
+        will-change: transform;
+
+        /* 提升渲染性能的技巧 */
+        backface-visibility: hidden;
+    }
+
+    .carousel__cell img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .carousel__cell:hover img {
+        transform: scale(1.1);
+    }
+
+    .carousel-controls {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .carousel-controls button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: 2px solid white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 28px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .carousel-controls button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: scale(1.1);
+    }
+
+    .full-width-bleed {
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 
 
 </style>
@@ -2403,21 +2408,24 @@
     </div>
 </div>
 
+<!-- ============================================= -->
+<!-- ========= 3D 旋转相册 JS (最终优化版) ========= -->
+<!-- ============================================= -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * @function initializeCarousel
-     * @description 初始化一个3D旋转相册组件
+     * @description 初始化一个高性能的3D旋转相册组件
      * @param {HTMLElement} carouselSection - 包含相册所有元素的根容器 (.carousel-section)
      */
     function initializeCarousel(carouselSection) {
+        // --- DOM元素获取 ---
         const container = carouselSection.querySelector('.carousel-container');
         if (!container) return;
 
         const carousel = container.querySelector('.carousel');
         const cells = Array.from(container.querySelectorAll('.carousel__cell'));
-        // 关键改动：使用class而不是ID来查找按钮，确保作用域正确
         const prevButton = carouselSection.querySelector('.carousel-prev-button');
         const nextButton = carouselSection.querySelector('.carousel-next-button');
 
@@ -2426,76 +2434,103 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // --- 核心参数计算 ---
         const cellCount = cells.length;
         const theta = 360 / cellCount;
         const cellWidth = carousel.offsetWidth;
-        const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
 
+        // 使用基于间距的新半径计算公式，解决图片过多时重叠和过小的问题
+        const panelGap = 80;
+        const circumference = cellCount * (cellWidth + panelGap);
+        const radius = Math.round(circumference / (2 * Math.PI));
+
+        // --- 动态布局与样式设置 ---
         carousel.style.setProperty('--carousel-radius', `-${radius}px`);
         cells.forEach((cell, index) => {
             const angle = theta * index;
             cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
         });
 
+        // --- 状态管理变量 ---
         let selectedIndex = 0;
         let autoplayTimeout;
         let isDragging = false;
         let startX, startAngle;
 
+        // 【优化2】用于requestAnimationFrame的状态变量
+        let latestAngle = 0;
+        let animationFrameId = null;
+
+        // --- 核心状态更新与动画函数 ---
         function updateCarouselState() {
             const angle = theta * selectedIndex * -1;
             carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
-            carousel.style.animation = 'none';
+            carousel.style.animation = 'none'; // 停止CSS动画
+
             clearTimeout(autoplayTimeout);
             autoplayTimeout = setTimeout(() => {
-                carousel.style.transition = 'none';
-                void carousel.offsetWidth;
+                carousel.style.transition = 'none'; // 为无缝切换到动画做准备
+                void carousel.offsetWidth; // 强制重绘
                 carousel.style.animation = `carousel_rotation 30s infinite linear`;
                 const progress = (angle % 360) / 360;
                 carousel.style.animationDelay = `${progress * -30}s`;
                 carousel.style.animationPlayState = 'running';
-            }, 2000);
+            }, 3000); // 交互后3秒恢复自动旋转
         }
 
+        // 【优化2】使用rAF来更新transform，与浏览器渲染同步
+        function animateDrag() {
+            carousel.style.transform = `translateZ(-${radius}px) rotateY(${latestAngle}deg)`;
+            animationFrameId = null; // 动画帧已执行，清空ID
+        }
+
+        // --- 事件监听器 ---
         prevButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
         nextButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
 
-        // 键盘事件是全局的，但我们只在页面聚焦时做响应，这里简化处理
-        // 如果需要更复杂的，可以检查哪个carousel在视口内再响应
-        document.addEventListener('keydown', (e) => {
-            if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
-            if (e.key === 'ArrowLeft') prevButton.click();
-            else if (e.key === 'ArrowRight') nextButton.click();
-        });
-
-        container.addEventListener('mousedown', e => {
+        // 拖拽开始 (pointerdown)
+        container.addEventListener('pointerdown', e => {
             e.preventDefault();
             isDragging = true;
             container.style.cursor = 'grabbing';
             startX = e.pageX;
             carousel.style.animationPlayState = 'paused';
             clearTimeout(autoplayTimeout);
+
             const computedStyle = window.getComputedStyle(carousel);
             const transformMatrix = new DOMMatrix(computedStyle.transform);
             startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+
+            // 捕获指针，解决“粘滞拖动”Bug
+            container.setPointerCapture(e.pointerId);
         });
 
-        document.addEventListener('mousemove', e => {
-            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection) return;
+        // 拖拽过程 (pointermove)
+        container.addEventListener('pointermove', e => {
+            if (!isDragging) return;
             const moveX = e.pageX - startX;
             const dragAngle = (moveX / container.offsetWidth) * 180;
-            const newAngle = startAngle - dragAngle;
-            carousel.style.transition = 'none';
-            carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
+            latestAngle = startAngle - dragAngle; // 保持正确的拖动方向
+
+            // 【优化2】不直接操作DOM，而是请求下一帧来更新
+            if (!animationFrameId) {
+                animationFrameId = requestAnimationFrame(animateDrag);
+            }
         });
 
-        function endDrag(e) {
-            // 只有当拖动的是当前实例时才响应
-            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection && e.type !== 'mouseleave') return;
-
+        // 拖拽结束 (pointerup, lostpointercapture)
+        function endDrag() {
+            if (!isDragging) return;
             isDragging = false;
             container.style.cursor = 'grab';
+
+            // 取消可能正在等待的下一帧动画
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+
             const computedStyle = window.getComputedStyle(carousel);
             const transformMatrix = new DOMMatrix(computedStyle.transform);
             const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
@@ -2503,8 +2538,10 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCarouselState();
         }
 
-        document.addEventListener('mouseup', endDrag);
-        document.addEventListener('mouseleave', endDrag);
+        container.addEventListener('pointerup', endDrag);
+        container.addEventListener('lostpointercapture', endDrag);
+        // 安全网：当窗口失焦时，也结束拖动
+        window.addEventListener('blur', endDrag);
     }
 
     // --- 自动初始化页面上所有的轮播组件 ---
@@ -2512,7 +2549,6 @@ document.addEventListener('DOMContentLoaded', () => {
     allCarousels.forEach(carousel => {
         initializeCarousel(carousel);
     });
-
 });
 </script>
 

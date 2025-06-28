@@ -34,6 +34,15 @@ status: new
 <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+
+    /* 强制重置相册样式 */
+    #life-carousel .carousel__cell img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        aspect-ratio: 450/280 !important; /* 强制横屏比例 */
+    }
+
 /* --- 变量定义，方便修改主题 --- */
     :root {
         --primary-color: #4a6cfd;      /* 主题蓝色 */
@@ -138,18 +147,25 @@ status: new
     }
     
     /* --- 手绘 SVG 箭头 --- */
-    .qualification__container .qualification__data:first-child > div:nth-child(2)::before {
+    .qualification__container .qualification__data > div:nth-child(2)::before {
         content: '';
         position: absolute;
-        top: -16px; 
+        top: -30px; 
         left: 50%;
         transform: translateX(-50%);
-        width: 16px;
-        height: 16px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234a6cfd' d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41z'/%3E%3C/svg%3E");
+        width: 30px;
+        height: 30px;
+        /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a6cfd' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'%3E%3C/polyline%3E%3C/svg%3E"); */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='1.5' d='M7.91 20.889c8.302 0 12.845-6.885 12.845-12.845c0-.193 0-.387-.009-.58A9.2 9.2 0 0 0 23 5.121a9.2 9.2 0 0 1-2.597.713a4.54 4.54 0 0 0 1.99-2.5a9 9 0 0 1-2.87 1.091A4.5 4.5 0 0 0 16.23 3a4.52 4.52 0 0 0-4.516 4.516c0 .352.044.696.114 1.03a12.82 12.82 0 0 1-9.305-4.718a4.526 4.526 0 0 0 1.4 6.03a4.6 4.6 0 0 1-2.043-.563v.061a4.524 4.524 0 0 0 3.62 4.428a4.4 4.4 0 0 1-1.189.159q-.435 0-.845-.08a4.51 4.51 0 0 0 4.217 3.135a9.05 9.05 0 0 1-5.608 1.936A9 9 0 0 1 1 18.873a12.84 12.84 0 0 0 6.91 2.016Z'/%3E%3C/svg%3E");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        /* (可选) 添加一个微妙的动画，让它更生动 */
+        transition: transform 0.3s ease;
+    }
+    /* (可选) 添加一个简单的悬停动效，让箭头轻微上浮 */
+    .qualification__data:hover > div:nth-child(2)::before {
+        transform: translateX(-50%) translateY(-3px);
     }
     
     /* --- 其他文本和图标样式 --- */
@@ -272,7 +288,7 @@ status: new
     /* 2. 简化诗词容器的样式 */
     #jinrishici-container {
         font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-        font-size: 1.8rem;  /*  诗词字体大小 */
+        font-size: 1.6rem;  /*  诗词字体大小 */
         font-weight: normal;
         color: #374151;
         line-height: 2.2;
@@ -350,6 +366,160 @@ status: new
         }
     }
 
+    .contact-container {
+        display: flex;            /* 启用 Flexbox 布局 */
+        justify-content: center;  /* 水平居中 */
+        align-items: flex-start;  /* 顶部对齐 */
+        gap: 25px;                /* 设置项目之间的间距 */
+        flex-wrap: wrap;          /* 在小屏幕上允许换行 */
+        text-align: center;       /* 内部文字居中 */
+    }
+    .contact-item {
+        width: 200px; /* 控制每个二维码的宽度，可以根据需要调整 */
+    }
+    .contact-item img {
+        width: 100%;              /* 图片宽度占满其容器 */
+        height: auto;             /* 高度自动，保持比例 */
+        border-radius: 12px;
+        border: 3px solid white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 添加一点阴影让效果更好 */
+    }
+    .contact-item p {
+        margin-top: 10px;
+        font-size: 15px;
+        color: #333;
+        line-height: 1.5;
+    }
+
+
+        /* ============================================= */
+        /* ========= 3D 旋转相册样式【开始】 ========= */
+        /* ============================================= */
+
+        .carousel-section {
+            /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 */
+            /* 保留flex布局用于居中内容 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1rem; /* 与其他部分保持一致的上下边距 */
+            /* 背景色可以设为透明或与页面背景一致 */
+            background-color: transparent; 
+            overflow: hidden;
+        }
+
+        .carousel-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-subtitle-underline {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0 auto 3.5rem auto;
+            border-radius: 2px;
+        }
+
+        .carousel-container {
+            width: 450px;
+            height: 280px;
+            position: relative;
+            perspective: 1000px;
+            margin-bottom: 2.5rem;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: grab;
+        }
+        .carousel-container:active {
+            cursor: grabbing;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: carousel_rotation 30s infinite linear;
+            animation-play-state: running;
+        }
+
+        .carousel-container:hover .carousel {
+            animation-play-state: paused;
+        }
+
+        /* 动画命名加上前缀以防冲突 */
+        @keyframes carousel_rotation {
+            from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
+            to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
+        }
+        
+        .carousel__cell {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: black;
+            border: solid 4px white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel__cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            filter: grayscale(0);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .carousel__cell:hover img {
+            filter: grayscale(0);
+            transform: scale(1.15);
+        }
+        
+        .carousel-controls {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 2px solid white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+        /* --- 【核心修改点 1】新增全宽出血样式 --- */
+        .full-width-bleed {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            /* 为左右可能产生的滚动条留出空间，如果您不希望有内边距可以设为0 */
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* ============================================= */
+        /* ========= 3D 旋转相册样式【结束】 ========= */
+        /* ============================================= */
+
 
 </style>
 
@@ -369,7 +539,7 @@ status: new
 ---
 
 <center>
-<a href="docs/about/算法方向.pdf" target="_blank" class="md-button">下载简历</a>
+<a href="docs/算法方向.pdf" target="_blank" class="md-button">下载简历</a>
 </center>  
 
 ## 个人简介
@@ -377,11 +547,171 @@ status: new
 <!-- <p style="text-align: center; font-size: 25px; margin: 0px;"><strong>𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩</strong></p> -->
 
 !!! pied-piper1 "About me"
-    - [x] Hey, I'm [Wcowin](https://wcowin.work/VitePress/){target=“_blank”}~
+    - [x] Hey, I'm [gzh](https://github.com/Gongzihang6){target=“_blank”}~
         - [x] 偶发的强迫症 
         - [x] 热爱(xiā)折腾技术/数学
         - [x] 读书明志;诗词爱好者;擅长羽毛球
         - [x] 清醒知趣，明得失，知进退 
+
+
+<div class="carousel-section full-width-bleed" id="life-carousel">
+    <h2 class="carousel-title">我的生活</h2>
+    <span class="carousel-subtitle-underline"></span>
+    <div class="carousel-container">
+        <div class="carousel">
+            <!-- 替换成您的生活照片 -->
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250510_170835.jpg" alt="社团活动" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20230915_174751.jpg" alt="旅行风景" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250417_085601.jpg" alt="团队合影" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" alt="羽毛球" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240809_190138.jpg" alt="个人摄影" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="志愿者活动" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="7" draggable="false"></figure>      
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240808_190022.jpg" alt="8" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240730_192249.jpg" alt="9" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240729_185903.jpg" alt="10" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111630.jpg" alt="11" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_124404.jpg" alt="12" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_120923.jpg" alt="13" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_081247.jpg" alt="14" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111718.jpg" alt="15" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250119_183726.jpg" alt="16" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20241224_172745.jpg" alt="17" draggable="false"></figure>
+            <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240726_190230.jpg" alt="18" draggable="false"></figure>
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button class="carousel-prev-button">‹</button>
+        <button class="carousel-next-button">›</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    /**
+     * @function initializeCarousel
+     * @description 初始化一个3D旋转相册组件
+     * @param {HTMLElement} carouselSection - 包含相册所有元素的根容器 (.carousel-section)
+     */
+    function initializeCarousel(carouselSection) {
+        const container = carouselSection.querySelector('.carousel-container');
+        if (!container) return;
+
+        const carousel = container.querySelector('.carousel');
+        const cells = Array.from(container.querySelectorAll('.carousel__cell'));
+        // 关键改动：使用class而不是ID来查找按钮，确保作用域正确
+        const prevButton = carouselSection.querySelector('.carousel-prev-button');
+        const nextButton = carouselSection.querySelector('.carousel-next-button');
+
+        if (!carousel || cells.length === 0 || !prevButton || !nextButton) {
+            console.error("轮播组件初始化失败，在", carouselSection, "中缺少必要的元素。");
+            return;
+        }
+
+        const cellCount = cells.length;
+        const theta = 360 / cellCount;
+        const cellWidth = carousel.offsetWidth;
+        const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
+
+        carousel.style.setProperty('--carousel-radius', `-${radius}px`);
+        cells.forEach((cell, index) => {
+            const angle = theta * index;
+            cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+        });
+
+        let selectedIndex = 0;
+        let autoplayTimeout;
+        let isDragging = false;
+        let startX, startAngle;
+
+        function updateCarouselState() {
+            const angle = theta * selectedIndex * -1;
+            carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
+            carousel.style.animation = 'none';
+            clearTimeout(autoplayTimeout);
+            autoplayTimeout = setTimeout(() => {
+                carousel.style.transition = 'none';
+                void carousel.offsetWidth;
+                carousel.style.animation = `carousel_rotation 30s infinite linear`;
+                const progress = (angle % 360) / 360;
+                carousel.style.animationDelay = `${progress * -30}s`;
+                carousel.style.animationPlayState = 'running';
+            }, 2000);
+        }
+
+        prevButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
+        nextButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
+        
+        // 键盘事件是全局的，但我们只在页面聚焦时做响应，这里简化处理
+        // 如果需要更复杂的，可以检查哪个carousel在视口内再响应
+        document.addEventListener('keydown', (e) => {
+            if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+            if (e.key === 'ArrowLeft') prevButton.click();
+            else if (e.key === 'ArrowRight') nextButton.click();
+        });
+
+        container.addEventListener('mousedown', e => {
+            e.preventDefault();
+            isDragging = true;
+            container.style.cursor = 'grabbing';
+            startX = e.pageX;
+            carousel.style.animationPlayState = 'paused';
+            clearTimeout(autoplayTimeout);
+            const computedStyle = window.getComputedStyle(carousel);
+            const transformMatrix = new DOMMatrix(computedStyle.transform);
+            startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+        });
+        
+        document.addEventListener('mousemove', e => {
+            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection) return;
+            const moveX = e.pageX - startX;
+            const dragAngle = (moveX / container.offsetWidth) * 180;
+            const newAngle = startAngle - dragAngle;
+            carousel.style.transition = 'none';
+            carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
+        });
+
+        function endDrag(e) {
+            // 只有当拖动的是当前实例时才响应
+            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection && e.type !== 'mouseleave') return;
+
+            isDragging = false;
+            container.style.cursor = 'grab';
+            const computedStyle = window.getComputedStyle(carousel);
+            const transformMatrix = new DOMMatrix(computedStyle.transform);
+            const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+            selectedIndex = Math.round(currentAngle / theta);
+            updateCarouselState();
+        }
+
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('mouseleave', endDrag);
+    }
+
+    // --- 自动初始化页面上所有的轮播组件 ---
+    const allCarousels = document.querySelectorAll('.carousel-section');
+    allCarousels.forEach(carousel => {
+        initializeCarousel(carousel);
+    });
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -584,13 +914,24 @@ status: new
 
 ## 联系我
 
-=== "💬 微信"
-    <center>
-    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" style="width: 280px; height: auto; border-radius: 12px; border: 3px solid white;">
-    <br>
-    扫一扫上面的二维码图案<br>
-    加我为朋友
-    </center>
+=== "💬 联系方式 Contact"
+    <div class="contact-container">
+      <div class="contact-item">
+        <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" alt="微信二维码">
+        <p>
+          <b>💬 微信</b><br>
+          扫码加我为朋友
+        </p>
+      </div>
+      <div class="contact-item">
+        <!-- 在这里替换成你的QQ二维码图片地址 -->
+        <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FQQ%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="QQ二维码">
+        <p>
+          <b>🐧 QQ</b><br>
+          扫码加我为好友
+        </p>
+      </div>
+    </div>
 
 === "📧 邮箱"
     <div style="text-align: center; padding: 20px 0px;">
@@ -658,7 +999,7 @@ status: new
             onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)'">
         <div style="font-size: 26px; margin-bottom: 12px;">💼</div>
         <h4 style="margin: 0 0 10px 0; color: var(--md-primary-fg-color); font-size: 17px;">LinkedIn</h4>
-        <a href="https://www.linkedin.com/in/wcowin/" class="md-button" style="font-size: 14px;" target="_blank">
+        <a href="https://www.linkedin.com/in/%E5%AD%90%E8%88%AA-%E9%BE%9A-74a0a1372/" class="md-button" style="font-size: 14px;" target="_blank">
             :fontawesome-brands-linkedin: 查看档案
         </a>
         </div>
