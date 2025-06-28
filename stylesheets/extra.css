@@ -653,9 +653,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 .md-ellipsis {
   font-size: 18px !important; /* 子标题 */
-  color: #aa96da;
+  /* color: #aa96da;
   /*字体加粗*/
-  font-weight: bold;
+  font-weight: bold; */
 }
 .md-nav__list {
   font-size: 18px !important; /* 主导航项 */
