@@ -124,117 +124,110 @@ figcaption::before {
 
 
 
+/* docs/custom.css - v5, Final refined version for integrated light theme */
+
 /* --- 变量定义 --- */
 :root {
-  --mac-card-bg: #ffffff;
-  --mac-card-shadow: rgba(0, 0, 0, 0.1);
-  --mac-linenos-border: #e5e7eb;
-  --mac-linenos-color: #9ca3af;
-  --mac-tag-bg: #f9fafb;
-  --mac-tag-border: #f3f4f6;
-  --mac-tag-color: #6b7280;
-  --mac-header-height: 45px;
+  --mac-window-bg: #f8f9fa;        /* 窗口/标题栏的整体背景 (非常浅的灰) */
+  --mac-linenos-bg: #f1f3f5;       /* 行号栏的背景 (稍深一点的灰) */
+  --mac-code-bg: #ffffff;           /* 代码区的背景 (纯白) */
+  --mac-border-color: #dee2e6;     /* 分隔线颜色 */
+  --mac-window-radius: 8px;         /* 窗口圆角 */
+  --mac-header-height: 40px;        /* 标题栏高度 */
 }
 
-/* --- 1. 主容器，即白色“卡片” --- */
+/* --- 1. 主容器 (整个窗口) --- */
 .md-typeset .highlight {
   position: relative;
-  background: var(--mac-card-bg);
-  border-radius: 8px;
-  box-shadow: 0 4px 16px var(--mac-card-shadow);
-  padding-top: var(--mac-header-height); /* 为顶部的圆点和按钮留出空间 */
-  
-  /* 关键：为外部的语言标签留出下边距，防止其与下方内容重叠 */
-  margin-top: 2em;
-  margin-bottom: 40px; 
+  background: var(--mac-window-bg);
+  border-radius: var(--mac-window-radius);
+  padding-top: var(--mac-header-height); /* 为顶部的标题栏留出空间 */
+  margin: 2em 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* 关键：裁剪内部元素，确保无缝和圆角 */
 }
 
 /* --- 2. 左上角的 macOS 三色圆点 --- */
 .md-typeset .highlight::before {
   content: ' ';
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 14px; /* 在40px高的标题栏里垂直居中 */
+  left: 15px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: #ff5f56;
   box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #35cd4b;
+  z-index: 2;
 }
 
-/* --- 3. 右下角的外部语言标签 (最核心的改造) --- */
-.md-typeset .highlight[data-lang]::after {
-  content: attr(data-lang);
-  position: absolute;
-  /* 定位到卡片的右下角外部 */
-  bottom: -14px; /* 向上偏移约自身高度的一半 */
-  right: 20px;
-  
-  background: var(--mac-tag-bg);
-  border: 1px solid var(--mac-tag-border);
-  color: var(--mac-tag-color);
-  border-radius: 6px;
-  padding: 3px 12px;
-  font-family: "SF Mono", "Consolas", monospace;
-  font-size: 0.75em;
-  text-transform: lowercase; /* 确保是小写，如 "java" */
-  z-index: 1; /* 确保它在阴影之上 */
-}
-
-/* --- 4. 表格、行号和代码区的布局 --- */
+/* --- 3. 容纳行号和代码的表格，移除所有内外边距，实现无缝对接 --- */
 .md-typeset .highlight table {
   width: 100%;
   border-spacing: 0;
-  padding: 0 1em 1em 1em; /* 给整个内容区一些内边距 */
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* --- 4. 左侧行号列 --- */
 .md-typeset .highlight .linenos {
-  color: var(--mac-linenos-color);
-  padding-right: 1.2em;
-  border-right: 1px solid var(--mac-linenos-border);
+  position: relative;
+  background: var(--mac-linenos-bg);
+  padding: 1em 0.8em; /* 统一的上下内边距，缩短了顶部距离 */
+  color: rgba(0, 0, 0, 0.4);
   text-align: right;
   user-select: none;
+  border-right: 1px solid var(--mac-border-color);
   vertical-align: top;
 }
 
+/* --- 5. 在行号列的左上角添加语言标签 --- */
+.md-typeset .highlight[data-lang] .linenos::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 1em; /* 与父元素的 padding-top 一致，对齐 */
+  left: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+/* --- 6. 右侧代码列 --- */
 .md-typeset .highlight .code {
-  padding-left: 1.2em;
+  position: relative; /* 为右上角按钮提供定位基准 */
+  background: var(--mac-code-bg);
+  padding: 1em 1em; /* 统一的上下内边距 */
   vertical-align: top;
 }
-
 .md-typeset .highlight .code pre {
   margin: 0;
   padding: 0;
   background: transparent !important;
 }
 
-/* --- 5. 右上角的按钮组 --- */
+/* --- 7. 右上角的按钮组 --- */
 .md-typeset .highlight .md-clipboard {
   position: absolute;
-  top: 13px;
-  right: 16px;
+  top: calc(1em - 4px); /* 与代码区内边距对齐，并微调 */
+  right: 1em;
   display: flex;
   align-items: center;
   background: transparent;
-  border: none;
-  padding: 0;
-  color: #9ca3af;
-  cursor: pointer;
+  color: #adb5bd;
   transition: color 0.2s;
 }
-
 .md-typeset .highlight .md-clipboard:hover {
-  color: #374151;
+  color: #343a40;
 }
 
 /* 使用 ::before 伪元素添加图片中的“减号”图标 */
 .md-typeset .highlight .md-clipboard::before {
   content: '−'; /* 这是数学减号，比连字符 '-' 更居中 */
   font-size: 20px;
-  font-weight: bold;
-  margin-right: 8px;
-  line-height: 1;
+  margin-right: 10px;
 }
 
 
