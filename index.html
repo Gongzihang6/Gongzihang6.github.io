@@ -2179,115 +2179,133 @@
     }
 
 
-    .carousel-section {
-        /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 */
-        /* 保留flex布局用于居中内容 */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 4rem 1rem; /* 与其他部分保持一致的上下边距 */
-        /* 背景色可以设为透明或与页面背景一致 */
-        background-color: transparent; 
-        overflow: hidden;
-    }
+        /* ============================================= */
+        /* ========= 3D 旋转相册样式【开始】 ========= */
+        /* ============================================= */
 
-    .carousel-title {
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: var(--title-color);
-        margin-bottom: 0.5rem;
-    }
+        .carousel-section {
+            /* 此处的样式是为了让相册作为独立组件展示，嵌入页面时可以简化 */
+            /* 保留flex布局用于居中内容 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 1rem; /* 与其他部分保持一致的上下边距 */
+            /* 背景色可以设为透明或与页面背景一致 */
+            background-color: transparent; 
+            overflow: hidden;
+        }
 
-    .carousel-subtitle-underline {
-        display: block;
-        width: 60px;
-        height: 4px;
-        background-color: var(--primary-color);
-        margin: 0 auto 3.5rem auto;
-        border-radius: 2px;
-    }
+        .carousel-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--title-color);
+            margin-bottom: 0.5rem;
+        }
 
-    .carousel-container {
-        width: 450px;
-        height: 280px;
-        position: relative;
-        perspective: 1000px;
-        margin-bottom: 2.5rem;
-        user-select: none;
-        -webkit-user-select: none;
-        cursor: grab;
-    }
-    .carousel-container:active {
-        cursor: grabbing;
-    }
+        .carousel-subtitle-underline {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0 auto 3.5rem auto;
+            border-radius: 2px;
+        }
 
-    .carousel {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transform-style: preserve-3d;
-        animation: carousel_rotation 30s infinite linear;
-        animation-play-state: running;
-    }
+        .carousel-container {
+            width: 450px;
+            height: 280px;
+            position: relative;
+            perspective: 1000px;
+            margin-bottom: 2.5rem;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: grab;
+        }
+        .carousel-container:active {
+            cursor: grabbing;
+        }
 
-    .carousel-container:hover .carousel {
-        animation-play-state: paused;
-    }
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: carousel_rotation 30s infinite linear;
+            animation-play-state: running;
+        }
 
-    /* 动画命名加上前缀以防冲突 */
-    @keyframes carousel_rotation {
-        from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
-        to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
-    }
+        .carousel-container:hover .carousel {
+            animation-play-state: paused;
+        }
 
-    .carousel__cell {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background: black;
-        border: solid 4px white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
+        /* 动画命名加上前缀以防冲突 */
+        @keyframes carousel_rotation {
+            from { transform: translateZ(var(--carousel-radius)) rotateY(0); }
+            to   { transform: translateZ(var(--carousel-radius)) rotateY(360deg); }
+        }
 
-    .carousel__cell img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        pointer-events: none;
-        filter: grayscale(0);
-        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
+        .carousel__cell {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: black;
+            border: solid 4px white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
 
-    .carousel__cell:hover img {
-        filter: grayscale(0);
-        transform: scale(1.15);
-    }
+        .carousel__cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            filter: grayscale(0);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-    .carousel-controls {
-        display: flex;
-        gap: 1.5rem;
-    }
-    .carousel-controls button {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: 2px solid white;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        font-size: 28px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    .carousel-controls button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        transform: scale(1.1);
-    }
+        .carousel__cell:hover img {
+            filter: grayscale(0);
+            transform: scale(1.15);
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 2px solid white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+        /* --- 【核心修改点 1】新增全宽出血样式 --- */
+        .full-width-bleed {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            /* 为左右可能产生的滚动条留出空间，如果您不希望有内边距可以设为0 */
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* ============================================= */
+        /* ========= 3D 旋转相册样式【结束】 ========= */
+        /* ============================================= */
 
 
 </style>
@@ -2319,10 +2337,7 @@
 </li>
 </ul>
 </div>
-<!-- ============================================= -->
-<!-- ========= 【第二个相册】课外生活 ========= -->
-<!-- ============================================= -->
-<div class="carousel-section" id="life-carousel">
+<div class="carousel-section full-width-bleed" id="life-carousel">
     <h2 class="carousel-title">我的课外生活</h2>
     <span class="carousel-subtitle-underline"></span>
     <div class="carousel-container">
@@ -2345,29 +2360,143 @@
     </div>
 </div>
 
-<!-- ============================================= -->
-<!-- ========= 3D 旋转相册 JS (重构版) ========= -->
-<!-- ============================================= -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;!-- ============================================= --&gt;
+&lt;!-- ========= 3D 旋转相册 JS (重构版) ========= --&gt;
+&lt;!-- ============================================= --&gt;
+&lt;script&gt;
+document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
 
     /**
-        * @function initializeCarousel
-        * @description 初始化一个3D旋转相册组件
-        * @param {HTMLElement} carouselSection - 包含相册所有元素的根容器 (.carousel-section)
-        */
+     * @function initializeCarousel
+     * @description 初始化一个3D旋转相册组件
+     * @param {HTMLElement} carouselSection - 包含相册所有元素的根容器 (.carousel-section)
+     */
     function initializeCarousel(carouselSection) {
-        const container = carouselSection.querySelector('.carousel-container');
+        const container = carouselSection.querySelector(&#39;.carousel-container&#39;);
         if (!container) return;
 
-        const carousel = container.querySelector('.carousel');
-        const cells = Array.from(container.querySelectorAll('.carousel__cell'));
+        const carousel = container.querySelector(&#39;.carousel&#39;);
+        const cells = Array.from(container.querySelectorAll(&#39;.carousel__cell&#39;));
         // 关键改动：使用class而不是ID来查找按钮，确保作用域正确
-        const prevButton = carouselSection.querySelector('.carousel-prev-button');
-        const nextButton = carouselSection.querySelector('.carousel-next-button');
+        const prevButton = carouselSection.querySelector(&#39;.carousel-prev-button&#39;);
+        const nextButton = carouselSection.querySelector(&#39;.carousel-next-button&#39;);
 
         if (!carousel || cells.length === 0 || !prevButton || !nextButton) {
-            console.error("轮播组件初始化失败，在", carouselSection, "中缺少必要的元素。");
+            console.error(&quot;轮播组件初始化失败，在&quot;, carouselSection, &quot;中缺少必要的元素。&quot;);
             return;
         }
 
@@ -2376,8 +2505,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const cellWidth = carousel.offsetWidth;
         const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
 
-        carousel.style.setProperty('--carousel-radius', `-${radius}px`);
-        cells.forEach((cell, index) => {
+        carousel.style.setProperty(&#39;--carousel-radius&#39;, `-${radius}px`);
+        cells.forEach((cell, index) =&gt; {
             const angle = theta * index;
             cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
         });
@@ -2389,59 +2518,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updateCarouselState() {
             const angle = theta * selectedIndex * -1;
-            carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            carousel.style.transition = &#39;transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)&#39;;
             carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
-            carousel.style.animation = 'none';
+            carousel.style.animation = &#39;none&#39;;
             clearTimeout(autoplayTimeout);
-            autoplayTimeout = setTimeout(() => {
-                carousel.style.transition = 'none';
+            autoplayTimeout = setTimeout(() =&gt; {
+                carousel.style.transition = &#39;none&#39;;
                 void carousel.offsetWidth;
                 carousel.style.animation = `carousel_rotation 30s infinite linear`;
                 const progress = (angle % 360) / 360;
                 carousel.style.animationDelay = `${progress * -30}s`;
-                carousel.style.animationPlayState = 'running';
+                carousel.style.animationPlayState = &#39;running&#39;;
             }, 2000);
         }
 
-        prevButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
-        nextButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
+        prevButton.addEventListener(&#39;click&#39;, () =&gt; { selectedIndex--; updateCarouselState(); });
+        nextButton.addEventListener(&#39;click&#39;, () =&gt; { selectedIndex++; updateCarouselState(); });
 
         // 键盘事件是全局的，但我们只在页面聚焦时做响应，这里简化处理
         // 如果需要更复杂的，可以检查哪个carousel在视口内再响应
-        document.addEventListener('keydown', (e) => {
-            if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
-            if (e.key === 'ArrowLeft') prevButton.click();
-            else if (e.key === 'ArrowRight') nextButton.click();
+        document.addEventListener(&#39;keydown&#39;, (e) =&gt; {
+            if (document.activeElement.tagName === &#39;INPUT&#39; || document.activeElement.tagName === &#39;TEXTAREA&#39;) return;
+            if (e.key === &#39;ArrowLeft&#39;) prevButton.click();
+            else if (e.key === &#39;ArrowRight&#39;) nextButton.click();
         });
 
-        container.addEventListener('mousedown', e => {
+        container.addEventListener(&#39;mousedown&#39;, e =&gt; {
             e.preventDefault();
             isDragging = true;
-            container.style.cursor = 'grabbing';
+            container.style.cursor = &#39;grabbing&#39;;
             startX = e.pageX;
-            carousel.style.animationPlayState = 'paused';
+            carousel.style.animationPlayState = &#39;paused&#39;;
             clearTimeout(autoplayTimeout);
             const computedStyle = window.getComputedStyle(carousel);
             const transformMatrix = new DOMMatrix(computedStyle.transform);
             startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
         });
 
-        document.addEventListener('mousemove', e => {
-            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection) return;
+        document.addEventListener(&#39;mousemove&#39;, e =&gt; {
+            if (!isDragging || e.target.closest(&#39;.carousel-section&#39;) !== carouselSection) return;
             const moveX = e.pageX - startX;
             const dragAngle = (moveX / container.offsetWidth) * 180;
-            // const newAngle = startAngle - dragAngle;
-            const newAngle = dragAngle - startAngle;
-            carousel.style.transition = 'none';
+            const newAngle = startAngle - dragAngle;
+            carousel.style.transition = &#39;none&#39;;
             carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
         });
 
         function endDrag(e) {
             // 只有当拖动的是当前实例时才响应
-            if (!isDragging || e.target.closest('.carousel-section') !== carouselSection && e.type !== 'mouseleave') return;
+            if (!isDragging || e.target.closest(&#39;.carousel-section&#39;) !== carouselSection &amp;&amp; e.type !== &#39;mouseleave&#39;) return;
 
             isDragging = false;
-            container.style.cursor = 'grab';
+            container.style.cursor = &#39;grab&#39;;
             const computedStyle = window.getComputedStyle(carousel);
             const transformMatrix = new DOMMatrix(computedStyle.transform);
             const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
@@ -2449,19 +2577,19 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCarouselState();
         }
 
-        document.addEventListener('mouseup', endDrag);
-        document.addEventListener('mouseleave', endDrag);
+        document.addEventListener(&#39;mouseup&#39;, endDrag);
+        document.addEventListener(&#39;mouseleave&#39;, endDrag);
     }
 
     // --- 自动初始化页面上所有的轮播组件 ---
-    const allCarousels = document.querySelectorAll('.carousel-section');
-    allCarousels.forEach(carousel => {
+    const allCarousels = document.querySelectorAll(&#39;.carousel-section&#39;);
+    allCarousels.forEach(carousel =&gt; {
         initializeCarousel(carousel);
     });
 
 });
-</script>
-
+&lt;/script&gt;
+</code></pre></div></td></tr></table></div>
 <!-- <div class="card2 file-block" markdown="1">
 <div class="file-icon"><img src="https://pic4.zhimg.com/80/v2-98f918276ecbc6d549fa6a5d1238e713_1440w.webp" style="height: 3em;"></div>
 <div class="file-body">
