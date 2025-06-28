@@ -703,8 +703,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
     text-align: center;
     font-size: 1.6rem;      
-    line-height: 1.2;       
-    letter-spacing: 3px;    
+    line-height: 0.8;       
+    /* letter-spacing: 3px;  */
 }
 .poem-content-adaptive .poem-title {
     font-size: 1.6rem;
