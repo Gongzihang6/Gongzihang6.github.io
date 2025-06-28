@@ -654,3 +654,116 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 .md-nav__list {
   font-size: 18px !important; /* 主导航项 */
 }
+
+
+
+
+/* --- 导入在线字体 --- */
+@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap');
+
+/*
+ * =========================================
+ *  古诗词卡片样式封装 (Poem Card Style)
+ * =========================================
+ */
+
+/* 1. 诗词卡片主容器 (Poem Card Container) */
+.poem-card {
+    /* 布局与定位 */
+    display: flex;
+    flex-direction: column; /* 让标题、作者、正文垂直排列 */
+    align-items: center; /* 水平居中所有内容 */
+    position: relative; /* 为印章提供绝对定位的锚点 */
+    margin: 2.5rem auto; /* 上下边距和自动水平居中 */
+
+    /* 尺寸与边距 */
+    max-width: 90vw; /* 最大宽度为视口的90% */
+    min-width: 320px; /* 最小宽度，防止过窄 */
+    padding: 3rem 2.5rem; /* 内边距 */
+    box-sizing: border-box; /* 让padding和border不计入总宽度 */
+
+    /* 背景与装饰 */
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+    background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fssyjt.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* 2. 诗词标题 (Poem Title) */
+.poem-title {
+    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* 3. 诗词作者 (Poem Author) */
+.poem-author {
+    font-family: 'KaiTi', '楷体', 'Noto Serif SC', serif;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* 4. 诗词正文 (Poem Body - Vertical Text) */
+.poem-body {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
+    font-size: 1.8rem;      
+    line-height: 2.3;       
+    letter-spacing: 4px;
+    color: #333;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+/* 诗句的段落样式 */
+.poem-body p {
+    margin: 0;
+    padding: 0 0.2em; /* 为每列文字左右留一点呼吸空间 */
+}
+
+/* 5. 自适应印章 (Poem Seal) */
+.poem-seal {
+    /* 定位 */
+    position: absolute;
+    bottom: 2rem;
+    right: 2.5rem;
+
+    /* 尺寸自适应 */
+    display: inline-flex;
+    padding: 0.7em;
+    aspect-ratio: 1 / 1;
+
+    /* 文字和布局 */
+    writing-mode: vertical-rl;
+    align-items: center;
+    justify-content: center;
+    font-family: 'FangSong', 'SimHei', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    
+    /* 外观 */
+    background-color: #c93c3c;
+    border: 2px solid #a63232;
+    border-radius: 4px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.poem-seal:hover {
+    transform: scale(1.1) rotate(3deg);
+    opacity: 1;
+}
