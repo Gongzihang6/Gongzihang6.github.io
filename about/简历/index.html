@@ -910,7 +910,7 @@
                     const progress = (angle % 360) / 360;
                     carousel.style.animationDelay = `${progress * -30}s`;
                     carousel.style.animationPlayState = 'running';
-                }, 1000); // 交互后3秒恢复自动旋转
+                }, 500); // 交互后3秒恢复自动旋转
             }
             
             // 【优化2】使用rAF来更新transform，与浏览器渲染同步
