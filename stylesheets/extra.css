@@ -655,7 +655,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   font-size: 18px !important; /* 子标题 */
   /* color: #aa96da;
   /*字体加粗*/
-  font-weight: bold; */
+
 }
 .md-nav__list {
   font-size: 18px !important; /* 主导航项 */
@@ -755,4 +755,87 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 .poem-seal-final:hover {
     transform: scale(1.1);
     opacity: 1;
+}
+
+
+
+
+
+
+/* --- macOS 风格代码块样式 --- */
+
+/* 定义变量，方便修改 */
+:root {
+  --mac-bar-height: 40px;
+  --mac-bar-background: #3c3c3c;
+  --mac-code-background: #2d2d2d;
+  --mac-window-radius: 8px;
+  --mac-lang-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 1. 主容器样式 (充当窗口和标题栏) */
+.md-typeset .highlight {
+  position: relative;
+  background-color: var(--mac-bar-background); /* 标题栏背景色 */
+  border-radius: var(--mac-window-radius);
+  padding-top: var(--mac-bar-height); /* 为标题栏留出空间 */
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 2. 内部代码区域样式 */
+.md-typeset .highlight pre {
+  margin: 0;
+  padding: 1.2em 1em; /* 给代码一些内边距 */
+  background-color: var(--mac-code-background); /* 代码区背景色 */
+  border-radius: 0 0 var(--mac-window-radius) var(--mac-window-radius); /* 只有下方有圆角 */
+}
+
+/* 3. 创建左上角的三个彩色圆点 */
+.md-typeset .highlight::before {
+  content: ' ';
+  position: absolute;
+  top: 14px; /* (40px - 12px) / 2 -> 14px 垂直居中 */
+  left: 15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56; /* 红色 */
+  /* 使用 box-shadow 高效绘制另外两个点 */
+  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+  z-index: 1; /* 确保在最上层 */
+}
+
+/* 4. 在右上角显示代码语言 */
+.md-typeset .highlight[data-lang]::after {
+  content: attr(data-lang); /* 读取语言属性 */
+  position: absolute;
+  top: 0;
+  right: 50px; /* 为复制按钮留出空间 (约50px) */
+  height: var(--mac-bar-height);
+  line-height: var(--mac-bar-height); /* 垂直居中 */
+  padding: 0 15px;
+  color: var(--mac-lang-color);
+  font-family: "SF Mono", "Consolas", "Roboto Mono", monospace;
+  font-size: 0.8em;
+  text-transform: uppercase; /* e.g., "java" -> "JAVA" */
+}
+
+/* 5. 调整 Material 主题的复制按钮位置和样式 */
+.md-typeset .highlight .md-clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--mac-bar-height);
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* 移除默认背景 */
+  border-radius: 0 var(--mac-window-radius) 0 0;
+}
+
+.md-typeset .highlight .md-clipboard svg {
+    color: var(--mac-lang-color); /* 统一图标颜色 */
 }
