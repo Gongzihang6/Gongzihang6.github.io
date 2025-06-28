@@ -124,110 +124,117 @@ figcaption::before {
 
 
 
-/* --- 变量定义，方便全局修改 --- */
+/* --- 变量定义 --- */
 :root {
-  --mac-window-bg: #f3f4f6;          /* 窗口/标题栏的整体背景 (浅灰) */
-  --mac-linenos-bg: #fdfdfe;        /* 行号栏的背景 (稍深一点的灰) */
-  --mac-code-bg: #fdfdfe;            /* 代码区的背景 (几乎是白色) */
-  --mac-border-color: #d1d5db;      /* 分隔线颜色 */
-  --mac-window-radius: 10px;        /* 窗口圆角 */
-  --mac-bar-height: 15px;           /* 标题栏高度 */
+  --mac-card-bg: #ffffff;
+  --mac-card-shadow: rgba(0, 0, 0, 0.1);
+  --mac-linenos-border: #e5e7eb;
+  --mac-linenos-color: #9ca3af;
+  --mac-tag-bg: #f9fafb;
+  --mac-tag-border: #f3f4f6;
+  --mac-tag-color: #6b7280;
+  --mac-header-height: 45px;
 }
 
-/* --- 1. 主容器，即整个“窗口” --- */
+/* --- 1. 主容器，即白色“卡片” --- */
 .md-typeset .highlight {
   position: relative;
-  background-color: var(--mac-window-bg); /* 整个容器是浅灰色 */
-  border-radius: var(--mac-window-radius);
-  padding-top: var(--mac-bar-height);      /* 仅为顶部的标题栏留出空间 */
-  margin: 0 0;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* 关键：隐藏内部超出圆角的部分 */
+  background: var(--mac-card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px var(--mac-card-shadow);
+  padding-top: var(--mac-header-height); /* 为顶部的圆点和按钮留出空间 */
+  
+  /* 关键：为外部的语言标签留出下边距，防止其与下方内容重叠 */
+  margin-top: 2em;
+  margin-bottom: 40px; 
 }
 
 /* --- 2. 左上角的 macOS 三色圆点 --- */
 .md-typeset .highlight::before {
   content: ' ';
   position: absolute;
-  top: calc(var(--mac-bar-height) / 2 - 6px); /* 垂直居中 */
-  left: 15px;
+  top: 16px;
+  left: 16px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: #ff5f56;
   box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #35cd4b;
-  z-index: 2;
 }
 
-/* --- 3. 容纳行号和代码的表格 --- */
+/* --- 3. 右下角的外部语言标签 (最核心的改造) --- */
+.md-typeset .highlight[data-lang]::after {
+  content: attr(data-lang);
+  position: absolute;
+  /* 定位到卡片的右下角外部 */
+  bottom: -14px; /* 向上偏移约自身高度的一半 */
+  right: 20px;
+  
+  background: var(--mac-tag-bg);
+  border: 1px solid var(--mac-tag-border);
+  color: var(--mac-tag-color);
+  border-radius: 6px;
+  padding: 3px 12px;
+  font-family: "SF Mono", "Consolas", monospace;
+  font-size: 0.75em;
+  text-transform: lowercase; /* 确保是小写，如 "java" */
+  z-index: 1; /* 确保它在阴影之上 */
+}
+
+/* --- 4. 表格、行号和代码区的布局 --- */
 .md-typeset .highlight table {
   width: 100%;
   border-spacing: 0;
-  /* 表格不再有自己的背景色或边距，完全融入父容器 */
+  padding: 0 1em 1em 1em; /* 给整个内容区一些内边距 */
+  box-sizing: border-box;
 }
 
-/* --- 4. 左侧行号列 --- */
 .md-typeset .highlight .linenos {
-  position: relative; /* 为语言标签定位提供基准 */
-  background-color: var(--mac-border-color);
-  /* 顶部留出空间放语言标签，其余内边距正常 */
-  padding: 5px 0.8em 1.2em 0.8em;
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--mac-linenos-color);
+  padding-right: 1.2em;
+  border-right: 1px solid var(--mac-linenos-border);
   text-align: right;
   user-select: none;
-  /* border-right: 1px solid var(--mac-border-color); */
-  vertical-align: top; /* 确保内容从顶部对齐 */
+  vertical-align: top;
 }
 
-/* --- 5. 在行号列的左上角添加语言标签 --- */
-.md-typeset .highlight[data-lang] .linenos::before {
-  content: attr(data-lang);
-  position: absolute;
-  top: 0px; /* 定位在顶部留出的空白区域 */
-  left: 5px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.9em;
-  font-weight: 600;
-  color: #333;
-  text-transform: capitalize;
-  text-align: left; /* 覆盖父级的 right 对齐 */
-}
-
-/* --- 6. 右侧代码列 --- */
 .md-typeset .highlight .code {
-  position: relative; /* 为复制按钮定位提供基准 */
-  background-color: var(--mac-code-bg);
-  padding: 0em 0em;
+  padding-left: 1.2em;
   vertical-align: top;
 }
 
 .md-typeset .highlight .code pre {
   margin: 0;
   padding: 0;
-  background-color: transparent !important;
+  background: transparent !important;
 }
 
-/* --- 7. 调整复制按钮，使其悬浮在代码区右上角 --- */
+/* --- 5. 右上角的按钮组 --- */
 .md-typeset .highlight .md-clipboard {
   position: absolute;
-  top: 8px; /* 调整到合适的位置 */
-  right: 8px;
-  padding: 4px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+  top: 13px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
   color: #9ca3af;
-  opacity: 0; /* 默认隐藏 */
-  transition: opacity 0.2s ease;
-}
-
-/* 鼠标悬浮在代码块上时，显示复制按钮 */
-.md-typeset .highlight:hover .md-clipboard {
-  opacity: 1;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
 .md-typeset .highlight .md-clipboard:hover {
-  background: rgba(0, 0, 0, 0.1);
   color: #374151;
+}
+
+/* 使用 ::before 伪元素添加图片中的“减号”图标 */
+.md-typeset .highlight .md-clipboard::before {
+  content: '−'; /* 这是数学减号，比连字符 '-' 更居中 */
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 8px;
+  line-height: 1;
 }
 
 
