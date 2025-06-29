@@ -1862,7 +1862,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该CSS代码片段实现了健身网站的关键UI组件，包含英雄区域渐变背景、响应式统计网格和运动标签系统。通过优化布局间距和图片比例(16:10)，确保内容在不同设备上的可读性和视觉一致性。技术亮点包括移除不稳定负边距、使用CSS Grid实现自适应统计卡片，以及通过aspect-ratio保持图片比例。应用场景涵盖运动数据展示(跑步128km/俯卧撑2500+)和多种训练类型标记(HIIT/户外等)，整体设计强调运动记录的视觉化呈现。</p>
+<p>本文介绍了一个健身主题网页的CSS样式实现方案，重点优化了英雄区域(hero-section)的视觉效果，采用渐变遮罩和全屏背景图增强视觉冲击力。通过网格布局(stats-grid)展示运动数据仪表盘，并设计了分类标签(tag)系统来区分不同运动类型。页面采用响应式设计，限制最大宽度(1200px)确保可读性，同时规范了卡片内图片的比例(aspect-ratio:16/10)和裁剪方式(object-fit)。整体设计注重运动数据的可视化呈现和多媒体内容的优雅展示。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -1923,9 +1923,7 @@
 
 <!-- 新增一个包裹层，用于控制内容宽度和边距 -->
 <div class="page-content-wrapper">
-
 ## 我的数据仪表盘 :material-chart-donut:
-
 <div class="stats-grid" markdown>
 <div class="stat-item">
     <span class="icon">:material-run-fast:</span>
@@ -1954,35 +1952,27 @@
 ## 锻炼时刻 :material-camera-enhance:
 
 <div class="grid cards" markdown>
-
 -   __户外长跑__
     <span class="tag tag-outdoor">户外</span> <span class="tag tag-relax">放松</span>
-
     ---
     [![跑步照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg)
     ***
     迎着朝阳，穿越公园。每一次呼吸都是与自然的交换，让多巴胺尽情释放。
-
 -   __羽毛球之夜__
     <span class="tag tag-hiit">高强度</span>
-
     ---
     [![羽毛球照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg)
     ***
     与好友的酣畅淋漓，每一次扣杀都充满力量。这是速度与激情的碰撞。
-
 -   __乒乓对决__
     <span class="tag tag-hiit">高强度</span> <span class="tag tag-relax">放松</span>
-
     ---
     [![乒乓球照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg)
     ***
     方寸之间，电光火石。小小的银球连接着专注与友谊。
-
 </div>
 
 ## 我的进步 :material-chart-line:
-
 ```mermaid
 gantt
     title 本周锻炼甘特图
