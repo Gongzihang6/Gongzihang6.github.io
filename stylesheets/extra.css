@@ -829,7 +829,16 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
-
+::selection {
+    background-color: #d59ceb4d;
+    border-radius: 10px !important;
+    padding: 2px 4px;  
+}
+::-moz-selection {  
+    background-color: #3390FF;  
+    border-radius: 6px !important;  
+    padding: 2px 4px;  
+}
 
 
 

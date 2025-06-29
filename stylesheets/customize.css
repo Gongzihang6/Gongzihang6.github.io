@@ -173,7 +173,7 @@ mark {
     padding: 2px 4px;  
 }
 ::-moz-selection {  
-    /* background-color: #3390FF;   */
+    background-color: #3390FF;  
     border-radius: 6px !important;  
     padding: 2px 4px;  
 }
