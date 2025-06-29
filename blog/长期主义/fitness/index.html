@@ -101,11 +101,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -447,7 +442,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1632,19 +1629,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Fitness
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1656,50 +1640,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      我的数据仪表盘
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      锻炼时刻
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      我的进步
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1889,7 +1829,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1898,41 +1840,6 @@
   
   
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      我的数据仪表盘
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      锻炼时刻
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      我的进步
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1945,6 +1852,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
@@ -1953,27 +1862,36 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了一个健身主题网页的CSS样式实现方案，重点展示了Hero Section、Stats Grid和卡片布局的设计细节。通过linear-gradient背景、响应式网格和强制宽高比图片处理技术，实现了视觉吸引力强且结构清晰的界面。关键特性包括自适应图片裁剪（object-fit）、动态阴影效果以及分类标签系统，适用于健身数据展示和运动记录场景。</p>
+<p>该CSS代码片段实现了健身网站的关键UI组件，包含英雄区域渐变背景、响应式统计网格和运动标签系统。通过优化布局间距和图片比例(16:10)，确保内容在不同设备上的可读性和视觉一致性。技术亮点包括移除不稳定负边距、使用CSS Grid实现自适应统计卡片，以及通过aspect-ratio保持图片比例。应用场景涵盖运动数据展示(跑步128km/俯卧撑2500+)和多种训练类型标记(HIIT/户外等)，整体设计强调运动记录的视觉化呈现。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>265</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>309</strong></p>
 </div>
 <!-- Hero Section and Styles -->
 <style>
-/* Hero Section 样式 (不变) */
+/* Hero Section 样式 - 移除了不稳定的负外边距 */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fe7e139257b9441e68a22609a994a1c7d-tplv-p14lwwcsbr-7.jfif') no-repeat center center;
     background-size: cover;
-    padding: 4rem 2rem;
-    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+    padding: 6rem 2rem; /* 可以适当增加上下内边距，让它更高一些 */
     color: white;
     text-align: center;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    /* 我们不再需要圆角和阴影，因为它现在是页面的一部分，而不是一个卡片 */
 }
-.hero-section h1 { font-size: 3rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-.hero-section p { font-size: 1.2rem; opacity: 0.9; }
+.hero-section h1 { font-size: 3.5rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.hero-section p { font-size: 1.3rem; opacity: 0.9; }
+
+/* 页面内容需要一些边距，否则会紧贴浏览器边缘 */
+.md-main__inner {
+    padding-top: 0; /* 移除模板默认的上边距 */
+}
+.page-content-wrapper {
+    max-width: 1200px; /* 限制内容最大宽度，让长文本更易读 */
+    margin: 0 auto;    /* 居中内容 */
+    padding: 2rem;     /* 内容区域的内边距 */
+}
+
 
 /* Stats Grid 样式 (不变) */
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center; margin-bottom: 2rem; }
@@ -1988,17 +1906,13 @@
 .tag-relax { background-color: #03a9f4; }
 .tag-strength { background-color: #ff9800; }
 
-/* 
- * ======================================================
- *  新增核心CSS：严格控制卡片内图片的尺寸和比例
- * ======================================================
- */
+/* 严格控制卡片内图片的尺寸和比例 (不变) */
 .grid.cards .md-card img {
-    width: 100%;             /* 图片宽度撑满卡片 */
-    height: auto;            /* 高度自动，配合下面的 aspect-ratio */
-    aspect-ratio: 16 / 10;   /* 强制图片的宽高比为 16:10，可以换成 16/9, 4/3 等 */
-    object-fit: cover;       /* 这是关键！图片会被裁剪以适应容器，但不会被拉伸变形 */
-    border-radius: 5px 5px 0 0; /* 给图片也加上一点圆角，更好看 */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
 }
 </style>
 
@@ -2007,14 +1921,16 @@
     <p>Sweat, Smile, Repeat. Building a stronger me, one rep at a time.</p>
 </div>
 
-<h2 id="_1">我的数据仪表盘 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.5 2.54l2.62 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95M12 19a7 7 0 0 1-7-7c0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95a10 10 0 0 0 10 10c3.3 0 6.23-1.61 8.05-4.09l-2.6-1.53A6.89 6.89 0 0 1 12 19"/></svg></span><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="stats-grid">
+<!-- 新增一个包裹层，用于控制内容宽度和边距 -->
+<div class="page-content-wrapper">
+
+## 我的数据仪表盘 :material-chart-donut:
+
+<div class="stats-grid" markdown>
 <div class="stat-item">
     <span class="icon">:material-run-fast:</span>
     <div class="number">128 km</div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;div class=&quot;label&quot;&gt;累计跑步
-</code></pre></div></td></tr></table></div>
-</div>
+    <div class="label">累计跑步</div>
 </div>
 <div class="stat-item">
     <span class="icon">:material-weight-lifter:</span>
@@ -2032,65 +1948,57 @@
     <div class="label">持续打卡</div>
 </div>
 </div>
-<hr />
-<h2 id="_2">锻炼时刻 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg></span><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="grid cards">
-<ul>
-<li>
-<p><strong>户外长跑</strong>
-    <span class="tag tag-outdoor">户外</span> <span class="tag tag-relax">放松</span></p>
-<hr />
-<p><!-- 修正后的语法: <a href="图片URL">klzzwxh:0024</a> -->
-<a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg"><img alt="跑步照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg" /></a></p>
-<hr />
-<p>迎着朝阳，穿越公园。每一次呼吸都是与自然的交换，让多巴胺尽情释放。</p>
-</li>
-<li>
-<p><strong>羽毛球之夜</strong>
-    <span class="tag tag-hiit">高强度</span></p>
-<hr />
-<p><!-- 修正后的语法，并替换为你的图片URL -->
-<a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg"><img alt="羽毛球照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg" /></a></p>
-<hr />
-<p>与好友的酣畅淋漓，每一次扣杀都充满力量。这是速度与激情的碰撞。</p>
-</li>
-<li>
-<p><strong>乒乓对决</strong>
-    <span class="tag tag-hiit">高强度</span> <span class="tag tag-relax">放松</span></p>
-<hr />
-<p><!-- 修正后的语法 -->
-<a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg"><img alt="乒乓球照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" /></a></p>
-<hr />
-<p>方寸之间，电光火石。小小的银球连接着专注与友谊。</p>
-</li>
-</ul>
+
+---
+
+## 锻炼时刻 :material-camera-enhance:
+
+<div class="grid cards" markdown>
+
+-   __户外长跑__
+    <span class="tag tag-outdoor">户外</span> <span class="tag tag-relax">放松</span>
+
+    ---
+    [![跑步照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg)
+    ***
+    迎着朝阳，穿越公园。每一次呼吸都是与自然的交换，让多巴胺尽情释放。
+
+-   __羽毛球之夜__
+    <span class="tag tag-hiit">高强度</span>
+
+    ---
+    [![羽毛球照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg)
+    ***
+    与好友的酣畅淋漓，每一次扣杀都充满力量。这是速度与激情的碰撞。
+
+-   __乒乓对决__
+    <span class="tag tag-hiit">高强度</span> <span class="tag tag-relax">放松</span>
+
+    ---
+    [![乒乓球照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg)
+    ***
+    方寸之间，电光火石。小小的银球连接着专注与友谊。
+
 </div>
-<h2 id="_3">我的进步 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>```mermaid
+
+## 我的进步 :material-chart-line:
+
+```mermaid
 gantt
     title 本周锻炼甘特图
     dateFormat  YYYY-MM-DD
-    axisFormat %m-%d</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>section 跑步
-晨跑          :active, run1, 2023-10-23, 1d
-长距离跑      :done, run2, 2023-10-25, 1d
+    axisFormat %m-%d
 
-section 力量
-俯卧撑挑战    :crit, done, pushup, after run1, 2d
-引体向上      :pullup, 2023-10-26, 1d
+    section 跑步
+    晨跑          :active, run1, 2023-10-23, 1d
+    长距离跑      :done, run2, 2023-10-25, 1d
 
-section 球类
-羽毛球        : badminton, 2023-10-24, 2h
-</code></pre></div></td></tr></table></div>
+    section 力量
+    俯卧撑挑战    :crit, done, pushup, after run1, 2d
+    引体向上      :pullup, 2023-10-26, 1d
+
+    section 球类
+    羽毛球        : badminton, 2023-10-24, 2h
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2139,6 +2047,11 @@ section 球类
 
 <!-- Determine date of last update -->
 
+  
+
+  <!-- Determine date of creation -->
+  
+
 
 <!-- Source file information -->
 
@@ -2170,6 +2083,8 @@ section 球类
 
 
 <!-- Determine whether to show feedback -->
+
+  
 
 
 <!-- Was this page helpful? -->
@@ -2288,6 +2203,8 @@ section 球类
   <!-- Link to previous and/or next page -->
   
     
+      
+        
       
       <nav
         class="md-footer__inner md-grid"
