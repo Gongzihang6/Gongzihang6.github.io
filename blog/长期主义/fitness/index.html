@@ -101,6 +101,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1629,6 +1634,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Fitness
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1640,6 +1658,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      我的数据仪表盘
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      锻炼时刻
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      我的进步
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1841,6 +1903,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      我的数据仪表盘
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      锻炼时刻
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      我的进步
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1862,11 +1959,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了一个健身主题网页的CSS样式实现方案，重点优化了英雄区域(hero-section)的视觉效果，采用渐变遮罩和全屏背景图增强视觉冲击力。通过网格布局(stats-grid)展示运动数据仪表盘，并设计了分类标签(tag)系统来区分不同运动类型。页面采用响应式设计，限制最大宽度(1200px)确保可读性，同时规范了卡片内图片的比例(aspect-ratio:16/10)和裁剪方式(object-fit)。整体设计注重运动数据的可视化呈现和多媒体内容的优雅展示。</p>
+<p>该CSS代码片段实现了一个健身主题网页的样式设计，包含英雄区域、数据仪表盘和锻炼卡片三大模块。通过线性渐变背景、响应式网格布局和标签系统，优化了视觉层次和内容展示。关键特性包括：移除不稳定负边距的Hero Section、1200px内容宽度限制、16:10比例图片自适应，以及通过彩色标签分类不同运动类型（HIIT、户外等）。整体设计注重移动友好性和视觉一致性，适用于健身日志类网站。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>309</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>332</strong></p>
 </div>
 <!-- Hero Section and Styles -->
 <style>
@@ -1900,7 +1997,7 @@
 .stat-item .label { font-size: 0.9rem; color: var(--md-text-color-light); }
 
 /* Tag 样式 (不变) */
-.tag { display: inline-block; padding: 0.2em 0.6em; font-size: 0.75rem; font-weight: 700; line-height: 1; color: #fff; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; margin-right: 5px; }
+.tag { display: inline-block; padding: 0.2em 0.6em; font-size: 0.75rem; font-weight: 700; line-height: 1; color: #fff; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; margin-right: 5px; margin-bottom: 10px; }
 .tag-hiit { background-color: #e91e63; }
 .tag-outdoor { background-color: #4caf50; }
 .tag-relax { background-color: #03a9f4; }
@@ -1921,74 +2018,116 @@
     <p>Sweat, Smile, Repeat. Building a stronger me, one rep at a time.</p>
 </div>
 
-<!-- 新增一个包裹层，用于控制内容宽度和边距 -->
+<!-- 
+  修正点 1: 在包裹层上添加 markdown="1"，使其内部的 Markdown 语法（如 ## 标题）能够被正确解析。
+-->
 <div class="page-content-wrapper">
-## 我的数据仪表盘 :material-chart-donut:
-<div class="stats-grid" markdown>
-<div class="stat-item">
-    <span class="icon">:material-run-fast:</span>
-    <div class="number">128 km</div>
-    <div class="label">累计跑步</div>
+<h2 id="_1">我的数据仪表盘 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.5 2.54l2.62 1.53c.56-1.24.88-2.62.88-4.07 0-5.18-3.95-9.45-9-9.95M12 19a7 7 0 0 1-7-7c0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95a10 10 0 0 0 10 10c3.3 0 6.23-1.61 8.05-4.09l-2.6-1.53A6.89 6.89 0 0 1 12 19"/></svg></span><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="stats-grid">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;div class=&quot;stat-item&quot;&gt;
+    &lt;span class=&quot;icon&quot;&gt;:material-run-fast:&lt;/span&gt;
+    &lt;div class=&quot;number&quot;&gt;128 km
+</code></pre></div></td></tr></table></div>
 </div>
-<div class="stat-item">
-    <span class="icon">:material-weight-lifter:</span>
-    <div class="number">2,500+</div>
-    <div class="label">总俯卧撑</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    &lt;div class=&quot;label&quot;&gt;累计跑步
+</code></pre></div></td></tr></table></div>
 </div>
-<div class="stat-item">
-    <span class="icon">:material-badminton:</span>
-    <div class="number">35 场</div>
-    <div class="label">球类对决</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;/div&gt;
+&lt;div class=&quot;stat-item&quot;&gt;
+    &lt;span class=&quot;icon&quot;&gt;:material-weight-lifter:&lt;/span&gt;
+    &lt;div class=&quot;number&quot;&gt;2,500+&lt;/div&gt;
+    &lt;div class=&quot;label&quot;&gt;总俯卧撑&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;stat-item&quot;&gt;
+    &lt;span class=&quot;icon&quot;&gt;:material-badminton:&lt;/span&gt;
+    &lt;div class=&quot;number&quot;&gt;35 场&lt;/div&gt;
+    &lt;div class=&quot;label&quot;&gt;球类对决&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;stat-item&quot;&gt;
+    &lt;span class=&quot;icon&quot;&gt;:material-fire:&lt;/span&gt;
+    &lt;div class=&quot;number&quot;&gt;150 天&lt;/div&gt;
+    &lt;div class=&quot;label&quot;&gt;持续打卡&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></td></tr></table></div>
 </div>
-<div class="stat-item">
-    <span class="icon">:material-fire:</span>
-    <div class="number">150 天</div>
-    <div class="label">持续打卡</div>
-</div>
-</div>
-
----
-
-## 锻炼时刻 :material-camera-enhance:
-
-<div class="grid cards" markdown>
--   __户外长跑__
-    <span class="tag tag-outdoor">户外</span> <span class="tag tag-relax">放松</span>
+<hr />
+<h2 id="_2">锻炼时刻 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg></span><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<!--
+  修正点 2: 调整卡片内部结构，将 <span class="tag ..."> 移动到 --- 分隔符下方。
+  同时为了美观，我给 .tag 样式增加了一点 margin-bottom。
+-->
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>户外长跑</strong>
     ---
-    [![跑步照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg)
-    ***
-    迎着朝阳，穿越公园。每一次呼吸都是与自然的交换，让多巴胺尽情释放。
--   __羽毛球之夜__
-    <span class="tag tag-hiit">高强度</span>
+    <span class="tag tag-outdoor">户外</span> <span class="tag tag-relax">放松</span></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg"><img alt="跑步照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg" /></a></p>
+<p>迎着朝阳，穿越公园。每一次呼吸都是与自然的交换，让多巴胺尽情释放。</p>
+</li>
+<li>
+<p><strong>羽毛球之夜</strong>
     ---
-    [![羽毛球照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg)
-    ***
-    与好友的酣畅淋漓，每一次扣杀都充满力量。这是速度与激情的碰撞。
--   __乒乓对决__
-    <span class="tag tag-hiit">高强度</span> <span class="tag tag-relax">放松</span>
+    <span class="tag tag-hiit">高强度</span></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg"><img alt="羽毛球照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg" /></a></p>
+<p>与好友的酣畅淋漓，每一次扣杀都充满力量。这是速度与激情的碰撞。</p>
+</li>
+<li>
+<p><strong>乒乓对决</strong>
     ---
-    [![乒乓球照片](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg)](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg)
-    ***
-    方寸之间，电光火石。小小的银球连接着专注与友谊。
+    <span class="tag tag-hiit">高强度</span> <span class="tag tag-relax">放松</span></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg"><img alt="乒乓球照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" /></a></p>
+<p>方寸之间，电光火石。小小的银球连接着专注与友谊。</p>
+</li>
+</ul>
 </div>
-
-## 我的进步 :material-chart-line:
-```mermaid
+<!--
+  修正点 3: 将“我的进步”部分移入 page-content-wrapper 内部，以保持页面布局宽度一致。
+-->
+<h2 id="_3">我的进步 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>```mermaid
 gantt
     title 本周锻炼甘特图
     dateFormat  YYYY-MM-DD
-    axisFormat %m-%d
+    axisFormat %m-%d</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>section 跑步
+晨跑          :active, run1, 2023-10-23, 1d
+长距离跑      :done, run2, 2023-10-25, 1d
 
-    section 跑步
-    晨跑          :active, run1, 2023-10-23, 1d
-    长距离跑      :done, run2, 2023-10-25, 1d
+section 力量
+俯卧撑挑战    :crit, done, pushup, after run1, 2d
+引体向上      :pullup, 2023-10-26, 1d
 
-    section 力量
-    俯卧撑挑战    :crit, done, pushup, after run1, 2d
-    引体向上      :pullup, 2023-10-26, 1d
-
-    section 球类
-    羽毛球        : badminton, 2023-10-24, 2h
+section 球类
+羽毛球        : badminton, 2023-10-24, 2h
+</code></pre></div></td></tr></table></div>
+<p></div> </p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
