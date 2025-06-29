@@ -169,7 +169,7 @@ mark {
  
 ::selection {
     background-color: #d59ceb4d;
-    border-radius: 4px !important;
+    border-radius: 10px !important;
     padding: 2px 4px;  
 }
 ::-moz-selection {  

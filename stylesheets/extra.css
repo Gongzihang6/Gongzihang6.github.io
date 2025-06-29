@@ -712,8 +712,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 .poem-content-adaptive .poem-title {
     font-size: 1.6rem;
     font-weight: bold;
-    letter-spacing: 7px;
-    line-height: 1.2;
+    letter-spacing: 3px;
+    line-height: 0.8;
 }
 .poem-content-adaptive .poem-author {
     font-size: 1.6rem;
