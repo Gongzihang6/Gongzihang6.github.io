@@ -1953,62 +1953,53 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文展示了一个健身主题的网页UI设计，采用CSS实现了渐变背景的英雄区域、数据统计网格和标签化分类功能。页面包含跑步距离、俯卧撑次数等运动数据可视化仪表盘，以及羽毛球、乒乓球等活动的图文记录。通过Mermaid甘特图呈现每周锻炼计划，突出交互式数据展示和运动分类标签（如HIIT、户外等）的设计特点，适用于个人健身追踪应用的界面开发。</p>
+<p>本文介绍了一个健身主题网页的CSS样式实现方案，重点展示了Hero Section、Stats Grid和卡片布局的设计细节。通过linear-gradient背景、响应式网格和强制宽高比图片处理技术，实现了视觉吸引力强且结构清晰的界面。关键特性包括自适应图片裁剪（object-fit）、动态阴影效果以及分类标签系统，适用于健身数据展示和运动记录场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>198</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>265</strong></p>
 </div>
-<!-- Hero Section -->
+<!-- Hero Section and Styles -->
 <style>
+/* Hero Section 样式 (不变) */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fe7e139257b9441e68a22609a994a1c7d-tplv-p14lwwcsbr-7.jfif') no-repeat center center;
     background-size: cover;
     padding: 4rem 2rem;
-    margin: -1.5rem -1.5rem 1.5rem -1.5rem; /* 抵消Material主题的边距 */
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
     color: white;
     text-align: center;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
-.hero-section h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-.hero-section p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
+.hero-section h1 { font-size: 3rem; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.hero-section p { font-size: 1.2rem; opacity: 0.9; }
+
+/* Stats Grid 样式 (不变) */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; text-align: center; margin-bottom: 2rem; }
 .stat-item .icon { font-size: 2.5rem; color: var(--md-primary-fg-color); }
 .stat-item .number { font-size: 2rem; font-weight: bold; }
 .stat-item .label { font-size: 0.9rem; color: var(--md-text-color-light); }
 
-/* 为卡片添加标签样式 */
-.tag {
-    display: inline-block;
-    padding: 0.2em 0.6em;
-    font-size: 0.75rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
-    margin-right: 5px;
-}
+/* Tag 样式 (不变) */
+.tag { display: inline-block; padding: 0.2em 0.6em; font-size: 0.75rem; font-weight: 700; line-height: 1; color: #fff; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; margin-right: 5px; }
 .tag-hiit { background-color: #e91e63; }
 .tag-outdoor { background-color: #4caf50; }
 .tag-relax { background-color: #03a9f4; }
 .tag-strength { background-color: #ff9800; }
+
+/* 
+ * ======================================================
+ *  新增核心CSS：严格控制卡片内图片的尺寸和比例
+ * ======================================================
+ */
+.grid.cards .md-card img {
+    width: 100%;             /* 图片宽度撑满卡片 */
+    height: auto;            /* 高度自动，配合下面的 aspect-ratio */
+    aspect-ratio: 16 / 10;   /* 强制图片的宽高比为 16:10，可以换成 16/9, 4/3 等 */
+    object-fit: cover;       /* 这是关键！图片会被裁剪以适应容器，但不会被拉伸变形 */
+    border-radius: 5px 5px 0 0; /* 给图片也加上一点圆角，更好看 */
+}
 </style>
 
 <div class="hero-section">
@@ -2049,7 +2040,8 @@
 <p><strong>户外长跑</strong>
     <span class="tag tag-outdoor">户外</span> <span class="tag tag-relax">放松</span></p>
 <hr />
-<p><a href="![assets/images/fitness/running.jpg](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg)"><img alt="跑步照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg" /></a></p>
+<p><!-- 修正后的语法: <a href="图片URL">klzzwxh:0024</a> -->
+<a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg"><img alt="跑步照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Ffd4bddb00e65c9563433480914fa6f2.jpg" /></a></p>
 <hr />
 <p>迎着朝阳，穿越公园。每一次呼吸都是与自然的交换，让多巴胺尽情释放。</p>
 </li>
@@ -2057,7 +2049,8 @@
 <p><strong>羽毛球之夜</strong>
     <span class="tag tag-hiit">高强度</span></p>
 <hr />
-<p><a href="assets/images/fitness/badminton.jpg"><img alt="羽毛球照片" src="assets/images/fitness/badminton.jpg" /></a></p>
+<p><!-- 修正后的语法，并替换为你的图片URL -->
+<a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg"><img alt="羽毛球照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F5d791760704f3a7480e3149bc5ac8e7.jpg" /></a></p>
 <hr />
 <p>与好友的酣畅淋漓，每一次扣杀都充满力量。这是速度与激情的碰撞。</p>
 </li>
@@ -2065,14 +2058,14 @@
 <p><strong>乒乓对决</strong>
     <span class="tag tag-hiit">高强度</span> <span class="tag tag-relax">放松</span></p>
 <hr />
-<p><a href="![assets/images/fitness/pingpong.jpg](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FaDYEvp-20240817.png)"><img alt="乒乓球照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" /></a></p>
+<p><!-- 修正后的语法 -->
+<a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg"><img alt="乒乓球照片" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" /></a></p>
 <hr />
 <p>方寸之间，电光火石。小小的银球连接着专注与友谊。</p>
 </li>
 </ul>
 </div>
 <h2 id="_3">我的进步 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>下面是本周的锻炼计划与完成情况：</p>
 <p>```mermaid
 gantt
     title 本周锻炼甘特图
