@@ -2221,7 +2221,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 4rem 1rem;
+        padding: 1rem 1rem;
         background-color: transparent;
         /* overflow: hidden; */
         position: relative; /* 用于全宽出血布局 */
@@ -2315,27 +2315,85 @@
         transform: scale(1.1);
     }
 
+
+
+    /* --- 【全新】美化后的控制按钮样式 --- */
     .carousel-controls {
         display: flex;
-        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem; /* 按钮之间的间距 */
     }
 
     .carousel-controls button {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: 2px solid white;
-        width: 60px;
-        height: 60px;
+        /* 1. 基础样式与尺寸 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
-        font-size: 28px;
+        border: none;
         cursor: pointer;
-        transition: all 0.3s ease;
+
+        /* 2. 颜色与渐变 (与您的主题色融合) */
+        background: linear-gradient(145deg, hsl(229, 98%, 65%), hsl(229, 98%, 55%)); /* 基于 --primary-color 的渐变 */
+        color: white; /* 图标颜色 */
+
+        /* 3. 阴影效果，营造悬浮感 */
+        box-shadow: 0 4px 15px rgba(74, 108, 253, 0.4), /* 主题色阴影 */
+                    0 2px 5px rgba(0, 0, 0, 0.1);       /* 常规阴影 */
+
+        /* 4. 平滑的过渡动画 */
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
+    /* 5. 悬停时的交互反馈 */
     .carousel-controls button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        transform: scale(1.1);
+        transform: translateY(-4px); /* 按钮轻微上浮 */
+        background: linear-gradient(145deg, hsl(229, 98%, 70%), hsl(229, 98%, 60%)); /* 渐变色变亮 */
+        box-shadow: 0 8px 25px rgba(74, 108, 253, 0.5),
+                    0 4px 10px rgba(0, 0, 0, 0.15);
     }
+
+    /* 6. 点击时的交互反馈 */
+    .carousel-controls button:active {
+        transform: translateY(-1px) scale(0.98); /* 轻微下沉和缩小，模拟按压 */
+        box-shadow: 0 2px 8px rgba(74, 108, 253, 0.4);
+        transition-duration: 0.1s; /* 点击反馈要快 */
+    }
+
+    /* 7. 使用SVG图标替换文字 (关键！) */
+    .carousel-controls button::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: currentColor; /* 使用按钮的 color (白色) 作为图标颜色 */
+        /* 使用 mask-image 技术来创建任意形状的图标 */
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+    }
+
+    /* 为“上一个”按钮设置向左的箭头图标 */
+    .carousel-controls .carousel-prev-button::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+    }
+
+    /* 为“下一个”按钮设置向右的箭头图标 */
+    .carousel-controls .carousel-next-button::before {
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z'/%3E%3C/svg%3E");
+    }
+
+
+
+
 
     .full-width-bleed {
         width: 100vw;
@@ -2646,7 +2704,15 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <h2 id="_2">人生态度<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p style="text-align: center; font-size: 25px; margin: 0px;"><strong>𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩</strong></p>
+<p style="text-align: center; font-size: 25px; margin: 0px;">
+    <strong>
+    "𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩"
+    </strong>
+    <br>
+    <strong>
+    “珍惜你的不良嗜好，因为那可能是你热爱生活的主要原因。”
+    </strong>
+</p>
 
 <!-- <img class="img1" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/IMG_20250626_101151.webp"> -->
 <p><img alt="IMG_20250626_101151" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/IMG_20250626_101151.webp" /></p>
