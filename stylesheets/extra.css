@@ -839,6 +839,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 .footer-visit-count {
     color: #000000;
 }
+.md-footer footer a {
+  color: black !important;
+}
 
 
 
