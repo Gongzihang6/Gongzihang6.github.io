@@ -798,7 +798,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 /* 1. 修改页脚主容器的背景和默认文字颜色 */
 .md-footer {
   background-color: #ffffff !important; /* 将背景色设为白色 */
-  color: rgba(0, 0, 0, 0.54) !important;   /* 设置默认文字颜色为深灰色，保持和正文一致性 */
+  color: rgba(0, 0, 0, 1) !important;   /* 设置默认文字颜色为深灰色，保持和正文一致性 */
 }
 
 /* 2. 修改页脚内 "上一页" 和 "下一页" 的导航链接文字颜色 */
@@ -808,18 +808,18 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 /* 3. 修改页脚导航链接的辅助文字（如 "主页"）颜色 */
 .md-footer-nav__title {
-    color: rgba(0, 0, 0, 0.54) !important; /* 辅助文字颜色变深 */
+    color: rgba(0, 0, 0, 1) !important; /* 辅助文字颜色变深 */
 }
 
 /* 4. 修改页脚中所有图标的颜色（包括导航箭头和社交图标） */
 /* SVG 图标使用 fill 属性来改变颜色 */
 .md-footer .md-icon svg {
-  fill: rgba(0, 0, 0, 0.54) !important; /* 将图标填充色设为深灰色 */
+  fill: rgba(0, 0, 0, 1) !important; /* 将图标填充色设为深灰色 */
 }
 
 /* 5. 修改版权信息部分的文字和链接颜色 */
 .md-footer-copyright, .md-footer-copyright a {
-    color: rgba(0, 0, 0, 0.54) !important; /* 确保版权文字和其中的链接也是深灰色 */
+    color: rgba(0, 0, 0, 1) !important; /* 确保版权文字和其中的链接也是深灰色 */
 }
 
 /* (可选) 6. 在页脚顶部添加一条分隔线 */
@@ -828,6 +828,15 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 /* .md-footer {
     border-top: .05rem solid #948383; 
 }*/
+
+.md-footer-meta__inner .md-grid {
+    max-width: 90% !important;
+    background-color: #FFFFFF !important;
+}
+.md-social__link {
+    color: #000000;
+}
+
 
 
 
