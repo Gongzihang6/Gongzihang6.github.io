@@ -818,7 +818,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 }
 
 /* 5. 修改版权信息部分的文字和链接颜色 */
-.md-footer-copyright, .md-footer-copyright a {
+.md-footer-copyright__highlight, .md-footer-copyright__highlight a {
     color: rgba(0, 0, 0, 1) !important; /* 确保版权文字和其中的链接也是深灰色 */
 }
 
@@ -834,6 +834,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     background-color: #FFFFFF !important;
 }
 .md-social__link {
+    color: #000000;
+}
+.footer-visit-count {
     color: #000000;
 }
 
