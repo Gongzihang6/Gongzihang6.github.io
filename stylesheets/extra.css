@@ -802,7 +802,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     在默认的亮色模式下，它就是白色。
     这样做的好处是，如果你切换到暗色模式，它也能自适应。
   */
-  background-color: #e5e7eb;
+  background-color: #e5e7eb !important;
 }
 
 /* 
