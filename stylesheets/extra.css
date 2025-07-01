@@ -793,27 +793,41 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
-/* --- Footer Style Customization --- */
+/* ---- 自定义页脚样式 ---- */
 
-/* 1. 修改页脚的背景色 */
+/* 1. 修改页脚主容器的背景和默认文字颜色 */
 .md-footer {
-  /* 
-    使用 var(--md-default-bg-color) 可以自动获取主题的主背景色。
-    在默认的亮色模式下，它就是白色。
-    这样做的好处是，如果你切换到暗色模式，它也能自适应。
-  */
-  background-color: #e5e7eb !important;
+  background-color: #ffffff !important; /* 将背景色设为白色 */
+  color: rgba(0, 0, 0, 0.54) !important;   /* 设置默认文字颜色为深灰色，保持和正文一致性 */
 }
 
-/* 
-   2. 修改页脚内所有文字和图标的颜色为黑色。
-      我们同时选择 .md-footer (针对文字) 和 .md-footer .md-social__link (针对社交图标)
-      来确保它们都变成黑色。
-*/
-.md-footer,
-.md-footer .md-social__link {
-  color: black;
+/* 2. 修改页脚内 "上一页" 和 "下一页" 的导航链接文字颜色 */
+.md-footer-nav__link {
+    color: rgb(0, 0, 0) !important; /* 链接主标题颜色加深 */
 }
+
+/* 3. 修改页脚导航链接的辅助文字（如 "主页"）颜色 */
+.md-footer-nav__title {
+    color: rgba(0, 0, 0, 0.54) !important; /* 辅助文字颜色变深 */
+}
+
+/* 4. 修改页脚中所有图标的颜色（包括导航箭头和社交图标） */
+/* SVG 图标使用 fill 属性来改变颜色 */
+.md-footer .md-icon svg {
+  fill: rgba(0, 0, 0, 0.54) !important; /* 将图标填充色设为深灰色 */
+}
+
+/* 5. 修改版权信息部分的文字和链接颜色 */
+.md-footer-copyright, .md-footer-copyright a {
+    color: rgba(0, 0, 0, 0.54) !important; /* 确保版权文字和其中的链接也是深灰色 */
+}
+
+/* (可选) 6. 在页脚顶部添加一条分隔线 */
+/* 由于页脚和正文现在都是白色，添加一条线可以更好地区分它们 */
+
+/* .md-footer {
+    border-top: .05rem solid #948383; 
+}*/
 
 
 
