@@ -846,3 +846,19 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
+
+
+
+/* 当屏幕宽度大于 1220px 时，应用此样式 */
+@media screen and (min-width: 1220px) {
+
+  /* 找到主内容容器 */
+  .md-container {
+    /* 覆盖默认的最大宽度，可以根据你的喜好调整这个值 */
+    /* 方法一：使用更大的像素值 */
+    /* max-width: 1440px;  */
+    
+    /* 方法二：或者使用百分比（推荐），让它更具流式布局的特性 */
+    max-width: 90%; 
+  }
+}
