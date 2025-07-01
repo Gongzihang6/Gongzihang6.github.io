@@ -215,6 +215,8 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
         }
         .skill-card h3 {
             font-size: 1.1rem;
@@ -797,14 +799,14 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                }, 100); // 延迟100毫秒
+                }, 1000); // 延迟100毫秒
             }
         });
 
         // --- 2. 监听滚动，为 header 添加 scrolled 类 ---
         const header = document.querySelector('.resume-header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) { // 向下滚动超过10px时触发
+            if (window.scrollY > 1) { // 向下滚动超过10px时触发
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -820,7 +822,7 @@
                     // observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.01 });
 
         document.querySelectorAll('.fade-in-up').forEach(el => {
             observer.observe(el);
