@@ -849,16 +849,23 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
-/* 当屏幕宽度大于 1220px 时，应用此样式 */
+/* 在 extra.css 中使用此代码 */
+
+/* 当屏幕宽度大于 Material 主题的桌面断点 (1220px) 时生效 */
 @media screen and (min-width: 1220px) {
 
-  /* 找到主内容容器 */
-  .md-container {
-    /* 覆盖默认的最大宽度，可以根据你的喜好调整这个值 */
-    /* 方法一：使用更大的像素值 */
-    /* max-width: 1440px;  */
-    
-    /* 方法二：或者使用百分比（推荐），让它更具流式布局的特性 */
-    max-width: 90%; 
+  /* 
+    .md-grid 是 Material 主题中控制整体居中内容宽度的核心容器。
+    它同时作用于顶栏和主内容区，修改它可以保证两者宽度一致。
+  */
+  .md-grid {
+    /* 覆盖默认的 max-width (约 76.25rem 或 1220px) */
+    /* 你可以根据喜好调整这个值 */
+
+    /* 推荐使用 rem 单位，比如 90rem (约 1440px) */
+    max-width: 90rem;
+
+    /* 或者使用像素值 */
+    /* max-width: 1600px; */
   }
 }
