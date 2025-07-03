@@ -878,7 +878,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     /* 你可以根据喜好调整这个值 */
 
     /* 推荐使用 rem 单位，比如 90rem (约 1440px) */
-    max-width: 85rem;
+    max-width: 80rem;
 
     /* 或者使用像素值 */
     /* max-width: 1600px; */
