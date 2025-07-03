@@ -2113,7 +2113,7 @@
 <li>使用了数据增强策略极大地抑制了训练过程的过拟合</li>
 <li>利用了GPU的并行计算能力，加速了网络的训练与推断</li>
 </ul>
-<p><img alt="AlexNet示意图,上下两部分表示使用两个GPU并行计算" src="./经典卷积神经网络/AlexNet.png" /></p>
+<p><img alt="AlexNet示意图,上下两部分表示使用两个GPU并行计算" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FAlexNet.png" /></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -2177,7 +2177,7 @@ $$
 <p>conv3、4、5的卷积核个数改为512、1024、512</p>
 </li>
 </ul>
-<p><img src="./经典卷积神经网络/ZFNet.png" alt="ZFNet示意图(图中conv3、4、5的通道数不正确，已经改为了512、1024、512)" style="zoom:150%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FZFNet.png" alt="ZFNet示意图(图中conv3、4、5的通道数不正确，已经改为了512、1024、512)" style="zoom:150%;" /></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -2224,7 +2224,7 @@ $$
 <p>（4）特征的层次分析：作者通过实验证明了，不同深度的网络层学习到的特征对于分类的作用，说明了深度结构确实能够获得比浅层结构更好的效果。 通过实验，说明了深度增加时，网络可以学习到更具区分的特征。 底层特征在迭代次数比较少时就能收敛，高层需要的迭代次数比较多 越是高层的特征，其用来做分类的性能越好</p>
 <h4 id="3vggnet2014">3、VGGNet(2014)<a class="headerlink" href="#3vggnet2014" title="Permanent link">&para;</a></h4>
 <p>论文：<a href="https://arxiv.org/abs/1409.1556">Very deep convolutional networks for large-scale image recongnition</a></p>
-<p><img alt="以VGG16为例，13卷积层+3全连接层" src="./经典卷积神经网络/VGG16.png" /></p>
+<p><img alt="以VGG16为例，13卷积层+3全连接层" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FVGG16.png" /></p>
 <p>其中卷积核均为3*3的，步长为1，padding也为1，卷积不改变图像尺寸，只在最大池化层设置2 *2，步长为2，每经过一层pool，图像高宽减半，通道数不变；全连接层使用了dropout策略。</p>
 <p>网络结构中全部采用3* 3卷积核级联，放弃采用大卷积核，理由是在获得相同大小的感受野的情况下，3* 3的小卷积核级联比大卷积核的参数更少、计算量更小，同时网络更深、更非线性。</p>
 <p>为什么VGG网络前四段里，每经过一次池化操作，卷积核个数就增加一倍？</p>
@@ -2240,10 +2240,10 @@ $$
 <li>去掉了AlexNet的前两个全连接层，并采用了平均池化，这一设计使得GoogLeNet只有500万参数，比AlexNet少了12倍；</li>
 <li>在网络的中部引入了辅助分类器，克服了训练过程中的梯度消失问题。</li>
 </ul>
-<p><img alt="GoogLeNet示意图" src="./经典卷积神经网络/Googlenet.png" /></p>
+<p><img alt="GoogLeNet示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FGooglenet.png" /></p>
 <p>网络主体部分由9个Inception模块构成，在第三个、第六个Inception模块分出两个辅助分类器，帮助底层神经网络参数更新，避免梯度消失。训练的时候，3个分类器一起参与训练，相当于有3个梯度流，最底层梯度为3个梯度流的和，有助于底层参数的更新。但推理时只采用最后一个分类器的输出。</p>
-<p><img src="./经典卷积神经网络/最初Inception模块.png" alt="最初Inception模块" style="zoom: 67%;" /></p>
-<p><img src="./经典卷积神经网络/改进Inception模块.png" alt="改进Inception模块" style="zoom: 67%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2F%E6%9C%80%E5%88%9DInception%E6%A8%A1%E5%9D%97.png" alt="最初Inception模块" style="zoom: 67%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2F%E6%94%B9%E8%BF%9BInception%E6%A8%A1%E5%9D%97.png" alt="改进Inception模块" style="zoom: 67%;" /></p>
 <p>Inception模块对输入分出四个分支，不改变图像高宽，只改变通道数，然后将四个分支在通道维拼接起来作为输出。对输入，采用1* 1卷积降维，再3* 3卷积升维。（1* 1卷积减少通道数并不会丢失信息）</p>
 <p>GoogLeNet分类器最后采用的是平均池化层，丢失了语义结构的位置信息，有助于提升卷积层提取到的特征的平移不变性。</p>
 <h4 id="5resnet2015">5、ResNet（2015）<a class="headerlink" href="#5resnet2015" title="Permanent link">&para;</a></h4>
@@ -2260,14 +2260,14 @@ $$
 <p>提出了一种针对ReLU激活函数的初始化方法</p>
 </li>
 </ul>
-<p><img alt="ResNet示意图" src="./经典卷积神经网络/ResNet.png" /></p>
+<p><img alt="ResNet示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FResNet.png" /></p>
 <p>残差结构，输入为<span class="arithmatex">\(x\)</span>，输出为<span class="arithmatex">\(H(x)\)</span>，而<span class="arithmatex">\(H(x)=F(x)+x\)</span>，所以<span class="arithmatex">\(F(x)=H(x)-x\)</span>，因此称<span class="arithmatex">\(F(x)\)</span>为残差。</p>
 <p>完整ResNet架构：初始卷积层、堆叠残差块、每个残差快有2个3* 3卷积层、周期性使用步长2的卷积，将特征响应图高宽减少一半、只有fc1000用于输出类别</p>
-<p><img alt="ResNet-Bottleneck" src="./经典卷积神经网络/ResNet-Bottleneck.png" /></p>
+<p><img alt="ResNet-Bottleneck" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FResNet-Bottleneck.png" /></p>
 <p><strong>为什么残差网络性能这么好？一种典型的解释：残差网络可以看作一种集成模型</strong></p>
 <h4 id="6r-cnn">6、R-CNN<a class="headerlink" href="#6r-cnn" title="Permanent link">&para;</a></h4>
 <p>实现流程示意如下：</p>
-<p><img alt="R-CNN实现的示意图" src="./经典卷积神经网络/R-CNN.png" /></p>
+<p><img alt="R-CNN实现的示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FR-CNN.png" /></p>
 <h5 id="61selective-search">6.1、区域建议：Selective Search<a class="headerlink" href="#61selective-search" title="Permanent link">&para;</a></h5>
 <p>对于region proposal的要求：</p>
 <ul>
@@ -2321,13 +2321,13 @@ $$
 <p>问题在于，对于每一张图片，大约有2k个区域需要卷积网络进行特征提取，重复区域反复计算，计算效率低下。</p>
 <h4 id="7fast-r-cnn">7、Fast R-CNN<a class="headerlink" href="#7fast-r-cnn" title="Permanent link">&para;</a></h4>
 <p>关键改进，放弃先对原始图像Selective Search，生成多个ROI，然后对每个ROI卷积进行特征提取，这样计算重复多，计算效率低，改为先对原始图像进行特征提取（如AlexNet、VGG、ResNet等），然后在得到的feature map上进行Selective Search，生成ROI，然后对生成的ROI进行裁剪+缩放特征来进行尺度的统一（比如暴力resize、按原始比例resize后pad等），然后送入全连接层，进行分类和边界框预测回归。</p>
-<p><img src="./经典卷积神经网络/Fast R-CNN.png" alt="Fast R-CNN流程示意图" style="zoom:67%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FFast%20R-CNN.png" alt="Fast R-CNN流程示意图" style="zoom:67%;" /></p>
 <h5 id="_2">裁剪+缩放特征的实现<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
-<p><img src="./经典卷积神经网络/ROI pool.png" alt="ROI pool实现流程" style="zoom:60%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FROI%20pool.png" alt="ROI pool实现流程" style="zoom:60%;" /></p>
 <p>将候选区域投影到特征图上后，得到的区域大概率不规整，四个角点没有刚好落在像素点上，此时没有直接将四个角点规整到最近的像素点（这样可能导致后面最大池化时四个区域不相等，为池化操作带来麻烦），而是将该区域平均分为4个小区域，然后在每个小区域内等间距取4个像素点，当然这四个像素点也大概率不规整，因此采用双线性插值方法得到这些像素点的像素值，然后再对整个区域进行2* 2最大池化，然后进入全连接层。</p>
 <h4 id="8faster-r-cnn">8、Faster R-CNN<a class="headerlink" href="#8faster-r-cnn" title="Permanent link">&para;</a></h4>
 <p>主要改进，引进了区域建议网络RPN (Region Proposal Network)来产生候选区域（原因是Selective Search算法提出候选区域占据了整个训练和测试的绝大部分时间），因此提出RPN，使用卷积神经网络来产生候选区域。其他部分与Fast R-CNN一致，即扣取每个候选区域的特征，然后对其进行分类。</p>
-<p><img src="./经典卷积神经网络/Faster R-CNN.png" alt="Faster R-CNN流程示意图" style="zoom:60%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FFaster%20R-CNN.png" alt="Faster R-CNN流程示意图" style="zoom:60%;" /></p>
 <h5 id="rpn">RPN<a class="headerlink" href="#rpn" title="Permanent link">&para;</a></h5>
 <p>RPN在结构中是用来生成一系列proposals的一层，本质上它是Backbone的最后一层卷积层作为输入，proposal的具体位置作为输出的神经网络。RPN主要包含以下几步：</p>
 <ul>
@@ -2337,7 +2337,7 @@ $$
 </ul>
 <p>首先介绍下什么是anchor和anchor boxes。每个anchor点就是backbone网络最后一层卷积层feature map上的元素点。而anchor boxes是以anchor为中心点而生成的一系列框boxes。一个anchor对应的框的具体数量是由scales和aspect ratios 2个参数控制。scales指的是对于每种形状，框体最长边的像素大小，aspect ratios指的是具体由哪些形状，描述的是长宽比。所以scales[8,16,32] 和ratios [0.5,1,2]就代表一个anchor会生成9个anchor boxes。注意的是anchor boxes的坐标是对应在原图尺寸上的，而feature map相比原图是缩小很多倍的，比如VGG16,backbone网络出来的图片尺寸比原图缩小了16倍，如果在原图中采anchor boxes，就需要按16像素点跳着采样。</p>
 <p>有了anchor boxes还不够，这些框体大多都都没有包含目标物体，所以我们需要模型学习判断box是否包含物体（即是前景图片还是背景图片），同时对于前景图片我们还要学习来预测box和GT的offset。这2个任务分别是用2个卷积网络实现的，如下图所示，</p>
-<p><img src="./经典卷积神经网络/RPN.png" alt="RPN" style="zoom:60%;" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2FRPN.png" alt="RPN" style="zoom:60%;" /></p>
 <p>RPN的损失函数如下，由分类损失和定位损失两部分组成
 $$
 L(p_i,t_i)=\frac{1}{N_{cls}} \times \sum L_{cls}(p_i,p_i^<em>) + \frac{\lambda}{N_{reg}} \times \sum p_i^</em>L_{reg}(t_i,t_i^*)
@@ -2542,9 +2542,8 @@ $$
       </main>
       
         <style>
-  .md-footer {
-    background-color: #fafafa;
-    color: #000;
+  .md-footer-meta {
+      background-color: #f0f0f0;
   }
 </style>
 

@@ -2064,12 +2064,12 @@
 \frac{x}{y}=z
 \]</div>
 <p>先来放上整个网络结构的示意图，图中所示为yolov5l的网络结构图</p>
-<p><img alt="yolov5l整体网络结构(部分参数不正确，以文中介绍为准)" src="./understanding-of-yolo-network-structure-1/yolov5.jpeg" /></p>
+<p><img alt="yolov5l整体网络结构(部分参数不正确，以文中介绍为准)" src="yolov5.jpeg" /></p>
 <hr />
 <h4 id="backbone">一、Backbone结构<a class="headerlink" href="#backbone" title="Permanent link">&para;</a></h4>
 <h5 id="1focus">1、Focus模块<a class="headerlink" href="#1focus" title="Permanent link">&para;</a></h5>
 <p>​   进入backbone之前，对原始输入图像进行切片操作，每隔一个像素取一个值，图像高宽减半，通道数变为原来4倍，信息基本没有丢失，以yolov5s为例，输入图像640 *640 *3，经过Focus结构，变为  320 *320 *12，如图：640 *640 *3</p>
-<p><img alt="focus示意图" src="./understanding-of-yolo-network-structure-1/Focus.png" /></p>
+<p><img alt="focus示意图" src="Focus.png" /></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -2124,7 +2124,7 @@
 </code></pre></div></td></tr></table></div>
 <h5 id="2bottleneck">2、BottleNeck模块<a class="headerlink" href="#2bottleneck" title="Permanent link">&para;</a></h5>
 <p>下面两种BottleNeck模块分别用在模型的Backbone和neck部分，BottleNeck1用于Backbone，BottleNeck2用于neck，BottleNeck结构不改变图像高宽和通道数量。</p>
-<p><img alt="BottleNeck示意图" src="./understanding-of-yolo-network-structure-1/BottleNeck.png" /></p>
+<p><img alt="BottleNeck示意图" src="BottleNeck.png" /></p>
 <p>由一个1* 1卷积和3* 3卷积，再加上残差连接组成</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -2159,7 +2159,7 @@
 <p>第一次进入BottleNeck1，图像形状为160* 160* 64，输出160* 160* 64</p>
 <h5 id="3c3">3、C3模块<a class="headerlink" href="#3c3" title="Permanent link">&para;</a></h5>
 <p>如图，C3模块由1* 1卷积和BottleNeck模块组成，构成了yolov5的核心组成部分。整体来说，C3模块先对输入图像做通道数减半的1*1卷积并分支，其中一个分支经过若干个BottleNeck, 然后两个分支在通道维concat，concat后得到的输出通道就和输入通道数一样了，最后再来一个通道数不变的</p>
-<p><img alt="C3模块示意图" src="./understanding-of-yolo-network-structure-1/C3.png" /></p>
+<p><img alt="C3模块示意图" src="C3.png" /></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -2237,7 +2237,7 @@
 </ul>
 <h5 id="5sppf">5、<strong>SPPF</strong><a class="headerlink" href="#5sppf" title="Permanent link">&para;</a></h5>
 <p>​       SSPF模块将经过CBS的x、一次池化后的y1、两次池化后的y2和3次池化后的self.m(y2)先进行拼接，然后再CBS提取特征。 仔细观察不难发现，虽然SSPF对特征图进行了多次池化，但是特征图尺寸并未发生变化，通道数更不会变化，所以后续的4个输出能够在channel维度进行融合。这一模块的主要作用是对高层特征进行提取并融合，在融合的过程中作者多次运用最大池化，尽可能多的去提取高层次的语义特征。</p>
-<p><img alt="SSPF示意图" src="./understanding-of-yolo-network-structure-1/SSPF.jpg" /></p>
+<p><img alt="SSPF示意图" src="SSPF.jpg" /></p>
 <p>​       第三个C3模块结束后，进入SSPF模块，输入为20* 20* 1024，先经过一个卷积cv1， 变为20* 20* 512，然后顺序经过kernel_size为5、9、13的最大池化层并依次输出，图像大小和高宽均不发生变化，最后将这四个输出在通道维concat起来，四个20* 20 <em>512，拼接起来得到           20 * 20</em> 2048，然后经过cv2，变为20* 20* 1024</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
@@ -3022,9 +3022,8 @@
       </main>
       
         <style>
-  .md-footer {
-    background-color: #fafafa;
-    color: #000;
+  .md-footer-meta {
+      background-color: #f0f0f0;
   }
 </style>
 
