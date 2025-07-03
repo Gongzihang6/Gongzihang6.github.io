@@ -1631,12 +1631,8 @@
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+    <nav class="md-nav" aria-label="第二部分：理解AUC (Area Under the Curve)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#auc" class="md-nav__link">
@@ -1698,6 +1694,16 @@
       总结：为什么这个解释如此重要？
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2374,12 +2380,8 @@
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+    <nav class="md-nav" aria-label="第二部分：理解AUC (Area Under the Curve)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#auc" class="md-nav__link">
@@ -2449,6 +2451,16 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
@@ -2484,11 +2496,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文探讨了机器学习模型评估的核心问题——泛化性能，重点分析了误差来源及其分解方法。通过偏差-方差分解框架，将泛化误差解构为偏差（算法拟合能力）、方差（数据扰动影响）和噪声（任务固有难度）三部分。指出优化模型需平衡偏差与方差，同时强调训练数据量对提升泛化能力的关键作用。该分析为评估和改进分类模型提供了理论依据，适用于各类监督学习任务。</p>
+<p>本文探讨了机器学习模型评估的核心问题，重点分析了泛化性能的误差分解。通过偏差-方差分解框架，揭示了泛化误差由偏差（算法拟合能力）、方差（数据扰动敏感性）和噪声（任务固有难度）三部分组成。指出优化模型需平衡偏差与方差，同时强调训练数据量和独立测试集的重要性，为提升模型在新样本上的预测能力提供了理论依据。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>5879</strong></p>
+<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>6070</strong></p>
 </div>
 <div class="toc">
 <ul>
@@ -2514,9 +2526,7 @@
 </ul>
 </li>
 <li><a href="#roc_1">ROC曲线的实际意义</a><ul>
-<li><a href="#auc-area-under-the-curve">第二部分：理解AUC (Area Under the Curve)</a></li>
-</ul>
-</li>
+<li><a href="#auc-area-under-the-curve">第二部分：理解AUC (Area Under the Curve)</a><ul>
 <li><a href="#auc">AUC的实际意义</a></li>
 <li><a href="#_12">结合教材图片内容解读</a></li>
 <li><a href="#_13">总结</a></li>
@@ -2524,6 +2534,10 @@
 <li><a href="#2">2. 玩一个“抽卡配对”游戏</a></li>
 <li><a href="#3">3. 从“配对游戏”到“曲线下面积”</a></li>
 <li><a href="#_14">总结：为什么这个解释如此重要？</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_15">代价敏感错误率与代价曲线</a></li>
@@ -2724,13 +2738,25 @@ $$
 TPR=\frac{TP}{TP+FN}
 $$
 TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是总的正例样本的数量，因此TPR表示总的正例样本中预测正确的比例；</p>
-<p>绘制出如下图所示的近似ROC曲线。绘图过程很简单：给定 <span class="arithmatex">\(m^+\)</span> 个正例和 <span class="arithmatex">\(m^-\)</span> 个反例，根据学习器预测结果对样例进行排序，然后把分类阈值设为最大，即把所有样例均预测为反例，此时真正例率和假正例率均为 0，在坐标 <span class="arithmatex">\((0,0)\)</span> 处标记一个点。然后，将分类阈值依次设为每个样例的预测值，即依次将每个样例划分为正例。设前一个标记点坐标为 <span class="arithmatex">\((x,y)\)</span>，当前若为真正例，则对应标记点的坐标为 <span class="arithmatex">\((x, y + \frac{1}{m^+})\)</span>；当前若为假正例，则对应标记点的坐标为 <span class="arithmatex">\((x + \frac{1}{m^-}, y)\)</span>，然后用线段连接相邻点即得。</p>
+<p>绘制出如下图所示的近似ROC曲线。绘图过程很简单：给定 <span class="arithmatex">\(m^+\)</span> 个正例和 <span class="arithmatex">\(m^-\)</span> 个反例，<strong>根据学习器预测结果对样例进行排序</strong>，然后把分类阈值设为最大，即把所有样例均预测为反例，此时真正例率和假正例率均为 0，在坐标 <span class="arithmatex">\((0,0)\)</span> 处标记一个点。然后，将分类阈值依次设为每个样例的预测值，即<strong>依次将每个样例划分为正例</strong>。设前一个标记点坐标为 <span class="arithmatex">\((x,y)\)</span>，当前若为真正例，则对应标记点的坐标为 <span class="arithmatex">\((x, y + \frac{1}{m^+})\)</span>；当前若为假正例，则对应标记点的坐标为 <span class="arithmatex">\((x + \frac{1}{m^-}, y)\)</span>，然后用线段连接相邻点即得。</p>
 <p><img alt="ROC曲线与AUC示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250622122355434.png" /></p>
 <p>如何根据ROC曲线比较学习器性能的优劣？与PR曲线类似，若一个学习器的ROC曲线被另一个学习器的曲线完全包住，则可以断言后者的性能优于前者；若两个学习器的ROC曲线发生交叉，则难以一般性的断言两者孰优孰劣，可以通过比较ROC曲线下的面积，即AUC（Area Under ROC Curve）</p>
+<p>从定义可知，AUC可以通过求ROC曲线下各部分的面积之和得到，相当于求多个梯形的面积之和。
+$$
+AUC=\frac{1}{2}\sum_{i=1}^{m-1}(x_{i+1}-x_i)(y_i+y_{i+1})
+$$
+形式化的看，AUC考虑的是样本预测的排序质量，因此它与排序误差有紧密联系。给定m^+个整理和m^-个反例，令D^+和D^-分别表示正、反例集合，则排序损失定义为：
+$$
+l_{rank}=\frac{1}{m^+ m^-}\sum_{x^+ \in D^+}\sum_{x^- \in D^-}\left(\mathbb{I}\left(f(x^+)&lt;f(x^-)\right)+\frac{1}{2}\mathbb{I}\left(f(x^+)=f(x^-)\right)\right)
+$$
+也就是考虑每一对正、反例，若正例的预测值小于反例，则计一个罚分，若相等，则计0.5个罚分，容易看出，l_{rank}对应的是ROC曲线上方的面积：若一个正例在ROC曲线上对应标记点的坐标为(x,y)，则x恰是排序在其之前的反例所占的比例，即假正例率。因此有
+$$
+AUC=1-\mathscr{l}_{rank}
+$$</p>
+<hr />
 <p>好的，这张图片是来自一本关于机器学习的经典教材（很可能是周志华老师的《机器学习》，俗称“西瓜书”），它讨论了ROC曲线和AUC的定义与计算。</p>
 <p>我会结合图片中的内容，用一个通俗易懂的例子，为你详细解释ROC曲线和AUC的实际意义。</p>
-<hr />
-<h4 id="_11"><strong>核心思想：从一个医生的诊断说起</strong><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<h4 id="_11">核心思想：从一个医生的诊断说起<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p>想象一下，你开发了一个AI模型，用来帮助医生判断CT影像中是否有肿瘤。这个模型不像人类医生直接说“有”或“没有”，而是输出一个<strong>“可能性”得分</strong>，比如0到1之间的一个数值。得分越高，模型认为有肿瘤的可能性越大。</p>
 <p>现在，医生需要根据这个得分来做最终诊断。他可以设定一个<strong>“阈值（Threshold）”</strong>。</p>
 <ul>
@@ -2777,7 +2803,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 <li><strong>阈值设为最低(比如0.0)：</strong> 模型非常“宽松”，把所有样本都判为“有肿瘤”。这时所有真病人都被找出(TPR=1)，同时所有健康人也都被误诊(FPR=1)。（对应ROC图的右上角(1,1)点）</li>
 </ol>
 <p>将阈值变化过程中所有(FPR, TPR)的点连接起来，就构成了这个模型的ROC曲线。</p>
-<h4 id="roc_1"><strong>ROC曲线的实际意义</strong><a class="headerlink" href="#roc_1" title="Permanent link">&para;</a></h4>
+<h4 id="roc_1">ROC曲线的实际意义<a class="headerlink" href="#roc_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>一个点代表一种策略：</strong> ROC曲线上的每一个点，都对应一个具体的阈值，代表了在该阈值下“漏诊”和“误诊”的一种平衡。</li>
 <li><strong>曲线的形状代表模型的能力：</strong><ul>
@@ -2788,10 +2814,10 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 </li>
 </ul>
 <hr />
-<h5 id="auc-area-under-the-curve"><strong>第二部分：理解AUC (Area Under the Curve)</strong><a class="headerlink" href="#auc-area-under-the-curve" title="Permanent link">&para;</a></h5>
+<h5 id="auc-area-under-the-curve">第二部分：理解AUC (Area Under the Curve)<a class="headerlink" href="#auc-area-under-the-curve" title="Permanent link">&para;</a></h5>
 <p>正如图片中文字所述，当两个模型的ROC曲线发生交叉时，我们很难说哪个模型更好。这时就需要一个定量的指标来衡量模型的整体性能，这就是AUC。</p>
 <p><strong>AUC就是ROC曲线下方的面积。</strong></p>
-<h4 id="auc"><strong>AUC的实际意义</strong><a class="headerlink" href="#auc" title="Permanent link">&para;</a></h4>
+<h6 id="auc">AUC的实际意义<a class="headerlink" href="#auc" title="Permanent link">&para;</a></h6>
 <p>AUC的取值范围在0到1之间，其背后有一个非常直观和重要的概率解释，这也是图片中<strong>“AUC考虑的是样本预测的排序质量”</strong>这句话的精髓所在：</p>
 <blockquote>
 <p><strong>AUC的数值，等于从所有正样本（真病人）中随机抽取一个，再从所有负样本（健康人）中随机抽取一个，这个正样本的预测得分高于这个负样本预测得分的概率。</strong></p>
@@ -2805,7 +2831,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 </ul>
 <p>所以，<strong>AUC衡量的不是模型预测的“准确度”，而是它对正负样本的“区分能力”或“排序能力”。</strong> 一个高AUC的模型，能很好地将正样本排在负样本前面。</p>
 <hr />
-<h4 id="_12"><strong>结合教材图片内容解读</strong><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h6 id="_12">结合教材图片内容解读<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h6>
 <ol>
 <li>
 <p><strong>“若一个学习器的ROC曲线被另一个学习器的曲线完全‘包住’，则可断言后者的性能优于前者”</strong></p>
@@ -2826,7 +2852,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 </ul>
 </li>
 </ol>
-<h4 id="_13"><strong>总结</strong><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h6 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h6>
 <table>
 <thead>
 <tr>
@@ -2862,7 +2888,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 <p>绝佳的问题！这句对AUC的概率解释是理解其<strong>核心价值</strong>的关键。很多人知道AUC是曲线下的面积，但并不清楚这个面积代表的实际意义。</p>
 <p>我们来用一个非常具体、直观的方式来拆解这句话。</p>
 <hr />
-<h4 id="1"><strong>1. 创造一个“微型世界”</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<h6 id="1">1. 创造一个“微型世界”<a class="headerlink" href="#1" title="Permanent link">&para;</a></h6>
 <p>假设我们的AI模型已经对一小批人进行了肿瘤风险打分。这个世界里只有：</p>
 <ul>
 <li><strong>3个真病人 (正样本)</strong></li>
@@ -2919,7 +2945,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 <strong>现实情况：</strong>如上表，模型犯了些错误。比如健康人H1的得分(0.7)就比病人P2(0.6)和P3(0.5)的得分要高。这说明模型的排序能力不是100%完美的。</p>
 <p>AUC衡量的就是这种<strong>排序的“完美程度”</strong>。</p>
 <hr />
-<h4 id="2"><strong>2. 玩一个“抽卡配对”游戏</strong><a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<h6 id="2">2. 玩一个“抽卡配对”游戏<a class="headerlink" href="#2" title="Permanent link">&para;</a></h6>
 <p>现在，我们来严格按照那句话的定义玩一个游戏：</p>
 <blockquote>
 <p>“从所有正样本（病人）中<strong>随机抽取一个</strong>，再从所有负样本（健康人）中<strong>随机抽取一个</strong>，比较他们的得分。”</p>
@@ -3014,7 +3040,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 <p>这个概率就是 <code>10 / 12 ≈ 0.833</code>。</p>
 <p><strong>这个0.833，就是这个模型在这个数据集上的AUC值！</strong></p>
 <hr />
-<h4 id="3"><strong>3. 从“配对游戏”到“曲线下面积”</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<h6 id="3">3. 从“配对游戏”到“曲线下面积”<a class="headerlink" href="#3" title="Permanent link">&para;</a></h6>
 <p>你可能会问：这个配对计数的概率，怎么就等于ROC曲线下方的面积了呢？</p>
 <p>这背后的数学联系非常巧妙，可以这样理解：</p>
 <p>绘制ROC曲线时，我们其实是在按得分从高到低排序，然后一个个地处理样本。
@@ -3027,7 +3053,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 <code>Σ [ (得分比这个健康人高的病人比例) × (1 / 健康人总数) ]</code>
 这个公式经过推导，其结果<strong>完全等价于</strong>我们上面计算的配对概率 <code>10/12</code>。</p>
 <hr />
-<h4 id="_14"><strong>总结：为什么这个解释如此重要？</strong><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<h6 id="_14">总结：为什么这个解释如此重要？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h6>
 <ol>
 <li>
 <p><strong>更直观：</strong> “面积”是一个几何概念，而“概率”是一个统计概念。<strong>“一个模型有多大概率能正确地把病人排在健康人前面”</strong>，这个说法比“曲线下面积是0.83”更容易被业务人员理解。它直接反映了模型的核心任务——区分能力。</p>
@@ -3040,6 +3066,7 @@ TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是�
 </li>
 </ol>
 <h3 id="_15">代价敏感错误率与代价曲线<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>在现实任务中常会遇到这样的情况，不同类型的错误造成的后果不同，例如在医疗诊断中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了“一次错误”，但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机；再如，门禁系统错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故。为权衡不同类型错误所造成的不同损失，可为错误赋予“非均等代价”(unequal cost)。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
