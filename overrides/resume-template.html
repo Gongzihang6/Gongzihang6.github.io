@@ -876,18 +876,18 @@
 
     <script>
         // --- 1. 页面加载后自动平滑滚动到 #about 部分 ---
-        window.addEventListener('load', () => {
-            const aboutSection = document.getElementById('about');
-            if (aboutSection) {
-                // 使用 setTimeout 稍微延迟滚动，给页面渲染留出时间，效果更平滑
-                setTimeout(() => {
-                    aboutSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 1000); // 延迟100毫秒
-            }
-        });
+        //window.addEventListener('load', () => {
+        //    const aboutSection = document.getElementById('about');
+        //    if (aboutSection) {
+        //        // 使用 setTimeout 稍微延迟滚动，给页面渲染留出时间，效果更平滑
+         //       setTimeout(() => {
+         //           aboutSection.scrollIntoView({
+        //                behavior: 'smooth',
+        //                block: 'start'
+        //            });
+        //        }, 1000); // 延迟100毫秒
+        //    }
+        //});
 
         // --- 2. 监听滚动，为 header 添加 scrolled 类 ---
         const header = document.querySelector('.resume-header');
