@@ -224,6 +224,7 @@
             text-align: center;
         }
         .skill-card p {
+            text-indent: 2em; /* 首行缩进 2 字符 */
             font-size: 0.9rem;
             color: var(--text-light);
             margin: 0;
@@ -522,66 +523,85 @@
             </div>
         </section>
 
-
         <!-- ============================================= -->
-        <!-- ========= 【第一个相册】荣誉证书 ========= -->
+        <!-- ========= 学习课程与证书展示模块 ========= -->
         <!-- ============================================= -->
-        <div class="carousel-section" id="honors-carousel">
-            <h2 class="carousel-title">荣誉证书</h2>
-            <span class="carousel-subtitle-underline"></span>
-            <div class="carousel-container">
-                <div class="carousel">
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%A6%88%E5%A6%88%E6%9D%AF.jpg" alt="妈妈杯证书" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%AD%A3%E5%A4%A7%E6%9D%AF%E5%9B%BD%E5%AE%B6%E4%B8%89%E7%AD%89%E5%A5%96.jpg" alt="正大杯国赛三等奖" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%8D%8E%E4%B8%BA%E6%9D%AF%E4%BA%8C%E7%AD%89%E5%A5%96.jpg" alt="华为杯二等奖" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD.jpg" alt="英语口语一等奖" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B%E4%B8%80%E7%AD%89%E5%A5%96.jpg" alt="数学竞赛一等奖" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2022%E4%BC%98%E7%A7%80%E5%9B%A2%E5%91%98.jpg" alt="优秀团员" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2020-2021%E6%9C%AC%E7%A7%91%E4%B8%89%E5%A5%BD%E5%AD%A6%E7%94%9F.jpg" alt="三好学生" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E7%BE%8E%E8%B5%9BHM%E5%A5%96" alt="美赛HM奖" draggable="false"></figure>
+        <section id="courses" class="resume-section fade-in-up">
+            <div class="section-wrapper">
+                <h2 class="section-title">核心课程</h2>
+                <span class="title-underline"></span>
+                
+                <div class="skills-grid">
+                    <!-- 课程证书卡片1 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>深度学习</h3>
+                        <p>系统学习神经网络原理、CNN/RNN架构及PyTorch框架应用，完成图像分类、目标检测等实战项目。</p>
+                        <div class="project-tags">
+                            <span>DeepLearning.AI</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 课程证书卡片2 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Python高级编程</h3>
+                        <p>掌握Python高级特性、设计模式及性能优化技巧，完成并发编程和算法优化实践。</p>
+                        <div class="project-tags">
+                            <span>Coursera</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 课程证书卡片3 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                        <h3>机器学习（西瓜书、统计学习方法）</h3>
+                        <p>学习各种常用机器学习算法原理及应用</p>
+                        <div class="project-tags">
+                            <span>Udacity</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 课程证书卡片4 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>数据结构与算法</h3>
+                        <p>深入理解经典算法实现，完成LeetCode 300+题目训练，掌握时间/空间复杂度优化方法。</p>
+                        <div class="project-tags">
+                            <span>edX</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 课程证书卡片5 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>云计算基础</h3>
+                        <p>学习AWS/Azure云服务架构，掌握容器化部署与Serverless应用开发。</p>
+                        <div class="project-tags">
+                            <span>阿里云认证</span>
+                            <span>2023</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 课程证书卡片6 -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3>大数据处理</h3>
+                        <p>掌握Spark核心原理与优化技巧，完成TB级数据处理与特征工程实践。</p>
+                        <div class="project-tags">
+                            <span>Cloudera</span>
+                            <span>2022</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-controls">
-                <button class="carousel-prev-button">‹</button>
-                <button class="carousel-next-button">›</button>
-            </div>
-        </div>
+        </section>
 
-        <!-- ============================================= -->
-        <!-- ========= 【第二个相册】课外生活 ========= -->
-        <!-- ============================================= -->
-        <div class="carousel-section" id="life-carousel">
-            <h2 class="carousel-title">生活记录</h2>
-            <span class="carousel-subtitle-underline"></span>
-            <div class="carousel-container">
-                <div class="carousel">
-                    <!-- 替换成您的生活照片 -->
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250510_170835.jpg" alt="社团活动" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20230915_174751.jpg" alt="旅行风景" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250417_085601.jpg" alt="团队合影" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" alt="羽毛球" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240809_190138.jpg" alt="个人摄影" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="志愿者活动" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="7" draggable="false"></figure>      111
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240808_190022.jpg" alt="8" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240730_192249.jpg" alt="9" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240729_185903.jpg" alt="10" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111630.jpg" alt="11" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_124404.jpg" alt="12" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_120923.jpg" alt="13" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_081247.jpg" alt="14" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111718.jpg" alt="15" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250119_183726.jpg" alt="16" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20241224_172745.jpg" alt="17" draggable="false"></figure>
-                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240726_190230.jpg" alt="18" draggable="false"></figure>
 
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-prev-button">‹</button>
-                <button class="carousel-next-button">›</button>
-            </div>
-        </div>
 
 
         <!-- Section: Education -->
@@ -604,13 +624,13 @@
                             <div class="date"><i class="fas fa-calendar-alt"></i> 2020 - 2024</div>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <!-- <div class="timeline-item">
                         <div class="timeline-card">
                             <h3>汉川一中</h3>
                             <p class="subtitle">平凡普通的三年</p>
                             <div class="date"><i class="fas fa-calendar-alt"></i> 2017 - 2020</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -722,6 +742,71 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- ============================================= -->
+        <!-- ========= 【第一个相册】荣誉证书 ========= -->
+        <!-- ============================================= -->
+        <div class="carousel-section" id="honors-carousel">
+            <h2 class="carousel-title">荣誉证书</h2>
+            <span class="carousel-subtitle-underline"></span>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%A6%88%E5%A6%88%E6%9D%AF.jpg" alt="妈妈杯证书" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%AD%A3%E5%A4%A7%E6%9D%AF%E5%9B%BD%E5%AE%B6%E4%B8%89%E7%AD%89%E5%A5%96.jpg" alt="正大杯国赛三等奖" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%8D%8E%E4%B8%BA%E6%9D%AF%E4%BA%8C%E7%AD%89%E5%A5%96.jpg" alt="华为杯二等奖" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD.jpg" alt="英语口语一等奖" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B%E4%B8%80%E7%AD%89%E5%A5%96.jpg" alt="数学竞赛一等奖" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2022%E4%BC%98%E7%A7%80%E5%9B%A2%E5%91%98.jpg" alt="优秀团员" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2020-2021%E6%9C%AC%E7%A7%91%E4%B8%89%E5%A5%BD%E5%AD%A6%E7%94%9F.jpg" alt="三好学生" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E7%BE%8E%E8%B5%9BHM%E5%A5%96" alt="美赛HM奖" draggable="false"></figure>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev-button">‹</button>
+                <button class="carousel-next-button">›</button>
+            </div>
+        </div>
+
+        <!-- ============================================= -->
+        <!-- ========= 【第二个相册】课外生活 ========= -->
+        <!-- ============================================= -->
+        <div class="carousel-section" id="life-carousel">
+            <h2 class="carousel-title">生活记录</h2>
+            <span class="carousel-subtitle-underline"></span>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- 替换成您的生活照片 -->
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250510_170835.jpg" alt="社团活动" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20230915_174751.jpg" alt="旅行风景" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250417_085601.jpg" alt="团队合影" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fwx_camera_1748174958408.jpg" alt="羽毛球" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240809_190138.jpg" alt="个人摄影" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="志愿者活动" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250320_004737.jpg" alt="7" draggable="false"></figure>      111
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240808_190022.jpg" alt="8" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240730_192249.jpg" alt="9" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240729_185903.jpg" alt="10" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111630.jpg" alt="11" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_124404.jpg" alt="12" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_120923.jpg" alt="13" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240204_081247.jpg" alt="14" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240320_111718.jpg" alt="15" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20250119_183726.jpg" alt="16" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20241224_172745.jpg" alt="17" draggable="false"></figure>
+                    <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240726_190230.jpg" alt="18" draggable="false"></figure>
+
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev-button">‹</button>
+                <button class="carousel-next-button">›</button>
+            </div>
+        </div>
+
+
+
+
 
         <!-- Section: Contact Me -->
         <section id="contact" class="resume-section fade-in-up">
