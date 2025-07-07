@@ -2363,11 +2363,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>支持向量机（SVM）是一种基于间隔最大化的线性二分类器，通过求解凸二次规划问题获得全局最优解。其核心优势在于处理小样本、非线性及高维数据时表现优异，并具有强泛化能力。SVM通过寻找最优划分超平面（由法向量和位移项决定）实现鲁棒分类，该超平面位于两类样本"正中间"，对局部扰动容忍性最好。此外，SVM可推广至函数拟合等机器学习任务。</p>
+<p>支持向量机(SVM)是一种基于间隔最大化的线性二分类器，通过求解凸二次规划问题获得全局最优解。其核心思想是寻找能最大化分类间隔的超平面，具有对小样本、非线性及高维数据的处理优势。SVM通过法向量和位移项定义划分超平面，对训练样本的局部扰动具有强鲁棒性，泛化能力优异，可扩展应用于函数拟合等机器学习任务。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>341</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>385</strong></p>
 </div>
 <h1 id="support-vector-machinesvm">支持向量机（Support Vector Machine，SVM）<a class="headerlink" href="#support-vector-machinesvm" title="Permanent link">&para;</a></h1>
 <p>SVM是特征空间上的间隔最大的线性二分类器，其学习策略是间隔最大化，最终可转化为一个凸二次规划问题求解，因此SVM的解是全局最优解。</p>
@@ -2381,6 +2381,17 @@ $$
 w^Tx+b=0
 $$
 其中<span class="arithmatex">\(w=(w_1,w_2,\dots,w_d)^T\)</span>为法向量，决定了超平面的方向，<span class="arithmatex">\(b\)</span>为位移项，决定了超平面与原点之间的距离，划分超平面由法向量<span class="arithmatex">\(w\)</span>和位移<span class="arithmatex">\(b\)</span>确定；</p>
+<p>样本空间中任意点x到超平面(w,b)的距离可以写为：
+$$
+r=\frac{|w^Tx+b|}{||W||}
+$$
+假设超平面(w,b)能将训练样本正确分类，即对于(x_i,y_i)\in D，若y_i=+1，则有w^Tx_i+b&gt;0；若y_i=-1，则有w^Tx_i+b&lt;0，即：
+$$
+\begin{cases}
+w^Tx_i+b \ge +1, \quad y_i=+1;  \
+w^Tx_i+b \le -1, \quad y_i=-1;
+\end{cases}
+$$</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

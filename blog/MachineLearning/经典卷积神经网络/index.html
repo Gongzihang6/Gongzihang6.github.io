@@ -2717,7 +2717,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>AlexNet首次提出ReLU激活函数、Dropout正则化和GPU并行计算，奠定了CNN基础架构。ZFNet通过特征可视化揭示了CNN层次化特征学习规律，验证了特征提取的通用性。VGGNet采用3×3小卷积核级联结构，在降低参数量的同时增强非线性表达能力。GoogLeNet创新性提出Inception模块和辅助分类器，显著减少参数量并缓解梯度消失问题。这些经典网络推动了深度学习在图像识别领域的发展。</p>
+<p>AlexNet首次提出ReLU激活函数和Dropout正则化，利用GPU并行计算加速训练。ZFNet通过反卷积可视化特征，验证了CNN特征提取的通用性和层次性。VGGNet采用3×3小卷积核级联，平衡计算量与模型深度。GoogLeNet引入Inception结构和辅助分类器，显著减少参数量并缓解梯度消失问题。这些经典CNN模型奠定了深度学习在计算机视觉领域的基础。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -2774,13 +2774,13 @@ $$
 其中：</p>
 <ul>
 <li>
-<p><span class="arithmatex">\(<span class="arithmatex">\(\alpha_{xy}^i\)</span>\)</span>: ReLU处理后的神经元，作为LRN的输入</p>
+<p><span class="arithmatex">\(\alpha_{xy}^i\)</span>: ReLU处理后的神经元，作为LRN的输入</p>
 </li>
 <li>
-<p><span class="arithmatex">\(<span class="arithmatex">\(b_{xy}^i\)</span>\)</span>: LRN的输出，LRN处理后的神经元</p>
+<p><span class="arithmatex">\(b_{xy}^i\)</span>: LRN的输出，LRN处理后的神经元</p>
 </li>
 <li>
-<p>N：kernal总数或通道数</p>
+<p><span class="arithmatex">\(N\)</span>：kernal总数或通道数</p>
 </li>
 <li>
 <p><span class="arithmatex">\(k\)</span>、<span class="arithmatex">\(n\)</span>、<span class="arithmatex">\(\alpha\)</span>、<span class="arithmatex">\(\beta\)</span>：常量，超参数，k类似于bias，n对应于Caffe中的local_size，在论文中这几个值分别为2、5、1e-4、0.75。</p>
