@@ -887,12 +887,12 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 .md-typeset .center-table {
   width: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* 用于单元格内容居中 */
 .text-center th,
 .text-center td {
-  text-align: center;
+  text-align: center !important;
 }
