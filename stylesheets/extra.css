@@ -896,3 +896,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 .text-center td {
   text-align: center !important;
 }
+
+.md-typeset scrolledwrap{
+  width: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
