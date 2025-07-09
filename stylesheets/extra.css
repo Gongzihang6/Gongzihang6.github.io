@@ -881,3 +881,13 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     /* max-width: 1600px; */
   /* } */
 /* } */
+
+
+
+
+/* --- 表格整体居中 --- */
+/* 创建一个 .center-table 类，用于将表格本身居中 */
+.center-table {
+  margin-left: auto;
+  margin-right: auto;
+}
