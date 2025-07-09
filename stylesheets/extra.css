@@ -902,3 +902,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   margin-left: auto !important;
   margin-right: auto !important;
 }
+.md-typeset scrolledwrap table{
+  width: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
