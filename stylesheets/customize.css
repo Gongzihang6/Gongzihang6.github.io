@@ -13,10 +13,7 @@
 .md-typeset .grid.cards > ul > li:hover {
   box-shadow: var(--card-hover-shadow);
 }
-.md-typeset table{
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 
 

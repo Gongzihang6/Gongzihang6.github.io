@@ -885,9 +885,14 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
 
 
-/* --- 表格整体居中 --- */
-/* 创建一个 .center-table 类，用于将表格本身居中 */
-.center-table {
+.md-typeset .center-table {
+  width: auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* 用于单元格内容居中 */
+.text-center th,
+.text-center td {
+  text-align: center;
 }
