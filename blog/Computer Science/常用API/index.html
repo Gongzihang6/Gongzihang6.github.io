@@ -3074,18 +3074,18 @@
 </li>
 <li>
 <p>```java
-  public class CollectionTraversalDemo3 {
-      public static void main(String[] args) {
-          // 目标：掌握Collection的遍历方式一：迭代器遍历
-          ArrayList<String> names = new ArrayList&lt;&gt;();
-          names.add("张无忌");
-          names.add("玄冥二老");
-          names.add("宋青书");
-  //        names.add("殷素素"); 
-          System.out.println(names); // [张无忌, 玄冥二老, 宋青书]</p>
+      public class CollectionTraversalDemo3 {
+          public static void main(String[] args) {
+              // 目标：掌握Collection的遍历方式一：迭代器遍历
+              ArrayList<String> names = new ArrayList&lt;&gt;();
+              names.add("张无忌");
+              names.add("玄冥二老");
+              names.add("宋青书");
+      //        names.add("殷素素"); 
+              System.out.println(names); // [张无忌, 玄冥二老, 宋青书]</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  // 1、得到这个集合的迭代器对象
-  Iterator&lt;String&gt; it = names.iterator();
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>      // 1、得到这个集合的迭代器对象
+      Iterator&lt;String&gt; it = names.iterator();
 </code></pre></div></td></tr></table></div>
 <p>//        System.out.println(it.next());
   //        System.out.println(it.next());
@@ -3097,15 +3097,16 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>  // 2、使用一个while循环来遍历
-  // it.hasNext()判断当前位置是否有元素存在，存在返回true，不存在返回false
-  while (it.hasNext()) {
-      String name = it.next();            // 获取当前位置的元素，并将迭代器对象指向下一个元素处
-      System.out.println(name);
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>      // 2、使用一个while循环来遍历
+      // it.hasNext()判断当前位置是否有元素存在，存在返回true，不存在返回false
+      while (it.hasNext()) {
+          String name = it.next();            // 获取当前位置的元素，并将迭代器对象指向下一个元素处
+          System.out.println(name);
+      }
   }
 </code></pre></div></td></tr></table></div>
 <p>}
-  }
   ```</p>
 </li>
 <li>
@@ -3119,34 +3120,35 @@
 </li>
 <li>
 <p>```java
-  public class CollectionTraversalDemo4 {
-      public static void main(String[] args) {
-          // 目标：掌握Collection的遍历方式二：增强for
-          Collection<String> names = new ArrayList&lt;&gt;();
-          names.add("张无忌");
-          names.add("玄冥二老");
-          names.add("宋青书");
-          names.add("殷素素");</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>  for (String name : names) {
-      System.out.println(name);
-  }
+      public class CollectionTraversalDemo4 {
+          public static void main(String[] args) {
+              // 目标：掌握Collection的遍历方式二：增强for
+              Collection<String> names = new ArrayList&lt;&gt;();
+              names.add("张无忌");
+              names.add("玄冥二老");
+              names.add("宋青书");
+              names.add("殷素素");</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>      for (String name : names) {
+          System.out.println(name);
+      }
 
-  String[] users = {&quot;张无忌&quot;, &quot;玄冥二老&quot;, &quot;宋青书&quot;, &quot;殷素素&quot;};
+      String[] users = {&quot;张无忌&quot;, &quot;玄冥二老&quot;, &quot;宋青书&quot;, &quot;殷素素&quot;};
 
-  for (String user : users) {
-      System.out.println(user);
+      for (String user : users) {
+          System.out.println(user);
+      }
   }
 </code></pre></div></td></tr></table></div>
 <p>}
-  }
   ```</p>
 </li>
 <li>
