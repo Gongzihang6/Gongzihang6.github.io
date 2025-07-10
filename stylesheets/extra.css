@@ -907,3 +907,106 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+
+
+
+
+
+
+
+
+/* docs/stylesheets/extra.css */
+
+/* 代码块容器相对定位，以便按钮绝对定位 */
+div.highlight {
+  position: relative;
+}
+
+/* 折叠按钮的样式 */
+.code-fold-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 1; /* 确保在代码之上 */
+  padding: 0.25em 0.5em;
+  border: 1px solid var(--md-code-fg-color--light);
+  border-radius: 4px;
+  background-color: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+  font-size: 0.65rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.code-fold-button:hover {
+  opacity: 1;
+}
+
+.code-fold-button svg {
+  width: 1.2em;
+  height: 1.2em;
+  fill: currentColor;
+}
+
+/* 折叠状态下的样式 */
+.code-collapsed > .highlight-toolbar, /* 隐藏复制按钮等工具栏 */
+.code-collapsed > pre {
+  max-height: 200px; /* 限制代码块的高度 */
+  overflow: hidden;
+  /* 添加一个渐变蒙版，提示下面还有内容 */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.code-collapsed > pre {
+  transition: max-height 0.3s ease-out; /* 平滑展开动画 */
+}
+
+/* 展开状态下的样式 */
+div.highlight:not(.code-collapsed) > pre {
+  max-height: 10000px; /* 一个足够大的值来显示所有内容 */
+  transition: max-height 0.5s ease-in; /* 平滑折叠动画 */
+}
+
+/* 根据折叠状态显示不同的图标和文字 */
+.code-collapsed .code-fold-button .icon-collapse,
+.code-collapsed .code-fold-button .button-text {
+  display: inline-block;
+}
+
+.code-collapsed .code-fold-button .icon-expand {
+  display: none;
+}
+.code-fold-button .button-text {
+  display: none;
+}
+.code-fold-button:hover .button-text {
+  display: inline-block;
+}
+
+
+div.highlight:not(.code-collapsed) .code-fold-button .icon-expand {
+  display: inline-block;
+}
+
+div.highlight:not(.code-collapsed) .code-fold-button .icon-collapse {
+  display: none;
+}
+
+div.highlight:not(.code-collapsed) .code-fold-button .button-text {
+    display: none;
+}
+
+div.highlight:not(.code-collapsed) .code-fold-button:hover .button-text {
+    display: inline-block;
+}
