@@ -1016,7 +1016,7 @@ div.highlight:not(.code-collapsed) .code-fold-button:hover .button-text {
 
 
 .md-header {
-    background-image: url('../assets/images/header-bg.png');
+    background-image: url('../img/header-bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
