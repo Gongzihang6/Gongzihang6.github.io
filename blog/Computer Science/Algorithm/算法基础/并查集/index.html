@@ -2978,13 +2978,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>并查集是一种树形数据结构，用于高效管理元素集合关系，支持合并(Union)和查询(Find)核心操作。通过路径压缩和按秩合并优化可实现接近常数的操作复杂度。该结构可扩展支持元素删除和持久化，但无法高效实现集合分离。广泛应用于Kruskal算法、LCA计算等场景，是解决动态连通性问题的经典方案，在NOI等算法竞赛中常见相关应用。</p>
+<p>并查集是一种高效管理元素分组关系的树形数据结构，核心支持合并(Union)和查询(Find)操作，用于判断元素连通性。通过路径压缩和按秩合并优化可实现接近常数的操作复杂度，广泛应用于Kruskal算法、LCA等问题。其局限性在于无法高效实现集合分离，但可通过扩展支持删除和持久化。典型应用包括程序自动分析、动态连通性维护等场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>335</strong> | 有效代码行数：<strong>62</strong></p>
 </div>
-<p><img alt="" src="images/disjoint-set.svg" /></p>
+<p><img alt="并查集" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fdisjoint-set.svg" /></p>
 <h2 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>并查集是一种用于管理元素所属集合的数据结构，实现为一个森林，其中每棵树表示一个集合，树中的节点表示对应集合中的元素。</p>
 <p>顾名思义，并查集支持两种操作：</p>
@@ -3025,7 +3025,7 @@
 </details>
 <h2 id="_3">查询<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>我们需要沿着树向上移动，直至找到根节点。</p>
-<p><img alt="" src="images/disjoint-set-find.svg" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fdisjoint-set-find.svg" /></p>
 <details class="note" open="open">
 <summary>实现</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">C++</label><label for="__tabbed_2_2">Python</label></div>
@@ -3045,7 +3045,7 @@
 </details>
 <h3 id="_4">路径压缩<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>查询过程中经过的每个元素都属于该集合，我们可以将其直接连到根节点以加快后续查询。</p>
-<p><img alt="" src="images/disjoint-set-compress.svg" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fdisjoint-set-compress.svg" /></p>
 <details class="note" open="open">
 <summary>实现</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">C++</label><label for="__tabbed_3_2">Python</label></div>
@@ -3069,7 +3069,7 @@
 </details>
 <h2 id="_5">合并<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>要合并两棵树，我们只需要将一棵树的根节点连到另一棵树的根节点。</p>
-<p><img alt="" src="images/disjoint-set-merge.svg" /></p>
+<p><img alt="" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fdisjoint-set-merge.svg" /></p>
 <details class="note" open="open">
 <summary>实现</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">C++</label><label for="__tabbed_4_2">Python</label></div>
