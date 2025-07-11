@@ -1010,3 +1010,44 @@ div.highlight:not(.code-collapsed) .code-fold-button .button-text {
 div.highlight:not(.code-collapsed) .code-fold-button:hover .button-text {
     display: inline-block;
 }
+
+
+
+
+
+.md-header {
+    background-image: url('../assets/images/header-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 
+  可选但强烈推荐：增加一个半透明的深色遮罩，确保文字清晰可读
+  这会在背景图之上叠加一个半透明的黑色渐变
+*/
+.md-header {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+        url('../img/header-bg.webp');
+}
+
+/* 
+  可选：如果背景图是深色的，可能需要将导航栏的文字和图标改为白色，以保证可读性
+*/
+.md-header,
+.md-header .md-nav__link,
+.md-header .md-tabs__link,
+.md-header .md-icon {
+    color: white;
+}
+
+/* 修复搜索图标颜色 */
+.md-search__icon {
+    color: white !important;
+}
+
+/* 修复 GitHub 等社交图标颜色 */
+.md-header .md-social__link {
+    color: white;
+}
