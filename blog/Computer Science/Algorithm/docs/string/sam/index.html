@@ -1,0 +1,4091 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="记录、分享">
+      
+      
+        <meta name="author" content="GoodCoder666, abc1763613206, ksyx">
+      
+      
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/Computer%20Science/Algorithm/docs/string/sam/">
+      
+      
+      
+      
+      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Sam - Blog of GZH</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/简历.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-40HC6RYSR1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-40HC6RYSR1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blog of GZH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sam
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6.5.5c12.4-13.1 22.5-28.3 29.8-45l-35.2.1h-72c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/ZH-TW/" hreflang="zh-TW" class="md-select__link">
+              China(TW)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MachineLearning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  每日诗词
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  长期主义
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../about/geren/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Blog of GZH
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java面向对象基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java集合框架与常用API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java高级技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode热题100
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode热题100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    字母异位词分组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交易逆序对的总数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单词接龙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    岛屿数量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分考场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    拉马车
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分巧克力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K倍区间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    编辑距离
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    接雨水
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组合总和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    全排列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    乘积最大子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. 最长回文子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前K个高频元素
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最小栈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pow(x,n)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络延迟时间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对角线上的质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    零钱兑换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    括号匹配
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300最长递增子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    115不同的子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    712两个字符串的最小ASCII删除和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    516最长回文子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    139单词拆分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    221最大正方形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2845统计趣味子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2799统计完全子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1399统计最大组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2338统计理想数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2179统计数组中好三元组数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2537统计好子数组的数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2140解决智力问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2278字母在字符串中的百分比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MachineLearning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MachineLearning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K近邻学习与降维
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    公式测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    经典卷积神经网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    理解YOLO网络结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    每日诗词
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            每日诗词
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·玉阑干外清江浦
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    菩萨蛮·回文夏闺怨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    清平乐·六盘山
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    洞仙歌·咏柳
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    秋兴八首·其一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    与史郎中钦听黄鹤楼上吹笛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    夏日南亭怀辛大
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    行香子·秋与
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自题金山画像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            长期主义
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fitness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/geren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作者个人简介
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简历
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    功能测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些记号
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      后缀自动机概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      子串和路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      简单例子
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性复杂度的构造算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性复杂度的构造算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpos" class="md-nav__link">
+    <span class="md-ellipsis">
+      结束位置 endpos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link" class="md-nav__link">
+    <span class="md-ellipsis">
+      后缀链接 link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      小结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      解释
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性时间复杂度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      更多性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="更多性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      转移数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      后缀链接树
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      检查字符串是否出现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      不同子串个数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      所有不同子串的总长度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      字典序第 k 大子串
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小循环移位
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      出现次数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一次出现的位置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      所有出现的位置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      最短的没有出现的字符串
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      两个字符串的最长公共子串
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      多个字符串间的最长公共子串
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      相关资料
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Sam</h1>
+
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (Gemini)</p>
+<p>后缀自动机(SAM)是一种高效的数据结构，用于解决字符串相关问题，如子串搜索和不同子串计数。SAM本质上是字符串所有子串的压缩形式，它以有向无环图表示，结点为状态，边为转移。对于长度为n的字符串，SAM的空间和时间复杂度均为O(n)。SAM的关键在于其最小性，通过合并结点，将全体后缀的AC自动机压缩至线性规模。每个状态对应一些字符串集合，路径对应子串，包含字符串的所有子串信息。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>32</strong> 分钟 | 中文字符：<strong>12808</strong> | 有效代码行数：<strong>74</strong></p>
+</div>
+<h2 id="_1">一些记号<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><span class="arithmatex">\(\Sigma\)</span>：字符集。字符集大小 <span class="arithmatex">\(|\Sigma| = k\)</span>。</li>
+<li><span class="arithmatex">\(s\)</span>：字符串。字符串长 <span class="arithmatex">\(|s| = n\)</span>，标号自 <span class="arithmatex">\(0\)</span> 开始。</li>
+<li><span class="arithmatex">\(t_0\)</span>：初始状态。</li>
+<li><span class="arithmatex">\(\operatorname{endpos}(t)\)</span>：字符串 <span class="arithmatex">\(s\)</span> 中子串 <span class="arithmatex">\(t\)</span> 的结束位置的集合。</li>
+<li><span class="arithmatex">\(\operatorname{link}(v)\)</span>：状态 <span class="arithmatex">\(v\)</span> 的后缀链接。</li>
+<li><span class="arithmatex">\(\operatorname{len}(v)\)</span>：状态 <span class="arithmatex">\(v\)</span> 对应的最长子串的长度。</li>
+<li><span class="arithmatex">\(\operatorname{longest}(v)\)</span>：状态 <span class="arithmatex">\(v\)</span> 对应的最长子串。</li>
+<li><span class="arithmatex">\(\operatorname{minlen}(v)\)</span>：状态 <span class="arithmatex">\(v\)</span> 对应的最短子串的长度。</li>
+<li><span class="arithmatex">\(\operatorname{shortest}(v)\)</span>：状态 <span class="arithmatex">\(v\)</span> 对应的最短子串。</li>
+</ul>
+<h2 id="_2">后缀自动机概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>后缀自动机</strong>（suffix automaton, SAM）是一个能解决许多字符串相关问题的有力的数据结构。</p>
+<p>举个例子，以下的字符串问题都可以在线性时间内通过 SAM 解决：</p>
+<ul>
+<li>在另一个字符串中搜索一个字符串的所有出现位置；</li>
+<li>计算给定的字符串中有多少个不同的子串。</li>
+</ul>
+<p>直观上，字符串的 SAM 可以理解为给定字符串的 <strong>所有子串</strong> 的压缩形式。值得注意的事实是，SAM 将所有的这些信息以高度压缩的形式储存。对于一个长度为 <span class="arithmatex">\(n\)</span> 的字符串，它的空间复杂度仅为 <span class="arithmatex">\(O(n)\)</span>。而且，构造 SAM 的时间复杂度也仅为 <span class="arithmatex">\(O(n)\)</span>。准确地说，一个 SAM 最多有 <span class="arithmatex">\(2n-1\)</span> 个结点和 <span class="arithmatex">\(3n-4\)</span> 条转移边。</p>
+<h2 id="_3">定义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>字符串 <span class="arithmatex">\(s\)</span> 的 SAM 是一个接受 <span class="arithmatex">\(s\)</span> 的所有后缀的最小 <a href="../automaton/">DFA</a>（确定性有限自动机或确定性有限状态机）。</p>
+<p>换句话说：</p>
+<ul>
+<li>SAM 是一张有向无环图。结点被称作 <strong>状态</strong>，边被称作状态间的 <strong>转移</strong>。</li>
+<li>图存在一个源点 <span class="arithmatex">\(t_0\)</span>，称作 <strong>初始状态</strong>，其它各结点均可从 <span class="arithmatex">\(t_0\)</span> 出发到达。</li>
+<li>每个 <strong>转移</strong> 都标有某个字符。从一个结点出发的所有转移均 <strong>不同</strong>。</li>
+<li>存在一个或多个 <strong>终止状态</strong>。如果我们从初始状态 <span class="arithmatex">\(t_0\)</span> 出发，最终转移到了一个终止状态，则路径上的所有转移的标号连接起来一定是字符串 <span class="arithmatex">\(s\)</span> 的一个后缀。反过来，<span class="arithmatex">\(s\)</span> 的每个后缀均可用一条从 <span class="arithmatex">\(t_0\)</span> 到某个终止状态的路径构成。</li>
+<li>在所有满足上述条件的自动机中，SAM 的结点数是最少的。</li>
+</ul>
+<p>SAM 的关键恰在于这个最小性。实际上，直接对字符串 <span class="arithmatex">\(s\)</span> 的所有后缀建立 <a href="../ac-automaton/">AC 自动机</a> 同样可以得到一个接受 <span class="arithmatex">\(s\)</span> 的所有后缀的 DFA。但是，最差情况下，这样得到的自动机有 <span class="arithmatex">\(\Theta(n^2)\)</span> 个结点，复杂度难以接受。从下面的例子可以看出，对所有后缀建立 AC 自动机得到的 DFA 中很多结点是重复的，因而可以合并。SAM 正是将结点的合并做到了极致，故而将得到的 DFA 的规模控制在 <span class="arithmatex">\(O(n)\)</span>。从这个意义上，SAM 是字符串的全体后缀的「压缩」的 AC 自动机。</p>
+<h3 id="_4">子串和路径<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>SAM 最简单、也最重要的性质是，它包含关于字符串 <span class="arithmatex">\(s\)</span> 的所有子串的信息。任意从初始状态 <span class="arithmatex">\(t_0\)</span> 开始的路径，如果我们将路径上的所有转移的标号写下来，都会形成 <span class="arithmatex">\(s\)</span> 的一个 <strong>子串</strong>。反之，每个 <span class="arithmatex">\(s\)</span> 的子串都对应从 <span class="arithmatex">\(t_0\)</span> 开始的某条路径。</p>
+<p>为了简化表达，我们称子串 <strong>对应</strong> 这条（从 <span class="arithmatex">\(t_0\)</span> 出发且它上面所有转移的标号构成这个子串的）路径。反过来，我们说任意一条路径都 <strong>对应</strong> 它的标号构成的字符串。</p>
+<p>到达某个状态的路径可能不止一条，因此我们说一个状态对应一些字符串的集合，这个集合中的字符串分别对应着这些路径。</p>
+<h3 id="_5">简单例子<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>我们将会在这里展示一些简单的字符串的后缀自动机。</p>
+<p>我们用蓝色表示初始状态，用绿色表示终止状态。</p>
+<p>对于字符串 <span class="arithmatex">\(s=\varnothing\)</span>：</p>
+<p><img alt="" src="../images/SAM/SA.svg" /></p>
+<p>对于字符串 <span class="arithmatex">\(s=\texttt{a}\)</span>：</p>
+<p><img alt="" src="../images/SAM/SAa.svg" /></p>
+<p>对于字符串 <span class="arithmatex">\(s=\texttt{aa}\)</span>：</p>
+<p><img alt="" src="../images/SAM/SAaa.svg" /></p>
+<p>对于字符串 <span class="arithmatex">\(s=\texttt{ab}\)</span>：</p>
+<p><img alt="" src="../images/SAM/SAab.svg" /></p>
+<p>对于字符串 <span class="arithmatex">\(s=\texttt{abb}\)</span>：</p>
+<p><img alt="" src="../images/SAM/SAabb.svg" /></p>
+<p>对于字符串 <span class="arithmatex">\(s=\texttt{abbb}\)</span>：</p>
+<p><img alt="" src="../images/SAM/SAabbb.svg" /></p>
+<p>在最后这个例子中可以看到，如果直接建立它的所有后缀的 AC 自动机，路径 <span class="arithmatex">\(\texttt{bbb}\)</span> 和路径 <span class="arithmatex">\(\texttt{abbb}\)</span> 应当导向不同的结点，但是这两个结点都是终止状态，且无论再添加任何字符，都不会得到更长的匹配串，这说明两个结点在自动机的转移上表现出同样的性质，因而可以合并成同一个结点。这样就得到了如图所示的 SAM。下面的讨论会将合并结点这一想法拓展到所有的情形，并说明，只要合理地合并结点，最后得到的 SAM 只有 <span class="arithmatex">\(O(n)\)</span> 个结点和转移。</p>
+<h2 id="_6">线性复杂度的构造算法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>在我们描述线性时间内构造 SAM 的算法之前，我们需要引入两个对理解构造过程非常重要的概念，并对其性质进行简单证明。其中，结束位置 <span class="arithmatex">\(\operatorname{endpos}\)</span> 定义了 SAM 中的结点（亦即指出了结点可以合并的充要条件），而后缀链接 <span class="arithmatex">\(\operatorname{link}\)</span> 不过是 AC 自动机中的 <a href="../ac-automaton/#失配指针">失配指针</a> 在 SAM 中的自然对应。</p>
+<h3 id="endpos">结束位置 <code>endpos</code><a class="headerlink" href="#endpos" title="Permanent link">&para;</a></h3>
+<p>考虑字符串 <span class="arithmatex">\(s\)</span> 的任意非空子串 <span class="arithmatex">\(t\)</span>，我们记 <span class="arithmatex">\(\operatorname{endpos}(t)\)</span> 为在字符串 <span class="arithmatex">\(s\)</span> 中 <span class="arithmatex">\(t\)</span> 的所有结束位置的集合（假设对字符串中字符的编号从零开始）。例如，对于字符串 <span class="arithmatex">\(\texttt{abcbc}\)</span>，我们有 <span class="arithmatex">\(\operatorname{endpos}(\texttt{bc})=\{2,4\}\)</span>。</p>
+<p>两个子串 <span class="arithmatex">\(t_1\)</span> 与 <span class="arithmatex">\(t_2\)</span> 的结束位置可能完全相同：<span class="arithmatex">\(\operatorname{endpos}(t_1)=\operatorname{endpos}(t_2)\)</span>。这定义了字符串 <span class="arithmatex">\(s\)</span> 的子串之间的等价关系。字符串 <span class="arithmatex">\(s\)</span> 的所有非空子串可以根据它们的结束位置集合 <span class="arithmatex">\(\operatorname{endpos}\)</span> 分为若干 <strong>等价类</strong>。</p>
+<p>一个事实是，每个这样的等价类都对应 SAM 的一个状态<sup id="fnref:state-endpos"><a class="footnote-ref" href="#fn:state-endpos">1</a></sup>。也就是说，只要两个子串的结束位置相同，它们在 SAM 中的路径就对应着同一个状态。换句话说，SAM 中的每个非初始状态都对应一个或多个 <span class="arithmatex">\(\operatorname{endpos}\)</span> 相同的非空子串。总之，SAM 中的状态就是所有非空子串的等价类，再加上初始状态。</p>
+<p>暂且接受这个事实，我们将基于它介绍构造 SAM 的算法。我们还将说明，SAM 需要满足的所有性质，除了最小性以外都满足了；而最小性可以由 Myhill–Nerode 定理得出（不会在这篇文章中证明）。</p>
+<p>由 <span class="arithmatex">\(\operatorname{endpos}\)</span> 的值我们可以得到一些重要结论，它们解释了同一个状态对应的不同的子串之间的关系。</p>
+<details class="note" open="open">
+<summary>引理 1</summary>
+<p>字符串 <span class="arithmatex">\(s\)</span> 的两个非空子串 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(w\)</span>（假设 <span class="arithmatex">\(\left|u\right|\le \left|w\right|\)</span>）的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 相同，当且仅当字符串 <span class="arithmatex">\(u\)</span> 在 <span class="arithmatex">\(s\)</span> 中每次出现时，都是以 <span class="arithmatex">\(w\)</span> 后缀的形式存在的。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>引理显然成立。如果 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(w\)</span> 的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 相同，则 <span class="arithmatex">\(u\)</span> 是 <span class="arithmatex">\(w\)</span> 的一个后缀，且在 <span class="arithmatex">\(s\)</span> 中只以 <span class="arithmatex">\(w\)</span> 的后缀的形式出现。反过来，根据定义，如果 <span class="arithmatex">\(u\)</span> 为 <span class="arithmatex">\(w\)</span> 的一个后缀，且只以 <span class="arithmatex">\(w\)</span> 的后缀的形式在 <span class="arithmatex">\(s\)</span> 中出现，那么两个子串的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 相同。</p>
+</details>
+<details class="note" open="open">
+<summary>引理 2</summary>
+<p>考虑两个非空子串 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(w\)</span>（假设 <span class="arithmatex">\(\left|u\right|\le \left|w\right|\)</span>）。那么，要么 <span class="arithmatex">\(\operatorname{endpos}(u)\cap \operatorname{endpos}(w)=\varnothing\)</span>，要么 <span class="arithmatex">\(\operatorname{endpos}(w)\subseteq \operatorname{endpos}(u)\)</span>，取决于 <span class="arithmatex">\(u\)</span> 是否为 <span class="arithmatex">\(w\)</span> 的一个后缀：</p>
+<div class="arithmatex">\[
+\begin{cases}
+\operatorname{endpos}(w) \subseteq \operatorname{endpos}(u), &amp; \text{if } u \text{ is a suffix of } w, \\
+\operatorname{endpos}(w) \cap \operatorname{endpos}(u) = \varnothing, &amp; \text{otherwise}.
+\end{cases}
+\]</div>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>如果集合 <span class="arithmatex">\(\operatorname{endpos}(u)\)</span> 与 <span class="arithmatex">\(\operatorname{endpos}(w)\)</span> 有至少一个公共元素，那么由于字符串 <span class="arithmatex">\(u\)</span> 与 <span class="arithmatex">\(w\)</span> 在相同位置结束，<span class="arithmatex">\(u\)</span> 是 <span class="arithmatex">\(w\)</span> 的一个后缀。所以在每次 <span class="arithmatex">\(w\)</span> 出现的位置，子串 <span class="arithmatex">\(u\)</span> 也会出现。所以 <span class="arithmatex">\(\operatorname{endpos}(w)\subseteq \operatorname{endpos}(u)\)</span>。</p>
+</details>
+<details class="note" open="open">
+<summary>引理 3</summary>
+<p>考虑一个 <span class="arithmatex">\(\operatorname{endpos}\)</span> 相同的子串等价类，将类中的所有子串按长度非递增的顺序排序。那么，每个子串都不会比它前一个子串长，与此同时每个子串也是它前一个子串的后缀。换句话说，对于同一等价类的任意两子串，较短者为较长者的后缀，且该等价类中的子串长度是连续的，取遍某个区间内的所有整数值。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>如果等价类中只包含一个子串，引理显然成立。现在我们来讨论子串元素个数大于 <span class="arithmatex">\(1\)</span> 的等价类。</p>
+<p>由引理 1，<span class="arithmatex">\(\operatorname{endpos}\)</span> 相同的两个不同字符串中，必定一长一短，且较短者总是较长者的真后缀。也就是说，等价类中没有等长的字符串。</p>
+<p>记 <span class="arithmatex">\(w\)</span> 为等价类中最长的字符串，<span class="arithmatex">\(u\)</span> 为等价类中最短的字符串。由引理 1，字符串 <span class="arithmatex">\(u\)</span> 是字符串 <span class="arithmatex">\(w\)</span> 的真后缀。现在考虑长度在区间 <span class="arithmatex">\([\left|u\right|,\left|w\right|]\)</span> 中的 <span class="arithmatex">\(w\)</span> 的任意后缀。容易看出，这个后缀也在同一等价类中，因为这个后缀只能在字符串 <span class="arithmatex">\(s\)</span> 中以 <span class="arithmatex">\(w\)</span> 的一个后缀的形式存在（这是因为较短的后缀 <span class="arithmatex">\(u\)</span> 在 <span class="arithmatex">\(s\)</span> 中只以 <span class="arithmatex">\(w\)</span> 的后缀的形式存在）。因此，由引理 1，这个后缀和字符串 <span class="arithmatex">\(w\)</span> 的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 相同。</p>
+</details>
+<p>一句话概括，同一个状态对应的子串的长度各不相同，而且是连续的若干自然数，其中较短的总是较长的子串的后缀。</p>
+<h3 id="link">后缀链接 <code>link</code><a class="headerlink" href="#link" title="Permanent link">&para;</a></h3>
+<p>考虑 SAM 中某个状态 <span class="arithmatex">\(v\neq t_0\)</span>。我们已经知道，状态 <span class="arithmatex">\(v\)</span> 对应于具有相同 <span class="arithmatex">\(\operatorname{endpos}\)</span> 的子串等价类。我们如果定义 <span class="arithmatex">\(w\)</span> 为这些字符串中最长的一个，则所有其它的字符串都是 <span class="arithmatex">\(w\)</span> 的后缀。</p>
+<p>我们还知道字符串 <span class="arithmatex">\(w\)</span> 的前几个后缀（按长度降序考虑）全部包含于这个等价类，且其它后缀（至少有一个——空后缀）在别的等价类中。我们记 <span class="arithmatex">\(t\)</span> 为其它后缀中最长的，然后将 <span class="arithmatex">\(v\)</span> 的后缀链接连到 <span class="arithmatex">\(t\)</span> 上。</p>
+<p>换句话说，<span class="arithmatex">\(v\)</span> 的 <strong>后缀链接</strong> <span class="arithmatex">\(\operatorname{link}(v)\)</span> 连接到的状态，对应于 <span class="arithmatex">\(w\)</span> 的后缀中与它的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合不同且最长的那个，也是 <span class="arithmatex">\(w\)</span> 的后缀中在 <span class="arithmatex">\(s\)</span> 中的出现次数比 <span class="arithmatex">\(w\)</span> 更多且最长的那个。</p>
+<p>为方便讨论，我们规定初始状态 <span class="arithmatex">\(t_0\)</span> 对应的等价类，只包含一个空字符串，而且 <span class="arithmatex">\(\operatorname{endpos}(t_0)=\{-1,0,\ldots,\left|S\right|-1\}\)</span>。</p>
+<details class="note" open="open">
+<summary>引理 4</summary>
+<p>所有后缀链接构成一棵根节点为 <span class="arithmatex">\(t_0\)</span> 的树。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>考虑任意状态 <span class="arithmatex">\(v\neq t_0\)</span>，后缀链接 <span class="arithmatex">\(\operatorname{link}(v)\)</span> 连接到的状态对应于严格更短的字符串（后缀链接的定义、引理 3）。因此，沿后缀链接移动，我们总是能到达对应空串的初始状态 <span class="arithmatex">\(t_0\)</span>。</p>
+</details>
+<details class="note" open="open">
+<summary>引理 5</summary>
+<p>以 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合为结点、集合的包含关系作为边，这样构造的树（即每个子节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合都包含在父节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合中）与通过后缀链接 <span class="arithmatex">\(\operatorname{link}\)</span> 构造的树相同。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>由引理 2，任意一个 SAM 的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合形成了一棵树（因为两个集合要么完全没有交集要么其中一个是另一个的子集）。</p>
+<p>我们现在考虑任意状态 <span class="arithmatex">\(v\neq t_0\)</span> 及后缀链接 <span class="arithmatex">\(\operatorname{link}(v)\)</span>，由后缀链接和引理 2，我们可以得到</p>
+<div class="arithmatex">\[
+\operatorname{endpos}(v)\subsetneq \operatorname{endpos}(\operatorname{link}(v)).
+\]</div>
+<p>注意这里应该是 <span class="arithmatex">\(\subsetneq\)</span> 而不是 <span class="arithmatex">\(\subseteq\)</span>，因为若 <span class="arithmatex">\(\operatorname{endpos}(v)=\operatorname{endpos}(\operatorname{link}(v))\)</span>，那么 <span class="arithmatex">\(v\)</span> 和 <span class="arithmatex">\(\operatorname{link}(v)\)</span> 应该被合并为一个结点。</p>
+</details>
+<p>结合前面的引理有：后缀链接构成的树本质上是 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合构成的一棵树。</p>
+<p>以下是对字符串 <span class="arithmatex">\(\texttt{abcbc}\)</span> 构造 SAM 时产生的后缀链接树的一个 <strong>例子</strong>，结点被标记为对应等价类中最长的子串。</p>
+<p><img alt="" src="../images/SAM/SA_suffix_links.svg" /></p>
+<p>结合图示，如果能够形成一些对于后缀自动机的认识，将对下文理解其构造算法和应用都有所帮助。</p>
+<details class="example" open="open">
+<summary>对图示的解释</summary>
+<ul>
+<li>SAM 上存在一条最长的路径，其标号恰好为字符串 <span class="arithmatex">\(\texttt{abcbc}\)</span> 本身。该路径从初始状态开始，经过的每个状态都对应着字符串 <span class="arithmatex">\(\texttt{abcbc}\)</span> 的前缀（<span class="arithmatex">\(\varnothing,\texttt{a},\texttt{ab},\texttt{abc},\texttt{abcb},\texttt{abcbc}\)</span>）。这些状态在后续 <a href="#后缀链接树">应用</a> 中至关重要。</li>
+<li>
+<p>后缀链接树可以看做是将这些「前缀状态」沿着后缀链接移动到根节点（即初始状态）的路径「压缩」得到。</p>
+<ul>
+<li>沿着每条路径，结点对应的字符串集合构成了相应的前缀的所有后缀的分划。例如，标记为 <span class="arithmatex">\(\texttt{abcbc}\)</span> 的状态沿着后缀链接移动到根节点的路径为 <span class="arithmatex">\(\texttt{abcbc}\rightarrow\texttt{bc}\rightarrow\varnothing\)</span>。其中，结点 <span class="arithmatex">\(\texttt{abcbc}\)</span> 实际对应着字符串集合 <span class="arithmatex">\(\{\texttt{abcbc},\texttt{bcbc},\texttt{cbc}\}\)</span>，结点 <span class="arithmatex">\(\texttt{bc}\)</span> 实际对应着字符串集合 <span class="arithmatex">\(\{\texttt{bc},\texttt{c}\}\)</span>，结点 <span class="arithmatex">\(\varnothing\)</span> 就对应空字符串。</li>
+<li>不同的路径可能共用同一个结点，这就是为什么会有「压缩」。例如，路径 <span class="arithmatex">\(\texttt{abc}\rightarrow\texttt{bc}\rightarrow\varnothing\)</span> 和路径 <span class="arithmatex">\(\texttt{abcbc}\rightarrow\texttt{bc}\rightarrow\varnothing\)</span> 共用了结点 <span class="arithmatex">\(\texttt{bc}\)</span>。这是因为 <span class="arithmatex">\(\operatorname{endpos}(\texttt{bc})=\{2,4\}\)</span>，而结束在位置 <span class="arithmatex">\(2\)</span> 的字符串 <span class="arithmatex">\(\texttt{bc}\)</span> 前紧接着字符 <span class="arithmatex">\(\texttt{a}\)</span> 而结束在位置 <span class="arithmatex">\(4\)</span> 的字符串 <span class="arithmatex">\(\texttt{bc}\)</span> 前紧接着字符 <span class="arithmatex">\(\texttt{c}\)</span>，因此，当在前方添加字符（即逆着后缀链接移动）时，结束位置集合（即状态）会分裂。</li>
+<li>后缀链接树只需要将这些后缀路径合理地「压缩」在一起即可，而不需要考虑别的结点。这是因为，所有子串都是某个前缀的后缀，故而必然出现在某个这样的路径中。后文的构造算法本质上就是逐个添加字符，并为每个新增加的前缀，构造这样一条后缀路径，并使其合理地「压缩」到之前已有的路径中（即不重复构造已经存在的状态和转移）。</li>
+<li>终止状态恰为字符串 <span class="arithmatex">\(\texttt{abcbc}\)</span> 本身所在的后缀路径上的所有结点。</li>
+</ul>
+</li>
+<li>
+<p>到达同一个状态的转移必然具有相同的标号，而且这些转移的起点一定是位于后缀链接树上的某条（连续的）路径。比如，转移到状态 <span class="arithmatex">\(\texttt{abcb}\)</span> 的状态就有两个：<span class="arithmatex">\(\texttt{abc}\)</span> 和 <span class="arithmatex">\(\texttt{bc}\)</span>。它们位于后缀树上的路径 <span class="arithmatex">\(\texttt{abc}\rightarrow\texttt{bc}\)</span> 上。注意，它们分别对应于字符串集合 <span class="arithmatex">\(\{\texttt{abc}\}\)</span> 和 <span class="arithmatex">\(\{\texttt{bc},\texttt{c}\}\)</span>，这些字符串在后面添加字符 <span class="arithmatex">\(\texttt{b}\)</span>，就得到状态 <span class="arithmatex">\(\texttt{abcb}\)</span> 对应的字符串集合 <span class="arithmatex">\(\{\texttt{abcb},\texttt{bcb},\texttt{cb}\}\)</span>。</p>
+<ul>
+<li>添加字符后，不同状态可能转移到同一个状态，是因为新添加的字符使得结束位置的增加更为困难。</li>
+</ul>
+</li>
+<li>
+<p>后缀链接树上，每个结点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合都是其子节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合的并集，至多再增加一个位置。而且，这个新位置存在，当且仅当该结点恰好对应着结束在该位置的原字符串的前缀。因为图示中，后缀链接树的非根非叶的结点都不对应着字符串 <span class="arithmatex">\(\texttt{abcbc}\)</span> 的前缀，所以不存在这种情形。</p>
+</li>
+</ul>
+</details>
+<p>后缀自动机中存储着字符串全部子串的信息。这件事可以通过两个角度理解：</p>
+<ul>
+<li>SAM 本身可以看作是字符串全体后缀的 AC 自动机的压缩版本。因此，它存储了字符串的全体后缀的所有前缀的信息，这就相当于存储了字符串全体子串的信息。</li>
+<li>SAM 的后缀链接树可以看做是字符串全体前缀的后缀路径的压缩版本。因此，它存储了字符串的全体前缀的所有后缀的信息，这也相当于存储了字符串全体子串的信息。</li>
+</ul>
+<p>这两种思考的角度在处理不同问题时都是有用的。</p>
+<h3 id="_7">小结<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>在进一步讨论算法本身前，我们总结一下之前的内容，并引入一些辅助记号。</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(s\)</span> 的子串可以根据它们的结束位置集合 <span class="arithmatex">\(\operatorname{endpos}\)</span> 划分为多个等价类；</p>
+</li>
+<li>
+<p>SAM 由初始状态 <span class="arithmatex">\(t_0\)</span> 和与每一个（非空子串的）<span class="arithmatex">\(\operatorname{endpos}\)</span> 等价类对应的每个状态组成；</p>
+</li>
+<li>
+<p>每一个状态 <span class="arithmatex">\(v\)</span> 都匹配一个或多个子串。我们记 <span class="arithmatex">\(\operatorname{longest}(v)\)</span> 为其中最长的一个字符串，记 <span class="arithmatex">\(\operatorname{len}(v)\)</span> 为它的长度。类似地，记 <span class="arithmatex">\(\operatorname{shortest}(v)\)</span> 为最短的子串，它的长度为 <span class="arithmatex">\(\operatorname{minlen}(v)\)</span>。那么对应这个状态的所有字符串都是字符串 <span class="arithmatex">\(\operatorname{longest}(v)\)</span> 的不同的后缀，且所有字符串的长度恰好取遍区间 <span class="arithmatex">\([\operatorname{minlen}(v),\operatorname{len}(v)]\)</span> 中的每一个整数。</p>
+</li>
+<li>
+<p>对于任意状态 <span class="arithmatex">\(v\neq t_0\)</span>，定义后缀链接为连接到对应字符串 <span class="arithmatex">\(\operatorname{longest}(v)\)</span> 的长度为 <span class="arithmatex">\(\operatorname{minlen}(v)-1\)</span> 的后缀的一条边。从根节点 <span class="arithmatex">\(t_0\)</span> 出发的后缀链接可以形成一棵树。这棵树也表示 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合间的包含关系。</p>
+</li>
+<li>
+<p>对于任意状态 <span class="arithmatex">\(v\neq t_0\)</span>，可用后缀链接 <span class="arithmatex">\(\operatorname{link}(v)\)</span> 表达 <span class="arithmatex">\(\operatorname{minlen}(v)\)</span>：</p>
+<div class="arithmatex">\[
+\operatorname{minlen}(v)=\operatorname{len}(\operatorname{link}(v))+1.
+\]</div>
+</li>
+<li>
+<p>如果我们从任意状态 <span class="arithmatex">\(v_0\)</span> 开始顺着后缀链接遍历，总会到达初始状态 <span class="arithmatex">\(t_0\)</span>。这种情况下我们可以得到一个互不相交的区间 <span class="arithmatex">\([\operatorname{minlen}(v_i),\operatorname{len}(v_i)]\)</span> 的序列，且它们的并集形成了连续的区间 <span class="arithmatex">\([0,\operatorname{len}(v_0)]\)</span>。</p>
+</li>
+</ul>
+<h3 id="_8">算法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>现在我们可以讨论构造 SAM 的算法了。这个算法是 <strong>在线</strong> 算法，我们可以逐个加入字符串中的每个字符，并且在每一步中对应地维护 SAM。</p>
+<p>在讨论详细的实现之前，首先通过图示初步感受一下增加新字符 <span class="arithmatex">\(c\)</span> 时，SAM 可能发生的变化。</p>
+<details class="note" open="open">
+<summary>简单理解增量构造过程</summary>
+<p>在字符串 <span class="arithmatex">\(s\)</span> 的 SAM 的基础上，可以构造字符串 <span class="arithmatex">\(s+c\)</span> 的 SAM。根据前文对图示的解释，只需要构造出新增加的前缀（即 <span class="arithmatex">\(s+c\)</span>）的后缀路径，并压缩到现有的路径上即可。而且，根据前文的描述，新的后缀路径上的结点必然都可以通过原字符串 <span class="arithmatex">\(s\)</span> 的后缀路径上的结点经由字符 <span class="arithmatex">\(c\)</span> 转移而来。</p>
+<p>我们首先考虑在添加新字符 <span class="arithmatex">\(c\)</span> 之前，原来的字符串 <span class="arithmatex">\(s\)</span> 的后缀路径可能具有什么形式，而且会怎样经由字符 <span class="arithmatex">\(c\)</span> 转移。最一般的情形，如下图示：</p>
+<p><img alt="" src="../images/SAM/sam-suffix-path-1.svg" /></p>
+<p>图中，原字符串 <span class="arithmatex">\(s\)</span> 的后缀路径为 <span class="arithmatex">\(p_0\rightarrow p_1\rightarrow\cdots\rightarrow p_6\rightarrow t_0\)</span>，后缀链接由红色箭头表示。其中部分结点（即 <span class="arithmatex">\(p_2\sim p_6\)</span>）已经存在经由字符 <span class="arithmatex">\(c\)</span> 的转移；因为将连续的后缀串添加同一个字符会同样得到连续的后缀，所以这些转移的终点组成另一串后缀路径 <span class="arithmatex">\(q_1\rightarrow q_2\rightarrow q_3\rightarrow t_0\)</span>。此时，有两点观察：</p>
+<ul>
+<li>
+<p>原字符串 <span class="arithmatex">\(s\)</span> 的后缀路径上，没有经由 <span class="arithmatex">\(c\)</span> 的转移的结点一定是最初的几个结点。只要从某个结点（图中的 <span class="arithmatex">\(p_2\)</span>）开始，存在经由 <span class="arithmatex">\(c\)</span> 的转移，后续经过的结点也一定存在经由 <span class="arithmatex">\(c\)</span> 的转移。</p>
+<p><strong>解释</strong>：设 <span class="arithmatex">\(s_2=\operatorname{longest}(p_2)\)</span>，那么后续经过的所有结点都对应 <span class="arithmatex">\(s_2\)</span> 的后缀，因而如果 <span class="arithmatex">\(s_2+c\)</span> 也出现在 <span class="arithmatex">\(s\)</span> 中，那么 <span class="arithmatex">\(s_2\)</span> 的后缀再加 <span class="arithmatex">\(c\)</span> 的结果也一定出现在 <span class="arithmatex">\(s\)</span> 中，因此这些结点都有经由 <span class="arithmatex">\(c\)</span> 的转移。</p>
+</li>
+<li>
+<p>虽然经由字符 <span class="arithmatex">\(c\)</span> 能够到达结点 <span class="arithmatex">\(q_i\)</span> 的结点一定是后缀链接树上的连续段，但是这个连续段未必全体都位于自 <span class="arithmatex">\(p_0\)</span> 到根的后缀路径上。特别地，只有第一个结点 <span class="arithmatex">\(q_1\)</span> 对应的连续段中起始的若干个结点 <strong>可能</strong> 不在这个后缀路径上。例如图中的结点 <span class="arithmatex">\(q_1\)</span> 就对应结点 <span class="arithmatex">\(p_1'\rightarrow p_2\rightarrow p_3\)</span>，其中，<span class="arithmatex">\(p_1'\)</span> 不在 <span class="arithmatex">\(p_0\)</span> 的后缀路径上。</p>
+<p><strong>解释</strong>：设 <span class="arithmatex">\(s_2=\operatorname{longest}(p_2)\)</span>，则 <span class="arithmatex">\(s_2+c\)</span> 对应着 <span class="arithmatex">\(q_1\)</span>，但是图中显然有 <span class="arithmatex">\(s_2+c\neq\operatorname{longest}(q_1)\)</span>，因为后者是 <span class="arithmatex">\(\operatorname{longest}(p'_1)+c\)</span>。这就说明，<span class="arithmatex">\(q_1\)</span> 对应的部分字符串不能由 <span class="arithmatex">\(s_2\)</span> 及其后缀转移来。反过来，<span class="arithmatex">\(q_2\)</span> 中的字符串必然是 <span class="arithmatex">\(s_2+c\)</span> 的后缀，因此删去末尾的 <span class="arithmatex">\(c\)</span> 后必然是 <span class="arithmatex">\(s_2\)</span> 的后缀。也就是说，经由 <span class="arithmatex">\(c\)</span> 转移到 <span class="arithmatex">\(q_2\)</span> 的结点必然在 <span class="arithmatex">\(p_2\)</span> 起始的后缀路径上。这也是为什么只有起始的 <span class="arithmatex">\(q_1\)</span> 对应的连续段中的部分结点可能不在 <span class="arithmatex">\(p_0\)</span> 的后缀路径上。</p>
+</li>
+</ul>
+<p>对于这个图示，如果要在原字符串 <span class="arithmatex">\(s\)</span> 的末尾添加一个字符 <span class="arithmatex">\(c\)</span>，并构造出相应的后缀路径，会发生什么变化呢？答案是如下图所示：</p>
+<p><img alt="" src="../images/SAM/sam-suffix-path-2.svg" /></p>
+<p>因为结点 <span class="arithmatex">\(q_0\)</span> 由原字符串 <span class="arithmatex">\(s\)</span> 对应结点 <span class="arithmatex">\(p_0\)</span> 经由字符 <span class="arithmatex">\(c\)</span> 转移而来，它就对应新字符串 <span class="arithmatex">\(s+c\)</span>。所以，它的后缀路径 <span class="arithmatex">\(q_0\rightarrow q_1''\rightarrow q_2\rightarrow q_3\rightarrow t_0\)</span> 就是新增的后缀路径。如果原来的后缀路径上的结点 <span class="arithmatex">\(p_i\)</span> 本就有经由 <span class="arithmatex">\(c\)</span> 的转移，那么新的后缀路径也必然会经过这些转移到达的结点，因此可以直接复用旧有的结点。新的后缀路径上有且只有一个完全新建的节点 <span class="arithmatex">\(q_0\)</span>，用于接受原来的后缀路径上起始的那些没有经由 <span class="arithmatex">\(c\)</span> 的转移的结点的转移。</p>
+<p>除了这些显然的事实外，还可以注意到，原来的结点 <span class="arithmatex">\(q_1\)</span> 也经过了一次复制，或者说是分裂成了两个结点 <span class="arithmatex">\(q'_1\rightarrow q_1''\)</span>。这是因为新增的后缀路径只是与现有路径部分重合：原来的结点 <span class="arithmatex">\(q_1\)</span> 对应的字符串中，只有较短的那些（即结点 <span class="arithmatex">\(p_2\)</span> 和 <span class="arithmatex">\(p_3\)</span> 能够转移到的那些）才会出现在新增的后缀路径上，而较长的那些（即结点 <span class="arithmatex">\(p_1'\)</span> 能够转移到的那些）并不会出现在新增的后缀路径上，因此新增的后缀路径只能经过结点 <span class="arithmatex">\(q_1\)</span> 的一部分，后者只能分裂成两个结点用于表示这种情形。同样的道理，前面已经解释过，<span class="arithmatex">\(q_1\)</span> 之后的结点 <span class="arithmatex">\(q_2\)</span> 和 <span class="arithmatex">\(q_3\)</span> 都无法由不在 <span class="arithmatex">\(p_0\)</span> 的后缀路径上的结点转移，因此这些结点对应的所有字符串都会出现在新增的后缀路径上，也就不需要分裂了。</p>
+<p>从 SAM 中状态代表的含义看，每个状态都是一个 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合。设延长字符串时，新增的结束位置为 <span class="arithmatex">\(i\)</span>，那么新增的结点 <span class="arithmatex">\(q_0\)</span> 就是结束位置集合 <span class="arithmatex">\(\{i\}\)</span>，而分裂的结点 <span class="arithmatex">\(q_1'\)</span> 和 <span class="arithmatex">\(q_1''\)</span> 分别对应集合 <span class="arithmatex">\(\operatorname{endpos}(q_1)\)</span> 和 <span class="arithmatex">\(\operatorname{endpos}(q_1)\cup\{i\}\)</span>，之后的结点 <span class="arithmatex">\(q_2\)</span> 和 <span class="arithmatex">\(q_3\)</span> 其实都在原有的结束位置集合上新增了 <span class="arithmatex">\(i\)</span>。也就是说，虽然 <span class="arithmatex">\(q_2\)</span> 和 <span class="arithmatex">\(q_3\)</span> 及其相关的转移没有发生变化，但是它们对应的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合的确扩大了。</p>
+<p>以上说明的是最复杂、最一般的情形（即下文的 <strong>情形三</strong>）。实际操作时，可能并不存在结点 <span class="arithmatex">\(p'_1\)</span>，因而也就不需要分裂（即下文的 <strong>情形二</strong>）。要判断这种情形，只需要判断 <span class="arithmatex">\(\operatorname{longest}(q_1)=\operatorname{longest}(p_2)+c\)</span> 即可，亦即 <span class="arithmatex">\(\operatorname{len}(q_1)=\operatorname{len}(p_2)+1\)</span>。也有可能 <span class="arithmatex">\(p_0\)</span> 的后缀路径上的所有结点都没有经由 <span class="arithmatex">\(c\)</span> 的转移，此时，只要新建 <span class="arithmatex">\(q_0\)</span> 就好了（即下文的 <strong>情形一</strong>）。</p>
+</details>
+<p>掌握了新增后缀路径的思想后，现在讨论增量构造的具体步骤。</p>
+<h4 id="_9">过程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>为了保证线性的空间复杂度，我们将只保存 <span class="arithmatex">\(\operatorname{len}\)</span> 和 <span class="arithmatex">\(\operatorname{link}\)</span> 的值和每个状态的转移列表，我们不会标记终止状态（但是我们稍后会展示在构造 SAM 后如何分配这些标记）。</p>
+<p>一开始 SAM 只包含一个状态 <span class="arithmatex">\(t_0\)</span>，编号为 <span class="arithmatex">\(0\)</span>（其它状态的编号为 <span class="arithmatex">\(1,2,\ldots\)</span>）。为了方便，对于状态 <span class="arithmatex">\(t_0\)</span> 我们指定 <span class="arithmatex">\(\operatorname{len}(t_0)=0\)</span>，<span class="arithmatex">\(\operatorname{link}(t_0)=-1\)</span>（<span class="arithmatex">\(-1\)</span> 表示虚拟状态）。</p>
+<p>现在，只需要实现给当前字符串添加一个字符 <span class="arithmatex">\(c\)</span> 的过程。算法流程如下：</p>
+<details class="note" open="open">
+<summary>SAM 增量构造过程</summary>
+<ul>
+<li>令 <span class="arithmatex">\(\textit{last}\)</span> 为添加字符 <span class="arithmatex">\(c\)</span> 之前，整个字符串对应的状态（一开始我们设 <span class="arithmatex">\(\textit{last}=0\)</span>，算法的最后一步更新 <span class="arithmatex">\(\textit{last}\)</span>）。</li>
+<li>创建一个新的状态 <span class="arithmatex">\(\textit{cur}\)</span>，并将 <span class="arithmatex">\(\operatorname{len}(\textit{cur})\)</span> 赋值为 <span class="arithmatex">\(\operatorname{len}(\textit{last})+1\)</span>，在这时 <span class="arithmatex">\(\operatorname{link}(\textit{cur})\)</span> 的值还未知。</li>
+<li>现在我们进行如下流程：从状态 <span class="arithmatex">\(\textit{last}\)</span> 开始，如果当前状态还没有标号为字符 <span class="arithmatex">\(c\)</span> 的转移，我们就添加一个经字符 <span class="arithmatex">\(c\)</span> 到状态 <span class="arithmatex">\(\textit{cur}\)</span> 的转移，并将当前状态沿后缀链接移动。如果过程中遇到某个状态已经存在到字符 <span class="arithmatex">\(c\)</span> 的转移，我们就停下来，并将这个状态标记为 <span class="arithmatex">\(p\)</span>。</li>
+<li><strong>情况一</strong>：如果没有找到这样的状态 <span class="arithmatex">\(p\)</span>，我们就到达了虚拟状态 <span class="arithmatex">\(-1\)</span>，我们将 <span class="arithmatex">\(\operatorname{link}(\textit{cur})\)</span> 赋值为 <span class="arithmatex">\(0\)</span> 并退出。</li>
+<li>假设现在我们找到了一个状态 <span class="arithmatex">\(p\)</span>，它可以通过字符 <span class="arithmatex">\(c\)</span> 转移。我们将转移到的状态标记为 <span class="arithmatex">\(q\)</span>。此时，要么 <span class="arithmatex">\(\operatorname{len}(p)+1=\operatorname{len}(q)\)</span>，要么 <span class="arithmatex">\(\operatorname{len}(p)+1&lt;\operatorname{len}(q)\)</span>。</li>
+<li><strong>情况二</strong>：如果 <span class="arithmatex">\(\operatorname{len}(p)+1=\operatorname{len}(q)\)</span>，我们只要将 <span class="arithmatex">\(\operatorname{link}(\textit{cur})\)</span> 赋值为 <span class="arithmatex">\(q\)</span> 并退出。</li>
+<li>
+<p><strong>情况三</strong>：否则就会有些复杂，需要 <strong>复制</strong> 状态 <span class="arithmatex">\(q\)</span>：我们创建一个新的状态 <span class="arithmatex">\(\textit{clone}\)</span>，复制 <span class="arithmatex">\(q\)</span> 的除了 <span class="arithmatex">\(\operatorname{len}\)</span> 的值以外的所有信息（后缀链接和转移）。我们将 <span class="arithmatex">\(\operatorname{len}(\textit{clone})\)</span> 赋值为 <span class="arithmatex">\(\operatorname{len}(p)+1\)</span>。</p>
+<p>复制之后，我们将后缀链接从 <span class="arithmatex">\(\textit{cur}\)</span> 指向 <span class="arithmatex">\(\textit{clone}\)</span>，也从 <span class="arithmatex">\(q\)</span> 指向 <span class="arithmatex">\(\textit{clone}\)</span>。</p>
+<p>最终我们需要沿着后缀链接从状态 <span class="arithmatex">\(p\)</span> 往回走，只要经过的状态存在指向状态 <span class="arithmatex">\(q\)</span> 的转移，就将该转移重新连接到状态 <span class="arithmatex">\(\textit{clone}\)</span>。</p>
+</li>
+<li>
+<p>处理完以上三种情况后，我们都需要将 <span class="arithmatex">\(\textit{last}\)</span> 的值更新为状态 <span class="arithmatex">\(\textit{cur}\)</span>。</p>
+</li>
+</ul>
+</details>
+<p>如果我们还想知道哪些状态是 <strong>终止状态</strong> 而哪些不是，我们可以在为字符串 <span class="arithmatex">\(s\)</span> 构造完完整的 SAM 后找到所有的终止状态。为此，我们从对应整个字符串的状态（存储在变量 <span class="arithmatex">\(\textit{last}\)</span> 中），遍历它的后缀链接，直到到达初始状态。我们将所有遍历到的状态都标记为终止状态。容易理解这样做我们会准确地标记字符串 <span class="arithmatex">\(s\)</span> 的所有后缀，这些状态都是终止状态。</p>
+<p>因为我们只为 <span class="arithmatex">\(s\)</span> 的每个字符创建一个或两个新状态，所以 SAM 只包含 <strong>线性个</strong> 状态。而 SAM 只有线性规模的转移个数，以及算法总体的线性运行时间，都还没有说清楚，将在后文说明。</p>
+<h4 id="_10">解释<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>我们详细解释算法每一步的细节，并说明它的 <strong>正确性</strong>。</p>
+<details class="note" open="open">
+<summary>对算法的详细解释</summary>
+<ul>
+<li>
+<p>若一个转移 <span class="arithmatex">\((p,q)\)</span> 满足 <span class="arithmatex">\(\operatorname{len}(p)+1=\operatorname{len}(q)\)</span>，则我们称这个转移是 <strong>连续的</strong>。否则，即当 <span class="arithmatex">\(\operatorname{len}(p)+1&lt;\operatorname{len}(q)\)</span> 时，这个转移被称为 <strong>不连续的</strong>。</p>
+<p>从算法描述中可以看出，连续的和不连续的转移，在算法中的处理也并不相同。连续的转移是固定的，我们不会再改变了。与此相反，当向字符串中插入一个新的字符时，不连续的转移可能会改变（转移边的端点可能会改变）。</p>
+</li>
+<li>
+<p>为了避免引起歧义，我们记向 SAM 中插入当前字符 <span class="arithmatex">\(c\)</span> 之前的字符串为 <span class="arithmatex">\(s\)</span>。</p>
+</li>
+<li>算法从创建一个新状态 <span class="arithmatex">\(\textit{cur}\)</span> 开始，对应于整个字符串 <span class="arithmatex">\(s+c\)</span>。我们创建一个新的节点的原因很清楚。与此同时我们也创建了一个新的字符和一个新的等价类。</li>
+<li>
+<p>在创建一个新的状态之后，我们会从对应整个字符串 <span class="arithmatex">\(s\)</span> 的状态 <span class="arithmatex">\(\textit{last}\)</span> 沿着后缀链接进行移动。对于经过的每一个状态，我们尝试添加一个通过字符 <span class="arithmatex">\(c\)</span> 到新状态 <span class="arithmatex">\(\textit{cur}\)</span> 的转移。</p>
+<p>然而我们只能添加与原有转移不冲突的转移。因此我们只要找到已存在的 <span class="arithmatex">\(c\)</span> 的转移，我们就必须停止。</p>
+</li>
+<li>
+<p>最简单的情况是我们到达了虚拟状态 <span class="arithmatex">\(-1\)</span>，这意味着我们为所有 <span class="arithmatex">\(s\)</span> 的后缀添加了 <span class="arithmatex">\(c\)</span> 的转移。这也意味着，字符 <span class="arithmatex">\(c\)</span> 从未在字符串 <span class="arithmatex">\(s\)</span> 中出现过。因此 <span class="arithmatex">\(\textit{cur}\)</span> 的后缀链接为状态 <span class="arithmatex">\(0\)</span>。</p>
+</li>
+<li>
+<p>第二种情况下，我们找到了现有的转移 <span class="arithmatex">\((p,q)\)</span>。这意味着我们尝试向自动机内添加一个 <strong>已经存在的</strong> 字符串 <span class="arithmatex">\(x+c\)</span>（其中 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(s\)</span> 的一个后缀，且字符串 <span class="arithmatex">\(x+c\)</span> 已经作为 <span class="arithmatex">\(s\)</span> 的一个子串出现过了）。因为我们假设字符串 <span class="arithmatex">\(s\)</span> 的自动机的构造是正确的，我们不应该在这里添加一个新的转移。</p>
+<p>然而，难点在于，从状态 <span class="arithmatex">\(\textit{cur}\)</span> 出发的后缀链接应该连接到哪个状态呢？我们要把后缀链接连到一个状态上，且对应的最长的字符串恰好是 <span class="arithmatex">\(x+c\)</span>，即这个状态的 <span class="arithmatex">\(\operatorname{len}\)</span> 应该是 <span class="arithmatex">\(\operatorname{len}(p)+1\)</span>。然而这样的状态有可能并不存在，即 <span class="arithmatex">\(\operatorname{len}(q)&gt;\operatorname{len}(p)+1\)</span>。这种情况下，我们必须通过拆开状态 <span class="arithmatex">\(q\)</span> 来创建一个这样的状态。</p>
+</li>
+<li>
+<p>当然，如果转移 <span class="arithmatex">\((p,\,q)\)</span> 是连续的，那么 <span class="arithmatex">\(\operatorname{len}(q)=\operatorname{len}(p)+1\)</span>。在这种情况下一切都很简单。我们只需要将 <span class="arithmatex">\(\textit{cur}\)</span> 的后缀链接指向状态 <span class="arithmatex">\(q\)</span>。</p>
+</li>
+<li>
+<p>否则转移是不连续的，即 <span class="arithmatex">\(\operatorname{len}(q)&gt;\operatorname{len}(p)+1\)</span>，这意味着状态 <span class="arithmatex">\(q\)</span> 不只对应于长度为 <span class="arithmatex">\(\operatorname{len}(p)+1\)</span> 的后缀 <span class="arithmatex">\(s+c\)</span>，还对应于 <span class="arithmatex">\(s\)</span> 的更长的子串。除了将状态 <span class="arithmatex">\(q\)</span> 拆成两个子状态以外我们别无他法，所以第一个子状态的长度就是 <span class="arithmatex">\(\operatorname{len}(p)+1\)</span> 了。</p>
+<p>我们如何拆开一个状态呢？我们 <strong>复制</strong> 状态 <span class="arithmatex">\(q\)</span>，产生一个状态 <span class="arithmatex">\(\textit{clone}\)</span>，我们将 <span class="arithmatex">\(\operatorname{len}(\textit{clone})\)</span> 赋值为 <span class="arithmatex">\(\operatorname{len}(p)+1\)</span>。由于我们不想改变经过 <span class="arithmatex">\(q\)</span> 的路径，我们将 <span class="arithmatex">\(q\)</span> 的所有转移复制到 <span class="arithmatex">\(\textit{clone}\)</span>。我们也将从 <span class="arithmatex">\(\textit{clone}\)</span> 出发的后缀链接设置为 <span class="arithmatex">\(q\)</span> 的后缀链接的目标，并设置 <span class="arithmatex">\(q\)</span> 的后缀链接为 <span class="arithmatex">\(\textit{clone}\)</span>。</p>
+<p>在拆开状态后，我们将从 <span class="arithmatex">\(\textit{cur}\)</span> 出发的后缀链接设置为 <span class="arithmatex">\(\textit{clone}\)</span>。</p>
+<p>最后一步我们将一些原本指向 <span class="arithmatex">\(q\)</span> 的转移重新连接到 <span class="arithmatex">\(\textit{clone}\)</span>。我们需要修改哪些转移呢？只重新连接相当于所有字符串 <span class="arithmatex">\(w+c\)</span>（其中 <span class="arithmatex">\(w\)</span> 是状态 <span class="arithmatex">\(p\)</span> 对应的最长字符串）的后缀就够了。也就是说，我们需要继续沿着后缀链接移动，从结点 <span class="arithmatex">\(p\)</span> 直到虚拟状态 <span class="arithmatex">\(-1\)</span>，或者当前状态经 <span class="arithmatex">\(c\)</span> 的转移不再指向状态 <span class="arithmatex">\(q\)</span>。</p>
+</li>
+</ul>
+</details>
+<h3 id="_11">线性时间复杂度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>我们假设字符集大小为 <strong>常数</strong>，即每次对一个字符搜索转移、添加转移、查找下一个转移这些操作的时间复杂度都为 <span class="arithmatex">\(O(1)\)</span> 的。如果将每个结点的转移分别存储为一个长度为 <span class="arithmatex">\(\left|\Sigma\right|\)</span> 的数组（用于快速查询给定标号的转移）和一个动态列表（用于快速遍历所有可用转移），以空间换时间，那么算法的时间复杂度<sup id="fnref:time-complexity"><a class="footnote-ref" href="#fn:time-complexity">2</a></sup>为 <span class="arithmatex">\(O(n)\)</span>，空间复杂度为 <span class="arithmatex">\(O(n\left|\Sigma\right|)\)</span>。</p>
+<details class="note">
+<summary>证明</summary>
+<p>如果我们考虑算法的各个部分，算法中有三处时间复杂度不明显是线性的：</p>
+<ul>
+<li>第一处是遍历所有状态 <span class="arithmatex">\(\textit{last}\)</span> 的后缀链接，添加字符 <span class="arithmatex">\(c\)</span> 的转移。</li>
+<li>第二处是当状态 <span class="arithmatex">\(q\)</span> 被复制到一个新的状态 <span class="arithmatex">\(\textit{clone}\)</span> 时复制转移的过程。</li>
+<li>第三处是修改指向 <span class="arithmatex">\(q\)</span> 的转移，将它们重新连接到 <span class="arithmatex">\(\textit{clone}\)</span> 的过程。</li>
+</ul>
+<p>我们使用 SAM 的大小（状态数和转移数）为 <strong>线性的</strong> 的事实（对状态数是线性的的证明就是算法本身，对转移数为线性的的证明将在稍后实现算法后给出）。</p>
+<p>因此上述 <strong>第一处和第二处</strong> 的总复杂度显然为线性的，因为单次操作均摊只为自动机添加了一个新转移。</p>
+<p>还需为 <strong>第三处</strong> 估计总复杂度，我们将最初指向 <span class="arithmatex">\(q\)</span> 的转移重新连接到 <span class="arithmatex">\(\textit{clone}\)</span>。我们记 <span class="arithmatex">\(v=\operatorname{longest}(p)\)</span>，这是字符串 <span class="arithmatex">\(s\)</span> 的一个后缀。每迭代一次，<span class="arithmatex">\(v\)</span> 的长度都减小，因而 <span class="arithmatex">\(v\)</span> 作为 <span class="arithmatex">\(s\)</span> 的后缀的起始位置必然在后移。因此，循环中 <span class="arithmatex">\(p\)</span> 沿后缀链接移动的次数，不超过 <span class="arithmatex">\(v\)</span> 作为 <span class="arithmatex">\(s\)</span> 的后缀的起始位置向后移动的距离。因为 <span class="arithmatex">\(p\)</span> 至少要向后移动一次，才能终止循环，而且 <span class="arithmatex">\(p\)</span> 至少是 <span class="arithmatex">\(last\)</span> 沿后缀链接移动一次的结果，因此循环终止时，<span class="arithmatex">\(v\)</span> 作为 <span class="arithmatex">\(s\)</span> 的后缀的的起始位置并不比字符串 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{last}))\)</span> 更靠前。而且，循环终止时，字符串 <span class="arithmatex">\(v\)</span> 作为 <span class="arithmatex">\(s\)</span> 的后缀的起始位置将恰好是 <span class="arithmatex">\(v+c\)</span> 作为 <span class="arithmatex">\(s+c\)</span> 的后缀的起始位置，而作为 <span class="arithmatex">\(s+c\)</span> 的后缀，字符串 <span class="arithmatex">\(v+c\)</span> 恰好是字符串 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{cur}))\)</span>。因为 <span class="arithmatex">\(cur\)</span> 是更新后的 <span class="arithmatex">\(last\)</span> 的值，所以循环中移动的次数不会超过更新前后 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{last}))\)</span> 作为当前字符串后缀的起始位置向后移动的距离，再加一（即为了终止循环必须移动的次数）。</p>
+<p>因为作为当前字符串后缀的字符串 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{last}))\)</span> 的位置在整个 SAM 构造过程中单调递增<sup id="fnref:monotone-loc"><a class="footnote-ref" href="#fn:monotone-loc">3</a></sup>，它的总移动距离必然不超过 <span class="arithmatex">\(n\)</span>。这就说明，需要修改指向 <span class="arithmatex">\(q\)</span> 的转移的循环中，迭代次数不超过 <span class="arithmatex">\(2n\)</span>。这正是我们需要证明的。</p>
+</details>
+<p>当然，如果字符集大小不是常数，SAM 的时间复杂度就不是线性的。从一个结点出发的转移需要存储在支持快速查询和插入的平衡树中。因此如果我们记 <span class="arithmatex">\(\Sigma\)</span> 为字符集，<span class="arithmatex">\(\left|\Sigma\right|\)</span> 为字符集大小，则算法的渐进时间复杂度为 <span class="arithmatex">\(O(n\log\left|\Sigma\right|)\)</span>，空间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<h3 id="_12">实现<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>首先，我们实现一种存储一个转移的全部信息的数据结构。如果需要的话，你可以在这里加入一个终止标记，也可以是一些其它信息。我们将用一个 <code>map</code> 存储转移的列表，允许我们在总计 <span class="arithmatex">\(O(n)\)</span> 的空间复杂度和 <span class="arithmatex">\(O(n\log\left|\Sigma\right|)\)</span> 的时间复杂度内处理整个字符串。当然，在字符集大小为较小的常数 <span class="arithmatex">\(K\)</span>（比如 26）时，将 <code>next</code> 声明为 <code>int[K]</code> 更方便。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">state</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="n">link</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<p>SAM 本身将会存储在一个 <code>state</code> 结构体数组中。我们记录当前自动机的大小 <code>sz</code> 和变量 <code>last</code>，当前整个字符串对应的状态。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAXLEN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">state</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">MAXLEN</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">sz</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p>我们定义一个函数来初始化 SAM（创建一个只有初始状态的 SAM）。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">sam_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="n">sz</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>最终我们给出主函数的实现：给当前行末增加一个字符，对应地在之前的基础上建造自动机。</p>
+<details class="note" open="open">
+<summary>实现</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">sam_extend</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sz</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">  </span><span class="n">st</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">last</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">next</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">next</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">link</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="n">st</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">next</span><span class="p">[</span><span class="n">c</span><span class="p">];</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">q</span><span class="p">].</span><span class="n">len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">      </span><span class="n">st</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">;</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sz</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">      </span><span class="n">st</span><span class="p">[</span><span class="n">clone</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">len</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">      </span><span class="n">st</span><span class="p">[</span><span class="n">clone</span><span class="p">].</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">q</span><span class="p">].</span><span class="n">next</span><span class="p">;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">      </span><span class="n">st</span><span class="p">[</span><span class="n">clone</span><span class="p">].</span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">q</span><span class="p">].</span><span class="n">link</span><span class="p">;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">      </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">next</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">        </span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">next</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clone</span><span class="p">;</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">        </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">p</span><span class="p">].</span><span class="n">link</span><span class="p">;</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">      </span><span class="n">st</span><span class="p">[</span><span class="n">q</span><span class="p">].</span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">cur</span><span class="p">].</span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clone</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">  </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="p">;</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>正如之前提到的一样，如果你用内存换时间（空间复杂度为 <span class="arithmatex">\(O(n\left|\Sigma\right|)\)</span>，其中 <span class="arithmatex">\(\left|\Sigma\right|\)</span> 为字符集大小），你可以在 <span class="arithmatex">\(O(n)\)</span> 的时间<sup id="fnref2:time-complexity"><a class="footnote-ref" href="#fn:time-complexity">2</a></sup>内构造字符集大小任意的 SAM。但是这样你需要为每一个状态储存一个大小为 <span class="arithmatex">\(\left|\Sigma\right|\)</span> 的数组（用于快速根据字符找到相应的转移）以及一个包含所有可用转移的列表（用于快速遍历所有可用的转移）。</p>
+<h2 id="_13">更多性质<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">状态数<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>对于一个长度为 <span class="arithmatex">\(n\)</span> 的字符串 <span class="arithmatex">\(s\)</span>，它的 SAM 中的状态数 <strong>不会超过</strong>  <span class="arithmatex">\(2n-1\)</span>（假设 <span class="arithmatex">\(n\ge 2\)</span>）。</p>
+<details class="note">
+<summary>证明</summary>
+<p>算法本身即可证明该结论。一开始，自动机含有一个状态，第一次和第二次迭代中只会创建一个节点，剩余的 <span class="arithmatex">\(n-2\)</span> 步中每步会创建至多 <span class="arithmatex">\(2\)</span> 个状态。</p>
+<p>然而我们也能在 <strong>不借助这个算法</strong> 的情况下 <strong>证明</strong> 这个估计值。我们回忆一下状态数等于不同的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合个数。这些 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合形成了一棵树（父节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合包含子节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合）。考虑将这棵树稍微变形一下：只要它有一个只有一个子节点的内部节点（这意味着该子节点的集合至少遗漏了它的父节点的集合中的一个位置），我们就创建一个含有这些遗漏位置的集合作为它的子节点。最后我们可以获得一棵每一个内部结点的度数都大于一的树，且叶子节点的个数不超过 <span class="arithmatex">\(n\)</span>。这样的树里有不超过 <span class="arithmatex">\(2n-1\)</span> 个节点，因此，原来的不同的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合个数也不超过 <span class="arithmatex">\(2n-1\)</span>。</p>
+<p>字符串 <span class="arithmatex">\(\texttt{abbb} \cdots \texttt{bbb}\)</span> 的状态数达到了该上界：从第三次迭代后的每次迭代，算法都会拆开一个状态，最终产生恰好 <span class="arithmatex">\(2n-1\)</span> 个状态。</p>
+</details>
+<h3 id="_15">转移数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>对于一个长度为 <span class="arithmatex">\(n\)</span> 的字符串 <span class="arithmatex">\(s\)</span>，它的 SAM 中的转移数 <strong>不会超过</strong>  <span class="arithmatex">\(3n-4\)</span>（假设 <span class="arithmatex">\(n\ge 3\)</span>）。</p>
+<details class="note">
+<summary>证明</summary>
+<p>我们首先估计连续的转移的数量。考虑自动机中由从状态 <span class="arithmatex">\(t_0\)</span> 开始到达所有状态的最长路径组成的生成树。生成树只包含连续的边，因此数量少于状态数，即边数不会超过 <span class="arithmatex">\(2n-2\)</span>。</p>
+<p>现在我们来估计不连续的转移的数量。令当前不连续转移为 <span class="arithmatex">\((p,\,q)\)</span>，其字符为 <span class="arithmatex">\(c\)</span>。我们取它的对应字符串 <span class="arithmatex">\(u+c+w\)</span>，其中字符串 <span class="arithmatex">\(u\)</span> 对应于初始状态到 <span class="arithmatex">\(p\)</span> 的最长路径，<span class="arithmatex">\(w\)</span> 对应于从 <span class="arithmatex">\(q\)</span> 到任意终止状态的最长路径。一方面，每个不完整的字符串所对应的形如 <span class="arithmatex">\(u+c+w\)</span> 的字符串是不同的（因为字符串 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(w\)</span> 仅由完整的转移组成）。另一方面，由终止状态的定义，每个形如 <span class="arithmatex">\(u+c+w\)</span> 的字符串都是整个字符串 <span class="arithmatex">\(s\)</span> 的后缀。因为 <span class="arithmatex">\(s\)</span> 只有 <span class="arithmatex">\(n\)</span> 个非空后缀，且形如 <span class="arithmatex">\(u+c+w\)</span> 的字符串都不包含 <span class="arithmatex">\(s\)</span>（因为整个字符串只包含完整的转移），所以非完整的转移的总数不会超过 <span class="arithmatex">\(n-1\)</span>。</p>
+<p>将以上两个估计值相加，我们可以得到上界 <span class="arithmatex">\(3n-3\)</span>。然而，最大的状态数只能在类似于 <span class="arithmatex">\(\texttt{abbb} \cdots \texttt{bbb}\)</span> 的情况中产生，而此时转移数量显然少于 <span class="arithmatex">\(3n-3\)</span>。</p>
+<p>因此我们可以获得更为紧确的 SAM 的转移数的上界：<span class="arithmatex">\(3n-4\)</span>。字符串 <span class="arithmatex">\(\texttt{abbb} \cdots \texttt{bbbc}\)</span> 就达到了这个上界。</p>
+</details>
+<h3 id="_16">后缀链接树<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>尽管构造 SAM 是为了得到它的状态和转移的信息，但是构造过程中记录的后缀链接 <span class="arithmatex">\(\operatorname{link}\)</span> 和该状态对应的最长子串长度 <span class="arithmatex">\(\operatorname{len}\)</span> 在应用中常常比 SAM 的转移更为重要，甚至可以抛开转移单独使用。</p>
+<p>在构建 SAM 的过程中，需要更新 <span class="arithmatex">\(\textit{last}\)</span> 状态的值。它对应的是每次添加字符前（后）的字符串，也就是整个字符串 <span class="arithmatex">\(s\)</span> 的所有前缀。将第 <span class="arithmatex">\(i\)</span> 个前缀对应的状态记为 <span class="arithmatex">\(v_i\)</span>，这样就得到 <span class="arithmatex">\(v_0,v_1,\cdots,v_{n-1}\)</span> 共计 <span class="arithmatex">\(n\)</span> 个状态。另外，规定初始状态 <span class="arithmatex">\(t_0\)</span> 为 <span class="arithmatex">\(v_{-1}\)</span>，对应着空前缀。这些状态姑且称为「前缀节点」。</p>
+<p>引理 4 中提及，所有状态和所有后缀链接构成根为 <span class="arithmatex">\(t_0\)</span> 的根向树，这个树也称为 <strong>后缀链接树</strong>（国内 OI 选手也常称它为 <strong>parent 树</strong>）。它记录了字符串全体前缀的所有后缀的信息，亦即全体子串的信息。</p>
+<p>后缀链接树有如下性质：</p>
+<ul>
+<li>祖先节点对应的字符串总是子孙节点对应的字符串的后缀。</li>
+<li>每个节点处的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合就是它的子树内的所有「前缀节点」<span class="arithmatex">\(v_i\)</span> 的下标 <span class="arithmatex">\(i\)</span> 的集合。</li>
+<li>后缀链接树的祖先节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合总是严格包含子孙节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合。</li>
+<li>每个节点处的 <span class="arithmatex">\(\operatorname{len}\)</span> 的值就是它的子树内的所有「前缀节点」<span class="arithmatex">\(v_i\)</span> 对应前缀的最长公共后缀的长度。</li>
+<li>除根节点 <span class="arithmatex">\(t_0\)</span> 外，每个节点对应的不同子串的数目，就是它的 <span class="arithmatex">\(\operatorname{len}\)</span> 值，减去它的父节点的 <span class="arithmatex">\(\operatorname{len}\)</span> 值，即 <span class="arithmatex">\(\operatorname{len}(v)-\operatorname{len}(\operatorname{link}(v))\)</span>。</li>
+</ul>
+<p>这些性质有很多应用。比如，第 <span class="arithmatex">\(i\)</span> 个前缀和第 <span class="arithmatex">\(j\)</span> 个前缀的最长公共后缀对应的字符串就是 <span class="arithmatex">\(v_i\)</span> 和 <span class="arithmatex">\(v_j\)</span> 的 LCA 对应的最长字符串。</p>
+<p>最后，对字符串 <span class="arithmatex">\(s\)</span> 建立的后缀链接树与对它的翻转 <span class="arithmatex">\(s_R\)</span> 建立的 <a href="../suffix-tree/">后缀树</a> 有相同的结构。这一点常常用于离线构造后缀树。</p>
+<h2 id="_17">应用<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>下面我们来看一些可以用 SAM 解决的问题。简单起见，假设字符集的大小 <span class="arithmatex">\(k\)</span> 为常数。这允许我们认为增加一个字符和遍历的复杂度为常数。</p>
+<h3 id="_18">检查字符串是否出现<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给一个文本串 <span class="arithmatex">\(T\)</span> 和多个模式串 <span class="arithmatex">\(P\)</span>，我们要检查字符串 <span class="arithmatex">\(P\)</span> 是否作为 <span class="arithmatex">\(T\)</span> 的一个子串出现。</p>
+</details>
+<details class="note">
+<summary>解法</summary>
+<p>我们在 <span class="arithmatex">\(O(\left|T\right|)\)</span> 的时间内对文本串 <span class="arithmatex">\(T\)</span> 构造后缀自动机。为了检查模式串 <span class="arithmatex">\(P\)</span> 是否在 <span class="arithmatex">\(T\)</span> 中出现，我们沿转移（边）从 <span class="arithmatex">\(t_0\)</span> 开始根据 <span class="arithmatex">\(P\)</span> 的字符进行转移。如果在某个点无法转移下去，则模式串 <span class="arithmatex">\(P\)</span> 不是 <span class="arithmatex">\(T\)</span> 的一个子串。如果我们能够这样处理完整个字符串 <span class="arithmatex">\(P\)</span>，那么模式串在 <span class="arithmatex">\(T\)</span> 中出现过。</p>
+<p>对于每个字符串 <span class="arithmatex">\(P\)</span>，算法的时间复杂度为 <span class="arithmatex">\(O(\left|P\right|)\)</span>。此外，这个算法还找到了模式串 <span class="arithmatex">\(P\)</span> 在文本串中出现的最大前缀长度。</p>
+</details>
+<h3 id="_19">不同子串个数<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给一个字符串 <span class="arithmatex">\(S\)</span>，计算不同子串的个数。</p>
+</details>
+<details class="note">
+<summary>解法一</summary>
+<p>对字符串 <span class="arithmatex">\(S\)</span> 构造后缀自动机。</p>
+<p>每个 <span class="arithmatex">\(S\)</span> 的子串都相当于自动机中的一些路径。因此不同子串的个数等于自动机中以 <span class="arithmatex">\(t_0\)</span> 为起点的不同路径的条数。</p>
+<p>考虑到 SAM 为有向无环图，不同路径的条数可以通过动态规划计算。即令 <span class="arithmatex">\(d_{v}\)</span> 为从状态 <span class="arithmatex">\(v\)</span> 开始的路径数量（包括长度为零的路径），则我们有如下递推方程：</p>
+<div class="arithmatex">\[
+d_{v}=1+\sum_{w:(v,w,c)\in DAWG}d_{w}
+\]</div>
+<p>即，<span class="arithmatex">\(d_{v}\)</span> 可以表示为所有 <span class="arithmatex">\(v\)</span> 的转移的末端的和，<span class="arithmatex">\(DAWG\)</span> 中的三元组 <span class="arithmatex">\((v,w,c)\)</span> 表示后缀自动机中存在自 <span class="arithmatex">\(v\)</span> 经 <span class="arithmatex">\(c\)</span> 至 <span class="arithmatex">\(w\)</span> 的转移。</p>
+<p>所以不同子串的个数为 <span class="arithmatex">\(d_{t_0}-1\)</span>（因为要去掉空子串）。</p>
+<p>总时间复杂度为：<span class="arithmatex">\(O(\left|S\right|)\)</span>。</p>
+</details>
+<details class="note">
+<summary>解法二</summary>
+<p>另一种方法是在构造完后缀自动机后，利用得到的后缀链接树的信息。每个节点对应的子串数量是 <span class="arithmatex">\(\operatorname{len}(v)-\operatorname{len}(\operatorname{link}(v))\)</span>，对自动机所有节点求和即可。</p>
+<p>总时间复杂度仍然为：<span class="arithmatex">\(O(\left|S\right|)\)</span>。</p>
+</details>
+<p>例题：<a href="https://www.luogu.com.cn/problem/P3804">【模板】后缀自动机</a>，<a href="https://loj.ac/problem/2033">SDOI2016 生成魔咒</a></p>
+<h3 id="_20">所有不同子串的总长度<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给定一个字符串 <span class="arithmatex">\(S\)</span>，计算所有不同子串的总长度。</p>
+</details>
+<details class="note">
+<summary>解法一</summary>
+<p>本题做法与上一题类似，只是现在我们需要考虑分两部分进行动态规划：不同子串的数量 <span class="arithmatex">\(d_{v}\)</span> 和它们的总长度 <span class="arithmatex">\(ans_{v}\)</span>。</p>
+<p>我们已经在上一题中介绍了如何计算 <span class="arithmatex">\(d_{v}\)</span>。<span class="arithmatex">\(ans_{v}\)</span> 的值可以通过以下递推式计算：</p>
+<div class="arithmatex">\[
+ans_{v}=\sum_{w:(v,w,c)\in DAWG}d_{w}+ans_{w}
+\]</div>
+<p>我们取每个邻接结点 <span class="arithmatex">\(w\)</span> 的答案，并加上 <span class="arithmatex">\(d_{w}\)</span>（因为从状态 <span class="arithmatex">\(v\)</span> 出发的子串都增加了一个字符）。</p>
+<p>算法的时间复杂度仍然是 <span class="arithmatex">\(O(\left|S\right|)\)</span>。</p>
+</details>
+<details class="note">
+<summary>解法二</summary>
+<p>同样可以利用后缀链接树的信息。每个节点对应的最长子串的所有后缀长度是</p>
+<div class="arithmatex">\[
+\dfrac{\operatorname{len}(v)\times (\operatorname{len}(v)+1)}{2},
+\]</div>
+<p>减去其 <span class="arithmatex">\(\operatorname{link}\)</span> 节点的对应值就是该节点的净贡献，对自动机所有节点求和即可。</p>
+<p>总时间复杂度仍然为：<span class="arithmatex">\(O(\left|S\right|)\)</span>。</p>
+</details>
+<h3 id="k">字典序第 k 大子串<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给定一个字符串 <span class="arithmatex">\(S\)</span>。多组询问，每组询问给定一个数 <span class="arithmatex">\(K_i\)</span>，查询 <span class="arithmatex">\(S\)</span> 的所有子串中字典序第 <span class="arithmatex">\(K_i\)</span> 大的子串。</p>
+</details>
+<details class="note">
+<summary>解法</summary>
+<p>解决这个问题的思路可以从解决前两个问题的思路发展而来。字典序第 <span class="arithmatex">\(k\)</span> 大的子串对应于 SAM 中字典序第 <span class="arithmatex">\(k\)</span> 大的路径，因此在计算每个状态的路径数后，我们可以很容易地从 SAM 的根开始找到第 <span class="arithmatex">\(k\)</span> 大的路径。</p>
+<p>预处理的时间复杂度为 <span class="arithmatex">\(O(\left|S\right|)\)</span>，单次查询的复杂度为 <span class="arithmatex">\(O(\left|ans\right|\cdot\left|\Sigma\right|)\)</span>（其中 <span class="arithmatex">\(ans\)</span> 是查询的答案，<span class="arithmatex">\(\left|\Sigma\right|\)</span> 为字符集的大小）。</p>
+</details>
+<details class="info">
+<summary>另注</summary>
+<p>虽然该题是后缀自动机的经典题，但实际上这题由于涉及字典序，用后缀数组做最方便。</p>
+</details>
+<p>例题：<a href="https://www.spoj.com/problems/SUBLEX/">SPOJ - SUBLEX</a>，<a href="https://loj.ac/problem/2102">TJOI2015 弦论</a></p>
+<h3 id="_21">最小循环移位<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给定一个字符串 <span class="arithmatex">\(S\)</span>。找出字典序最小的循环移位。</p>
+</details>
+<details class="note">
+<summary>解法</summary>
+<p>容易发现字符串 <span class="arithmatex">\(S+S\)</span> 包含字符串 <span class="arithmatex">\(S\)</span> 的所有循环移位作为子串。</p>
+<p>所以问题简化为在 <span class="arithmatex">\(S+S\)</span> 对应的后缀自动机上寻找最小的长度为 <span class="arithmatex">\(\left|S\right|\)</span> 的路径，这可以通过平凡的方法做到：我们从初始状态开始，贪心地访问最小的字符即可。</p>
+<p>总的时间复杂度为 <span class="arithmatex">\(O(\left|S\right|)\)</span>。</p>
+</details>
+<h3 id="_22">出现次数<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>对于一个给定的文本串 <span class="arithmatex">\(T\)</span>，有多组询问，每组询问给一个模式串 <span class="arithmatex">\(P\)</span>，回答模式串 <span class="arithmatex">\(P\)</span> 在字符串 <span class="arithmatex">\(T\)</span> 中作为子串出现了多少次。</p>
+</details>
+<details class="note">
+<summary>解法一</summary>
+<p>利用后缀链接树的信息，进行 dfs 即可预处理每个节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合的大小。</p>
+<p>所有「前缀节点」的初始集合大小为 <span class="arithmatex">\(1\)</span>，非「前缀节点」的初始集合大小为 <span class="arithmatex">\(0\)</span>。然后，沿着后缀链接自下向上回溯时，每个父节点的集合大小都加上它的所有子节点的集合大小（不要遗漏父节点本身的初始值）。这样得到的每个节点处的值，就是该节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合的大小。不同子节点的集合大小可以直接相加的理由是，同一个 <span class="arithmatex">\(v_i\)</span> 只会出现在一个子树内，故而相加不会重复。</p>
+<p>查询时，在自动机上查找模式串 <span class="arithmatex">\(P\)</span> 对应的节点，如果存在，则答案就是该节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合的大小；如果不存在，则答案为 <span class="arithmatex">\(0\)</span>。</p>
+<p>预处理时间复杂度为 <span class="arithmatex">\(O(|T|)\)</span>。单次查询的时间复杂度为 <span class="arithmatex">\(O(|P|)\)</span>。</p>
+</details>
+<details class="note">
+<summary>解法二</summary>
+<p>对文本串 <span class="arithmatex">\(T\)</span> 构造后缀自动机。</p>
+<p>接下来做预处理：对于自动机中的每个状态 <span class="arithmatex">\(v\)</span>，预处理 <span class="arithmatex">\(cnt_{v}\)</span>，使之等于 <span class="arithmatex">\(\operatorname{endpos}(v)\)</span> 集合的大小。事实上，对应同一状态 <span class="arithmatex">\(v\)</span> 的所有子串在文本串 <span class="arithmatex">\(T\)</span> 中的出现次数相同，这相当于集合 <span class="arithmatex">\(\operatorname{endpos}\)</span> 中的位置数。</p>
+<p>然而我们不能明确的构造集合 <span class="arithmatex">\(\operatorname{endpos}\)</span>，因此我们只考虑它们的大小 <span class="arithmatex">\(cnt\)</span>。</p>
+<p>为了计算这些值，我们进行以下操作。对于每个状态，如果它不是通过复制创建的（且它不是初始状态 <span class="arithmatex">\(t_0\)</span>），我们将它的 <span class="arithmatex">\(cnt\)</span> 初始化为 1。然后我们按它们的长度 <span class="arithmatex">\(\operatorname{len}\)</span> 降序遍历所有状态，并将当前的 <span class="arithmatex">\(cnt_{v}\)</span> 的值加到后缀链接指向的状态上，即：</p>
+<div class="arithmatex">\[
+cnt_{\operatorname{link}(v)}+=cnt_{v}
+\]</div>
+<p>这样做每个状态的答案都是正确的。</p>
+<p>为什么这是正确的？不是通过复制获得的状态，恰好有 <span class="arithmatex">\(\left|T\right|\)</span> 个，并且它们中的前 <span class="arithmatex">\(i\)</span> 个在我们插入前 <span class="arithmatex">\(i\)</span> 个字符时产生。因此对于每个这样的状态，我们在它被处理时计算它们所对应的位置的数量。因此我们初始将这些状态的 <span class="arithmatex">\(cnt\)</span> 的值赋为 <span class="arithmatex">\(1\)</span>，其它状态的 <span class="arithmatex">\(cnt\)</span> 值赋为 <span class="arithmatex">\(0\)</span>。</p>
+<p>接下来我们对每一个 <span class="arithmatex">\(v\)</span> 执行以下操作：<span class="arithmatex">\(cnt_{\operatorname{link}(v)}+=cnt_{v}\)</span>。其背后的含义是，如果有一个字符串 <span class="arithmatex">\(v\)</span> 出现了 <span class="arithmatex">\(cnt_{v}\)</span> 次，那么它的所有后缀也在完全相同的地方结束，即也出现了 <span class="arithmatex">\(cnt_{v}\)</span> 次。</p>
+<p>为什么我们在这个过程中不会重复计数（即把某些位置数了两次）呢？因为我们只将一个状态的位置添加到 <strong>一个</strong> 其它的状态上，所以一个状态不可能以两种不同的方式将其位置重复地指向另一个状态。</p>
+<p>因此，我们可以在 <span class="arithmatex">\(O(\left|T\right|)\)</span> 的时间内计算出所有状态的 <span class="arithmatex">\(cnt\)</span> 的值。</p>
+<p>最后回答询问只需要查找值 <span class="arithmatex">\(cnt_{t}\)</span>，其中 <span class="arithmatex">\(t\)</span> 为模式串对应的状态，如果该模式串不存在答案就为 <span class="arithmatex">\(0\)</span>。单次查询的时间复杂度为 <span class="arithmatex">\(O(\left|P\right|)\)</span>。</p>
+</details>
+<h3 id="_23">第一次出现的位置<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给定一个文本串 <span class="arithmatex">\(T\)</span>，多组查询。每次查询字符串 <span class="arithmatex">\(P\)</span> 在字符串 <span class="arithmatex">\(T\)</span> 中第一次出现的位置（<span class="arithmatex">\(P\)</span> 的开头位置）。</p>
+</details>
+<details class="note">
+<summary>解法一</summary>
+<p>利用后缀链接树的信息，进行 dfs 即可预处理每个节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合中的最小值。</p>
+<p>所有「前缀节点」<span class="arithmatex">\(v_i\)</span> 的初始值为 <span class="arithmatex">\(i\)</span>，非「前缀节点」的初始值为 <span class="arithmatex">\(\infty\)</span>。然后，沿着后缀链接自下向上回溯时，每个父节点的值都与它的所有子节点的值比较，取最小值（不要遗漏父节点本身的初始值）。这样得到的每个节点处的值，就是该节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合中的最小值。</p>
+<p>查询时，在自动机上查找模式串 <span class="arithmatex">\(P\)</span> 对应的节点，如果存在，则答案就是该节点的值，减去 <span class="arithmatex">\(|P|-1\)</span>；如果不存在，则答案不存在。</p>
+<p>预处理时间复杂度为 <span class="arithmatex">\(O(|T|)\)</span>。单次查询的时间复杂度为 <span class="arithmatex">\(O(|P|)\)</span>。</p>
+</details>
+<details class="note">
+<summary>解法二</summary>
+<p>我们构造一个后缀自动机。我们对 SAM 中的所有状态预处理位置 <span class="arithmatex">\(\operatorname{firstpos}\)</span>。即，对每个状态 <span class="arithmatex">\(v\)</span> 我们想要找到第一次出现这个状态的末端的位置 <span class="arithmatex">\(\operatorname{firstpos}[v]\)</span>。换句话说，我们希望先找到每个集合 <span class="arithmatex">\(\operatorname{endpos}\)</span> 中的最小的元素（显然我们不能显式地维护所有 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合）。</p>
+<p>为了维护 <span class="arithmatex">\(\operatorname{firstpos}\)</span> 这些位置，我们对函数 <code>sam_extend()</code> 进行扩展。当我们创建新状态 <span class="arithmatex">\(\textit{cur}\)</span> 时，我们令：</p>
+<div class="arithmatex">\[
+\operatorname{firstpos}(\textit{cur})=\operatorname{len}(\textit{cur})-1.
+\]</div>
+<p>当我们将结点 <span class="arithmatex">\(q\)</span> 复制到 <span class="arithmatex">\(\textit{clone}\)</span> 时，我们令：</p>
+<div class="arithmatex">\[
+\operatorname{firstpos}(\textit{clone})=\operatorname{firstpos}(q).
+\]</div>
+<p>（因为值的唯一的其它选项 <span class="arithmatex">\(\operatorname{firstpos}(\textit{cur})\)</span> 显然太大了）。</p>
+<p>那么查询的答案就是 <span class="arithmatex">\(\operatorname{firstpos}(t)-\left|P\right|+1\)</span>，其中 <span class="arithmatex">\(t\)</span> 为对应字符串 <span class="arithmatex">\(P\)</span> 的状态。单次查询只需要 <span class="arithmatex">\(O(\left|P\right|)\)</span> 的时间。</p>
+</details>
+<h3 id="_24">所有出现的位置<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>问题同上，这一次需要查询文本串 <span class="arithmatex">\(T\)</span> 中模式串 <span class="arithmatex">\(P\)</span> 出现的所有位置。</p>
+</details>
+<details class="note">
+<summary>解法一</summary>
+<p>找到模式串 <span class="arithmatex">\(P\)</span> 对应的节点后，利用后缀链接树的信息，遍历子树，一旦发现终点节点就输出。</p>
+<p>单次查询复杂度为 <span class="arithmatex">\(O(|P|)+O(\textit{answer}(P))\)</span>，其中，<span class="arithmatex">\(\textit{answer}(P)\)</span> 为本次询问的答案。仿照 <a href="#状态数">状态数为线性的证明</a> 可以说明，后缀链接树的子树大小不会超过该节点的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合的大小的二倍，因此遍历子树的复杂度是 <span class="arithmatex">\(O(\textit{answer}(P))\)</span> 的。</p>
+</details>
+<details class="note">
+<summary>解法二</summary>
+<p>我们还是对文本串 <span class="arithmatex">\(T\)</span> 构造后缀自动机。与上一个问题相似，我们为所有状态计算位置 <span class="arithmatex">\(\operatorname{firstpos}\)</span>。</p>
+<p>如果 <span class="arithmatex">\(t\)</span> 为对应于模式串 <span class="arithmatex">\(P\)</span> 的状态，显然 <span class="arithmatex">\(\operatorname{firstpos}(t)\)</span> 为答案之一。我们已经找到了自动机中对应于 <span class="arithmatex">\(P\)</span> 的状态。还需要找到其它哪些位置？正是那些对应于以 <span class="arithmatex">\(P\)</span> 为后缀的字符串的状态。换句话说，我们要找到所有可以通过后缀链接到达状态 <span class="arithmatex">\(t\)</span> 的状态。</p>
+<p>因此为了解决这个问题，我们需要为每一个状态保存一个指向它的后缀连接列表。查询的答案就包含了对于每个我们能从状态 <span class="arithmatex">\(t\)</span> 只使用反向的后缀链接进行 DFS 或 BFS 找到的所有状态的 <span class="arithmatex">\(\operatorname{firstpos}\)</span> 值。</p>
+<p>预处理的复杂度为 <span class="arithmatex">\(O(|T|)\)</span>，单次查询的复杂度为 <span class="arithmatex">\(O(|P|+\textit{answer}(P))\)</span>。</p>
+<p>我们不会重复访问一个状态（因为对于仅有一个后缀链接指向一个状态，所以不存在两条不同的路径指向同一状态）。</p>
+<p>我们只需要考虑两个可能有相同 <span class="arithmatex">\(\operatorname{firstpos}\)</span> 值的不同状态。这种情形只在一个状态是由另一个状态复制而来时发生。然而，这并不会对复杂度分析造成影响。仿照 <a href="#状态数">状态数为线性的证明</a>，所有这种后缀为 <span class="arithmatex">\(P\)</span> 的状态数目不会超过 <span class="arithmatex">\(2\textit{answer}(P)\)</span>。</p>
+<p>此外，我们可以通过不考虑复制而来的节点的 <span class="arithmatex">\(\operatorname{firstpos}\)</span> 值来去除重复的位置。事实上对于一个状态，如果经过被复制状态可以到达，则经过原状态也可以到达。因此，如果我们给每个状态记录标记 <code>is_clone</code> 来代表这个状态是不是被复制出来的，我们就可以简单地忽略掉被复制的状态，只输出其它所有状态的 <span class="arithmatex">\(firstpos\)</span> 的值。</p>
+<p>以下是大致的实现：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">state</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_clone</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">first_pos</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inv_link</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span><span class="c1">// some other variables</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="p">};</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1">// 在构造 SAM 后</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sz</span><span class="p">;</span><span class="w"> </span><span class="n">v</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">link</span><span class="p">].</span><span class="n">inv_link</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1">// 输出所有出现位置</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="kt">void</span><span class="w"> </span><span class="nf">output_all_occurrences</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">P_length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">is_clone</span><span class="p">)</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">first_pos</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">P_length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">inv_link</span><span class="p">)</span><span class="w"> </span><span class="n">output_all_occurrences</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">P_length</span><span class="p">);</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h3 id="_25">最短的没有出现的字符串<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给定一个字符串 <span class="arithmatex">\(S\)</span> 和一个特定的字符集，我们要找一个长度最短的没有在 <span class="arithmatex">\(S\)</span> 中出现过的字符串。</p>
+</details>
+<details class="note">
+<summary>解法</summary>
+<p>我们在字符串 <span class="arithmatex">\(S\)</span> 的后缀自动机上做动态规划。</p>
+<p>假定我们已经处理完了子串的一部分，当前在状态 <span class="arithmatex">\(v\)</span>，想找到不连续的转移需要添加的最小字符数量，将节点 <span class="arithmatex">\(v\)</span> 处的这个数量记作 <span class="arithmatex">\(d_v\)</span>。</p>
+<p>计算 <span class="arithmatex">\(d_{v}\)</span> 非常简单。如果不存在使用字符集中至少一个字符的转移，则 <span class="arithmatex">\(d_{v}=1\)</span>。否则添加一个字符是不够的，我们需要求出所有转移中的最小值：</p>
+<div class="arithmatex">\[
+d_{v}=1+\min_{w:(v,w,c)\in SAM}d_{w}
+\]</div>
+<p>问题的答案就是 <span class="arithmatex">\(d_{t_0}\)</span>，字符串可以通过计算过的数组 <span class="arithmatex">\(d\)</span> 逆推回去。</p>
+</details>
+<h3 id="_26">两个字符串的最长公共子串<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给定两个字符串 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(T\)</span>，求出最长公共子串，公共子串定义为在 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(T\)</span> 中都作为子串出现过的字符串 <span class="arithmatex">\(X\)</span>。</p>
+</details>
+<details class="note">
+<summary>解法</summary>
+<p>我们对字符串 <span class="arithmatex">\(S\)</span> 构造后缀自动机。</p>
+<p>我们现在处理字符串 <span class="arithmatex">\(T\)</span>，对于每一个前缀，都在 <span class="arithmatex">\(S\)</span> 中寻找这个前缀的最长后缀。换句话说，对于每个字符串 <span class="arithmatex">\(T\)</span> 中的位置，我们想要找到这个位置结束的 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(T\)</span> 的最长公共子串的长度。</p>
+<p>为了达到这一目的，我们使用两个变量，<strong>当前状态</strong>  <span class="arithmatex">\(v\)</span> 和 <strong>当前长度</strong>  <span class="arithmatex">\(l\)</span>。这两个变量描述当前匹配的部分：它的长度和它们对应的状态。</p>
+<p>一开始 <span class="arithmatex">\(v=t_0\)</span> 且 <span class="arithmatex">\(l=0\)</span>，即，匹配为空串。</p>
+<p>现在我们来描述如何添加一个字符 <span class="arithmatex">\(T_{i}\)</span> 并为其重新计算答案：</p>
+<ul>
+<li>如果存在一个从 <span class="arithmatex">\(v\)</span> 到字符 <span class="arithmatex">\(T_{i}\)</span> 的转移，我们只需要转移并让 <span class="arithmatex">\(l\)</span> 自增一。</li>
+<li>
+<p>如果不存在这样的转移，我们需要缩短当前匹配的部分，这意味着我们需要按照后缀链接进行转移：</p>
+<div class="arithmatex">\[
+v=\operatorname{link}(v)
+\]</div>
+<p>与此同时，需要缩短当前长度。显然我们需要将 <span class="arithmatex">\(l\)</span> 赋值为 <span class="arithmatex">\(\operatorname{len}(v)\)</span>，因为经过这个后缀链接后我们到达的状态所对应的最长字符串是一个子串。</p>
+</li>
+<li>
+<p>如果仍然没有使用这一字符的转移，我们继续重复经过后缀链接并减小 <span class="arithmatex">\(l\)</span>，直到我们找到一个转移或到达虚拟状态 <span class="arithmatex">\(-1\)</span>（这意味着字符 <span class="arithmatex">\(T_{i}\)</span> 根本没有在 <span class="arithmatex">\(S\)</span> 中出现过，所以我们设置 <span class="arithmatex">\(v=l=0\)</span>）。</p>
+</li>
+</ul>
+<p>显然问题的答案就是所有 <span class="arithmatex">\(l\)</span> 的最大值。</p>
+<p>这一部分的时间复杂度为 <span class="arithmatex">\(O(\left|T\right|)\)</span>，因为每次移动我们要么可以使 <span class="arithmatex">\(l\)</span> 增加一，要么可以在后缀链接间移动几次，每次都减小 <span class="arithmatex">\(l\)</span> 的值。</p>
+<p>代码实现：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">string</span><span class="w"> </span><span class="nf">lcs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="n">sam_init</span><span class="p">();</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">sam_extend</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">bestpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">next</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">      </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">link</span><span class="p">;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">      </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">length</span><span class="p">;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">next</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">      </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">next</span><span class="p">[</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">      </span><span class="n">l</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">best</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">      </span><span class="n">best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">      </span><span class="n">bestpos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">bestpos</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">best</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">best</span><span class="p">);</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>例题：<a href="https://www.spoj.com/problems/LCS/en/">SPOJ Longest Common Substring</a></p>
+<h3 id="_27">多个字符串间的最长公共子串<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary>问题</summary>
+<p>给定 <span class="arithmatex">\(k\)</span> 个字符串 <span class="arithmatex">\(S_i\)</span>。我们需要找到它们的最长公共子串，即作为子串出现在每个字符串中的字符串 <span class="arithmatex">\(X\)</span>。</p>
+</details>
+<details class="note">
+<summary>解法一</summary>
+<p>我们将所有的子串连接成一个较长的字符串 <span class="arithmatex">\(T\)</span>，以特殊字符 <span class="arithmatex">\(D_i\)</span> 分开每个字符串（一个字符对应一个字符串）：</p>
+<div class="arithmatex">\[
+T=S_1+D_1+S_2+D_2+\cdots+S_k+D_k.
+\]</div>
+<p>然后对字符串 <span class="arithmatex">\(T\)</span> 构造后缀自动机。</p>
+<p>现在我们需要在自动机中找到存在于所有字符串 <span class="arithmatex">\(S_i\)</span> 中的一个字符串，为此可以利用添加的特殊字符。如果 <span class="arithmatex">\(S_j\)</span> 包含了一个子串 <span class="arithmatex">\(X\)</span>，则从子串 <span class="arithmatex">\(X\)</span> 对应的节点 <span class="arithmatex">\(t\)</span> 出发，必然存在一条到达 <span class="arithmatex">\(D_j\)</span> 但是不经过任何其它特殊字符 <span class="arithmatex">\(D_1,\cdots,D_{j-1},D_{j+1},\cdots,D_k\)</span> 的路径。对于公共子串 <span class="arithmatex">\(X\)</span>，应当对每个特殊字符 <span class="arithmatex">\(D_j\)</span> 都存在这样的路径。</p>
+<p>因此我们需要计算可达性，即对于自动机中的每个状态和每个字符 <span class="arithmatex">\(D_i\)</span>，是否存在这样的一条路径。这可以容易地通过 DFS 或 BFS 及动态规划计算。这之后，问题的答案就是所有能够达到所有特殊字符的状态 <span class="arithmatex">\(v\)</span> 对应的最长子串 <span class="arithmatex">\(\operatorname{longest}(v)\)</span> 中最长的那个。</p>
+</details>
+<details class="note">
+<summary>解法二</summary>
+<p>不妨设 <strong>最短</strong> 的字符串为 <span class="arithmatex">\(S_1\)</span>，对它构造 SAM。利用解决两个字符串最长公共子串的算法，计算剩余的每个字符串与 <span class="arithmatex">\(S_1\)</span> 的最长公共子串长度。在匹配过程中，每添加一个要匹配的字符串 <span class="arithmatex">\(S_j\)</span> 中的字符，就相应地在 SAM 上移动，因此，可以直接记录 <strong>在匹配过程中</strong> SAM 每个状态能够匹配上的 <span class="arithmatex">\(S_j\)</span> 的最长子串的长度。</p>
+<p>因为匹配过程中，每次匹配到 SAM 的一个状态时，必然同时匹配到了它在后缀链接树上的所有祖先节点，但是祖先节点的匹配长度的信息并没有更新。所以，在完成对字符串 <span class="arithmatex">\(S_j\)</span> 的匹配后，需要自下而上地沿着后缀链接更新，将子节点匹配到的最长子串的信息更新到父节点。此时，需要注意父节点记录的最长匹配长度不能超过它自身的 <span class="arithmatex">\(\operatorname{len}\)</span> 值。这样，就得到了 <span class="arithmatex">\(S_1\)</span> 的 SAM 上每个状态 <strong>实际能够匹配到</strong> 的 <span class="arithmatex">\(S_j\)</span> 的最长字串长度。</p>
+<p>最后，只需要对每个 <span class="arithmatex">\(S_2,\cdots,S_k\)</span> 都匹配一遍，再对 SAM 上每个状态记录的实际匹配到的长度取最小值，就得到 SAM 上每个状态实际能够匹配到的 <span class="arithmatex">\(S_2,\cdots,S_k\)</span> 的最长公共子串的长度。然后，遍历 SAM 所有状态，取最大值就是这 <span class="arithmatex">\(k\)</span> 个串的最长公共子串长度。</p>
+<p>算法时间复杂度是 <span class="arithmatex">\(O(\sum_i |S_i|)\)</span> 的。字符串 <span class="arithmatex">\(S_1\)</span> 的 SAM 虽然遍历了 <span class="arithmatex">\(k\)</span> 遍，但是因为 <span class="arithmatex">\(|S_1|\)</span> 是最小的，所以 <span class="arithmatex">\(k|S_1|\le \sum_i |S_i|\)</span>，复杂度的主要项依然是匹配过程遍历所有子串。</p>
+</details>
+<p>例题：<a href="https://www.spoj.com/problems/LCS2/">SPOJ Longest Common Substring II</a></p>
+<h2 id="_28">习题<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://hihocoder.com/problemset/problem/1441">HihoCoder #1441 : 后缀自动机一·基本概念</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P3804">【模板】后缀自动机</a></li>
+<li><a href="https://loj.ac/problem/2033">SDOI2016 生成魔咒</a></li>
+<li><a href="https://www.spoj.com/problems/SUBLEX/">SPOJ - SUBLEX</a></li>
+<li><a href="https://loj.ac/problem/2102">TJOI2015 弦论</a></li>
+<li><a href="https://www.spoj.com/problems/LCS/en/">SPOJ Longest Common Substring</a></li>
+<li><a href="https://www.spoj.com/problems/LCS2/">SPOJ Longest Common Substring II</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1037/H">Codeforces 1037H Security</a></li>
+<li><a href="https://codeforces.com/problemset/problem/666/E">Codeforces 666E Forensic Examination</a></li>
+<li><a href="https://acm.hdu.edu.cn/showproblem.php?pid=4416">HDU4416 Good Article Good sentence</a></li>
+<li><a href="https://acm.hdu.edu.cn/showproblem.php?pid=4436">HDU4436 str2int</a></li>
+<li><a href="https://acm.hdu.edu.cn/showproblem.php?pid=6583">HDU6583 Typewriter</a></li>
+<li><a href="https://codeforces.com/problemset/problem/235/C">Codeforces 235C Cyclical Quest</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P4022">CTSC2012 熟悉的文章</a></li>
+<li><a href="https://uoj.ac/problem/395">NOI2018 你的名字</a></li>
+</ul>
+<h2 id="_29">相关资料<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>我们先给出与 SAM 有关的最初的一些文献：</p>
+<ul>
+<li>A. Blumer, J. Blumer, A. Ehrenfeucht, D. Haussler, R. McConnell. Linear Size Finite Automata for the Set of All Subwords of a Word. An Outline of Results. [1983]</li>
+<li>A. Blumer, J. Blumer, A. Ehrenfeucht, D. Haussler. The Smallest Automaton Recognizing the Subwords of a Text. [1984]</li>
+<li>Maxime Crochemore. Optimal Factor Transducers. [1985]</li>
+<li>Maxime Crochemore. Transducers and Repetitions. [1986]</li>
+<li>A. Nerode. Linear automaton transformations. [1958]</li>
+</ul>
+<p>另外，在更新的一些资源以及很多关于字符串算法的书中，都能找到这个主题：</p>
+<ul>
+<li>Maxime Crochemore, Rytter Wowjcieh. Jewels of Stringology. [2002]</li>
+<li>Bill Smyth. Computing Patterns in Strings. [2003]</li>
+<li>Bill Smith. Methods and algorithms of calculations on lines. [2006]</li>
+</ul>
+<p>另外，还有一些资料：</p>
+<ul>
+<li>《后缀自动机》，陈立杰。</li>
+<li>《后缀自动机在字典树上的拓展》，刘研绎。</li>
+<li>《后缀自动机及其应用》，张天扬。</li>
+<li><a href="https://www.cnblogs.com/zinthos/p/3899679.html">https://www.cnblogs.com/zinthos/p/3899679.html</a></li>
+<li><a href="https://codeforces.com/blog/entry/20861">https://codeforces.com/blog/entry/20861</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25948077">https://zhuanlan.zhihu.com/p/25948077</a></li>
+</ul>
+<p><strong>本页面主要译自博文 <a href="http://e-maxx.ru/algo/suffix_automata">Суффиксный автомат</a> 与其英文翻译版 <a href="https://cp-algorithms.com/string/suffix-automaton.html">Suffix Automaton</a>。其中俄文版版权协议为 Public Domain + Leave a Link；英文版版权协议为 CC-BY-SA 4.0。</strong></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:state-endpos">
+<p>需要将每个状态都取作一个 <span class="arithmatex">\(\operatorname{endpos}\)</span> 等价类的原因，其实就是本段提到的 Myhill–Nerode 定理。简单来说，如果两个字符串 <span class="arithmatex">\(t\)</span> 和 <span class="arithmatex">\(u\)</span> 的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合不同，那么它们不能对应于 SAM 的同一个状态：同一个状态到达终止状态的路径总是一样的，这意味着在 <span class="arithmatex">\(t\)</span> 和 <span class="arithmatex">\(u\)</span> 末尾添加字符到达 <span class="arithmatex">\(s\)</span> 的结尾的方式也是一样的，而这正说明 <span class="arithmatex">\(t\)</span> 和 <span class="arithmatex">\(u\)</span> 在字符串 <span class="arithmatex">\(s\)</span> 中的结束位置一样。反过来，只要两个字符串 <span class="arithmatex">\(t\)</span> 和 <span class="arithmatex">\(u\)</span> 的 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合相同，就可以将它们对应到 SAM 的同一个状态。这样做可行，就是 Nerode 定理的证明的内容，在此不多讨论。但是，此处的讨论至少可以相信，将 <span class="arithmatex">\(\operatorname{endpos}\)</span> 集合相同的字符串放到同一个状态，这样得到的 SAM 一定是最小的，因为进一步合并节点是不可能的。&#160;<a class="footnote-backref" href="#fnref:state-endpos" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:time-complexity">
+<p>如果不额外使用列表记录当前状态的可用转移，只用数组存储所有可能的转移（无论是否存在）并在复制节点时直接复制，那么时间复杂度也是 <span class="arithmatex">\(O(n\left|\Sigma\right|)\)</span> 的。&#160;<a class="footnote-backref" href="#fnref:time-complexity" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:time-complexity" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:monotone-loc">
+<p>此处正文没有解释的是，在第一种和第二种情况中，<span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{last})))\)</span> 的位置是否也是单调（弱）递增的。第一种情况容易验证，因为更新后 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{last})))\)</span> 是空串，起止位置在字符串 <span class="arithmatex">\(s\)</span> 的末尾。第二种情况，转移是连续的，说明 <span class="arithmatex">\(\operatorname{longest}(q) = \operatorname{longest}(p)+c\)</span>。然而，向子串的末尾添加新的字符只会使得该子串更难以出现在字符串中，也就是说，当字符串 <span class="arithmatex">\(\operatorname{longest}(p)\)</span> 的长度为 <span class="arithmatex">\(\operatorname{len}(\operatorname{link}(p))\)</span> 的后缀的结束位置集合严格包含 <span class="arithmatex">\(\operatorname{endpos}(p)\)</span> 时，字符串 <span class="arithmatex">\(\operatorname{longest}(q)\)</span> 的长度为 <span class="arithmatex">\(\operatorname{len}(\operatorname{link}(p))+1\)</span> 的后缀的结束位置集合可能仍然与 <span class="arithmatex">\(\operatorname{endpos}(q)\)</span> 相同。故而，<span class="arithmatex">\(\operatorname{len}(\operatorname{link}(q))&lt;\operatorname{len}(\operatorname{link}(p))+1\)</span>，亦即 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(p))\)</span> 作为 <span class="arithmatex">\(s\)</span> 的后缀的起始位置必然不大于 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(q))\)</span> 作为 <span class="arithmatex">\(s+c\)</span> 的后缀的起始位置。而当一次找到状态 <span class="arithmatex">\(p\)</span> 使得存在经由 <span class="arithmatex">\(c\)</span> 的转移时，必定移动了至少一次，这说明 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(p))\)</span> 作为 <span class="arithmatex">\(s\)</span> 的后缀的起始位置不小于 <span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{last})))\)</span> 作为 <span class="arithmatex">\(s\)</span> 的后缀的起始位置。最后，<span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(q))=\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{cur})))\)</span>。这就说明，在第二种情况中，<span class="arithmatex">\(\operatorname{longest}(\operatorname{link}(\operatorname{link}(\textit{last})))\)</span> 的位置也是单调递增的。&#160;<a class="footnote-backref" href="#fnref:monotone-loc" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <style>
+  .md-footer {
+      background-color: #f0f0f0;
+  }
+</style>
+
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; gzh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+      <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;color: #000;">
+        本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+        <span id="finicount_views"></span>    &nbsp;|&nbsp;
+        <footer>
+          <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+        </footer>
+      </div>
+      </font>
+
+        <style>
+          .footer-visit-count {
+              height: fit-content;
+              min-height: 55px; /* 根据实际情况调整此高度 */
+              color: #000;
+          }
+          </style>
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" rel="noopener" title="Wechat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/gongzihang" target="_blank" rel="noopener" title="telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ZihangGong28792" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<zihanggong24@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/688234000/lists" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+        
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。 如果你同意,你可以帮助我们让我们的网站更好</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../../../javascripts/config_mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../../../javascripts/简历.js"></script>
+      
+    
+  </body>
+</html>

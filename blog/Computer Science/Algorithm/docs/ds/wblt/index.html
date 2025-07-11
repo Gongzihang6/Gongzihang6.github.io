@@ -1,0 +1,3723 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="记录、分享">
+      
+      
+        <meta name="author" content="hsfzLZH1, cesonic, AtomAlpaca, caijianhong, Persdre, aofall, CoelacanthusHex, Marcythm, shuzhouliu, Tiphereth-A">
+      
+      
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/Computer%20Science/Algorithm/docs/ds/wblt/">
+      
+      
+      
+      
+      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Wblt - Blog of GZH</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/简历.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-40HC6RYSR1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-40HC6RYSR1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blog of GZH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wblt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6.5.5c12.4-13.1 22.5-28.3 29.8-45l-35.2.1h-72c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/ZH-TW/" hreflang="zh-TW" class="md-select__link">
+              China(TW)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MachineLearning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  每日诗词
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  长期主义
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../about/geren/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Blog of GZH
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java面向对象基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java集合框架与常用API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java高级技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode热题100
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode热题100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    字母异位词分组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交易逆序对的总数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单词接龙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    岛屿数量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分考场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    拉马车
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分巧克力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K倍区间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    编辑距离
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    接雨水
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组合总和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    全排列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    乘积最大子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. 最长回文子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前K个高频元素
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最小栈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pow(x,n)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络延迟时间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对角线上的质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    零钱兑换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    括号匹配
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300最长递增子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    115不同的子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    712两个字符串的最小ASCII删除和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    516最长回文子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    139单词拆分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    221最大正方形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2845统计趣味子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2799统计完全子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1399统计最大组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2338统计理想数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2179统计数组中好三元组数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2537统计好子数组的数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2140解决智力问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2278字母在字符串中的百分比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MachineLearning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MachineLearning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K近邻学习与降维
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    公式测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    经典卷积神经网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    理解YOLO网络结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    每日诗词
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            每日诗词
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·玉阑干外清江浦
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    菩萨蛮·回文夏闺怨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    清平乐·六盘山
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    洞仙歌·咏柳
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    秋兴八首·其一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    与史郎中钦听黄鹤楼上吹笛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    夏日南亭怀辛大
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    行香子·秋与
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自题金山画像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            长期主义
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fitness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/geren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作者个人简介
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简历
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    功能测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      引入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本结构及平衡维护
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本结构及平衡维护">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      节点信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      辅助函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      平衡的概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      通过旋转维护
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      通过合并维护
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      平衡树基础操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="平衡树基础操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      建树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入与删除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询排名
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      根据排名查询
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      查找前驱、后继
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      分裂操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考实现
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料与注释
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Wblt</h1>
+
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>WBLT（Weight Balanced Leafy Tree）是一种结合了Weight Balanced Tree和Leafy Tree特性的平衡树结构，具有实现简单、常数小的优点。其叶子节点存储原始数据，非叶子节点维护子树信息，通过旋转和合并保持α-平衡。WBLT支持区间操作和可持久化，空间复杂度为Θ(n)，适用于高效查询和动态数据维护场景。该结构在算法竞赛中表现优异，但需注意参数设置和空间回收问题。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>851</strong> | 有效代码行数：<strong>17</strong></p>
+</div>
+<h2 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>Weight Balanced Leafy Tree</strong>，下称 <strong>WBLT</strong>，是一种平衡树，比起其它平衡树主要有实现简单、常数小的优点。它支持区间操作，而且可持久化。</p>
+<p>Weight Balanced Leafy Tree 顾名思义是 Weight Balanced Tree 和 Leafy Tree 的结合。</p>
+<p>Weight Balanced Tree 的每个结点储存这个结点下子树的大小，并且通过保持左右子树的大小关系在一定范围来保证树高。</p>
+<p>Leafy Tree 维护的原始信息仅存储在树的 <strong>叶子节点</strong> 上，而非叶子节点仅用于维护子节点信息和维持数据结构的形态。我们熟知的线段树就是一种 Leafy Tree。</p>
+<p><img alt="" src="../images/leafy-tree-1.svg" /></p>
+<p>本文的树均指的是二叉的 Leafy Tree，即每个节点的子节点数目只能是 <span class="arithmatex">\(0\)</span> 或者 <span class="arithmatex">\(2\)</span>。本文中的 <span class="arithmatex">\(n\)</span>，指的是树的叶子节点的数目。叶子节点数目为 <span class="arithmatex">\(n\)</span> 的树，总的节点数量是 <span class="arithmatex">\(2n-1\)</span>，因此，WBLT 占用的空间是 <span class="arithmatex">\(\Theta(n)\)</span> 的。</p>
+<h2 id="_2">基本结构及平衡维护<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本节介绍 WBLT 的基本结构，定义树的 <span class="arithmatex">\(\alpha\)</span>‑平衡的概念，并解释如何通过旋转或合并的方式维护树的平衡。</p>
+<h3 id="_3">节点信息<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>要实现一个基本的 WBLT，只需要记录每个节点的如下信息：</p>
+<ul>
+<li><code>lc[x]</code>、<code>rc[x]</code>：左、右子节点；</li>
+<li><code>sz[x]</code>：以 <span class="arithmatex">\(x\)</span> 为根的子树中的叶子节点的数目。</li>
+</ul>
+<p>利用 WBLT 实现平衡树，还需要在每个节点处记录与键值相关的信息：</p>
+<ul>
+<li><code>val[x]</code>：节点 <span class="arithmatex">\(x\)</span> 处的键值。</li>
+</ul>
+<p>因为只有叶子节点实际存储键值，所以其他节点处存储的信息是由它们的子节点合并得到的，以方便后续查询。</p>
+<p>比如，一种常用的合并方式就是将两个子节点的键值中较大的那个存储于该节点。这样，每个节点存储的就是以它为根的子树中，所有叶子节点的键值的最大值。基于此，节点信息的更新方法如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>当然，如果需要，还可以实现相应的 <code>push_down(x)</code> 函数。</p>
+<h3 id="_4">辅助函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>除了基本的节点信息维护外，WBLT 通常还需要实现如下辅助函数，用于内存管理：</p>
+<ul>
+<li><code>new_node()</code>：新建节点；</li>
+<li><code>del_node(x)</code>：删除节点 <span class="arithmatex">\(x\)</span>；</li>
+<li><code>new_leaf(v)</code>：新建以 <span class="arithmatex">\(v\)</span> 为键值的叶子节点；</li>
+<li><code>join(x, y)</code>：连接子树，即分别以 <span class="arithmatex">\(x\)</span>、<span class="arithmatex">\(y\)</span> 为左右子节点，新建节点 <span class="arithmatex">\(x\)</span>；</li>
+<li><code>cut(x)</code>：拆分子树，即获得节点 <span class="arithmatex">\(x\)</span> 的两个子节点，并删除节点 <span class="arithmatex">\(x\)</span>。</li>
+</ul>
+<p>如果 WBLT 的实现十分依赖于拆分和连接子树，会建立较多的新节点，并释放等量的旧节点。如果不及时回收旧的无用节点，会导致空间不再是线性的。以下是这些辅助函数的数组实现：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>封装好这些辅助函数后，数组实现和指针实现在后续函数中就没有区别了。</p>
+<h3 id="_5">平衡的概念<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>对于一个树，可以定义它在一个非叶节点 <span class="arithmatex">\(x\)</span> 处的 <strong>平衡度</strong> 为</p>
+<div class="arithmatex">\[
+\rho(x) = \dfrac{\min\{w(T_{\operatorname{left}(x)}),w(T_{\operatorname{right}(x)})\}}{w(T_x)}.
+\]</div>
+<p>其中，<span class="arithmatex">\(T_x\)</span> 表示以 <span class="arithmatex">\(x\)</span> 为根的子树，<span class="arithmatex">\(w(\cdot)\)</span> 表示子树的权重（它的叶子节点的数目），而 <span class="arithmatex">\(\operatorname{left}(x)\)</span> 和 <span class="arithmatex">\(\operatorname{right}(x)\)</span> 分别表示 <span class="arithmatex">\(x\)</span> 的左右叶子节点。特别地，叶子节点处规定 <span class="arithmatex">\(\rho(x)=1/2\)</span>。</p>
+<p>对于 <span class="arithmatex">\(\alpha\in(0,1/2]\)</span>，如果某个节点 <span class="arithmatex">\(x\)</span> 处平衡度 <span class="arithmatex">\(\rho(x)\ge\alpha\)</span>，就称该节点是 <strong><span class="arithmatex">\(\alpha\)</span>‑平衡</strong> 的。如果树的每个节点处都是 <span class="arithmatex">\(\alpha\)</span>‑平衡的，就称树是 <strong><span class="arithmatex">\(\alpha\)</span>‑平衡</strong> 的。这样的树的集合记作 <span class="arithmatex">\(BB[\alpha]\)</span>。一个树是 <strong><span class="arithmatex">\(\alpha\)</span>‑平衡</strong> 的，当且仅当它本身是 <span class="arithmatex">\(\alpha\)</span>‑平衡的，且它的左右子树都是 <span class="arithmatex">\(\alpha\)</span>‑平衡的或者它是叶子节点。</p>
+<p>树是 <span class="arithmatex">\(\alpha\)</span>‑平衡的，有一个显然的好处是，它的高度是 <span class="arithmatex">\(O(\log n)\)</span> 的。这是因为，从叶子节点每向根移动一步，子树所包含的叶子节点数目就至少扩大到原来的 <span class="arithmatex">\(1/(1-\alpha)\)</span> 倍，因此只能移动 <span class="arithmatex">\(O(\log_{\frac{1}{1-\alpha}}n) = O(\log n)\)</span> 次。这就保证了在 <span class="arithmatex">\(\alpha\)</span>‑平衡的树中，单次查询的复杂度总是严格 <span class="arithmatex">\(O(\log n)\)</span> 的，且算法的常数与 <span class="arithmatex">\(\log(1/(1-\alpha))\)</span>（以 <span class="arithmatex">\(2\)</span> 为底）正相关。当 <span class="arithmatex">\(\alpha\)</span> 位于下文提供的合理范围内时，这个常数大致为 <span class="arithmatex">\(2\sim 3.5\)</span>。</p>
+<p>WBLT 的平衡维护通常可以通过旋转或合并的方式进行。两种方式实现的 WBLT，单次插入、删除等操作，复杂度都是严格 <span class="arithmatex">\(O(\log n)\)</span> 的。但是，与固定优先级的 <a href="../treap/">Treap</a> 不同，WBLT 的结构并不具有唯一性，因此，两种方式维护得到的树的结构并不相同，虽然这并不影响它们的使用。当然，平衡的维护还可以采取类似 <a href="../sgt/">替罪羊树</a> 的策略，利用重构达到均摊 <span class="arithmatex">\(O(\log n)\)</span> 的复杂度，但是这样就失去了 WBLT 可持久化和区间操作等优势，因而并不推荐。</p>
+<p>下文分别介绍了通过旋转和合并维护平衡的方法，并实现了相应的平衡维护和合并操作的函数。封装好这些函数后，两种维护树平衡的方式在后续具体的平衡树的实现中再无区别。而且，无论使用哪种方式，单次维护平衡的操作的时间复杂度都是 <span class="arithmatex">\(O(1)\)</span> 的，单次合并树 <span class="arithmatex">\(T_1\)</span> 和树 <span class="arithmatex">\(T_2\)</span> 的复杂度都是 <span class="arithmatex">\(O\left(\left|\log\dfrac{w(T_1)}{w(T_2)}\right|\right)\)</span> 的。</p>
+<details class="info" open="open">
+<summary>省略权重的记号</summary>
+<p>为了维护树的平衡，只需要保留子树的权重信息。因此，为了表达方便，下面讨论平衡维护的两节将混用树和它的权重的记号。比如，子树 <span class="arithmatex">\(x\)</span> 的权重也由 <span class="arithmatex">\(x\)</span> 表示，而不是 <span class="arithmatex">\(w(x)\)</span>。类似地，子树 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 合并得到的树也用它的权重表示，直接写作树 <span class="arithmatex">\(x+y\)</span>。</p>
+</details>
+<h3 id="_6">通过旋转维护<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>WBLT 的旋转操作和 <a href="../treap/#旋转">Treap 的旋转操作</a> 完全相同，可以采取与 Treap 完全一致的旋转策略。当然，旋转本身同样可以看作是重新分配子树权重的过程，因此也可以利用拆分和连接子树完成。两种实现的结果是完全一致的，但是第二种实现更方便 WBLT 的持久化。</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">不依赖连接</label><label for="__tabbed_1_2">依赖连接</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</details>
+<p>假设在某个树的修改操作后，正在自下而上地恢复树的平衡。现在，左右子树 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 不再平衡，但是它们自身都是平衡的。不妨设右子树 <span class="arithmatex">\(y\)</span> 过轻，即 <span class="arithmatex">\(y&lt;\alpha(x+y)\)</span>。此时，树的形态如图中左侧的树所示。</p>
+<p><img alt="" src="../images/wblt-balance.svg" /></p>
+<p>一种朴素的平衡维护策略是将 <span class="arithmatex">\(x\)</span> 旋转到根节点处，这样它原先的右子节点 <span class="arithmatex">\(w\)</span> 就和 <span class="arithmatex">\(y\)</span> 一起成为了新树的右子节点，而它原先的左子节点 <span class="arithmatex">\(z\)</span> 成为了新树的左子节点。这相当于将原来的树左侧中 <span class="arithmatex">\(w\)</span> 的权重移动到它的右侧。如果 <span class="arithmatex">\(w\)</span> 的权重合适，这样的操作就可以恢复树的平衡。这样得到的树如图中右侧的树所示。</p>
+<p>但是，如果 <span class="arithmatex">\(w\)</span> 本身过重，这样的操作可能移动了太多的权重到右子树，从而使得新树中左子树过轻，即 <span class="arithmatex">\(z&lt;\alpha(x+y)\)</span>。对于这种情形，因为子树 <span class="arithmatex">\(z\)</span> 和子树 <span class="arithmatex">\(y\)</span> 的权重都太小，只能考虑将 <span class="arithmatex">\(w\)</span> 分拆为两个子树，分别与 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(y\)</span> 连接，成为新树的两个子树。这相当于首先将节点 <span class="arithmatex">\(w\)</span> 旋转到节点 <span class="arithmatex">\(x\)</span> 处，再将它旋转到根节点处。同样，可以期待这样得到的树能够达到平衡，形态如图中上方的树所示。</p>
+<p>这两种旋转的策略分别称为单旋和双旋。单旋和双旋策略的选取，主要取决于子树 <span class="arithmatex">\(w\)</span> 相对于子树 <span class="arithmatex">\(x\)</span> 的比重，即存在阈值 <span class="arithmatex">\(\beta\)</span>，使得</p>
+<ul>
+<li>当 <span class="arithmatex">\(w\le\beta x\)</span> 时，应选取单旋策略；</li>
+<li>当 <span class="arithmatex">\(w&gt;\beta x\)</span> 时，应选取双旋策略。</li>
+</ul>
+<p>难点在于阈值 <span class="arithmatex">\(\beta\)</span> 的选择，这就需要做一些具体的计算。Blum 和 Mehlhorn 证明了，对于参数<sup id="fnref:wrong-range"><a class="footnote-ref" href="#fn:wrong-range">1</a></sup></p>
+<div class="arithmatex">\[
+\alpha\in\left(\dfrac{2}{11},1-\dfrac{\sqrt{2}}{2}\right]\approx(0.182,0.292],~\beta=\frac{1}{2-\alpha},
+\]</div>
+<p>能够通过上述单旋和双旋结合的策略，维护因为单次插入或删除而失衡的 WBLT 的平衡。</p>
+<details class="note">
+<summary>证明</summary>
+<p>需要证明的是，如果树在单次插入或删除后失衡，可以通过上述策略恢复它的平衡。结合上述图示，令</p>
+<div class="arithmatex">\[
+\rho_1 = \dfrac{y}{x+y}, ~\rho_2 = \dfrac{w}{x}, ~\rho_3 = \dfrac{v}{w}.
+\]</div>
+<p>那么，有 <span class="arithmatex">\(\rho_1&lt;\alpha\le\rho_2,\rho_3\le 1-\alpha\)</span>。此处还有一个隐含条件，是关于 <span class="arithmatex">\(\rho_1\)</span> 的取值范围的：</p>
+<ul>
+<li>
+<p>如果失衡是由插入单个元素引起的，那么，应该有</p>
+<div class="arithmatex">\[
+\dfrac{y}{x-1+y} \ge \alpha \implies \rho_1 \ge \dfrac{\alpha y}{y+\alpha} \ge \dfrac{\alpha}{1+\alpha}.
+\]</div>
+</li>
+<li>
+<p>如果失衡是由删除单个元素引起的，那么，应该有</p>
+<div class="arithmatex">\[
+\dfrac{y+1}{x+y+1} \ge \alpha \implies \rho_1 \ge \dfrac{\alpha y}{y+1-\alpha} \ge \dfrac{\alpha}{2-\alpha}.
+\]</div>
+</li>
+</ul>
+<p>因为对于 <span class="arithmatex">\(0&lt;\alpha&lt;1/2\)</span>，总有 <span class="arithmatex">\(\alpha/(2-\alpha)&lt;\alpha/(1+\alpha)\)</span>，所以删除元素会导致比增添元素更严重的失衡，尤其是对于树的规模很小的情形。</p>
+<p>接下来，恢复平衡的操作分为两种情形：</p>
+<details class="note">
+<summary> 情形一：<span class="arithmatex">\(w\)</span> 没有过重，即 <span class="arithmatex">\(\rho_2\le\beta\)</span> 时，单旋 </summary>
+<p>首先，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span> 平衡。这是因为</p>
+<div class="arithmatex">\[
+\left(1-\dfrac{\alpha}{2-\alpha}\right)\alpha+\dfrac{\alpha}{2-\alpha} \le \dfrac{w+y}{x+y} = (1-\rho_1)\rho_2+\rho_1 &lt; (1-\alpha)\dfrac{1}{2-\alpha}+\alpha.
+\]</div>
+<p>左侧表达式在 <span class="arithmatex">\(\alpha\in(0,1)\)</span> 时总大于 <span class="arithmatex">\(\alpha\)</span>，右侧表达式在 <span class="arithmatex">\(\alpha\in(0,1-\sqrt{2}/2]\)</span> 时总不大于 <span class="arithmatex">\((1-\alpha)\)</span>。</p>
+<p>其次，<span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(y\)</span> 平衡。同样地，考虑</p>
+<div class="arithmatex">\[
+\dfrac{y}{w+y} = \dfrac{\rho_1}{(1-\rho_1)\rho_2+\rho_1}.
+\]</div>
+<p>一方面，对于所有 <span class="arithmatex">\(\alpha\in(0,(3-\sqrt{5})/2)\)</span>，有</p>
+<div class="arithmatex">\[
+\dfrac{y}{w+y} &lt; \dfrac{\alpha}{(1-\alpha)\alpha+\alpha} &lt; 1-\alpha.
+\]</div>
+<p>另一方面，对于所有 <span class="arithmatex">\(\alpha\in(0,1/3)\)</span>，除了删除元素且 <span class="arithmatex">\(y=1\)</span> 的情形外，都有</p>
+<div class="arithmatex">\[
+\rho_1 \ge \min\left\{\dfrac{\alpha}{1+\alpha},\dfrac{2\alpha}{3-\alpha}\right\} = \dfrac{2\alpha}{3-\alpha},
+\]</div>
+<p>所以，有</p>
+<div class="arithmatex">\[
+\dfrac{y}{w+y} \ge \dfrac{\dfrac{2\alpha}{3-\alpha}}{\left(1-\dfrac{2\alpha}{3-\alpha}\right)\dfrac{1}{2-\alpha}+\dfrac{2\alpha}{3-\alpha}} &gt; \alpha.
+\]</div>
+<p>最后，考虑剩余的情形，即删除元素且 <span class="arithmatex">\(y=1\)</span> 时。最可能失衡的情形发生在 <span class="arithmatex">\(x=\lfloor 2/\alpha\rfloor-2\)</span> 且 <span class="arithmatex">\(w=\lfloor\beta x\rfloor\)</span> 时。树可以恢复平衡，当且仅当</p>
+<div class="arithmatex">\[
+\dfrac{1}{1+\lfloor\beta x\rfloor}\ge\alpha \iff \lfloor\beta x\rfloor\le\dfrac{1}{\alpha}-1 \iff \beta x &lt; \dfrac{1}{\alpha} \iff x &lt; \dfrac{2}{\alpha}-1.
+\]</div>
+<p>而这总是成立的。这就完成了该情形的证明。注意，最后一种情形的证明利用了权重总是整数这一性质，并不能合并到之前的讨论中。</p>
+</details>
+<details class="note">
+<summary> 情形二：<span class="arithmatex">\(w\)</span> 过重，即 <span class="arithmatex">\(\rho_2&gt;\beta\)</span> 时，双旋 </summary>
+<p>首先，<span class="arithmatex">\(z+u\)</span> 和 <span class="arithmatex">\(v+y\)</span> 平衡。这是因为</p>
+<div class="arithmatex">\[
+\dfrac{\alpha}{2-\alpha}+\left(1-\dfrac{\alpha}{2-\alpha}\right)\dfrac{1}{2-\alpha}\alpha &lt; \dfrac{z+u}{x+y} = \rho_1+(1-\rho_1)\rho_2\rho_3 &lt;\alpha+(1-\alpha)^3
+\]</div>
+<p>左侧表达式在 <span class="arithmatex">\(\alpha\in(0,1)\)</span> 时总大于 <span class="arithmatex">\(\alpha\)</span>，右侧表达式在 <span class="arithmatex">\(\alpha\in(0,(3-\sqrt{5})/2)\)</span> 时总小于 <span class="arithmatex">\((1-\alpha)\)</span>。</p>
+<p>然后，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(u\)</span> 平衡。这是因为对于 <span class="arithmatex">\(\alpha\in(0,1)\)</span>，总是成立</p>
+<div class="arithmatex">\[
+\alpha=\dfrac{\dfrac{1}{2-\alpha}\alpha}{1-\dfrac{1}{2-\alpha}(1-\alpha)}&lt;\dfrac{u}{z} = \dfrac{\rho_2(1-\rho_3)}{1-\rho_2\rho_3} &lt;\dfrac{(1-\alpha)^2}{1-(1-\alpha)\alpha} &lt; 1-\alpha.
+\]</div>
+<p>最后，<span class="arithmatex">\(v\)</span> 和 <span class="arithmatex">\(y\)</span> 平衡。类似其他的情形，考虑</p>
+<div class="arithmatex">\[
+\dfrac{y}{v+y} = \dfrac{\rho_1}{\rho_1+(1-\rho_1)\rho_2\rho_3}.
+\]</div>
+<p>一方面，对于所有 <span class="arithmatex">\(\alpha\in(0,1-\sqrt{2}/2]\)</span>，都有</p>
+<div class="arithmatex">\[
+\dfrac{y}{v+y} &lt; \dfrac{\alpha}{\alpha+(1-\alpha)\dfrac{1}{2-\alpha}\alpha} \le 1-\alpha.
+\]</div>
+<p>另一方面，</p>
+<div class="arithmatex">\[
+\dfrac{y}{v+y} \ge \dfrac{\rho_1}{\rho_1+(1-\rho_1)(1-\alpha)^2}.
+\]</div>
+<p>右侧表达式不小于 <span class="arithmatex">\(\alpha\)</span>，当且仅当</p>
+<div class="arithmatex">\[
+\rho_1 \ge \dfrac{\alpha(1-\alpha)}{1+\alpha(1-\alpha)}.
+\]</div>
+<p>如果失衡是由插入引起的，那么 <span class="arithmatex">\(\rho_1\ge \alpha/(1+\alpha)\)</span>，显然成立。否则，情形有些复杂：</p>
+<ul>
+<li>当 <span class="arithmatex">\(y\ge 3\)</span> 时，<span class="arithmatex">\(\rho_1\ge 3\alpha/(4-\alpha)\)</span>，且 <span class="arithmatex">\(3\alpha/(4-\alpha)\ge\alpha(1-\alpha)/(1+\alpha(1-\alpha))\)</span> 对于所有 <span class="arithmatex">\(\alpha\in[1-\sqrt{3}/2,1)\)</span> 都成立；</li>
+<li>当 <span class="arithmatex">\(y=2\)</span> 时，最可能失衡的情形发生在 <span class="arithmatex">\(x=\lfloor 3/\alpha\rfloor-3\)</span>，<span class="arithmatex">\(w=\lfloor(1-\alpha)x\rfloor\)</span> 且 <span class="arithmatex">\(v=\lfloor(1-\alpha)w\rfloor\)</span> 时，此时 <span class="arithmatex">\(v/(v+y)\ge\alpha\)</span> 对于所有 <span class="arithmatex">\(\alpha\in(3/22,1)\)</span> 都成立；</li>
+<li>当 <span class="arithmatex">\(y=1\)</span> 时，最可能失衡的情形发生在 <span class="arithmatex">\(x=\lfloor 2/\alpha\rfloor-2\)</span>，<span class="arithmatex">\(w=\lfloor(1-\alpha)x\rfloor\)</span> 且 <span class="arithmatex">\(v=\lfloor(1-\alpha)w\rfloor\)</span> 时，此时 <span class="arithmatex">\(v/(v+y)\ge\alpha\)</span> 对于所有 <span class="arithmatex">\(\alpha\in(2/11,1)\)</span> 都成立。</li>
+</ul>
+<p>最后两种情形的讨论，同样利用了所有节点的权重都是整数这一点。</p>
+</details>
+<p>综合两种情形，当 <span class="arithmatex">\(\alpha\in(2/11,1-\sqrt{2}/2]\)</span> 时，前述单旋和双旋结合的策略可以保证树的平衡。</p>
+<p>从这个分析过程中可以看出，最难保持平衡的情形发生在从小规模的树中删除节点时。除了 <span class="arithmatex">\(\beta=1/(2-\alpha)\)</span> 之外，对于其他参数的选择的正确性证明，同样可以重复上述的过程，只是用到的一些不等式需要相应地调整。</p>
+</details>
+<p>随后，Hirai 和 Yamamoto 通过机器证明完整地确定了所有可行的 <span class="arithmatex">\((\alpha,\beta)\)</span> 的范围，结果是一个相当复杂的二维图形：</p>
+<p><img alt="" src="../images/wblt-param-range.svg" /></p>
+<p>他们在文章中推荐使用如下策略维持平衡：</p>
+<ul>
+<li>当 <span class="arithmatex">\(x&gt;3y\)</span> 时，判断失衡；</li>
+<li>当 <span class="arithmatex">\(w\le 2z\)</span> 时，选取单旋策略，否则，选取双旋策略。</li>
+</ul>
+<p>原因是，这是可行的参数范围内唯一可以用简单整数表示的策略，从而避免了浮点数运算造成的效率损失。他们推荐的策略相当于取 <span class="arithmatex">\((\alpha,\beta)=(1/4,2/3)\)</span>。实践中，可以根据具体情况，选择合适的参数。</p>
+<p>参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>实现了维护平衡的策略后，合并两树的算法就非常简单。仍然设 <span class="arithmatex">\(x&gt;y\)</span>，合并的策略如下：</p>
+<ul>
+<li>如果右子树 <span class="arithmatex">\(y\)</span> 是空的，直接返回左子树 <span class="arithmatex">\(x\)</span>；</li>
+<li>如果左右子树 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 已经平衡，即 <span class="arithmatex">\(y\ge\alpha(x+y)\)</span>，直接连接两子树；</li>
+<li>否则，将 <span class="arithmatex">\(x\)</span> 的右子树 <span class="arithmatex">\(w\)</span> 与 <span class="arithmatex">\(y\)</span> 合并，将左子树 <span class="arithmatex">\(z\)</span> 与它们合并的结果连接，并调整新树的平衡。</li>
+</ul>
+<p>参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>可以证明，这样可以维持合并后树的平衡，且这样操作的复杂度是 <span class="arithmatex">\(O(|\log(x/y)|)\)</span> 的。</p>
+<details class="note">
+<summary>平衡和复杂度的证明</summary>
+<p>只需要考虑 <span class="arithmatex">\(y\)</span> 过轻的情形，即 <span class="arithmatex">\(y&lt;\alpha(x+y)\)</span>。此时，先合并 <span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(y\)</span>，再连接 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span>。需要证明的是，只要在树根处调整树的平衡，就能够保证树的平衡。假设树 <span class="arithmatex">\(w+y\)</span> 的左、右子树分别是 <span class="arithmatex">\(c\)</span> 和 <span class="arithmatex">\(d\)</span>，且 <span class="arithmatex">\(c\)</span> 的左、右子树分别是 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span>。在树根处调整平衡，可以分为三种情形：</p>
+<details class="note">
+<summary> 情形一：<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span> 已经平衡，无需进一步调整，即 <span class="arithmatex">\(z\ge\alpha(x+y)\)</span></summary>
+<p>根据平衡的定义，子树 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span> 都是平衡的，且它们互相也是平衡的，那么整棵树也是平衡的。</p>
+</details>
+<details class="note">
+<summary> 情形二：<span class="arithmatex">\(z\)</span> 过轻且 <span class="arithmatex">\(c\)</span> 没有过重，可以通过单旋恢复平衡，即 <span class="arithmatex">\(z&lt;\alpha(x+y)\)</span> 且 <span class="arithmatex">\(c\le\beta(w+y)\)</span></summary>
+<p>此时，因为 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w\)</span> 平衡，但 <span class="arithmatex">\(y\)</span> 相较于 <span class="arithmatex">\(x = z+w\)</span> 过轻，所以，子树 <span class="arithmatex">\(z\)</span> 的权重满足</p>
+<div class="arithmatex">\[
+\alpha(1-\alpha)(x+y) &lt;  \alpha(z+w) \le z \le \alpha(x+y) .
+\]</div>
+<p>而 <span class="arithmatex">\(c\)</span> 的权重则满足</p>
+<div class="arithmatex">\[
+\alpha(w+y) \le c \le \beta(w+y).
+\]</div>
+<p>由此，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(c\)</span> 互相平衡，只要</p>
+<div class="arithmatex">\[
+\dfrac{\alpha}{1-\alpha}&lt;\dfrac{1-\alpha}{\alpha}\alpha&lt;\dfrac{c}{z}=\dfrac{w+y}{z}\dfrac{c}{w+y} &lt; \dfrac{1-\alpha(1-\alpha)}{\alpha(1-\alpha)}\beta\le\dfrac{1-\alpha}{\alpha},
+\]</div>
+<p>这要求</p>
+<div class="arithmatex">\[
+\beta\le \dfrac{(1-\alpha)^2}{1-\alpha(1-\alpha)}.
+\]</div>
+<p>以及 <span class="arithmatex">\(z+c\)</span> 和 <span class="arithmatex">\(d\)</span> 互相平衡，只要</p>
+<div class="arithmatex">\[
+\alpha\le (1-\beta)(1-\alpha)\le \dfrac{d}{w+y}\dfrac{w+y}{x+y}  = \dfrac{d}{x+y} &lt; \dfrac{d}{c+d} \le 1-\alpha,
+\]</div>
+<p>这要求</p>
+<div class="arithmatex">\[
+\beta \le \dfrac{1-2\alpha}{1-\alpha}.
+\]</div>
+</details>
+<details class="note">
+<summary> 情形三：<span class="arithmatex">\(z\)</span> 过轻且 <span class="arithmatex">\(c\)</span> 过重，可以通过双旋恢复平衡，即 <span class="arithmatex">\(z&lt;\alpha(x+y)\)</span> 且 <span class="arithmatex">\(c&gt;\beta(w+y)\)</span></summary>
+<p>类似情形二，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\alpha(1-\alpha)(x+y) &lt; z &amp;\le \alpha(x+y),\\
+\beta(w+y)&lt;c &amp;\le (1-\alpha)(w+y),\\
+\alpha c\le a,b &amp;\le (1-\alpha)c.
+\end{aligned}
+\]</div>
+<p>由此，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(a\)</span> 互相平衡，只要</p>
+<div class="arithmatex">\[
+\dfrac{\alpha}{1-\alpha}\le\dfrac{1-\alpha}{\alpha}\beta\alpha\le\dfrac{a}{z} = \dfrac{w+y}{z}\dfrac{a}{c+d} &lt; \dfrac{1-\alpha(1-\alpha)}{\alpha(1-\alpha)}(1-\alpha)^2,
+\]</div>
+<p>这要求</p>
+<div class="arithmatex">\[
+\beta\ge\dfrac{\alpha}{(1-\alpha)^2}.
+\]</div>
+<p>其次，<span class="arithmatex">\(b\)</span> 和 <span class="arithmatex">\(d\)</span> 互相平衡，只要</p>
+<div class="arithmatex">\[
+\dfrac{\alpha}{1-\alpha}\le\dfrac{\beta}{1-\beta}\alpha \le \dfrac{b}{d} = \dfrac{c}{d}\dfrac{b}{c} \le \dfrac{1-\alpha}{\alpha}(1-\alpha) &lt; \dfrac{1-\alpha}{\alpha},
+\]</div>
+<p>这要求</p>
+<div class="arithmatex">\[
+\beta\ge\dfrac{1}{2-\alpha}.
+\]</div>
+<p>最后，<span class="arithmatex">\(z+a\)</span> 和 <span class="arithmatex">\(b+d\)</span> 互相平衡，只要</p>
+<div class="arithmatex">\[
+\alpha&lt;(1-\alpha)(1-(1-\alpha)^2)\le\frac{b+d}{x+y} = \dfrac{w+y}{x+y}\dfrac{b+d}{w+y} &lt; (1-\alpha(1-\alpha))(1-\beta\alpha) \le 1-\alpha,
+\]</div>
+<p>这要求</p>
+<div class="arithmatex">\[
+\beta\ge\dfrac{\alpha}{1-\alpha+\alpha^2}.
+\]</div>
+</details>
+<p>综合三种情形，只要</p>
+<div class="arithmatex">\[
+0&lt;\alpha\le 1-\dfrac{\sqrt{2}}{2},~\dfrac{1}{2-\alpha}\le\beta\le\dfrac{1-2\alpha}{1-\alpha},
+\]</div>
+<p>就能保证合并后的树可以利用单旋和双旋结合的策略调整到平衡。这显然包含正文给出的参数范围。</p>
+<p>最后，简单说明一下该算法的复杂度为什么是 <span class="arithmatex">\(O(|\log(x/y)|)\)</span> 的。合并的流程中，如果 <span class="arithmatex">\(y\)</span> 相较于 <span class="arithmatex">\(x\)</span> 过轻，就尝试与 <span class="arithmatex">\(x\)</span> 的右子树合并，这个过程一直持续到以 <span class="arithmatex">\(x\)</span> 某个子孙节点为根的子树与 <span class="arithmatex">\(y\)</span> 平衡为止。因为每向下加深一层，子树权重至少变为原来的 <span class="arithmatex">\((1-\alpha)\)</span>，所以至多只要 <span class="arithmatex">\(\log_{\frac{1}{1-\alpha}}(x/y)\)</span> 次迭代，就能找到与 <span class="arithmatex">\(y\)</span> 平衡的子树。因此，该合并算法调用 <span class="arithmatex">\(O(\log n)\)</span> 次平衡算法<sup id="fnref:merge-complexity-cmp"><a class="footnote-ref" href="#fn:merge-complexity-cmp">2</a></sup>，复杂度也就是 <span class="arithmatex">\(O(\log n)\)</span>。</p>
+<p>虽然并不明显，但是这个论证过程依赖于这样一个结论：不断取右子树的过程中，<span class="arithmatex">\(y\)</span> 不会在一次迭代前后，从相较于左侧的子树过轻，变为相较于它过重。这是因为能够与 <span class="arithmatex">\(y\)</span> 平衡的子树权重范围位于 <span class="arithmatex">\(\alpha y/(1-\alpha)\)</span> 与 <span class="arithmatex">\((1-\alpha)y/\alpha\)</span> 之间。因此，如果在一次迭代时，就从 <span class="arithmatex">\(y\)</span> 过轻变成 <span class="arithmatex">\(y\)</span> 过重，则 <span class="arithmatex">\(x\)</span> 的子树的权重在该次迭代过程中至少缩小到了原来的 <span class="arithmatex">\(\alpha^2/(1-\alpha)^2\)</span> 倍。但是，单次迭代，子树权重至多只能缩小到原来的 <span class="arithmatex">\(\alpha\)</span> 倍，但是在上述 <span class="arithmatex">\(\alpha\)</span> 的范围中，<span class="arithmatex">\(\alpha&gt;\alpha^2/(1-\alpha)^2\)</span>。这说明，前设情形是不可能的，某次迭代之后一定会有 <span class="arithmatex">\(y\)</span> 与 <span class="arithmatex">\(x\)</span> 的某个子树平衡的情形发生。</p>
+</details>
+<h3 id="_7">通过合并维护<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>合并两子树是指，保证左子树的键值总是不大于右子树的键值的情况下，建立新树，使其所有叶子节点的信息恰为左右子树叶子节点信息的并，且保证树的平衡。</p>
+<p>为此，有如下策略<sup id="fnref:more-join"><a class="footnote-ref" href="#fn:more-join">3</a></sup>：（仍然设 <span class="arithmatex">\(x&gt;y\)</span>）</p>
+<ul>
+<li>如果右子树 <span class="arithmatex">\(y\)</span> 是空的，直接返回左子树 <span class="arithmatex">\(x\)</span>；</li>
+<li>如果左右子树 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 已经平衡，即 <span class="arithmatex">\(y\ge\alpha(x+y)\)</span>，直接连接两子树；</li>
+<li>否则，右子树 <span class="arithmatex">\(y\)</span> 过轻，但如果 <span class="arithmatex">\(x\)</span> 的左子树 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span> 可以平衡，即 <span class="arithmatex">\(z\ge\alpha(x+y)\)</span>，就将 <span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(y\)</span> 先合并，再合并 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span>；</li>
+<li>否则，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(y\)</span> 都过轻，此时，需要首先合并 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w\)</span> 的左子树 <span class="arithmatex">\(u\)</span>，再合并 <span class="arithmatex">\(w\)</span> 的右子树 <span class="arithmatex">\(v\)</span> 和 <span class="arithmatex">\(y\)</span>，再将两次合并的结果 <strong>合并</strong> 为新树。</li>
+</ul>
+<p>将这一策略与前文的平衡策略对比，可以看到后两种情形中节点的组合方式分别和前述平衡策略中单旋和双旋的结果相似，只是将子树的连接换作了合并。</p>
+<p>可以证明，当</p>
+<div class="arithmatex">\[
+0&lt;\alpha \le 1-\dfrac{\sqrt{2}}{2}\approx 0.292
+\]</div>
+<p>时，这样得到的树总是平衡的，且这样操作的复杂度是 <span class="arithmatex">\(O(|\log(x/y)|)\)</span> 的。也就是说，合并两个树的成本，与两个树的绝对大小无关，而只与它们的相对大小有关。</p>
+<details class="note">
+<summary>平衡和复杂度的证明</summary>
+<p>设合并权重分别为 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的两棵子树时，需要直接连接两棵子树的次数为 <span class="arithmatex">\(\tau(x,y)\)</span>。严格来说，需要证明当 <span class="arithmatex">\(0&lt;\alpha\le 1-\sqrt{2}/2\)</span> 时，存在常数 <span class="arithmatex">\(C&gt;0\)</span>，对于任意 <span class="arithmatex">\(x&gt;y&gt;0\)</span>，都有</p>
+<div class="arithmatex">\[
+\tau(x,y) \le 1+C\log^+\dfrac{\alpha x}{(1-\alpha)^2y},
+\]</div>
+<p>其中，<span class="arithmatex">\(\log^+ x = \max\{0,\log x\}\)</span>；而且，对于所有 <span class="arithmatex">\(x/y\le(1-\alpha)/\alpha\)</span>，都有 <span class="arithmatex">\(\tau(x,y)=1\)</span>。实际上，式子中的常数可以取作</p>
+<div class="arithmatex">\[
+C = -\dfrac{2}{\log(1-\alpha)}.
+\]</div>
+<p>这就说明了合并算法的复杂度是 <span class="arithmatex">\(O(|\log(x/y)|)\)</span> 的。</p>
+<p>为了证明合并算法得到的树总是平衡的，且上述复杂度的表达式成立，需要使用归纳法。对于所有第一象限的格点 <span class="arithmatex">\((x,y)\in\mathbf N^2_+\)</span>，可以赋以 <span class="arithmatex">\((x+y,|x-y|)\)</span> 的字典序，这显然是该集合上的良序，可以沿着该顺序进行归纳。归纳起点是 <span class="arithmatex">\((x,y)=(1,1)\)</span>，此时，两子树都只有一个叶子节点，直接连接得到的子树必然是平衡的，且 <span class="arithmatex">\(\tau(x,y)=1\)</span>，符合上式。下面假设归纳进行到 <span class="arithmatex">\((x,y)\)</span>，且结论对于所有 <span class="arithmatex">\((x,y)\)</span> 之前的点都成立。这分为三种情形：</p>
+<details class="note">
+<summary> 情形一：树 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 平衡，即 <span class="arithmatex">\(y\ge\alpha(x+y)\)</span></summary>
+<p>此时，直接连接得到树也是平衡的，且只调用树的连接算法一次，所以有 <span class="arithmatex">\(\tau(x,y)=1\)</span>。</p>
+</details>
+<details class="note">
+<summary> 情形二：树 <span class="arithmatex">\(y\)</span> 过轻，但是 <span class="arithmatex">\(z\)</span> 并不过轻，即 <span class="arithmatex">\(y&lt;\alpha(x+y)\le z\)</span></summary>
+<p>此时，首先合并 <span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(y\)</span>，然后合并 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span>，所以</p>
+<div class="arithmatex">\[
+\tau(x,y) = \tau(w,y) + \tau(z,w+y).
+\]</div>
+<p>由归纳假设，子树 <span class="arithmatex">\(w+y\)</span> 已经是平衡的。对于第二步合并，其实可以直接证明证明 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span> 是平衡的：</p>
+<div class="arithmatex">\[
+\alpha \le \dfrac{z}{z+(w+y)} = \dfrac{z}{x+y} &lt; \dfrac{z}{z+w} \le 1-\alpha.
+\]</div>
+<p>因此，合并 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span> 其实是直接连接两个子树，有 <span class="arithmatex">\(\tau(z,w+y) = 1\)</span>。因此，最后得到的树也是平衡的。</p>
+<p>现在估计 <span class="arithmatex">\(\tau(w,y)\)</span> 的大小。因为 <span class="arithmatex">\(y&gt;(\alpha/(1-\alpha))x\)</span> 且 <span class="arithmatex">\(\alpha x\le w\le(1-\alpha)x\)</span>，所以，经放缩可知</p>
+<div class="arithmatex">\[
+\dfrac{\alpha}{1-\alpha}&lt;1-\alpha=\dfrac{\alpha x}{(\alpha/(1-\alpha))x}&lt; \dfrac{w}{y} \le \dfrac{(1-\alpha)x}{y}.
+\]</div>
+<p>这说明，<span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(y\)</span> 不平衡，只出现在 <span class="arithmatex">\(w&gt;y\)</span> 时，所以，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\tau(w,y) &amp;\le 1+C\log^+\dfrac{\alpha w}{(1-\alpha)^2y} \le 1+C\log^+\dfrac{\alpha x}{(1-\alpha)y} \\
+&amp;= 1 + C\log(1-\alpha) + C\log^+\dfrac{\alpha x}{(1-\alpha)^2y}.
+\end{aligned}
+\]</div>
+<p>最后一步的等式成立，是因为 <span class="arithmatex">\(x/y&gt;(1-\alpha)/\alpha\)</span>。</p>
+<p>因此，有</p>
+<div class="arithmatex">\[
+\tau(x,y) \le 2 + C\log(1-\alpha) + C\log^+\dfrac{\alpha x}{(1-\alpha)^2y}.
+\]</div>
+</details>
+<details class="note">
+<summary> 情形三：树 <span class="arithmatex">\(y\)</span> 和 <span class="arithmatex">\(z\)</span> 都过轻，即 <span class="arithmatex">\(y,z&lt;\alpha(x+y)\)</span></summary>
+<p>此时，首先合并 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(u\)</span>，再合并 <span class="arithmatex">\(v\)</span> 和 <span class="arithmatex">\(y\)</span>，最后合并 <span class="arithmatex">\(z+u\)</span> 和 <span class="arithmatex">\(v+y\)</span>。因此，</p>
+<div class="arithmatex">\[
+\tau(x,y) = \tau(z,u) + \tau(v,y) + \tau(z+u,v+y).
+\]</div>
+<p>类似前文情形，可以估计每一步合并时两个子树的权重比值。</p>
+<p>因为 <span class="arithmatex">\(z,y&lt;\alpha(x+y)\)</span>，所以 <span class="arithmatex">\(w&gt;(1-2\alpha)(x+y)\)</span>。同时，利用平衡条件，有 <span class="arithmatex">\(\alpha\le z/x,w/x,u/w,v/w\le 1-\alpha\)</span>。这说明</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\dfrac{\alpha}{1-\alpha}&lt;\dfrac{\alpha}{1-\alpha}\frac{1}{1-\alpha}\le \dfrac{z}{u} &amp;= \dfrac{z}{w}\dfrac{w}{u} &lt; \dfrac{\alpha}{1-2\alpha}\dfrac{1}{\alpha} \le \dfrac{1-\alpha}{\alpha},\\
+\dfrac{\alpha}{1-\alpha}\le\alpha\dfrac{1-2\alpha}{\alpha}&lt; \dfrac{v}{y} &amp;= \dfrac{v}{w}\dfrac{w}{y} \le (1-\alpha)\dfrac{(1-\alpha)x}{y} = (1-\alpha)^2\dfrac{x}{y}.
+\end{aligned}
+\]</div>
+<p>对于最后一项，有</p>
+<div class="arithmatex">\[
+\dfrac{z+u}{v+y} = \dfrac{x+y}{v+y}-1 = \dfrac{x+y}{y}\dfrac{y}{v+y} - 1 &lt; (1-\alpha)\left(\dfrac{x}{y}+1\right)-1 &lt; (1-\alpha)\dfrac{x}{y}.
+\]</div>
+<p>反过来，有</p>
+<div class="arithmatex">\[
+\dfrac{z+u}{v+y} = \dfrac{x+y}{v+y}-1 \ge \dfrac{x+y}{(1-\alpha)^2x+y}-1 &gt; \dfrac{1}{(1-\alpha)^3+\alpha}-1 &gt; \dfrac{\alpha}{1-\alpha}.
+\]</div>
+<p>利用这些不等式，可以说明最后得到的树必然是平衡的。利用归纳假设可知，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(u\)</span> 合并，<span class="arithmatex">\(v\)</span> 和 <span class="arithmatex">\(y\)</span> 合并，都可以保证得到的树是平衡的。而且，其中第一步 <span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(u\)</span> 合并实际上是直接连接两棵树。对于树 <span class="arithmatex">\(z+u\)</span> 和树 <span class="arithmatex">\(v+y\)</span> 的合并，又有两种子情形：</p>
+<ul>
+<li>如果 <span class="arithmatex">\(z+u\le v+y\)</span>，那么它们的权重比值严格大于 <span class="arithmatex">\(\alpha/(1-\alpha)\)</span>，故而可以直接连接，结果是平衡的；</li>
+<li>否则，它们的权重比值必然严格小于 <span class="arithmatex">\(x/y\)</span>，但是 <span class="arithmatex">\((z+u)+(v+y)=x+y\)</span>，所以 <span class="arithmatex">\(|(z+u)-(v+y)|&lt;|x-y|\)</span>，由前文给出的字典序判断，这种情形也可以应用归纳假设，结果也是平衡的。</li>
+</ul>
+<p>进一步应用归纳假设可知：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\tau(z,u) &amp;= 1,\\
+\tau(v,y) &amp;\le 1+C\log^+\dfrac{\alpha x}{y},\\
+\tau(z+u,v+y) &amp;\le 1 + C\log^+\dfrac{\alpha x}{(1-\alpha)y}.
+\end{aligned}
+\]</div>
+<p>三个不等式直接相加，会导致对数项前面的系数变成 <span class="arithmatex">\(2C\)</span>，无法完成归纳。因此，此处需要更为细致的估计。</p>
+<p>当 <span class="arithmatex">\(\max\{v/y,(z+u)/(v+y)\}\le(1-\alpha)/\alpha\)</span> 时，<span class="arithmatex">\(\tau(v,y)\)</span> 和 <span class="arithmatex">\(\tau(z+u,v+y)\)</span> 中必然有一项为 <span class="arithmatex">\(1\)</span>，所以，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\tau(v,y) + \tau(z+u,v+y) &amp;\le 2 + C\log^+\dfrac{\alpha x}{(1-\alpha)y}\\
+&amp;= 2 + C\log(1-\alpha) + C\log^+\dfrac{\alpha x}{(1-\alpha)^2y}.
+\end{aligned}
+\]</div>
+<p>否则，应该有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\tau(v,y) + \tau(z+u,v+y) 
+&amp;\le 2 + C\log^+\dfrac{\alpha v}{(1-\alpha)^2y} + C\log^+\dfrac{\alpha(z+u)}{(1-\alpha)^2(v+y)}\\
+&amp;= 2 + C\log\dfrac{\alpha}{(1-\alpha)^2} + C\log^+\dfrac{\alpha v(z+u)}{(1-\alpha)^2y(v+y)}.
+\end{aligned}
+\]</div>
+<p>对于 <span class="arithmatex">\(0&lt;\alpha\le 1-\sqrt{2}/2\)</span>，有</p>
+<div class="arithmatex">\[
+\dfrac{\alpha}{(1-\alpha)^2} &lt; 1-\alpha.
+\]</div>
+<p>而且，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\dfrac{v(z+u)}{y(v+y)} &amp;= \left(\dfrac{v+y}{y}-1\right)\left(\dfrac{x+y}{y}\dfrac{y}{v+y} - 1\right) \\
+&amp;= \dfrac{x+y}{y} + 1 -\dfrac{x+y}{y}\dfrac{y}{v+y}-\dfrac{v+y}{y} &lt; \dfrac{x}{y}.
+\end{aligned}
+\]</div>
+<p>这就说明，对于后面这种情形，也有</p>
+<div class="arithmatex">\[
+\tau(v,y) + \tau(z+u,v+y) &lt; 2 + C\log(1-\alpha) + C\log^+\dfrac{\alpha x}{(1-\alpha)^2y}.
+\]</div>
+<p>整体的合并复杂度为</p>
+<div class="arithmatex">\[
+\tau(x,y) \le 3 + C\log(1-\alpha) + C\log^+\dfrac{\alpha x}{(1-\alpha)^2y}.
+\]</div>
+</details>
+<p>综合所有情形，有</p>
+<div class="arithmatex">\[
+\tau(x,y) \le 3 + C\log(1-\alpha) + C\log^+\dfrac{\alpha x}{(1-\alpha)^2y}.
+\]</div>
+<p>因此，只要取 <span class="arithmatex">\(2+C\log(1-\alpha)\le 0\)</span>，就可以完成复杂度的归纳。一个显然的选择为</p>
+<div class="arithmatex">\[
+C = -\dfrac{2}{\log(1-\alpha)}.
+\]</div>
+<p>这个常数说明，两个树合并时，直接连接子树的次数大致不会超过树高差值的二倍。</p>
+</details>
+<p>参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>利用该合并策略，同样可以很容易实现树的平衡维护：失衡时，直接合并左右子树即可。</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>因为需要再平衡的两个树的大小总是近乎平衡的，因此维护平衡的复杂度是 <span class="arithmatex">\(O(1)\)</span> 的。</p>
+<h2 id="_8">平衡树基础操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>利用前文实现的函数，WBLT 可以支持平衡树的所有基础操作。本节以可重集为例，讨论 WBLT 实现平衡树的方法。</p>
+<h3 id="_9">建树<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>建树操作与线段树十分相似，只需要向下递归二分区间，直至区间长度为 <span class="arithmatex">\(1\)</span> 时把要维护的信息放叶子节点上，回溯的时候合并区间信息即可。</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<h3 id="_10">插入与删除<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>对于插入操作，需要从根节点开始向下递归，直到找到权值大于等于插入元素的权值最小的叶子节点，再新建两个节点，其中一个用来存储新插入的值，另一个作为两个叶子的新父亲替代这个最小叶子节点的位置，再将这两个叶子连接到这个父亲上。回溯时，需要维护树的平衡。</p>
+<p><img alt="" src="../images/wblt-insert-delete.svg" /></p>
+<p>如图所示，要向左侧的树中插入值为 <span class="arithmatex">\(4\)</span> 的元素。首先找到值为 <span class="arithmatex">\(5\)</span> 的叶子节点，然后新建叶子节点 <span class="arithmatex">\(4\)</span> 和非叶子节点 <span class="arithmatex">\(\text{d}\)</span>，并将 <span class="arithmatex">\(4\)</span> 和 <span class="arithmatex">\(5\)</span> 连接到 <span class="arithmatex">\(\text{d}\)</span> 上。这就得到右侧的树。</p>
+<p>对于删除，考虑上面过程的逆过程。即找到与要删除的值权值相等的一个叶子节点，将它和它的父亲节点删除，并用其父亲的另一个儿子代替父亲的位置。回溯时，同样需要维护树的平衡。</p>
+<p>参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>注意空树的处理。如果不想处理空树，可以提前向树内插入 <span class="arithmatex">\(\infty\)</span> 元素。</p>
+<p>两种操作的时间复杂度均为 <span class="arithmatex">\(O(\log n)\)</span>。</p>
+<h3 id="_11">查询排名<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>因为 WBLT 的形态和线段树十分相似，因此查询排名可以使用类似线段树上二分的方式：如果左子树的最大值大于等于待查值就往左子节点跳；否则，就向右子节点跳，同时答案加上左子树的权重。</p>
+<p>参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>时间复杂度为 <span class="arithmatex">\(O(\log n)\)</span>。</p>
+<h3 id="_12">根据排名查询<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>依然是利用线段树上二分的思想，只不过这里比较的是节点的权重。</p>
+<p>参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>时间复杂度为 <span class="arithmatex">\(O(\log n)\)</span>。</p>
+<h3 id="_13">查找前驱、后继<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>以上两种功能结合即可。</p>
+<p>参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>如果想直接实现，需要注意键值相同的节点可能存储于多个叶子节点。</p>
+<h3 id="_14">分裂操作<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>WBLT 的分裂与 <a href="../treap/#分裂split">无旋 Treap</a> 类似，根据子树大小或权值决定向下递归分裂左子树或右子树。不同的是，WBLT 需要对分裂出来的子树进行 <strong>合并</strong>，以维护最终分裂的树的平衡。</p>
+<p>根据子树大小分裂的参考实现如下：</p>
+<details class="example" open="open">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>时间复杂度为 <span class="arithmatex">\(O(\log n)\)</span>。</p>
+<details class="note">
+<summary>复杂度证明</summary>
+<p>向下递归的层数显然不超过树高，是 <span class="arithmatex">\(O(\log n)\)</span> 的。需要证明的是，将左右两侧分裂出来的子树分别合并起来的复杂度是 <span class="arithmatex">\(O(\log n)\)</span> 的。不妨仅考虑左侧的子树，因为右侧是对称的。设左侧分裂出来的子树自下而上分别是 <span class="arithmatex">\(T_1,T_2,\cdots,T_\ell\)</span>，这些子树的数量 <span class="arithmatex">\(\ell\in O(\log n)\)</span>。合并的过程可以描述为，自 <span class="arithmatex">\(T'_1=T_1\)</span> 开始，将 <span class="arithmatex">\(T'_{i-1}\)</span> 与 <span class="arithmatex">\(T_i\)</span> 合并得到 <span class="arithmatex">\(T'_i\)</span>，递归地合并完所有子树为止。合并的总复杂度可以表示为</p>
+<div class="arithmatex">\[
+\sum_{i=2}^\ell \tau(T_i,T'_{i-1}),
+\]</div>
+<p>其中，<span class="arithmatex">\(\tau(T_i,T'_{i-1})\)</span> 是将 <span class="arithmatex">\(T_i\)</span> 和 <span class="arithmatex">\(T'_{i-1}\)</span> 合并起来的复杂度。</p>
+<p>如果总是有 <span class="arithmatex">\(w(T_i)\ge w(T'_{i-1})\)</span>，那么根据合并两子树的复杂度表达式，有</p>
+<div class="arithmatex">\[
+\tau(T_i,T'_{i-1}) \in O\left(\log\dfrac{w(T_i)}{w(T'_{i-1})}\right) \subseteq O\left(\log\dfrac{w(T'_i)}{w(T'_{i-1})}\right).
+\]</div>
+<p>因为这些大 <span class="arithmatex">\(O\)</span> 记号中的常数都是一致的，所以可以直接相加，裂项相消。</p>
+<p>但是，应该注意的是，<span class="arithmatex">\(w(T_i)\ge w(T'_{i-1})\)</span> 并不总是成立，因为 <span class="arithmatex">\(T'_{i-1}\)</span> 是从 <span class="arithmatex">\(T_i\)</span> 在原来的树中对应的右子树分裂出来的，而这个右子树可能比左子树 <span class="arithmatex">\(T_i\)</span> 更大。尽管如此，即使 <span class="arithmatex">\(T'_{i-1}\)</span> 比 <span class="arithmatex">\(T_i\)</span> 大，作为右子树的一部分，权重 <span class="arithmatex">\(w(T'_{i-1})\)</span> 也不会超过 <span class="arithmatex">\(w(T_i)\)</span> 的 <span class="arithmatex">\((1-\alpha)/\alpha\)</span> 倍，这意味着，此时 <span class="arithmatex">\(T'_{i-1}\)</span> 和 <span class="arithmatex">\(T_i\)</span> 一定是平衡的，合并的复杂度是 <span class="arithmatex">\(O(1)\)</span> 的。</p>
+<p>将这两种情形总结在一起，单次合并的复杂度可以写为</p>
+<div class="arithmatex">\[
+\tau(T_i,T'_{i-1}) \in O\left(\log\dfrac{w(T'_i)}{w(T'_{i-1})}\right) + O(1).
+\]</div>
+<p>由此，合并的总复杂度为</p>
+<div class="arithmatex">\[
+O\left(\sum_{i=2}^\ell\left( 1+\log\dfrac{w(T'_i)}{w(T'_{i-1})}\right) \right) \subseteq O(\ell+\log w(T'_\ell)) \subseteq O(\log n).
+\]</div>
+<p>这也说明，分裂算法的总复杂度是 <span class="arithmatex">\(O(\log n)\)</span> 的。</p>
+</details>
+<h2 id="_15">参考实现<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>本文介绍了如何利用 WBLT 完成平衡树的基本操作。下面是用 WBLT 实现的 <a href="https://loj.ac/p/104">普通平衡树模板</a>。</p>
+<details class="example">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>利用合并和分裂，也可以实现文艺平衡树。下面是用 WBLT 实现的 <a href="https://loj.ac/p/105">文艺平衡树模板</a>，需要在向下访问节点时下传懒标记。</p>
+<details class="example">
+<summary>参考代码</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>注意 WBLT 需要两倍的空间；涉及分裂与合并时，需要注意垃圾回收，及时回收无用的节点，否则空间不是线性的。</p>
+<h2 id="_16">参考资料与注释<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Weight-balanced_tree">Weight-balanced tree - Wikipedia</a></li>
+<li>Nievergelt, J.; Reingold, E. M. (1973). "Binary Search Trees of Bounded Balance". SIAM Journal on Computing. 2: 33–43.</li>
+<li>Blum, Norbert; Mehlhorn, Kurt (1980). "On the average number of rebalancing operations in weight-balanced trees". Theoretical Computer Science. 11 (3): 303–320.</li>
+<li>Hirai, Y.; Yamamoto, K. (2011). "Balancing weight-balanced trees". Journal of Functional Programming. 21 (3): 287.</li>
+<li>Blelloch, Guy E.; Ferizovic, Daniel; Sun, Yihan (2016), "Just Join for Parallel Ordered Sets", Symposium on Parallel Algorithms and Architectures, Proc. of 28<sup>th</sup> ACM Symp. Parallel Algorithms and Architectures (SPAA 2016), ACM, pp. 253–264.</li>
+<li>Straka, Milan. (2011). "Adams’Trees Revisited: Correctness Proof and Efficient Implementation." International Symposium on Trends in Functional Programming. Berlin, Heidelberg: Springer Berlin Heidelberg.</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:wrong-range">
+<p>Nievergelt 和 Reingold 的原始论文中给出的参数范围 <span class="arithmatex">\(\alpha &lt; 1-\dfrac{\sqrt{2}}{2},~\beta=\dfrac{1-2\alpha}{1-\alpha}\)</span> 是错误的。Hirai 和 Yamamoto 的文章中提供了相应的反例，问题主要出现在某些很小的树上，从而导致整个归纳证明失效。当然，实际算法竞赛中，很难造出能卡掉这些错误参数的数据，所以实践中可能并不会有太大影响。&#160;<a class="footnote-backref" href="#fnref:wrong-range" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:merge-complexity-cmp">
+<p>因为单次平衡操作至多相当于连接两次子树，而且最后两子树已经平衡时还需要调用一次连接子树的算法，所以如果以调用连接子树的算法的次数计算，基于平衡实现的合并操作和下文直接合并的平衡操作的算法的常数是一致的。&#160;<a class="footnote-backref" href="#fnref:merge-complexity-cmp" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:more-join">
+<p>通过稍后的证明可以看出：第三种情形中，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(w+y\)</span> 总是平衡的；第四种情形中，<span class="arithmatex">\(z\)</span> 和 <span class="arithmatex">\(u\)</span> 总是平衡的。它们都可以直接连接，而不需要合并。&#160;<a class="footnote-backref" href="#fnref:more-join" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <style>
+  .md-footer {
+      background-color: #f0f0f0;
+  }
+</style>
+
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; gzh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+      <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;color: #000;">
+        本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+        <span id="finicount_views"></span>    &nbsp;|&nbsp;
+        <footer>
+          <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+        </footer>
+      </div>
+      </font>
+
+        <style>
+          .footer-visit-count {
+              height: fit-content;
+              min-height: 55px; /* 根据实际情况调整此高度 */
+              color: #000;
+          }
+          </style>
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" rel="noopener" title="Wechat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/gongzihang" target="_blank" rel="noopener" title="telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ZihangGong28792" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<zihanggong24@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/688234000/lists" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+        
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。 如果你同意,你可以帮助我们让我们的网站更好</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../../../javascripts/config_mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../../../javascripts/简历.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3760 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="记录、分享">
+      
+      
+        <meta name="author" content="pw384, s0cks5, Watersail2005, Xeonacid">
+      
+      
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/Computer%20Science/Algorithm/docs/graph/matrix-tree/">
+      
+      
+      
+      
+      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Matrix tree - Blog of GZH</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/简历.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-40HC6RYSR1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-40HC6RYSR1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blog of GZH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Matrix tree
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6.5.5c12.4-13.1 22.5-28.3 29.8-45l-35.2.1h-72c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/ZH-TW/" hreflang="zh-TW" class="md-select__link">
+              China(TW)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MachineLearning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  每日诗词
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  长期主义
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../about/geren/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Blog of GZH
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java面向对象基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java集合框架与常用API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java高级技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode热题100
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode热题100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    字母异位词分组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交易逆序对的总数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单词接龙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    岛屿数量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分考场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    拉马车
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分巧克力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K倍区间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    编辑距离
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    接雨水
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组合总和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    全排列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    乘积最大子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. 最长回文子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前K个高频元素
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最小栈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pow(x,n)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络延迟时间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对角线上的质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    零钱兑换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    括号匹配
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300最长递增子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    115不同的子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    712两个字符串的最小ASCII删除和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    516最长回文子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    139单词拆分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    221最大正方形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2845统计趣味子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2799统计完全子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1399统计最大组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2338统计理想数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2179统计数组中好三元组数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2537统计好子数组的数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2140解决智力问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2278字母在字符串中的百分比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MachineLearning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MachineLearning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K近邻学习与降维
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    公式测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    经典卷积神经网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    理解YOLO网络结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    每日诗词
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            每日诗词
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·玉阑干外清江浦
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    菩萨蛮·回文夏闺怨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    清平乐·六盘山
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    洞仙歌·咏柳
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    秋兴八首·其一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    与史郎中钦听黄鹤楼上吹笛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    夏日南亭怀辛大
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    行香子·秋与
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自题金山画像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            长期主义
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fitness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/geren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作者个人简介
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简历
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../about/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    功能测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      本篇记号声明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="本篇记号声明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      无向图情况
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      有向图情况
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理叙述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理证明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定理证明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cauchybinet" class="md-nav__link">
+    <span class="md-ellipsis">
+      引理：Cauchy–Binet 公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      用关联矩阵刻画图的结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      带权有向图的矩阵树定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征值形式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cayley" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cayley 公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best" class="md-nav__link">
+    <span class="md-ellipsis">
+      BEST 定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      实现
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Matrix tree</h1>
+
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>矩阵树定理通过Laplace矩阵的行列式或特征值计算图的生成树数量，适用于无向图和有向图。无向图使用度数矩阵与邻接矩阵之差构建Laplace矩阵，其n-1阶主子式等于生成树个数。有向图分为根向和叶向树形图，分别通过出度/入度Laplace矩阵的主子式计算。定理证明基于Cauchy-Binet公式，统一处理带权图情形，为图论中的生成树计数提供了高效代数方法。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>12</strong> 分钟 | 中文字符：<strong>4993</strong> | 有效代码行数：<strong>78</strong></p>
+</div>
+<p>矩阵树定理解决了一张图的生成树个数计数问题。</p>
+<h2 id="_1">本篇记号声明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本篇中的图，无论无向还是有向，都允许重边，但是默认没有自环。</p>
+<details class="note">
+<summary>有自环的情形</summary>
+<p>自环并不影响生成树的个数，也不影响下文中 Laplace 矩阵的计算，故而矩阵树定理对有自环的情形依然成立。计算时不必删去自环。如果删去自环，会影响根据 BEST 定理应用矩阵树定理统计有向图的欧拉回路个数。</p>
+</details>
+<h3 id="_2">无向图情况<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>设 <span class="arithmatex">\(G\)</span> 是一个有 <span class="arithmatex">\(n\)</span> 个顶点的无向图。定义度数矩阵 <span class="arithmatex">\(D(G)\)</span> 为</p>
+<div class="arithmatex">\[
+D_{ii}(G) = \mathrm{deg}(i),\ D_{ij} = 0,\ i\neq j.
+\]</div>
+<p>设 <span class="arithmatex">\(\#e(i,j)\)</span> 为点 <span class="arithmatex">\(i\)</span> 与点 <span class="arithmatex">\(j\)</span> 相连的边数，并定义邻接矩阵 <span class="arithmatex">\(A\)</span> 为</p>
+<div class="arithmatex">\[
+A_{ij}(G)=A_{ji}(G)=\#e(i,j),\ i\neq j.
+\]</div>
+<p>定义 Laplace 矩阵（亦称 Kirchhoff 矩阵）<span class="arithmatex">\(L\)</span> 为</p>
+<div class="arithmatex">\[
+L(G) = D(G) - A(G).
+\]</div>
+<p>记图 <span class="arithmatex">\(G\)</span> 的所有生成树个数为 <span class="arithmatex">\(t(G)\)</span>。</p>
+<h3 id="_3">有向图情况<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>设 <span class="arithmatex">\(G\)</span> 是一个有 <span class="arithmatex">\(n\)</span> 个顶点的有向图。定义出度矩阵 <span class="arithmatex">\(D^{out}(G)\)</span> 为</p>
+<div class="arithmatex">\[
+D^\mathrm{out}_{ii}(G) = \mathrm{deg}^\mathrm{out}(i),\ D^\mathrm{out}_{ij} = 0,\ i\neq j.
+\]</div>
+<p>类似地定义入度矩阵 <span class="arithmatex">\(D^\mathrm{in}(G)\)</span>。</p>
+<p>设 <span class="arithmatex">\(\#e(i,j)\)</span> 为点 <span class="arithmatex">\(i\)</span> 指向点 <span class="arithmatex">\(j\)</span> 的有向边数，并定义邻接矩阵 <span class="arithmatex">\(A\)</span> 为</p>
+<div class="arithmatex">\[
+A_{ij}(G)=\#e(i,j),\ i\neq j.
+\]</div>
+<p>定义出度 Laplace 矩阵 <span class="arithmatex">\(L^\mathrm{out}\)</span> 为</p>
+<div class="arithmatex">\[
+L^\mathrm{out}(G) = D^\mathrm{out}(G) - A(G).
+\]</div>
+<p>定义入度 Laplace 矩阵 <span class="arithmatex">\(L^\mathrm{in}\)</span> 为</p>
+<div class="arithmatex">\[
+L^\mathrm{in}(G) = D^\mathrm{in}(G) - A(G).
+\]</div>
+<p>记图 <span class="arithmatex">\(G\)</span> 的以 <span class="arithmatex">\(k\)</span> 为根的所有根向树形图个数为 <span class="arithmatex">\(t^\mathrm{root}(G,k)\)</span>。所谓根向树形图，是说这张图的基图是一棵树，所有的边全部指向父亲。</p>
+<p>记图 <span class="arithmatex">\(G\)</span> 的以 <span class="arithmatex">\(k\)</span> 为根的所有叶向树形图个数为 <span class="arithmatex">\(t^\mathrm{leaf}(G,k)\)</span>。所谓叶向树形图，是说这张图的基图是一棵树，所有的边全部指向儿子。</p>
+<h2 id="_4">定理叙述<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>矩阵树定理具有多种形式。</p>
+<p>定义 <span class="arithmatex">\([n]=\{1,2,\cdots,n\}\)</span>，矩阵 <span class="arithmatex">\(A\)</span> 的子矩阵 <span class="arithmatex">\(A_{S,T}\)</span> 为选取 <span class="arithmatex">\(A_{i,j}\pod{i\in S,j\in T}\)</span> 的元素得到的子矩阵。</p>
+<details class="note" open="open">
+<summary>定理 1（矩阵树定理，无向图，行列式形式）</summary>
+<p>对于无向图 <span class="arithmatex">\(G\)</span> 和任意的 <span class="arithmatex">\(k\)</span>，都有</p>
+<div class="arithmatex">\[
+t(G) = \det L(G)_{[n]\setminus\{k\},[n]\setminus\{k\}}.
+\]</div>
+<p>也就是说，无向图的 Laplace 矩阵所有 <span class="arithmatex">\(n-1\)</span> 阶主子式都相等，且都等于图的生成树的个数。</p>
+</details>
+<details class="note" open="open">
+<summary>推论 1（矩阵树定理，无向图，特征值形式）</summary>
+<p>设 <span class="arithmatex">\(\lambda_1\ge\lambda_2\ge\cdots\ge\lambda_{n-1}\ge\lambda_n=0\)</span> 为 <span class="arithmatex">\(L(G)\)</span> 的 <span class="arithmatex">\(n\)</span> 个特征值，那么有</p>
+<div class="arithmatex">\[
+t(G) = \frac{1}{n}\lambda_1\lambda_2\cdots\lambda_{n-1}.
+\]</div>
+</details>
+<details class="note" open="open">
+<summary>定理 2（矩阵树定理，有向图根向树，行列式形式）</summary>
+<p>对于有向图 <span class="arithmatex">\(G\)</span> 和任意的 <span class="arithmatex">\(k\)</span>，都有</p>
+<div class="arithmatex">\[
+t^\mathrm{root}(G,k) = \det L^\mathrm{out}(G)_{[n]\setminus\{k\},[n]\setminus\{k\}}.
+\]</div>
+<p>也就是说，有向图的出度 Laplace 矩阵删去第 <span class="arithmatex">\(k\)</span> 行第 <span class="arithmatex">\(k\)</span> 列得到的主子式等于以 <span class="arithmatex">\(k\)</span> 为根的根向树形图的个数。</p>
+</details>
+<p>因此如果要统计一张图所有的根向树形图，只要枚举所有的根 <span class="arithmatex">\(k\)</span> 并对 <span class="arithmatex">\(t^\mathrm{root}(G,k)\)</span> 求和即可。</p>
+<details class="note" open="open">
+<summary>定理 3（矩阵树定理，有向图叶向树，行列式形式）</summary>
+<p>对于有向图 <span class="arithmatex">\(G\)</span> 和任意的 <span class="arithmatex">\(k\)</span>，都有</p>
+<div class="arithmatex">\[
+t^\mathrm{leaf}(G,k) = \det L^\mathrm{in}(G)_{[n]\setminus\{k\},[n]\setminus\{k\}}.
+\]</div>
+<p>也就是说，有向图的入度 Laplace 矩阵删去第 <span class="arithmatex">\(k\)</span> 行第 <span class="arithmatex">\(k\)</span> 列得到的主子式等于以 <span class="arithmatex">\(k\)</span> 为根的叶向树形图的个数。</p>
+</details>
+<p>因此如果要统计一张图所有的叶向树形图，只要枚举所有的根 <span class="arithmatex">\(k\)</span> 并对 <span class="arithmatex">\(t^\mathrm{leaf}(G,k)\)</span> 求和即可。</p>
+<details class="note" open="open">
+<summary>注</summary>
+<p>根向树形图也被称为内向树形图，但因为计算内向树形图用的是出度，为了不引起 <span class="arithmatex">\(\mathrm{in}\)</span> 和 <span class="arithmatex">\(\mathrm{out}\)</span> 的混淆，所以采用了根向这一说法。</p>
+</details>
+<h2 id="_5">定理证明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>观察上述定理形式极为相似，这里给出一种统一的证明方式，并且将之前的结论拓展到带权的图上。</p>
+<p>证明的大致思路如下：</p>
+<ul>
+<li>首先，所有情形都可以转化为计数有向图上根向树形图的情形；</li>
+<li>利用矩阵语言给出选出的若干边可以构成根向树形图的充要条件；</li>
+<li>将选边的操作利用 Cauchy–Binet 公式和 Laplace 矩阵的行列式联系起来；</li>
+<li>最后，将行列式形式的结论转化为特征值形式的结论。</li>
+</ul>
+<h3 id="cauchybinet">引理：Cauchy–Binet 公式<a class="headerlink" href="#cauchybinet" title="Permanent link">&para;</a></h3>
+<details class="note" open="open">
+<summary>引理 1（Cauchy–Binet）</summary>
+<p>给定 <span class="arithmatex">\(n\times m\)</span> 的矩阵 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(m\times n\)</span> 的矩阵 <span class="arithmatex">\(B\)</span>，则有</p>
+<div class="arithmatex">\[
+\det(AB)=\sum_{S\subset[m];~|S|=n}\det A_{[n],S}\det B_{S,[n]},
+\]</div>
+<p>这里求和记号的含义是，<span class="arithmatex">\(S\)</span> 取遍所有 <span class="arithmatex">\([m]\)</span> 中大小为 <span class="arithmatex">\(n\)</span> 的子集。如果 <span class="arithmatex">\(n&gt;m\)</span>，必然有 <span class="arithmatex">\(\det(AB)=0\)</span>。</p>
+</details>
+<details class="note">
+<summary>证明（组合视角）</summary>
+<p>参考 <a href="https://loj.ac/p/3533">「NOI2021」路径交点</a> 的模型，首先考虑行列式的如下组合意义。对于 <span class="arithmatex">\(n\times n\)</span> 阶矩阵 <span class="arithmatex">\(C\)</span>，建立有向无环图 <span class="arithmatex">\(G=(V,E)\)</span>。其中，顶点集为 <span class="arithmatex">\(V=[2]\times[n]\subset\mathbb R^2\)</span>，亦即平面上的两列点。记左侧一列点为 <span class="arithmatex">\(L=\{l_i=(1,i):i\in[n]\}\)</span>，右侧的一列点为 <span class="arithmatex">\(R=\{r_i=(2,i):i\in[n]\}\)</span>；而有向边集为 <span class="arithmatex">\(E=\{(l_i,r_j):i,j\in[n]\}\)</span>，并赋有边权 <span class="arithmatex">\(w(l_i,r_j)=C_{i,j}\)</span>。在图中，称大小为 <span class="arithmatex">\(n\)</span> 的边的子集 <span class="arithmatex">\(E^\sigma\subset E\)</span> 为一个路径组，如果它的起点互不相同，且终点也互不相同。显然，路径组 <span class="arithmatex">\(E^\sigma\)</span> 和 <span class="arithmatex">\([n]\)</span> 上的置换 <span class="arithmatex">\(\sigma\)</span> 可以一一对应。注意到，如果将一个路径组在平面上画出，这些边之间可能会两两相交，而这些交点的数目（计重数）就等于 <span class="arithmatex">\(\sigma\)</span> 的逆序数。这是因为边 <span class="arithmatex">\((l_i,r_{\sigma(i)})\)</span> 和边 <span class="arithmatex">\((l_j,r_{\sigma(j)})\)</span> 相交，当且仅当 <span class="arithmatex">\((i-j)(\sigma(i)-\sigma(j))&lt; 0\)</span>，即这是一个逆序对。为方便，称对应置换的逆序数的奇偶性，亦即该路径组交点个数的奇偶性，为该路径组的奇偶性。所以，如果将这些路径组按照权重计数，且用偶数交点的路径组数减去奇数交点的路径组数，就会得到行列式的 Leibniz 展开：</p>
+<div class="arithmatex">\[
+\det(C)=\sum_{\sigma\in S_n}\mathrm{sgn}(\sigma)\prod_{i\in[n]}C_{i,\sigma(i)},
+\]</div>
+<p>其中，<span class="arithmatex">\(S_n\)</span> 为 <span class="arithmatex">\([n]\)</span> 上的置换群，而 <span class="arithmatex">\(\mathrm{sgn}(\sigma)\)</span> 为置换 <span class="arithmatex">\(\sigma\)</span> 的符号（当逆序数为偶数时，它等于 <span class="arithmatex">\(1\)</span>；当逆序数为奇数时，它等于 <span class="arithmatex">\(-1\)</span>）。</p>
+<p>在理解行列式的组合意义后，可以利用如下的组合模型证明 Cauchy–Binet 公式。对于 <span class="arithmatex">\(n\times m\)</span> 阶矩阵 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(m\times n\)</span> 阶矩阵 <span class="arithmatex">\(B\)</span>，建立有向无环图 <span class="arithmatex">\(G=(V,E)\)</span>。其中，顶点集为 <span class="arithmatex">\(V=L\cup D\cup R\)</span>，这里，<span class="arithmatex">\(L=\{l_i=(1,i):i\in[n]\}\)</span>，<span class="arithmatex">\(D=\{d_i=(2,i):i\in[m]\}\)</span> 和 <span class="arithmatex">\(R=\{r_i=(3,i):i\in[n]\}\)</span>；而有向边集为 <span class="arithmatex">\(E=E_L\cup E_R\)</span>，其中，<span class="arithmatex">\(E_L=\{(l_i,d_j):i\in[n],j\in[m]\}\)</span> 和 <span class="arithmatex">\(E_R=\{(d_j,r_i):j\in[m],i\in[n]\}\)</span>，分别赋以边权 <span class="arithmatex">\(w(l_i,d_j)=A_{i,j}\)</span> 和 <span class="arithmatex">\(w(d_j,r_i)=B_{j,i}\)</span>。同样考虑自 <span class="arithmatex">\(L\)</span> 经 <span class="arithmatex">\(D\)</span> 到 <span class="arithmatex">\(R\)</span> 的路径组（路径间两两不共用顶点），按照权重计数，并用偶数交点的路径组数减去奇数交点的路径组数。下面说明，Cauchy–Binet 公式的左右两侧分别用两种方式计算了这一数目。</p>
+<p>对于左侧，基于上面描述的图 <span class="arithmatex">\(G\)</span>，建立新图 <span class="arithmatex">\(G'\)</span>，其顶点集为 <span class="arithmatex">\(V'=L\cup R\)</span>，边集为 <span class="arithmatex">\(E'=\{(l_i,r_j):i,j\in[n]\}\)</span>，且对于边 <span class="arithmatex">\((l_i,r_j)\)</span> 赋以边权 <span class="arithmatex">\(\sum_{k\in[m]}A_{i,k}B_{k,j}\)</span>，即在原图 <span class="arithmatex">\(G\)</span> 中自 <span class="arithmatex">\(l_i\)</span> 到 <span class="arithmatex">\(r_j\)</span> 的简单路径的加权计数。这一边权正是 <span class="arithmatex">\((AB)_{i,j}\)</span>。这相当于把上述的三层图简化成了两层图。但是，两层图 <span class="arithmatex">\(G'\)</span> 中的路径组（按权重计）并非和三层图 <span class="arithmatex">\(G\)</span> 中的路径组一一对应。由于在两层图中，每个路径都对应三层图中若干条简单路径，在对两层图进行路径组的计数时，需要将权重相乘，这相当于对它们对应的三层图中的路径集合两两组合，这必然会造成出现共用中间经停点的情形。但是，这些共用中间经停点的路径对并不会对最后的答案有贡献，因为对于 <span class="arithmatex">\(i_1&lt; i_2\)</span> 和 <span class="arithmatex">\(j_1&lt; j_2\)</span> 和任意中间点 <span class="arithmatex">\(d\)</span>，都存在两种简单路径对 <span class="arithmatex">\((l_{i_1}\rightarrow d\rightarrow r_{j_1}, l_{i_2}\rightarrow d\rightarrow r_{j_2})\)</span> 和 <span class="arithmatex">\((l_{i_1}\rightarrow d\rightarrow r_{j_2}, l_{i_2}\rightarrow d\rightarrow r_{j_1})\)</span>，但是这两组路径在三层图中的交点数目奇偶性必然相反，因为如果只看起点和终点，两组路径交换了终点。所以，这些共用中间经停点的路径在简化后的两层图计数时，贡献会两两抵消。对于剩下的情形，如果给定两条路径的起点和终点，那么无论中间的点如何如何选取（只要不选择同一个点），则这两条路径的交点个数的奇偶性不会变。故而，<span class="arithmatex">\(G'\)</span> 中每一个路径组对应的所有原图 <span class="arithmatex">\(G\)</span> 中的路径组都具有相同的奇偶性。因而，<span class="arithmatex">\(\det(AB)\)</span> 提供了前文所述路径组数差值的一种计算方式。</p>
+<p>对于右侧，它相当于枚举了所有可能的中间点的组合。给定任何中间点集合 <span class="arithmatex">\(S\subset D=[m]\)</span> 且 <span class="arithmatex">\(|S|=n\)</span>，分别考虑自 <span class="arithmatex">\(L\)</span> 到 <span class="arithmatex">\(S\)</span> 的路径组和自 <span class="arithmatex">\(S\)</span> 到 <span class="arithmatex">\(R\)</span> 的路径组，可以连接得到 <span class="arithmatex">\(L\)</span> 到 <span class="arithmatex">\(R\)</span> 的路径组，且前两个路径组对应的置换的复合就等于之后的路径组对应的置换，故而前两个路径的奇偶性的乘积等于之后的路径组的奇偶性。所以，所有中间点集合为 <span class="arithmatex">\(S\)</span> 的路径组的计数的差值正等于自 <span class="arithmatex">\(L\)</span> 到 <span class="arithmatex">\(S\)</span> 的路径组的计数的差值和自 <span class="arithmatex">\(S\)</span> 到 <span class="arithmatex">\(R\)</span> 的路径组的计数的差值的乘积。对所有可能的 <span class="arithmatex">\(S\)</span> 求和，即得到右式，故而它正是前文所述路径组数差值。</p>
+</details>
+<details class="note">
+<summary>证明（代数视角）</summary>
+<p>上述组合证明其实可以逐字逐句地翻译成代数证明。这里转而提供另一种技巧性较强的代数证明，但用到了几个常见结论。当 <span class="arithmatex">\(m&lt; n\)</span> 时，行列式为零，因为</p>
+<div class="arithmatex">\[
+\mathrm{rank}(AB)\le \min\{\mathrm{rank}(A),\mathrm{rank}(B)\}\le m&lt; n.
+\]</div>
+<p>当 <span class="arithmatex">\(m=n\)</span> 时，Cauchy–Binet 公式就是，方阵的积的行列式等于方阵的行列式的积。</p>
+<p>当 <span class="arithmatex">\(m&gt;n\)</span> 时，注意到</p>
+<div class="arithmatex">\[
+x^{m-n}\det(xI_n+AB) = \det(xI_m+BA).
+\]</div>
+<p>又已知结论，<span class="arithmatex">\(\det(xI_n+C)\)</span> 中 <span class="arithmatex">\(x^{n-k}\)</span> 的系数是 <span class="arithmatex">\(C\)</span> 的所有 <span class="arithmatex">\(k\)</span> 阶主子式的和。故而，比较上式中两侧系数，有</p>
+<div class="arithmatex">\[
+\det(AB) = \sum_{S\subset[m];~|S|=n}\det(BA)_{S,S} = \sum_{S\subset[m];~|S|=n}\det(B)_{S,[n]}\det(A)_{[n],S} = \sum_{S\subset[m];~|S|=n}\det(A)_{[n],S}\det(B)_{S,[n]}.
+\]</div>
+<p>这里，第二个等号用到了 <span class="arithmatex">\(m=n\)</span> 的情形的结论。</p>
+</details>
+<h3 id="_6">用关联矩阵刻画图的结构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>对于有向图 <span class="arithmatex">\(G=(V,E)\)</span>，顶点数为 <span class="arithmatex">\(n\)</span>，边数为 <span class="arithmatex">\(m\)</span>，且边 <span class="arithmatex">\(e\)</span> 赋有边权 <span class="arithmatex">\(w(e)\)</span>。由此，可以定义 <span class="arithmatex">\(m\times n\)</span> 阶出度关联矩阵</p>
+<div class="arithmatex">\[
+M^\mathrm{out}_{ij}=\begin{cases}
+\sqrt{w(e_i)},&amp;\exists u(e_i=(v_j,u)),\\
+0,&amp;\textrm{otherwise},
+\end{cases}
+\]</div>
+<p>和 <span class="arithmatex">\(m\times n\)</span> 阶入度关联矩阵</p>
+<div class="arithmatex">\[
+M^\mathrm{in}_{ij}=\begin{cases}
+\sqrt{w(e_i)},&amp;\exists u(e_i=(u,v_j)),\\
+0,&amp;\textrm{otherwise}.
+\end{cases}
+\]</div>
+<p>它们每行都记录了一条边：出度关联矩阵 <span class="arithmatex">\(M^\mathrm{out}\)</span> 记录了边的起点，入度关联矩阵 <span class="arithmatex">\(M^\mathrm{in}\)</span> 记录了边的终点。</p>
+<p>简单计算可知</p>
+<div class="arithmatex">\[
+D^\mathrm{out}(G) = (M^\mathrm{out})^T M^\mathrm{out},\ A(G) = (M^\mathrm{out})^T M^\mathrm{in},\ D^\mathrm{in}(G) = (M^\mathrm{in})^T M^\mathrm{in}.
+\]</div>
+<p>进而有</p>
+<div class="arithmatex">\[
+L^\mathrm{out}(G) = (M^\mathrm{out})^T (M^\mathrm{out}-M^\mathrm{in}),\ L^\mathrm{in}(G) = (M^\mathrm{in}-M^\mathrm{out})^T M^\mathrm{in}.
+\]</div>
+<p>前文的 Cauchy–Binet 公式表明，Laplace 矩阵的主子式其实是一系列子结构的和。每个子结构都反映了对应的子图的性质。</p>
+<details class="note" open="open">
+<summary>引理 2</summary>
+<p>对于 <span class="arithmatex">\(G\)</span> 的一个子图 <span class="arithmatex">\((W,S)\)</span>，若它满足 <span class="arithmatex">\(|W|=|S|\le n\)</span>，则子图 <span class="arithmatex">\(T=(V,S)\)</span> 是一个以 <span class="arithmatex">\(V\setminus W\)</span> 为根的根向森林，当且仅当对应的算式</p>
+<div class="arithmatex">\[
+\det(M^\mathrm{out}_{S,W})\det(M^\mathrm{out}_{S,W}-M^\mathrm{in}_{S,W})
+\]</div>
+<p>不为零。而且，该式当不为零时，必然等于 <span class="arithmatex">\(\prod_{e\in S}w(e)\)</span>，记作 <span class="arithmatex">\(w(T)\)</span>。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>不妨设 <span class="arithmatex">\(w(e)=1\)</span>。这是根据行列式的多重线性，每个行列式的每行都可以提取因子 <span class="arithmatex">\(\sqrt{w(e)}\)</span>，这些因子的乘积为 <span class="arithmatex">\(w(T)\)</span>。</p>
+<p>首先分析两个因子等于零的条件。前一个因子 <span class="arithmatex">\(\det(M^\mathrm{out}_{S,W})\)</span> 每行至多一个不为零的数字，即 <span class="arithmatex">\(+1\)</span>。如果有任何一行全为零，则该行列式必然为零。所以，该行列式不为零，当且仅当每行恰好一个 <span class="arithmatex">\(+1\)</span>，亦即 <span class="arithmatex">\(W\)</span> 中每个点都恰好是 <span class="arithmatex">\(S\)</span> 中一条边的起点，且没有两个边共用同一个起点。已知 <span class="arithmatex">\(T\)</span> 成为以 <span class="arithmatex">\(V\setminus W\)</span> 为根的根向森林，一个必要条件就是除了根之外，所有顶点有且只有一个父节点，这必然使得该因子不为零；但反过来并不一定成立，因为不能保证不存在环，所以还需要考察第二个因子。注意，<span class="arithmatex">\(S\)</span> 的终点未必在 <span class="arithmatex">\(W\)</span> 中。</p>
+<p>假定前一个因子不为零，则此时子图 <span class="arithmatex">\(T\)</span> 成为根向森林，当且仅当 <span class="arithmatex">\(T\)</span> 中没有环。此时，后一项 <span class="arithmatex">\(\det(M^\mathrm{out}_{S,W}-M^\mathrm{in}_{S,W})\)</span> 每行中都有一个 <span class="arithmatex">\(+1\)</span>，但可能有一个或零个 <span class="arithmatex">\(-1\)</span>。对于终点也在 <span class="arithmatex">\(W\)</span> 中的边，如果 <span class="arithmatex">\(e_i\)</span> 的终点是 <span class="arithmatex">\(e_j\)</span> 的起点，则将 <span class="arithmatex">\(e_i\)</span> 对应的行加上 <span class="arithmatex">\(e_j\)</span> 对应的行，可以消去 <span class="arithmatex">\(e_i\)</span> 行中的 <span class="arithmatex">\(-1\)</span>。可以想象，此时该行描述的是 <span class="arithmatex">\(e_i\)</span> 和 <span class="arithmatex">\(e_j\)</span> 首尾相接的简单路径。如果该行出现了新的 <span class="arithmatex">\(-1\)</span>，那么说明 <span class="arithmatex">\(e_j\)</span> 的终点也在 <span class="arithmatex">\(W\)</span> 内，<span class="arithmatex">\(-1\)</span> 的位置就是 <span class="arithmatex">\(e_j\)</span> 的终点，于事，可以继续找到以 <span class="arithmatex">\(e_j\)</span> 的终点为起点的边，再次加到该行上。这样的边总是存在的，因为上一段论述说明，<span class="arithmatex">\(W\)</span> 中每个点都恰好是 <span class="arithmatex">\(S\)</span> 中一条边的起点。这一过程一直持续到该行不在出现 <span class="arithmatex">\(-1\)</span> 为止，相当于不断添加新的边到简单路径 <span class="arithmatex">\(e_i\rightarrow e_j\rightarrow \cdots\rightarrow e_k\)</span> 中。此时，如果该行只剩下一个 <span class="arithmatex">\(+1\)</span>，那么说明 <span class="arithmatex">\(e_k\)</span> 的终点不在所选顶点 <span class="arithmatex">\(W\)</span> 中，过程终止；如果上次加入的边恰巧抵消了现有的 <span class="arithmatex">\(+1\)</span>，即该行只剩下零，那么说明新边 <span class="arithmatex">\(e_k\)</span> 的终点就是最开始的边 <span class="arithmatex">\(e_i\)</span> 的起点，即出现了一个环。所以，没有环的充要条件是该一行列式经上述操作可以变形成每行都恰好只有一个 <span class="arithmatex">\(+1\)</span> 的形式。由于这些 <span class="arithmatex">\(+1\)</span> 的位置是各行对应边的起点，此时得到的矩阵实际上就是 <span class="arithmatex">\(\det(M^\mathrm{out}_{S,W})\)</span>。</p>
+<p>综上所述，如果 <span class="arithmatex">\(T\)</span> 不是根向森林，则要么 <span class="arithmatex">\(\det(M^\mathrm{out}_{S,W})=0\)</span>，要么 <span class="arithmatex">\(\det(M^\mathrm{out}_{S,W}-M^\mathrm{in}_{S,W})=0\)</span>；否则，两者均不为零，且乘积等于 <span class="arithmatex">\(\left(\det(M^\mathrm{out}_{S,W})\right)^2=1\)</span>。</p>
+</details>
+<h3 id="_7">带权有向图的矩阵树定理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>现在可以证明本文的主要结果。前文所述矩阵树定理均为该定理的特殊情形。</p>
+<details class="note" open="open">
+<summary>定理 4（矩阵树定理，带权有向图根向树，行列式形式）</summary>
+<p>对于任意的 <span class="arithmatex">\(k\)</span>，都有</p>
+<div class="arithmatex">\[
+\sum_{T\in\mathcal T^\mathrm{root}(G,k)}w(T)=\det L^\mathrm{out}(G)_{[n]\setminus\{k\},[n]\setminus\{k\}}.
+\]</div>
+<p>这里，<span class="arithmatex">\(\mathcal T^\mathrm{root}(G,k)\)</span> 是 <span class="arithmatex">\(G\)</span> 的以 <span class="arithmatex">\(k\)</span> 为根的根向树形图的集合。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>记 <span class="arithmatex">\(W=[n]\setminus\{k\}\)</span> 为除去 <span class="arithmatex">\(k\)</span> 点外的剩余顶点的集合。那么，根据 Cauchy–Binet 公式，右式可以写作</p>
+<div class="arithmatex">\[
+\det L^\mathrm{out}(G)_{W,W} = \sum_{S\subset[m];~|S|=n-1}\det(M^\mathrm{out}_{S,W})\det(M^\mathrm{out}_{S,W}-M^\mathrm{in}_{S,W}).
+\]</div>
+<p>遍历所有的 <span class="arithmatex">\(S\)</span>，由引理 2，当且仅当 <span class="arithmatex">\(T=(V,S)\)</span> 构成一个以 <span class="arithmatex">\(V\setminus W=\{k\}\)</span> 为根的根向森林时，亦即 <span class="arithmatex">\(T\)</span> 是一个以 <span class="arithmatex">\(k\)</span> 为根的根向树形图时，右侧累加一个 <span class="arithmatex">\(w(T)\)</span>。</p>
+</details>
+<p>当 <span class="arithmatex">\(w(e)=1\)</span> 时，每个树的权值都是 <span class="arithmatex">\(1\)</span>，则左侧就是所有树的计数，即 <span class="arithmatex">\(t^\mathrm{root}(G,k)\)</span>，这就得到定理 2。类比上文，可以将结论直接推广于叶向树形图，这就得到定理 3。最后，要得到无向图上的生成树计数，可以应用如下推论。</p>
+<details class="note" open="open">
+<summary>推论 4（矩阵树定理，带权无向图，行列式形式）</summary>
+<p>对于无向图 <span class="arithmatex">\(G\)</span> 和任意的 <span class="arithmatex">\(k\)</span>，都有</p>
+<div class="arithmatex">\[
+\sum_{T\in\mathcal T(G)}w(T) = \det L(G)_{[n]\setminus\{k\},[n]\setminus\{k\}}.
+\]</div>
+<p>这里，<span class="arithmatex">\(\mathcal T(G)\)</span> 是 <span class="arithmatex">\(G\)</span> 的生成树的集合。这也说明，<span class="arithmatex">\(L(G)\)</span> 的所有 <span class="arithmatex">\((n-1)\)</span> 阶主子式都相等。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>对于无向图 <span class="arithmatex">\(G=(V,E)\)</span>，可以构建有向图 <span class="arithmatex">\(G'=(V,E')\)</span>，其中，<span class="arithmatex">\(E'=\{(v_i,v_j):(v_i,v_j)\in E\}\cup\{(v_j,v_i):(v_i,v_j)\in E\}\)</span>，即每条 <span class="arithmatex">\(G\)</span> 中的无向边都拆成有向图中方向相反的两条有向边。任取 <span class="arithmatex">\(k\)</span>，则 <span class="arithmatex">\(G'\)</span> 中以 <span class="arithmatex">\(k\)</span> 为根的根向树形图和 <span class="arithmatex">\(G\)</span> 中的生成树一一对应。由前者向后者，只需要移除边的定向和根的选取；由后者向前者，只需要从选定的根 <span class="arithmatex">\(k\)</span> 开始逐边选取根向作为边的定向。所以，此时有</p>
+<div class="arithmatex">\[
+\sum_{T\in\mathcal T(G)}w(T) = \sum_{T\in\mathcal T^\mathrm{root}(G',k)}w(T) = \det L^\mathrm{out}(G')_{[n]\setminus\{k\},[n]\setminus\{k\}} = \det L(G)_{[n]\setminus\{k\},[n]\setminus\{k\}}.
+\]</div>
+<p>此处用到了结论 <span class="arithmatex">\(L^\mathrm{out}(G')=L(G)\)</span>，这容易直接验证。</p>
+</details>
+<h3 id="_8">特征值形式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>仍然首先考虑有向图上的结论。</p>
+<details class="note" open="open">
+<summary>定理 5</summary>
+<p>对于有向图 <span class="arithmatex">\(G\)</span>，定义多元多项式</p>
+<div class="arithmatex">\[
+\chi(x_1,\cdots,x_n)=\det(\mathrm{diag}(x_1,\cdots,x_n)-L^\mathrm{out}(G)).
+\]</div>
+<p>这里，<span class="arithmatex">\(\mathrm{diag}(x_1,\cdots,x_n)\)</span> 是指以 <span class="arithmatex">\(x_1,\cdots,x_n\)</span> 为对角线元素的对角矩阵。那么，</p>
+<div class="arithmatex">\[
+(-1)^{n-r}[x_{k_1},\cdots,x_{k_r}]\chi(x_1,\cdots,x_n)
+\]</div>
+<p>就等于 <span class="arithmatex">\(G\)</span> 的以 <span class="arithmatex">\(\{k_1,\cdots,k_r\}\)</span> 为根的根向森林的（带权的）计数。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>仿照定理 4 的证明，注意到如果令 <span class="arithmatex">\(W=[n]\setminus\{k_1,\cdots,k_r\}\)</span>，那么，定理中的系数就是 <span class="arithmatex">\(\det L^\mathrm{out}(G)_{W,W}\)</span>（这一点不妨直接观察行列式的 Leibniz 展开式）。根据 Cauchy–Binet 公式，它等于</p>
+<div class="arithmatex">\[
+\det L^\mathrm{out}(G)_{W,W} = \sum_{S\subset[m];~|S|=n-r}\det(M^\mathrm{out}_{S,W})\det(M^\mathrm{out}_{S,W}-M^\mathrm{in}_{S,W}).
+\]</div>
+<p>遍历所有的 <span class="arithmatex">\(S\)</span>，由引理 2，当且仅当 <span class="arithmatex">\(T=(V,S)\)</span> 构成一个以 <span class="arithmatex">\(V\setminus W=\{k_1,\cdots,k_r\}\)</span> 为根的根向森林时，右侧累加一个 <span class="arithmatex">\(w(T)\)</span>。</p>
+</details>
+<p>将 <span class="arithmatex">\(x\)</span> 代入所有的未知元，得到 Laplace 矩阵的特征多项式</p>
+<div class="arithmatex">\[
+P(x) = \det(xI-L^\mathrm{out}(G)) = \chi(x,\cdots,x).
+\]</div>
+<details class="note" open="open">
+<summary>引理 3</summary>
+<p>Laplace 矩阵 <span class="arithmatex">\(L^\mathrm{out}(G)\)</span> 至少有一个特征值为零。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>只要证明它的行列式为零即可。仿照定理 4 和 5 的证明，取 <span class="arithmatex">\(W=\varnothing\)</span>，则这个行列式的大小应该等于有零棵树的根向森林的数目。这并不存在，所以该行列式等于零。</p>
+</details>
+<details class="note" open="open">
+<summary>推论 5</summary>
+<p>对于有向图 <span class="arithmatex">\(G\)</span>，所有由 <span class="arithmatex">\(k\)</span> 棵树构成的根向森林的权值的总和等于系数</p>
+<div class="arithmatex">\[
+(-1)^{n-k}[x^k]P(x).
+\]</div>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>对所有可能的 <span class="arithmatex">\(k\)</span> 个根的选择求和即可。</p>
+</details>
+<p>定义 <span class="arithmatex">\(k\)</span>- 生成森林 是图的一个生成子图，使得这个子图有 <span class="arithmatex">\(k\)</span> 个连通分量且无环。</p>
+<details class="note" open="open">
+<summary>推论 6</summary>
+<p>记无向图 <span class="arithmatex">\(G\)</span> 的 <span class="arithmatex">\(k\)</span>- 生成森林 的集合为 <span class="arithmatex">\(\mathcal T_k(G)\)</span>，则</p>
+<div class="arithmatex">\[
+\sum_{T\in\mathcal T_k(G)}w(T)Q(T) = (-1)^{n-k}[x^k]P(x).
+\]</div>
+<p>这里，<span class="arithmatex">\(Q(T)\)</span> 为森林 <span class="arithmatex">\(T\)</span> 中每个连通分量的顶点数目的乘积。特别地，当 <span class="arithmatex">\(k=1\)</span> 时，有 <span class="arithmatex">\(Q(T)=n\)</span>，故而</p>
+<div class="arithmatex">\[
+n\sum_{T\in\mathcal T(G)}w(T) = \lambda_1\lambda_2\cdots\lambda_{n-1}.
+\]</div>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>仿照推论 4 的证明，可以直接利用推论 5 的结论。有向图中每一个由 <span class="arithmatex">\(k\)</span> 棵树构成的根向森林都对应一个无向图中的 <span class="arithmatex">\(k\)</span>- 生成森林。但是，由于每个 <span class="arithmatex">\(k\)</span>- 生成森林 <span class="arithmatex">\(T\)</span> 有 <span class="arithmatex">\(Q(T)\)</span> 种选择根的方法，它会出现在 <span class="arithmatex">\(Q(T)\)</span> 个有向图的根向森林中。</p>
+</details>
+<h2 id="_9">应用<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="cayley">Cayley 公式<a class="headerlink" href="#cayley" title="Permanent link">&para;</a></h3>
+<details class="note" open="open">
+<summary>推论 7（Cayley）</summary>
+<p>大小为 <span class="arithmatex">\(n\)</span> 的带标号的无根树有 <span class="arithmatex">\(n^{n-2}\)</span> 个。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>等价地，只要求得 <span class="arithmatex">\(n\)</span> 个顶点的完全图的生成树的数目为 <span class="arithmatex">\(n^{n-2}\)</span> 即可。为此，写出 Laplace 矩阵</p>
+<div class="arithmatex">\[
+L(G) = \left(\begin{matrix} n-1 &amp; -1 &amp; \cdots &amp; -1 \\ -1 &amp; n-1 &amp; \cdots &amp; -1 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ -1 &amp; -1 &amp; \cdots &amp; n-1  \end{matrix}\right)_{n\times n}.
+\]</div>
+<p>计算它的任意主子式，有</p>
+<div class="arithmatex">\[
+\det(nI_{n-1}-{\bf 1}{\bf 1}^T) = n^{n-1}\det(I_{n-1}-n^{-1}{\bf 1}{\bf 1}^T) = n^{n-1}(1-n^{-1}{\bf 1}^T{\bf 1}) = n^{n-1}(1-(n-1)/n) = n^{n-2}.
+\]</div>
+<p>应用定理 1 即得到结论。</p>
+</details>
+<h3 id="best">BEST 定理<a class="headerlink" href="#best" title="Permanent link">&para;</a></h3>
+<p>前置知识：<a href="../euler/">欧拉图</a></p>
+<p>这一定理将有向欧拉图中欧拉回路的数目和该图的根向树形图的数目联系起来，从而解决了有向图中的欧拉回路的计数问题。注意，任意无向图中的欧拉回路的计数问题是 NP 完全的。</p>
+<p>在实现该算法时，应当首先判定给定图是否是欧拉图，移除所有零度顶点，然后建图计算根向树形图的个数，并由 BEST 定理得到欧拉回路的计数。注意，如果所求欧拉回路个数要求以给定点作为起点，需要将答案再乘上该点出度，相当于枚举回路中首条边。</p>
+<p>在证明 BEST 定理之前，需要知道如下结论。</p>
+<details class="note" open="open">
+<summary>性质（有向图具有欧拉回路的判定）</summary>
+<p>一个有向图具有欧拉回路，当且仅当非零度顶点是强连通的，且所有顶点的出度和入度相等。</p>
+</details>
+<p>对于欧拉图，因为出度和入度相等，可以将它们略去上标，记作 <span class="arithmatex">\(\mathrm{deg}(v)\)</span>。BEST 定理可以叙述如下。</p>
+<details class="note" open="open">
+<summary>定理 6（BEST 定理）</summary>
+<p>设 <span class="arithmatex">\(G\)</span> 是有向欧拉图，<span class="arithmatex">\(k\)</span> 为任意顶点，那么 <span class="arithmatex">\(G\)</span> 的不同欧拉回路总数 <span class="arithmatex">\(\mathrm{ec}(G)\)</span> 是</p>
+<div class="arithmatex">\[
+\mathrm{ec}(G) = t^\mathrm{root}(G,k)\prod_{v\in V}(\deg (v) - 1)!.
+\]</div>
+<p>这也说明，对欧拉图 <span class="arithmatex">\(G\)</span> 的任意两个节点 <span class="arithmatex">\(k, k'\)</span>，都有 <span class="arithmatex">\(t^\mathrm{root}(G,k)=t^\mathrm{root}(G,k')\)</span>。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>证明的大致思路是建立以 <span class="arithmatex">\(k\)</span> 为起点的欧拉回路和以 <span class="arithmatex">\(k\)</span> 为根的根向树形图以及各个顶点处出边的排列的对应关系。在指定欧拉回路的顶点后，需要证明的计数应当等于</p>
+<div class="arithmatex">\[
+\mathrm{deg}(k)\mathrm{ec}(G) = t^\mathrm{root}(G,k)\deg(k)!\prod_{v\neq k}(\deg (v) - 1)!.
+\]</div>
+<p>这一计数的组合含义对应的构造如下。对于起点为 <span class="arithmatex">\(k\)</span> 的欧拉回路，根据回路中每条边的出现顺序，可以构造出</p>
+<ul>
+<li>一个以 <span class="arithmatex">\(k\)</span> 为根的根向树形图，由所有非根顶点处的最后一条出边组成，即 <span class="arithmatex">\(t^\mathrm{root}(G,k)\)</span>，</li>
+<li>根 <span class="arithmatex">\(k\)</span> 处所有出边的排列顺序，即 <span class="arithmatex">\(\mathrm{deg}(k)!\)</span>，和</li>
+<li>非根顶点 <span class="arithmatex">\(v\neq k\)</span> 处除去最后一条出边之外的其他所有出边的排列顺序，即 <span class="arithmatex">\((\mathrm{deg}(v)-1)!\)</span>。</li>
+</ul>
+<p>下面说明，这样的构造得到的映射是双射。</p>
+<p>一方面，给定欧拉回路，要证明所有非根顶点处的最后一条出边组成了一个根向树形图。根据构造，树中每个非根顶点的确只有一条出边，所以只需要证明这些出边不会成环。注意到，如果将所有顶点根据它在欧拉回路最后一次出现的顺序排序，那么非根顶点的最后一次出边必然指向顺序严格更靠后的顶点。如果存在环，那么环中就有一个顺序最靠后的顶点，因为它在环中，所以它指向了一个顺序并不靠后的点，这与上文矛盾。所以，非根顶点的最后一次出边必然构成根向树形图。</p>
+<p>另一方面，给定任意根向树形图和其余出边的排列顺序，可以复原出一条欧拉回路，使得该欧拉回路经上述构造后可以得到给定的根向树形图和其余出边的排列顺序。对此，只需要从根 <span class="arithmatex">\(k\)</span> 出发，每当到达一个顶点时，都根据给定的该顶点的出边排列顺序，选择顺序最靠前的、尚未经过的出边作为欧拉回路中本次的出边；如果该顶点处的排列中所有出边都已经经过了，就选择根向树形图中该顶点的出边作为欧拉回路中本次的出边。因为图是欧拉图，每个顶点的入度都等于出度，所以，这一过程不会在非根顶点处终止，即所得路径的确是回路。要证明所得路径是合法的欧拉回路，只需要证明这一过程能够遍历所有边就可以。</p>
+<p>如果不能，则必然有某个顶点 <span class="arithmatex">\(v\)</span> 的某个出边没有遍历到。考察顶点 <span class="arithmatex">\(v\)</span>。顶点 <span class="arithmatex">\(v\)</span> 不能是根，因为最后会终止在根，如果根仍有出边剩余，这与过程终止矛盾。所以，<span class="arithmatex">\(v\)</span> 必然不是根。根据前文描述的过程，只要非根顶点 <span class="arithmatex">\(v\)</span> 有任何出边剩余，那么非根顶点在树中的出边 <span class="arithmatex">\(e\)</span> 必然剩余。记 <span class="arithmatex">\(e=(v,u)\)</span>。因为 <span class="arithmatex">\(u\)</span> 的某个入边没有遍历到，根据 <span class="arithmatex">\(u\)</span> 的出度等于入度，必然有 <span class="arithmatex">\(u\)</span> 的某条出边没有遍历到。然后，可以类似地考察顶点 <span class="arithmatex">\(u\)</span>。这些推理将考察的顶点从 <span class="arithmatex">\(v\)</span> 移动到了 <span class="arithmatex">\(u\)</span>，即沿着根向树形图向树的根移动了一步。可以归纳地证明，此时必有根 <span class="arithmatex">\(k\)</span> 的某个出边没有遍历到。前文已经说明这不可能，故得到矛盾。这说明，上一段所得路径的确是合法的欧拉回路。</p>
+<p>可以验证这些映射都是单射，则必然同为双射。原命题得证。</p>
+</details>
+<h2 id="_10">实现<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>根据图写出 Laplace 矩阵，删去一行一列，求所得矩阵的行列式即可。求行列式可以使用 Gauss–Jordan 消元法。</p>
+<p>例如，一个正方形图的生成树个数</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+2 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 2 \end{pmatrix}-\begin{pmatrix}
+0 &amp; 1 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 1 &amp; 0 \end{pmatrix}=\begin{pmatrix}
+2 &amp; -1 &amp; 0 &amp; -1 \\
+-1 &amp; 2 &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; 2 &amp; -1 \\
+-1 &amp; 0 &amp; -1 &amp; 2 \end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+\begin{vmatrix}
+2 &amp; -1 &amp; 0 \\
+-1 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 2 \end{vmatrix} = 4
+\]</div>
+<p>可以用 Gauss–Jordan 消元解决，时间复杂度为 <span class="arithmatex">\(O(n^3)\)</span>。</p>
+<details class="note">
+<summary>实现</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#__codelineno-0-75">75</a></span>
+<span class="normal"><a href="#__codelineno-0-76">76</a></span>
+<span class="normal"><a href="#__codelineno-0-77">77</a></span>
+<span class="normal"><a href="#__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#__codelineno-0-80">80</a></span>
+<span class="normal"><a href="#__codelineno-0-81">81</a></span>
+<span class="normal"><a href="#__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#__codelineno-0-83">83</a></span>
+<span class="normal"><a href="#__codelineno-0-84">84</a></span>
+<span class="normal"><a href="#__codelineno-0-85">85</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstring&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MOD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000007</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-7</span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">struct</span><span class="w"> </span><span class="nc">matrix</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAXN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">MAXN</span><span class="p">][</span><span class="n">MAXN</span><span class="p">];</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">  </span><span class="n">matrix</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">memset</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mat</span><span class="p">));</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;MATRIX &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">;</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">initSquare</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">mat</span><span class="p">));</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">    </span><span class="n">mat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">    </span><span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">    </span><span class="n">mat</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">    </span><span class="n">mat</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">    </span><span class="n">mat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-2</span><span class="p">;</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">n</span><span class="o">--</span><span class="p">;</span><span class="w">  </span><span class="c1">// 去一行</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="w">    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m</span><span class="o">--</span><span class="p">;</span><span class="w">  </span><span class="c1">// 去一列</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">gauss</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">eps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="w">          </span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">          </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sid</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">          </span><span class="n">swap</span><span class="p">(</span><span class="n">mat</span><span class="p">[</span><span class="n">sid</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="w">          </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">ans</span><span class="p">;</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="w">          </span><span class="n">mat</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ratio</span><span class="p">;</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">mat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="p">};</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="w">  </span><span class="n">srand</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">  </span><span class="n">matrix</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="w">  </span><span class="c1">// T.random(2);</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="w">  </span><span class="n">T</span><span class="p">.</span><span class="n">initSquare</span><span class="p">();</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">  </span><span class="n">T</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">gauss</span><span class="p">();</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="w">  </span><span class="n">T</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="_11">例题<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<details class="note" open="open">
+<summary> 例题 1：<a href="https://loj.ac/problem/2122">「HEOI2015」小 Z 的房间</a></summary>
+<p><strong>解</strong> 矩阵树定理的裸题。将每个空房间看作一个结点，根据输入的信息建图，得到 Laplace 矩阵后，任意删掉 <span class="arithmatex">\(L\)</span> 的第 <span class="arithmatex">\(i\)</span> 行第 <span class="arithmatex">\(i\)</span> 列，求这个子式的行列式即可。求行列式的方法就是高斯消元成上三角阵然后算对角线积。另外本题需要在模 <span class="arithmatex">\(k\)</span> 的整数子环 <span class="arithmatex">\(\mathbb{Z}_k\)</span> 上进行高斯消元，采用辗转相除法即可。</p>
+</details>
+<details class="note" open="open">
+<summary> 例题 2：<a href="https://www.luogu.com.cn/problem/P2144">「FJOI2007」轮状病毒</a></summary>
+<p><strong>解</strong> 本题的解法很多，这里用矩阵树定理是最直接的解法。当输入为 <span class="arithmatex">\(n\)</span> 时，容易写出其 <span class="arithmatex">\(n+1\)</span> 阶的 Laplace 矩阵为：</p>
+<div class="arithmatex">\[
+L_n = \begin{bmatrix}
+n&amp;  -1&amp; -1&amp; -1&amp; \cdots&amp; -1&amp; -1\\
+-1&amp; 3&amp;  -1&amp; 0&amp;  \cdots&amp; 0&amp;  -1\\
+-1&amp; -1&amp; 3&amp;  -1&amp; \cdots&amp; 0&amp;  0\\
+-1&amp; 0&amp;  -1&amp; 3&amp;  \cdots&amp; 0&amp;  0\\
+\vdots&amp; \vdots&amp; \vdots&amp; \vdots&amp; \ddots&amp; \vdots&amp; \vdots\\
+-1&amp; 0&amp;  0&amp;  0&amp;  \cdots&amp; 3&amp;  -1\\
+-1&amp; -1&amp; 0&amp;  0&amp;  \cdots&amp; -1&amp; 3\\
+\end{bmatrix}_{n+1}
+\]</div>
+<p>求出它的 <span class="arithmatex">\(n\)</span> 阶子式的行列式即可，剩下的只有高精度计算了。</p>
+</details>
+<details class="note">
+<summary>例题 2+</summary>
+<p>将例题 2 的数据加强，要求 <span class="arithmatex">\(n\leq 100000\)</span>，但是答案对 1000007 取模。（本题求解需要一些线性代数知识）</p>
+<p><strong>解</strong> 推导递推式后利用矩阵快速幂即可求得。</p>
+<p>推导递推式的过程：</p>
+<p>注意到 <span class="arithmatex">\(L_n\)</span> 删掉第 1 行第 1 列以后得到的矩阵很有规律，因此其实就是在求矩阵</p>
+<div class="arithmatex">\[
+M_n = \begin{bmatrix}
+3&amp;  -1&amp; 0&amp;  \cdots&amp; 0&amp;  -1\\
+-1&amp; 3&amp;  -1&amp; \cdots&amp; 0&amp;  0\\
+0&amp;  -1&amp; 3&amp;  \cdots&amp; 0&amp;  0\\
+\vdots&amp; \vdots&amp; \vdots&amp; \ddots&amp; \vdots&amp; \vdots\\
+0&amp;  0&amp;  0&amp;  \cdots&amp; 3&amp;  -1\\
+-1&amp; 0&amp;  0&amp;  \cdots&amp; -1&amp; 3\\
+\end{bmatrix}_{n}
+\]</div>
+<p>的行列式。对 <span class="arithmatex">\(M_n\)</span> 的行列式按第一列展开，得到</p>
+<div class="arithmatex">\[
+\det M_n = 3\det \begin{bmatrix}
+3&amp;  -1&amp; \cdots&amp; 0&amp;  0\\
+-1&amp; 3&amp;  \cdots&amp; 0&amp;  0\\
+\vdots&amp; \vdots&amp; \ddots&amp; \vdots&amp; \vdots\\
+0&amp;  0&amp;  \cdots&amp; 3&amp;  -1\\
+0&amp;  0&amp;  \cdots&amp; -1&amp; 3\\
+\end{bmatrix}_{n-1} + \det\begin{bmatrix}
+-1&amp; 0&amp;  \cdots&amp; 0&amp;  -1\\
+-1&amp; 3&amp;  \cdots&amp; 0&amp;  0\\
+\vdots&amp; \vdots&amp; \ddots&amp; \vdots&amp; \vdots\\
+0&amp;  0&amp;  \cdots&amp; 3&amp;  -1\\
+0&amp;  0&amp;  \cdots&amp; -1&amp; 3\\
+\end{bmatrix}_{n-1} + (-1)^n \det\begin{bmatrix}
+-1&amp; 0&amp;  \cdots&amp; 0&amp;  -1\\
+3&amp;  -1&amp; \cdots&amp; 0&amp;  0\\
+-1&amp; 3&amp;  \cdots&amp; 0&amp;  0\\
+\vdots&amp; \vdots&amp; \ddots&amp; \vdots&amp; \vdots\\
+0&amp;  0&amp;  \cdots&amp; 3&amp;  -1\\
+\end{bmatrix}_{n-1}
+\]</div>
+<p>上述三个矩阵的行列式记为 <span class="arithmatex">\(d_{n-1}, a_{n-1}, b_{n-1}\)</span>。<br />
+注意到 <span class="arithmatex">\(d_n\)</span> 是三对角行列式，采用类似的展开的方法可以得到 <span class="arithmatex">\(d_n\)</span> 具有递推公式 <span class="arithmatex">\(d_n=3d_{n-1}-d_{n-2}\)</span>。类似地，采用展开的方法可以得到 <span class="arithmatex">\(a_{n-1}=-d_{n-2}-1\)</span>，以及 <span class="arithmatex">\((-1)^n b_{n-1}=-d_{n-2}-1\)</span>。<br />
+将这些递推公式代入上式，得到：</p>
+<div class="arithmatex">\[
+\det M_n = 3d_{n-1}-2d_{n-2}-2
+\]</div>
+<div class="arithmatex">\[
+d_n = 3d_{n-1}-d_{n-2}
+\]</div>
+<p>于是猜测 <span class="arithmatex">\(\det M_n\)</span> 也是非齐次的二阶线性递推。采用待定系数法可以得到最终的递推公式为</p>
+<div class="arithmatex">\[
+\det M_n = 3\det M_{n-1} - \det M_{n-2} + 2
+\]</div>
+<p>改写成 <span class="arithmatex">\((\det M_n+2) = 3(\det M_{n-1}+2) - (\det M_{n-2} + 2)\)</span> 后，采用矩阵快速幂即可求出答案。</p>
+</details>
+<details class="note" open="open">
+<summary> 例题 3：<a href="https://hydro.ac/p/bzoj-P3659">「BZOJ3659」WHICH DREAMED IT</a></summary>
+<p><strong>解</strong> 本题是 BEST 定理的直接应用，但是要注意，由于题目规定「两种完成任务的方式算作不同当且仅当使用钥匙的顺序不同」，对每个欧拉回路，1 号房间可以沿着任意一条出边出发，从而答案还要乘以 1 号房间的出度。</p>
+</details>
+<details class="note" open="open">
+<summary> 例题 4：<a href="https://loj.ac/p/3304">「联合省选 2020 A」作业题</a></summary>
+<p><strong>解</strong> 首先需要用莫比乌斯反演转化成计算所有生成树的边权和，因为与本文关系不大所以略去。</p>
+<p>将行列式的项写成 <span class="arithmatex">\(w_ix+1\)</span>，最后答案是行列式的一次项系数，因为答案实际上是钦定一条边之后的生成树个数 <span class="arithmatex">\(\times\)</span> 这条边的边权之和，那么被乘上一次项系数的边就是被钦定的边。此时可以把高于一次的项忽略掉，复杂度 <span class="arithmatex">\(O(n^3)\)</span>。</p>
+<p><a href="https://www.luogu.com.cn/problem/P5296">「北京省选集训 2019」生成树计数</a> 是较为一般化的情况：计算生成树权值之和的 <span class="arithmatex">\(k\)</span> 次方之和，用类似方法构造行列式的项即可，具体见洛谷题解。</p>
+</details>
+<details class="note" open="open">
+<summary> 例题 5：<a href="https://atcoder.jp/contests/agc051/tasks/agc051_d">AGC051D C4</a></summary>
+<p><strong>解</strong> 无向图欧拉回路计数是 NPC 问题，但这题的图较为简单，确定了 <span class="arithmatex">\(S-T\)</span> 的边中从 <span class="arithmatex">\(S\)</span> 指向 <span class="arithmatex">\(T\)</span> 的有多少条，就可以确定其他三条边的定向方案，然后直接套用 BEST 定理就得到 <span class="arithmatex">\(O(a+b+c+d)\)</span> 的做法。</p>
+</details>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <style>
+  .md-footer {
+      background-color: #f0f0f0;
+  }
+</style>
+
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; gzh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+      <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;color: #000;">
+        本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+        <span id="finicount_views"></span>    &nbsp;|&nbsp;
+        <footer>
+          <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+        </footer>
+      </div>
+      </font>
+
+        <style>
+          .footer-visit-count {
+              height: fit-content;
+              min-height: 55px; /* 根据实际情况调整此高度 */
+              color: #000;
+          }
+          </style>
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" rel="noopener" title="Wechat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/gongzihang" target="_blank" rel="noopener" title="telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ZihangGong28792" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<zihanggong24@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/688234000/lists" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+        
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。 如果你同意,你可以帮助我们让我们的网站更好</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../../../javascripts/config_mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../../../javascripts/简历.js"></script>
+      
+    
+  </body>
+</html>

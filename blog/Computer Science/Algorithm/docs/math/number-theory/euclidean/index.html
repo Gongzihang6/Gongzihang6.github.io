@@ -1,0 +1,3688 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="记录、分享">
+      
+      
+        <meta name="author" content="sshwy, FFjet">
+      
+      
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/Computer%20Science/Algorithm/docs/math/number-theory/euclidean/">
+      
+      
+      
+      
+      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Euclidean - Blog of GZH</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/简历.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-40HC6RYSR1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-40HC6RYSR1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blog of GZH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Euclidean
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6.5.5c12.4-13.1 22.5-28.3 29.8-45l-35.2.1h-72c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/ZH-TW/" hreflang="zh-TW" class="md-select__link">
+              China(TW)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MachineLearning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  每日诗词
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  长期主义
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../about/geren/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Blog of GZH
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java面向对象基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java集合框架与常用API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java高级技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode热题100
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode热题100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    字母异位词分组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交易逆序对的总数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单词接龙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    岛屿数量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分考场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    拉马车
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分巧克力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K倍区间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    编辑距离
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    接雨水
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组合总和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    全排列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    乘积最大子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. 最长回文子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前K个高频元素
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最小栈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pow(x,n)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络延迟时间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对角线上的质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    零钱兑换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    括号匹配
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300最长递增子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    115不同的子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    712两个字符串的最小ASCII删除和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    516最长回文子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    139单词拆分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    221最大正方形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2845统计趣味子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2799统计完全子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1399统计最大组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2338统计理想数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2179统计数组中好三元组数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2537统计好子数组的数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2140解决智力问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2278字母在字符串中的百分比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MachineLearning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MachineLearning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K近邻学习与降维
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    公式测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    经典卷积神经网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    理解YOLO网络结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    每日诗词
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            每日诗词
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·玉阑干外清江浦
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    菩萨蛮·回文夏闺怨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    清平乐·六盘山
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    洞仙歌·咏柳
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    秋兴八首·其一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    与史郎中钦听黄鹤楼上吹笛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    夏日南亭怀辛大
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    行香子·秋与
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自题金山画像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            长期主义
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fitness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/geren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作者个人简介
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简历
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    功能测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      引入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      类欧几里得算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="类欧几里得算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      代数解法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      几何直观
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      万能欧几里得算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="万能欧几里得算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题转化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料与注释
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Euclidean</h1>
+
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>类欧几里得算法用于求解形如⌊(ai+b)/c⌋的数列求和问题，通过递归转化和模运算将问题规模缩小，类似欧几里得算法的辗转相除过程。该算法时间复杂度为O(log min{a,c})，相比连分数等方法更易理解和实现。适用于处理线性分式结构的离散求和，并能扩展至平方和等非线性求和场景。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1121</strong> | 有效代码行数：<strong>8</strong></p>
+</div>
+<h2 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>类欧几里德算法是洪华敦在 2016 年冬令营营员交流中提出的内容。它常用于解决形如</p>
+<div class="arithmatex">\[
+\left\lfloor\dfrac{ai+b}{c}\right\rfloor
+\]</div>
+<p>结构的数列（下标为 <span class="arithmatex">\(i\)</span>）的求和问题。它的主要想法是，利用分数自身的递归结构，将问题转化为更小规模的问题，递归求解。因为分数的递归结构和 <a href="../gcd/#欧几里得算法">欧几里得算法</a> 存在直接的 <a href="../continued-fraction/#连分数表示的求法">联系</a>，因此，这一求和方法也称为类欧几里得算法。</p>
+<p>因为 <a href="../continued-fraction/">连分数</a> 和 <a href="../stern-brocot/">Stern–Brocot 树</a> 等方法同样刻画了分数的递归结构，所以利用类欧几里得算法可以解决的问题，通常也可以用这些方法解决。与这些方法相比，类欧几里得算法通常更容易理解，它的实现也更为简明。</p>
+<h2 id="_2">类欧几里得算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>最简单的例子，就是求和问题：</p>
+<div class="arithmatex">\[
+f(a,b,c,n)=\sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor,
+\]</div>
+<p>其中，<span class="arithmatex">\(a,b,c,n\)</span> 都是正整数。</p>
+<h3 id="_3">代数解法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>首先，将 <span class="arithmatex">\(a,b\)</span> 对 <span class="arithmatex">\(c\)</span> 取模，可以简化问题，将问题转化为 <span class="arithmatex">\(0\le a,b&lt;c\)</span> 的情形：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(a,b,c,n)&amp;=\sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor\\
+&amp;=\sum_{i=0}^n\left\lfloor
+\frac{\left(\left\lfloor\frac{a}{c}\right\rfloor c+(a\bmod c)\right)i+\left(\left\lfloor\frac{b}{c}\right\rfloor c+(b\bmod c)\right)}{c}\right\rfloor\\
+&amp;=\sum_{i=0}^n\left(\left\lfloor\frac{a}{c}\right\rfloor i+\left\lfloor\frac{b}{c}\right\rfloor+\left\lfloor\frac{\left(a\bmod c\right)i+\left(b\bmod c\right)}{c}
+\right\rfloor\right)\\
+&amp;=\frac{n(n+1)}{2}\left\lfloor\frac{a}{c}\right\rfloor
++(n+1)\left\lfloor\frac{b}{c}\right\rfloor+f(a\bmod c,b\bmod c,c,n).
+\end{aligned}
+\]</div>
+<p>现在，考虑转化后的问题。令</p>
+<div class="arithmatex">\[
+m = \left\lfloor \frac{an+b}{c} \right\rfloor.
+\]</div>
+<p>那么，原问题可以写作二次求和式：</p>
+<div class="arithmatex">\[
+\sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor
+=\sum_{i=0}^n\sum_{j=0}^{m-1}\left[j&lt;\left\lfloor \frac{ai+b}{c} \right\rfloor\right].
+\]</div>
+<p>交换求和次序，这需要对于每个 <span class="arithmatex">\(j\)</span> 计算满足条件的 <span class="arithmatex">\(i\)</span> 的范围。为此，将条件变形：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;j&lt;\left\lfloor \frac{ai+b}{c} \right\rfloor = \left\lceil \frac{ai+b+1}{c} \right\rceil-1\\
+&amp;\iff j + 1 &lt; \left\lceil \frac{ai+b+1}{c} \right\rceil
+\iff j+1&lt; \frac{ai+b+1}{c} \\
+&amp;\iff \dfrac{cj+c-b-1}{a} &lt; i
+\iff \left\lfloor\dfrac{cj+c-b-1}{a}\right\rfloor &lt; i.
+\end{aligned}
+\]</div>
+<p>变形过程中多次利用了取整函数的性质。代入变形后的条件，原式可以写作：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(a,b,c,n)&amp;=\sum_{j=0}^{m-1}
+\sum_{i=0}^n\left[i&gt;\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor \right]\\
+&amp;=\sum_{j=0}^{m-1}\left(n-\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor\right)\\
+&amp;=nm-f\left(c,c-b-1,a,m-1\right).
+\end{aligned}
+\]</div>
+<p>令 <span class="arithmatex">\((a',b',c',n')=(c,c-b-1,a,m-1)\)</span>，这就又回到了前面讨论过的 <span class="arithmatex">\(a'&gt;c'\)</span> 的情形。</p>
+<p>将这两步转化结合在一起，可以发现在过程中，<span class="arithmatex">\((a,c)\)</span> 不断地取模后交换位置，直到 <span class="arithmatex">\(a=0\)</span>。这就类似于对 <span class="arithmatex">\((a,c)\)</span> 进行辗转相除，这也是类欧几里德算法的得名。它的时间复杂度是 <span class="arithmatex">\(O(\log\min\{a,c\})\)</span> 的。</p>
+<p>在计算过程中，可能会出现 <span class="arithmatex">\(m=0\)</span> 的情形，此时内层递归会出现 <span class="arithmatex">\(n=-1\)</span>。这并不影响最终的结果。但是，如果要求出现 <span class="arithmatex">\(m=0\)</span> 时，直接终止算法，那么算法的时间复杂度可以改良为 <span class="arithmatex">\(O(\log\min\{a,c,n\})\)</span> 的。</p>
+<details class="note">
+<summary>对复杂度的解释</summary>
+<p>利用该算法和欧几里得算法的相似性，很容易说明它的时间复杂度是 <span class="arithmatex">\(O(\log\min\{a,c\})\)</span> 的。因此，只需要说明，如果在 <span class="arithmatex">\(m=0\)</span> 时终止算法，那么它的时间复杂度也是 <span class="arithmatex">\(O(\log n)\)</span> 的。</p>
+<p>令 <span class="arithmatex">\(m=\lfloor(an+b)/c\rfloor\)</span>，并记 <span class="arithmatex">\(S=mn\)</span>，<span class="arithmatex">\(k=m/n\)</span>，它们分别相当于几何直观（见下一节）中点阵图的面积和直线的斜率。对于充分大的 <span class="arithmatex">\(n\)</span>，近似有 <span class="arithmatex">\(k\doteq a/c\)</span>。</p>
+<p>考察 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(k\)</span> 在算法过程中的变化。第一步取模时，<span class="arithmatex">\(n\)</span> 保持不变，<span class="arithmatex">\(k\)</span> 近似由 <span class="arithmatex">\(a/c\)</span> 变为 <span class="arithmatex">\((a\bmod c)/c\)</span>，相当于斜率由 <span class="arithmatex">\(k\)</span> 变为 <span class="arithmatex">\(k-\lfloor k\rfloor\)</span>，而 <span class="arithmatex">\(S\)</span> 也近似变为原来的 <span class="arithmatex">\((k-\lfloor k\rfloor)\)</span> 倍。第二步交换横纵坐标时，<span class="arithmatex">\(S\)</span> 近似保持不变，<span class="arithmatex">\(k\)</span> 则变为它的倒数。因此，若设两步操作后，二元组 <span class="arithmatex">\((k,S)\)</span> 变为 <span class="arithmatex">\((k',S')\)</span>，则有 <span class="arithmatex">\(k'=(k-\lfloor k\rfloor)^{-1}\)</span> 且 <span class="arithmatex">\(S'=(k-\lfloor k\rfloor)S\)</span>。</p>
+<p>因为 <span class="arithmatex">\(1\le\lfloor k'\rfloor\le k'&lt;\lfloor k'\rfloor+1\)</span>，所以，递归计算两轮后，乘积缩小的倍数最少为</p>
+<div class="arithmatex">\[
+(k'-\lfloor k'\rfloor)(k-\lfloor k\rfloor) = 1-\dfrac{\lfloor k'\rfloor}{k'} &lt; 1-\dfrac{\lfloor k'\rfloor}{\lfloor k'\rfloor+1} = \dfrac{1}{\lfloor k'\rfloor+1}\le \dfrac{1}{2}.
+\]</div>
+<p>因此，至多 <span class="arithmatex">\(O(\log S)\)</span> 轮，算法必然终止。因为从第二轮开始，每轮开始时的 <span class="arithmatex">\(S\)</span> 总是不超过上一轮取模结束后的 <span class="arithmatex">\(S\)</span>，而后者大致为 <span class="arithmatex">\(kn^2\)</span> 且 <span class="arithmatex">\(k&lt;1\)</span>，因而 <span class="arithmatex">\(O(\log S)\subseteq O(\log n)\)</span>。这就得到了上述结论。</p>
+</details>
+<p>模板题的参考实现如下：</p>
+<details class="example">
+<summary> 模板题实现（<a href="https://judge.yosupo.jp/problem/sum_of_floor_of_linear">Library Checker - Sum of Floor of Linear</a>）</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<h3 id="_4">几何直观<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>这个算法还可以从几何的角度理解。类欧几里得算法可以解决的问题主要是直线下整点计数问题。</p>
+<p>如下图最左部分所示，该求和式相当于求直线</p>
+<div class="arithmatex">\[
+y = \dfrac{ax+b}{c}
+\]</div>
+<p>下方，<span class="arithmatex">\(x\)</span> 轴上方（不包括 <span class="arithmatex">\(x\)</span> 轴），且横坐标位于 <span class="arithmatex">\([0,n]\)</span> 之间的格点数目。</p>
+<p><img alt="" src="../images/euclidean-1.svg" /></p>
+<p>首先，移除斜率和截距中的整数部分。这一步相当于将上图中间部分的蓝点数量单独计算出来。当斜率和截距都是整数时，蓝点一定构成一个梯形阵列，也就是说，不同纵列的格点形成等差数列，因而这些点的数量是容易计算的。将这些点移除后，剩余的格点和上图最右部分的红点数量一致。问题就转化成了斜率和截距都小于一的情形。因为梯形的高为 <span class="arithmatex">\(n+1\)</span> 且两个底边长度分别为 <span class="arithmatex">\(\lfloor b/c\rfloor\)</span> 和 <span class="arithmatex">\((\lfloor a/c\rfloor n+\lfloor b/c\rfloor)\)</span>，所以，利用梯形面积公式，这一步骤可以归纳为算式</p>
+<div class="arithmatex">\[
+f(a,b,c,n) = f(a\bmod c,b\bmod c,c,n) + \dfrac{1}{2}(n+1)\left(\left\lfloor\dfrac{b}{c}\right\rfloor+\left(\left\lfloor\dfrac{a}{c}\right\rfloor n+\left\lfloor\dfrac{b}{c}\right\rfloor\right)\right).
+\]</div>
+<p>然后，翻转横纵坐标轴。如下图最左部分所示，图中的红点和蓝点构成了一个横向长度为 <span class="arithmatex">\(n\)</span>、纵向长度为 <span class="arithmatex">\(m=\lfloor(an+b)/c\rfloor\)</span> 的矩形点阵。要计算红点的数量，只需要计算蓝点的数量，再用矩形点阵的数量减去蓝点的数量即可。翻转后，上图左半部分中的蓝点点阵就变成了某条直线下的红色点阵。而且，翻转后，斜率大于一，就又回到了上文已经处理过的情形。</p>
+<p><img alt="" src="../images/euclidean-2.svg" /></p>
+<p>关键在于如何计算新的红色点阵上方的直线的方程。将上图最左部分的横纵坐标轴翻转，就得到上图中间部分。翻转后的红色点阵上方的直线（中间部分的实线），并非对应翻转前的直线（最左部分的实线），而是翻转前的直线向左上平移一点点的结果（最左部分的虚线）。这是因为，如果直接将直线（最左部分的实线）翻转，将得到中间部分的虚线，但是按照定义，它下方的格点包括恰好落在直线上的格点，这就会导致直线上的格点重复计数。为了避免这一点，需要将翻转直线 <span class="arithmatex">\(y=(ax+b)/c\)</span> 后得到的直线 <span class="arithmatex">\(y=(cx-b)/a\)</span> 向下平移一点点，得到直线 <span class="arithmatex">\(y=(cx-b-1)/a\)</span>，这样它下方的点阵才恰为翻转前的蓝色点阵。</p>
+<p>还有另一处细节需要处理。上图中间部分的直线的截距是负数，这意味着还没有回到之前的初始情形。要让截距恢复为非负数，只需要将直线（中间部分的实线）向左平移一个单位。这样做不会漏掉任何格点，因为翻转前的蓝色点阵中没有纵坐标为零的点，翻转后也就不存在横坐标为零的点。最后，直线方程就变为 <span class="arithmatex">\(y=(cx+c-b-1)/a\)</span>；同时，点阵的横坐标的上界也从 <span class="arithmatex">\(m\)</span> 变成了 <span class="arithmatex">\(m-1\)</span>。这一步骤可以归纳为算式</p>
+<div class="arithmatex">\[
+f(a,b,c,n) = mn - f(c,c-b-1,a,m-1).
+\]</div>
+<p>这种递归的算法行得通，主要有两个原因：</p>
+<ul>
+<li>第一，直线的斜率不断地先取小数部分再取倒数，这等价于计算直线斜率 <span class="arithmatex">\(k=a/c\)</span> 的 <a href="../continued-fraction/#连分数表示的求法">连分数展开</a>。因为有理分数的连分数展开的长度是 <span class="arithmatex">\(O(\log\min\{a,c\})\)</span> 的，所以这一过程一定在 <span class="arithmatex">\(O(\log\min\{a,c\})\)</span> 步后终止；</li>
+<li>第二，因为每次翻转坐标轴的时候，直线斜率都是小于一的，因此，直觉上应该有 <span class="arithmatex">\(m&lt;n\)</span>，也就是说，经过这样一轮迭代后，横坐标的范围一直是在缩小的。前文的复杂度计算中通过严格的分析说明，每两轮迭代后，<span class="arithmatex">\(n\)</span> 至多为原来的一半，故而这一过程一定在 <span class="arithmatex">\(O(\log n)\)</span> 步后终止。</li>
+</ul>
+<p>这也是斜率为有理数时的类欧几里得算法的复杂度是 <span class="arithmatex">\(O(\log\min\{a,c,n\})\)</span> 的原因。</p>
+<p>利用类似的几何直观，可以将类欧几里得算法推广到斜率为无理数的情形，具体分析请参考后文的例题。</p>
+<h3 id="_5">例题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary><a href="https://www.luogu.com.cn/problem/P5170">【模板】类欧几里得算法</a></summary>
+<p>多组询问。给定正整数 <span class="arithmatex">\(a,b,c,n\)</span>，求</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(a,b,c,n) &amp;= \sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor,\\
+g(a,b,c,n) &amp;= \sum_{i=0}^ni\left\lfloor \frac{ai+b}{c} \right\rfloor,\\
+h(a,b,c,n) &amp;= \sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor^2.
+\end{aligned}
+\]</div>
+</details>
+<details class="note">
+<summary>解答一</summary>
+<p>类似于 <span class="arithmatex">\(f\)</span> 的推导，可以得到 <span class="arithmatex">\(g,h\)</span> 的递归表达式。</p>
+<p>首先，利用取模，将问题转化为 <span class="arithmatex">\(0\le a,b&lt;c\)</span> 的情形：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+g(a,b,c,n)
+&amp;=g(a\bmod c,b\bmod c,c,n)+\left\lfloor\frac{a}{c}\right\rfloor\frac{n(n+1)(2n+1)}{6}+\left\lfloor\frac{b}{c}\right\rfloor\frac{n(n+1)}{2}, \\
+h(a,b,c,n)&amp;=h(a\bmod c,b\bmod c,c,n)\\
+&amp;\quad+2\left\lfloor\frac{b}{c}\right\rfloor f(a\bmod c,b\bmod c,c,n)
++2\left\lfloor\frac{a}{c}\right\rfloor g(a\bmod c,b\bmod c,c,n)\\
+&amp;\quad+\left\lfloor\frac{a}{c}\right\rfloor^2\frac{n(n+1)(2n+1)}{6}+\left\lfloor\frac{b}{c}\right\rfloor^2(n+1)
++\left\lfloor\frac{a}{c}\right\rfloor\left\lfloor\frac{b}{c}\right\rfloor n(n+1).
+\end{aligned}
+\]</div>
+<p>然后，利用交换求和次序，可以进一步转化。同样地，令</p>
+<div class="arithmatex">\[
+m = \left\lfloor \frac{an+b}{c} \right\rfloor.
+\]</div>
+<p>那么，对于和式 <span class="arithmatex">\(g\)</span>，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+g(a,b,c,n)&amp;=\sum_{i=0}^ni\left\lfloor \frac{ai+b}{c} \right\rfloor\\
+&amp;=\sum_{i=0}^n \sum_{j=0}^{m-1}i
+\left[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor\right] \\
+&amp;=\sum_{j=0}^{m-1}\sum_{i=0}^n i\left[i&gt;\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor \right]\\
+&amp;=\sum_{j=0}^{m-1}\dfrac{1}{2}\left(\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor+n+1\right)\left(n-\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor\right)\\
+&amp;=\dfrac{1}{2}mn(n+1) - \dfrac{1}{2}\sum_{j=0}^{m-1}\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor - \dfrac{1}{2}\sum_{j=0}^{m-1}\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor^2\\
+&amp;=\dfrac{1}{2}mn(n+1) - \dfrac{1}{2}f(c,c-b-1,a,m-1) - \dfrac{1}{2}h(c,c-b-1,a,m-1).
+\end{aligned}
+\]</div>
+<p>对于和式 <span class="arithmatex">\(h\)</span>，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+h(a,b,c,n)&amp;=\sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor^2\\
+&amp;=\sum_{i=0}^n\sum_{j=0}^{m-1}(2j+1)\left[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor\right]\\
+&amp;=\sum_{j=0}^{m-1}\sum_{i=0}^n(2j+1)\left[i&gt;\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor \right]\\
+&amp;=\sum_{j=0}^{m-1}(2j+1)\left(n-\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor\right)\\
+&amp;=nm^2 - \sum_{j=0}^{m-1}\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor - 2\sum_{j=0}^{m-1}j\left\lfloor\frac{cj+c-b-1}{a}\right\rfloor\\
+&amp;=nm^2 - f(c,c-b-1,a,m-1) - 2g(c,c-b-1,a,m-1).
+\end{aligned}
+\]</div>
+<p>从几何直观的角度看，这些非线性的求和式相当于给区域中的每个点 <span class="arithmatex">\((i,j)\)</span> 都赋予了相应的权重 <span class="arithmatex">\(w(i,j)\)</span>。除了这些权重之外，其余部分的计算过程是完全一致的。对于权重的选择，一般地，有</p>
+<div class="arithmatex">\[
+\sum_{i=0}^ni^r\left\lfloor \frac{ai+b}{c} \right\rfloor^s = \sum_{i=0}^n\sum_{j=0}^{m-1} i^r\left((j+1)^s-j^s\right)\left[j&lt;\left\lfloor\frac{ai+b}{c}\right\rfloor\right].
+\]</div>
+<p>本题的另一个特点是，<span class="arithmatex">\(g\)</span> 和 <span class="arithmatex">\(h\)</span> 在递归计算时，会相互交错。因此，需要将 <span class="arithmatex">\((f,g,h)\)</span> 作为三元组同时递归。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example" open="open">
+<summary><a href="https://www.luogu.com.cn/problem/P5172">[清华集训 2014] Sum</a></summary>
+<p>多组询问。给定正整数 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(r\)</span>，求</p>
+<div class="arithmatex">\[
+\sum_{d=1}^n(-1)^{\lfloor d\sqrt{r}\rfloor}.
+\]</div>
+</details>
+<details class="note">
+<summary>解答一</summary>
+<p>如果 <span class="arithmatex">\(r\)</span> 是完全平方数，那么当 <span class="arithmatex">\(\sqrt{r}\)</span> 为偶数时，和式为 <span class="arithmatex">\(n\)</span>；否则，和式依据 <span class="arithmatex">\(n\)</span> 奇偶性不同，在 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(-1\)</span> 之间交替变化。下面考虑 <span class="arithmatex">\(r\)</span> 不是完全平方数的情形。</p>
+<p>为了应用类欧几里得算法，首先将求和式转化为熟悉的形式：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sum_{d=1}^n(-1)^{\lfloor d\sqrt{r}\rfloor} &amp;= \sum_{d=1}^n\left(1 - 2(\lfloor d\sqrt{r}\rfloor\bmod 2)\right)\\
+&amp;= n - 2\sum_{d=1}^n\left(\lfloor d\sqrt{r}\rfloor - 2\left\lfloor\dfrac{\lfloor d\sqrt{r}\rfloor}{2}\right\rfloor\right) \\
+&amp;= n - 2\sum_{d=1}^n\lfloor d\sqrt{r}\rfloor + 4 \sum_{d=1}^n\left\lfloor\dfrac{d\sqrt{r}}{2}\right\rfloor\\
+&amp;= n - 2f(n,1,0,1) + 4f(n,1,0,2)
+\end{aligned}
+\]</div>
+<p>其中的函数 <span class="arithmatex">\(f\)</span> 具有形式</p>
+<div class="arithmatex">\[
+f(a,b,c,n) = \sum_{i=1}^n\left\lfloor\dfrac{a\sqrt{r}+b}{c}i\right\rfloor.
+\]</div>
+<p>与正文中的算法不同的是，此处的斜率不再是有理数。设斜率</p>
+<div class="arithmatex">\[
+k = \dfrac{a\sqrt{r}+b}{c}.
+\]</div>
+<p>同样分为两种情形讨论。如果 <span class="arithmatex">\(k\ge 1\)</span>，那么</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(a,b,c,n) &amp;= \sum_{i=1}^n \lfloor ki\rfloor = \sum_{i=1}^n \lfloor(k-\lfloor k\rfloor)i\rfloor + \lfloor k\rfloor \sum_{i=1}^ni\\
+&amp;= \lfloor k\rfloor\dfrac{n(n+1)}{2} + f(a,b-c\lfloor k\rfloor,c,n).
+\end{aligned}
+\]</div>
+<p>问题转化为斜率小于一的情形。如果 <span class="arithmatex">\(k&lt;1\)</span>，那么设 <span class="arithmatex">\(m=\lfloor nk\rfloor\)</span>，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(a,b,c,n) &amp;= \sum_{i=1}^n \lfloor ki\rfloor = \sum_{i=1}^n\sum_{j=1}^m[j\le\lfloor ki\rfloor]\\
+&amp;= \sum_{j=1}^m\sum_{i=1}^n[i&gt;\lfloor k^{-1}j\rfloor] = nm - \sum_{j=1}^m\sum_{i=1}^n[i\le\lfloor k^{-1}j\rfloor].
+\end{aligned}
+\]</div>
+<p>此处的推导中，交换 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span> 的条件比正文中的情形更为简单，是因为直线 <span class="arithmatex">\(y=kx\)</span> 上没有除了原点之外的格点。关键在于交换后的求和式写成 <span class="arithmatex">\(f(a,b,c,n)\)</span> 的形式，这相当于要求 <span class="arithmatex">\(a',b',c'\)</span> 满足</p>
+<div class="arithmatex">\[
+k^{-1} = \dfrac{a'\sqrt{r}+b'}{c'}.
+\]</div>
+<p>这并不困难，只需要将分母有理化，就能得到</p>
+<div class="arithmatex">\[
+k^{-1} = \dfrac{c}{a\sqrt{r}+b} = \dfrac{ca\sqrt{r}-cb}{a^2r-b^2}.
+\]</div>
+<p>因此，有</p>
+<div class="arithmatex">\[
+a'=ca,~b'=-cb,~c'=a^2r-b^2.
+\]</div>
+<p>这说明</p>
+<div class="arithmatex">\[
+f(a,b,c,n) = nm - f(ca,-cb,a^2r-b^2,m).
+\]</div>
+<p>为了避免整数溢出，需要每次都将 <span class="arithmatex">\(a,b,c\)</span> 同除以它们的最大公约数。因为这个计算过程和计算 <span class="arithmatex">\(k\)</span> 的连分数的过程完全一致，所以根据 <a href="../continued-fraction/#二次无理数">连分数理论</a>，只要保证 <span class="arithmatex">\(\gcd(a,b,c)=1\)</span>，它们在计算过程中必然在整型范围内。另外，尽管 <span class="arithmatex">\((a,b,c,n)\)</span> 不会溢出，但是在该题数据范围下，<span class="arithmatex">\(f(a,b,c,n)\)</span> 可能会超过 <span class="arithmatex">\(64\)</span> 位整数的范围，自然溢出即可，无需额外处理，最后结果一定在 <span class="arithmatex">\([-n,n]\)</span> 之间。</p>
+<p>尽管斜率不会变为零，算法的复杂度仍然是 <span class="arithmatex">\(O(\log n)\)</span> 的，这一点从前文关于算法复杂度的论证容易看出。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example" open="open">
+<summary><a href="https://www.luogu.com.cn/problem/P5179">Fraction</a></summary>
+<p>给定正整数 <span class="arithmatex">\(a,b,c,d\)</span>，求所有满足 <span class="arithmatex">\(a/b&lt;p/q&lt;c/d\)</span> 的最简分数 <span class="arithmatex">\(p/q\)</span> 中 <span class="arithmatex">\((q,p)\)</span> 的字典序最小的那个。</p>
+</details>
+<details class="note">
+<summary>解答</summary>
+<p>这道题目也是 <a href="../stern-brocot/">Stern–Brocot 树</a> 的经典应用，相关题解可以在 <a href="../continued-fraction/#连分数的树">此处</a> 找到。因为它只依赖于分数的递归结构，所以它同样可以利用类似欧几里得算法的方法求解，故而也可以视作类欧几里得算法的一个应用。</p>
+<p>如果 <span class="arithmatex">\(a/b\)</span> 和 <span class="arithmatex">\(c/d\)</span> 之间（不含端点）存在至少一个自然数，可以直接取 <span class="arithmatex">\((q,p)=(1,\lfloor a/b\rfloor+1)\)</span>。否则，必然有</p>
+<div class="arithmatex">\[
+\left\lfloor\dfrac{a}{b}\right\rfloor \le \dfrac{a}{b} &lt;\dfrac{p}{q} &lt;\dfrac{c}{d}\le\left\lfloor\dfrac{a}{b}\right\rfloor+1.
+\]</div>
+<p>从这个不等式中可以看出，<span class="arithmatex">\(p/q\)</span> 的整数部分可以确定为 <span class="arithmatex">\(\lfloor a/b\rfloor\)</span>，直接消去该整数部分，然后整体取倒数，用于确定它的小数部分。这正是确定 <span class="arithmatex">\(p/q\)</span> 的连分数的 <a href="../continued-fraction/#连分数表示的求法">基本方法</a>。若最终的答案是 <span class="arithmatex">\(p/q\)</span>，那么算法的时间复杂度为 <span class="arithmatex">\(O(\log\min\{p,q\})\)</span>。</p>
+<p>此处，有一个细节问题，即取倒数之后得到的字典序最小的分数，是否是取倒数之前的字典序最小的分数。换句话说，满足 <span class="arithmatex">\(a/b&lt;p/q&lt;c/d\)</span> 的分数 <span class="arithmatex">\(p/q\)</span> 中，字典序 <span class="arithmatex">\((q,p)\)</span> 最小的，是否也是字典序 <span class="arithmatex">\((p,q)\)</span> 最小的。假设不然，设 <span class="arithmatex">\(p/q\)</span> 是字典序 <span class="arithmatex">\((q,p)\)</span> 最小的，但是 <span class="arithmatex">\(r/s\neq p/q\)</span> 是字典序 <span class="arithmatex">\((r,s)\)</span> 最小的。这必然有 <span class="arithmatex">\(r&lt;p\)</span> 且 <span class="arithmatex">\(q&lt;s\)</span>。但是，这说明</p>
+<div class="arithmatex">\[
+\dfrac{a}{b} &lt; \dfrac{r}{s} &lt; \dfrac{r}{q} &lt; \dfrac{p}{q} &lt; \dfrac{c}{d}.
+\]</div>
+<p>因此，<span class="arithmatex">\(r/q\)</span> 无论按照哪个字典序怎样都是严格更小于当前解的。这与所设条件矛盾。因此，上述算法是正确的。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="_6">万能欧几里得算法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>上一节讨论的类欧几里得算法推导通常较为繁琐，而且能够解决的和式主要是可以转化为直线下（带权）整点计数问题的和式。本节讨论一种更为一般的方法，它进一步抽象了上述过程，从而可以解决更多的问题。因此，这一方法也称为万能欧几里得算法。它同样利用了分数的递归结构求解问题，但是与类欧几里得算法约化问题的思路稍有不同。</p>
+<p>仍然考虑最经典的求和问题：</p>
+<div class="arithmatex">\[
+f(a,b,c,n)=\sum_{i=1}^n\left\lfloor \frac{ai+b}{c} \right\rfloor,
+\]</div>
+<p>其中，<span class="arithmatex">\(a,b,c,n\)</span> 都是正整数。</p>
+<h3 id="_7">问题转化<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>设参数为 <span class="arithmatex">\((a,b,c,n)\)</span> 的线段为</p>
+<div class="arithmatex">\[
+y = \frac{ax+b}{c},~0&lt; x\le n.
+\]</div>
+<p>对于这条线段，可以按照如下方法定义一个由 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span> 组成的字符串 <span class="arithmatex">\(S\)</span>，也称为 <strong>操作序列</strong>：</p>
+<ul>
+<li>字符串恰有 <span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(m=\lfloor(an+b)/c\rfloor\)</span> 个 <span class="arithmatex">\(U\)</span> 组成；</li>
+<li>第 <span class="arithmatex">\(i\)</span> 个 <span class="arithmatex">\(R\)</span> 前方的 <span class="arithmatex">\(U\)</span> 的数量恰等于 <span class="arithmatex">\(\lfloor(ai+b)/c\rfloor\)</span>，其中，<span class="arithmatex">\(i=1,\cdots,n\)</span>。</li>
+</ul>
+<p>从几何直观上看，这大致相当于从原点开始，每向右穿过一次竖向的网格线，就写下一个 <span class="arithmatex">\(R\)</span>，每向上穿过一次横向的网格线，就写下一个 <span class="arithmatex">\(U\)</span>。如下图所示：</p>
+<p><img alt="" src="../images/euclidean-universal.svg" /></p>
+<p>当然，这样的定义还需要考量一系列特殊情形：</p>
+<ul>
+<li>经过整点（即同时上穿和右穿）时，需要先写 <span class="arithmatex">\(U\)</span> 再写 <span class="arithmatex">\(R\)</span>；</li>
+<li>字符串开始时，除了在 <span class="arithmatex">\((0,1]\)</span> 区间内上穿网格线的次数外，还需要格外补充 <span class="arithmatex">\(\lfloor b/c\rfloor\)</span> 个 <span class="arithmatex">\(U\)</span>；</li>
+<li>字符串结束时，不能有格外的 <span class="arithmatex">\(U\)</span>。</li>
+</ul>
+<p>如果对于几何直观的描述有任何不明晰的地方，可以参考上述代数方法的定义辅助理解。几何直观的描述，有助于理解下文的算法过程。</p>
+<p>万能欧几里得算法的基本思路，就是将操作序列中的 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span> 都视作某个 <a href="../../algebra/basic/#群">幺半群</a> 内的元素，将整个操作序列视为幺半群内元素的乘积，而问题最终的答案与这个乘积有关。</p>
+<p>比如，本题中，可以定义状态向量 <span class="arithmatex">\(v = (1,y,\sum y)\)</span>，表示自原点开始，经历了若干次上穿和右穿网格线后，当前的状态。其中，第一个分量是常数，第二个分量是纵坐标 <span class="arithmatex">\(y\)</span>，第三个分量是要求的和式。起始时，有 <span class="arithmatex">\(v=(1,0,0)\)</span>。每向上穿过一次网格线，纵坐标就累加一，即相当于将状态向量右乘以矩阵</p>
+<div class="arithmatex">\[
+U = \begin{pmatrix}1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1\end{pmatrix}.
+\]</div>
+<p>每向右穿过一次网格线，和式就累加一次纵坐标，即相当于将状态向量右乘以矩阵</p>
+<div class="arithmatex">\[
+R = \begin{pmatrix}1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1\end{pmatrix}.
+\]</div>
+<p>因此，最终的状态就是乘积 <span class="arithmatex">\((1,0,0)S\)</span>，其中，<span class="arithmatex">\(S\)</span> 理解为上述矩阵的乘积。所求的答案，就是最终状态的第三个分量。</p>
+<p>除了将幺半群中的元素定义为矩阵以外，还可以将它们定义为一段操作序列对于最终结果的贡献，然后将操作的乘积定义为两段操作序列的贡献的合并。</p>
+<p>本题中，可以定义每段操作序列的贡献为 <span class="arithmatex">\((x,y,\sum y)\)</span>。为了严谨地解释这些记号，可以将这些分量都看作是操作序列的函数，也就是说，对于操作序列 <span class="arithmatex">\(S\)</span>，它的贡献可以写作 <span class="arithmatex">\((x(S),y(S),(\sum y)(S))\)</span>。其中，<span class="arithmatex">\(x(S)\)</span> 和 <span class="arithmatex">\(y(S)\)</span> 分别对应着操作序列 <span class="arithmatex">\(S\)</span> 中 <span class="arithmatex">\(R\)</span> 和 <span class="arithmatex">\(U\)</span> 的数量，也就是该线段右穿和上穿网格线的次数。最后一项中的求和符号，一般地，有如下定义：对于操作序列上的函数 <span class="arithmatex">\(f(S)\)</span>，可以定义 <span class="arithmatex">\((\sum f)(S)\)</span>，或记作 <span class="arithmatex">\(\sum_S f\)</span>，为下面的表达式：</p>
+<div class="arithmatex">\[
+\sum_S f := \sum\{f(S_{[1,r]}):S_r=R\}.
+\]</div>
+<p>其中，<span class="arithmatex">\(S_r\)</span> 是 <span class="arithmatex">\(S\)</span> 中的第 <span class="arithmatex">\(r\)</span> 个字符，<span class="arithmatex">\(S_{[1,r]}\)</span> 是 <span class="arithmatex">\(S\)</span> 中前 <span class="arithmatex">\(r\)</span> 个字符组成的前缀。也就是说，这个求和记号，可以看作是对于操作序列 <span class="arithmatex">\(S\)</span> 中所有以 <span class="arithmatex">\(R\)</span> 结尾的前缀进行的求和。比如说，有</p>
+<div class="arithmatex">\[
+\sum_S 1 = x,~ \sum_S x = \dfrac{1}{2}x(x+1).
+\]</div>
+<p>再比如说，<span class="arithmatex">\(\sum y\)</span> 就是操作序列中，每次右穿网格线时，之前上穿网格线的次数的累加。对于整段操作序列来说，<span class="arithmatex">\(y\)</span> 在所有以 <span class="arithmatex">\(R\)</span> 结尾的前缀处的值，就是在 <span class="arithmatex">\(i=1,\cdots,n\)</span> 处的所有 <span class="arithmatex">\(\lfloor(ai+b)/c\rfloor\)</span> 的值。因此，对于整段操作序列计算的 <span class="arithmatex">\(\sum y\)</span>，就是本题最终要求的量。</p>
+<p>初始时，有 <span class="arithmatex">\(U=(0,1,0)\)</span>，<span class="arithmatex">\(R=(1,0,0)\)</span>。进一步，可以将两个元素 <span class="arithmatex">\((x_1,y_1,s_1)\)</span> 和 <span class="arithmatex">\((x_2,y_2,s_2)\)</span> 的乘积定义为</p>
+<div class="arithmatex">\[
+(x_1,y_1,s_1)\cdot (x_2,y_2,s_2) = (x_1+x_2,y_1+y_2,s_1+s_2+x_2y_1).
+\]</div>
+<p>其中，最后一项贡献合并的结果可以通过如下计算得到：</p>
+<div class="arithmatex">\[
+\sum_{S_1+S_2}y = \sum_{S_1}y + \sum_{S_2}(y+y_1) = \sum_{S_1}y + \sum_{S_2}y + y_1\sum_{S_2}1 = s_1+s_2+x_2y_1.
+\]</div>
+<p>容易验证，这个乘法运算满足结合律，且幺元为 <span class="arithmatex">\((0,0,0)\)</span>，所以这些元素在该乘法运算下构成幺半群。所求的答案，就是乘积的第三个分量。</p>
+<p>这两种方法都可以得到正确的结果。但是，因为保留了较多的冗余信息，矩阵运算的常数较大，所以第二种方法在处理实际问题时更为实用。</p>
+<h3 id="_8">算法过程<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>与类欧几里得算法整体约化不同，万能欧几里得算法约化问题的手段是将这些操作分批次地合并。记字符串对应的操作的乘积为</p>
+<div class="arithmatex">\[
+F(a,b,c,n,U,R).
+\]</div>
+<p>约化过程具体如下：</p>
+<ul>
+<li>
+<p>当 <span class="arithmatex">\(b\ge c\)</span> 时，操作序列的开始有 <span class="arithmatex">\(\lfloor b/c\rfloor\)</span> 个 <span class="arithmatex">\(U\)</span>，直接计算它们的乘积，并将这些 <span class="arithmatex">\(U\)</span> 从操作序列中移除。此时，第 <span class="arithmatex">\(i\)</span> 个 <span class="arithmatex">\(R\)</span> 前方的 <span class="arithmatex">\(U\)</span> 的数量等于</p>
+<div class="arithmatex">\[
+\left\lfloor\dfrac{ai+b}{c}\right\rfloor - \left\lfloor\dfrac{b}{c}\right\rfloor = \left\lfloor\dfrac{ai+(b\bmod c)}{c}\right\rfloor.
+\]</div>
+<p>因此，这相当于将线段参数由 <span class="arithmatex">\((a,b,c,n)\)</span> 变为 <span class="arithmatex">\((a,b\bmod c,c,n)\)</span>。所以，对于这种情形，有</p>
+<div class="arithmatex">\[
+F(a,b,c,n,U,R) = U^{\lfloor b/c\rfloor}F(a,b\bmod c,c,n,U,R).
+\]</div>
+</li>
+<li>
+<p>当 <span class="arithmatex">\(a\ge c\)</span> 时，操作序列中每个 <span class="arithmatex">\(R\)</span> 的前方都至少有 <span class="arithmatex">\(\lfloor a/c\rfloor\)</span> 个 <span class="arithmatex">\(U\)</span>，可以将它们合并到 <span class="arithmatex">\(R\)</span> 上。也就是说，可以用 <span class="arithmatex">\(U^{\lfloor a/c\rfloor}R\)</span> 替代 <span class="arithmatex">\(R\)</span>。合并后的字符串中，第 <span class="arithmatex">\(i\)</span> 个 <span class="arithmatex">\(R\)</span> 前方的 <span class="arithmatex">\(U\)</span> 的数量等于</p>
+<div class="arithmatex">\[
+\left\lfloor\dfrac{ai+b}{c}\right\rfloor - \left\lfloor\dfrac{a}{c}\right\rfloor i = \left\lfloor\dfrac{(a\bmod c)i+b}{c}\right\rfloor.
+\]</div>
+<p>因此，这相当于将线段参数由 <span class="arithmatex">\((a,b,c,n)\)</span> 变为 <span class="arithmatex">\((a\bmod c,b,c,n)\)</span>。所以，对于这种情形，有</p>
+<div class="arithmatex">\[
+F(a,b,c,n,U,R) = F(a\bmod c,b,c,n,U,U^{\lfloor a/c\rfloor}R).
+\]</div>
+</li>
+<li>
+<p>对于剩下的情形，需要翻转横纵坐标，这基本是在交换 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span>，只是翻转后线段的参数需要仔细计算。结合操作序列的定义可知，需要确定系数 <span class="arithmatex">\((a',b',c',n')\)</span> 使得变换前的操作序列中，第 <span class="arithmatex">\(j\)</span> 个 <span class="arithmatex">\(U\)</span> 前方的 <span class="arithmatex">\(R\)</span> 的数量恰为 <span class="arithmatex">\(\lfloor(a'j+b')/c'\rfloor\)</span> 且总共有 <span class="arithmatex">\(n'\)</span> 个 <span class="arithmatex">\(U\)</span>。根据定义可知，</p>
+<div class="arithmatex">\[
+n'=\left\lfloor\dfrac{an+b}{c}\right\rfloor = m,
+\]</div>
+<p>而第 <span class="arithmatex">\(j\)</span> 个 <span class="arithmatex">\(U\)</span> 前方的 <span class="arithmatex">\(R\)</span> 的数量，就等于最大的 <span class="arithmatex">\(i\)</span> 使得</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\left\lfloor\dfrac{ai+b}{c}\right\rfloor &lt; j 
+&amp;\iff \dfrac{ai+b}{c} &lt; j \iff i &lt; \dfrac{cj-b}{a} \\
+&amp;\iff i &lt; \left\lceil\dfrac{cj-b}{a}\right\rceil = \left\lfloor\dfrac{cj-b - 1}{a}\right\rfloor + 1.
+\end{aligned}
+\]</div>
+<p>因此，<span class="arithmatex">\(i = \lfloor(cj-b-1)/a\rfloor\)</span>。这一推导过程与前文类欧几里得算法的推导类似，同样利用了上下取整函数的性质。</p>
+<p>有两处细节需要处理：</p>
+<ul>
+<li>截距项 <span class="arithmatex">\(-(b+1)/a\)</span> 为负数。注意到，如果将线段向左平移一个单位，就可以让截距项恢复为非负数，因为总有 <span class="arithmatex">\((c-b-1)/a\ge 0\)</span>。因此，可以将交换前的第一段 <span class="arithmatex">\(R^{\lfloor(c-b-1)/a\rfloor}U\)</span> 提取出来，只交换剩余操作序列中的 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span>；</li>
+<li>交换 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span> 后，结尾存在多余的 <span class="arithmatex">\(U\)</span>。因此，交换 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span> 之前，需要首先将最后一段 <span class="arithmatex">\(R\)</span> 提取出来，只交换剩余操作序列中的 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span>。这一段 <span class="arithmatex">\(R\)</span> 的数量为 <span class="arithmatex">\(n-\lfloor(cm-b-1)/a\rfloor\)</span>。</li>
+</ul>
+<p>去掉头尾若干个字符后，第 <span class="arithmatex">\(j\)</span> 个 <span class="arithmatex">\(U\)</span> 前方的 <span class="arithmatex">\(R\)</span> 的数量变为：</p>
+<div class="arithmatex">\[
+\left\lfloor\dfrac{c(j+1)-b-1}{a}\right\rfloor - \left\lfloor\dfrac{c-b-1}{a}\right\rfloor = \left\lfloor\dfrac{cj+(c-b-1)\bmod a}{a}\right\rfloor.
+\]</div>
+<p>回忆起，交换前的序列中 <span class="arithmatex">\(U\)</span> 的数量为 <span class="arithmatex">\(m = \lfloor(an+b)/c\rfloor\)</span>。而上述左移一个单位的操作，要求保证交换前至少存在一个 <span class="arithmatex">\(U\)</span>，也就是 <span class="arithmatex">\(m&gt;0\)</span>。利用这一条件，可以分为两种情形：</p>
+<ul>
+<li>
+<p>对于 <span class="arithmatex">\(m&gt;0\)</span> 的情形，处理了上面的两点后，交换完 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span> 的操作序列就是对应着参数为 <span class="arithmatex">\((c,(c-b-1)\bmod a,a,m-1)\)</span> 的线段的合法序列。所以，有</p>
+<div class="arithmatex">\[
+F(a,b,c,n,U,R) = R^{\lfloor(c-b-1)/a\rfloor}UF(c,(c-b-1)\bmod a,a,m-1,R,U)R^{n-\lfloor(cm-b-1)/a\rfloor}.
+\]</div>
+</li>
+<li>
+<p>特别地，对于 <span class="arithmatex">\(m=0\)</span> 的情形，交换前的操作序列中只包含 <span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(R\)</span>，无需交换，可以直接返回：</p>
+<div class="arithmatex">\[
+F(a,b,c,n,U,R) = R^n.
+\]</div>
+<p>与类欧几里得算法不同，万能欧几里得算法的这一特殊情形需要单独处理，否则会因涉及负幂次而无法正确计算。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>利用这些讨论，就可以将问题递归地解决。</p>
+<p>假设幺半群内元素单次相乘的时间复杂度是 <span class="arithmatex">\(O(1)\)</span> 的。那么，如果计算过程中这些元素的幂次计算都使用 <a href="../../binary-exponentiation/">快速幂</a> 进行，最终的算法复杂度就是 <span class="arithmatex">\(O(\log\max\{a,c\}+\log(b/c))\)</span> 的<sup id="fnref:complexity"><a class="footnote-ref" href="#fn:complexity">1</a></sup>。</p>
+<details class="note">
+<summary>对复杂度的解释</summary>
+<p>对比（类）欧几里得算法，万能欧几里得算法只是多了求快速幂的步骤。其余的计算过程的复杂度和类欧几里得算法相仿，已经说明是 <span class="arithmatex">\(O(\log\min\{a,c,n\})\)</span> 的。现在，需要计算这些快速幂的总复杂度。</p>
+<p>除了第一轮迭代，都有 <span class="arithmatex">\(b&lt;c\)</span>，因此这些迭代每轮都涉及三次快速幂的计算，总的复杂度是：</p>
+<div class="arithmatex">\[
+O\left(\log\left\lfloor\dfrac{a}{c}\right\rfloor+\log\left\lfloor\dfrac{c-b_1-1}{a_1}\right\rfloor+\log\left(n-\left\lfloor\dfrac{cm-b_1-1}{a_1}\right\rfloor\right)\right),
+\]</div>
+<p>其中，<span class="arithmatex">\(a_1=a\bmod c\)</span>，<span class="arithmatex">\(b_1=b\bmod c\)</span> 且 <span class="arithmatex">\(m=\lfloor(a_1n+b_1)/c\rfloor\)</span>。后面两项，分别有估计：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\dfrac{c-b_1-1}{a_1} &amp;\le \dfrac{c}{a_1},\\
+n-\left\lfloor\dfrac{cm-b_1-1}{a_1}\right\rfloor &amp;\le n - \dfrac{cm-b_1-1}{a_1} + 1 \\
+&amp;\le n - \dfrac{c((a_1n+b_1)/c-1)-b_1-1}{a_1} +1 \\
+&amp;= \dfrac{c+1}{a_1}+1.
+\end{aligned}
+\]</div>
+<p>因此，这两项的复杂度都是 <span class="arithmatex">\(O(\log(c/a_1))\)</span> 的。</p>
+<p>每一轮迭代中，线段的参数都由 <span class="arithmatex">\((a,\cdot,c,\cdot)\)</span> 变换为 <span class="arithmatex">\((c,\cdot,a\bmod c,\cdot)\)</span>，且该轮总的时间复杂度为</p>
+<div class="arithmatex">\[
+O\left(\log\dfrac{a}{c}+\log\dfrac{c}{a\bmod c}\right).
+\]</div>
+<p>对于全部递归的轮次，这些项可以裂项相消，因此，最后总和复杂度就是 <span class="arithmatex">\(O(\log a+\log c)=O(\log\max\{a,c\})\)</span> 的。</p>
+<p>最后，再加上第一轮迭代中快速幂 <span class="arithmatex">\(U^{\lfloor b/c\rfloor}\)</span> 的复杂度 <span class="arithmatex">\(O(\log(b/c))\)</span>，就得到总的复杂度为 <span class="arithmatex">\(O(\log\max\{a,c\}+\log(b/c))\)</span>。</p>
+</details>
+<p>万能欧几里得算法的流程可以写成统一的模板，处理具体问题时只需要更改模板类型 <code>T</code> 的实现即可。</p>
+<details class="example" open="open">
+<summary>参考实现</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<p>利用万能欧几里得算法可以得到模板题的实现如下：</p>
+<details class="example">
+<summary> 模板题实现（<a href="https://judge.yosupo.jp/problem/sum_of_floor_of_linear">Library Checker - Sum of Floor of Linear</a>）</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<h3 id="_9">例题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<details class="example" open="open">
+<summary><a href="https://www.luogu.com.cn/problem/P5170">【模板】类欧几里得算法</a></summary>
+<p>多组询问。给定正整数 <span class="arithmatex">\(a,b,c,n\)</span>，求</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(a,b,c,n) &amp;= \sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor,\\
+g(a,b,c,n) &amp;= \sum_{i=0}^ni\left\lfloor \frac{ai+b}{c} \right\rfloor,\\
+h(a,b,c,n) &amp;= \sum_{i=0}^n\left\lfloor \frac{ai+b}{c} \right\rfloor^2.
+\end{aligned}
+\]</div>
+</details>
+<details class="note">
+<summary>解答二</summary>
+<p>为了应用万能欧几里得算法的模板，首先将 <span class="arithmatex">\(i=0\)</span> 的项提出来，单独考虑。对于剩下的部分，可以看作是对参数为 <span class="arithmatex">\((a,b,c,n)\)</span> 的线段分别计算 <span class="arithmatex">\(\sum y,\sum xy,\sum y^2\)</span>。如正文所言，有两种将操作序列转换为幺半群元素的方式。</p>
+<p><strong>矩阵运算</strong>：状态向量定义为 <span class="arithmatex">\((1,x,y,xy,y^2,\sum y,\sum xy,\sum y^2)\)</span>。初始状态为 <span class="arithmatex">\((1,0,0,0,0,0,0,0)\)</span>，两个操作分别为</p>
+<div class="arithmatex">\[
+U =
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 
+\end{pmatrix},~
+R = 
+\begin{pmatrix}
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 
+\end{pmatrix}.
+\]</div>
+<p>最终答案为初始状态右乘这些操作矩阵的乘积得到的向量末尾三个分量。</p>
+<p>这个做法的常数巨大，并不能通过本题，这里给出细节仅仅是为了辅助理解。</p>
+<p><strong>贡献合并</strong>：一段操作序列的贡献定义为 <span class="arithmatex">\((x,y,\sum y,\sum xy,\sum y^2)\)</span>。两个操作分别为</p>
+<div class="arithmatex">\[
+U = (1,0,0,0,0),~ R = (0,1,0,0,0).
+\]</div>
+<p>贡献合并时，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sum_{S_1+S_2} y 
+&amp;= \sum_{S_1}y + \sum_{S_2}(y+y_1) = \sum_{S_1}y + \sum_{S_2}y + x_2y_1,\\
+\sum_{S_1+S_2} xy
+&amp;= \sum_{S_1}xy + \sum_{S_2}(x+x_1)(y+y_1) \\
+&amp;= \sum_{S_1}xy + \sum_{S_2}xy + x_1\sum_{S_2}y + y_1\sum_{S_2}x + x_1y_1\sum_{S_2}1\\
+&amp;= \sum_{S_1}xy + \sum_{S_2}xy + x_1\sum_{S_2}y + \dfrac{1}{2}x_2(x_2+1)y_1 + x_1x_2y_1,\\
+\sum_{S_1+S_2}y^2
+&amp;= \sum_{S_1}y^2 + \sum_{S_2}(y+y_1)^2 \\
+&amp;= \sum_{S_1}y^2 + \sum_{S_2}y^2 + 2y_1\sum_{S_2}y + y_1^2\sum_{S_2}1  \\
+&amp;= \sum_{S_1}y^2 + \sum_{S_2}y^2 + 2y_1\sum_{S_2}y + x_2y_1^2.
+\end{aligned}
+\]</div>
+<p>这说明，应该将操作的乘法定义为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;(x_1,y_1,s_1,t_1,u_1)\cdot(x_2,y_2,s_2,t_2,u_2)\\
+&amp;= (x_1+x_2,y_1+y_2,s_1+s_2+x_2y_1,\\
+&amp;\qquad t_1+t_2+x_1s_2+(1/2)x_2(x_2+1)y_1+x_1x_2y_1,\\
+&amp;\qquad u_1+u_2+2y_1s_2+x_2y_1^2).
+\end{aligned}
+\]</div>
+<p>虽然直接验证较为繁琐，但是上述定义的贡献向量在该乘法下的确构成幺半群，单位元为 <span class="arithmatex">\((0,0,0,0,0)\)</span>。</p>
+<p>对于一般的情形，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sum_{S_1+S_2}x^ry^s &amp;= \sum_{S_1}x^ry^s + \sum_{S_2}(x+x_1)^r(y+y_1)^s \\
+&amp;= \sum_{S_1}x^ry^s + \sum_{i=0}^r\sum_{j=0}^s\binom{r}{i}\binom{s}{j}x_1^{r-i}y_1^{s-j}\sum_{S_2}x^iy^j.
+\end{aligned}
+\]</div>
+<p>只要维护好所有更低幂次的贡献，就可以计算一般情形的和式。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="example" open="open">
+<summary><a href="https://www.luogu.com.cn/problem/P5172">[清华集训 2014] Sum</a></summary>
+<p>多组询问。给定正整数 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(r\)</span>，求</p>
+<div class="arithmatex">\[
+\sum_{d=1}^n(-1)^{\lfloor d\sqrt{r}\rfloor}.
+\]</div>
+</details>
+<details class="note">
+<summary>解答二</summary>
+<p>首先，单独处理 <span class="arithmatex">\(r\)</span> 为完全平方数的情形，与前文完全一致，从略。此处，仅考虑 <span class="arithmatex">\(r\)</span> 不是完全平方数的情形。</p>
+<p>本题应用万能欧几里得算法的方式有很多。比如说，可以为每个操作定义一个线性变换：</p>
+<div class="arithmatex">\[
+U(x) = -x,~ R(x) = x + 1.
+\]</div>
+<p>操作的乘法定义为线性变换的复合。那么，最终的答案就是操作序列对应的变换的复合得到的函数在 <span class="arithmatex">\(x=0\)</span> 处的值。</p>
+<p>还可以为每段操作序列定义它的贡献。贡献可以定义为 <span class="arithmatex">\(((-1)^y,\sum(-1)^y)\)</span>。那么，两个操作分别取</p>
+<div class="arithmatex">\[
+U = (0,-1),~ R = (1,1).
+\]</div>
+<p>贡献的合并定义为</p>
+<div class="arithmatex">\[
+(u_1,v_1)\cdot(u_2,v_2) = (u_1u_2,v_1+u_1v_2).
+\]</div>
+<p>容易验证，在该乘法下，所有操作构成了幺半群，且单位元为 <span class="arithmatex">\((0,1)\)</span>。最终的答案就是所有元素乘积的第二个分量。</p>
+<p>这两种方法是一致的，因为如果将线性变换写作 <span class="arithmatex">\(f(x)=u+vx\)</span>，那么线性变换的复合对应的系数的变化，恰恰就是上述操作的乘法。也就是说，这两个幺半群是同构的。</p>
+<p>本题中，线段的参数为 <span class="arithmatex">\((k,n)\)</span>，其中，<span class="arithmatex">\(k\in\mathbf R\)</span> 为直线的斜率。设操作序列对应的乘积为 <span class="arithmatex">\(F(k,n,U,R)\)</span>。那么，有如下递归算法：</p>
+<ul>
+<li>
+<p>如果 <span class="arithmatex">\(k\ge 1\)</span>，那么操作序列中每个 <span class="arithmatex">\(R\)</span> 前方都有至少 <span class="arithmatex">\(\lfloor k\rfloor\)</span> 个 <span class="arithmatex">\(U\)</span>，所以，有</p>
+<div class="arithmatex">\[
+F(k,n,U,R) = F(k-\lfloor k\rfloor,n,U,U^{\lfloor k\rfloor} R).
+\]</div>
+</li>
+<li>
+<p>如果 <span class="arithmatex">\(k&lt;1\)</span>，那么交换操作序列中的 <span class="arithmatex">\(U\)</span> 和 <span class="arithmatex">\(R\)</span>，并舍去末尾的 <span class="arithmatex">\(U\)</span>（即交换前的 <span class="arithmatex">\(R\)</span>），所以，有</p>
+<div class="arithmatex">\[
+F(k,n,U,R) = F(k^{-1},m,R,U)R^{n-\lfloor k^{-1}m\rfloor}.
+\]</div>
+</li>
+</ul>
+<p>算法中，<span class="arithmatex">\(k\)</span> 的迭代过程其实就是在求 <span class="arithmatex">\(\sqrt{r}\)</span> 的连分数展开。为此，可以应用 <a href="../pell-equation/#pqa-算法">PQa 算法</a>。求连分数的过程和万能欧几里得算法迭代的过程可以同时进行。</p>
+<p>和类欧几里得算法的情形一致，算法的复杂度仍然是 <span class="arithmatex">\(O(\log n)\)</span> 的。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="_10">习题<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>模板题：</p>
+<ul>
+<li><a href="https://judge.yosupo.jp/problem/sum_of_floor_of_linear">Library Checker - Sum of Floor of Linear</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P5170">Luogu P5170【模板】类欧几里得算法</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P5171">Luogu P5171 Earthquake</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P5172">Luogu P5172 [清华集训 2014] Sum</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P4132">Luogu P4132 [BJOI2012] 算不出的等式</a></li>
+<li><a href="https://loj.ac/p/138">LOJ 138. 类欧几里得算法</a></li>
+<li><a href="https://loj.ac/p/6440">LOJ 6440. 万能欧几里得</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P5179">Luogu P5179 Fraction</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1182/F">Codeforces 1182 F. Maximum Sine</a></li>
+</ul>
+<p>应用题：</p>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P4433">Luogu P4433 [COCI 2009/2010 #1] ALADIN</a></li>
+<li><a href="https://atcoder.jp/contests/abc372/tasks/abc372_g">AtCoder Beginner Contest 372 G - Ax + By &lt; C</a></li>
+<li><a href="https://atcoder.jp/contests/abc313/tasks/abc313_g">AtCoder Beginner Contest 313 G - Redistribution of Piles</a></li>
+<li><a href="https://atcoder.jp/contests/abc283/tasks/abc283_h">AtCoder Beginner Contest 283 Ex - Popcount Sum</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1098/E">Codeforces 1098 E. Fedya the Potter</a></li>
+<li><a href="https://codeforces.com/problemset/problem/868/G">Codeforces 868 G. El Toll Caves</a></li>
+</ul>
+<h2 id="_11">参考资料与注释<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:complexity">
+<p>通常考虑的问题中，<span class="arithmatex">\(b\)</span> 都与 <span class="arithmatex">\(a\)</span> 同阶，<span class="arithmatex">\(O(\log(b/c))\)</span> 这一项可以忽略。而且，如果在调用万能欧几里得算法前，首先进行了一轮类欧几里得算法的取模，消除 <span class="arithmatex">\(b\)</span> 的影响，这一项的快速幂的复杂度是可以规避的。这其实是因为通常的问题中，<span class="arithmatex">\(U\)</span> 的初始形式较为特殊，它的幂次有着更简单的形式，不需要通过快速幂计算。比如正文的例子中，<span class="arithmatex">\(U^{\lfloor b/a\rfloor}\)</span> 的结果，就是将 <span class="arithmatex">\(U\)</span> 中不在对角线上的那个 <span class="arithmatex">\(1\)</span> 替换成 <span class="arithmatex">\(\lfloor b/a\rfloor\)</span>，而无需用快速幂计算。&#160;<a class="footnote-backref" href="#fnref:complexity" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <style>
+  .md-footer {
+      background-color: #f0f0f0;
+  }
+</style>
+
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; gzh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+      <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;color: #000;">
+        本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+        <span id="finicount_views"></span>    &nbsp;|&nbsp;
+        <footer>
+          <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+        </footer>
+      </div>
+      </font>
+
+        <style>
+          .footer-visit-count {
+              height: fit-content;
+              min-height: 55px; /* 根据实际情况调整此高度 */
+              color: #000;
+          }
+          </style>
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" rel="noopener" title="Wechat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/gongzihang" target="_blank" rel="noopener" title="telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ZihangGong28792" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<zihanggong24@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/688234000/lists" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+        
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。 如果你同意,你可以帮助我们让我们的网站更好</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../../../../javascripts/config_mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../../../../javascripts/简历.js"></script>
+      
+    
+  </body>
+</html>

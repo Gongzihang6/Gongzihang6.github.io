@@ -1,0 +1,3614 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="记录、分享">
+      
+      
+        <meta name="author" content="Enter-tainer, iamtwz, Ir1d, isdanni, ksyx, StudyingFather, Tiphereth-A, Xeonacid, c-forrest">
+      
+      
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/Computer%20Science/Algorithm/docs/math/algebra/schreier-sims/">
+      
+      
+      
+      
+      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Schreier sims - Blog of GZH</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/简历.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../../../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-40HC6RYSR1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-40HC6RYSR1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blog of GZH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Schreier sims
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6.5.5c12.4-13.1 22.5-28.3 29.8-45l-35.2.1h-72c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/ZH-TW/" hreflang="zh-TW" class="md-select__link">
+              China(TW)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MachineLearning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  每日诗词
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  长期主义
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../../../about/geren/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Blog of GZH
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java面向对象基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java集合框架与常用API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java高级技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode热题100
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode热题100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    字母异位词分组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交易逆序对的总数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单词接龙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    岛屿数量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分考场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    拉马车
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分巧克力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K倍区间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    编辑距离
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    接雨水
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组合总和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    全排列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    乘积最大子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. 最长回文子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前K个高频元素
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最小栈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pow(x,n)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络延迟时间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对角线上的质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    零钱兑换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    括号匹配
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300最长递增子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    115不同的子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    712两个字符串的最小ASCII删除和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    516最长回文子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    139单词拆分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    221最大正方形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2845统计趣味子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2799统计完全子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1399统计最大组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2338统计理想数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2179统计数组中好三元组数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2537统计好子数组的数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2140解决智力问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2278字母在字符串中的百分比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MachineLearning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MachineLearning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K近邻学习与降维
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    公式测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    经典卷积神经网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    理解YOLO网络结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    每日诗词
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            每日诗词
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·玉阑干外清江浦
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    菩萨蛮·回文夏闺怨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    清平乐·六盘山
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    洞仙歌·咏柳
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    秋兴八首·其一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    与史郎中钦听黄鹤楼上吹笛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    夏日南亭怀辛大
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    行香子·秋与
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自题金山画像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            长期主义
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fitness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/geren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作者个人简介
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简历
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../about/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    功能测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      引入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      稳定化子链
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基和强生成集
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      群的阶数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      成员判定
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      轨道、陪集代表系和稳定化子的计算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="轨道、陪集代表系和稳定化子的计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      轨道和陪集代表系的存储
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="轨道和陪集代表系的存储">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      直接存储
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schreier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schreier 树
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schreier_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schreier 引理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schreiersims" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schreier–Sims 算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schreier–Sims 算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      筛选
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      另一种实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      复杂度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料与注释
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Schreier sims</h1>
+
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (Gemini)</p>
+<p>Schreier-Sims算法是计算群论中用于高效处理有限置换群的关键算法。它通过构建稳定化子链，找到群的基和强生成集，从而避免直接存储所有群元素。该算法能解决诸如计算群的阶数、判断元素归属等问题，其核心思想类似于线性基。通过递归地寻找稳定化子和陪集代表系，Schreier-Sims算法将群结构分解为更易管理的部分，并在计算机代数系统中得到广泛应用。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>15</strong> 分钟 | 中文字符：<strong>5997</strong> | 有效代码行数：<strong>1</strong></p>
+</div>
+<p>前置知识：<a href="../basic/">抽象代数基本概念</a>、<a href="../group-theory/">群论</a>、<a href="../../permutation/">置换与排列</a></p>
+<h2 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>Schreier–Sims 算法</strong> 是计算群论（computational group theory）的一种算法，以数学家 Otto Schreier 和 Charles Sims 的名字命名。该算法能够在多项式时间内解决诸如找到有限置换群的阶数、查看给定置换是否包含在所给群中等许多问题。Schreier–Sims 算法最早由 Sims 在 1970 年基于 Schreier 引理引入。在 1981 年<sup id="fnref:knuth-year"><a class="footnote-ref" href="#fn:knuth-year">1</a></sup>，Donald Knuth 进一步改进了该算法的运行时间。后来，该算法又发展出来一种更快的随机化版本。计算机代数系统（例如 GAP 和 Magma）通常使用该算法的高度优化过的 Monte Carlo 版本<sup id="fnref:monte-carlo"><a class="footnote-ref" href="#fn:monte-carlo">2</a></sup>。</p>
+<details class="info" open="open">
+<summary>记号</summary>
+<p>本文依照计算群论文献的惯例，将群作用记作右作用，这意味着置换的复合由左向右进行。本文涉及的群作用都可以视为置换作用，尽管部分算法对于更广泛的群作用也成立。相应地，群作用的集合默认为 <span class="arithmatex">\(X=\{1,2,\cdots,n\}\)</span>，其中的元素则称为点。置换 <span class="arithmatex">\(g\)</span> 作用在点 <span class="arithmatex">\(x\)</span> 上得到的结果记作 <span class="arithmatex">\(x^g\)</span>，有时也称置换 <span class="arithmatex">\(g\)</span> 将点 <span class="arithmatex">\(x\)</span> 移动到点 <span class="arithmatex">\(x^g\)</span>。最后，置换群 <span class="arithmatex">\(G\)</span> 作用下，点 <span class="arithmatex">\(x\)</span> 的轨道记作 <span class="arithmatex">\(x^G=\{x^g:g\in G\}\)</span>，它的稳定化子则记作 <span class="arithmatex">\(G_x=\{g\in G:x^g=x\}\)</span>。稳定化子的概念还可以推广到集合 <span class="arithmatex">\(B\subseteq X\)</span>，它的稳定化子定义为 <span class="arithmatex">\(G_B=\bigcap_{x\in B}G_x\)</span>。</p>
+</details>
+<h2 id="_2">概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Schreier–Sims 算法主要试图解决这样一个问题：</p>
+<ul>
+<li>给定大小为 <span class="arithmatex">\(n\)</span> 的集合 <span class="arithmatex">\(X\)</span> 上的一些置换组成的集合 <span class="arithmatex">\(S\)</span>，如何在计算机中高效地存储由 <span class="arithmatex">\(S\)</span> 生成的置换群 <span class="arithmatex">\(G=\langle S\rangle\)</span>，并完成一系列对该群的查询任务？</li>
+</ul>
+<p>显然，这样的群 <span class="arithmatex">\(G\)</span> 的规模可能很大，且远远大于集合 <span class="arithmatex">\(X\)</span> 和生成集 <span class="arithmatex">\(S\)</span> 的规模。比如，<span class="arithmatex">\(n\)</span> 次对称群 <span class="arithmatex">\(S_n=\langle(123\cdots n),(12)\rangle\)</span> 的大小为 <span class="arithmatex">\(n!\)</span>，但是它可以仅由两个置换生成。存储群中的每一个元素是不现实的。</p>
+<p>类似于利用 <a href="../../numerical/gauss/">Gauss 消元法</a> 构建出向量空间的一组 <a href="../../linear-algebra/basis/">线性基</a>，Schreier–Sims 算法的思路是找到有限置换群 <span class="arithmatex">\(G\)</span> 的一组「基」：</p>
+<ol>
+<li>算法的输入是 <span class="arithmatex">\(G\)</span> 的一个生成集 <span class="arithmatex">\(S\)</span>，其中有若干个置换；</li>
+<li>如果群 <span class="arithmatex">\(G\)</span> 不平凡，总能找到在群 <span class="arithmatex">\(G\)</span> 作用下位置会发生变化的点 <span class="arithmatex">\(\beta\)</span>，即 <span class="arithmatex">\(|\beta^G|&gt;1\)</span>；</li>
+<li>找到点 <span class="arithmatex">\(\beta\)</span> 的轨道 <span class="arithmatex">\(\Delta=\beta^{G}\)</span>，并对轨道中的每个点 <span class="arithmatex">\(\delta\in\Delta\)</span>，都找到群 <span class="arithmatex">\(G\)</span> 中一个置换 <span class="arithmatex">\(t_{\delta}\)</span>，它能够将点 <span class="arithmatex">\(\beta\)</span> 移动到 <span class="arithmatex">\(\delta\)</span>；</li>
+<li>找到点 <span class="arithmatex">\(\beta\)</span> 的稳定化子 <span class="arithmatex">\(G_{\beta}\)</span> 的一个生成集 <span class="arithmatex">\(S'\)</span>；</li>
+<li>递归地对 <span class="arithmatex">\(G'=\langle S'\rangle\)</span> 调用该算法，直到得到平凡的群 <span class="arithmatex">\(\{e\}\)</span>。</li>
+</ol>
+<p>这个思路的合理性在于，点 <span class="arithmatex">\(\beta\)</span> 的稳定化子 <span class="arithmatex">\(G_{\beta}\)</span> 是群 <span class="arithmatex">\(G\)</span> 的子群，它的全体（右）陪集构成群 <span class="arithmatex">\(G\)</span> 的分划，且这些陪集和点 <span class="arithmatex">\(\beta\)</span> 的轨道 <span class="arithmatex">\(\beta^G\)</span> 一一对应，步骤 3 中求得的那些置换 <span class="arithmatex">\(t_{\delta}\)</span> 就是这些陪集的代表元。这个陪集代表元的集合 <span class="arithmatex">\(T\)</span> 称为稳定化子 <span class="arithmatex">\(G_{\beta}\)</span> 的 <strong>陪集代表系</strong>（transversal）。换句话说，群 <span class="arithmatex">\(G\)</span> 中的每个元素 <span class="arithmatex">\(g\)</span> 都和唯一的一对元素 <span class="arithmatex">\((h,t)\in G_\beta\times T\)</span> 对应，且 <span class="arithmatex">\(g=ht\)</span>。因而，只要能想办法存储子群 <span class="arithmatex">\(G_{\beta}\)</span> 和相应的陪集代表系 <span class="arithmatex">\(T\)</span>，就可以存储整个群 <span class="arithmatex">\(G\)</span>。然而，存储子群 <span class="arithmatex">\(G_{\beta}\)</span> 的问题也已经解决了——只要递归调用算法即可。</p>
+<p>当然，算法的实现还有很多细节需要梳理，这是本文的主要内容。但是在那之前，首先要考察调用该算法之后得到的结果，看看算法将群存储为怎样的结构，能够解决怎样的查询问题。为此，应当明晰一些概念。</p>
+<h3 id="_3">稳定化子链<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>假设对群 <span class="arithmatex">\(G=\{S\}\)</span> 调用该算法，共进行了 <span class="arithmatex">\(k\)</span> 次；且在第 <span class="arithmatex">\(i\)</span> 次调用该算法时，输入是置换的集合 <span class="arithmatex">\(S^{(i-1)}\)</span>，找到的点是 <span class="arithmatex">\(\beta_i\)</span>，得到的陪集代表系是 <span class="arithmatex">\(T_i\)</span>，得到的稳定化子的生成集是 <span class="arithmatex">\(S^{(i)}\)</span>。如果记 <span class="arithmatex">\(G^{(i)}=\langle S^{(i)}\rangle\)</span>。那么，算法实际上得到了子群链</p>
+<div class="arithmatex">\[
+G=G^{(0)}&gt; G^{(1)}&gt;\cdots&gt; G^{(k-1)}&gt; G^{(k)}=\{e\}.
+\]</div>
+<p>而且，每一个链中的子群都是一个稳定化子</p>
+<div class="arithmatex">\[
+G^{(i)}=G_{\beta_1,\cdots,\beta_i}.
+\]</div>
+<p>因而，Schreier–Sims 算法可以看作就是在计算这样一个 <strong>稳定化子链</strong>（stabilizer chain）。</p>
+<h3 id="_4">基和强生成集<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>如果集合 <span class="arithmatex">\(X\)</span> 的子集 <span class="arithmatex">\(B\)</span> 满足 <span class="arithmatex">\(G_B=\{e\}\)</span>，就称 <span class="arithmatex">\(B\)</span> 是置换群 <span class="arithmatex">\(G\)</span> 的一组 <strong>基</strong>（base）。显然，上述算法得到了一组基 <span class="arithmatex">\(B=\{\beta_1,\cdots,\beta_k\}\)</span>。这意味着，置换 <span class="arithmatex">\(g\in G\)</span> 对这些点作用的结果在群 <span class="arithmatex">\(G\)</span> 中唯一地确定了这个置换。而且，算法输出的这个基还满足条件</p>
+<div class="arithmatex">\[
+G^{(i-1)}=G_{\beta_1,\cdots,\beta_{i-1}}&gt;G_{\beta_1,\cdots,\beta_{i-1},\beta_i}=G^{(i)}.
+\]</div>
+<p>这就是说，基中的每个点都蕴含着关于群中的元素的有效信息。这样的基称为 <strong>无冗余的</strong>（nonredundant）。算法总是输出无冗余的基。这样的基对应的稳定化子链是严格递降的。</p>
+<p>同时，算法得到的生成集的并集</p>
+<div class="arithmatex">\[
+\bar S=\bigcup_{i=0}^kS_i
+\]</div>
+<p>也是群 <span class="arithmatex">\(G\)</span> 的生成集，且成立 <span class="arithmatex">\(\langle\bar S\cap G^{(i)}\rangle = G^{(i)}\)</span>。满足这个条件的生成集称为群 <span class="arithmatex">\(G\)</span> 相对于基 <span class="arithmatex">\(B\)</span> 的 <strong>强生成集</strong>（strong generating set）。因而，Schreier–Sims 算法也可以看作是在计算群 <span class="arithmatex">\(G\)</span> 的 <strong>基和强生成集</strong>（base and strong generating set, BSGS）。这个说法和稳定化子链的说法是等价的，本文不加以区分。</p>
+<p>当然，算法还得到了一系列轨道 <span class="arithmatex">\(\Delta_i=\beta_{i}^{G^{(i-1)}}\)</span> 和相应的陪集代表系 <span class="arithmatex">\(T_i\)</span>。这些轨道称为群 <span class="arithmatex">\(G\)</span> 的 <strong>基础轨道</strong>（fundamental orbits）。当本文提及群 <span class="arithmatex">\(G\)</span> 的稳定化子链或者基和强生成集时，总是默认相应的基础轨道和陪集代表系都已经一并求出。</p>
+<h3 id="_5">数据结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>本文会提供一系列伪代码。伪代码中，群的稳定化子链（或基和强生成集）存储在数据结构 <span class="arithmatex">\(C\)</span> 中：</p>
+<div class="arithmatex">\[
+C=(S,\Delta,T,C').
+\]</div>
+<p>这个结构中的数据成员分别是当前群的生成集 <span class="arithmatex">\(S\)</span>、基础轨道 <span class="arithmatex">\(\Delta\)</span>、相应的陪集代表系 <span class="arithmatex">\(T\)</span> 和存储为嵌套子结构的稳定化子 <span class="arithmatex">\(C'\)</span>。当然，稳定化子 <span class="arithmatex">\(C'\)</span> 也是这样的一个结构。整个群实际存储在一个层状结构中，每层都描述了稳定化子链中的一个群。最内层是空的结构体，表示 <span class="arithmatex">\(G^{(k)}=\{e\}\)</span>。</p>
+<p>在伪代码中，该数据结构中的成员可以分别由 <span class="arithmatex">\(C.generators\)</span>、<span class="arithmatex">\(C.orbit\)</span>、<span class="arithmatex">\(C.transversal\)</span> 和 <span class="arithmatex">\(C.next\)</span> 访问。轨道的首个元素 <span class="arithmatex">\(C.orbit[0]\)</span> 默认是基中的点 <span class="arithmatex">\(\beta\)</span>，而相应的陪集代表元 <span class="arithmatex">\(C.transversal[\beta]\)</span> 默认是恒等变换 <span class="arithmatex">\(e\)</span>。注意，虽然此处用数组下标访问了轨道和陪集代表系中的元素，但是它们未必存储为数组，而应当理解为它们提供了访问轨道首元素和根据轨道中的点查询相应的陪集代表元的方法。下文会讨论具体的实现细节。</p>
+<h3 id="_6">应用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>在获得群的基和强生成集后，能够解决一系列关于群的查询问题。其中，最基础的，也是算法竞赛中最常遇到的，是查询群的阶数和查询某个置换是否属于给定群的问题。</p>
+<h4 id="_7">群的阶数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>如果已知群 <span class="arithmatex">\(G\)</span> 的基和强生成集，那么应用 Lagrange 定理和轨道稳定化子定理可知，群 <span class="arithmatex">\(G\)</span> 的阶数可以计算为</p>
+<div class="arithmatex">\[
+|G|=\prod_{i=1}^k[G^{(i-1)}:G^{(i)}]=\prod_{i=1}^k[G^{(i-1)}:G^{(i-1)}_{\beta_i}]=\prod_{i=1}^k|T_i|.
+\]</div>
+<p>所以，只要将所有陪集代表系 <span class="arithmatex">\(T_i\)</span> 的大小（或者等价地，基础轨道 <span class="arithmatex">\(\Delta_i\)</span> 的长度）乘起来就可以得到群 <span class="arithmatex">\(G\)</span> 的阶数。</p>
+<h4 id="_8">成员判定<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>已知群 <span class="arithmatex">\(G\)</span> 的基和强生成集，也可以判定某个置换 <span class="arithmatex">\(h\)</span> 是否属于群 <span class="arithmatex">\(G\)</span>。这称为 <strong>成员判定</strong>（membership testing）问题。</p>
+<p>这个问题可以递归地解决。要判定 <span class="arithmatex">\(h\in G^{(i-1)}\)</span>，首先要找到 <span class="arithmatex">\(G^{(i)}\)</span> 的包含 <span class="arithmatex">\(h\)</span> 的陪集的代表元 <span class="arithmatex">\(t\in T_i\)</span>。如果能够找到，那么设 <span class="arithmatex">\(h'=ht^{-1}\)</span>，就有 <span class="arithmatex">\(h=h't\)</span> 且 <span class="arithmatex">\(h\in G^{(i-1)}\)</span> 等价于 <span class="arithmatex">\(h'\in G^{(i)}\)</span>；问题就转化为判定 <span class="arithmatex">\(h'\in G^{(i)}\)</span>。如果找不到这样的 <span class="arithmatex">\(t\)</span>，或者已经递归到了 <span class="arithmatex">\(G^{(k)}=\{e\}\)</span> 但是 <span class="arithmatex">\(h\neq e\)</span>，就可以得出结论，<span class="arithmatex">\(h\notin G\)</span>。其实，这个过程不仅判定了 <span class="arithmatex">\(h\in G\)</span>，而且在 <span class="arithmatex">\(h\in G\)</span> 的情形下，还能够将 <span class="arithmatex">\(h\)</span> 表示为一系列陪集代表元的乘积 <span class="arithmatex">\(t_k\cdots t_2t_1\)</span>，其中，<span class="arithmatex">\(t_i\in T_i\)</span>。对于群 <span class="arithmatex">\(G\)</span> 中的元素，这样的表示存在且唯一。这再次证明了上面关于群的阶数的公式是正确的。</p>
+<p>现在将该过程写成如下伪代码：</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+\textbf{Algorithm }\textrm{MembershipTest}(C,h):\\
+\textbf{Input. }\textrm{A stabilizer chain }C\textrm{ for a group }G\textrm{ and a permutation }h.\\
+\textbf{Output. }\textrm{Whether }h\in G.\\
+\textbf{Method.}\\
+\begin{array}{ll}
+1  &amp; \textbf{while }C\textrm{ is not empty }\\
+2  &amp; \qquad \beta \leftarrow C.orbit[0]\\
+3  &amp; \qquad \delta \leftarrow \beta^h\\
+4  &amp; \qquad \textbf{if }\delta\in C.orbit\textbf{ then}\\
+5  &amp; \qquad \qquad t \leftarrow C.transversal[\delta]\\
+6  &amp; \qquad \qquad h \leftarrow ht^{-1}\\
+7  &amp; \qquad \textbf{else }\\
+8  &amp; \qquad \qquad \textbf{return }\textrm{false}\\
+9  &amp; \qquad \textbf{end if}\\
+10 &amp; \qquad C \leftarrow C.next\\
+11 &amp; \textbf{end while}\\
+12 &amp; \textbf{return }h=e
+\end{array}
+\end{array}
+\]</div>
+<p>下文会看到，成员判定问题也是本文所讨论的 Schreier–Sims 算法的实现中的一个重要组成部分。</p>
+<h2 id="_9">轨道、陪集代表系和稳定化子的计算<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>要实现 Schreier–Sims 算法，首先要解决如下子问题：<sup id="fnref:orbit-algo"><a class="footnote-ref" href="#fn:orbit-algo">3</a></sup></p>
+<ul>
+<li>给定群 <span class="arithmatex">\(G\)</span> 的生成集 <span class="arithmatex">\(S\)</span> 和一个点 <span class="arithmatex">\(\beta\)</span>，如何求出轨道 <span class="arithmatex">\(\beta^G\)</span>、相应的陪集代表系 <span class="arithmatex">\(T\)</span> 和稳定化子 <span class="arithmatex">\(G_\beta\)</span> 的生成集？</li>
+</ul>
+<p>这就是本节要解决的问题。</p>
+<h3 id="_10">轨道和陪集代表系的存储<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>要求得轨道和陪集代表系，只要直接搜索就好了。伪代码如下：</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+\textbf{Algorithm }\textrm{OrbitTransversal}(S,\beta):\\
+\textbf{Input. }\textrm{A generating set }S\textrm{ for a group }G\textrm{ and a point }\beta.\\
+\textbf{Output. }\textrm{The orbit }\Delta=\beta^G\textrm{ and the transversal }T.\\
+\textbf{Method.}\\
+\begin{array}{ll}
+1  &amp; \Delta \leftarrow [\beta]\\
+2  &amp; T[\beta] \leftarrow e\\
+3  &amp; \textbf{for }\delta\in\Delta\\
+4  &amp; \qquad \textbf{for }s\in S\\
+5  &amp; \qquad \qquad \gamma \leftarrow \delta^s\\
+6  &amp; \qquad \qquad \textbf{if }\gamma\notin\Delta\textbf{ then}\\
+7  &amp; \qquad \qquad \qquad\textrm{append }\gamma\textrm{ to }\Delta\\
+8  &amp; \qquad \qquad \qquad T[\gamma] \leftarrow T[\delta]\cdot s\\
+9  &amp; \qquad \qquad \textbf{end if}\\
+10 &amp; \qquad \textbf{end for}\\
+11 &amp; \textbf{end for}\\
+12 &amp; \textbf{return }\Delta, T
+\end{array}
+\end{array}
+\]</div>
+<p>具体实现的时候，使用广度优先搜索和深度优先搜索都是可以的。搜索遍历到的状态数目是 <span class="arithmatex">\(|S||T|\)</span>，只要能合理地存储轨道和陪集代表系，时间复杂度是完全可以接受的。</p>
+<p>由于在置换群的语境下，轨道无非是至多 <span class="arithmatex">\(n\)</span> 个点的集合，为了高效完成查找和添加操作，可以使用布尔值数组或是无序集合存储。这样两个操作的时间复杂度都是 <span class="arithmatex">\(O(1)\)</span> 的，整体的空间占用是 <span class="arithmatex">\(O(n)\)</span> 的。当然，取决于陪集代表系的实现，可能还需要额外标记首元素的位置。</p>
+<p>问题在于使用什么样的数据结构存储相应的陪集代表系 <span class="arithmatex">\(T\)</span>。</p>
+<h4 id="_11">直接存储<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>最简单的方法，当然是直接存储陪集代表系 <span class="arithmatex">\(T\)</span> 中的每一个元素 <span class="arithmatex">\(t\)</span>。单个置换存储为 <a href="../../permutation/#单行记号">单行记号</a>，需要的空间恰为 <span class="arithmatex">\(n\)</span>，所以存储这样的陪集代表系的空间复杂度是 <span class="arithmatex">\(O(|T|n)\)</span> 的。这样做的好处是访问单个陪集代表元的时间复杂度是 <span class="arithmatex">\(O(1)\)</span> 的，代价是初次计算这些陪集代表元的时间复杂度是 <span class="arithmatex">\(O(|T|n)\)</span> 的。</p>
+<h4 id="schreier">Schreier 树<a class="headerlink" href="#schreier" title="Permanent link">&para;</a></h4>
+<p>另外一种常见的做法是实现一个树形结构用于存储陪集代表系。它称为 <strong>Schreier 树</strong>（Schreier tree）或 <strong>Schreier 向量</strong>（Schreier vector）<sup id="fnref:schreier-vector"><a class="footnote-ref" href="#fn:schreier-vector">4</a></sup>。它以 <span class="arithmatex">\(\beta\)</span> 为根，以轨道 <span class="arithmatex">\(\Delta\)</span> 中的元素 <span class="arithmatex">\(\delta\)</span> 为顶点。每次在搜索过程中得到新的顶点 <span class="arithmatex">\(\gamma=\delta^s\)</span> 时，就从旧的顶点 <span class="arithmatex">\(\delta\)</span> 到新的顶点 <span class="arithmatex">\(\gamma\)</span> 连一条边，边上记录生成集 <span class="arithmatex">\(S\)</span> 中置换 <span class="arithmatex">\(s\)</span> 的序号（或指针）。因为已经存储了生成集，存储陪集代表系的额外空间复杂度是 <span class="arithmatex">\(O(|T|)\)</span> 的。对于 <span class="arithmatex">\(n\)</span> 的规模很大的情形，这样做可以有效地节约空间，而且初次计算的时候复杂度是 <span class="arithmatex">\(O(|T|)\)</span> 的。但是，副作用就是每次需要获得陪集代表元的时候，需要遍历顶点到根的路径上的边，重新计算陪集代表元，因而时间复杂度高度依赖于 Schreier 树的深度。对于一般的情形，树的深度可能达到 <span class="arithmatex">\(O(n)\)</span> 级别。</p>
+<p>在具体实现的时候，需要根据实际情况权衡算法的时空复杂度。对于算法竞赛可能涉及的情形，<span class="arithmatex">\(n\)</span> 通常都不大，空间充足，而时间复杂度常常成为瓶颈。稍后会看到，Schreier–Sims 算法最耗时的步骤恰好需要多次访问陪集代表元，因而使用直接存储的方式往往更优。但是对于某些应用场景，<span class="arithmatex">\(n\)</span> 可能很大，存储空间可能更为紧张，就有可能需要使用 Schreier 树的方式存储陪集代表系。对于这种情况，为避免 Schreier 树深度过深，研究者提出了很多方法，可以在树的深度过深的时候重构出浅的 Schreier 树。有兴趣的读者可以参考文末的文献。</p>
+<p>在伪代码中，本文不会区分具体的陪集代表系的实现，而只假设存储陪集代表系 <span class="arithmatex">\(T\)</span> 的数据结构实现了根据轨道元素 <span class="arithmatex">\(\delta\in\Delta\)</span> 访问和修改对应陪集代表元 <span class="arithmatex">\(T[\delta]\)</span> 的操作。</p>
+<h3 id="schreier_1">Schreier 引理<a class="headerlink" href="#schreier_1" title="Permanent link">&para;</a></h3>
+<p>在获得了轨道 <span class="arithmatex">\(\beta^G\)</span> 和陪集代表系 <span class="arithmatex">\(T\)</span> 后，Schreier 引理继而提供了获得稳定化子 <span class="arithmatex">\(G_\beta\)</span> 的生成集的方法。</p>
+<details class="note" open="open">
+<summary>Schreier 引理</summary>
+<p>设群 <span class="arithmatex">\(G=\langle S\rangle\)</span> 有子群 <span class="arithmatex">\(H\le G\)</span>。设 <span class="arithmatex">\(T\)</span> 是子群 <span class="arithmatex">\(H\)</span> 的（右）陪集代表系，且 <span class="arithmatex">\(e\in T\)</span><sup id="fnref:schreier-lemma-unity"><a class="footnote-ref" href="#fn:schreier-lemma-unity">5</a></sup>，并记 <span class="arithmatex">\(g\in G\)</span> 所在陪集的代表元 <span class="arithmatex">\(t\in T\)</span> 为 <span class="arithmatex">\(\overline g\)</span>。那么，集合</p>
+<div class="arithmatex">\[
+U=\{ts(\overline{ts})^{-1}:t\in T,s\in S\}
+\]</div>
+<p>是子群 <span class="arithmatex">\(H\)</span> 的一个生成集。它的元素称为子群 <span class="arithmatex">\(H\)</span> 的 <strong>Schreier 生成元</strong>（Schreier generator）。</p>
+</details>
+<details class="note">
+<summary>证明</summary>
+<p>首先，根据陪集代表元的定义可知，<span class="arithmatex">\(ts(\overline{ts})^{-1}\in H\)</span> 对所有 <span class="arithmatex">\(t\in T,s\in S\)</span> 都成立，故而 <span class="arithmatex">\(\langle U\rangle\subseteq H\)</span>。</p>
+<p>反过来，对于任何 <span class="arithmatex">\(h\in H\)</span>，因为 <span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(G\ge H\)</span> 的生成集，必然存在一列 <span class="arithmatex">\(s_i\in S\cup S^{-1}\)</span> 使得</p>
+<div class="arithmatex">\[
+h=s_1s_2\cdots s_r
+\]</div>
+<p>成立。令 <span class="arithmatex">\(t_1=e\)</span>，并递归地定义 <span class="arithmatex">\(t_{i+1}=\overline{s_it_i}\in T\)</span>，于是，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+h&amp;=\left(t_1s_1t_2^{-1}\right)\left(t_2s_2t_3^{-1}\right)\cdots(t_rs_rt_{r+1})^{-1}t_{r+1}.
+\end{aligned}
+\]</div>
+<p>而对于每个 <span class="arithmatex">\(i=1,2,\cdots,r\)</span> 都有 <span class="arithmatex">\(t_is_it_{i+1}^{-1}=t_is_i(\overline{t_is_i})^{-1}\in U\cup U^{-1}\subseteq H\)</span>，故而有 <span class="arithmatex">\(t_{r+1}\in H\)</span>。但是，<span class="arithmatex">\(H\cap T=\{e\}\)</span>，所以有 <span class="arithmatex">\(t_{r+1}=e\)</span>。这就说明，任意 <span class="arithmatex">\(h\in H\)</span> 都可以写作一列 <span class="arithmatex">\(u_i=t_is_it_{i+1}^{-1}\in U\cup U^{-1}\)</span> 的乘积，亦即 <span class="arithmatex">\(U\)</span> 生成 <span class="arithmatex">\(H\)</span>。</p>
+</details>
+<p>因为陪集代表系 <span class="arithmatex">\(T\)</span> 对应的子群就是稳定化子 <span class="arithmatex">\(G_\beta\)</span>，所以求出陪集代表系 <span class="arithmatex">\(T\)</span> 后再结合群 <span class="arithmatex">\(G\)</span> 的生成集 <span class="arithmatex">\(S\)</span> 就能得到稳定化子 <span class="arithmatex">\(G_\beta\)</span> 的生成集。</p>
+<h3 id="_12">算法<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>只要对上面的伪代码稍作修改，就能在计算轨道和陪集代表系的同时得到相应的稳定化子的生成集：</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+\textbf{Algorithm }\textrm{OrbitTransversalStabilizer}(S,\beta):\\
+\textbf{Input. }\textrm{A generating set }S\textrm{ for a group }G\textrm{ and a point }\beta.\\
+\textbf{Output. }\textrm{The orbit }\Delta=\beta^G\textrm{, the transversal }T\textrm{, and a}\\
+\qquad\textrm{ generating set }S'\textrm{ for the stabilizer }G_\beta.\\
+\textbf{Method.}\\
+\begin{array}{ll}
+1  &amp; \Delta \leftarrow [\beta]\\
+2  &amp; T[\beta] \leftarrow e\\
+3  &amp; S' \leftarrow [e]\\
+4  &amp; \textbf{for }\delta\in\Delta\\
+5  &amp; \qquad \textbf{for }s\in S\\
+6  &amp; \qquad \qquad \gamma \leftarrow \delta^s\\
+7  &amp; \qquad \qquad \textbf{if }\gamma\notin\Delta\textbf{ then}\\
+8  &amp; \qquad \qquad \qquad\textrm{append }\gamma\textrm{ to }\Delta\\
+9  &amp; \qquad \qquad \qquad T[\gamma] \leftarrow T[\delta]\cdot s\\
+10 &amp; \qquad \qquad \textbf{else} \\
+11 &amp; \qquad \qquad \qquad \textrm{append }T[\delta]\cdot s\cdot T[\gamma]^{-1}\textrm{ to }S'\\
+12 &amp; \qquad \qquad \textbf{end if}\\
+13 &amp; \qquad \textbf{end for}\\
+14 &amp; \textbf{end for}\\
+15 &amp; \textbf{return }\Delta, T, S'
+\end{array}
+\end{array}
+\]</div>
+<p>伪代码中，对于每对 <span class="arithmatex">\((\delta,s)\)</span>，只有轨道中不产生新的元素时，<span class="arithmatex">\(t_\delta st_{\delta^s}^{-1}\)</span> 才是新的 Schreier 生成元；否则，它就是恒等变换 <span class="arithmatex">\(e\)</span>。因而，算法中实际生成的 Schreier 生成元（包括最初的恒等变换）最多只有</p>
+<div class="arithmatex">\[
+|S||T|-(|T|-1) = |S|(|T|-1)+1
+\]</div>
+<p>个。对于一般的情形，这个上界是紧的。<sup id="fnref:upper-bound"><a class="footnote-ref" href="#fn:upper-bound">6</a></sup>但是，对于实际要处理的有限群，这个上界相当地宽松：这些新得到的 Schreier 生成元大多数并都是之前得到的生成元的重复，或者可以由之前的生成元复合而成。</p>
+<p>因为 Schreier–Sims 算法的基本流程可以实现为递归地调用上述计算轨道和稳定化子的算法，所以其实此时就已经得到了 Schreier–Sims 算法的一种朴素实现。但是，如果不加以筛选，Schreier 生成元的规模的增长速度是指数级的：反复应用 <span class="arithmatex">\(O(|S_{i}|)=O(|S_{i-1}||T_i|)\)</span> 可知，最内层的稳定化子的生成集的规模将达到 <span class="arithmatex">\(O(|S||G|)\)</span>。这显然低效得荒诞，因为最内层的稳定化子是 <span class="arithmatex">\(\{e\}\)</span>。</p>
+<p>Sims 的工作提供了限制 Schreier 生成元的规模的增长速度的方法，它能够保证最终得到的强生成集 <span class="arithmatex">\(\bar S\)</span> 的大小是 <span class="arithmatex">\(O(n^2)\)</span> 的。这样就可以在多项式时间内计算基和强生成集。</p>
+<h2 id="schreiersims">Schreier–Sims 算法<a class="headerlink" href="#schreiersims" title="Permanent link">&para;</a></h2>
+<p>为解决上述问题，本节讨论 Schreier–Sims 算法的一种增量实现，它得到的强生成集的大小是 <span class="arithmatex">\(O(n^2)\)</span> 的。</p>
+<h3 id="_13">筛选<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Schreier–Sims 算法对上述朴素算法的核心优化十分简明：它要求在向稳定化子的生成集添加任何 Schreier 生成元之前，都首先需要经过 <strong>筛选</strong>（sifting）。所谓筛选，就是首先判定新的 Schreier 生成元是否已经存在于已有的生成元生成的子群中，然后只添加那些尚不存在的生成元。为此，只需要使用前文的成员判定算法 <span class="arithmatex">\(\textrm{MembershipTest}(C,h)\)</span> 即可。</p>
+<p>但是，能够这样做的前提是，基于当前群的已经产生了的 Schreier 生成元，早就构建好了它们生成的群的稳定化子链（或基和强生成集）。这意味着，每次向稳定化子的生成集中添加一个新的 Schreier 生成元，都需要动态地维护内层的稳定化子链，以用于之后的筛选。但是，当前层每插入一个生成元，可能会产生多个 Schreier 生成元，也就可能会多次更新内层结构；而内层结构的每次更新，都可能会引发更内层结构的多次更新。</p>
+<p>似乎之前提到的指数级爆炸的问题依然存在。其实不然。因为提前做好了筛选，只有待添加的生成元真的会引发某一层结构的扩大的时候，该层结构才会更新。这说明，单层结构更新的次数实际上等于该层结构存储的群严格增长的次数。但是，大小为 <span class="arithmatex">\(|G|\)</span> 的群至多有长度为 <span class="arithmatex">\(\log|G|\)</span> 的子群链；因为 Lagrange 定理保证，子群链长度每增加一，群的大小至少要翻倍。这就说明，单层结构至多只会更新 <span class="arithmatex">\(\log|G|\)</span> 次，因而最后得到的强生成集 <span class="arithmatex">\(\bar S\)</span> 的大小就是 <span class="arithmatex">\(|B|\log|G|\)</span> 的。</p>
+<p>这个估计还可以进一步改进。因为此处出现的群 <span class="arithmatex">\(G\)</span> 已知是 <span class="arithmatex">\(n\)</span> 次对称群 <span class="arithmatex">\(S_n\)</span> 的子群，所以 <span class="arithmatex">\(G\)</span> 的子群链长度不会超过 <span class="arithmatex">\(S_n\)</span> 的子群链长度。可以证明<sup id="fnref:subgroup-chain"><a class="footnote-ref" href="#fn:subgroup-chain">7</a></sup>，<span class="arithmatex">\(S_n\)</span> 的严格递增子群链长度不会超过 <span class="arithmatex">\(3n/2\)</span>。这说明，单层结构更新的次数其实是 <span class="arithmatex">\(O(n)\)</span> 的。显然，基的大小也不超过 <span class="arithmatex">\(n\)</span>。故而，最后得到的强生成集 <span class="arithmatex">\(\bar S\)</span> 的大小就是 <span class="arithmatex">\(O(n^2)\)</span> 的。</p>
+<p>此处提到的筛选方法是 Sims 提出的，也称为 Sims 筛（Sims filter）。还有一种更为复杂的筛选方法，是由 Jerrum 提出的，也称为 <a href="https://groupprops.subwiki.org/w/index.php?title=Jerrum%27s_filter">Jerrum 筛</a>（Jerrum filter），它能够保证得到的强生成集的大小是 <span class="arithmatex">\(O(n)\)</span> 的。有兴趣的读者可以自行学习。</p>
+<p>对于筛选过程，有一个小优化是，在 <span class="arithmatex">\(\textrm{MembershipTest}(C,h)\)</span> 的实现中，并不输出布尔值，而是输出最后得到的「筛渣」<sup id="fnref:siftee"><a class="footnote-ref" href="#fn:siftee">8</a></sup><span class="arithmatex">\(h\)</span>（即用 <span class="arithmatex">\(\textbf{return }h\)</span> 代替伪代码中的第 <span class="arithmatex">\(10\)</span> 和第 <span class="arithmatex">\(14\)</span> 行）。如果「筛渣」<span class="arithmatex">\(h\neq e\)</span>，就说明成员判定失败，此时可以直接将「筛渣」<span class="arithmatex">\(h\)</span> 而不是原来的 <span class="arithmatex">\(h\)</span> 添加到当前层。此处的「筛渣」<span class="arithmatex">\(h\)</span> 已经除去了若干个陪集代表元的因子，因而移动了更少的元素，所以会减少局部的计算量。这个优化对于整体的复杂度没有任何影响。</p>
+<h3 id="_14">过程<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>现在可以描述 Schreier–Sims 算法的具体过程：首先，初始化一个空结构 <span class="arithmatex">\(C\)</span>，用于存储群的稳定化子链。然后，逐个向结构 <span class="arithmatex">\(C\)</span> 中添加生成集 <span class="arithmatex">\(S\)</span> 中的生成元，最后得到的结构 <span class="arithmatex">\(C\)</span> 就是群 <span class="arithmatex">\(\langle S\rangle\)</span> 的稳定化子链。伪代码如下：</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+\textbf{Algorithm }\textrm{SchreierSims}(S):\\
+\textbf{Input. }\textrm{A generating set }S\textrm{ for a group }G.\\
+\textbf{Output. }\textrm{The stabilizer chain }C\textrm{ for the group }G.\\
+\textbf{Method.}\\
+\begin{array}{ll}
+1  &amp; C \leftarrow []\\
+2  &amp; \textbf{for }s\in S\\
+3  &amp; \qquad C \leftarrow \textrm{Extend}(C,s)\\
+4  &amp; \textbf{end for}\\
+5  &amp; \textbf{return }C
+\end{array}
+\end{array}
+\]</div>
+<p>算法的核心在于向当前的 <span class="arithmatex">\(C\)</span> 中添加新的生成元 <span class="arithmatex">\(s\)</span> 这一步，即子程序 <span class="arithmatex">\(\textrm{Extend}(C,s)\)</span>。正如前文所述，添加置换 <span class="arithmatex">\(s\)</span> 之前和之后，都需要保证 <span class="arithmatex">\(C\)</span> 是稳定化子链。这样，在添加置换 <span class="arithmatex">\(s\)</span> 之前，可以首先做筛选。如果发现 <span class="arithmatex">\(s\)</span> 不在已有的群中，就 <strong>增量地</strong> 计算轨道、陪集代表元和 Schreier 生成元。此处的「增量」的含义是，已经计算过的，不要重复计算。这样才能保证正确的复杂度。</p>
+<p>考虑如何将 <span class="arithmatex">\(\textrm{OrbitTransversalStabilizer}(S,\beta)\)</span> 改造为增量版本。算法搜索的状态空间是 <span class="arithmatex">\(\Delta\times S\)</span>。在添加新的生成元 <span class="arithmatex">\(s\)</span> 之后，状态空间将变成 <span class="arithmatex">\(\Delta'\times\left(S\cup\{s\}\right)\)</span>。两者的差集就是</p>
+<div class="arithmatex">\[
+\left(\Delta\times\{s\}\right)\cup\left((\Delta'\setminus\Delta)\times \left(S\cup\{s\}\right)\right).
+\]</div>
+<p>这意味着，当加入新的生成元 <span class="arithmatex">\(s\)</span> 的时候，首先需要计算新的生成元 <span class="arithmatex">\(s\)</span> 与旧的轨道和相应的陪集代表元的组合；如果在这个过程中还得到了新的轨道的元素，就再考虑这些元素与所有生成元（无论新旧）的组合；过程重复到轨道不再延长为止。</p>
+<p>向结构 <span class="arithmatex">\(C\)</span> 中添加置换 <span class="arithmatex">\(g\)</span> 的伪代码如下：</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+\textbf{Algorithm }\textrm{Extend}(C,g):\\
+\textbf{Input. }\textrm{A stabilizer chain }C\textrm{ for the group generated by }S\textrm{ and a}\\
+\qquad \textrm{permutation }g.\\
+\textbf{Output. }\textrm{A stabilizer chain }C\textrm{ for the group generated by }S\cup\{g\}.\\
+\textbf{Method.}\\
+\begin{array}{ll}
+1  &amp; \textbf{if }\textrm{MembershipTest}(C,g)\textrm{ is passed}\textbf{ then}\\
+2  &amp; \qquad \textbf{return }C\\
+3  &amp; \textbf{end if}\\
+4  &amp; \textbf{if }C\textrm{ is empty}\textbf{ then}\\
+5  &amp; \qquad \beta \leftarrow \textrm{an element moved by }g\\
+6  &amp; \qquad C.orbit[0] \leftarrow \beta \\
+7  &amp; \qquad C.transversal[\beta] \leftarrow e\\
+8  &amp; \textbf{end if}\\
+9  &amp; \textrm{append }g\textrm{ to }C.generators\\
+10  &amp; \Delta \leftarrow C.orbit \\
+11 &amp; \textbf{for }\delta\in\Delta \\
+12 &amp; \qquad \gamma \leftarrow \delta^g \\
+13 &amp; \qquad \textbf{if }\gamma\notin C.orbit\textbf{ then}\\
+14 &amp; \qquad \qquad \textrm{append }\gamma\textrm{ to }C.orbit\\
+15 &amp; \qquad \qquad C.transversal[\gamma] \leftarrow C.transversal[\delta]\cdot g\\
+16 &amp; \qquad \textbf{else}\\
+17 &amp; \qquad \qquad s'\leftarrow C.transversal[\delta]\cdot g\cdot C.transversal[\gamma]^{-1}\\
+18 &amp; \qquad \qquad C.next \leftarrow \textrm{Extend}(C.next, s')\\
+19 &amp; \qquad \textbf{end if}\\
+20 &amp; \textbf{end for} \\
+21 &amp; \textbf{for }\delta\in C.orbit\setminus\Delta \\ 
+22 &amp; \qquad \textbf{for }s\in C.generators \\
+23 &amp; \qquad \qquad \gamma \leftarrow \delta^s \\
+24 &amp; \qquad \qquad \textbf{if }\gamma\notin C.orbit\textbf{ then}\\
+25 &amp; \qquad \qquad \qquad \textrm{append }\gamma\textrm{ to }C.orbit\\
+26 &amp; \qquad \qquad \qquad C.transversal[\gamma] \leftarrow C.transversal[\delta]\cdot s\\
+27 &amp; \qquad \qquad \textbf{else}\\
+28 &amp; \qquad \qquad \qquad s'\leftarrow C.transversal[\delta]\cdot s\cdot C.transversal[\gamma]^{-1}\\
+29 &amp; \qquad \qquad \qquad \textrm{Extend}(C.next, s')\\
+30 &amp; \qquad \qquad \textbf{end if}\\
+31 &amp; \qquad \textbf{end for}\\
+32 &amp; \textbf{end for} \\
+33 &amp; \textbf{return }C
+\end{array}
+\end{array}
+\]</div>
+<p>这样就得到了完整的 Schreier–Sims 算法。</p>
+<h3 id="_15">另一种实现<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>上述的实现已经是正确的，但是 <span class="arithmatex">\(12\sim 19\)</span> 行和 <span class="arithmatex">\(23\sim 30\)</span> 行略显重复。基于此，Knuth 在论文中提出了一种递归实现，更为简明。他的做法是，将这个重复的部分视作是对陪集剩余系（和轨道）的更新。每次更新陪集剩余系都要和所有的生成元组合，根据是否产生了新的陪集代表元，决定是递归地调用自身还是添加生成元的程序。伪代码如下：</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+\textbf{Algorithm }\textrm{Extend}(C,g):\\
+\textbf{Input. }\textrm{A stabilizer chain }C\textrm{ for the group generated by }S\textrm{ and a}\\
+\qquad \textrm{permutation }g.\\
+\textbf{Output. }\textrm{A stabilizer chain }C\textrm{ for the group generated by }S\cup\{g\}.\\
+\textbf{Method.}\\
+\begin{array}{ll}
+1  &amp; \textbf{if }\textrm{MembershipTest}(C,g)\textrm{ is passed}\textbf{ then}\\
+2  &amp; \qquad \textbf{return }C\\
+3  &amp; \textbf{end if}\\
+4  &amp; \textbf{if }C\textrm{ is empty}\textbf{ then}\\
+5  &amp; \qquad \beta \leftarrow \textrm{an element moved by }g\\
+6  &amp; \qquad C.orbit[0] \leftarrow \beta \\
+7  &amp; \qquad C.transversal[\beta] \leftarrow e\\
+8  &amp; \textbf{end if}\\
+9  &amp; \textrm{append }g\textrm{ to }C.generators\\
+10 &amp; \textbf{for }t\in C.transversal\\
+11 &amp; \qquad \textrm{ExtendTranserversal}(C,t\cdot g)\\
+12 &amp; \textbf{end for}\\
+13 &amp; \textbf{return }C
+\end{array}\\
+\\
+\textbf{Sub-Algorithm }\textrm{ExtendTranserversal}(C,t):\\
+\textbf{Method.}\\
+\begin{array}{ll}
+1  &amp; \beta \leftarrow C.orbit[0]\\
+2  &amp; \gamma \leftarrow \beta^t\\
+3  &amp; \textbf{if }\gamma\notin C.orbit\textbf{ then}\\
+4  &amp; \qquad \textrm{append }\gamma\textrm{ to }C.orbit\\
+5  &amp; \qquad C.transversal[\gamma] \leftarrow t\\
+6  &amp; \qquad \textbf{for }s\in C.generators\\
+7  &amp; \qquad \qquad \textrm{ExtendTranserversal}(C,t\cdot s)\\
+8  &amp; \qquad \textbf{end for}\\
+9  &amp; \textbf{else}\\
+10 &amp; \qquad s' \leftarrow t\cdot C.transversal[\gamma]^{-1}\\
+11 &amp; \qquad \textrm{Extend}(C.next,s')\\
+12 &amp; \textbf{end if}
+\end{array}
+\end{array}
+\]</div>
+<p>将此处的伪代码和上节的相比，就可以知道它是正确的。而且，两者复杂度并无差异。</p>
+<h3 id="_16">复杂度<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>为了分析 Schreier–Sims 算法的复杂度，需要一些记号。设置换的长度为 <span class="arithmatex">\(n\)</span>，生成集的大小 <span class="arithmatex">\(|S|\)</span> 为 <span class="arithmatex">\(m\)</span>。得到的（无冗余）基的长度记为 <span class="arithmatex">\(|B|\)</span>。而且，最后得到的自外向内第 <span class="arithmatex">\(i\)</span> 层的稳定化子 <span class="arithmatex">\(G_i\)</span> 中，生成元的数目记为 <span class="arithmatex">\(|S_{i-1}|\)</span>，陪集代表系的大小（或轨道的长度）记为 <span class="arithmatex">\(|T_i|\)</span>。下面分析利用上述 Schreier–Sims 算法的增量实现所需要的时间复杂度。算法主要分为两部分：筛选，以及对轨道、陪集代表系和 Schreider 生成元的计算。</p>
+<p>最初输入的生成元和算法中得到的 Schreider 生成元都需要进行筛选，因而筛选过程执行的总次数是 <span class="arithmatex">\(O(\sum_{i=1}^{|B|}|S_{i-1}||T_i|+|S|)\)</span>。单次筛选需要与 <span class="arithmatex">\(O(|B|)\)</span> 个陪集代表元计算置换乘积。设计算与单个陪集代表元的乘积的时间是 <span class="arithmatex">\(\tau\)</span>。直接存储陪集代表元时，<span class="arithmatex">\(\tau\in O(n)\)</span>；而用 Schreier 树存储陪集代表元时，<span class="arithmatex">\(\tau\in O(n^2)\)</span>。执行筛选过程的时间复杂度总共为 <span class="arithmatex">\(O(\tau|B|\sum_{i=1}^{|B|}|S_{i-1}||T_i|+\tau|B||S|)\)</span>。</p>
+<p>对于轨道等信息的计算，因为是增量实现，状态空间中的每对 <span class="arithmatex">\((\delta,s)\in\Delta_i\times S_{i-1}\)</span> 都只计算了至多一次。对于轨道和陪集代表系的计算，根据存储方式不同，单次计算陪集代表元的时间复杂度可能是 <span class="arithmatex">\(O(n)\)</span> 的或是 <span class="arithmatex">\(O(1)\)</span> 的。但是，无论如何，这都不超过计算 Schreider 生成元的复杂度。直接存储时，它是 <span class="arithmatex">\(O(n)\)</span> 的；使用 Schreier 树时，它是 <span class="arithmatex">\(O(n^2)\)</span> 的。与筛选过程的总时间复杂度比较，会发现计算这些信息的时间复杂度都不会超过筛选需要的时间复杂度。所以，Schreier–Sims 算法的时间复杂度就是上一段得到的 <span class="arithmatex">\(O(\tau|B|\sum_{i=1}^{|B|}|S_{i-1}||T_i|+\tau|B||S|)\)</span>。</p>
+<p>至于空间复杂度，算法最后得到的数据结构中存储了 <span class="arithmatex">\(O(\sum_{i=1}^{|B|}|S_{i-1}|)\)</span> 个生成元和 <span class="arithmatex">\(O(\sum_{i=1}^{|B|}|T_i|)\)</span> 个陪集代表元。如果使用直接存储，生成元和陪集代表元都需要 <span class="arithmatex">\(O(n)\)</span> 的空间；如果使用 Schreiner 树，生成元需要 <span class="arithmatex">\(O(n)\)</span> 的空间，而陪集代表元只需要 <span class="arithmatex">\(O(1)\)</span> 的空间。</p>
+<p>前文已经说明，<span class="arithmatex">\(n\)</span> 次对称群中严格递增子群链的长度是 <span class="arithmatex">\(O(n)\)</span> 的，这对 <span class="arithmatex">\(|B|\)</span> 和 <span class="arithmatex">\(|S_i|\)</span> 都适用。因而，使用直接存储陪集代表系的方式实现的 Schreier–Sims 算法，时间复杂度是 <span class="arithmatex">\(O(n^5+mn^2)\)</span> 的，空间复杂度是 <span class="arithmatex">\(O(n^3)\)</span> 的。当然对于 <span class="arithmatex">\(\log|G|\in O(n)\)</span> 的情形，一个更好的估计是时间复杂度<sup id="fnref:knuth-complexity"><a class="footnote-ref" href="#fn:knuth-complexity">9</a></sup> <span class="arithmatex">\(O(n^2\log^3|G|+mn\log|G|)\)</span> 和空间复杂度 <span class="arithmatex">\(O(n^2\log|G|)\)</span>。对于随机的生成集的情形，实际测试发现算法的复杂度明显低于 <span class="arithmatex">\(\Theta(n^5)\)</span>，而大致是 <span class="arithmatex">\(\Theta(n^4)\)</span> 的。</p>
+<p>虽然相较于直接存储，用 Schreiner 树会在时间复杂度中引入额外的 <span class="arithmatex">\(n\)</span> 的指数，但对于 <span class="arithmatex">\(n\)</span> 很大，但是群本身远小于 <span class="arithmatex">\(n\)</span> 次对称群的情形，它的空间复杂度是 <span class="arithmatex">\(O(n\log^2|G|)\)</span> 的，远小于直接存储的 <span class="arithmatex">\(O(n^2\log|G|)\)</span>。但是在算法竞赛中，很难遇到这样使用 Schreiner 树存储更优的情形。</p>
+<h3 id="_17">参考实现<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>此处提供一个 Schreier–Sims 算法的参考实现。因为 <span class="arithmatex">\(n\)</span> 规模较小，实现中直接指定基 <span class="arithmatex">\(B=\{n,n-1,\cdots,1\}\)</span> 而不是通过算法选择它。这样做的好处是，自内向外第 <span class="arithmatex">\(k\)</span> 层（不计空结构体）的群中的置换只就会改变前 <span class="arithmatex">\(k\)</span> 个元素，方便后续计算。代码中的另一项优化是，在存储陪集代表元的时候，存储的实际上是它的逆置换，这简化了置换的运算。</p>
+<details class="example">
+<summary>参考实现</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="_18">习题<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://loj.ac/p/177">LOJ 177. 生成子群阶数</a></li>
+<li><a href="https://uoj.ac/problem/287">[WC2017] 棋盘</a></li>
+<li><a href="https://codeforces.com/gym/421334/problem/A">Permutations</a></li>
+<li><a href="https://disk.yandex.com/i/OfEXXcu-anMHuw">[Grand Prix of Yekaterinburg 2015] Problem H. Heimdall</a></li>
+</ul>
+<h2 id="_19">参考资料与注释<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Schreier%E2%80%93Sims_algorithm">Schreier–Sims algorithm - Wikipedia</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/B9780080129754500205">Sims, Charles C, Computational methods in the study of permutation groups, Computational Problems in Abstract Algebra, pp. 169–183, Pergamon, Oxford, 1970.</a></li>
+<li><a href="https://arxiv.org/abs/math/9201304">Knuth, Donald E. Efficient representation of perm groups, Combinatorica 11 (1991), no. 1, 33–43.</a></li>
+<li><a href="https://www.cambridge.org/core/books/permutation-group-algorithms/199629665EC545A10BCB99FFE6AAFD25">Ákos Seress, Permutation Group Algorithms, Cambridge University Press</a></li>
+<li><a href="https://www.math.colostate.edu/%7Ehulpke/CGT/cgtnotes.pdf">Alexander Hulpke's Notes on Computational Group Theory</a></li>
+<li><a href="https://blogs.cs.st-andrews.ac.uk/codima/files/2015/11/CoDiMa2015_Holt.pdf">Derek Holt's Slides on The Schreier–Sims algorithm for finite permutation groups</a></li>
+<li><a href="https://www.m8j.net/data/List/Files-118/Documentation.pdf">Martin Jaggi, Implementations of 3 Types of the Schreier–Sims Algorithm, MAS334 - Mathematics Computing Project, 2005</a></li>
+<li><a href="https://henrik.baarnhielm.net/schreiersims.pdf">Henrik Bäärnhielm. The Schreier–Sims algorithm for matrix groups</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:knuth-year">
+<p>Knuth 的论文是在 1991 年发表的，但是他的改进在 1981 年就通过会议广泛地宣传。论文是基于他的会议讲稿写作的。&#160;<a class="footnote-backref" href="#fnref:knuth-year" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:monte-carlo">
+<p>不要与 Monto Carlo 方法混淆。此处的 Monte Carlo 算法是指出错概率恒定且任意小的随机算法。&#160;<a class="footnote-backref" href="#fnref:monte-carlo" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:orbit-algo">
+<p>这个问题以及本节的算法都并不需要假设所讨论的群作用是置换作用，因而可以应用于更广泛的场景。比如，如果将这些算法应用于共轭作用，同样可以求得轨道（共轭类）、陪集代表系和稳定化子（中心化子）。&#160;<a class="footnote-backref" href="#fnref:orbit-algo" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:schreier-vector">
+<p>因为这个树形结构可以通过一列指向父节点的指针来实现，所以也称作 Schreier 向量。&#160;<a class="footnote-backref" href="#fnref:schreier-vector" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:schreier-lemma-unity">
+<p>这个 <span class="arithmatex">\(e\in T\)</span> 的条件对于 Schreier 引理的成立不是必要的。&#160;<a class="footnote-backref" href="#fnref:schreier-lemma-unity" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:upper-bound">
+<p><a href="https://en.wikipedia.org/wiki/Nielsen%E2%80%93Schreier_theorem">Nielsen–Schreier 定理</a> 说明，对于由 <span class="arithmatex">\(n\)</span> 个生成元生成的 <a href="https://en.wikipedia.org/wiki/Free_group">自由群</a>，它的指数为 <span class="arithmatex">\(k\)</span> 的子群是由 <span class="arithmatex">\(k(n-1)+1\)</span> 个生成元生成的自由群。&#160;<a class="footnote-backref" href="#fnref:upper-bound" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:subgroup-chain">
+<p>参见 <a href="https://www.sciencedirect.com/science/article/pii/0021869389902561">Cameron, P. J., Solomon, R., &amp; Turull, A. (1989). Chains of subgroups in symmetric groups. Journal of algebra, 127(2), 340-352.</a>&#160;<a class="footnote-backref" href="#fnref:subgroup-chain" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:siftee">
+<p>这并不是什么严格的术语，在不同的英文文献中可能称作 siftee 或者 sifted element。&#160;<a class="footnote-backref" href="#fnref:siftee" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:knuth-complexity">
+<p>Knuth 的论文给出的上界还要再少一个对数因子，这需要对群的稳定化子链的基础轨道长度做更仔细的估计。&#160;<a class="footnote-backref" href="#fnref:knuth-complexity" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <style>
+  .md-footer {
+      background-color: #f0f0f0;
+  }
+</style>
+
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; gzh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+      <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;color: #000;">
+        本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+        <span id="finicount_views"></span>    &nbsp;|&nbsp;
+        <footer>
+          <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+        </footer>
+      </div>
+      </font>
+
+        <style>
+          .footer-visit-count {
+              height: fit-content;
+              min-height: 55px; /* 根据实际情况调整此高度 */
+              color: #000;
+          }
+          </style>
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" rel="noopener" title="Wechat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/gongzihang" target="_blank" rel="noopener" title="telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ZihangGong28792" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<zihanggong24@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/688234000/lists" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+        
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。 如果你同意,你可以帮助我们让我们的网站更好</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../../../javascripts/extra.js"></script>
+      
+        <script src="../../../../../../../javascripts/config_mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../../../../javascripts/简历.js"></script>
+      
+    
+  </body>
+</html>
