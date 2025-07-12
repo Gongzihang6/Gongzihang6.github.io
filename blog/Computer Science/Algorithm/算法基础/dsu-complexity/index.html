@@ -9,16 +9,16 @@
         <meta name="description" content="记录、分享">
       
       
-        <meta name="author" content="gzh">
+        <meta name="author" content="orzAtalod">
       
       
-        <link rel="canonical" href="https://gongzihang6.github.io/blog/%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/">
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/dsu-complexity/">
       
       
-        <link rel="prev" href="../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/">
+        <link rel="prev" href="../%E5%B9%B6%E6%9F%A5%E9%9B%86/">
       
       
-        <link rel="next" href="../%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/">
+        <link rel="next" href="../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/">
       
       
       <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
@@ -26,14 +26,14 @@
     
     
       
-        <title>虞美人·玉阑干外清江浦 - Blog of GZH</title>
+        <title>Dsu complexity - Blog of GZH</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,21 +52,21 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/extra2.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/简历.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/简历.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../../../stylesheets/customize.css">
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -116,7 +116,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+    <a href="../../../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              虞美人·玉阑干外清江浦
+              Dsu complexity
             
           </span>
         </div>
@@ -301,7 +301,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
   
@@ -318,6 +318,8 @@
   
   
   
+    
+  
   
     
     
@@ -325,11 +327,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../Computer%20Science/java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
           
   
   
@@ -354,7 +358,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+        <a href="../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
           
   
   
@@ -372,13 +376,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
           
   
   
@@ -400,7 +402,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../%E5%8F%91%E7%96%AF/" class="md-tabs__link">
+        <a href="../../../../%E5%8F%91%E7%96%AF/" class="md-tabs__link">
           
   
   
@@ -422,7 +424,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-tabs__link">
+        <a href="../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-tabs__link">
           
   
   
@@ -444,7 +446,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/geren/" class="md-tabs__link">
+        <a href="../../../../../about/geren/" class="md-tabs__link">
           
   
   
@@ -480,7 +482,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+    <a href="../../../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -515,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -541,8 +543,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -558,21 +562,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -585,7 +590,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Computer Science
@@ -613,10 +618,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -625,7 +633,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   
@@ -652,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../../../java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   
@@ -675,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+      <a href="../../../%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
         
   
   
@@ -698,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+      <a href="../../../java%E6%8F%90%E9%AB%98/" class="md-nav__link">
         
   
   
@@ -726,8 +734,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -738,20 +748,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   
@@ -764,7 +775,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Algorithm
@@ -775,8 +786,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -793,13 +806,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
@@ -815,7 +826,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_1">
             <span class="md-nav__icon md-icon"></span>
             并查集
@@ -829,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+      <a href="../%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
         
   
   
@@ -849,10 +860,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/dsu-complexity/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Dsu complexity
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -863,6 +894,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      阿克曼函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      证明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="证明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unionxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      union(x,y) 操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finda" class="md-nav__link">
+    <span class="md-ellipsis">
+      find(a) 操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      为何并查集会被卡
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于启发式合并
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -901,10 +1034,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -913,7 +1049,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
             
   
   
@@ -940,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+      <a href="../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -1053,10 +1189,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1065,7 +1204,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
             
   
   
@@ -1092,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+      <a href="../../../LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
         
   
   
@@ -1115,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+      <a href="../../../LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
         
   
   
@@ -1138,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+      <a href="../../../LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
         
   
   
@@ -1161,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+      <a href="../../../LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
         
   
   
@@ -1184,7 +1323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+      <a href="../../../LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
         
   
   
@@ -1207,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+      <a href="../../../LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
         
   
   
@@ -1230,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+      <a href="../../../LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
         
   
   
@@ -1253,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+      <a href="../../../LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
         
   
   
@@ -1276,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+      <a href="../../../LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
         
   
   
@@ -1299,7 +1438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+      <a href="../../../LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
         
   
   
@@ -1322,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+      <a href="../../../LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
         
   
   
@@ -1345,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -1368,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+      <a href="../../../LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
         
   
   
@@ -1391,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+      <a href="../../../LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
         
   
   
@@ -1414,7 +1553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+      <a href="../../../LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
         
   
   
@@ -1437,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+      <a href="../../../LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
         
   
   
@@ -1460,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+      <a href="../../../LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
         
   
   
@@ -1483,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+      <a href="../../../LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
         
   
   
@@ -1506,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+      <a href="../../../LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
         
   
   
@@ -1529,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+      <a href="../../../LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
         
   
   
@@ -1552,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+      <a href="../../../LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
         
   
   
@@ -1575,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+      <a href="../../../LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
         
   
   
@@ -1598,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+      <a href="../../../LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
         
   
   
@@ -1621,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+      <a href="../../../LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
         
   
   
@@ -1644,7 +1783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+      <a href="../../../LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
         
   
   
@@ -1667,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+      <a href="../../../LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
         
   
   
@@ -1690,7 +1829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+      <a href="../../../LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
         
   
   
@@ -1713,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+      <a href="../../../LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
         
   
   
@@ -1736,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+      <a href="../../../LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
         
   
   
@@ -1759,7 +1898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+      <a href="../../../LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
         
   
   
@@ -1782,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+      <a href="../../../LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
         
   
   
@@ -1805,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+      <a href="../../../LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
         
   
   
@@ -1828,7 +1967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+      <a href="../../../LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
         
   
   
@@ -1851,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+      <a href="../../../LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
         
   
   
@@ -1874,7 +2013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+      <a href="../../../LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
         
   
   
@@ -1897,7 +2036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../../LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
         
   
   
@@ -1920,7 +2059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer%20Science/LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+      <a href="../../../LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
         
   
   
@@ -2015,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+      <a href="../../../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
         
   
   
@@ -2038,7 +2177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../../../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
         
   
   
@@ -2061,7 +2200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+      <a href="../../../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
         
   
   
@@ -2084,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+      <a href="../../../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
         
   
   
@@ -2107,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   
@@ -2134,10 +2273,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2163,22 +2300,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -2191,7 +2327,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             每日诗词
@@ -2202,32 +2338,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    虞美人·玉阑干外清江浦
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
         
   
   
@@ -2238,62 +2352,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      作者简介
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      译文
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      注释
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      鉴赏
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2306,7 +2364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
         
   
   
@@ -2329,7 +2387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
         
   
   
@@ -2352,7 +2410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
         
   
   
@@ -2375,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
         
   
   
@@ -2398,7 +2456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
         
   
   
@@ -2421,7 +2479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
         
   
   
@@ -2444,7 +2502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
         
   
   
@@ -2467,7 +2525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+      <a href="../../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
         
   
   
@@ -2546,7 +2604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%8F%91%E7%96%AF/" class="md-nav__link">
+      <a href="../../../../%E5%8F%91%E7%96%AF/" class="md-nav__link">
         
   
   
@@ -2625,7 +2683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-nav__link">
+      <a href="../../../../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/" class="md-nav__link">
         
   
   
@@ -2710,7 +2768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/geren/" class="md-nav__link">
+      <a href="../../../../../about/geren/" class="md-nav__link">
         
   
   
@@ -2740,7 +2798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+      <a href="../../../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
         
   
   
@@ -2763,7 +2821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/zcw/" class="md-nav__link">
+      <a href="../../../../../about/zcw/" class="md-nav__link">
         
   
   
@@ -2793,7 +2851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/test/" class="md-nav__link">
+      <a href="../../../../../about/test/" class="md-nav__link">
         
   
   
@@ -2833,8 +2891,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2843,36 +2899,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      作者简介
+      阿克曼函数
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      译文
+      基础定义
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      注释
+      证明
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="证明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unionxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      union(x,y) 操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finda" class="md-nav__link">
+    <span class="md-ellipsis">
+      find(a) 操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      鉴赏
+      为何并查集会被卡
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于启发式合并
     </span>
   </a>
   
@@ -2897,54 +3001,106 @@
   
 
 
+  <h1>Dsu complexity</h1>
+
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>这首词描绘春夏之交的雨景，通过"好风如扇雨如帘"等新颖比喻展现细腻意境。上片写景，刻画江浦烟雨、花草涨痕；下片抒情，以"青林枕上"转入怀人思绪，结尾"霎时凉梦"点出相思主题。全词格调清朗，层次分明，景情交融，在婉约词中独具疏淡特色，展现了作者高超的艺术表现力。</p>
+<p>本文通过势能分析探讨了并查集(DSU)的时间复杂度。核心在于定义阿克曼函数和势函数，证明union和find操作均摊时间复杂度为Θ(α(n))，其中α(n)是阿克曼反函数。关键步骤包括分析节点rank变化、level/iter函数性质，以及势能在不同操作中的变化规律，最终得出并查集操作具有接近常数的渐进复杂度。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1016</strong></p>
+<p>阅读时间：<strong>5</strong> 分钟 | 中文字符：<strong>1864</strong></p>
 </div>
-<div class="card-wrapper">
-    <div class="poem-card-adaptive">
-
-        <!-- 【核心】HTML结构已改变：直接在div里写字 -->
-        <div class="poem-seal-final">
-            李廌
-        </div>
-
-        <div class="poem-content-adaptive">
-            <h3 class="poem-title">虞美人·玉阑干外清江浦</h3>
-            <p class="poem-author">李廌</p>
-            <p>玉阑干外清江浦，渺渺天涯雨。</p>
-            <p>好风如扇雨如帘，时见岸花汀草、涨痕添。</p>
-            <p>青林枕上关山路，卧想乘鸾处。</p>
-            <p>碧芜千里思悠悠，唯有霎时凉梦、到南州。</p>
-        </div>
-    </div>
-</div>
-
-<h1 id="_1">虞美人·玉阑干外清江浦<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>玉阑干外清江浦，渺渺天涯雨。好风如扇雨如帘，时见岸花汀草、涨痕添。</p>
-<p>青林枕上关山路，卧想乘鸾处。碧芜千里思悠悠，唯有霎时凉梦、到南州。</p>
-<h2 id="_2">作者简介<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>李廌（zhì）（1059-1109） 北宋文学家。字方叔，号德隅斋，又号齐南先生、太华逸民。汉族，华州（今陕西华县）人。6岁而孤，能发奋自学。少以文为苏轼所知，誉之为有“万人敌”之才。由此成为“苏门六君子”之一。中年应举落第，绝意仕进，定居长社（今河南长葛市），直至去世。文章喜论古今治乱，辨而中理。</p>
-<h2 id="_3">译文<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>独倚栏杆向远处望去，清江浦在哪里呢？大雨迷蒙，连天涯都一片苍茫。好风像扇子，好雨似挂着的珠帘。只见岸上红花开放，汀洲覆满绿草，浸水的印痕在不断上涨。
-想象自己的梦魂进入了关山之路，那游冶的旧处在哪里呢？如今只剩梦影依稀，不堪回首。碧绿的平野延伸至天际，引起离人无尽的归思。只有在偶然的美梦中，才能回到长期思念的南方。</p>
-<h2 id="_4">注释<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>清江浦：清江，又名沙河，在今江苏淮阴市北淮河与运河会合处。浦，水滨。
-渺渺：形容雨大，迷漾一片。
-汀草，水边的野草。
-青林：喻梦魂。
-乘鸾：指仙游。秦穆公女弄玉好乐，萧史善箫，穆公为筑凤楼，二人吹箫，凤凰来集，遂乘而仙去。
-南州：南方。</p>
-<h2 id="_5">鉴赏<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>这首词，是写春夏之交的雨景并由此而勾起的怀人情绪。</p>
-<p>上片从近水楼台的玉阑干写起。清江烟雨，是阑干内人物所接触到的眼前景物；渺渺天涯，是一个空远无边的境界。“好风如扇”比喻新颖，未经人道，春夏之交，往往有这样的景色。陶渊明诗“春风扇微和”的扇字是动词，作虚用；这里的扇是名词，作实用；同样给人以风吹柔和的感觉。“雨如帘”的绘景更妙，它不仅曲状了疏疏细细的雨丝，像后来杨万里诗“千峰故隔一帘珠”那样地落想；而且因为人在玉阑干内，从内看外，雨丝就真像挂着的珠帘。“岸花汀草、涨痕添”，也正是从隔帘看到。“微雨止还作”（苏东坡句），是夏雨季节的特征。一番雨到，一番添上新的涨痕，所以说是“时见”。“涨痕添”从“岸花汀草”方面着眼，便显示了一种幽美的词境。这是精细的描绘，跟一般写壮阔的江涨气势采用粗线条勾勒的全不相同。</p>
-<p>下片由景入情。见到天涯的雨，很自然地会联想到离别的人，一种怀人的孤寂感，不免要涌上心头，于是幻想就进入了枕上关山之路。只有模糊的梦影可以回忆乘鸾的旧踪。碧芜千里的天涯，自然引起“王孙游兮不归”的悠悠之思呢。可是温馨的会面，在梦里也不可能经常遇到。“惟有霎时凉梦、到南州”，这么一结，进一层透示这仅有的一霎欢娱应该珍视，给人的回味是悠然不尽的。</p>
-<p>这首词虽是相思怀人之作，但格调清朗疏淡，没有一丝缠绵悱恻的凄清，在同类题材中不多见，在一定程度上开拓了词境。</p>
-<p>艺术手法上，这首词层次分明，对比鲜明；上片写白天，下片写晚上；上片写景，下片抒情。</p>
+<p>本部分内容转载并修改自 <a href="https://www.luogu.com.cn/blog/Atalod/shi-jian-fu-za-du-shi-neng-fen-xi-qian-tan">时间复杂度 - 势能分析浅谈</a>，已取得原作者授权同意。</p>
+<h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">阿克曼函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>这里，先给出 <span class="arithmatex">\(\alpha(n)\)</span> 的定义。为了给出这个定义，先给出 <span class="arithmatex">\(A_k(j)\)</span> 的定义。</p>
+<p>定义 <span class="arithmatex">\(A_k(j)\)</span> 为：</p>
+<div class="arithmatex">\[
+A_k(j)=\left\{
+\begin{aligned}
+&amp;j+1&amp; &amp;k=0&amp;\\
+&amp;A_{k-1}^{(j+1)}(j)&amp; &amp;k\geq1&amp;
+\end{aligned}
+\right.
+\]</div>
+<p>即阿克曼函数。</p>
+<p>这里，<span class="arithmatex">\(f^i(x)\)</span> 表示将 <span class="arithmatex">\(f\)</span> 连续应用在 <span class="arithmatex">\(x\)</span> 上 <span class="arithmatex">\(i\)</span> 次，即 <span class="arithmatex">\(f^0(x)=x\)</span>，<span class="arithmatex">\(f^i(x)=f(f^{i-1}(x))\)</span>。</p>
+<p>再定义 <span class="arithmatex">\(\alpha(n)\)</span> 为使得 <span class="arithmatex">\(A_{\alpha(n)}(1)\geq n\)</span> 的最小整数值。注意，我们之前将它描述为 <span class="arithmatex">\(A_{\alpha(n)}(\alpha(n))\geq n\)</span>，反正他们的增长速度都很慢，值都不超过 4。</p>
+<h3 id="_3">基础定义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>每个节点都有一个 rank。这里的 rank 不是节点个数，而是深度。节点的初始 rank 为 0，在合并的时候，如果两个节点的 rank 不同，则将 rank 小的节点合并到 rank 大的节点上，并且不更新大节点的 rank 值。否则，随机将某个节点合并到另外一个节点上，将根节点的 rank 值 +1。这里根节点的 rank 给出了该树的高度。记 x 的 rank 为 <span class="arithmatex">\(rnk(x)\)</span>，类似的，记 x 的父节点为 <span class="arithmatex">\(fa(x)\)</span>。我们总有 <span class="arithmatex">\(rnk(x)+1\leq rnk(fa(x))\)</span>。</p>
+<p>为了定义势函数，需要预先定义一个辅助函数 <span class="arithmatex">\(level(x)\)</span>。其中，<span class="arithmatex">\(level(x)=\max(k:rnk(fa(x))\geq A_k(rnk(x)))\)</span>。当 <span class="arithmatex">\(rnk(x)\geq1\)</span> 的时候，再定义一个辅助函数 <span class="arithmatex">\(iter(x)=\max(i:rnk(fa(x))\geq A_{level(x)}^i(rnk(x))\)</span>。这些函数定义的 <span class="arithmatex">\(x\)</span> 都满足 <span class="arithmatex">\(rnk(x)&gt;0\)</span> 且 <span class="arithmatex">\(x\)</span> 不是某个树的根。</p>
+<p>上面那些定义可能让你有点头晕。再理一下，对于一个 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(fa(x)\)</span>，如果 <span class="arithmatex">\(rnk(x)&gt;0\)</span>，总是可以找到一对 <span class="arithmatex">\(i,k\)</span> 令 <span class="arithmatex">\(rnk(fa(x))\geq A_k^i(rnk(x))\)</span>，而 <span class="arithmatex">\(level(x)=\max(k)\)</span>，在这个前提下，<span class="arithmatex">\(iter(x)=\max(i)\)</span>。<span class="arithmatex">\(level\)</span> 描述了 <span class="arithmatex">\(A\)</span> 的最大迭代级数，而 <span class="arithmatex">\(iter\)</span> 描述了在最大迭代级数时的最大迭代次数。</p>
+<p>对于这两个函数，<span class="arithmatex">\(level(x)\)</span> 总是随着操作的进行而增加或不变，如果 <span class="arithmatex">\(level(x)\)</span> 不增加，<span class="arithmatex">\(iter(x)\)</span> 也只会增加或不变。并且，它们总是满足以下两个不等式：</p>
+<div class="arithmatex">\[
+0\leq level(x)&lt;\alpha(n)
+\]</div>
+<div class="arithmatex">\[
+1\leq iter(x)\leq rnk(x)
+\]</div>
+<p>考虑 <span class="arithmatex">\(level(x)\)</span>、<span class="arithmatex">\(iter(x)\)</span> 和 <span class="arithmatex">\(A_k^j\)</span> 的定义，这些很容易被证明出来，就留给读者用于熟悉定义了。</p>
+<p>定义势能函数 <span class="arithmatex">\(\Phi(S)=\sum\limits_{x\in S}\Phi(x)\)</span>，其中 <span class="arithmatex">\(S\)</span> 表示一整个并查集，而 <span class="arithmatex">\(x\)</span> 为并查集中的一个节点。定义 <span class="arithmatex">\(\Phi(x)\)</span> 为：</p>
+<div class="arithmatex">\[
+\Phi(x)=
+\begin{cases}
+\alpha(n)\times \mathit{rnk}(x)&amp; \mathit{rnk}(x)=0\ \text{或}\ x\ \text{为某棵树的根节点}\\
+(\alpha(n)-\mathit{level}(x))\times \mathit{rnk}(x)-iter(x)&amp; \text{otherwise}
+\end{cases}
+\]</div>
+<p>然后就是通过操作引起的势能变化来证明摊还时间复杂度为 <span class="arithmatex">\(\Theta(\alpha(n))\)</span> 啦。注意，这里我们讨论的 <span class="arithmatex">\(union(x,y)\)</span> 操作保证了 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 都是某个树的根，因此不需要额外执行 <span class="arithmatex">\(find(x)\)</span> 和 <span class="arithmatex">\(find(y)\)</span>。</p>
+<p>可以发现，势能总是个非负数。另，在开始的时候，并查集的势能为 <span class="arithmatex">\(0\)</span>。</p>
+<h2 id="_4">证明<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="unionxy">union(x,y) 操作<a class="headerlink" href="#unionxy" title="Permanent link">&para;</a></h3>
+<p>其花费的时间为 <span class="arithmatex">\(\Theta(1)\)</span>，因此我们考虑其引起的势能的变化。</p>
+<p>这里，我们假设 <span class="arithmatex">\(rnk(x)\leq rnk(y)\)</span>，即 <span class="arithmatex">\(x\)</span> 被接到 <span class="arithmatex">\(y\)</span> 上。这样，势能增加的节点仅有 <span class="arithmatex">\(x\)</span>（从树根变成非树根），<span class="arithmatex">\(y\)</span>（秩可能增加）和操作前 <span class="arithmatex">\(y\)</span> 的子节点（父节点的秩可能增加）。我们先证明操作前 <span class="arithmatex">\(y\)</span> 的子节点 <span class="arithmatex">\(c\)</span> 的势能不可能增加，并且如果减少了，至少减少 <span class="arithmatex">\(1\)</span>。</p>
+<p>设操作前 <span class="arithmatex">\(c\)</span> 的势能为 <span class="arithmatex">\(\Phi(c)\)</span>，操作后为 <span class="arithmatex">\(\Phi(c')\)</span>，这里 <span class="arithmatex">\(c\)</span> 可以是任意一个 <span class="arithmatex">\(rnk(c)&gt;0\)</span> 的非根节点，操作可以是任意操作，包括下面的 find 操作。我们分三种情况讨论。</p>
+<ol>
+<li><span class="arithmatex">\(iter(c)\)</span> 和 <span class="arithmatex">\(level(c)\)</span> 并未增加。显然有 <span class="arithmatex">\(\Phi(c)=\Phi(c')\)</span>。</li>
+<li><span class="arithmatex">\(iter(c)\)</span> 增加了，<span class="arithmatex">\(level(c)\)</span> 并未增加。这里 <span class="arithmatex">\(iter(c)\)</span> 至少增加一，即 <span class="arithmatex">\(\Phi(c')\leq \Phi(c)-1\)</span>，势能函数减少了，并且至少减少 1。</li>
+<li><span class="arithmatex">\(level(c)\)</span> 增加了，<span class="arithmatex">\(iter(c)\)</span> 可能减少。但是由于 <span class="arithmatex">\(0&lt;iter(c)\leq rnk(c)\)</span>，<span class="arithmatex">\(iter(c)\)</span> 最多减少 <span class="arithmatex">\(rnk(c)-1\)</span>，而 <span class="arithmatex">\(level(c)\)</span> 至少增加 <span class="arithmatex">\(1\)</span>。由定义 <span class="arithmatex">\(\Phi(c)=(\alpha(n)-level(c))\times rnk(c)-iter(c)\)</span>，可得 <span class="arithmatex">\(\Phi(c')\leq\Phi(c)-1\)</span>。</li>
+<li>其他情况。由于 <span class="arithmatex">\(rnk(c)\)</span> 不变，<span class="arithmatex">\(rnk(fa(c))\)</span> 不减，所以不存在。</li>
+</ol>
+<p>所以，势能增加的节点仅可能是 <span class="arithmatex">\(x\)</span> 或 <span class="arithmatex">\(y\)</span>。而 <span class="arithmatex">\(x\)</span> 从树根变成了非树根，如果 <span class="arithmatex">\(rnk(x)=0\)</span>，则一直有 <span class="arithmatex">\(\Phi(x)=\Phi(x')=0\)</span>。否则，一定有 <span class="arithmatex">\(\alpha(x)\times rnk(x)\geq(\alpha(n)-level(x))\times rnk(x)-iter(x)\)</span>。即，<span class="arithmatex">\(\Phi(x')\leq \Phi(x)\)</span>。</p>
+<p>因此，唯一势能可能增加的点就是 <span class="arithmatex">\(y\)</span>。而 <span class="arithmatex">\(y\)</span> 的势能最多增加 <span class="arithmatex">\(\alpha(n)\)</span>。因此，可得 <span class="arithmatex">\(union\)</span> 操作均摊后的时间复杂度为 <span class="arithmatex">\(\Theta(\alpha(n))\)</span>。</p>
+<h3 id="finda">find(a) 操作<a class="headerlink" href="#finda" title="Permanent link">&para;</a></h3>
+<p>如果查找路径包含 <span class="arithmatex">\(\Theta(s)\)</span> 个节点，显然其查找的时间复杂度是 <span class="arithmatex">\(\Theta(s)\)</span>。如果由于查找操作，没有节点的势能增加，且至少有 <span class="arithmatex">\(s-\alpha(n)\)</span> 个节点的势能至少减少 <span class="arithmatex">\(1\)</span>，就可以证明 <span class="arithmatex">\(find(a)\)</span> 操作的时间复杂度为 <span class="arithmatex">\(\Theta(\alpha(n))\)</span>。为了避免混淆，这里用 <span class="arithmatex">\(a\)</span> 作为参数，而出现的 <span class="arithmatex">\(x\)</span> 都是泛指某一个并查集内的结点。</p>
+<p>首先证明没有节点的势能增加。很显然，我们在上面证明过所有非根节点的势能不增，而根节点的 <span class="arithmatex">\(rnk\)</span> 没有改变，所以没有节点的势能增加。</p>
+<p>接下来证明至少有 <span class="arithmatex">\(s-\alpha(n)\)</span> 个节点的势能至少减少 <span class="arithmatex">\(1\)</span>。我们上面证明过了，如果 <span class="arithmatex">\(level(x)\)</span> 或者 <span class="arithmatex">\(iter(x)\)</span> 有改变的话，它们的势能至少减少 <span class="arithmatex">\(1\)</span>。所以，只需要证明至少有 <span class="arithmatex">\(s-\alpha(n)\)</span> 个节点的 <span class="arithmatex">\(level(x)\)</span> 或者 <span class="arithmatex">\(iter(x)\)</span> 有改变即可。</p>
+<p>回忆一下非根节点势能的定义，<span class="arithmatex">\(\Phi(x)=(\alpha(n)-level(x))\times rnk(x)-iter(x)\)</span>，而 <span class="arithmatex">\(level(x)\)</span> 和 <span class="arithmatex">\(iter(x)\)</span> 是使 <span class="arithmatex">\(rnk(fa(x))\geq A_{level(x)}^{iter(x)}(rnk(x))\)</span> 的最大数。</p>
+<p>所以，如果 <span class="arithmatex">\(root_x\)</span> 代表 <span class="arithmatex">\(x\)</span> 所处的树的根节点，只需要证明 <span class="arithmatex">\(rnk(root_x)\geq A_{level(x)}^{iter(x)+1}(rnk(x))\)</span> 就好了。根据 <span class="arithmatex">\(A_k^i\)</span> 的定义，<span class="arithmatex">\(A_{level(x)}^{iter(x)+1}(rnk(x))=A_{level(x)}(A_{level(x)}^{iter(x)}(rnk(x)))\)</span>。</p>
+<p>注意，我们可能会用 <span class="arithmatex">\(k(x)\)</span> 代表 <span class="arithmatex">\(level(x)\)</span>，<span class="arithmatex">\(i(x)\)</span> 代表 <span class="arithmatex">\(iter(x)\)</span> 以避免式子过于冗长。这里，就是 <span class="arithmatex">\(rnk(root_x)\geq A_{k(x)}(A_{k(x)}^{i(x)}(x))\)</span>。</p>
+<p>当你看到这的时候，可能会有一种「这啥玩意」的感觉。这意味着你可能需要多看几遍，或者跳过一些内容以后再看。</p>
+<p>这里，我们需要一个外接的 <span class="arithmatex">\(A_{k(x)}\)</span>，意味着我们可能需要再找一个点 <span class="arithmatex">\(y\)</span>。令 <span class="arithmatex">\(y\)</span> 是搜索路径上在 <span class="arithmatex">\(x\)</span> 之后的满足 <span class="arithmatex">\(k(y)=k(x)\)</span> 的点，这里「搜索路径之后」相当于「是 <span class="arithmatex">\(x\)</span> 的祖先」。显然，不是每一个 <span class="arithmatex">\(x\)</span> 都有这样一个 <span class="arithmatex">\(y\)</span>。很容易证明，没有这样的 <span class="arithmatex">\(y\)</span> 的 <span class="arithmatex">\(x\)</span> 不超过 <span class="arithmatex">\(\alpha(n)+2\)</span> 个。因为只有每个 <span class="arithmatex">\(k\)</span> 的最后一个 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(a\)</span> 以及 <span class="arithmatex">\(root_a\)</span> 没有这样的 <span class="arithmatex">\(y\)</span>。</p>
+<p>我们再强调一遍 <span class="arithmatex">\(fa(x)\)</span> 指的是路径压缩 <strong>之前</strong>  <span class="arithmatex">\(x\)</span> 的父节点，路径压缩 <strong>之后</strong>  <span class="arithmatex">\(x\)</span> 的父节点一律用 <span class="arithmatex">\(root_x\)</span> 表示。对于每个存在 <span class="arithmatex">\(y\)</span> 的 <span class="arithmatex">\(x\)</span>，总是有 <span class="arithmatex">\(rnk(y)\geq rnk(fa(x))\)</span>。同时，我们有 <span class="arithmatex">\(rnk(fa(x))\geq A_{k(x)}^{i(x)}(rnk(x))\)</span>。由于 <span class="arithmatex">\(k(x)=k(y)\)</span>，我们用 <span class="arithmatex">\(k\)</span> 来统称，即，<span class="arithmatex">\(rnk(fa(x))\geq A_k^{i(x)}(rnk(x))\)</span>。我们需要造一个 <span class="arithmatex">\(A_k\)</span> 出来，所以我们可以不关注 <span class="arithmatex">\(iter(y)\)</span> 的值，直接使用弱化版的 <span class="arithmatex">\(rnk(fa(y))\geq A_k(rnk(y))\)</span>。</p>
+<p>如果我们将不等式组合起来，神奇的事情就发生了。我们发现，<span class="arithmatex">\(rnk(fa(y))\geq A_k^{i(x)+1}(rnk(x))\)</span>。也就是说，为了从 <span class="arithmatex">\(rnk(x)\)</span> 迭代到 <span class="arithmatex">\(rnk(fa(y))\)</span>，至少可以迭代 <span class="arithmatex">\(A_k\)</span> 不少于 <span class="arithmatex">\(i(x)+1\)</span> 次而不超过 <span class="arithmatex">\(rnk(fa(y))\)</span>。</p>
+<p>显然，有 <span class="arithmatex">\(rnk(root_y)\geq rnk(fa(y))\)</span>，且 <span class="arithmatex">\(rnk(x)\)</span> 在路径压缩时不变。因此，我们可以得到 <span class="arithmatex">\(rnk(root_x)\geq A_k^{i(x)+1}(rnk(x))\)</span>，也就是说 <span class="arithmatex">\(iter(x)\)</span> 的值至少增加 1，如果 <span class="arithmatex">\(rnk(x)\)</span> 没有增加，一定是 <span class="arithmatex">\(level(x)\)</span> 增加了。</p>
+<p>所以，<span class="arithmatex">\(\Phi(x)\)</span> 至少减少了 1。由于这样的 <span class="arithmatex">\(x\)</span> 节点至少有 <span class="arithmatex">\(s-\alpha(n)-2\)</span> 个，所以最后 <span class="arithmatex">\(\Phi(S)\)</span> 至少减少了 <span class="arithmatex">\(s-\alpha(n)-2\)</span>，均摊后的时间复杂度即为 <span class="arithmatex">\(\Theta(\alpha(n)+2)=\Theta(\alpha(n))\)</span>。</p>
+<h2 id="_5">为何并查集会被卡<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>这个问题也就是问，如果我们不按秩合并，会有哪些性质被破坏，导致并查集的时间复杂度不能保证为 <span class="arithmatex">\(\Theta(m\alpha(n))\)</span>。</p>
+<p>如果我们在合并的时候，<span class="arithmatex">\(rnk\)</span> 较大的合并到了 <span class="arithmatex">\(rnk\)</span> 较小的节点上面，我们就将那个 <span class="arithmatex">\(rnk\)</span> 较小的节点的 <span class="arithmatex">\(rnk\)</span> 值设为另一个节点的 <span class="arithmatex">\(rnk\)</span> 值加一。这样，我们就能保证 <span class="arithmatex">\(rnk(fa(x))\geq rnk(x)+1\)</span>，从而不会出现类似于满地 compile error 一样的性质不符合。</p>
+<p>显然，如果这样子的话，我们破坏的就是 <span class="arithmatex">\(union(x,y)\)</span> 函数「y 的势能最多增加 <span class="arithmatex">\(\alpha(n)\)</span>」这一句。</p>
+<p>存在一个能使路径压缩并查集时间复杂度降至 <span class="arithmatex">\(\Omega(m\log_{1+\frac{m}{n}}n)\)</span> 的结构，定义如下：</p>
+<p>二项树（实际上和一般的二项树不太一样），其中 j 是常数，<span class="arithmatex">\(T_k\)</span> 为一个 <span class="arithmatex">\(T_{k-1}\)</span> 加上一个 <span class="arithmatex">\(T_{k-j}\)</span> 作为根节点的儿子。</p>
+<p><img alt="二项树" src="../images/dsu-complexity.svg" /></p>
+<p>边界条件，<span class="arithmatex">\(T_1\)</span> 到 <span class="arithmatex">\(T_j\)</span> 都是一个单独的点。</p>
+<p>令 <span class="arithmatex">\(rnk(T_k)=r_k\)</span>，这里我们有 <span class="arithmatex">\(r_k=(k-1)/j\)</span>（证明略）。每轮操作，我们将它接到一个单节点上，然后查询底部的 <span class="arithmatex">\(j\)</span> 个节点。也就是说，我们接到单节点上的时候，单节点的势能提高了 <span class="arithmatex">\((k-1)/j+1\)</span>。在 <span class="arithmatex">\(j=\lfloor\frac{m}{n}\rfloor\)</span>，<span class="arithmatex">\(i=\lfloor\log_{j+1}\frac{n}{2}\rfloor\)</span>，<span class="arithmatex">\(k=ij\)</span> 的时候，势能增加量为：</p>
+<div class="arithmatex">\[
+\alpha(n)\times((ij-1)/j+1)=\alpha(n)\times((\lfloor\log_{\lfloor\frac{m}{n}\rfloor+1}\frac{n}{2}\rfloor\times \lfloor\frac{m}{n}\rfloor-1)/\lfloor\frac{m}{n}\rfloor+1)
+\]</div>
+<p>变换一下，去掉所有的取整符号，就可以得出，势能增加量 <span class="arithmatex">\(\geq \alpha(n)\times(\log_{1+\frac{m}{n}}n-\frac{n}{m})\)</span>，m 次操作就是 <span class="arithmatex">\(\Omega(m\log_{1+\frac{m}{n}}n-n)=\Omega(m\log_{1+\frac{m}{n}}n)\)</span>。</p>
+<h2 id="_6">关于启发式合并<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>由于按秩合并比启发式合并难写，所以很多 dalao 会选择使用启发式合并来写并查集。具体来说，则是对每个根都维护一个 <span class="arithmatex">\(size(x)\)</span>，每次将 <span class="arithmatex">\(size\)</span> 小的合并到大的上面。</p>
+<p>所以，启发式合并会不会被卡？</p>
+<p>首先，可以从秩参与证明的性质来说明。如果 <span class="arithmatex">\(size\)</span> 可以代替 <span class="arithmatex">\(rnk\)</span> 的地位，则可以使用启发式合并。快速总结一下，秩参与证明的性质有以下三条：</p>
+<ol>
+<li>每次合并，最多有一个节点的秩上升，而且最多上升 1。</li>
+<li>总有 <span class="arithmatex">\(rnk(fa(x))\geq rnk(x)+1\)</span>。</li>
+<li>节点的秩不减。</li>
+</ol>
+<p>关于第二条和第三条，<span class="arithmatex">\(siz\)</span> 显然满足，然而第一条不满足，如果将 <span class="arithmatex">\(x\)</span> 合并到 <span class="arithmatex">\(y\)</span> 上面，则 <span class="arithmatex">\(siz(y)\)</span> 会增大 <span class="arithmatex">\(siz(x)\)</span> 那么多。</p>
+<p>所以，可以考虑使用 <span class="arithmatex">\(\log_2 siz(x)\)</span> 代替 <span class="arithmatex">\(rnk(x)\)</span>。</p>
+<p>关于第一条性质，由于节点的 <span class="arithmatex">\(siz\)</span> 最多翻倍，所以 <span class="arithmatex">\(\log_2 siz(x)\)</span> 最多上升 1。关于第二三条性质，结论较为显然，这里略去证明。</p>
+<p>所以说，如果不想写按秩合并，就写启发式合并好了，时间复杂度仍旧是 <span class="arithmatex">\(\Theta(m\alpha(n))\)</span>。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3165,9 +3321,9 @@
         
           
           <a
-            href="../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/"
+            href="../%E5%B9%B6%E6%9F%A5%E9%9B%86/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 理解YOLO网络结构"
+            aria-label="上一页: 并查集"
           >
             <div class="md-footer__button md-icon">
               
@@ -3178,7 +3334,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                理解YOLO网络结构
+                并查集
               </div>
             </div>
             
@@ -3189,16 +3345,16 @@
         
           
           <a
-            href="../%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/"
+            href="../../../LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: 菩萨蛮·回文夏闺怨"
+            aria-label="下一页: 字母异位词分组"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                菩萨蛮·回文夏闺怨
+                字母异位词分组
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3394,20 +3550,20 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../javascripts/extra.js"></script>
+        <script src="../../../../../javascripts/extra.js"></script>
       
-        <script src="../../../javascripts/config_mathjax.js"></script>
+        <script src="../../../../../javascripts/config_mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/简历.js"></script>
+        <script src="../../../../../javascripts/简历.js"></script>
       
     
   </body>

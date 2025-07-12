@@ -783,6 +783,57 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            并查集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
         
@@ -795,6 +846,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/dsu-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dsu complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2712,7 +2794,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求计算字符串s中子序列等于字符串t的个数，结果需对10^9+7取模。通过动态规划解决，定义dp[i][j]表示s前i个字符中匹配t前j个字符的方案数。核心在于状态转移方程：当s[i-1]=t[j-1]时，可累加匹配或不匹配的方案；否则仅继承不匹配的方案。时间复杂度O(mn)，空间复杂度可优化至O(n)，适用于字符串匹配统计场景。</p>
+<p>该问题要求计算字符串s中子序列等于字符串t的个数，结果需对10^9+7取模。通过动态规划解决，定义dp[i][j]表示s前i个字符中匹配t前j个字符的方案数。核心在于状态转移：当s[i-1]=t[j-1]时，方案数包含使用或不使用s[i-1]两种情况；否则仅继承不使用的方案。时间复杂度O(mn)，适用于字符串匹配统计场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>

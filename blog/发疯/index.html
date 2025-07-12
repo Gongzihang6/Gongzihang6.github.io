@@ -772,6 +772,57 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            并查集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
         
@@ -784,6 +835,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/dsu-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dsu complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2698,11 +2780,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了一种具有优雅动画效果的无限循环立体卡片轮播实现方案。通过CSS自定义属性控制卡片尺寸和动画时长，采用cubic-bezier缓动函数实现流畅的进出场动画，包含卡片飞出时的3D变换效果。设计包含文字遮罩层确保可读性，并提供了圆形导航按钮交互。该组件适用于博客或内容展示网站，支持多主题卡片切换，具有响应式布局和良好的用户体验。</p>
+<p>本文介绍了一种无限循环立体卡片轮播的实现方案，采用CSS3动画和3D透视效果。核心特点包括：自定义卡片尺寸和过渡时间，使用cubic-bezier曲线实现优雅动画效果，卡片飞出时带有旋转和缩放特效，并添加文字遮罩保证可读性。该组件支持响应式设计，适用于博客或内容展示场景，通过JavaScript实现交互控制，提供流畅的用户体验。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>285</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>292</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -2725,7 +2807,7 @@
         align-items: center;
         padding: 40px 20px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background-color: #f0f2f5; /* 可以设置为透明或与你博客背景色一致 */
+        background-color: transparent; /* 可以设置为透明或与你博客背景色一致 */
     }
 
     /* --- 卡片堆叠区域 --- */
@@ -2837,8 +2919,8 @@
 <div class="card-carousel">
     <div class="card-stack">
         <!-- 卡片1 -->
-        <div class="card" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723a9ce6890?q=80&w=2070&auto=format&fit=crop');">
-            <div class="card-content"><h2>海滩漫步</h2><p>在金色的沙滩上，感受海风的轻拂。</p></div>
+        <div class="card" style="background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2FIMG_20240726_190230.jpg');">
+            <div class="card-content"><h2>结局</h2><p>粉红色的雪不该下在沙地上，我们的结局也不应该如此。</p></div>
         </div>
         <!-- 卡片2 -->
         <div class="card" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2072&auto=format&fit=crop');">

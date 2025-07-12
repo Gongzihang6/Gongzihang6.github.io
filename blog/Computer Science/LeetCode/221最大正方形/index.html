@@ -788,6 +788,57 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            并查集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
         
@@ -800,6 +851,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/dsu-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dsu complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2903,7 +2985,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在由0和1组成的二维矩阵中寻找仅包含1的最大正方形面积。核心解法采用动态规划，通过状态转移方程dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1计算每个位置作为右下角时能构成的最大正方形边长。算法时间复杂度为O(mn)，空间复杂度可优化至O(n)，适用于图像处理等需要检测规则形状的场景。</p>
+<p>该问题要求在由0和1组成的二维矩阵中寻找仅包含1的最大正方形面积。采用动态规划方法，通过状态转移方程dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1计算每个位置作为右下角时能构成的最大正方形边长。核心思想是当前正方形的扩展受限于左、上、左上三个相邻位置的最小值，最终结果为所有dp值的最大平方。时间复杂度O(mn)，空间复杂度O(mn)。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>

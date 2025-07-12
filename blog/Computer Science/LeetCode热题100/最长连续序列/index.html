@@ -771,6 +771,57 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            并查集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
         
@@ -783,6 +834,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/dsu-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dsu complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2811,11 +2893,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在未排序整数数组中找出最长连续数字序列的长度。核心解法包括哈希集合法和并查集法，均能实现O(n)时间复杂度。哈希集合法通过快速查找相邻元素确定序列边界，而并查集法则通过动态合并相邻集合统计最大连通分量。两种方法均需权衡空间复杂度与实现复杂度，适用于大规模数据处理的场景。</p>
+<p>该问题要求在未排序整数数组中找出最长连续数字序列的长度。核心解法利用哈希集合或并查集实现O(n)时间复杂度，通过检查相邻数字是否存在来构建连续序列。并查集方法直观处理数字连通性，但需要额外空间；哈希集合法更简洁高效。两种方案均满足线性复杂度要求，适用于大规模数据处理。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>211</strong> | 有效代码行数：<strong>93</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>211</strong> | 有效代码行数：<strong>101</strong></p>
 </div>
 <h1 id="128"><a href="https://leetcode.cn/problems/longest-consecutive-sequence/">128. 最长连续序列</a><a class="headerlink" href="#128" title="Permanent link">&para;</a></h1>
 <p>给定一个未排序的整数数组 <code>nums</code> ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>
@@ -2935,22 +3017,22 @@
 </code></pre></div></td></tr></table></div>
 <h3 id="_3">代码解释<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>初始化哈希集合</strong>：将所有数字存入HashSet，去重并提供O(1)查询</li>
+<li><strong>初始化哈希集合</strong>：将所有数字存入 HashSet，去重并提供 O(1)查询</li>
 <li><strong>遍历集合元素</strong>：对于每个数字，检查它是否是某个连续序列的起点</li>
 <li><strong>扩展序列</strong>：如果是起点，向后扩展序列并计算长度</li>
 <li><strong>更新最大值</strong>：始终保持记录最长序列长度</li>
 </ol>
 <h3 id="_4">示例验证<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>以示例1 <code>[100,4,200,1,3,2]</code> 为例：</p>
+<p>以示例 1 <code>[100,4,200,1,3,2]</code> 为例：</p>
 <ol>
-<li>存入HashSet后得到 <code>{1,2,3,4,100,200}</code></li>
+<li>存入 HashSet 后得到 <code>{1,2,3,4,100,200}</code></li>
 <li>遍历时：<ul>
-<li>数字1：1-0不在集合中，是起点，向后扩展得到序列1,2,3,4，长度4</li>
-<li>数字100：100-99不在集合中，是起点，向后无扩展，长度1</li>
-<li>数字200：200-199不在集合中，是起点，向后无扩展，长度1</li>
+<li>数字 1：1-0 不在集合中，是起点，向后扩展得到序列 1,2,3,4，长度 4</li>
+<li>数字 100：100-99 不在集合中，是起点，向后无扩展，长度 1</li>
+<li>数字 200：200-199 不在集合中，是起点，向后无扩展，长度 1</li>
 </ul>
 </li>
-<li>最终最长序列长度为4</li>
+<li>最终最长序列长度为 4</li>
 </ol>
 <h2 id="_5">并查集方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2958,17 +3040,28 @@
 <p><strong>核心思想</strong>：将连续的数字合并到同一个集合中</p>
 </li>
 <li>
-<p>关键步骤</p>
-<p>：</p>
+<p>关键步骤：</p>
 <ul>
 <li>初始化并查集，每个数字作为一个单独的集合</li>
-<li>遍历数组，对于每个数字，将其与相邻数字（num-1和num+1）合并</li>
+<li>遍历数组，对于每个数字，将其与相邻数字（<code>num-1</code> 和 <code>num+1</code>）合并</li>
 <li>统计每个集合的大小，找出最大的集合</li>
 </ul>
 </li>
 </ol>
 <h3 id="_6">时间复杂度分析<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>使用路径压缩和按秩合并优化的并查集，单次操作的时间复杂度接近O(1)，总体时间复杂度为O(n)。</p>
+<p>使用路径压缩和按秩合并优化的并查集，单次操作的时间复杂度接近 <code>O(1)</code>，总体时间复杂度为 <code>O(n)</code>。</p>
+<p>使用并查集解决问题的一般思路：并查集一般用来解决多集合的合并、查询等连通性问题，首先要建立并查集类，</p>
+<ul>
+<li>
+<p>属性：使用哈希表 HashMap 构造键值对，键表示节点元素，值表示该节点元素的根节点；使用哈希表 HashMap 存储每个根节点对应集合的元素个数；</p>
+</li>
+<li>
+<p>构造函数：初始化时遍历每个节点元素，每个节点元素以自身为根节点，对应的集合大小也初始化为 1；</p>
+</li>
+<li>查询方法：查找任意一个节点的根节点；</li>
+<li>合并方法：合并两个集合，将</li>
+</ul>
+<p>最后根据具体任务提供对应的实现方法；比如本题是要找最长连续序列，就要记录所有集合中元素个数最多的，要判断相邻数字 <code>num-1</code> 或者 <code>num+1</code> 是否在哈希表 <code>parent</code> 中</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -3034,77 +3127,95 @@
 <span class="normal"><a href="#__codelineno-4-63">63</a></span>
 <span class="normal"><a href="#__codelineno-4-64">64</a></span>
 <span class="normal"><a href="#__codelineno-4-65">65</a></span>
-<span class="normal"><a href="#__codelineno-4-66">66</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="normal"><a href="#__codelineno-4-66">66</a></span>
+<span class="normal"><a href="#__codelineno-4-67">67</a></span>
+<span class="normal"><a href="#__codelineno-4-68">68</a></span>
+<span class="normal"><a href="#__codelineno-4-69">69</a></span>
+<span class="normal"><a href="#__codelineno-4-70">70</a></span>
+<span class="normal"><a href="#__codelineno-4-71">71</a></span>
+<span class="normal"><a href="#__codelineno-4-72">72</a></span>
+<span class="normal"><a href="#__codelineno-4-73">73</a></span>
+<span class="normal"><a href="#__codelineno-4-74">74</a></span>
+<span class="normal"><a href="#__codelineno-4-75">75</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">longestConsecutive</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">        </span><span class="n">UnionFind</span><span class="w"> </span><span class="n">uf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UnionFind</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">            </span><span class="c1">// 合并相邻数字</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">uf</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">                </span><span class="n">uf</span><span class="p">.</span><span class="na">union</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">uf</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">                </span><span class="n">uf</span><span class="p">.</span><span class="na">union</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">uf</span><span class="p">.</span><span class="na">getMaxSize</span><span class="p">();</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">UnionFind</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSize</span><span class="p">;</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">UnionFind</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">            </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">            </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">            </span><span class="n">maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">                </span><span class="n">size</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a>
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">contains</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">parent</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37"></a>
-<a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">)));</span><span class="w"> </span><span class="c1">// 路径压缩</span>
-<a id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">parent</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="c1">// 如果所给数组nums为空，则最长连续序列长度肯定为0</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="c1">// 以数组nums初始化并查集</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="n">UnionFind</span><span class="w"> </span><span class="n">uf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UnionFind</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">            </span><span class="c1">// 合并相邻数字</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">            </span><span class="c1">// 对于当前数字num，如果num-1也在parent的键中，则num和num-1这两个数可以合并，且num以num-1为根节点</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">uf</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">                </span><span class="n">uf</span><span class="p">.</span><span class="na">union</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">uf</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">                </span><span class="n">uf</span><span class="p">.</span><span class="na">union</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">uf</span><span class="p">.</span><span class="na">getMaxSize</span><span class="p">();</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">UnionFind</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span><span class="w">   </span><span class="c1">// 用于存储每个元素的父节点，parent.get(x) 返回元素 x 的根节点</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">size</span><span class="p">;</span><span class="w">     </span><span class="c1">// 用于存储每个集合的大小，size.get(x) 返回以 x 为根节点的集合的大小</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSize</span><span class="p">;</span><span class="w">    </span><span class="c1">// 记录当前所有集合中的最大大小，用于快速获取最长连续序列的长度</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">        </span><span class="c1">// 构造函数，接受一个一维数组nums，遍历每个数字，将每个数字分别单独初始化为一个集合，且以自身为根节点</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">UnionFind</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">            </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">   </span><span class="c1">// 一个一个的键值对，键为数字，值为该数字对应的根节点</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">            </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">            </span><span class="n">maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">            </span><span class="c1">// 初始化并查集（以数字表示当前节点）</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span><span class="w">   </span><span class="c1">// 每个数字的父节点初始化为自身</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">                </span><span class="n">size</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">// 每个集合的大小初始化为1</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39"></a>
+<a id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">        </span><span class="c1">// 检查并查集中是否包含某个数字</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">contains</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">parent</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
 <a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-4-44" name="__codelineno-4-44"></a>
-<a id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">rootX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<a id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">rootY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rootX</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rootY</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-4-49" name="__codelineno-4-49"></a>
-<a id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">            </span><span class="c1">// 按秩合并</span>
-<a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootX</span><span class="p">,</span><span class="w"> </span><span class="n">rootY</span><span class="p">);</span>
-<a id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="w">                </span><span class="n">size</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootY</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">));</span>
-<a id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="w">                </span><span class="n">maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxSize</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">));</span>
-<a id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-56" name="__codelineno-4-56"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootY</span><span class="p">,</span><span class="w"> </span><span class="n">rootX</span><span class="p">);</span>
-<a id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="w">                </span><span class="n">size</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootX</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">));</span>
-<a id="__codelineno-4-58" name="__codelineno-4-58"></a><span class="w">                </span><span class="n">maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxSize</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">));</span>
-<a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-4-60" name="__codelineno-4-60"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-4-61" name="__codelineno-4-61"></a>
-<a id="__codelineno-4-62" name="__codelineno-4-62"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMaxSize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-63" name="__codelineno-4-63"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">maxSize</span><span class="p">;</span>
-<a id="__codelineno-4-64" name="__codelineno-4-64"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-4-65" name="__codelineno-4-65"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-66" name="__codelineno-4-66"></a><span class="p">}</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="w">        </span><span class="c1">// 查找元素 x 的根节点</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">)));</span><span class="w"> </span><span class="c1">// 路径压缩，在递归过程中，将 x 的父节点直接指向根节点，从而减少后续查找的时间复杂度</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">parent</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-52" name="__codelineno-4-52"></a>
+<a id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="w">        </span><span class="c1">// 合并两个集合，并更新集合大小和最大大小</span>
+<a id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">rootX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-4-56" name="__codelineno-4-56"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">rootY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rootX</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rootY</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// 如果两个集合的根节点相同，说明本来就属于同一个集合，不需要合并</span>
+<a id="__codelineno-4-58" name="__codelineno-4-58"></a>
+<a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="w">            </span><span class="c1">// 按秩合并，将较小的集合合并到较大的集合中，以保持树的平衡</span>
+<a id="__codelineno-4-60" name="__codelineno-4-60"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-61" name="__codelineno-4-61"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootX</span><span class="p">,</span><span class="w"> </span><span class="n">rootY</span><span class="p">);</span>
+<a id="__codelineno-4-62" name="__codelineno-4-62"></a><span class="w">                </span><span class="n">size</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootY</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">));</span>
+<a id="__codelineno-4-63" name="__codelineno-4-63"></a><span class="w">                </span><span class="n">maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxSize</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">));</span>
+<a id="__codelineno-4-64" name="__codelineno-4-64"></a><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-65" name="__codelineno-4-65"></a><span class="w">                </span><span class="n">parent</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootY</span><span class="p">,</span><span class="w"> </span><span class="n">rootX</span><span class="p">);</span>
+<a id="__codelineno-4-66" name="__codelineno-4-66"></a><span class="w">                </span><span class="n">size</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">rootX</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootY</span><span class="p">));</span>
+<a id="__codelineno-4-67" name="__codelineno-4-67"></a><span class="w">                </span><span class="n">maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">maxSize</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">rootX</span><span class="p">));</span>
+<a id="__codelineno-4-68" name="__codelineno-4-68"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-69" name="__codelineno-4-69"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-70" name="__codelineno-4-70"></a>
+<a id="__codelineno-4-71" name="__codelineno-4-71"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMaxSize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-72" name="__codelineno-4-72"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">maxSize</span><span class="p">;</span>
+<a id="__codelineno-4-73" name="__codelineno-4-73"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-74" name="__codelineno-4-74"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-75" name="__codelineno-4-75"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="_7">代码解释<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>UnionFind类</p>
+<p>UnionFind 类</p>
 <p>：实现并查集数据结构</p>
 <ul>
 <li><code>parent</code>：记录每个元素的父节点</li>
@@ -3113,34 +3224,34 @@
 </ul>
 </li>
 <li>
-<p><strong>find方法</strong>：查找元素的根节点，并进行路径压缩优化</p>
+<p><strong>find 方法</strong>：查找元素的根节点，并进行路径压缩优化</p>
 </li>
 <li>
-<p><strong>union方法</strong>：合并两个集合，按秩合并并更新最大集合大小</p>
+<p><strong>union 方法</strong>：合并两个集合，按秩合并并更新最大集合大小</p>
 </li>
 <li>
 <p><strong>主方法</strong>：遍历数组，合并相邻数字，最后返回最大集合大小</p>
 </li>
 </ol>
 <h3 id="_8">示例验证<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>以示例1 <code>[100,4,200,1,3,2]</code> 为例：</p>
+<p>以示例 1 <code>[100,4,200,1,3,2]</code> 为例：</p>
 <ol>
 <li>初始化并查集：每个数字单独成集合</li>
 <li>遍历合并：<ul>
-<li>数字1：与2合并</li>
-<li>数字2：与1和3合并</li>
-<li>数字3：与2和4合并</li>
-<li>数字4：与3合并</li>
-<li>数字100和200：无相邻数字，不合并</li>
+<li>数字 1：与 2 合并</li>
+<li>数字 2：与 1 和 3 合并</li>
+<li>数字 3：与 2 和 4 合并</li>
+<li>数字 4：与 3 合并</li>
+<li>数字 100 和 200：无相邻数字，不合并</li>
 </ul>
 </li>
-<li>最终最大集合为{1,2,3,4}，大小为4</li>
+<li>最终最大集合为{1,2,3,4}，大小为 4</li>
 </ol>
 <h3 id="_9">优缺点分析<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <h4 id="_10">优点<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>直观地处理了数字的连通性</li>
-<li>时间复杂度O(n)，满足题目要求</li>
+<li>时间复杂度 O(n)，满足题目要求</li>
 <li>可扩展性强，适用于其他连通性问题</li>
 </ul>
 <h4 id="_11">缺点<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
