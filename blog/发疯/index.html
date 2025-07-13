@@ -2857,7 +2857,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>392</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>522</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -3132,6 +3132,46 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCards(true);
 });
 </script>
+
+<!-- 1. 引入 canvas-confetti 库，我们使用 CDN 保证速度和方便 -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<!-- 2. 添加触发碎纸屑特效的脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // 【优化】增加一个判断，让特效只在每次会话（Session）中首次加载时触发一次。
+    // 这样用户在页面内跳转再回来时，不会重复看到爆炸效果，体验更好。
+    if (!sessionStorage.getItem('confettiFired')) {
+
+        // 创建一个 confetti 实例
+        const myConfetti = confetti.create(null, {
+            resize: true,
+            useWorker: true
+        });
+
+        // 触发礼花效果
+        myConfetti({
+            particleCount: 200,     // 粒子数量
+            spread: 160,            // 喷射范围 (角度)
+            origin: { y: 0.5 },     // 从页面中部喷出
+            startVelocity: 40,      // 初始速度
+            gravity: 0.8,           // 重力
+            ticks: 350,             // 持续时间
+
+            // 我根据您博客的主题色为您挑选了一组和谐的颜色
+            colors: ['#4a6cfd', '#a5b4fc', '#ffc700', '#ff5e7e', '#88ff5a'] 
+        });
+
+        // 标记本次会话已经触发过特效了
+        sessionStorage.setItem('confettiFired', 'true');
+    }
+});
+</script>
+
+
+
+
 
 </body>
 </html>
