@@ -3211,11 +3211,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>并查集是一种高效管理元素分组关系的树形数据结构，核心支持合并(Union)和查询(Find)操作，用于判断元素连通性。通过路径压缩和按秩合并优化可实现接近常数的操作复杂度。典型应用包括Kruskal算法、动态连通性判断等场景，但无法高效支持集合分离。扩展功能支持元素删除和可持久化实现，被广泛应用于算法竞赛和网络分析领域。</p>
+<p>并查集是一种高效管理元素分组关系的树形数据结构，核心支持合并(Union)和查询(Find)操作，用于判断元素连通性。通过路径压缩和按秩合并优化可实现接近常数的操作复杂度，广泛应用于Kruskal算法、LCA等问题。其局限性在于无法高效实现集合分离，但可通过扩展支持删除和持久化。典型应用包括程序自动分析、动态连通性维护等场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>335</strong> | 有效代码行数：<strong>64</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>391</strong> | 有效代码行数：<strong>63</strong></p>
 </div>
 <p><img alt="并查集" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fdisjoint-set.svg" /></p>
 <h2 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -3515,139 +3515,12 @@
 <summary>参考代码</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">C++</label><label for="__tabbed_8_2">cpp</label><label for="__tabbed_8_3">Python</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-14-10">10</a></span>
-<span class="normal"><a href="#__codelineno-14-11">11</a></span>
-<span class="normal"><a href="#__codelineno-14-12">12</a></span>
-<span class="normal"><a href="#__codelineno-14-13">13</a></span>
-<span class="normal"><a href="#__codelineno-14-14">14</a></span>
-<span class="normal"><a href="#__codelineno-14-15">15</a></span>
-<span class="normal"><a href="#__codelineno-14-16">16</a></span>
-<span class="normal"><a href="#__codelineno-14-17">17</a></span>
-<span class="normal"><a href="#__codelineno-14-18">18</a></span>
-<span class="normal"><a href="#__codelineno-14-19">19</a></span>
-<span class="normal"><a href="#__codelineno-14-20">20</a></span>
-<span class="normal"><a href="#__codelineno-14-21">21</a></span>
-<span class="normal"><a href="#__codelineno-14-22">22</a></span>
-<span class="normal"><a href="#__codelineno-14-23">23</a></span>
-<span class="normal"><a href="#__codelineno-14-24">24</a></span>
-<span class="normal"><a href="#__codelineno-14-25">25</a></span>
-<span class="normal"><a href="#__codelineno-14-26">26</a></span>
-<span class="normal"><a href="#__codelineno-14-27">27</a></span>
-<span class="normal"><a href="#__codelineno-14-28">28</a></span>
-<span class="normal"><a href="#__codelineno-14-29">29</a></span>
-<span class="normal"><a href="#__codelineno-14-30">30</a></span>
-<span class="normal"><a href="#__codelineno-14-31">31</a></span>
-<span class="normal"><a href="#__codelineno-14-32">32</a></span>
-<span class="normal"><a href="#__codelineno-14-33">33</a></span>
-<span class="normal"><a href="#__codelineno-14-34">34</a></span>
-<span class="normal"><a href="#__codelineno-14-35">35</a></span>
-<span class="normal"><a href="#__codelineno-14-36">36</a></span>
-<span class="normal"><a href="#__codelineno-14-37">37</a></span>
-<span class="normal"><a href="#__codelineno-14-38">38</a></span>
-<span class="normal"><a href="#__codelineno-14-39">39</a></span>
-<span class="normal"><a href="#__codelineno-14-40">40</a></span>
-<span class="normal"><a href="#__codelineno-14-41">41</a></span>
-<span class="normal"><a href="#__codelineno-14-42">42</a></span>
-<span class="normal"><a href="#__codelineno-14-43">43</a></span>
-<span class="normal"><a href="#__codelineno-14-44">44</a></span>
-<span class="normal"><a href="#__codelineno-14-45">45</a></span>
-<span class="normal"><a href="#__codelineno-14-46">46</a></span>
-<span class="normal"><a href="#__codelineno-14-47">47</a></span>
-<span class="normal"><a href="#__codelineno-14-48">48</a></span>
-<span class="normal"><a href="#__codelineno-14-49">49</a></span>
-<span class="normal"><a href="#__codelineno-14-50">50</a></span>
-<span class="normal"><a href="#__codelineno-14-51">51</a></span>
-<span class="normal"><a href="#__codelineno-14-52">52</a></span>
-<span class="normal"><a href="#__codelineno-14-53">53</a></span>
-<span class="normal"><a href="#__codelineno-14-54">54</a></span>
-<span class="normal"><a href="#__codelineno-14-55">55</a></span>
-<span class="normal"><a href="#__codelineno-14-56">56</a></span>
-<span class="normal"><a href="#__codelineno-14-57">57</a></span>
-<span class="normal"><a href="#__codelineno-14-58">58</a></span>
-<span class="normal"><a href="#__codelineno-14-59">59</a></span>
-<span class="normal"><a href="#__codelineno-14-60">60</a></span>
-<span class="normal"><a href="#__codelineno-14-61">61</a></span>
-<span class="normal"><a href="#__codelineno-14-62">62</a></span>
-<span class="normal"><a href="#__codelineno-14-63">63</a></span>
-<span class="normal"><a href="#__codelineno-14-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a>
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">dsu</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pa</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10"></a>
-<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">dsu</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">size_</span><span class="p">)</span>
-<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">pa</span><span class="p">(</span><span class="n">size_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">size_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">size_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">        </span><span class="c1">// size 与 sum 的前半段其实没有使用，只是为了让下标计算更简单</span>
-<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">        </span><span class="n">iota</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">pa</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size_</span><span class="p">,</span><span class="w"> </span><span class="n">size_</span><span class="p">);</span>
-<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">        </span><span class="n">iota</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size_</span><span class="p">,</span><span class="w"> </span><span class="n">pa</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">size_</span><span class="p">);</span>
-<a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">        </span><span class="n">iota</span><span class="p">(</span><span class="n">sum</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size_</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-14-18" name="__codelineno-14-18"></a>
-<a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">unite</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">])</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="w">        </span><span class="n">pa</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="w">        </span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
-<a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="w">        </span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
-<a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-14-27" name="__codelineno-14-27"></a>
-<a id="__codelineno-14-28" name="__codelineno-14-28"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">move</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-29" name="__codelineno-14-29"></a><span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">fx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">fy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-14-30" name="__codelineno-14-30"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fx</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">fy</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
-<a id="__codelineno-14-31" name="__codelineno-14-31"></a><span class="w">        </span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fy</span><span class="p">;</span>
-<a id="__codelineno-14-32" name="__codelineno-14-32"></a><span class="w">        </span><span class="o">--</span><span class="n">size</span><span class="p">[</span><span class="n">fx</span><span class="p">],</span><span class="w"> </span><span class="o">++</span><span class="n">size</span><span class="p">[</span><span class="n">fy</span><span class="p">];</span>
-<a id="__codelineno-14-33" name="__codelineno-14-33"></a><span class="w">        </span><span class="n">sum</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">fy</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<a id="__codelineno-14-34" name="__codelineno-14-34"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-14-35" name="__codelineno-14-35"></a>
-<a id="__codelineno-14-36" name="__codelineno-14-36"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-14-37" name="__codelineno-14-37"></a><span class="w">    </span><span class="p">};</span>
-<a id="__codelineno-14-38" name="__codelineno-14-38"></a>
-<a id="__codelineno-14-39" name="__codelineno-14-39"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-40" name="__codelineno-14-40"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<a id="__codelineno-14-41" name="__codelineno-14-41"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-42" name="__codelineno-14-42"></a><span class="w">        </span><span class="n">dsu</span><span class="w"> </span><span class="n">dsu</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// 元素范围是 1..n</span>
-<a id="__codelineno-14-43" name="__codelineno-14-43"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-44" name="__codelineno-14-44"></a><span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">op</span><span class="p">;</span>
-<a id="__codelineno-14-45" name="__codelineno-14-45"></a><span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-46" name="__codelineno-14-46"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-14-47" name="__codelineno-14-47"></a><span class="w">            </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<a id="__codelineno-14-48" name="__codelineno-14-48"></a><span class="w">            </span><span class="n">dsu</span><span class="p">.</span><span class="n">unite</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-14-49" name="__codelineno-14-49"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-14-50" name="__codelineno-14-50"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-14-51" name="__codelineno-14-51"></a><span class="w">            </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<a id="__codelineno-14-52" name="__codelineno-14-52"></a><span class="w">            </span><span class="n">dsu</span><span class="p">.</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-14-53" name="__codelineno-14-53"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-14-54" name="__codelineno-14-54"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
-<a id="__codelineno-14-55" name="__codelineno-14-55"></a><span class="w">            </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<a id="__codelineno-14-56" name="__codelineno-14-56"></a><span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dsu</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<a id="__codelineno-14-57" name="__codelineno-14-57"></a><span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dsu</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dsu</span><span class="p">.</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
-<a id="__codelineno-14-58" name="__codelineno-14-58"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-14-59" name="__codelineno-14-59"></a><span class="w">            </span><span class="k">default</span><span class="o">:</span>
-<a id="__codelineno-14-60" name="__codelineno-14-60"></a><span class="w">            </span><span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w">  </span><span class="c1">// not reachable</span>
-<a id="__codelineno-14-61" name="__codelineno-14-61"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-14-62" name="__codelineno-14-62"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-14-63" name="__codelineno-14-63"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-14-64" name="__codelineno-14-64"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
@@ -3696,56 +3569,186 @@
 <span class="normal"><a href="#__codelineno-15-47">47</a></span>
 <span class="normal"><a href="#__codelineno-15-48">48</a></span>
 <span class="normal"><a href="#__codelineno-15-49">49</a></span>
-<span class="normal"><a href="#__codelineno-15-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Dsu</span><span class="p">:</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a>        <span class="c1"># size 与 sum 的前半段其实没有使用，只是为了让下标计算更简单</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span> <span class="o">*</span> <span class="mi">2</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="normal"><a href="#__codelineno-15-50">50</a></span>
+<span class="normal"><a href="#__codelineno-15-51">51</a></span>
+<span class="normal"><a href="#__codelineno-15-52">52</a></span>
+<span class="normal"><a href="#__codelineno-15-53">53</a></span>
+<span class="normal"><a href="#__codelineno-15-54">54</a></span>
+<span class="normal"><a href="#__codelineno-15-55">55</a></span>
+<span class="normal"><a href="#__codelineno-15-56">56</a></span>
+<span class="normal"><a href="#__codelineno-15-57">57</a></span>
+<span class="normal"><a href="#__codelineno-15-58">58</a></span>
+<span class="normal"><a href="#__codelineno-15-59">59</a></span>
+<span class="normal"><a href="#__codelineno-15-60">60</a></span>
+<span class="normal"><a href="#__codelineno-15-61">61</a></span>
+<span class="normal"><a href="#__codelineno-15-62">62</a></span>
+<span class="normal"><a href="#__codelineno-15-63">63</a></span>
+<span class="normal"><a href="#__codelineno-15-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
 <a id="__codelineno-15-7" name="__codelineno-15-7"></a>
-<a id="__codelineno-15-8" name="__codelineno-15-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-15-9" name="__codelineno-15-9"></a>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<a id="__codelineno-15-10" name="__codelineno-15-10"></a>        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-15-11" name="__codelineno-15-11"></a>            <span class="k">return</span>
-<a id="__codelineno-15-12" name="__codelineno-15-12"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">]:</span>
-<a id="__codelineno-15-13" name="__codelineno-15-13"></a>            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
-<a id="__codelineno-15-14" name="__codelineno-15-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
-<a id="__codelineno-15-15" name="__codelineno-15-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
-<a id="__codelineno-15-16" name="__codelineno-15-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
-<a id="__codelineno-15-17" name="__codelineno-15-17"></a>
-<a id="__codelineno-15-18" name="__codelineno-15-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-15-19" name="__codelineno-15-19"></a>        <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<a id="__codelineno-15-20" name="__codelineno-15-20"></a>        <span class="k">if</span> <span class="n">fx</span> <span class="o">==</span> <span class="n">fy</span><span class="p">:</span>
-<a id="__codelineno-15-21" name="__codelineno-15-21"></a>            <span class="k">return</span>
-<a id="__codelineno-15-22" name="__codelineno-15-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">fy</span>
-<a id="__codelineno-15-23" name="__codelineno-15-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
-<a id="__codelineno-15-24" name="__codelineno-15-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">fy</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-15-25" name="__codelineno-15-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span> <span class="o">-=</span> <span class="n">x</span>
-<a id="__codelineno-15-26" name="__codelineno-15-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">fy</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">dsu</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pa</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">dsu</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">size_</span><span class="p">)</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">pa</span><span class="p">(</span><span class="n">size_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">size_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">size_</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">        </span><span class="c1">// size 与 sum 的前半段其实没有使用，只是为了让下标计算更简单</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="w">        </span><span class="n">iota</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">pa</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size_</span><span class="p">,</span><span class="w"> </span><span class="n">size_</span><span class="p">);</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">        </span><span class="n">iota</span><span class="p">(</span><span class="n">pa</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size_</span><span class="p">,</span><span class="w"> </span><span class="n">pa</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">size_</span><span class="p">);</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="w">        </span><span class="n">iota</span><span class="p">(</span><span class="n">sum</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">size_</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">unite</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">])</span><span class="w"> </span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23"></a><span class="w">        </span><span class="n">pa</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="w">        </span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="w">        </span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-15-27" name="__codelineno-15-27"></a>
-<a id="__codelineno-15-28" name="__codelineno-15-28"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-15-29" name="__codelineno-15-29"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>
-<a id="__codelineno-15-30" name="__codelineno-15-30"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
-<a id="__codelineno-15-31" name="__codelineno-15-31"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-<a id="__codelineno-15-32" name="__codelineno-15-32"></a>
-<a id="__codelineno-15-33" name="__codelineno-15-33"></a>
-<a id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<a id="__codelineno-15-35" name="__codelineno-15-35"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<a id="__codelineno-15-36" name="__codelineno-15-36"></a>        <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-15-37" name="__codelineno-15-37"></a>            <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<a id="__codelineno-15-38" name="__codelineno-15-38"></a>            <span class="n">dsu</span> <span class="o">=</span> <span class="n">Dsu</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 元素范围是 1..n</span>
-<a id="__codelineno-15-39" name="__codelineno-15-39"></a>            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-<a id="__codelineno-15-40" name="__codelineno-15-40"></a>                <span class="n">op_x_y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
-<a id="__codelineno-15-41" name="__codelineno-15-41"></a>                <span class="n">op</span> <span class="o">=</span> <span class="n">op_x_y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-15-42" name="__codelineno-15-42"></a>                <span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-15-43" name="__codelineno-15-43"></a>                    <span class="n">dsu</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">op_x_y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">op_x_y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<a id="__codelineno-15-44" name="__codelineno-15-44"></a>                <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-15-45" name="__codelineno-15-45"></a>                    <span class="n">dsu</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">op_x_y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">op_x_y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<a id="__codelineno-15-46" name="__codelineno-15-46"></a>                <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-<a id="__codelineno-15-47" name="__codelineno-15-47"></a>                    <span class="n">x</span> <span class="o">=</span> <span class="n">dsu</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">op_x_y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<a id="__codelineno-15-48" name="__codelineno-15-48"></a>                    <span class="nb">print</span><span class="p">(</span><span class="n">dsu</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">dsu</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
-<a id="__codelineno-15-49" name="__codelineno-15-49"></a>        <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
-<a id="__codelineno-15-50" name="__codelineno-15-50"></a>            <span class="k">break</span>
+<a id="__codelineno-15-28" name="__codelineno-15-28"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">move</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29"></a><span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">fx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">fy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fx</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">fy</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-15-31" name="__codelineno-15-31"></a><span class="w">        </span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fy</span><span class="p">;</span>
+<a id="__codelineno-15-32" name="__codelineno-15-32"></a><span class="w">        </span><span class="o">--</span><span class="n">size</span><span class="p">[</span><span class="n">fx</span><span class="p">],</span><span class="w"> </span><span class="o">++</span><span class="n">size</span><span class="p">[</span><span class="n">fy</span><span class="p">];</span>
+<a id="__codelineno-15-33" name="__codelineno-15-33"></a><span class="w">        </span><span class="n">sum</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="n">fy</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35"></a>
+<a id="__codelineno-15-36" name="__codelineno-15-36"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">find</span><span class="p">(</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-15-38" name="__codelineno-15-38"></a>
+<a id="__codelineno-15-39" name="__codelineno-15-39"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-40" name="__codelineno-15-40"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-15-41" name="__codelineno-15-41"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-42" name="__codelineno-15-42"></a><span class="w">        </span><span class="n">dsu</span><span class="w"> </span><span class="n">dsu</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c1">// 元素范围是 1..n</span>
+<a id="__codelineno-15-43" name="__codelineno-15-43"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-44" name="__codelineno-15-44"></a><span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">op</span><span class="p">;</span>
+<a id="__codelineno-15-45" name="__codelineno-15-45"></a><span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">op</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-46" name="__codelineno-15-46"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-15-47" name="__codelineno-15-47"></a><span class="w">            </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-15-48" name="__codelineno-15-48"></a><span class="w">            </span><span class="n">dsu</span><span class="p">.</span><span class="n">unite</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-15-49" name="__codelineno-15-49"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-50" name="__codelineno-15-50"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-15-51" name="__codelineno-15-51"></a><span class="w">            </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-15-52" name="__codelineno-15-52"></a><span class="w">            </span><span class="n">dsu</span><span class="p">.</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<a id="__codelineno-15-53" name="__codelineno-15-53"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-54" name="__codelineno-15-54"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
+<a id="__codelineno-15-55" name="__codelineno-15-55"></a><span class="w">            </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-15-56" name="__codelineno-15-56"></a><span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dsu</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-15-57" name="__codelineno-15-57"></a><span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dsu</span><span class="p">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dsu</span><span class="p">.</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<a id="__codelineno-15-58" name="__codelineno-15-58"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-15-59" name="__codelineno-15-59"></a><span class="w">            </span><span class="k">default</span><span class="o">:</span>
+<a id="__codelineno-15-60" name="__codelineno-15-60"></a><span class="w">            </span><span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w">  </span><span class="c1">// not reachable</span>
+<a id="__codelineno-15-61" name="__codelineno-15-61"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-62" name="__codelineno-15-62"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-15-63" name="__codelineno-15-63"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-64" name="__codelineno-15-64"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span>
+<span class="normal"><a href="#__codelineno-16-15">15</a></span>
+<span class="normal"><a href="#__codelineno-16-16">16</a></span>
+<span class="normal"><a href="#__codelineno-16-17">17</a></span>
+<span class="normal"><a href="#__codelineno-16-18">18</a></span>
+<span class="normal"><a href="#__codelineno-16-19">19</a></span>
+<span class="normal"><a href="#__codelineno-16-20">20</a></span>
+<span class="normal"><a href="#__codelineno-16-21">21</a></span>
+<span class="normal"><a href="#__codelineno-16-22">22</a></span>
+<span class="normal"><a href="#__codelineno-16-23">23</a></span>
+<span class="normal"><a href="#__codelineno-16-24">24</a></span>
+<span class="normal"><a href="#__codelineno-16-25">25</a></span>
+<span class="normal"><a href="#__codelineno-16-26">26</a></span>
+<span class="normal"><a href="#__codelineno-16-27">27</a></span>
+<span class="normal"><a href="#__codelineno-16-28">28</a></span>
+<span class="normal"><a href="#__codelineno-16-29">29</a></span>
+<span class="normal"><a href="#__codelineno-16-30">30</a></span>
+<span class="normal"><a href="#__codelineno-16-31">31</a></span>
+<span class="normal"><a href="#__codelineno-16-32">32</a></span>
+<span class="normal"><a href="#__codelineno-16-33">33</a></span>
+<span class="normal"><a href="#__codelineno-16-34">34</a></span>
+<span class="normal"><a href="#__codelineno-16-35">35</a></span>
+<span class="normal"><a href="#__codelineno-16-36">36</a></span>
+<span class="normal"><a href="#__codelineno-16-37">37</a></span>
+<span class="normal"><a href="#__codelineno-16-38">38</a></span>
+<span class="normal"><a href="#__codelineno-16-39">39</a></span>
+<span class="normal"><a href="#__codelineno-16-40">40</a></span>
+<span class="normal"><a href="#__codelineno-16-41">41</a></span>
+<span class="normal"><a href="#__codelineno-16-42">42</a></span>
+<span class="normal"><a href="#__codelineno-16-43">43</a></span>
+<span class="normal"><a href="#__codelineno-16-44">44</a></span>
+<span class="normal"><a href="#__codelineno-16-45">45</a></span>
+<span class="normal"><a href="#__codelineno-16-46">46</a></span>
+<span class="normal"><a href="#__codelineno-16-47">47</a></span>
+<span class="normal"><a href="#__codelineno-16-48">48</a></span>
+<span class="normal"><a href="#__codelineno-16-49">49</a></span>
+<span class="normal"><a href="#__codelineno-16-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Dsu</span><span class="p">:</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a>        <span class="c1"># size 与 sum 的前半段其实没有使用，只是为了让下标计算更简单</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pa</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span> <span class="o">*</span> <span class="mi">2</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a>        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a>            <span class="k">return</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">]:</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13"></a>            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17"></a>
+<a id="__codelineno-16-18" name="__codelineno-16-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19"></a>        <span class="n">fx</span><span class="p">,</span> <span class="n">fy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20"></a>        <span class="k">if</span> <span class="n">fx</span> <span class="o">==</span> <span class="n">fy</span><span class="p">:</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21"></a>            <span class="k">return</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">fy</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">fy</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">fx</span><span class="p">]</span> <span class="o">-=</span> <span class="n">x</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">fy</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27"></a>
+<a id="__codelineno-16-28" name="__codelineno-16-28"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pa</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32"></a>
+<a id="__codelineno-16-33" name="__codelineno-16-33"></a>
+<a id="__codelineno-16-34" name="__codelineno-16-34"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-16-36" name="__codelineno-16-36"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-16-37" name="__codelineno-16-37"></a>            <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-16-38" name="__codelineno-16-38"></a>            <span class="n">dsu</span> <span class="o">=</span> <span class="n">Dsu</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 元素范围是 1..n</span>
+<a id="__codelineno-16-39" name="__codelineno-16-39"></a>            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+<a id="__codelineno-16-40" name="__codelineno-16-40"></a>                <span class="n">op_x_y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<a id="__codelineno-16-41" name="__codelineno-16-41"></a>                <span class="n">op</span> <span class="o">=</span> <span class="n">op_x_y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-16-42" name="__codelineno-16-42"></a>                <span class="k">if</span> <span class="n">op</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-16-43" name="__codelineno-16-43"></a>                    <span class="n">dsu</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">op_x_y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">op_x_y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-16-44" name="__codelineno-16-44"></a>                <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-16-45" name="__codelineno-16-45"></a>                    <span class="n">dsu</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">op_x_y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">op_x_y</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-16-46" name="__codelineno-16-46"></a>                <span class="k">elif</span> <span class="n">op</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<a id="__codelineno-16-47" name="__codelineno-16-47"></a>                    <span class="n">x</span> <span class="o">=</span> <span class="n">dsu</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">op_x_y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-16-48" name="__codelineno-16-48"></a>                    <span class="nb">print</span><span class="p">(</span><span class="n">dsu</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">dsu</span><span class="o">.</span><span class="n">sum</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+<a id="__codelineno-16-49" name="__codelineno-16-49"></a>        <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+<a id="__codelineno-16-50" name="__codelineno-16-50"></a>            <span class="k">break</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
