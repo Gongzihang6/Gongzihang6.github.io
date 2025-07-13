@@ -734,7 +734,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     /* --- 尺寸自适应的关键 --- */
     display: inline-flex;       /* 使其包裹内容 */
     padding: 0.2em;             /* 使用em单位，让边距随字号缩放 */
-    aspect-ratio: 1 / 1;      /* 强制保持1:1的正方形比例 */
+    /* 强制保持1:1的正方形比例 */
+    /* aspect-ratio: 1 / 1;       */
 
     /* --- 文字和布局 --- */
     writing-mode: vertical-rl;  /* 让多字竖排 */
