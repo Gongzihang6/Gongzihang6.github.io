@@ -13,6 +13,7 @@ EXCLUDE_PATTERNS = [
     re.compile(r'waline\.md$'),
     re.compile(r'link\.md$'),
     re.compile(r'404\.md$'),
+    re.compile(r'liuyanban\.md$'),
 ]
 
 # 优化的字符统计正则表达式
@@ -237,7 +238,7 @@ def on_page_markdown(markdown, **kwargs):
     reading_time, chinese_chars, code_lines = calculate_reading_stats(markdown)
     
     # 过滤太短的内容
-    if chinese_chars < 50:
+    if chinese_chars < 30:
         return markdown
     
     # 生成阅读信息

@@ -45,8 +45,8 @@ class AISummaryGenerator:
         # 🤖 多AI服务配置
         self.ai_services = {
             'deepseek': {
-                'url': 'https://api.deepseek.com/v1/chat/completions',
-                'model': 'deepseek-chat',
+                'url': 'https://api.siliconflow.cn/v1/chat/completions',
+                'model': 'deepseek-ai/DeepSeek-V3',
                 'api_key': os.getenv('DEEPSEEK_API_KEY', ),
                 'max_tokens': 150,
                 'temperature': 0.3
@@ -1022,7 +1022,7 @@ def configure_ai_summary(enabled_folders=None, exclude_patterns=None, exclude_fi
             ai_summary_generator.configure_ai_service(ai_service)
 
 # 🔧 新增 CI 配置函数
-def configure_ci_behavior(enabled_in_ci=None, enabled_in_local=None, ci_only_cache=None, ci_fallback_enabled=None, cache_enabled=None):
+def configure_ci_behavior(enabled_in_ci=None, enabled_in_local=True, ci_only_cache=None, ci_fallback_enabled=None, cache_enabled=None):
     """
     配置 CI 和本地环境行为
     

@@ -1,0 +1,7 @@
+{
+  "summary": "该题要求统计数组中满足至少包含k对相同元素的子数组数量。采用滑动窗口技术，通过维护左右指针和哈希表动态计算当前窗口内的元素对数，当满足条件时累加结果。算法确保每个元素最多处理两次，实现O(n)时间复杂度，高效解决大规模数据问题。核心在于窗口扩展时更新元素频率，收缩时调整对数统计。",
+  "service": "deepseek",
+  "page_title": "[2537. 统计好子数组的数目](https://leetcode.cn/problems/count-the-number-of-good-subarrays/)",
+  "timestamp": "2025-07-13T10:30:19.149906",
+  "language": "zh"
+}

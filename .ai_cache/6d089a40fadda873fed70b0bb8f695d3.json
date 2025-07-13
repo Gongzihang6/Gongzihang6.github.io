@@ -1,0 +1,7 @@
+{
+  "summary": "该文章探讨了股票交易中逆序对统计问题，重点分析了三种解法：归并排序法（推荐，O(n log n)时间）、树状数组法（适合大数据）和暴力法（O(n²)时间）。归并排序通过在合并阶段统计逆序对实现高效计算，树状数组则结合离散化优化性能。文章强调理解算法核心思想及边界处理，并建议面试时从暴力解法逐步优化。",
+  "service": "deepseek",
+  "page_title": "[LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)",
+  "timestamp": "2025-07-13T10:31:01.778663",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "该算法解决字符串数组中字母异位词分组问题，通过哈希表将字符排序后相同的字符串归为一组。核心思路是利用排序后的字符串作为哈希键，时间复杂度为O(nklogk)，其中n是字符串数量，k是字符串最大长度。适用于需要快速分类相似字符串的场景，如文本处理和数据分析。",
+  "service": "deepseek",
+  "page_title": "[49. 字母异位词分组](https://leetcode.cn/problems/group-anagrams/)",
+  "timestamp": "2025-07-13T10:32:19.744106",
+  "language": "zh"
+}

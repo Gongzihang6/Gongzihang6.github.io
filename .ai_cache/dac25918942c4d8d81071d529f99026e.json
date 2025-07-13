@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求通过动态规划求解按顺序解决或跳过考试题目的最优策略，以获得最高分数。核心思路是定义dp[i]为从第i题开始能获得的最大分数，采用从后往前遍历的方式，每次决策选择解决当前题（获得分数但跳过后续若干题）或跳过当前题。算法时间复杂度为O(n)，空间复杂度为O(n)，通过维护最优子结构确保高效计算全局最优解。",
+  "service": "deepseek",
+  "page_title": "[2140. 解决智力问题](https://leetcode.cn/problems/solving-questions-with-brainpower/)",
+  "timestamp": "2025-07-13T10:30:01.169586",
+  "language": "zh"
+}

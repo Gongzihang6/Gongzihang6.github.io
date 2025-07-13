@@ -1,11 +1,14 @@
 #[Info]
-site_name: Mkdocs中文教程 #your site name 显示在左上角
-site_url: http://wcowin.work/Mkdocs-Wcowin
-site_description: Content and ambitious, gentle yet firm.
-site_author: 王科文(Wcowin) # your name
+site_name: Blog of GZH #your site name 显示在左上角
+site_url: https://gongzihang6.github.io/
+site_description: 记录、分享
+site_author: gzh # your name
 #[UI]
 theme:
   name: material
+  font:
+    text: Roboto
+    code: Roboto Mono
   custom_dir: docs/overrides #覆写路径
   # logo: assets/favicon.png #左上角logo，可插入图片链接
 
@@ -46,13 +49,15 @@ theme:
     - content.tabs.link
     - content.tooltips
     - content.code.copy #代码复制
-    - content.action.edit
-    - content.action.view
+    - content.code.select
+    # - content.action.edit
+    # - content.action.view
     - content.code.annotate
     # - navigation.instant
     #- header.autohide  #自动隐藏
     # - navigation.tabs.sticky  #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见
   language: zh # 一些提示性的文字会变成中文
+
 
   icon:
     repo: fontawesome/brands/github #右上角图标
@@ -61,67 +66,154 @@ theme:
     # top: fontawesome/solid/angles-up
     alternate: fontawesome/solid/language
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
-repo_url: https://github.com/Wcowin/Mkdocs-Wcowin # 右上角点击跳转的链接
-repo_name: Mkdocs-Wcowin # 右上角的名字
+repo_url: https://github.com/Gongzihang6 # 右上角点击跳转的链接
+repo_name: Gongzihang6 # 右上角的名字
 
 # [Navigtion]
+# 下面的.md文件以docs为根目录确定路径
 nav:
-  # - 主页: index.md
-  - MKdocs中文教程:
-      - 许可声明: blog/MIT.md
-      - MKdocs教程(三部曲):
-          - 0.Mkdocs教程前言: blog/Mkdocs/mkfirst.md
-          - 1.利用Mkdocs部署静态网页: blog/Mkdocs/mkdocs1.md
-          - 2.Mkdocs配置说明(mkdocs.yml): blog/Mkdocs/mkdocs2.md
-          - 3.解决Github Pages部署mkdocs自定义域名失效的问题: blog/Mkdocs/mkdocs3.md
-      - Mkdocs美化/补充:
-          - MkDocs文档AI摘要: blog/websitebeauty/Mkdocs-AI-Summary.md
-          - 添加阅读信息统计: blog/websitebeauty/reading_time.md
-          - 添加Mkdocs博客: blog/Mkdocs/mkdocsblog.md
-          - 如何给MKdocs添加友链: blog/Mkdocs/linktech.md
-          - 网页圆角化设计: blog/websitebeauty/yuanjiaohua.md
-          - 添加评论系统(giscus为例): blog/websitebeauty/mkcomments.md
-          - 添加在线聊天: blog/websitebeauty/webtalknow.md
-          - 添加友链: blog/websitebeauty/linktech.md
-          - 添加顶部公告栏: blog/websitebeauty/header.md
-          - 修改网站字体: blog/websitebeauty/mkdocsfont.md
-          - JS实现鼠标样式: blog/websitebeauty/shubiao.md
-          - 背景特效: blog/websitebeauty/backgroud.md
-          - 嵌入PDF文件: blog/websitebeauty/mkpdf.md
-          - 相对地址的一些问题: blog/websitebeauty/Relativeaddress.md
-          - 添加404页面: blog/websitebeauty/404.md
-          - 为MKdocs添加文章修订时间戳: blog/websitebeauty/time.md
-          - 页脚设置: blog/websitebeauty/footer.md
-          - 加速网站访问的一些心得: blog/websitebeauty/accelerate.md
-  - 建设MKdocs技能指北:
-      - Markdown:
-          - Markdown指南: develop/Markdown/markdown.md
-          - MWeb Pro: develop/Markdown/MWeb.md
-      - Git 实用技巧: develop/git.md
-      - 利用Lighthouse测试网站性能: develop/lighthouse.md
-      - 如何将 github pages 迁移到 vercel 上托管: develop/vercel.md
-      - 设计美学:
-          - 唐·诺曼—情感设计的三个层次: develop/designbeauty/db1.md
-          - 我对设计的一些观点: develop/designbeauty/my-to-desihn.md
+  - 主页: index.md
 
-  - 标签: tag.md
-  - 留言板: liuyanban.md
-  - 博客:
-      - index: blog/index.md
-  - 友链:
-      - 友链: link.md
+  ################################################################################################
+  # - 技术:
+  #   # - index: 
+  - Computer Science: 
+    - Java:
+      - Java面向对象基础: blog/Computer Science/java基础.md
+      - Java集合框架与常用API: blog/Computer Science/常用API.md
+      - Java高级技术: blog/Computer Science/java提高.md
+    - Algorithm:
+      - 并查集:
+        - blog/Computer Science/Algorithm/算法基础/并查集.md
+        - blog/Computer Science/Algorithm/算法基础/dsu-complexity.md
+    - LeetCode热题100:
+      - blog/Computer Science/LeetCode热题100/字母异位词分组.md
+      - blog/Computer Science/LeetCode热题100/最长连续序列.md
+    - LeetCode:
+      - blog/Computer Science/LeetCode/交易逆序对的总数.md
+      - blog/Computer Science/LeetCode/单词接龙.md
+      - blog/Computer Science/LeetCode/岛屿数量.md
+      - blog/Computer Science/LeetCode/分考场.md
+      - blog/Computer Science/LeetCode/拉马车.md
+      - blog/Computer Science/LeetCode/分巧克力.md
+      - blog/Computer Science/LeetCode/k倍区间.md
+      - blog/Computer Science/LeetCode/编辑距离.md
+      - blog/Computer Science/LeetCode/接雨水.md
+      - blog/Computer Science/LeetCode/组合总和.md
+      - blog/Computer Science/LeetCode/全排列.md
+      - blog/Computer Science/LeetCode/乘积最大子数组.md
+      - blog/Computer Science/LeetCode/最长回文子串.md
+      - blog/Computer Science/LeetCode/前K个高频元素.md
+      - blog/Computer Science/LeetCode/最小栈.md
+      - blog/Computer Science/LeetCode/Pow(x,n).md
+      - blog/Computer Science/LeetCode/网络延迟时间.md
+      - blog/Computer Science/LeetCode/计算质数.md
+      - blog/Computer Science/LeetCode/对角线上的质数.md
+      - blog/Computer Science/LeetCode/零钱兑换.md
+      - blog/Computer Science/LeetCode/01矩阵.md
+      - blog/Computer Science/LeetCode/二分查找.md
+      - blog/Computer Science/LeetCode/括号匹配.md
+      - blog/Computer Science/LeetCode/300最长递增子序列.md
+      - blog/Computer Science/LeetCode/115不同的子序列.md
+      - blog/Computer Science/LeetCode/712两个字符串的最小ASCII删除和.md
+      - blog/Computer Science/LeetCode/516最长回文子序列.md
+      - blog/Computer Science/LeetCode/139单词拆分.md
+      - blog/Computer Science/LeetCode/221最大正方形.md
+      - blog/Computer Science/LeetCode/2845统计趣味子数组的数目.md
+      - blog/Computer Science/LeetCode/2799统计完全子数组的数目.md
+      - blog/Computer Science/LeetCode/1399统计最大组的数目.md
+      - blog/Computer Science/LeetCode/2338统计理想数组的数目.md
+      - blog/Computer Science/LeetCode/2179统计数组中好三元组数目.md
+      - blog/Computer Science/LeetCode/2537统计好子数组的数.md
+      - blog/Computer Science/LeetCode/2140解决智力问题.md
+      - blog/Computer Science/LeetCode/2278字母在字符串中的百分比.md
+
+
+  - MachineLearning: 
+    - blog/MachineLearning/K近邻学习与降维.md
+    - blog/MachineLearning/模型评估与多分类.md
+    - blog/MachineLearning/公式测试.md
+    - blog/MachineLearning/经典卷积神经网络.md
+    - blog/MachineLearning/理解YOLO网络结构.md
+  - 每日诗词:
+    - blog/每日诗词/虞美人·玉阑干外清江浦.md
+    - blog/每日诗词/菩萨蛮·回文夏闺怨.md
+    - blog/每日诗词/清平乐·六盘山.md
+    - blog/每日诗词/洞仙歌·咏柳.md
+    - blog/每日诗词/秋兴八首·其一.md
+    - blog/每日诗词/与史郎中钦听黄鹤楼上吹笛.md
+    - blog/每日诗词/夏日南亭怀辛大.md
+    - blog/每日诗词/行香子·秋与.md
+    - blog/每日诗词/自题金山画像.md
+    - blog/每日诗词/一剪梅·红藕香残玉簟秋.md
+  # - 随笔:
+  - 发疯:
+    - blog/发疯.md
+  - 长期主义:
+    - blog/长期主义/fitness.md
+
+  # - MKdocs中文教程:
+  #     - 许可声明: blog/MIT.md
+  #     - MKdocs教程(三部曲):
+  #         - 0.Mkdocs教程前言: blog/Mkdocs/mkfirst.md
+  #         - 1.利用Mkdocs部署静态网页: blog/Mkdocs/mkdocs1.md
+  #         - 2.Mkdocs配置说明(mkdocs.yml): blog/Mkdocs/mkdocs2.md
+  #         - 3.解决Github Pages部署mkdocs自定义域名失效的问题: blog/Mkdocs/mkdocs3.md
+  #     - Mkdocs美化/补充:
+  #         - MkDocs文档AI摘要: blog/websitebeauty/Mkdocs-AI-Summary.md
+  #         - 添加阅读信息统计: blog/websitebeauty/reading_time.md
+  #         - 添加Mkdocs博客: blog/Mkdocs/mkdocsblog.md
+  #         - 如何给MKdocs添加友链: blog/Mkdocs/linktech.md
+  #         - 网页圆角化设计: blog/websitebeauty/yuanjiaohua.md
+  #         - 添加评论系统(giscus为例): blog/websitebeauty/mkcomments.md
+  #         - 添加在线聊天: blog/websitebeauty/webtalknow.md
+  #         - 添加友链: blog/websitebeauty/linktech.md
+  #         - 添加顶部公告栏: blog/websitebeauty/header.md
+  #         - 修改网站字体: blog/websitebeauty/mkdocsfont.md
+  #         - JS实现鼠标样式: blog/websitebeauty/shubiao.md
+  #         - 背景特效: blog/websitebeauty/backgroud.md
+  #         - 嵌入PDF文件: blog/websitebeauty/mkpdf.md
+  #         - 相对地址的一些问题: blog/websitebeauty/Relativeaddress.md
+  #         - 添加404页面: blog/websitebeauty/404.md
+  #         - 为MKdocs添加文章修订时间戳: blog/websitebeauty/time.md
+  #         - 页脚设置: blog/websitebeauty/footer.md
+  #         - 加速网站访问的一些心得: blog/websitebeauty/accelerate.md
+  # - 建设MKdocs技能指北:
+  #     - Markdown:
+  #         - Markdown指南: develop/Markdown/markdown.md
+  #         - MWeb Pro: develop/Markdown/MWeb.md
+  #     - Git 实用技巧: develop/git.md
+  #     - 利用Lighthouse测试网站性能: develop/lighthouse.md
+  #     - 如何将 github pages 迁移到 vercel 上托管: develop/vercel.md
+  #     - 设计美学:
+  #         - 唐·诺曼—情感设计的三个层次: develop/designbeauty/db1.md
+  #         - 我对设计的一些观点: develop/designbeauty/my-to-desihn.md
+
+  # - 标签: tag.md
+  # - 留言板: liuyanban.md
+  # - 博客:
+  #     - index: blog/index.md
+  # - 友链:
+  #     - 友链: link.md
   - 关于:
       - 作者个人简介: about/geren.md
-      - 个人简历: about/resume.md
+      - 个人简历: about/简历.md
       - 支持作者: about/zcw.md
       - 功能测试: about/test.md
-  - 个人博客: https://wcowin.work
-  - 个人简介: https://wcowin.work/Personal-Profile/#
-  - 使用本主题: https://github.com/new?template_name=Mkdocs-Wcowin&template_owner=Wcowin
+  # - 个人博客: https://wcowin.work
+  # - 个人简介: https://wcowin.work/Personal-Profile/#
+  # - 使用本主题: https://github.com/new?template_name=Mkdocs-Wcowin&template_owner=Wcowin
 
-copyright: Copyright &copy; 2022~2025 Wcowin # 左下角的版权声明
+
+
+
+
+
+
+copyright: Copyright &copy; gzh # 左下角的版权声明
 
 extra:
+  mathjax: true
   alternate:
     - name: 简体中文
       link: /
@@ -138,23 +230,23 @@ extra:
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
     - icon: fontawesome/brands/weixin
-      link: https://s1.imagehub.cc/images/2024/02/02/bb9ee71b03ee7a3b87caad5cc4bcebff.jpeg
+      link: https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png
       name: Wechat
     - icon: fontawesome/brands/telegram
-      link: https://t.me/wecowin
+      link: https://t.me/gongzihang
       name: telegram
     - icon: fontawesome/brands/x-twitter #联系方式图标 : https://fontawesome.com/ 去这里找图标
-      link: https://twitter.com/wcowin_
+      link: https://twitter.com/ZihangGong28792
     - icon: fontawesome/brands/github
-      link: https://github.com/Wcowin
+      link: https://github.com/Gongzihang6
 
     - icon: fontawesome/regular/envelope #联系方式图标
-      link: mailto:<wangkewen821@gmail.com> #邮件联系方式
+      link: mailto:<zihanggong24@gmail.com> #邮件联系方式
     - icon: fontawesome/brands/bilibili
-      link: https://space.bilibili.com/1407028951/lists/4566631?type=series
+      link: https://space.bilibili.com/688234000/lists
   analytics:
     provider: google #谷歌分析
-    property: G-29HZMNR0KG ##如果你 clone 了my模板，请将这个修改为你的
+    property: G-40HC6RYSR1 ##如果你 clone 了my模板，请将这个修改为你的
 
     # 网页底部反馈
     feedback:
@@ -172,13 +264,16 @@ extra:
             Thanks for your feedback! Help us improve this page by
             using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
   # cookies设置（可选）
-  # consent:
-  #   title: Cookie consent
-  #   description: >-
-  #     我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
-  #     如果你同意,你可以帮助我们让我们的网站更好
+  consent:
+    title: Cookie consent
+    description: >-
+      我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
+      如果你同意,你可以帮助我们让我们的网站更好
 
 plugins:
+  - exclude:
+      glob:
+        - blog/Computer Science/Algorithm/docs/*
   - search #搜索配置
   # - glightbox:
   #     enabled: !ENV [glightbox, false]
@@ -208,18 +303,18 @@ plugins:
         - blog/posts/update.md
         - blog/posts/wkw.md
         - about/link.md
-  - git-revision-date-localized:
-      enabled: !ENV [CI, false]
-      type: iso_date
-      enable_creation_date: false
-      exclude:
-        # - index.md
-        - tag.md
-        - liuyanban.md
-        - blog/posts/update.md
-        - blog/posts/wkw.md
-        - about/link.md
-        - websitebeauty/linktech.md
+  # - git-revision-date-localized:
+  #     enabled: !ENV [CI, false]
+  #     type: iso_date
+  #     enable_creation_date: false
+  #     exclude:
+  #       # - index.md
+  #       - tag.md
+  #       - liuyanban.md
+  #       - blog/posts/update.md
+  #       - blog/posts/wkw.md
+  #       - about/link.md
+  #       - websitebeauty/linktech.md
   - blog: #博客配置
       post_date_format: full #时间
       draft: true
@@ -235,6 +330,8 @@ plugins:
   - tags
 
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+
+  
   - abbr
   - attr_list
   - admonition
@@ -242,7 +339,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - footnotes
   - md_in_html
   # - meta # 支持Markdown文件上方自定义标题标签等
-  - pymdownx.caret
+  # - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
   - pymdownx.details
@@ -252,20 +349,17 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   - pymdownx.snippets
   - pymdownx.smartsymbols
   - pymdownx.tilde
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format:
-            !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
-  - pymdownx.arithmatex: # latex支持
-      generic: true
+
+
+
+
   - toc:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
       linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
+      linenums_style: "table"
+      auto_title: true # 显示编程语言名称
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -277,22 +371,45 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   #     slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   #     permalink: "\ue157"
 
-extra_javascript:
-  # - javascripts/extra.js #自定义javascript
-  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
-  # - javascripts/mathjax.js #Latex支持
-  - javascripts/mathjax.js #Latex支持的CDN
-  # - https://polyfill.io/v3/polyfill.min.js?features=es6 #Latex支持
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #Latex支持
-  # - ckplayer/js/ckplayer.js #播放器配置
-  # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js  #gitalk支持
-  # - https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js #忘了
-  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/view.js
+  - admonition
+  - pymdownx.details
 
+  - pymdownx.arithmatex: # latex支持
+      generic: true
+      
+      # block_tag: 'div'  # 强制行间公式用div包裹
+      block_syntax:
+        - dollar  # 用于 $$...$$
+        - begin_end # 用于 \begin{}...\end{}
+      # preview: false  # 禁用预览模式避免冲突
+  - pymdownx.superfences:
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+
+        - name: raw_html
+          class: raw-html
+          # format: !!python/name:pymdownx.superfences.fence_raw_format
+
+
+        - name: mermaid
+          class: mermaid
+          format:
+            !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
+        - pymdownx.tabbed:
+            alternate_style: true
+
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/config_mathjax.js  # 确保此文件正确配置了 MathJax
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/简历.js
 extra_css:
-  - stylesheets/extra.css # 自定义CSS
+  - stylesheets/extra.css
   - stylesheets/extra2.css
+  - stylesheets/简历.css
   # - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/extra.css
   # - stylesheets/link.css #友链配置
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css  #友链CDN
@@ -308,6 +425,8 @@ extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css #字体
   # - https://static.zeoseven.com/zsft/292/main/result.css #字体
   # - stylesheets/ziti.css  #字体
+
+  - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css #字体
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css  #字体

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+
+
 :root > * {
   --md-primary-fg-color:        #4c94cb;
   --md-primary-fg-color--light:#4c94cb;
@@ -8,6 +11,14 @@
 /* * {
   outline: 1px solid #518FC1;
 }  */
+
+
+
+
+
+
+
+
 
 
 
@@ -69,7 +80,19 @@ img.twitter {
   font-size: large;
   
 }
-.md-typeset .pied-piper > .admonition-title,
+/* .md-typeset .pied-piper > .admonition-title, */
+/* 1. 修改所有 admonition 的标题字体大小 */
+.md-typeset .admonition-title {
+  font-size: 18px; /* 你可以根据需要调整这个值，例如 1.1em, 20px */
+}
+/* 2. 修改所有 admonition 的内容字体大小 */
+/*    内容是 <p> 标签，所以我们选择它 */
+.md-typeset .admonition p {
+  font-size: 16px; /* 你可以根据需要调整这个值 */
+}
+
+
+
 .md-typeset .pied-piper > summary {
   background-color: rgba(43, 155, 70, 0.1);
 }
@@ -271,8 +294,8 @@ height: 100%;
 }
 
 #rcorners4 {
-  border-radius: 25px;
-  border: 2px solid #518FC1;
+  border-radius: 32px;
+  border: 2px solid rgba(68,138,255,.1);
   padding: 20px;
   width: 110%;
   height: 100%;
@@ -603,4 +626,392 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 #cusdis_thread > iframe {
   height: 30rem;
 }
+
+
+
+
+/* 对文章内容区域的所有段落 <p> 应用首行缩进 */
+.md-content .md-typeset p {
+  text-indent: 2em;
+}
+
+/* 
+   可选：取消列表项内部段落的缩进，
+   否则列表中的文字也会缩进，看起来会很奇怪。
+*/
+.md-content .md-typeset li p {
+  text-indent: 0;
+}
+
+
+.ai-summary {
+  font-size: 16px !important; /* 按需调整数值 */
+}
+.md-nav__title {
+  font-size: 24px !important; /* 主导航项 */
+}
+
+.md-ellipsis {
+  font-size: 18px !important; /* 子标题 */
+  /* color: #aa96da;
+  /*字体加粗*/
+
+}
+.md-nav__list {
+  font-size: 18px !important; /* 主导航项 */
+}
+
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap'); */
+/* (可选) 如果想让印章字体更有篆刻感，可以引入一个仿宋或篆体字体 */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap'); */
+
+/* --- 卡片居中包装器 --- */
+.card-wrapper {
+    text-align: center;
+    margin: 2.5rem auto;
+}
+
+/* --- 自适应诗词卡片 --- */
+.poem-card-adaptive {
+    display: inline-flex; 
+    min-width: 300px;
+    max-width: 90vw;
+    /* min-height: 250px; */
+    padding: 1.2rem 3rem; /* 左右内边距可以稍大一些 */
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fssyjt.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+.poem-card-adaptive:hover {
+    transform: translateY(-8px);
+}
+
+/* --- 自适应诗词内容 --- */
+.poem-content-adaptive {
+    writing-mode: vertical-rl;
+    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif !important;
+    color: #333;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 1.6rem;      
+    line-height: 0.8;       
+    /* letter-spacing: 3px;  */
+}
+.poem-content-adaptive p {
+    text-indent: 0 !important;
+}
+.poem-content-adaptive .poem-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 0.8;
+}
+.poem-content-adaptive .poem-author {
+    font-size: 1.6rem;
+    margin-top: 1em;
+    color: #555;
+}
+
+/* --- 【核心】自适应红色印章 --- */
+.poem-seal-final {
+    /* 定位 */
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+
+    /* --- 尺寸自适应的关键 --- */
+    display: inline-flex;       /* 使其包裹内容 */
+    padding: 0.2em;             /* 使用em单位，让边距随字号缩放 */
+    aspect-ratio: 1 / 1;      /* 强制保持1:1的正方形比例 */
+
+    /* --- 文字和布局 --- */
+    writing-mode: vertical-rl;  /* 让多字竖排 */
+    text-orientation: mixed;    /* 确保字符是正的 */
+    align-items: center;        /* 垂直居中（在竖排模式下是水平） */
+    justify-content: center;    /* 水平居中（在竖排模式下是垂直） */
+
+    /* --- 字体和颜色 --- */
+    /* 建议为印章使用更硬朗的字体，如仿宋(FangSong)或黑体(SimHei) */
+    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif !important;
+    font-size: 1.1rem;          /* 控制印章文字大小，进而控制印章整体大小 */
+    color: white;
+    
+    /* --- 印章外观 --- */
+    background-color: #c93c3c;
+    border: 2px solid #a63232;
+    border-radius: 16px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+.poem-seal-final:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+
+
+
+
+
+/* 代码块主题 */
+/* 顶部 */
+.md-fences {
+    color: #c5c8c6;
+    background-color: #21252b;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 rgb(0 0 0 / 40%);
+    padding-top: 30px;
+    font-family: monospace, 'PingFang SC', 'Microsoft YaHei';
+}
+ 
+.md-fences::before {
+    background: #fc625d;
+    border-radius: 50%;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    content: ' ';
+    height: 12px;
+    left: 12px;
+    margin-top: -20px;
+    position: absolute;
+    width: 12px;
+}
+
+
+
+
+
+
+/* ---- 自定义页脚样式 ---- */
+
+/* 1. 修改页脚主容器的背景和默认文字颜色 */
+.md-footer {
+  background-color: #ffffff !important; /* 将背景色设为白色 */
+  color: rgba(0, 0, 0, 1) !important;   /* 设置默认文字颜色为深灰色，保持和正文一致性 */
+}
+
+/* 2. 修改页脚内 "上一页" 和 "下一页" 的导航链接文字颜色 */
+.md-footer-nav__link {
+    color: rgb(0, 0, 0) !important; /* 链接主标题颜色加深 */
+}
+
+/* 3. 修改页脚导航链接的辅助文字（如 "主页"）颜色 */
+.md-footer-nav__title {
+    color: rgba(0, 0, 0, 1) !important; /* 辅助文字颜色变深 */
+}
+
+/* 4. 修改页脚中所有图标的颜色（包括导航箭头和社交图标） */
+/* SVG 图标使用 fill 属性来改变颜色 */
+.md-footer .md-icon svg {
+  fill: rgba(0, 0, 0, 1) !important; /* 将图标填充色设为深灰色 */
+}
+
+/* 5. 修改版权信息部分的文字和链接颜色 */
+.md-footer-copyright__highlight, .md-footer-copyright__highlight a {
+    color: rgba(0, 0, 0, 1) !important; /* 确保版权文字和其中的链接也是深灰色 */
+}
+
+/* (可选) 6. 在页脚顶部添加一条分隔线 */
+/* 由于页脚和正文现在都是白色，添加一条线可以更好地区分它们 */
+
+/* .md-footer {
+    border-top: .05rem solid #948383; 
+}*/
+
+.md-footer-meta__inner .md-grid {
+    max-width: 90% !important;
+    background-color: #FFFFFF !important;
+}
+.md-social__link {
+    color: #000000;
+}
+.footer-visit-count {
+    color: #000000;
+}
+.md-footer footer a {
+  color: black !important;
+}
+
+
+
+
+
+
+::selection {
+    background-color: #d59ceb4d;
+    border-radius: 10px !important;
+    padding: 2px 4px;  
+}
+::-moz-selection {  
+    background-color: #3390FF;  
+    border-radius: 6px !important;  
+    padding: 2px 4px;  
+}
+
+
+
+
+
+
+
+
+/* 当屏幕宽度大于 Material 主题的桌面断点 (1220px) 时生效 */
+/* @media screen and (min-width: 1220px) { */
+  /* 
+    .md-grid 是 Material 主题中控制整体居中内容宽度的核心容器。
+    它同时作用于顶栏和主内容区，修改它可以保证两者宽度一致。
+  */
+  /* .md-grid { */
+    /* 覆盖默认的 max-width (约 76.25rem 或 1220px) */
+    /* 你可以根据喜好调整这个值 */
+    /* 推荐使用 rem 单位，比如 90rem (约 1440px) */
+    /* max-width: 80rem; */
+    /* 或者使用像素值 */
+    /* max-width: 1600px; */
+  /* } */
+/* } */
+
+
+
+
+.md-typeset .center-table {
+  width: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 用于单元格内容居中 */
+.text-center th,
+.text-center td {
+  text-align: center !important;
+}
+
+.md-typeset scrolledwrap{
+  width: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.md-typeset scrolledwrap table{
+  width: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+
+
+
+
+
+
+
+/* docs/stylesheets/extra.css */
+
+/* 代码块容器相对定位，以便按钮绝对定位 */
+div.highlight {
+  position: relative;
+}
+
+/* 折叠按钮的样式 */
+.code-fold-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 1; /* 确保在代码之上 */
+  padding: 0.25em 0.5em;
+  border: 1px solid var(--md-code-fg-color--light);
+  border-radius: 4px;
+  background-color: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+  font-size: 0.65rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.code-fold-button:hover {
+  opacity: 1;
+}
+
+.code-fold-button svg {
+  width: 1.2em;
+  height: 1.2em;
+  fill: currentColor;
+}
+
+/* 折叠状态下的样式 */
+.code-collapsed > .highlight-toolbar, /* 隐藏复制按钮等工具栏 */
+.code-collapsed > pre {
+  max-height: 200px; /* 限制代码块的高度 */
+  overflow: hidden;
+  /* 添加一个渐变蒙版，提示下面还有内容 */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.code-collapsed > pre {
+  transition: max-height 0.3s ease-out; /* 平滑展开动画 */
+}
+
+/* 展开状态下的样式 */
+div.highlight:not(.code-collapsed) > pre {
+  max-height: 10000px; /* 一个足够大的值来显示所有内容 */
+  transition: max-height 0.5s ease-in; /* 平滑折叠动画 */
+}
+
+/* 根据折叠状态显示不同的图标和文字 */
+.code-collapsed .code-fold-button .icon-collapse,
+.code-collapsed .code-fold-button .button-text {
+  display: inline-block;
+}
+
+.code-collapsed .code-fold-button .icon-expand {
+  display: none;
+}
+.code-fold-button .button-text {
+  display: none;
+}
+.code-fold-button:hover .button-text {
+  display: inline-block;
+}
+
+
+div.highlight:not(.code-collapsed) .code-fold-button .icon-expand {
+  display: inline-block;
+}
+
+div.highlight:not(.code-collapsed) .code-fold-button .icon-collapse {
+  display: none;
+}
+
+div.highlight:not(.code-collapsed) .code-fold-button .button-text {
+    display: none;
+}
+
+div.highlight:not(.code-collapsed) .code-fold-button:hover .button-text {
+    display: inline-block;
+}
+
+
+
+
 

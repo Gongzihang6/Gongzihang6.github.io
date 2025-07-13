@@ -1,0 +1,7 @@
+{
+  "summary": "MkDocs通过Markdown扩展和MathJax协同实现公式渲染：服务端的Markdown扩展负责识别和保护LaTeX代码，防止构建时被其他处理器破坏；客户端的MathJax则在浏览器中动态解析受保护的LaTeX代码并渲染为可视化公式。两者需正确配置才能确保公式显示效果，配置不当会导致语法错误或渲染失败。该机制采用服务端-客户端接力模式完成数学公式的完整呈现流程。",
+  "service": "deepseek",
+  "page_title": "公式显示",
+  "timestamp": "2025-07-13T10:33:15.507741",
+  "language": "zh"
+}

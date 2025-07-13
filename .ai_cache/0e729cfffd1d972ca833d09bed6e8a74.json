@@ -1,0 +1,7 @@
+{
+  "summary": "该题目要求统计满足特定条件的子数组数量。给定数组和整数mod、k，趣味子数组需满足：在子数组范围内，模mod等于k的元素数目本身也满足模mod等于k的条件。解题关键在于高效计算符合条件的连续子数组，涉及前缀和与哈希表优化技术，适用于数组处理与组合数学场景。",
+  "service": "deepseek",
+  "page_title": "[2845. 统计趣味子数组的数目](https://leetcode.cn/problems/count-of-interesting-subarrays/)",
+  "timestamp": "2025-07-13T10:30:27.710289",
+  "language": "zh"
+}

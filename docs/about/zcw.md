@@ -7,9 +7,9 @@ status: new
 
 <div class="grid cards" markdown>
 
-- :material-email-mark-as-unread: 给我发送[邮箱](mailto:wcowin@qq.com)
+- :material-email-mark-as-unread: 给我发送[邮箱](mailto:601049742@qq.com)
 
-- :material-github: [点击此处](https://github.com/Wcowin/Wcowin.github.io){target="\_blank" rel="noopener"}访问Github仓库
+- :material-github: [点击此处](https://github.com/Gongzihang6){target="\_blank" rel="noopener"}访问Github仓库
 
 </div>
 
@@ -25,7 +25,7 @@ status: new
 </p> -->
 
 <p align="center">
-  <img src="https://pic2.zhimg.com/80/v2-42db1a89cc3e402891212189f444f081_1440w.webp" class="img1" style="width:120%; height:auto;" />
+  <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%B6%E6%AC%BE%E7%A0%81.jpg" class="img1" style="width:60%; height:auto;" />
 </p>
 
 ## **:simple-wechat:** **WeChat Pay**
@@ -35,14 +35,14 @@ status: new
 </p> -->
 
 <p align="center">
-  <img src="https://pic2.zhimg.com/80/v2-4384c32173a239a1609309aa1b1ee9f9_1440w.webp" class="img1" style="width:120%; height:auto;" />
+  <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%BE%AE%E4%BF%A1%E8%B5%9E%E8%B5%8F%E7%A0%81.jpg" class="img1" style="width:60%; height:auto;" />
 </p>
 
 
 ***
-## **:simple-kofi:ko-fi**
+<!-- ## **:simple-kofi:ko-fi** -->
 
-[请作者喝杯咖啡](https://ko-fi.com/wcowin){ .md-button target=_blank}
+<!-- [请作者喝杯咖啡](https://ko-fi.com/wcowin){ .md-button target=_blank} -->
 
 <!-- <div class="reward-container">
   <div></div>
@@ -61,9 +61,11 @@ status: new
   </div>
 </div> -->
 
-## **赞助列表**
+
+
+<!-- ## **赞助列表**
 
 赞助人|赞助金额|赞助时间
 -|-|-
 *急|15￥|25/04/18
-千平|100￥|25/04/16
+千平|100￥|25/04/16 -->
