@@ -3034,11 +3034,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // 最多只显示3张在后面的卡片
             if (index < 4) { 
                 const scale = 1 - index * 0.08;
-                const translateX = index * 45;
-                const rotate = index * 3;
+                const translateX = -(index * 45);   // ===================================================
+                const rotate = -(index * 3);
                 transform = `translateX(${translateX}px) scale(${scale}) rotateZ(${rotate}deg)`;
             } else {
-                transform = `translateX(135px) scale(0.76) rotateZ(9deg)`;
+                transform = `translateX(-135px) scale(0.76) rotateZ(-9deg)`;
             }
 
             card.style.transform = transform;
