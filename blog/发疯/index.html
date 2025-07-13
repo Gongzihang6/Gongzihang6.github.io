@@ -2830,11 +2830,11 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了一种无限循环立体卡片轮播的实现方案，采用CSS3动画技术实现优雅的3D切换效果。关键特性包括自定义贝塞尔曲线缓动动画（快进慢出）、卡片飞出时的复合变换效果（平移/旋转/缩放），以及文字遮罩层保证可读性。通过perspective属性实现立体透视，并支持响应式设计，适用于博客等展示场景。代码提供了完整的样式定义，包括卡片尺寸、过渡时间和自定义字体集成方案。</p>
+<p>本文介绍了一种无限循环立体卡片轮播的实现方案，采用CSS3动画技术实现优雅的视觉过渡效果。核心特点包括自定义卡片尺寸（520×650px）、基于cubic-bezier的弹性缓动动画（0.6s时长）、3D透视效果（1500px景深）以及响应式交互设计。通过transform组合实现卡片飞出时的3D旋转位移效果，并采用渐变遮罩确保文字可读性，适用于博客等需要展示图文内容的场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>297</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>305</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -2853,9 +2853,9 @@
 
     /* --- 全局样式，确保与博客融合 --- */
     :root {
-        --card-width: 320px;
-        --card-height: 450px;
-        --card-transition-duration: 0.8s; /* 动画时间稍长，更显优雅 */
+        --card-width: 520px;    /* 卡片宽度320px */
+        --card-height: 650px;   /* 卡片高度450px */
+        --card-transition-duration: 0.6s; /* 动画时间稍长，更显优雅 */
     }
 
     /* --- 轮播容器 --- */
@@ -2981,7 +2981,7 @@
     }
 
     .card-content p {
-        font-weight: 400;
+        font-weight: 500;
     }
 </style>
 </head>
