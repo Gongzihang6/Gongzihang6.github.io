@@ -2856,12 +2856,8 @@
   <h1>发疯</h1>
 
 <div class="admonition info">
-<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了一种无限循环立体卡片轮播的实现方案，采用CSS3动画技术实现优雅的3D切换效果。核心特点包括自定义贝塞尔曲线缓动动画（cubic-bezier）、透视变换（perspective）和卡片飞出特效，通过transform属性实现平滑的旋转、缩放和位移过渡。方案包含响应式卡片布局（420×650px）、文字遮罩层优化可读性，以及导航按钮交互设计，适用于博客等需要展示图文内容的场景。</p>
-</div>
-<div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>376</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>392</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -3026,7 +3022,7 @@
         </div>
         <!-- 卡片3 -->
         <div class="card" style="background-image: url('https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?q=80&w=2070&auto=format&fit=crop');">
-            <div class="card-content"><h2>林间小径</h2><p>阳光透过树叶的缝隙，洒下斑驳的光影。</p></div>
+            <div class="card-content"><h2>爱是什么</h2><p>爱的本质是自由意志的沉沦，你说你爱的很理性，很克制，而我说，你爱的好懦弱</p></div>
         </div>
         <!-- 卡片4 -->
         <div class="card" style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070&auto=format&fit=crop');">
@@ -3353,6 +3349,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+  <h2 id="__comments">评论</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+      data-repo="Gongzihang6/Discussion"
+      data-repo-id="R_kgDOPLkWUA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOPLkWUM4Cs35N"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+  </script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
