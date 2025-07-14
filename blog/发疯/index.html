@@ -2888,7 +2888,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>487</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>553</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -2983,8 +2983,23 @@
         position: relative;
         z-index: 2;
         text-align: center;
-        padding: 0 25px; /* 只保留左右一点内边距，防止文字贴边 */
-        max-width: 90%;
+        max-width: 90%; /* 防止内容过宽 */
+
+        /* 1. 【核心】应用您喜欢的渐变背景 */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.4));
+
+        /* 2. 重新添加内边距，让文字有呼吸空间 */
+        padding: 25px 35px;
+
+        /* 3. 重新添加圆角，使其看起来像一个卡片 */
+        border-radius: 16px; 
+
+        /* 4. 【关键】重新添加毛玻璃效果，打造现代感 */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px); /* 兼容 Safari */
+
+        /* 5. (可选) 加一点阴影，让卡片更有层次感 */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .card-content h2 {
