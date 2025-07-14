@@ -2880,7 +2880,309 @@
 
   <h1>Fitness</h1>
 
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>本文介绍了一个优化版高级运动日历的CSS实现方案，采用半透明磨砂玻璃效果和运动风格背景图增强视觉体验。核心特性包括响应式布局、月份导航功能和日期网格交互设计，通过CSS变量实现主题定制，并运用backdrop-filter实现毛玻璃效果。该方案适用于健身类Web应用，在保证功能性的同时提升了UI美观度与用户体验。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>168</strong></p>
+</div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的高级运动日历 (优化版)</title>
+    <style>
+        /* --- 1. 全局与主题样式 --- */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+        :root {
+            --primary-color: #6d28d9; --primary-light-color: #a78bfa; --secondary-color: #ddd6fe;
+            --bg-color: #f9fafb; --card-bg-color: rgba(255, 255, 255, 0.85); /* 半透明白色，为背景图做准备 */
+            --text-color: #1f2937; --text-light-color: #6b7280; --border-color: #d1d5db;
+        }
+        body {
+            font-family: 'Noto Sans SC', sans-serif; background-color: var(--bg-color);
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; padding: 20px; box-sizing: border-box; overflow: hidden;
+        }
 
+        /* --- 2. 日历卡片主容器 --- */
+        .calendar-card {
+            position: relative; z-index: 1; /* 为伪元素背景做准备 */
+            width: 100%; max-width: 550px;
+            border-radius: 24px; box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.15);
+            padding: 25px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);
+            /* --- 【优化3】添加运动风格背景图 --- */
+            background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+        }
+        /* 半透明磨砂层，确保可读性 */
+        .calendar-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--card-bg-color);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        #current-month-year { font-size: 1.25rem; font-weight: 700; color: var(--text-color); }
+        .nav-button { background: rgba(255,255,255,0.5); border: none; cursor: pointer; padding: 8px; border-radius: 50%; display: flex; transition: background-color 0.2s; }
+        .nav-button:hover { background-color: rgba(255,255,255,0.8); }
+        .nav-button svg { width: 24px; height: 24px; stroke: var(--text-color); stroke-width: 2.5; }
+
+        /* --- 3. 日历网格 --- */
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+        .weekday { font-size: 0.75rem; font-weight: 500; color: var(--text-light-color); text-align: center; padding-bottom: 10px; }
+        .day {
+            border-radius: 8px; cursor: pointer; position: relative; transition: all 0.2s;
+            padding: 8px 4px; display: flex; flex-direction: column; height: 70px;
+            border: 1px solid transparent;
+        }
+        .day:hover { background-color: var(--secondary-color); border-color: var(--primary-color); }
+        .day.other-month { opacity: 0.35; pointer-events: none; }
+        .day.today { background-color: var(--primary-color); color: white; box-shadow: 0 0 15px var(--primary-light-color); }
+        .day-number { font-weight: 600; font-size: 0.9rem; align-self: flex-start; }
+        .day.today .day-number { color: white; }
+        .day-summary { font-size: 0.7rem; color: #6b7280; margin-top: 4px; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .day.today .day-summary { color: rgba(255, 255, 255, 0.8); }
+
+        /* --- 4. 详细信息浮层 --- */
+        .detail-card-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: none; }
+        .detail-card-overlay.visible { display: block; }
+
+        /* --- 【优化2】美化连接线 --- */
+        .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; }
+        #connector-line {
+            stroke: url(#line-gradient); /* 使用SVG渐变 */
+            stroke-width: 2.5px; stroke-linecap: round;
+            filter: drop-shadow(0 0 3px var(--primary-light-color)); /* 发光效果 */
+            stroke-dasharray: 1000; stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 0.5s cubic-bezier(0.6, 0, 0.4, 1);
+        }
+        .detail-card-overlay.visible #connector-line { stroke-dashoffset: 0; animation: pulse-glow 2s infinite ease-in-out; }
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 3px var(--primary-light-color)); }
+            50% { filter: drop-shadow(0 0 8px var(--primary-color)); }
+        }
+
+        /* --- 【优化2 & 3】美化详细信息卡片与添加背景 --- */
+        .detail-card {
+            position: absolute; width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 15px 50px rgba(0, 0, 0, 0.15);
+            padding: 25px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.3);
+            opacity: 0; transform: scale(0.95) translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            background-image: url('https://images.unsplash.com/photo-1548690312-e3b511d5b17b?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+        }
+        /* 卡片磨砂层 */
+        .detail-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            z-index: -1;
+        }
+        .detail-card-overlay.visible .detail-card { opacity: 1; transform: scale(1) translateY(0); }
+        .detail-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .detail-card-date { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); }
+        .close-detail-btn { font-size: 1.8rem; color: var(--text-light-color); cursor: pointer; line-height: 1; transition: transform .2s; }
+        .close-detail-btn:hover { transform: rotate(90deg); }
+        .detail-card label { font-size: 0.8rem; font-weight: 600; color: var(--text-color); display: block; margin-bottom: 5px; }
+        .detail-card-summary { width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 15px; box-sizing: border-box; background: rgba(255,255,255,0.5); }
+        .detail-card-editor {
+            width: 100%; min-height: 150px; border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 12px; box-sizing: border-box;
+            font-size: 1rem; line-height: 1.6; overflow-y: auto; background: rgba(255,255,255,0.5);
+        }
+        .detail-card-editor:focus, .detail-card-summary:focus {
+            outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+        .detail-card-actions { margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px; }
+        .detail-btn { padding: 8px 18px; border-radius: 8px; border: none; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+        #save-detail { background-color: var(--primary-color); color: white; }
+        #save-detail:hover { background-color: #581c87; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(109, 40, 217, 0.4); }
+        #delete-detail { background-color: #f3f4f6; color: var(--text-light-color); }
+        #delete-detail:hover { background-color: #ef4444; color: white; }
+
+    </style>
+</head>
+<body>
+
+<div class="calendar-card">
+    <div class="calendar-header">
+        <button class="nav-button" id="prev-month">
+             <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <h2 id="current-month-year"></h2>
+        <button class="nav-button" id="next-month">
+            <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+    </div>
+    <div class="calendar-grid">
+        <div class="weekday">日</div><div class="weekday">一</div><div class="weekday">二</div><div class="weekday">三</div><div class="weekday">四</div><div class="weekday">五</div><div class="weekday">六</div>
+    </div>
+    <div class="calendar-grid" id="calendar-days-grid"></div>
+</div>
+
+<div class="detail-card-overlay" id="detail-overlay">
+    <svg width="100%" height="100%" class="connector-svg">
+        <defs>
+            <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:var(--primary-light-color)" />
+                <stop offset="100%" style="stop-color:var(--primary-color)" />
+            </linearGradient>
+        </defs>
+        <line id="connector-line" x1="0" y1="0" x2="0" y2="0" />
+    </svg>
+    <div class="detail-card" id="detail-card">
+        <div class="detail-card-header">
+            <h3 class="detail-card-date" id="detail-date"></h3>
+            <span class="close-detail-btn">×</span>
+        </div>
+        <label for="detail-summary">摘要 (Summary)</label>
+        <input type="text" id="detail-summary" class="detail-card-summary" placeholder="一句话总结...">
+        <label for="detail-editor">详细内容 (可粘贴图片/表情)</label>
+        <div id="detail-editor" class="detail-card-editor" contenteditable="true"></div>
+        <div class="detail-card-actions">
+            <button class="detail-btn" id="delete-detail">删除</button>
+            <button class="detail-btn" id="save-detail">保存</button>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 省略了前面未改变的DOM元素获取代码
+    const currentMonthYearEl = document.getElementById('current-month-year');
+    const daysGridEl = document.getElementById('calendar-days-grid');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    const detailOverlay = document.getElementById('detail-overlay');
+    const detailCard = document.getElementById('detail-card');
+    const detailDateEl = document.getElementById('detail-date');
+    const detailSummaryInput = document.getElementById('detail-summary');
+    const detailEditor = document.getElementById('detail-editor');
+    const saveDetailBtn = document.getElementById('save-detail');
+    const deleteDetailBtn = document.getElementById('delete-detail');
+    const closeDetailBtn = document.querySelector('.close-detail-btn');
+    const connectorLine = document.getElementById('connector-line');
+
+    let currentDate = new Date();
+    let entries = {};
+    let currentEditingDate = null;
+
+    const loadEntries = () => { const saved = localStorage.getItem('advCalendarEntriesV2'); if (saved) entries = JSON.parse(saved); };
+    const saveEntries = () => localStorage.setItem('advCalendarEntriesV2', JSON.stringify(entries));
+
+    function renderCalendar() {
+        const year = currentDate.getFullYear(); const month = currentDate.getMonth();
+        currentMonthYearEl.textContent = `${year}年 ${month + 1}月`;
+        daysGridEl.innerHTML = '';
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+        const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
+        const lastDateOfPrevMonth = new Date(year, month, 0).getDate();
+
+        for (let i = firstDayOfMonth; i > 0; i--) {
+            daysGridEl.innerHTML += `<div class="day other-month"><span class="day-number">${lastDateOfPrevMonth - i + 1}</span></div>`;
+        }
+        const today = new Date();
+        for (let i = 1; i <= lastDateOfMonth; i++) {
+            const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+            const entry = entries[dateString];
+            const isToday = year === today.getFullYear() && month === today.getMonth() && i === today.getDate();
+            const dayEl = document.createElement('div');
+            dayEl.className = `day ${isToday ? 'today' : ''}`; dayEl.dataset.date = dateString;
+            dayEl.innerHTML = `<span class="day-number">${i}</span><div class="day-summary">${entry ? entry.summary : ''}</div>`;
+            dayEl.addEventListener('click', (e) => openDetailCard(dateString, e.currentTarget));
+            daysGridEl.appendChild(dayEl);
+        }
+    }
+
+    function openDetailCard(dateString, dayElement) {
+        currentEditingDate = dateString;
+        const entry = entries[dateString] || { summary: '', detail: '' };
+
+        detailDateEl.textContent = dateString;
+        detailSummaryInput.value = entry.summary;
+        detailEditor.innerHTML = entry.detail;
+
+        const dayRect = dayElement.getBoundingClientRect();
+        const cardWidth = detailCard.offsetWidth;
+        const cardHeight = detailCard.offsetHeight;
+        const margin = 20;
+
+        let cardX, cardY;
+        if (dayRect.left + dayRect.width + margin + cardWidth > window.innerWidth) {
+            cardX = dayRect.left - cardWidth - margin;
+        } else {
+            cardX = dayRect.right + margin;
+        }
+        cardY = dayRect.top + window.scrollY + dayRect.height / 2 - cardHeight / 2;
+
+        // --- 【优化1】确保卡片在视口内 ---
+        const viewportHeight = window.innerHeight;
+        if (cardY + cardHeight > viewportHeight - margin) {
+            cardY = viewportHeight - cardHeight - margin;
+        }
+        if (cardY < margin) {
+            cardY = margin;
+        }
+
+        detailCard.style.left = `${cardX}px`;
+        detailCard.style.top = `${cardY}px`;
+
+        const lineStartX = (cardX > dayRect.left) ? dayRect.right : dayRect.left;
+        const lineStartY = dayRect.top + dayRect.height / 2;
+        const lineEndX = (cardX > dayRect.left) ? cardX : cardX + cardWidth;
+        const lineEndY = cardY + 60; // 连接点更美观
+
+        connectorLine.setAttribute('x1', lineStartX);
+        connectorLine.setAttribute('y1', lineStartY);
+        connectorLine.setAttribute('x2', lineEndX);
+        connectorLine.setAttribute('y2', lineEndY);
+
+        const lineLength = Math.hypot(lineEndX - lineStartX, lineEndY - lineStartY);
+        connectorLine.style.strokeDasharray = lineLength;
+        connectorLine.style.strokeDashoffset = lineLength;
+
+        detailOverlay.classList.add('visible');
+        void connectorLine.offsetWidth;
+        connectorLine.style.strokeDashoffset = 0;
+    }
+
+    function closeDetailCard() { detailOverlay.classList.remove('visible'); }
+
+    prevMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); });
+    nextMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); });
+    closeDetailBtn.addEventListener('click', closeDetailCard);
+    detailOverlay.addEventListener('click', (e) => { if (e.target === detailOverlay) closeDetailCard(); });
+
+    saveDetailBtn.addEventListener('click', () => {
+        const summary = detailSummaryInput.value.trim();
+        const detail = detailEditor.innerHTML;
+        if (summary || detail.trim() !== '<br>' && detail.trim() !== '') {
+            entries[currentEditingDate] = { summary, detail };
+        } else {
+            delete entries[currentEditingDate];
+        }
+        saveEntries(); closeDetailCard(); renderCalendar();
+    });
+
+    deleteDetailBtn.addEventListener('click', () => {
+        delete entries[currentEditingDate];
+        saveEntries(); closeDetailCard(); renderCalendar();
+    });
+
+    loadEntries();
+    renderCalendar();
+});
+</script>
+
+</body>
+</html>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
