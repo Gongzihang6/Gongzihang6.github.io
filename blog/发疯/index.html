@@ -2888,7 +2888,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>521</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>487</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -2983,14 +2983,10 @@
         position: relative;
         z-index: 2;
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
-        padding: 20px 30px;                   /* 增加内边距，让文字和边框有呼吸空间 */
-        border-radius: 12px;                  /* 圆角 */
-        backdrop-filter: blur(8px);           /*  【关键】添加毛玻璃效果，非常现代！ */
-        -webkit-backdrop-filter: blur(8px);   /* 兼容 Safari */
-        box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* 加一点阴影更有层次感 */
+        padding: 0 25px; /* 只保留左右一点内边距，防止文字贴边 */
+        max-width: 90%;
     }
-
+    /*
     .card-content h2 {
         margin: 0 0 5px;
         font-size: 1.8rem;
@@ -3003,6 +2999,7 @@
         line-height: 1.5;
         opacity: 0.9;
     }
+    */
 
     /* --- 导航按钮 --- */
     .card-nav {
@@ -3038,6 +3035,8 @@
         font-family: 'MyCustomFont', 'Noto Serif SC', serif;
         line-height: 1.5;
         color: rgba(176, 129, 222, 0.9);
+
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     .card-content h2 {
