@@ -2888,7 +2888,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>520</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>596</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -3166,6 +3166,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 事件监听 ---
     nextBtn.addEventListener('click', nextCard);
     prevBtn.addEventListener('click', prevCard);
+
+    // 【新增代码】为卡片堆叠区添加点击事件监听器
+    stack.addEventListener('click', (event) => {
+        // 获取当前最顶部的卡片
+        const topCard = stack.children[0];
+
+        // 检查点击事件的目标是否发生在最顶部的卡片之内
+        // 并且确保动画当前未在播放中
+        if (topCard && topCard.contains(event.target) && !isAnimating) {
+            // 如果是，则调用 nextCard() 函数进行翻页
+            nextCard();
+        }
+    });
 
     let throttleTimer = false;
     stack.addEventListener('wheel', (e) => {
