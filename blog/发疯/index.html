@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://gongzihang6.github.io/blog/%E5%8F%91%E7%96%AF/">
       
       
-        <link rel="prev" href="../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E7%BA%A2%E8%97%95%E9%A6%99%E6%AE%8B%E7%8E%89%E7%B0%9F%E7%A7%8B/">
+        <link rel="prev" href="../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%88%9D%E5%88%B0%E9%BB%84%E5%B7%9E/">
       
       
         <link rel="next" href="../%E9%95%BF%E6%9C%9F%E4%B8%BB%E4%B9%89/fitness/">
@@ -465,6 +465,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -2206,6 +2208,8 @@
       
         
       
+        
+      
     
     
     
@@ -2464,6 +2468,29 @@
   
   <span class="md-ellipsis">
     一剪梅·红藕香残玉簟秋
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%88%9D%E5%88%B0%E9%BB%84%E5%B7%9E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    初到黄州
     
   </span>
   
@@ -2826,6 +2853,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2847,6 +2876,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
@@ -2857,7 +2888,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>453</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>521</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -2913,7 +2944,8 @@
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;      /* 将卡片内容放在底部 */
+         align-items: center;         /* 将卡片内容放在中间 */
         padding: 25px;
         box-sizing: border-box;
         color: white;
@@ -2934,6 +2966,7 @@
     }
 
     /* 文字内容的遮罩，确保可读性 */
+    /*
     .card::before {
         content: '';
         position: absolute;
@@ -2944,10 +2977,18 @@
         background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
         z-index: 1;
     }
+    */
 
     .card-content {
         position: relative;
         z-index: 2;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+        padding: 20px 30px;                   /* 增加内边距，让文字和边框有呼吸空间 */
+        border-radius: 12px;                  /* 圆角 */
+        backdrop-filter: blur(8px);           /*  【关键】添加毛玻璃效果，非常现代！ */
+        -webkit-backdrop-filter: blur(8px);   /* 兼容 Safari */
+        box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* 加一点阴影更有层次感 */
     }
 
     .card-content h2 {
@@ -3148,7 +3189,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 触发礼花效果
     myConfetti({
-        particleCount: 200,     // 粒子数量
+        particleCount: 300,     // 粒子数量
         spread: 160,            // 喷射范围 (角度)
         origin: { y: 0.5 },     // 从页面中部喷出
         startVelocity: 40,      // 初始速度
@@ -3289,6 +3330,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <!-- Determine whether to show feedback -->
+
+  
 
 
 <!-- Was this page helpful? -->
@@ -3469,6 +3512,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     
       
+        
+      
       <nav
         class="md-footer__inner md-grid"
         aria-label="页脚"
@@ -3479,9 +3524,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
           
           <a
-            href="../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E7%BA%A2%E8%97%95%E9%A6%99%E6%AE%8B%E7%8E%89%E7%B0%9F%E7%A7%8B/"
+            href="../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%88%9D%E5%88%B0%E9%BB%84%E5%B7%9E/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 一剪梅·红藕香残玉簟秋"
+            aria-label="上一页: 初到黄州"
           >
             <div class="md-footer__button md-icon">
               
@@ -3492,7 +3537,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 上一页
               </span>
               <div class="md-ellipsis">
-                一剪梅·红藕香残玉簟秋
+                初到黄州
               </div>
             </div>
             
