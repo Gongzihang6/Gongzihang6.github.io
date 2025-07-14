@@ -466,6 +466,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2851,6 +2853,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2872,6 +2876,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
@@ -2881,25 +2887,21 @@
   <h1>Fitness</h1>
 
 <div class="admonition info">
-<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文介绍了一个优化版高级运动日历的CSS实现方案，采用半透明磨砂玻璃效果和运动风格背景图增强视觉体验。核心特性包括响应式布局、月份导航功能和日期网格交互设计，通过CSS变量实现主题定制，并运用backdrop-filter实现毛玻璃效果。该方案适用于健身类Web应用，在保证功能性的同时提升了UI美观度与用户体验。</p>
-</div>
-<div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>168</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>163</strong></p>
 </div>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的高级运动日历 (优化版)</title>
+    <title>我的高级运动日历 (最终修复版)</title>
     <style>
         /* --- 1. 全局与主题样式 --- */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
         :root {
             --primary-color: #6d28d9; --primary-light-color: #a78bfa; --secondary-color: #ddd6fe;
-            --bg-color: #f9fafb; --card-bg-color: rgba(255, 255, 255, 0.85); /* 半透明白色，为背景图做准备 */
+            --bg-color: #f9fafb; --card-bg-color: rgba(255, 255, 255, 0.85);
             --text-color: #1f2937; --text-light-color: #6b7280; --border-color: #d1d5db;
         }
         body {
@@ -2910,15 +2912,13 @@
 
         /* --- 2. 日历卡片主容器 --- */
         .calendar-card {
-            position: relative; z-index: 1; /* 为伪元素背景做准备 */
+            position: relative; z-index: 1;
             width: 100%; max-width: 550px;
             border-radius: 24px; box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.15);
             padding: 25px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);
-            /* --- 【优化3】添加运动风格背景图 --- */
             background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop');
             background-size: cover; background-position: center;
         }
-        /* 半透明磨砂层，确保可读性 */
         .calendar-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background-color: var(--card-bg-color);
@@ -2951,55 +2951,49 @@
         .detail-card-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; display: none; }
         .detail-card-overlay.visible { display: block; }
 
-        /* --- 【优化2】美化连接线 --- */
+        /* --- 【优化1】贝塞尔曲线连接线 --- */
         .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; }
-        #connector-line {
-            stroke: url(#line-gradient); /* 使用SVG渐变 */
+        #connector-path { /* 样式由line改为path */
+            fill: none; /* 路径不填充 */
+            stroke: url(#line-gradient);
             stroke-width: 2.5px; stroke-linecap: round;
-            filter: drop-shadow(0 0 3px var(--primary-light-color)); /* 发光效果 */
+            filter: drop-shadow(0 0 3px var(--primary-light-color));
             stroke-dasharray: 1000; stroke-dashoffset: 1000;
-            transition: stroke-dashoffset 0.5s cubic-bezier(0.6, 0, 0.4, 1);
+            transition: stroke-dashoffset 0.6s cubic-bezier(0.6, 0, 0.4, 1);
         }
-        .detail-card-overlay.visible #connector-line { stroke-dashoffset: 0; animation: pulse-glow 2s infinite ease-in-out; }
+        .detail-card-overlay.visible #connector-path { stroke-dashoffset: 0; animation: pulse-glow 2s infinite ease-in-out; }
         @keyframes pulse-glow {
             0%, 100% { filter: drop-shadow(0 0 3px var(--primary-light-color)); }
             50% { filter: drop-shadow(0 0 8px var(--primary-color)); }
         }
 
-        /* --- 【优化2 & 3】美化详细信息卡片与添加背景 --- */
+        /* --- 详细信息卡片 --- */
         .detail-card {
             position: absolute; width: 380px;
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 15px 50px rgba(0, 0, 0, 0.15);
             padding: 25px; overflow: hidden;
             border: 1px solid rgba(255,255,255,0.3);
-            opacity: 0; transform: scale(0.95) translateY(10px);
+            opacity: 0; transform: scale(0.95);
             transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
             background-image: url('https://images.unsplash.com/photo-1548690312-e3b511d5b17b?q=80&w=1974&auto=format&fit=crop');
             background-size: cover; background-position: center;
         }
-        /* 卡片磨砂层 */
         .detail-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background-color: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
             z-index: -1;
         }
-        .detail-card-overlay.visible .detail-card { opacity: 1; transform: scale(1) translateY(0); }
+        .detail-card-overlay.visible .detail-card { opacity: 1; transform: scale(1); }
         .detail-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .detail-card-date { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); }
         .close-detail-btn { font-size: 1.8rem; color: var(--text-light-color); cursor: pointer; line-height: 1; transition: transform .2s; }
         .close-detail-btn:hover { transform: rotate(90deg); }
         .detail-card label { font-size: 0.8rem; font-weight: 600; color: var(--text-color); display: block; margin-bottom: 5px; }
         .detail-card-summary { width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 15px; box-sizing: border-box; background: rgba(255,255,255,0.5); }
-        .detail-card-editor {
-            width: 100%; min-height: 150px; border: 1px solid var(--border-color);
-            border-radius: 8px; padding: 12px; box-sizing: border-box;
-            font-size: 1rem; line-height: 1.6; overflow-y: auto; background: rgba(255,255,255,0.5);
-        }
-        .detail-card-editor:focus, .detail-card-summary:focus {
-            outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--secondary-color);
-        }
+        .detail-card-editor { width: 100%; min-height: 150px; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; box-sizing: border-box; font-size: 1rem; line-height: 1.6; overflow-y: auto; background: rgba(255,255,255,0.5); }
+        .detail-card-editor:focus, .detail-card-summary:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--secondary-color); }
         .detail-card-actions { margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px; }
         .detail-btn { padding: 8px 18px; border-radius: 8px; border: none; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
         #save-detail { background-color: var(--primary-color); color: white; }
@@ -3012,6 +3006,7 @@
 <body>
 
 <div class="calendar-card">
+    <!-- 日历头部等HTML保持不变 -->
     <div class="calendar-header">
         <button class="nav-button" id="prev-month">
              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -3035,8 +3030,10 @@
                 <stop offset="100%" style="stop-color:var(--primary-color)" />
             </linearGradient>
         </defs>
-        <line id="connector-line" x1="0" y1="0" x2="0" y2="0" />
+        <!-- 【优化1】将line替换为path -->
+        <path id="connector-path" d="" fill="none" />
     </svg>
+    <!-- 详细信息卡片HTML保持不变 -->
     <div class="detail-card" id="detail-card">
         <div class="detail-card-header">
             <h3 class="detail-card-date" id="detail-date"></h3>
@@ -3055,7 +3052,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    // 省略了前面未改变的DOM元素获取代码
+    // --- DOM 元素获取 (connector-path) ---
+    const connectorPath = document.getElementById('connector-path');
+    // 其他DOM元素获取省略...
     const currentMonthYearEl = document.getElementById('current-month-year');
     const daysGridEl = document.getElementById('calendar-days-grid');
     const prevMonthBtn = document.getElementById('prev-month');
@@ -3068,23 +3067,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveDetailBtn = document.getElementById('save-detail');
     const deleteDetailBtn = document.getElementById('delete-detail');
     const closeDetailBtn = document.querySelector('.close-detail-btn');
-    const connectorLine = document.getElementById('connector-line');
 
     let currentDate = new Date();
     let entries = {};
     let currentEditingDate = null;
 
-    const loadEntries = () => { const saved = localStorage.getItem('advCalendarEntriesV2'); if (saved) entries = JSON.parse(saved); };
-    const saveEntries = () => localStorage.setItem('advCalendarEntriesV2', JSON.stringify(entries));
+    // --- 数据存储函数 (使用新key避免冲突) ---
+    const loadEntries = () => { const saved = localStorage.getItem('advCalendarEntriesV3'); if (saved) entries = JSON.parse(saved); };
+    const saveEntries = () => localStorage.setItem('advCalendarEntriesV3', JSON.stringify(entries));
 
-    function renderCalendar() {
+    // --- 日历渲染函数 (保持不变) ---
+    function renderCalendar() { /* ... 此函数内容与之前版本相同 ... */
         const year = currentDate.getFullYear(); const month = currentDate.getMonth();
         currentMonthYearEl.textContent = `${year}年 ${month + 1}月`;
         daysGridEl.innerHTML = '';
         const firstDayOfMonth = new Date(year, month, 1).getDay();
         const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
         const lastDateOfPrevMonth = new Date(year, month, 0).getDate();
-
         for (let i = firstDayOfMonth; i > 0; i--) {
             daysGridEl.innerHTML += `<div class="day other-month"><span class="day-number">${lastDateOfPrevMonth - i + 1}</span></div>`;
         }
@@ -3101,6 +3100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- 【核心优化】打开详细信息卡片的函数 ---
     function openDetailCard(dateString, dayElement) {
         currentEditingDate = dateString;
         const entry = entries[dateString] || { summary: '', detail: '' };
@@ -3109,73 +3109,81 @@ document.addEventListener('DOMContentLoaded', () => {
         detailSummaryInput.value = entry.summary;
         detailEditor.innerHTML = entry.detail;
 
-        const dayRect = dayElement.getBoundingClientRect();
+        // 强制浏览器先计算卡片尺寸，特别是高度
+        detailCard.style.display = 'block';
         const cardWidth = detailCard.offsetWidth;
         const cardHeight = detailCard.offsetHeight;
+        detailCard.style.display = '';
+
+        const dayRect = dayElement.getBoundingClientRect();
         const margin = 20;
 
-        let cardX, cardY;
-        if (dayRect.left + dayRect.width + margin + cardWidth > window.innerWidth) {
+        // 计算卡片水平位置 (X)
+        let cardX;
+        if (dayRect.left + dayRect.width / 2 > window.innerWidth / 2) {
+            // 日期在屏幕右侧，卡片放左边
             cardX = dayRect.left - cardWidth - margin;
         } else {
+            // 日期在屏幕左侧，卡片放右边
             cardX = dayRect.right + margin;
         }
-        cardY = dayRect.top + window.scrollY + dayRect.height / 2 - cardHeight / 2;
 
-        // --- 【优化1】确保卡片在视口内 ---
-        const viewportHeight = window.innerHeight;
-        if (cardY + cardHeight > viewportHeight - margin) {
-            cardY = viewportHeight - cardHeight - margin;
-        }
-        if (cardY < margin) {
-            cardY = margin;
-        }
+        // --- 【解决问题2】健壮的卡片垂直定位 (Y) ---
+        const desiredY = dayRect.top + dayRect.height / 2 - cardHeight / 2;
+        const minY = margin;
+        const maxY = window.innerHeight - cardHeight - margin;
+        const cardY = Math.max(minY, Math.min(desiredY, maxY)); // 核心：将Y值限制在安全区域内
 
         detailCard.style.left = `${cardX}px`;
         detailCard.style.top = `${cardY}px`;
 
-        const lineStartX = (cardX > dayRect.left) ? dayRect.right : dayRect.left;
-        const lineStartY = dayRect.top + dayRect.height / 2;
-        const lineEndX = (cardX > dayRect.left) ? cardX : cardX + cardWidth;
-        const lineEndY = cardY + 60; // 连接点更美观
+        // --- 【解决问题1】计算贝塞尔曲线路径 ---
+        const startX = dayRect.left + dayRect.width / 2;
+        const startY = dayRect.top + dayRect.height / 2;
 
-        connectorLine.setAttribute('x1', lineStartX);
-        connectorLine.setAttribute('y1', lineStartY);
-        connectorLine.setAttribute('x2', lineEndX);
-        connectorLine.setAttribute('y2', lineEndY);
+        // 终点连接到卡片最近的边
+        const endX = (cardX > dayRect.left) ? cardX : cardX + cardWidth;
+        const endY = cardY + cardHeight / 2;
 
-        const lineLength = Math.hypot(lineEndX - lineStartX, lineEndY - lineStartY);
-        connectorLine.style.strokeDasharray = lineLength;
-        connectorLine.style.strokeDashoffset = lineLength;
+        // 控制点，用于生成S形曲线
+        const ctrlX1 = startX + (endX - startX) * 0.5;
+        const ctrlY1 = startY;
+        const ctrlX2 = endX - (endX - startX) * 0.5;
+        const ctrlY2 = endY;
+
+        const pathData = `M ${startX} ${startY} C ${ctrlX1} ${ctrlY1}, ${ctrlX2} ${ctrlY2}, ${endX} ${endY}`;
+        connectorPath.setAttribute('d', pathData);
+
+        // 启动绘制动画
+        const pathLength = connectorPath.getTotalLength();
+        connectorPath.style.strokeDasharray = pathLength;
+        connectorPath.style.strokeDashoffset = pathLength;
 
         detailOverlay.classList.add('visible');
-        void connectorLine.offsetWidth;
-        connectorLine.style.strokeDashoffset = 0;
+        void connectorPath.offsetWidth; // 强制浏览器重绘
+        connectorPath.style.strokeDashoffset = 0;
     }
 
+    // --- 其他事件监听与初始化函数 (保持不变) ---
     function closeDetailCard() { detailOverlay.classList.remove('visible'); }
-
     prevMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); });
     nextMonthBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); });
     closeDetailBtn.addEventListener('click', closeDetailCard);
     detailOverlay.addEventListener('click', (e) => { if (e.target === detailOverlay) closeDetailCard(); });
-
     saveDetailBtn.addEventListener('click', () => {
         const summary = detailSummaryInput.value.trim();
         const detail = detailEditor.innerHTML;
-        if (summary || detail.trim() !== '<br>' && detail.trim() !== '') {
+        if (summary || (detail.trim() !== '<br>' && detail.trim() !== '')) {
             entries[currentEditingDate] = { summary, detail };
         } else {
             delete entries[currentEditingDate];
         }
         saveEntries(); closeDetailCard(); renderCalendar();
     });
-
     deleteDetailBtn.addEventListener('click', () => {
         delete entries[currentEditingDate];
         saveEntries(); closeDetailCard(); renderCalendar();
     });
-
     loadEntries();
     renderCalendar();
 });
@@ -3305,6 +3313,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Determine whether to show feedback -->
 
+  
+
 
 <!-- Was this page helpful? -->
 
@@ -3398,6 +3408,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  <h2 id="__comments">评论</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+      data-repo="Gongzihang6/Discussion"
+      data-repo-id="R_kgDOPLkWUA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOPLkWUM4Cs35N"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+  </script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
                 
               </article>
             </div>
@@ -3429,6 +3493,8 @@ document.addEventListener('DOMContentLoaded', () => {
   <!-- Link to previous and/or next page -->
   
     
+      
+        
       
       <nav
         class="md-footer__inner md-grid"
