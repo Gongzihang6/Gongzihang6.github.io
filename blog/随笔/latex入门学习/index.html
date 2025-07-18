@@ -2354,7 +2354,7 @@
           <li class="md-nav__item">
   <a href="#latex" class="md-nav__link">
     <span class="md-ellipsis">
-      利用LaTeX编写文档
+      利用 LaTeX 编写文档
     </span>
   </a>
   
@@ -3491,7 +3491,7 @@
           <li class="md-nav__item">
   <a href="#latex" class="md-nav__link">
     <span class="md-ellipsis">
-      利用LaTeX编写文档
+      利用 LaTeX 编写文档
     </span>
   </a>
   
@@ -3801,14 +3801,14 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文对比了LaTeX与Word两种排版工具的特点，指出LaTeX通过代码编译实现"非所见即所得"的规范性排版，尤其适合学术论文写作。详细介绍了LaTeX文档编写流程，包括文档类型选择、宏包加载、标题设置、正文格式、图表插入、定理环境配置等核心功能，并提供了具体代码示例。文章强调LaTeX在学术排版中的自动编号、公式支持和结构规范性优势，同时提及与Markdown的兼容性，为科研写作提供了专业的技术指导。</p>
+<p>LaTeX是一种基于代码的排版系统，通过编译.tex文件生成PDF，具有规范性强、自动化程度高的特点。相比Word的"所见即所得"，LaTeX更适合学术论文写作，能自动处理公式、参考文献和章节编号，确保排版一致性。文章详细介绍了LaTeX文档结构、宏包加载、标题设置、正文格式控制及数学环境配置等核心功能，并对比了其与Word在学术排版中的优劣。同时指出LaTeX需要学习特定语法，但能显著提升专业文档的排版质量。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>7</strong> 分钟 | 中文字符：<strong>2969</strong> | 有效代码行数：<strong>120</strong></p>
+<p>阅读时间：<strong>7</strong> 分钟 | 中文字符：<strong>2980</strong> | 有效代码行数：<strong>120</strong></p>
 </div>
 <h3 id="_1">前言：排版工具与书写工具的讨论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>LaTeX是一种“非所见即所得”的排版系统，用户需要输入特定的代码，保存在后缀为.tex的文件中，通过编译得到所需的pdf文件，例如以下代码：</p>
+<p>LaTeX 是一种“非所见即所得”的排版系统，用户需要输入特定的代码，保存在后缀为.tex 的文件中，通过编译得到所需的 pdf 文件，例如以下代码：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -3823,27 +3823,27 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>最后输出的结果是一个pdf文件，内容是”Hello, world!“。</p>
-<p>如何理解“非所见即所得”呢？在这里举个“所见即所得”的例子：Word。Word的界面就是一张A4纸，输入的时候是什么样子，最后呈现出来就是什么样子。这给了我们极高的<strong>自由度</strong>，也非常容易上手，但是有如下问题： - 对于对细节不敏感的用户，Word的排版常常会在细节存在问题，比如两段话之间行间距不同、字体不同、标题样式不同等； - 对于撰写论文的用户，Word的标题、章节、图表、参考文献等无法自动标号，也很难在正文中引用； - 对于有公式输入需求的用户，Word自带的公式不稳定，而公式插件效果常常不好。</p>
-<p>相比之下，使用LaTeX进行排版，就像是在铺好的轨道上驾驶火车一样。使用LaTeX没有办法像Word一样非常自由，但是可以保证<strong>规范性</strong>，这使得LaTeX非常适合用于论文的排版。在学习的过程中，也将会感受到这一点。</p>
-<p>无论是LaTeX还是Word，其归根结底都只是<strong>排版工具</strong>，用Word也可以排出LaTeX的效果，用LaTeX也可以排出Word的效果。另外，笔者最建议的<strong>书写工具</strong>是Markdown，其书写的过程中可以不在意排版，也支持使用LaTeX语法输入公式，与LaTeX之间的转换非常方便。</p>
+<p>最后输出的结果是一个 pdf 文件，内容是”Hello, world!“。</p>
+<p>如何理解“非所见即所得”呢？在这里举个“所见即所得”的例子：Word。Word 的界面就是一张 A4 纸，输入的时候是什么样子，最后呈现出来就是什么样子。这给了我们极高的 <strong>自由度</strong>，也非常容易上手，但是有如下问题： - 对于对细节不敏感的用户，Word 的排版常常会在细节存在问题，比如两段话之间行间距不同、字体不同、标题样式不同等； - 对于撰写论文的用户，Word 的标题、章节、图表、参考文献等无法自动标号，也很难在正文中引用； - 对于有公式输入需求的用户，Word 自带的公式不稳定，而公式插件效果常常不好。</p>
+<p>相比之下，使用 LaTeX 进行排版，就像是在铺好的轨道上驾驶火车一样。使用 LaTeX 没有办法像 Word 一样非常自由，但是可以保证 <strong>规范性</strong>，这使得 LaTeX 非常适合用于论文的排版。在学习的过程中，也将会感受到这一点。</p>
+<p>无论是 LaTeX 还是 Word，其归根结底都只是 <strong>排版工具</strong>，用 Word 也可以排出 LaTeX 的效果，用 LaTeX 也可以排出 Word 的效果。另外，笔者最建议的 <strong>书写工具</strong> 是 Markdown，其书写的过程中可以不在意排版，也支持使用 LaTeX 语法输入公式，与 LaTeX 之间的转换非常方便。</p>
 <ul>
 <li></li>
 </ul>
-<h4 id="latex">利用LaTeX编写文档<a class="headerlink" href="#latex" title="Permanent link">&para;</a></h4>
+<h4 id="latex">利用 LaTeX 编写文档<a class="headerlink" href="#latex" title="Permanent link">&para;</a></h4>
 <h4 id="_2">文档类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>TeX有多种文档类型可选，笔者较常用的有如下几种类型：</p>
+<p>TeX 有多种文档类型可选，笔者较常用的有如下几种类型：</p>
 <ul>
-<li>对于英文，可以用<code>book</code>、<code>article</code>和<code>beamer</code>；</li>
-<li>对于中文，可以用<code>ctexbook</code>、<code>ctexart</code>和<code>ctexbeamer</code>，这些类型自带了对中文的支持。</li>
+<li>对于英文，可以用 <code>book</code>、<code>article</code> 和 <code>beamer</code>；</li>
+<li>对于中文，可以用 <code>ctexbook</code>、<code>ctexart</code> 和 <code>ctexbeamer</code>，这些类型自带了对中文的支持。</li>
 </ul>
-<p>不同的文件类型，编写的过程中也会有一定的差异，如果直接修改文件类型的话，甚至会报错。以下统一选用<code>ctexart</code>。在编辑框第一行，输入如下内容来设置文件类型：</p>
+<p>不同的文件类型，编写的过程中也会有一定的差异，如果直接修改文件类型的话，甚至会报错。以下统一选用 <code>ctexart</code>。在编辑框第一行，输入如下内容来设置文件类型：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">\documentclass</span><span class="nb">{</span>ctexart<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>另外，一般也可以在<code>\documentclass</code>处设置基本参数，笔者通常设置默认字体大小为12pt，纸张大小为A4，单面打印。需要将第一行的内容替换为：</p>
+<p>另外，一般也可以在 <code>\documentclass</code> 处设置基本参数，笔者通常设置默认字体大小为 12pt，纸张大小为 A4，单面打印。需要将第一行的内容替换为：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">\documentclass</span><span class="na">[12pt, a4paper, oneside]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>文件的正文部分需要放入document环境中，在document环境外的部分不会出现在文件中。</p>
+<p>文件的正文部分需要放入 document 环境中，在 document 环境外的部分不会出现在文件中。</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -3859,14 +3859,14 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_3">宏包<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>为了完成一些功能（如定理环境），还需要在导言区，也即document环境之前加载宏包。加载宏包的代码是<code>\usepackage{}</code>。本份教程中，与数学公式与定理环境相关的宏包为<code>amsmath</code>、<code>amsthm</code>、<code>amssymb</code>，用于插入图片的宏包为<code>graphicx</code>，代码如下：</p>
+<p>为了完成一些功能（如定理环境），还需要在导言区，也即 document 环境之前加载宏包。加载宏包的代码是 <code>\usepackage{}</code>。本份教程中，与数学公式与定理环境相关的宏包为 <code>amsmath</code>、<code>amsthm</code>、<code>amssymb</code>，用于插入图片的宏包为 <code>graphicx</code>，代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">\usepackage</span><span class="nb">{</span>amsmath, amsthm, amssymb, graphicx<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>另外，在加载宏包时还可以设置基本参数，如使用超链接宏包<code>hyperref</code>，可以设置引用的颜色为黑色等，代码如下：</p>
+<p>另外，在加载宏包时还可以设置基本参数，如使用超链接宏包 <code>hyperref</code>，可以设置引用的颜色为黑色等，代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">\usepackage</span><span class="na">[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]</span><span class="nb">{</span>hyperref<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_4">标题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>标题可以用<code>\title{}</code>设置，作者可以用<code>\author</code>设置，日期可以用<code>\date{}</code>设置，这些都需要放在导言区。为了在文档中显示标题信息，需要使用<code>\maketitle</code>。例如：</p>
+<p>标题可以用 <code>\title{}</code> 设置，作者可以用 <code>\author</code> 设置，日期可以用 <code>\date{}</code> 设置，这些都需要放在导言区。为了在文档中显示标题信息，需要使用 <code>\maketitle</code>。例如：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -3902,7 +3902,7 @@
 <a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_5">正文<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>正文可以直接在document环境中书写，没有必要加入空格来缩进，因为文档默认会进行首行缩进。相邻的两行在编译时仍然会视为同一段。在LaTeX中，另起一段的方式是使用一行相隔，例如：</p>
+<p>正文可以直接在 document 环境中书写，没有必要加入空格来缩进，因为文档默认会进行首行缩进。相邻的两行在编译时仍然会视为同一段。在 LaTeX 中，另起一段的方式是使用一行相隔，例如：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>我是第一段. 
@@ -3945,7 +3945,7 @@
 </tbody>
 </table>
 <h3 id="_6">章节<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>对于<code>ctexart</code>文件类型，章节可以用<code>\section{}</code>和<code>\subsection{}</code>命令来标记，例如：</p>
+<p>对于 <code>ctexart</code> 文件类型，章节可以用 <code>\section{}</code> 和 <code>\subsection{}</code> 命令来标记，例如：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
@@ -3997,7 +3997,7 @@
 <a id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_7">目录<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p>在有了章节的结构之后，使用<code>\tableofcontents</code>命令就可以在指定位置生成目录。通常带有目录的文件需要编译两次，因为需要先在目录中生成.toc文件，再据此生成目录。</p>
+<p>在有了章节的结构之后，使用 <code>\tableofcontents</code> 命令就可以在指定位置生成目录。通常带有目录的文件需要编译两次，因为需要先在目录中生成.toc 文件，再据此生成目录。</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
@@ -4053,7 +4053,7 @@
 <a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_8">图片<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p>插入图片需要使用<code>graphicx</code>宏包，建议使用如下方式：</p>
+<p>插入图片需要使用 <code>graphicx</code> 宏包，建议使用如下方式：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
@@ -4064,9 +4064,9 @@
 <a id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="k">\caption</span><span class="nb">{</span>图片标题<span class="nb">}</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>其中，<code>[htbp]</code>的作用是自动选择插入图片的最优位置，<code>\centering</code>设置让图片居中，<code>[width=8cm]</code>设置了图片的宽度为8cm，<code>\caption{}</code>用于设置图片的标题。</p>
+<p>其中，<code>[htbp]</code> 的作用是自动选择插入图片的最优位置，<code>\centering</code> 设置让图片居中，<code>[width=8cm]</code> 设置了图片的宽度为 8cm，<code>\caption{}</code> 用于设置图片的标题。</p>
 <h4 id="_9">表格<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p>LaTeX中表格的插入较为麻烦，可以直接使用<a href="https://link.zhihu.com/?target=https%3A//www.tablesgenerator.com/%23">Create LaTeX tables online – TablesGenerator.com</a>来生成。建议使用如下方式：</p>
+<p>LaTeX 中表格的插入较为麻烦，可以直接使用 <a href="https://link.zhihu.com/?target=https%3A//www.tablesgenerator.com/%23">Create LaTeX tables online – TablesGenerator.com</a> 来生成。建议使用如下方式：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
@@ -4086,7 +4086,7 @@
 <a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_10">列表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p>LaTeX中的列表环境包含无序列表<code>itemize</code>、有序列表<code>enumerate</code>和描述<code>description</code>，以<code>enumerate</code>为例，用法如下：</p>
+<p>LaTeX 中的列表环境包含无序列表 <code>itemize</code>、有序列表 <code>enumerate</code> 和描述 <code>description</code>，以 <code>enumerate</code> 为例，用法如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
@@ -4097,7 +4097,7 @@
 <a id="__codelineno-13-4" name="__codelineno-13-4"></a>    <span class="k">\item</span> 这是第三点. 
 <a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>另外，也可以自定义<code>\item</code>的样式：</p>
+<p>另外，也可以自定义 <code>\item</code> 的样式：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
@@ -4109,17 +4109,17 @@
 <a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_11">定理环境<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p>定理环境需要使用<code>amsthm</code>宏包，首先在导言区加入：</p>
+<p>定理环境需要使用 <code>amsthm</code> 宏包，首先在导言区加入：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>\newtheorem{theorem}{定理}[section]
 </code></pre></div></td></tr></table></div>
-<p>其中<code>{theorem}</code>是环境的名称，<code>{定理}</code>设置了该环境显示的名称是“定理”，<code>[section]</code>的作用是让<code>theorem</code>环境在每个section中单独编号。在正文中，用如下方式来加入一条定理：</p>
+<p>其中 <code>{theorem}</code> 是环境的名称，<code>{定理}</code> 设置了该环境显示的名称是“定理”，<code>[section]</code> 的作用是让 <code>theorem</code> 环境在每个 section 中单独编号。在正文中，用如下方式来加入一条定理：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
 <span class="normal"><a href="#__codelineno-16-2">2</a></span>
 <span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">\begin</span><span class="nb">{</span>theorem<span class="nb">}</span>[定理名称]
 <a id="__codelineno-16-2" name="__codelineno-16-2"></a>    这里是定理的内容. 
 <a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="k">\end</span><span class="nb">{</span>theorem<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>其中<code>[定理名称]</code>不是必须的。另外，我们还可以建立新的环境，如果要让新的环境和<code>theorem</code>环境一起计数的话，可以用如下方式：</p>
+<p>其中 <code>[定理名称]</code> 不是必须的。另外，我们还可以建立新的环境，如果要让新的环境和 <code>theorem</code> 环境一起计数的话，可以用如下方式：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
 <span class="normal"><a href="#__codelineno-17-2">2</a></span>
 <span class="normal"><a href="#__codelineno-17-3">3</a></span>
@@ -4132,10 +4132,10 @@
 <a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="k">\newtheorem</span><span class="nb">{</span>example<span class="nb">}</span>[theorem]<span class="nb">{</span>例<span class="nb">}</span>
 <a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="k">\newtheorem</span><span class="nb">{</span>proposition<span class="nb">}</span>[theorem]<span class="nb">{</span>命题<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>另外，定理的证明可以直接用<code>proof</code>环境。</p>
+<p>另外，定理的证明可以直接用 <code>proof</code> 环境。</p>
 <h4 id="_12">页面<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
-<p>最开始选择文件类型时，我们设置的页面大小是a4paper，除此之外，我们也可以修改页面大小为b5paper等等。</p>
-<p>一般情况下，LaTeX默认的页边距很大，为了让每一页显示的内容更多一些，我们可以使用<code>geometry</code>宏包，并在导言区加入以下代码：</p>
+<p>最开始选择文件类型时，我们设置的页面大小是 a4paper，除此之外，我们也可以修改页面大小为 b5paper 等等。</p>
+<p>一般情况下，LaTeX 默认的页边距很大，为了让每一页显示的内容更多一些，我们可以使用 <code>geometry</code> 宏包，并在导言区加入以下代码：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
 <span class="normal"><a href="#__codelineno-18-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">\usepackage</span><span class="nb">{</span>geometry<span class="nb">}</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="k">\geometry</span><span class="nb">{</span>left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm<span class="nb">}</span>
@@ -4147,21 +4147,21 @@
 <p>默认的页码编码方式是阿拉伯数字，用户也可以自己设置为小写罗马数字：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">\pagenumbering</span><span class="nb">{</span>roman<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
-<p>另外，<code>aiph</code>表示小写字母，<code>Aiph</code>表示大写字母，<code>Roman</code>表示大写罗马数字，<code>arabic</code>表示默认的阿拉伯数字。如果要设置页码的话，可以用如下代码来设置页码从0开始：</p>
+<p>另外，<code>aiph</code> 表示小写字母，<code>Aiph</code> 表示大写字母，<code>Roman</code> 表示大写罗马数字，<code>arabic</code> 表示默认的阿拉伯数字。如果要设置页码的话，可以用如下代码来设置页码从 0 开始：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">\setcounter</span><span class="nb">{</span>page<span class="nb">}{</span>0<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="_14">数学公式的输入方式<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <h4 id="_15">行内公式<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
-<p>行内公式通常使用<code>$..$</code>来输入，这通常被称为公式环境，例如：</p>
+<p>行内公式通常使用 <code>$..$</code> 来输入，这通常被称为公式环境，例如：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>若<span class="s">$</span><span class="nb">a&gt;</span><span class="m">0</span><span class="s">$</span>, <span class="s">$</span><span class="nb">b&gt;</span><span class="m">0</span><span class="s">$</span>, 则<span class="s">$</span><span class="nb">a</span><span class="o">+</span><span class="nb">b&gt;</span><span class="m">0</span><span class="s">$</span>.
 </code></pre></div></td></tr></table></div>
-<p>若<span class="arithmatex">\(a&gt;0\)</span>, <span class="arithmatex">\(b&gt;0\)</span>, 则<span class="arithmatex">\(a+b&gt;0\)</span>.</p>
-<p>公式环境通常使用特殊的字体，并且默认为斜体。需要注意的是，只要是公式，就需要放入公式环境中。如果需要在行内公式中展现出行间公式的效果，可以在前面加入<code>\displaystyle</code>，例如</p>
+<p>若 <span class="arithmatex">\(a&gt;0\)</span>, <span class="arithmatex">\(b&gt;0\)</span>, 则 <span class="arithmatex">\(a+b&gt;0\)</span>.</p>
+<p>公式环境通常使用特殊的字体，并且默认为斜体。需要注意的是，只要是公式，就需要放入公式环境中。如果需要在行内公式中展现出行间公式的效果，可以在前面加入 <code>\displaystyle</code>，例如</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>设<span class="s">$</span><span class="nv">\displaystyle\lim</span><span class="nb">_{n</span><span class="nv">\to\infty</span><span class="nb">}x_n</span><span class="o">=</span><span class="nb">x</span><span class="s">$</span>.
 </code></pre></div></td></tr></table></div>
-<p>设<span class="arithmatex">\(\displaystyle\lim_{n\to\infty}x_n=x\)</span></p>
+<p>设 <span class="arithmatex">\(\displaystyle\lim_{n\to\infty}x_n=x\)</span></p>
 <h4 id="_16">行间公式<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
-<p>行间公式需要用<code>\[..\]</code>或者<code>$$..$$</code>来输入，推荐使用<code>\[..\]</code>，输入方式如下：</p>
+<p>行间公式需要用 <code>\[..\]</code> 或者 <code>$$..$$</code> 来输入，推荐使用 <code>\[..\]</code>，输入方式如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
 <span class="normal"><a href="#__codelineno-24-2">2</a></span>
 <span class="normal"><a href="#__codelineno-24-3">3</a></span>
@@ -4170,22 +4170,22 @@
 <a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="nb">a</span><span class="o">+</span><span class="nb">b&gt;</span><span class="m">0</span><span class="nb">.</span>
 <a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="s">\]</span>
 </code></pre></div></td></tr></table></div>
-<p>若<span class="arithmatex">\(a&gt;0, b&gt;0\)</span>, 则</p>
+<p>若 <span class="arithmatex">\(a&gt;0, b&gt;0\)</span>, 则</p>
 <p><span class="arithmatex">\(a+b&gt;0.\)</span></p>
-<p>关于具体的输入方式，可以参考<a href="https://link.zhihu.com/?target=https%3A//www.latexlive.com/">在线LaTeX公式编辑器-编辑器 (latexlive.com)</a>，在这里只列举一些需要注意的。</p>
+<p>关于具体的输入方式，可以参考 <a href="https://link.zhihu.com/?target=https%3A//www.latexlive.com/">在线 LaTeX 公式编辑器-编辑器 (latexlive.com)</a>，在这里只列举一些需要注意的。</p>
 <h4 id="_17">上下标<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
-<p>上标可以用<code>^</code>输入，例如<code>a^n</code>，效果为 a^n ；下标可以用<code>_</code>来输入，例如<code>a_1</code>，效果为 a_1 。上下标只会读取第一个字符，如果上下标的内容较多的话，需要改成<code>^{}</code>或<code>_{}</code>。</p>
+<p>上标可以用 <code>^</code> 输入，例如 <code>a^n</code>，效果为 a^n ；下标可以用 <code>_</code> 来输入，例如 <code>a_1</code>，效果为 a_1 。上下标只会读取第一个字符，如果上下标的内容较多的话，需要改成 <code>^{}</code> 或 <code>_{}</code>。</p>
 <p><span class="arithmatex">\(x_1\)</span>   <span class="arithmatex">\(x_n\)</span>           <span class="arithmatex">\(x_n^m\)</span>     <span class="arithmatex">\(x_{i+j}^{m+n}\)</span></p>
 <h4 id="_18">分式<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
-<p>分式可以用<code>\dfrac{}{}</code>来输入，例如<code>\dfrac{a}{b}</code>，效果为 \dfrac{a}{b} 。为了在行间、分子、分母或者指数上输入较小的分式，可以改用<code>\frac{}{}</code>，例如<code>a^\frac{1}{n}</code>，效果为 <span class="arithmatex">\(a^\frac{1}{n}\)</span> 。</p>
+<p>分式可以用 <code>\dfrac{}{}</code> 来输入，例如 <code>\dfrac{a}{b}</code>，效果为 \dfrac{a}{b} 。为了在行间、分子、分母或者指数上输入较小的分式，可以改用 <code>\frac{}{}</code>，例如 <code>a^\frac{1}{n}</code>，效果为 <span class="arithmatex">\(a^\frac{1}{n}\)</span> 。</p>
 <h4 id="_19">括号<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<p>括号可以直接用<code>(..)</code>输入，但是需要注意的是，有时候括号内的内容高度较大，需要改用<code>\left(..\right)</code>。例如<code>\left(1+\dfrac{1}{n}\right)^n</code>，效果是$ \left(1+\dfrac{1}{n}\right)^n$ 。</p>
-<p>在中间需要隔开时，可以用<code>\left(..\middle|..\right)</code>。</p>
-<p>另外，输入大括号{}时需要用<code>\{..\}</code>，其中<code>\</code>起到了转义作用。</p>
+<p>括号可以直接用 <code>(..)</code> 输入，但是需要注意的是，有时候括号内的内容高度较大，需要改用 <code>\left(..\right)</code>。例如 <code>\left(1+\dfrac{1}{n}\right)^n</code>，效果是 $ \left(1+\dfrac{1}{n}\right)^n$ 。</p>
+<p>在中间需要隔开时，可以用 <code>\left(..\middle|..\right)</code>。</p>
+<p>另外，输入大括号{}时需要用 <code>\{..\}</code>，其中 <code>\</code> 起到了转义作用。</p>
 <h4 id="_20">加粗<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
-<p>对于加粗的公式，建议使用<code>bm</code>宏包，并且用命令<code>\bm{}</code>来加粗，这可以保留公式的斜体。</p>
+<p>对于加粗的公式，建议使用 <code>bm</code> 宏包，并且用命令 <code>\bm{}</code> 来加粗，这可以保留公式的斜体。</p>
 <h4 id="_21">大括号<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
-<p>在这里可以使用<code>cases</code>环境，可以用于分段函数或者方程组，例如</p>
+<p>在这里可以使用 <code>cases</code> 环境，可以用于分段函数或者方程组，例如</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
 <span class="normal"><a href="#__codelineno-25-2">2</a></span>
 <span class="normal"><a href="#__codelineno-25-3">3</a></span>
@@ -4201,7 +4201,7 @@
 <p>效果为</p>
 <p><span class="arithmatex">\(f(x)=\begin{cases} x, &amp; x&gt;0, \\ -x, &amp; x\leq 0. \end{cases}\)</span></p>
 <h4 id="_22">多行公式<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
-<p>多行公式通常使用<code>aligned</code>环境，例如</p>
+<p>多行公式通常使用 <code>aligned</code> 环境，例如</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
 <span class="normal"><a href="#__codelineno-26-2">2</a></span>
 <span class="normal"><a href="#__codelineno-26-3">3</a></span>
@@ -4217,7 +4217,7 @@
 <p>效果为</p>
 <p><span class="arithmatex">\(\begin{aligned} a &amp; =b+c \\ &amp; =d+e \end{aligned}\)</span></p>
 <h4 id="_23">矩阵和行列式<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
-<p>矩阵可以用<code>bmatrix</code>环境和<code>pmatrix</code>环境，分别为方括号和圆括号，例如</p>
+<p>矩阵可以用 <code>bmatrix</code> 环境和 <code>pmatrix</code> 环境，分别为方括号和圆括号，例如</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">TeX</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
 <span class="normal"><a href="#__codelineno-27-2">2</a></span>
 <span class="normal"><a href="#__codelineno-27-3">3</a></span>
@@ -4230,10 +4230,14 @@
 <a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="nv">\end</span><span class="nb">{bmatrix}</span>
 <a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="s">$$</span>
 </code></pre></div></td></tr></table></div>
-<p>效果为$ \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix} $。如果要输入行列式的话，可以使用<code>vmatrix</code>环境，用法同上。</p>
+<p>效果为
+$$
+ \begin{bmatrix} a &amp; b \ c &amp; d \end{bmatrix} 
+$$</p>
+<p>如果要输入行列式的话，可以使用 <code>vmatrix</code> 环境，用法同上。</p>
 <hr />
 <h4 id="_24">常用数学公式和符号<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
-<p>在latex中，字符 #、$、%、&amp;、~、^、n、_、{、} 的含义特殊，不能直接表示</p>
+<p>在 latex 中，字符 #、$、%、&amp;、~、^、n、_、{、} 的含义特殊，不能直接表示</p>
 <table>
 <thead>
 <tr>
@@ -4797,9 +4801,9 @@
 <td style="text-align: center;">开平方</td>
 </tr>
 <tr>
-<td style="text-align: center;">\sqrt[5]{ab}</td>
+<td style="text-align: center;">\sqrt [5]{ab}</td>
 <td style="text-align: center;"><span class="arithmatex">\(\sqrt[5]{ab}\)</span></td>
-<td style="text-align: center;">开5次根号，根号下多个字符时用{}</td>
+<td style="text-align: center;">开 5 次根号，根号下多个字符时用{}</td>
 </tr>
 <tr>
 <td style="text-align: center;">\sideset{<sup>1_2}{</sup>3_4}\bigotimes</td>
@@ -4857,24 +4861,24 @@
 <td style="text-align: center;">上下符号等大，带括号</td>
 </tr>
 <tr>
-<td style="text-align: center;">\sum_{i=a}^{b}c_i</td>
+<td style="text-align: center;">\sum_{i = a}^{b}c_i</td>
 <td style="text-align: center;"><span class="arithmatex">\(\sum_{i=a}^{b}c_i\)</span></td>
 <td style="text-align: center;">求和公式  <span class="arithmatex">\(\Sigma_{i=a}^{b}c_i\)</span></td>
 </tr>
 <tr>
-<td style="text-align: center;">\sum\nolimits_{i=a}^{b}c_i</td>
+<td style="text-align: center;">\sum\nolimits_{i = a}^{b}c_i</td>
 <td style="text-align: center;"><span class="arithmatex">\(\sum\nolimits_{i=a}^{b}c_i\)</span></td>
-<td style="text-align: center;">limits和nolimits是否压缩</td>
+<td style="text-align: center;">limits 和 nolimits 是否压缩</td>
 </tr>
 <tr>
-<td style="text-align: center;">\prod_{i=a}^{b}c_i</td>
+<td style="text-align: center;">\prod_{i = a}^{b}c_i</td>
 <td style="text-align: center;"><span class="arithmatex">\(\prod_{i=a}^{b}ci\)</span></td>
 <td style="text-align: center;">求积公式</td>
 </tr>
 <tr>
-<td style="text-align: center;">\prod\nolimits_{i=a}^{b}_c_i</td>
+<td style="text-align: center;">\prod\nolimits_{i = a}^{b}_c_i</td>
 <td style="text-align: center;"><span class="arithmatex">\(\prod\nolimits_{i=a}^{b}ci\)</span></td>
-<td style="text-align: center;">limits和nolimits是否压缩</td>
+<td style="text-align: center;">limits 和 nolimits 是否压缩</td>
 </tr>
 <tr>
 <td style="text-align: center;">\int_{a}^{b}f(x)dx</td>
@@ -4884,7 +4888,7 @@
 <tr>
 <td style="text-align: center;">\int\nolimits_{a}^{b}f(x)dx</td>
 <td style="text-align: center;"><span class="arithmatex">\(\int\nolimits_{a}^{b}f(x)dx\)</span></td>
-<td style="text-align: center;">limits和nolimits是否压缩</td>
+<td style="text-align: center;">limits 和 nolimits 是否压缩</td>
 </tr>
 <tr>
 <td style="text-align: center;">\iint</td>
@@ -4902,12 +4906,12 @@
 <td style="text-align: center;">积分形式</td>
 </tr>
 <tr>
-<td style="text-align: center;">\xleftarrow[x+y]{x}</td>
+<td style="text-align: center;">\xleftarrow [x+y]{x}</td>
 <td style="text-align: center;"><span class="arithmatex">\(\xleftarrow[x+y]{x}\)</span></td>
 <td style="text-align: center;">可自行调整</td>
 </tr>
 <tr>
-<td style="text-align: center;">\xrightarrow[x+y]{x}</td>
+<td style="text-align: center;">\xrightarrow [x+y]{x}</td>
 <td style="text-align: center;"><span class="arithmatex">\(\xrightarrow[x+y]{x}\)</span></td>
 <td style="text-align: center;">可自行调整</td>
 </tr>
@@ -5027,7 +5031,7 @@
 <td style="text-align: center;">括号</td>
 </tr>
 <tr>
-<td style="text-align: center;">\left[ a^b \right]</td>
+<td style="text-align: center;">\left [ a^b \right]</td>
 <td style="text-align: center;"><span class="arithmatex">\(\left[ a^b \right]\)</span></td>
 <td style="text-align: center;">括号，可变大小</td>
 </tr>
@@ -5059,27 +5063,27 @@
 <tr>
 <td style="text-align: center;">a \quad b</td>
 <td style="text-align: center;"><span class="arithmatex">\(a \quad b\)</span></td>
-<td style="text-align: center;">一个m的宽度</td>
+<td style="text-align: center;">一个 m 的宽度</td>
 </tr>
 <tr>
 <td style="text-align: center;">a \<!--qquad--> b</td>
 <td style="text-align: center;"><span class="arithmatex">\(a \qquad b\)</span></td>
-<td style="text-align: center;">两个m的宽度</td>
+<td style="text-align: center;">两个 m 的宽度</td>
 </tr>
 <tr>
 <td style="text-align: center;">a : b</td>
 <td style="text-align: center;"><span class="arithmatex">\(a \: b\)</span></td>
-<td style="text-align: center;">&#8531;个m的宽度</td>
+<td style="text-align: center;">&#8531; 个 m 的宽度</td>
 </tr>
 <tr>
 <td style="text-align: center;">a : b</td>
 <td style="text-align: center;"><span class="arithmatex">\(a \; b\)</span></td>
-<td style="text-align: center;">2/7个m的宽度</td>
+<td style="text-align: center;">2/7 个 m 的宽度</td>
 </tr>
 <tr>
 <td style="text-align: center;">a \, b</td>
 <td style="text-align: center;"><span class="arithmatex">\(a \, b\)</span></td>
-<td style="text-align: center;">&#8537;个m的宽度</td>
+<td style="text-align: center;">&#8537; 个 m 的宽度</td>
 </tr>
 <tr>
 <td style="text-align: center;">ab</td>
@@ -5089,51 +5093,59 @@
 <tr>
 <td style="text-align: center;">a ! b</td>
 <td style="text-align: center;"><span class="arithmatex">\(a \! b\)</span></td>
-<td style="text-align: center;">缩进&#8537;个m的宽度</td>
+<td style="text-align: center;">缩进 &#8537; 个 m 的宽度</td>
 </tr>
 </tbody>
 </table>
 <p>公式中括号的应用，可以用一系列命令 (\big, \Big, \bigg, \Bigg) 改变括号大小，例如</p>
 <p>{% raw %}</p>
 <p>\Bigg( \bigg( \Big( \big((x) \big) \Big) \bigg) \Bigg) $$ \Bigg{ \bigg{ \Big{ \big{{x} \big} \Big} \bigg} \Bigg}</p>
-<p>$\Bigg( \bigg( \Big( \big((x) \big) \Big) \bigg) \Bigg) $$ \Bigg{ \bigg{ \Big{ \big{{x} \big} \Big} \bigg} \Bigg}$ {{sensitive}}</p>
+<p>$\Bigg( \bigg( \Big( \big((x) \big) \Big) \bigg) \Bigg) $</p>
+<p>$ \Bigg{ \bigg{ \Big{ \big{{x} \big} \Big} \bigg} \Bigg}$ </p>
+<p>{{sensitive}}</p>
 <p>{% endraw %}</p>
 <p>也可以用自动模式自动调节大小
 $$
-f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)
+f(x, y, z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)
 $$</p>
 <div class="arithmatex">\[
-f\left(\left[\frac{1+\left\{x,y\right\}}{\left(\frac{x}{y}+\frac{y}{x}\right)\left(u+1\right)}+a\right]^{3/2}\right)
+f\left(\left [\frac{1+\left\{x, y\right\}}{\left(\frac{x}{y}+\frac{y}{x}\right)\left(u+1\right)}+a\right]^{3/2}\right)
 \]</div>
 <h4 id="beginaligned-endaligned">换行和&amp;、\begin{aligned}  \end{aligned}<a class="headerlink" href="#beginaligned-endaligned" title="Permanent link">&para;</a></h4>
-<p>其中“\begin{aligned}”与“\end{aligned}”开辟一个环境，可以换行。
+<p>其中 <code>\begin{aligned}</code> 与 <code>\end{aligned}</code> 开辟一个环境，可以换行。
 $$
-\begin{aligned}a=&amp;\left(1+2+3+ \cdots \right. \&amp; \cdots+ \left. \infty-2+\infty-1+\infty\right)\end{aligned}
+\begin{aligned}a =&amp;\left(1+2+3+ \cdots \right. \&amp; \cdots+ \left. \infty-2+\infty-1+\infty\right)\end{aligned}
 $$
-分隔符\middle的作用，以及\可以公式换行
+分隔符\middle 的作用，以及\\可以公式换行
 $$
-\begin{aligned} P=\left(A=2|\frac{A^2}{B}&gt;4\right) \  P=\left(A=2\middle|\frac{A^2}{B}&gt;4\right) \end{aligned}
+\begin{aligned} P =\left(A = 2|\frac{A^2}{B}&gt; 4\right)  \  P =\left(A = 2\middle|\frac{A^2}{B}&gt; 4\right) \end{aligned}
 $$</p>
 <h4 id="_29">分段函数<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
 <p>在单行文本中，不是只能写一行公式，而是整个公式占用一行，这里用到了 cases 环境，把多个情况放在一个公式中，每个情况用\换行
 $$
-L(Y,f(X))=\begin{cases}1,\quad &amp;Y\neq f(X)\0,\quad &amp;Y=f(X)\end{cases}
-$$
-在公式环境下编写公式，公式环境有很多种，这里列举一些常用环境。例如 equation
+L(Y, f(X))=\begin{cases}
+1,\quad &amp;Y\neq f(X) \ 
+0,\quad &amp;Y = f(X)
+\end{cases}
+$$</p>
+<p>在公式环境下编写公式，公式环境有很多种，这里列举一些常用环境。例如 equation
 环境，公式放在这个环境中，自动居中对齐，带有公式编号
 $$
-\begin{equation}f(x)=3x^2+6(x-2)-1\end{equation}
-$$
-$\begin{equation}f(x)=3x^{2}+6(x-2)-1 \quad     \tag{1}\end{equation} $     做不到居中，typora中还是得ctrl+shift+m，行间公式且自动带编号（偏好设置里加上）。</p>
-<p>\begin{equation}\begin{aligned}x=&amp;\left(a+b+c \right. \&amp;\left. +d+e+f \right)\end{aligned}\end{equation}       两个&amp;标明了换行后对齐的位置</p>
+\begin{equation}f(x)= 3x^2+6(x-2)-1\end{equation}
+$$</p>
+<p><span class="arithmatex">\(\begin{equation}
+f(x)= 3x^{2}+6(x-2)-1 \quad     \tag{1}
+\end{equation}\)</span></p>
+<p>typora 中单个 <code>$</code> 包裹即使用 <code>equation</code> 环境也做不到居中，typora 中还是得 ctrl+shift+m，行间公式且自动带编号（偏好设置里加上）。</p>
+<p>\begin{equation}\begin{aligned}x =&amp;\left(a+b+c \right. \&amp;\left. +d+e+f \right)\end{aligned}\end{equation}      两个&amp;标明了换行后对齐的位置</p>
 <p><span class="arithmatex">\(\begin{equation}\begin{aligned}x=&amp;\left(a+b+c \right. \\&amp;\left. +d+e+f \right)\end{aligned} \quad \tag{2}\end{equation}\)</span>   </p>
-<p>\left.\begin{aligned}x+y &amp;&gt; 5 \ x-y &amp;&gt; 11 \end{aligned} \right}\Rightarrow x<sup>2-y</sup>2&gt;55</p>
+<p>\left.\begin{aligned}x+y &amp;&gt; 5 \ x-y &amp;&gt; 11 \end{aligned} \right}\Rightarrow x<sup>2-y</sup>2 &gt; 55</p>
 <p>还可以把括号放在左边，只需要换一下“影子括号”位置就可以了。
 $$
-\left.\begin{aligned}x+y &amp;&gt; 5 \ x-y &amp;&gt; 11 \end{aligned} \right}\Rightarrow x<sup>2-y</sup>2&gt;55
+\left.\begin{aligned}x+y &amp;&gt; 5 \ x-y &amp;&gt; 11 \end{aligned} \right}\Rightarrow x<sup>2-y</sup>2 &gt; 55
 $$</p>
 <h4 id="_30">表格、矩阵<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
-<p>在 equation 环境中添加 array 环境，就可以实现数组或者表格的形式，其中每个元素用 &amp; 分隔， \hline表示横线。公式中如果有中文，就要用\text{}或者\mbox{}装载，否则不能正常输出中文。
+<p>在 equation 环境中添加 array 环境，就可以实现数组或者表格的形式，其中每个元素用 &amp; 分隔， \hline 表示横线。公式中如果有中文，就要用\text{}或者\mbox{}装载，否则不能正常输出中文。
 $$
 \begin{equation}\begin{array}{c|l|c|r}
 n &amp; \text{左对齐} &amp; \text{居中对齐} &amp; \text{右对齐} \
@@ -5154,17 +5166,17 @@ $$
 $$
 \left\{
 \begin{array}{c}
-a_1x+b_1y+c_1z=d_1 \\
-a_2x+b_2y+c_2z=d_2 \\
-a_3x+b_3y+c_3z=d_3
+a_1x+b_1y+c_1z = d_1 \\
+a_2x+b_2y+c_2z = d_2 \\
+a_3x+b_3y+c_3z = d_3
 \end{array}
 \right.$
 $$
 &lt;img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2F%E7%9F%A9%E9%98%B5.png" alt="latex公式矩阵表达" style="zoom:60%;" /&gt;
 $$
 \begin{matrix}
-a &amp;b &amp;c \\\\
-d &amp;e &amp;f \\\\
+a &amp;b &amp;c \\
+d &amp;e &amp;f \\
 g &amp;h &amp;j
 \end{matrix}
 \]</div>
