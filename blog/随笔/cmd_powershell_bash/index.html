@@ -12,7 +12,7 @@
         <meta name="author" content="gzh">
       
       
-        <link rel="canonical" href="https://gongzihang6.github.io/blog/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/%E9%9A%8F%E7%AC%94/cmd_powershell_bash/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>正则表达式 - Blog of GZH</title>
+        <title>Cmd powershell bash - Blog of GZH</title>
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#shell" class="md-skip">
           跳转至
         </a>
       
@@ -139,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              正则表达式
+              Cmd powershell bash
             
           </span>
         </div>
@@ -3132,28 +3132,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#shell" class="md-nav__link">
     <span class="md-ellipsis">
-      一、正则表达式
+      引言：什么是 Shell（外壳）？
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="一、正则表达式">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-cmd-vs-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一部分：Windows 的世界 - CMD vs. PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一部分：Windows 的世界 - CMD vs. PowerShell">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-command-prompt-cmd" class="md-nav__link">
     <span class="md-ellipsis">
-      1、字符组
+      1. Command Prompt (CMD)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-powershell" class="md-nav__link">
     <span class="md-ellipsis">
-      2、简单元字符
+      2. PowerShell
     </span>
   </a>
   
@@ -3162,25 +3171,7 @@
           <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      3、量词
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4、惰性匹配与贪婪匹配
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5、分组
+      3. 为什么要有这两个东西？
     </span>
   </a>
   
@@ -3188,6 +3179,75 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-bashbatlinux-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二部分：更广阔的世界 - Bash、BAT、Linux Shell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：更广阔的世界 - Bash、BAT、Linux Shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-linux-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Linux Shell (一个泛称)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bash-linux-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Bash (作为 Linux Shell 的代表)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bat-batch-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. BAT (Batch Files)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三部分：区别与联系的详细总结
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四部分：现代联系与融合趋势
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
   
 </li>
       
@@ -3205,160 +3265,261 @@
                 
                   
 
-  <nav class="md-tags" >
-    
-      
-      
-      
-        <a href="../../../tag/#tag:markdown" class="md-tag">Markdown</a>
-      
-    
-      
-      
-      
-        <a href="../../../tag/#tag:typora" class="md-tag">Typora</a>
-      
-    
-  </nav>
-
 
   
   
 
 
-  <h1>正则表达式</h1>
+  <h1>Cmd powershell bash</h1>
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>正则表达式是一种用于字符串匹配的规则，通过特定语法从文本中提取目标内容。核心功能包括字符组（如[a-z]）、元字符、量词（控制匹配次数）以及贪婪/惰性匹配模式（如.*?x）。分组机制（()）支持复杂模式匹配，适用于身份证号等结构化数据验证。该技术广泛应用于文本处理、数据抽取和格式校验等场景。</p>
+<p>本文对比了CMD、PowerShell和Bash三种命令行工具的核心特性和应用场景。CMD基于文本处理，简单但功能有限；PowerShell采用面向对象设计，支持.NET对象操作，适合复杂系统管理；Bash是Unix/Linux主流Shell，强调脚本灵活性。三者分别适用于Windows简单任务、企业级自动化及Unix环境开发，反映了CLI从文本到对象的技术演进趋势。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>308</strong> | 有效代码行数：<strong>37</strong></p>
+<p>阅读时间：<strong>7</strong> 分钟 | 中文字符：<strong>2997</strong> | 有效代码行数：<strong>4</strong></p>
 </div>
-<h3 id="_1">一、正则表达式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>​   简单理解正则表达式就是用来匹配一段字符串中自己想要的部分的匹配规则，从一段长字符串中抽取想要的关键信息</p>
-<h4 id="1">1、字符组<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
-<p>​   字符组用[]括起来。在[]中出现的内容会被匹配，例如[abc]匹配a或b或c，字符组内容过多时还可以使用-，例如[a-z]表示a到z之间所有小写字母，[0-9]表示匹配0到9的所有阿拉伯数字</p>
-<h4 id="2">2、简单元字符<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>.   匹配除了换行符以外的任意字符
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>\w  匹配字母、数字、下划线
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>\s  匹配任意的空白符
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>\d  匹配数字
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>\n  匹配一个换行符
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>\t  匹配一个制表符
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>^   匹配字符串的开始
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>$   匹配字符串的结尾
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>\W  匹配非 字母、数字、下划线（和\w相反）
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>\D  匹配非数字
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>\S  匹配非空白符
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>a|b 匹配字符a或字符b
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>()  匹配括号内的表达式，也表示一个组
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>[...]   匹配字符组中的字符
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>[^...]  匹配除了字符组中字符  的所有字符
+<p>好的，这是一个非常好的问题，它触及了计算机操作系统交互方式的核心演变。下面我将为你提供一份极其详细的总结，涵盖这些命令行工具的<strong>历史渊源、核心设计哲学、功能区别、适用场景以及它们之间的联系和未来趋势</strong>。</p>
+<hr />
+<h3 id="shell"><strong>引言：什么是 Shell（外壳）？</strong><a class="headerlink" href="#shell" title="Permanent link">&para;</a></h3>
+<p>在理解这些工具之前，首先要明白什么是“Shell”。</p>
+<p><strong>Shell（外殼）</strong> 是操作系统提供给用户的一个接口，用于与操作系统的<strong>内核（Kernel）</strong>进行交互。用户通过 Shell 输入命令，Shell 解释这些命令，然后调用内核执行相应的操作。Shell 可以是：</p>
+<ol>
+<li><strong>命令行界面 (CLI - Command-Line Interface)</strong>：如 CMD、PowerShell、Bash。用户通过键入文本命令进行交互。</li>
+<li><strong>图形用户界面 (GUI - Graphical User Interface)</strong>：如 Windows 的桌面、文件资源管理器。用户通过点击图标、窗口、菜单进行交互。</li>
+</ol>
+<p>我们这里讨论的 CMD、PowerShell、Bash 等都属于 CLI 类型的 Shell。</p>
+<hr />
+<h3 id="windows-cmd-vs-powershell"><strong>第一部分：Windows 的世界 - CMD vs. PowerShell</strong><a class="headerlink" href="#windows-cmd-vs-powershell" title="Permanent link">&para;</a></h3>
+<h4 id="1-command-prompt-cmd"><strong>1. Command Prompt (CMD)</strong><a class="headerlink" href="#1-command-prompt-cmd" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>官方名称</strong>：Windows 命令提示符 (Command Prompt)。</li>
+<li><strong>可执行文件</strong>：<code>cmd.exe</code>。</li>
+</ul>
+<p><strong>(1) 历史与本质：</strong>
+CMD 是 Windows NT 系统家族（包括 Windows 2000, XP, 7, 10, 11）的默认命令行解释器。它的前身是 MS-DOS 中的 <code>COMMAND.COM</code>。虽然功能上比 <code>COMMAND.COM</code> 强大，但它的设计思想和局限性很大程度上继承自 DOS 时代。</p>
+<p><strong>(2) 核心设计哲学：面向字符串（Text-based）</strong>
+这是理解 CMD 的关键。CMD 中，<strong>一切皆为文本</strong>。
+*   <strong>输入</strong>：你输入的是文本命令。
+*   <strong>输出</strong>：命令执行后返回的是纯文本流（String Stream）。
+*   <strong>管道 (<code>|</code>)</strong>：CMD 的管道作用是将<strong>前一个命令的文本输出</strong>作为<strong>后一个命令的文本输入</strong>。</p>
+<p><strong>示例：</strong>
+你想查找当前目录下所有的 <code>.txt</code> 文件。
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Batchfile</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">dir</span> <span class="p">|</span> findstr <span class="s2">&quot;.txt&quot;</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="3">3、量词<a id="量词"></a><a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
-<p>控制前面的元字符出现的次数</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>*   重复零次或更多次
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>+   重复一次或更多次
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>？   重复零次或一次
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>{n} 重复n次
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>{n,} 重复n次或更多次
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>{n,m} 重复n到m次
+*   <code>dir</code> 命令输出一个包含文件列表的<strong>长字符串</strong>。
+*   <code>|</code> 将这个长字符串传递给 <code>findstr</code>。
+*   <code>findstr</code> 在这个字符串中逐行查找包含 <code>.txt</code> 的行，并输出。</p>
+<p><strong>(3) 优缺点与适用场景：</strong>
+*   <strong>优点</strong>：
+    *   <strong>简单直接</strong>：对于简单的文件操作（如 <code>copy</code>, <code>del</code>, <code>ren</code>）和网络命令（如 <code>ping</code>, <code>ipconfig</code>）非常快速。
+    *   <strong>兼容性极强</strong>：几乎所有的 Windows 系统都内置，并且无数的旧有脚本和程序依赖它。启动速度快。
+    *   <strong>学习成本低</strong>：基本命令很少，容易上手。
+*   <strong>缺点</strong>：
+    *   <strong>输出处理困难</strong>：由于输出是纯文本，如果你想获取一个文件的“修改日期”或一个进程的“内存占用”，你需要进行复杂的字符串解析，非常脆弱且容易出错。
+    *   <strong>逻辑和脚本能力弱</strong>：其脚本语言（Batch, <code>.bat</code> 文件）功能非常有限，缺少现代编程语言的特性（如复杂的循环、函数、错误处理、数据结构等）。
+    *   <strong>缺乏一致性</strong>：不同命令的参数格式和输出格式五花八门，没有统一规范。
+*   <strong>适用场景</strong>：
+    *   执行简单的、一次性的命令。
+    *   运行遗留的批处理（<code>.bat</code>）脚本。
+    *   快速进行网络诊断。</p>
+<h4 id="2-powershell"><strong>2. PowerShell</strong><a class="headerlink" href="#2-powershell" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>官方名称</strong>：Windows PowerShell。</li>
+<li><strong>可执行文件</strong>：<ul>
+<li><code>powershell.exe</code> (Windows PowerShell 5.1 及更早版本，依赖 .NET Framework，内置于 Windows)。</li>
+<li><code>pwsh.exe</code> (PowerShell 6 及更高版本，也叫 PowerShell Core，基于 .NET Core/.NET 5+，跨平台，可安装在 Windows/Linux/macOS)。</li>
+</ul>
+</li>
+</ul>
+<p><strong>(1) 历史与本质：</strong>
+PowerShell 由微软于 2006 年首次发布，其初衷是解决 CMD 和 VBScript 在系统管理上的局限性。微软需要一个强大、一致、可自动化的工具来管理日益复杂的 Windows Server 和其他企业产品（如 Exchange, SQL Server）。</p>
+<p><strong>(2) 核心设计哲学：面向对象（Object-oriented）</strong>
+这是 PowerShell 与 CMD/Bash 等传统 Shell <strong>最根本的区别</strong>。在 PowerShell 中，<strong>一切皆为对象</strong>。
+*   <strong>输入</strong>：你输入的是命令（称为 <strong>Cmdlet</strong>）。
+*   <strong>输出</strong>：Cmdlet 执行后返回的是 <strong>.NET 对象（Object）</strong>。这些对象包含了结构化的数据和属性。
+*   <strong>管道 (<code>|</code>)</strong>：PowerShell 的管道传递的是<strong>完整的对象</strong>，而不是文本。</p>
+<p><strong>示例：</strong>
+你想找到占用 CPU 时间超过 100 秒的进程，并停止它们。
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">Get-Process</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">CPU</span> <span class="o">-gt</span> <span class="n">100</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Stop-Process</span> <span class="n">-WhatIf</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="4">4、惰性匹配与贪婪匹配<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
-<p>​       量词中的？、*、+、{}都属于贪婪匹配，就是尽可能多的匹配到结果</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>例如：
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>str: 玩儿吃鸡游戏, 晚上一起上游戏, 干嘛呢? 打游戏啊
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>reg: 玩儿.*游戏
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>此时匹配的是: 玩儿吃鸡游戏, 晚上一起上游戏, 干嘛呢? 打游戏
+*   <code>Get-Process</code>：输出一个<strong>进程对象的集合（Array of Objects）</strong>。每个对象都有 <code>.Name</code>, <code>.Id</code>, <code>.CPU</code>, <code>.Memory</code> 等属性。
+*   <code>|</code>：将这些<strong>进程对象</strong>一个一个地传递给下一个命令。
+*   <code>Where-Object</code>：对每个接收到的<strong>对象</strong>进行筛选。<code>$_.CPU</code> 直接访问了对象的 <code>CPU</code> 属性，判断其是否大于 100。
+*   <code>|</code>：将筛选后剩下的<strong>进程对象</strong>传递给 <code>Stop-Process</code>。
+*   <code>Stop-Process</code>：接收这些<strong>进程对象</strong>，并对它们执行停止操作。(<code>-WhatIf</code> 参数表示模拟操作，不实际执行，非常安全)。</p>
+<p><strong>(3) 优缺点与适用场景：</strong>
+*   <strong>优点</strong>：
+    *   <strong>强大且可靠</strong>：操作的是结构化数据（对象），无需解析文本，脚本更健壮。你可以精确地获取 <code>进程名</code> 或 <code>服务状态</code>，而不是去猜它在输出文本的第几行第几列。
+    *   <strong>一致性</strong>：Cmdlet 遵循严格的 <code>动词-名词</code> 命名规范（如 <code>Get-Process</code>, <code>Set-Item</code>, <code>New-File</code>），易于发现和学习。
+    *   <strong>极强的脚本能力</strong>：PowerShell 是一种功能完备的脚本语言，支持函数、类、模块、强大的错误处理等。
+    *   <strong>可扩展性</strong>：可以轻松调用 .NET 库、COM 对象和 WMI，能管理的范围远超文件系统。
+    *   <strong>跨平台</strong>：PowerShell Core (<code>pwsh.exe</code>) 可以在 Linux 和 macOS 上运行，实现跨平台管理。
+*   <strong>缺点</strong>：
+    *   <strong>学习曲线陡峭</strong>：对于习惯了传统 Shell 的用户，面向对象的概念需要时间适应。
+    *   <strong>启动略慢</strong>：相比 CMD，加载 .NET 环境需要更多时间。
+    *   <strong>语法冗长</strong>：虽然有别名系统（如 <code>ls</code> 是 <code>Get-ChildItem</code> 的别名），但标准语法比 Unix Shell 命令更长。
+*   <strong>适用场景</strong>：
+    *   Windows 系统管理和自动化。
+    *   管理 Azure, Office 365, SQL Server 等微软全家桶。
+    *   编写复杂的自动化维护脚本（<code>.ps1</code> 文件）。
+    *   替代 CMD 和 VBScript 进行所有高级任务。</p>
+<h4 id="3"><strong>3. 为什么要有这两个东西？</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>向后兼容性 (Backward Compatibility)</strong>：这是 Windows 的核心原则。有数以百万计的设备、应用程序和脚本依赖于 CMD 的行为。如果微软直接用 PowerShell 替换 CMD，将会造成巨大的混乱。因此，CMD 作为“遗产”被保留下来。</li>
+<li><strong>演进式替代 (Evolutionary Replacement)</strong>：PowerShell 是一个全新的、更强大的工具，它的目标是成为未来的标准。微软通过将两者并存，让用户和企业有一个平滑的过渡期，逐步从 CMD 迁移到 PowerShell。</li>
+<li><strong>不同目标用户 (Different Target Audiences)</strong>：<ul>
+<li><strong>CMD</strong>：面向普通用户和执行简单命令的场景。</li>
+<li><strong>PowerShell</strong>：面向 <strong>IT 专业人员、系统管理员、DevOps 工程师和开发者</strong>。</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="-bashbatlinux-shell"><strong>第二部分：更广阔的世界 - Bash、BAT、Linux Shell</strong><a class="headerlink" href="#-bashbatlinux-shell" title="Permanent link">&para;</a></h3>
+<h4 id="1-linux-shell"><strong>1. Linux Shell (一个泛称)</strong><a class="headerlink" href="#1-linux-shell" title="Permanent link">&para;</a></h4>
+<p>“Linux Shell” 不是一个具体的东西，而是一个<strong>类别</strong>。它是指在 Linux 和其他类 Unix 系统（如 macOS, BSD）上运行的命令行解释器。常见的有：
+*   <strong><code>sh</code> (Bourne Shell)</strong>：最早的 Unix Shell，由 Stephen Bourne 开发。它是所有现代 Shell 的祖先，语法简单，是 POSIX 标准的基础。在很多系统中 <code>/bin/sh</code> 是一个指向更现代 Shell (如 bash 或 dash) 的符号链接。
+*   <strong><code>bash</code> (Bourne Again Shell)</strong>：<code>sh</code> 的增强版，是 <strong>GNU 项目</strong> 的一部分。它是目前<strong>绝大多数 Linux 发行版的默认 Shell</strong>，也是 macOS 之前的默认 Shell。它在 <code>sh</code> 的基础上增加了命令历史、Tab 补全、作业控制、更强的脚本功能等。
+*   <strong><code>zsh</code> (Z Shell)</strong>：一个比 Bash 更现代、功能更强大的 Shell。它提供了更智能的自动补全、拼写纠正、主题支持（如 Oh My Zsh）等高级功能。<strong>现在是 macOS 的默认 Shell</strong>。
+*   <strong><code>fish</code> (Friendly Interactive Shell)</strong>：以用户友好著称，开箱即用，提供强大的语法高亮和自动建议功能。
+*   <strong><code>ksh</code> (Korn Shell)</strong>：结合了 <code>sh</code> 的语法和 C Shell 的一些交互特性。</p>
+<p><strong>核心设计哲学（共通点）：</strong>
+*   <strong>一切皆文件 (Everything is a file)</strong>：这是 Unix/Linux 的核心哲学。设备、网络套接字、进程信息等，都可以通过文件系统的形式访问（如 <code>/dev</code>, <code>/proc</code>）。
+*   <strong>面向文本流 (Text-stream-based)</strong>：与 CMD 类似，但强大得多。标准输入(stdin)、标准输出(stdout)、标准错误(stderr) 是其基石。
+*   <strong>小而美的工具链 (Small, sharp tools)</strong>：推崇将多个小工具（<code>grep</code>, <code>sed</code>, <code>awk</code>, <code>cut</code>, <code>sort</code>）通过管道连接起来，完成复杂的任务。每个工具只做一件事，并做到极致。</p>
+<h4 id="2-bash-linux-shell"><strong>2. Bash (作为 Linux Shell 的代表)</strong><a class="headerlink" href="#2-bash-linux-shell" title="Permanent link">&para;</a></h4>
+<p><strong>(1) 本质：</strong>
+Bash 是当今最流行、最具代表性的 Linux Shell。它的功能强大，脚本语言（Shell Script, <code>.sh</code> 文件）足以应对绝大多数自动化任务。</p>
+<p><strong>(2) 与 PowerShell 的核心对比：</strong>
+*   <strong>管道</strong>：Bash 传递<strong>文本流</strong>，PowerShell 传递<strong>对象</strong>。
+    *   <strong>Bash 示例</strong>：获取占用内存最多的 5 个进程。
+        <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rnk<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span>
 </code></pre></div></td></tr></table></div>
-<p>​       在使用.*后面如果加了？则是表示尽可能少匹配，表示惰性匹配</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>str: 玩儿吃鸡游戏, 晚上一起上游戏, 干嘛呢? 打游戏啊
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>reg: 玩儿.*?游戏
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>此时匹配的是: 玩儿吃鸡游戏
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>str: &lt;div&gt;胡辣汤&lt;/div&gt;
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>reg: &lt;.*&gt;
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>结果: &lt;div&gt;胡辣汤&lt;/div&gt;
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>str: &lt;div&gt;胡辣汤&lt;/div&gt;
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>reg: &lt;.*?&gt;
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>结果: 
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    &lt;div&gt;
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    &lt;/div&gt;
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>str: &lt;div&gt;胡辣汤&lt;/div&gt;&lt;span&gt;饭团&lt;/span&gt;
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a>reg: &lt;div&gt;.*?&lt;/div&gt;
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>结果:
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a>    &lt;div&gt;胡辣汤&lt;/div&gt;
+        这里需要用户知道 <code>ps aux</code> 输出的第 4 列 (<code>%MEM</code>) 是内存，然后用 <code>sort</code> 对这一列进行文本排序。这种方式<strong>依赖于 <code>ps</code> 命令的输出格式</strong>，如果系统更新后格式变了，脚本就可能失效。
+    *   <strong>PowerShell 示例</strong>：
+        <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">Get-Process</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">WorkingSet</span> <span class="n">-Descending</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">5</span>
 </code></pre></div></td></tr></table></div>
-<p>.*?x的含义，找到最近的x</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>str: abcdefgxhijklmn
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>reg: .*?x
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>结果:abcdefgx
-</code></pre></div></td></tr></table></div>
-<h4 id="5">5、分组<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
-<p>在正则中使用()进行分组. 比如. 我们要匹配一个相对复杂的身份证号. 身份证号分成两种. 老的身份证号有15位. 新的身份证号有18位. 并且新的身份证号结尾有可能是x.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>身份证号  15位, 18位
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>^[1-9]\d{13,16}[0-9x]$
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>^[1-9]\d{14}(\d{2}[0-9x])?$         √
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>^([1-9]\d{16}[0-9x]|[1-9]\d{14})$
-</code></pre></div></td></tr></table></div>
-<p>最后，推荐一个可以练习正则表达式的网站<a href="https://tool.chinaz.com/regex/">正则表达式在线测试 - 站长工具 (chinaz.com)</a></p>
-<p><a href="#量词">量词</a></p>
+        这里 <code>Sort-Object</code> 直接操作对象的 <code>WorkingSet</code> (内存) 属性，<strong>不关心 <code>Get-Process</code> 的显示格式</strong>，因此更加健壮。</p>
+<p><strong>(3) 优缺点：</strong>
+*   <strong>优点</strong>：
+    *   <strong>文本处理的王者</strong>：拥有 <code>grep</code>, <code>sed</code>, <code>awk</code> 等无与伦比的文本处理三剑客，处理日志、配置文件等纯文本数据极其高效。
+    *   <strong>简洁高效</strong>：命令通常很短，对于熟练的用户来说，操作速度飞快。
+    *   <strong>生态系统</strong>：在 Linux/Unix 世界拥有最广泛的支持和海量的可用脚本。
+*   <strong>缺点</strong>：
+    *   <strong>数据类型单一</strong>：所有东西都是字符串，进行数学计算或处理结构化数据（如 JSON, XML）时比较笨拙。
+    *   <strong>语法怪异</strong>：Shell 脚本的语法（如 <code>[ ]</code> vs <code>[[ ]]</code>, <code>if/then/fi</code>）对于初学者来说有些古怪和不一致。</p>
+<h4 id="3-bat-batch-files"><strong>3. BAT (Batch Files)</strong><a class="headerlink" href="#3-bat-batch-files" title="Permanent link">&para;</a></h4>
+<p><code>.bat</code> 文件是使用 CMD 的脚本语言编写的<strong>批处理文件</strong>。它不是一个独立的 Shell，而是 <strong>CMD 的脚本语言格式</strong>。
+*   <strong>本质</strong>：就是一系列 CMD 命令的集合，按顺序执行。
+*   <strong>特点</strong>：
+    *   语法非常简单（<code>@echo off</code>, <code>set VAR=value</code>, <code>if %ERRORLEVEL% NEQ 0 ...</code>, <code>for %%i in (...) do ...</code>）。
+    *   功能极其有限，变量处理、循环和错误检查都很原始。
+    *   在 PowerShell 出现之前，它是 Windows 上进行简单自动化的唯一原生方式（除 VBScript 外）。</p>
+<hr />
+<h3 id="_1"><strong>第三部分：区别与联系的详细总结</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>为了让你一目了然，我们用一个表格来总结：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性/维度</th>
+<th style="text-align: left;">Command Prompt (CMD)</th>
+<th style="text-align: left;">PowerShell</th>
+<th style="text-align: left;">Bash (代表 Linux Shell)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>操作系统</strong></td>
+<td style="text-align: left;">Windows</td>
+<td style="text-align: left;">Windows (原生), Linux, macOS</td>
+<td style="text-align: left;">Linux, macOS (原生), Windows (通过 WSL, Git Bash 等)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>核心哲学</strong></td>
+<td style="text-align: left;"><strong>面向文本 (Text-based)</strong></td>
+<td style="text-align: left;"><strong>面向对象 (Object-based)</strong></td>
+<td style="text-align: left;"><strong>面向文本 (Text-based)，一切皆文件</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>管道 (<code>|</code>) 传递</strong></td>
+<td style="text-align: left;">纯文本字符串</td>
+<td style="text-align: left;"><strong>.NET 对象</strong></td>
+<td style="text-align: left;">纯文本流 (stdin/stdout)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>主要用途</strong></td>
+<td style="text-align: left;">简单命令、旧脚本兼容</td>
+<td style="text-align: left;"><strong>系统管理、自动化、云管理</strong></td>
+<td style="text-align: left;">系统管理、自动化、软件开发</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>数据处理</strong></td>
+<td style="text-align: left;">极弱，依赖 <code>findstr</code> 等工具进行粗糙的字符串匹配</td>
+<td style="text-align: left;"><strong>极强</strong>，直接访问对象的属性和方法</td>
+<td style="text-align: left;"><strong>极强</strong>，通过 <code>grep</code>, <code>sed</code>, <code>awk</code> 等工具链进行强大的文本处理</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>脚本语言</strong></td>
+<td style="text-align: left;">Batch (<code>.bat</code>, <code>.cmd</code>)</td>
+<td style="text-align: left;">PowerShell (<code>.ps1</code>)</td>
+<td style="text-align: left;">Shell Script (<code>.sh</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>脚本能力</strong></td>
+<td style="text-align: left;">非常有限，过程式</td>
+<td style="text-align: left;">功能完备的面向对象语言</td>
+<td style="text-align: left;">强大的过程式/函数式语言</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>命令格式</strong></td>
+<td style="text-align: left;">不统一 (e.g., <code>dir</code>, <code>netsh</code>)</td>
+<td style="text-align: left;">统一的 <code>动词-名词</code> 规范 (e.g., <code>Get-Service</code>)</td>
+<td style="text-align: left;">相对统一但更简洁 (e.g., <code>ls</code>, <code>ps</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>与系统集成</strong></td>
+<td style="text-align: left;">基本的文件/网络操作</td>
+<td style="text-align: left;"><strong>深度集成</strong>，可管理注册表、WMI、服务、事件日志等一切</td>
+<td style="text-align: left;"><strong>深度集成</strong>，通过 <code>/proc</code>, <code>/sys</code> 等虚拟文件系统管理内核和进程</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>典型优势</strong></td>
+<td style="text-align: left;">简单、快速、兼容性好</td>
+<td style="text-align: left;"><strong>健壮性、可发现性、管理 Windows 生态</strong></td>
+<td style="text-align: left;"><strong>文本处理能力、简洁性、Unix 生态</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>学习曲线</strong></td>
+<td style="text-align: left;">低</td>
+<td style="text-align: left;">高</td>
+<td style="text-align: left;">中等</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2"><strong>第四部分：现代联系与融合趋势</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>过去，Windows 和 Linux 的命令行世界是完全隔离的。但现在，界线正在变得模糊：</p>
+<ol>
+<li>
+<p><strong>Windows Subsystem for Linux (WSL)</strong>：微软官方推出的功能，允许你在 Windows 系统上<strong>原生运行一个完整的 Linux 环境</strong>，包括 Bash、Zsh 等 Shell 和各种 Linux 工具。这意味着你可以在 Windows 上无缝使用 <code>grep</code>, <code>awk</code>, <code>ssh</code> 等。</p>
+</li>
+<li>
+<p><strong>PowerShell Core 的跨平台</strong>：PowerShell (<code>pwsh.exe</code>) 已经开源并支持在 Linux 和 macOS 上安装。这使得习惯 PowerShell 的管理员可以在 Linux 服务器上使用他们熟悉的工具和脚本。</p>
+</li>
+<li>
+<p><strong>Windows Terminal</strong>：微软推出的现代化终端应用。它可以<strong>在一个窗口内以多标签页的形式同时运行 CMD、PowerShell 和多个 WSL 发行版（如 Ubuntu 的 Bash）</strong>。这表明微软已经承认并拥抱了这多种 Shell 并存的现实。</p>
+</li>
+</ol>
+<h3 id="_3"><strong>结论</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>CMD</strong> 是 Windows 的<strong>过去</strong>，因兼容性而存在，适用于最简单的任务。</li>
+<li><strong>PowerShell</strong> 是 Windows 的<strong>现在和未来</strong>，是为解决现代 IT 管理复杂性而设计的、强大的<strong>面向对象</strong>的自动化平台。</li>
+<li><strong>Bash</strong> 是 Linux/Unix 世界的<strong>标准和基石</strong>，是一个极其高效的<strong>面向文本</strong>的工具链，尤其擅长处理文本数据。</li>
+</ul>
+<p><strong>你应该学哪个？</strong>
+*   如果你是 <strong>Windows 系统管理员</strong> 或 <strong>DevOps 工程师</strong>，<strong>PowerShell 是必修课</strong>。
+*   如果你是 <strong>Linux 系统管理员</strong> 或 <strong>后端/软件开发者</strong>，<strong>Bash (及其他 Shell) 是必修课</strong>。
+*   <strong>对于一个现代的 IT 专业人员来说，理想状态是两者都懂</strong>：在 Windows 上主用 PowerShell，同时通过 WSL 熟练使用 Bash；在 Linux 上主用 Bash，同时了解 PowerShell 以备跨平台管理之需。</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3428,7 +3589,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 13, 2025 04:42:02 CEST"><span class="timeago" datetime="2025-07-13T04:42:02+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 13, 2025 04:42:02 CEST">2025-07-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 18, 2025 17:07:49 CEST"><span class="timeago" datetime="2025-07-18T17:07:49+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 18, 2025 17:07:49 CEST">2025-07-18</span>
   </span>
 
     
@@ -3440,7 +3601,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 13, 2025 04:42:02 CEST"><span class="timeago" datetime="2025-07-13T04:42:02+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 13, 2025 04:42:02 CEST">2025-07-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 18, 2025 17:07:49 CEST"><span class="timeago" datetime="2025-07-18T17:07:49+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 18, 2025 17:07:49 CEST">2025-07-18</span>
   </span>
 
     
