@@ -936,6 +936,8 @@
       
         
       
+        
+      
     
     
     
@@ -1054,6 +1056,29 @@
   
     <li class="md-nav__item">
       <a href="../../../computer Science/LeetCode热题100/盛水最多的容器.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer Science/LeetCode热题100/三数之和.md" class="md-nav__link">
         
   
   
@@ -2470,6 +2495,8 @@
       
         
       
+        
+      
     
     
     
@@ -2797,6 +2824,29 @@
   
   <span class="md-ellipsis">
     破阵子·四十年来家国
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%98%A5%E6%97%A5%E9%86%89%E8%B5%B7%E8%A8%80%E5%BF%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    春日醉起言志
     
   </span>
   
@@ -3179,7 +3229,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求统计数组中满足"完全子数组"条件的连续子序列数目，即子数组包含原数组所有不同元素。通过暴力枚举会导致O(n²)超时，优化方案采用双指针滑动窗口：右指针扩展至首次满足条件时，剩余右端元素均构成解；左指针收缩后重复上述过程。该方法将时间复杂度优化至O(n)，显著提升效率，适用于处理大规模数据场景。</p>
+<p>该问题要求统计数组中满足"完全子数组"条件的连续子序列数目，即子数组包含原数组所有不同元素。通过哈希表统计原数组元素种类数，采用双指针法优化：右指针扩展至满足条件时，左指针收缩并累加有效子数组数。该方法将时间复杂度从O(n²)优化至O(n)，显著提升效率。核心在于动态维护滑动窗口内的元素种类，避免重复计算。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
