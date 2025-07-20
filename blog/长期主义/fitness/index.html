@@ -488,8 +488,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -3179,8 +3177,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -3202,14 +3198,16 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>本文介绍了一个健康日历网页应用的CSS样式设计，采用响应式布局和现代化UI元素。核心设计包括渐变色背景、卡片式日历视图、网格布局的日期显示，以及交互式按钮组件。技术特点涵盖移动端优化（移除点击高亮）、CSS过渡动画效果，以及通过阴影和悬停状态增强用户体验。整体风格简洁专业，适合健康管理类应用场景。</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>202</strong></p>
@@ -4233,8 +4231,6 @@
 
 <!-- Determine whether to show feedback -->
 
-  
-
 
 <!-- Was this page helpful? -->
 
@@ -4328,60 +4324,6 @@
 
 
 
-  <h2 id="__comments">评论</h2>
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-      data-repo="Gongzihang6/Discussion"
-      data-repo-id="R_kgDOPLkWUA"
-      data-category="Announcements"
-      data-category-id="DIC_kwDOPLkWUM4Cs35N"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="preferred_color_scheme"
-      data-lang="zh-CN"
-      data-loading="lazy"
-      crossorigin="anonymous"
-      async>
-  </script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-  </script>
-
                 
               </article>
             </div>
@@ -4413,8 +4355,6 @@
   <!-- Link to previous and/or next page -->
   
     
-      
-        
       
       <nav
         class="md-footer__inner md-grid"
