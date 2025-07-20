@@ -6,6 +6,7 @@ hide:
   - feedback
 #   - footer
 status: new
+comments: true
 ---
 
 
@@ -31,6 +32,7 @@ status: new
     <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/3f58b6cea54d446e22107fde739e843.jpg" alt="Back Image">
 </div>
 </div>
+
 <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
@@ -602,7 +604,7 @@ status: new
 ---
 
 <center>
-<a href="docs/算法方向.pdf" target="_blank" class="md-button">下载简历</a>
+<a href="../算法方向.pdf" target="_blank" class="md-button">下载简历</a>
 </center>  
 
 ## 个人简介
@@ -1127,5 +1129,36 @@ jinrishici.load(function(result) {
     }
 });
 </script>
+
+
+<!-- 1. 引入 canvas-confetti 库，我们使用 CDN 保证速度和方便 -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<!-- 2. 添加触发碎纸屑特效的脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // 创建一个 confetti 实例
+    const myConfetti = confetti.create(null, {
+        resize: true,
+        useWorker: true
+    });
+
+    // 触发礼花效果
+    myConfetti({
+        particleCount: 200,     // 粒子数量
+        spread: 160,            // 喷射范围 (角度)
+        origin: { y: 0.5 },     // 从页面中部喷出
+        startVelocity: 40,      // 初始速度
+        gravity: 0.8,           // 重力
+        ticks: 350,             // 持续时间
+
+        // 我根据您博客的主题色为您挑选了一组和谐的颜色
+        colors: ['#4a6cfd', '#a5b4fc', '#ffc700', '#ff5e7e', '#88ff5a'] 
+    });
+});
+</script>
+
+
 
 

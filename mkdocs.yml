@@ -89,6 +89,9 @@ nav:
     - LeetCode热题100:
       - blog/Computer Science/LeetCode热题100/字母异位词分组.md
       - blog/Computer Science/LeetCode热题100/最长连续序列.md
+      - blog/Computer Science/LeetCode热题100/移动零.md
+      - blog/computer Science/LeetCode热题100/盛水最多的容器.md
+      - blog/computer Science/LeetCode热题100/三数之和.md
     - LeetCode:
       - blog/Computer Science/LeetCode/交易逆序对的总数.md
       - blog/Computer Science/LeetCode/单词接龙.md
@@ -135,6 +138,13 @@ nav:
     - blog/MachineLearning/公式测试.md
     - blog/MachineLearning/经典卷积神经网络.md
     - blog/MachineLearning/理解YOLO网络结构.md
+  - 随笔:
+    - blog/随笔/latex入门学习.md
+    - blog/随笔/Matlab基础速成.md
+    - blog/随笔/Matlab进阶.md
+    - blog/随笔/Py-Markdown.md
+    - blog/随笔/ssh_gitlab.md
+    
   - 每日诗词:
     - blog/每日诗词/虞美人·玉阑干外清江浦.md
     - blog/每日诗词/菩萨蛮·回文夏闺怨.md
@@ -146,11 +156,15 @@ nav:
     - blog/每日诗词/行香子·秋与.md
     - blog/每日诗词/自题金山画像.md
     - blog/每日诗词/一剪梅·红藕香残玉簟秋.md
-  # - 随笔:
+    - blog/每日诗词/初到黄州.md
+    - blog/每日诗词/雨霖铃·寒蝉凄切.md
+    - blog/每日诗词/破阵子·四十年来家国.md
+    - blog/每日诗词/春日醉起言志.md
+  
   - 发疯:
     - blog/发疯.md
   - 长期主义:
-    - blog/长期主义/fitness.md
+    - about/fitness.md
 
   # - MKdocs中文教程:
   #     - 许可声明: blog/MIT.md
@@ -294,7 +308,7 @@ plugins:
   #     manual: false
   - git-committers:
       enabled: !ENV [CI, false]
-      repository: Wcowin/Mkdocs-Wcowin
+      repository: Gongzihang6/Discussion
       branch: main
       exclude:
         - index.md
@@ -303,18 +317,35 @@ plugins:
         - blog/posts/update.md
         - blog/posts/wkw.md
         - about/link.md
-  # - git-revision-date-localized:
-  #     enabled: !ENV [CI, false]
-  #     type: iso_date
-  #     enable_creation_date: false
-  #     exclude:
-  #       # - index.md
-  #       - tag.md
-  #       - liuyanban.md
-  #       - blog/posts/update.md
-  #       - blog/posts/wkw.md
-  #       - about/link.md
-  #       - websitebeauty/linktech.md
+  - git-revision-date-localized:
+      # enabled: !ENV [CI, false]
+      # type: iso_date
+      # enable_creation_date: false
+
+      type: timeago #时间类型
+      custom_format: "%d. %B %Y"  # 时间格式
+      timezone: Europe/Amsterdam #时区
+      locale: en #首选语言
+      fallback_to_build_date: false #许回退到git 不可用时mkdocs build执行的时间
+      enable_creation_date: true #是否启用创建时间
+      exclude:  #排除的页面
+          - index.md
+      enabled: true #是否启用
+      strict: true
+
+
+
+
+
+
+      exclude:
+        # - index.md
+        - tag.md
+        - liuyanban.md
+        - blog/posts/update.md
+        - blog/posts/wkw.md
+        - about/link.md
+        - websitebeauty/linktech.md
   - blog: #博客配置
       post_date_format: full #时间
       draft: true
@@ -330,16 +361,14 @@ plugins:
   - tags
 
 markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
-
-  
   - abbr
   - attr_list
   - admonition
   - def_list
   - footnotes
   - md_in_html
-  # - meta # 支持Markdown文件上方自定义标题标签等
-  # - pymdownx.caret
+  - meta
+  - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
   - pymdownx.details
@@ -397,8 +426,8 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
           class: mermaid
           format:
             !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
-        - pymdownx.tabbed:
-            alternate_style: true
+        # - pymdownx.tabbed:
+        #     alternate_style: true
 
 extra_javascript:
   - javascripts/extra.js

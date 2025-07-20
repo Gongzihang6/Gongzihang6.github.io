@@ -303,7 +303,7 @@ class AISummaryGenerator:
                     cache_data = json.load(f)
                     # 检查缓存是否过期（7天）
                     cache_time = datetime.fromisoformat(cache_data.get('timestamp', '1970-01-01'))
-                    if (datetime.now() - cache_time).days < 7:
+                    if (datetime.now() - cache_time).days < 30:
                         return cache_data
             except:
                 pass
