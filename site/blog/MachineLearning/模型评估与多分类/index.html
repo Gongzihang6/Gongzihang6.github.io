@@ -1,0 +1,4896 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="记录、分享">
+      
+      
+        <meta name="author" content="gzh">
+      
+      
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/">
+      
+      
+        <link rel="prev" href="../K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/">
+      
+      
+        <link rel="next" href="../%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/">
+      
+      
+      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>模型评估与多分类 - Blog of GZH</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/简历.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One&family=LXGW+WenKai+TC&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-40HC6RYSR1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-40HC6RYSR1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blog of GZH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              模型评估与多分类
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6.5.5c12.4-13.1 22.5-28.3 29.8-45l-35.2.1h-72c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/ZH-TW/" hreflang="zh-TW" class="md-select__link">
+              China(TW)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Science/java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MachineLearning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E9%9A%8F%E7%AC%94/latex%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  随笔
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  每日诗词
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%8F%91%E7%96%AF/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  发疯
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/fitness/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  长期主义
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/geren/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Blog of GZH
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java面向对象基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java集合框架与常用API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java高级技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            并查集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/dsu-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dsu complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode热题100
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode热题100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    字母异位词分组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最长连续序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E7%A7%BB%E5%8A%A8%E9%9B%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    移动零
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer Science/LeetCode热题100/盛水最多的容器.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../computer Science/LeetCode热题100/三数之和.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    无重复字符的最长子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交易逆序对的总数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单词接龙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    岛屿数量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分考场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    拉马车
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分巧克力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K倍区间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    编辑距离
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    接雨水
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组合总和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    全排列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    乘积最大子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. 最长回文子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前K个高频元素
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最小栈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pow(x,n)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络延迟时间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对角线上的质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    零钱兑换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    括号匹配
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300最长递增子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    115不同的子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    712两个字符串的最小ASCII删除和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    516最长回文子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    139单词拆分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    221最大正方形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2845统计趣味子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2799统计完全子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1399统计最大组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2338统计理想数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2179统计数组中好三元组数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2537统计好子数组的数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2140解决智力问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2278字母在字符串中的百分比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    MachineLearning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MachineLearning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K近邻学习与降维
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      泛化性能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="泛化性能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      误差分解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      过拟合与欠拟合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      评估方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="评估方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      留出法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      交叉验证法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      自助法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能度量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能度量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      错误率与精度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f1" class="md-nav__link">
+    <span class="md-ellipsis">
+      查准率、查全率与 F1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc-auc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROC 与 AUC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROC 与 AUC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心思想：从一个医生的诊断说起
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心思想：从一个医生的诊断说起">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roc-receiver-operating-characteristic-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一部分：理解ROC曲线 (Receiver Operating Characteristic Curve)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何绘制ROC曲线？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROC曲线的实际意义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROC曲线的实际意义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auc-area-under-the-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二部分：理解AUC (Area Under the Curve)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：理解AUC (Area Under the Curve)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auc" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUC的实际意义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      结合教材图片内容解读
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 创造一个“微型世界”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 玩一个“抽卡配对”游戏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 从“配对游戏”到“曲线下面积”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结：为什么这个解释如此重要？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      代价敏感错误率与代价曲线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    公式测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    经典卷积神经网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    理解YOLO网络结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    随笔
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            随笔
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/latex%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Latex入门学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/Matlab%E5%9F%BA%E7%A1%80%E9%80%9F%E6%88%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Matlab基础速成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/Matlab%E8%BF%9B%E9%98%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Matlab进阶
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/Py-Markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Py Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/ssh_gitlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ssh gitlab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    每日诗词
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            每日诗词
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·玉阑干外清江浦
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    菩萨蛮·回文夏闺怨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    清平乐·六盘山
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    洞仙歌·咏柳
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    秋兴八首·其一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    与史郎中钦听黄鹤楼上吹笛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    夏日南亭怀辛大
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    行香子·秋与
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自题金山画像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E7%BA%A2%E8%97%95%E9%A6%99%E6%AE%8B%E7%8E%89%E7%B0%9F%E7%A7%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    一剪梅·红藕香残玉簟秋
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%88%9D%E5%88%B0%E9%BB%84%E5%B7%9E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    初到黄州
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E9%9B%A8%E9%9C%96%E9%93%83%C2%B7%E5%AF%92%E8%9D%89%E5%87%84%E5%88%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    雨霖铃·寒蝉凄切
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A0%B4%E9%98%B5%E5%AD%90%C2%B7%E5%9B%9B%E5%8D%81%E5%B9%B4%E6%9D%A5%E5%AE%B6%E5%9B%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    破阵子·四十年来家国
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%98%A5%E6%97%A5%E9%86%89%E8%B5%B7%E8%A8%80%E5%BF%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    春日醉起言志
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    发疯
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            发疯
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8F%91%E7%96%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    发疯
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            长期主义
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/fitness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/geren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作者个人简介
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简历
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    功能测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      泛化性能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="泛化性能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      误差分解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      过拟合与欠拟合
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      评估方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="评估方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      留出法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      交叉验证法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      自助法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能度量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能度量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      错误率与精度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f1" class="md-nav__link">
+    <span class="md-ellipsis">
+      查准率、查全率与 F1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc-auc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROC 与 AUC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROC 与 AUC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心思想：从一个医生的诊断说起
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心思想：从一个医生的诊断说起">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roc-receiver-operating-characteristic-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一部分：理解ROC曲线 (Receiver Operating Characteristic Curve)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何绘制ROC曲线？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROC曲线的实际意义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ROC曲线的实际意义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auc-area-under-the-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二部分：理解AUC (Area Under the Curve)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：理解AUC (Area Under the Curve)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auc" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUC的实际意义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      结合教材图片内容解读
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 创造一个“微型世界”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 玩一个“抽卡配对”游戏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 从“配对游戏”到“曲线下面积”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结：为什么这个解释如此重要？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      代价敏感错误率与代价曲线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>本文探讨了机器学习模型评估的核心问题——泛化性能，重点分析了误差来源及其分解方法。通过偏差-方差分解框架，揭示了泛化误差由偏差（算法拟合能力）、方差（数据扰动敏感性）和噪声（任务固有难度）三部分组成。文章指出优化模型需平衡偏差与方差，并强调测试集独立性的重要性，为评估和改进分类模型性能提供了理论依据。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>16</strong> 分钟 | 中文字符：<strong>6399</strong></p>
+</div>
+<div class="toc">
+<ul>
+<li><a href="#_1">模型评估与多分类</a><ul>
+<li><a href="#_2">泛化性能</a><ul>
+<li><a href="#_3">误差分解</a></li>
+<li><a href="#_4">过拟合与欠拟合</a></li>
+</ul>
+</li>
+<li><a href="#_5">评估方法</a><ul>
+<li><a href="#_6">留出法</a></li>
+<li><a href="#_7">交叉验证法</a></li>
+<li><a href="#_8">自助法</a></li>
+</ul>
+</li>
+<li><a href="#_9">性能度量</a><ul>
+<li><a href="#_10">错误率与精度</a></li>
+<li><a href="#f1">查准率、查全率与 F1</a></li>
+<li><a href="#roc-auc">ROC 与 AUC</a><ul>
+<li><a href="#_11">核心思想：从一个医生的诊断说起</a><ul>
+<li><a href="#roc-receiver-operating-characteristic-curve">第一部分：理解ROC曲线 (Receiver Operating Characteristic Curve)</a></li>
+<li><a href="#roc">如何绘制ROC曲线？</a></li>
+</ul>
+</li>
+<li><a href="#roc_1">ROC曲线的实际意义</a><ul>
+<li><a href="#auc-area-under-the-curve">第二部分：理解AUC (Area Under the Curve)</a><ul>
+<li><a href="#auc">AUC的实际意义</a></li>
+<li><a href="#_12">结合教材图片内容解读</a></li>
+<li><a href="#_13">总结</a></li>
+<li><a href="#1">1. 创造一个“微型世界”</a></li>
+<li><a href="#2">2. 玩一个“抽卡配对”游戏</a></li>
+<li><a href="#3">3. 从“配对游戏”到“曲线下面积”</a></li>
+<li><a href="#_14">总结：为什么这个解释如此重要？</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_15">代价敏感错误率与代价曲线</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="_1">模型评估与多分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">泛化性能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>现实任务中往往会对学习器的泛化性能、时间开销、存储开销、可解释性等方面的因素进行评估并作出选择；</li>
+</ul>
+<p>通常我们把分类错误的样本数占样本总数的比例称为“错误率”（error rate），即如果在 <span class="arithmatex">\(m\)</span> 个样本中有 <span class="arithmatex">\(a\)</span> 个样本分类错误，则错误率为 <span class="arithmatex">\(E=a/m\)</span>；相应的，<span class="arithmatex">\(1-a/m\)</span> 称为“精度”（accuracy），即精度 = 1-错误率；</p>
+<p>泛化（推广，generalization）性能是指学习机器对“新样本”预测的能力，也是机器学习的目标；学习器实际预测输出与样本的真实输出之间的差异称为“误差”，我们把学习器在训练集上的误差称为“训练误差”（training error）或者“经验误差”（emprical error）；在新样本下的误差称为“泛化误差”（generalization error），我们希望得到泛化误差小的学习器（因为我们实际应用学习器的时候，测试的样本肯定是学习器没有见过的，我们希望学习器在没有见过的新样本上依旧有很好的性能）</p>
+<p>机器学习通常假设样本空间服从一个存在但未知的分布，样本从这个分布中独立获得，即独立同分布；一般而言，训练样本越多，越有可能通过学习获得强泛化能力的模型；</p>
+<p>由于事先并不知道“新样本”的信息，我们只能努力使经验误差最小化，并将测试集上的“测试误差”作为泛化误差的近似，所以测试集要和训练集中的样本尽可能互斥；</p>
+<h3 id="_3">误差分解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>“偏差-方差分解”（bias-variance decomposition）是解释机器学习算法泛化性能的一种重要工具；</p>
+<p>对测试样本 <span class="arithmatex">\(x\)</span>，令 <span class="arithmatex">\(y_D\)</span> 为 <span class="arithmatex">\(x\)</span> 在数据集中的标记，<span class="arithmatex">\(y\)</span> 为 <span class="arithmatex">\(x\)</span> 的真实标记，<span class="arithmatex">\(f(x;D)\)</span> 为训练集 D 上学到的模型 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\(x\)</span> 上的预测输出，以回归任务为例，学习算法的期望预测为<span style="color:#d59bf6;">（这里指的是同一个学习算法在<strong>样本数相同的训练集</strong>上训练出来的模型的产生的预测的期望值）</span>
+$$
+\bar{f}(x)= E_D [f(x; D)]
+$$
+使用样本数相同的不同训练集产生的方差为
+$$
+var(x)= E_D [(f(x; D)-\bar{f}(x))^2]
+$$
+噪声，即 x 在数据集中的标记与真实标记的差，可以理解为观测误差或者测量误差
+$$
+\epsilon^2 = E_D [(y_D-y)^2]
+$$</p>
+<p>期望输出与真实标记的差别称为偏差（bias），即
+$$
+\text{bias}<sup>2{(x)}=(\bar{f}(x)-f(x))</sup>2
+$$
+为了便于讨论，假定噪声期望为 0，即 <span class="arithmatex">\(E_D[y_D-y]=0\)</span>，通过简单的多项式展开合并，可以对算法的期望泛化误差进行分解：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+E(f; D) &amp;= \mathbb{E}_D \left [ (f(x; D) - y_D)^2 \right] \\
+&amp;= \mathbb{E}_D \left [ (f(x; D) - \bar{f}(x) + \bar{f}(x) - y_D)^2 \right] \\
+&amp;= \mathbb{E}_D \left [ (f(x; D) - \bar{f}(x))^2 \right] + \mathbb{E}_D \left [ (\bar{f}(x) - y_D)^2 \right]  + \mathbb{E}_D \left [ 2(f(x; D) - \bar{f}(x))(\bar{f}(x) - y_D) \right] \\
+&amp;= \mathbb{E}_D \left [ (f(x; D) - \bar{f}(x))^2 \right] + \mathbb{E}_D \left [ (\bar{f}(x) - y_D)^2 \right] \\
+&amp;= \mathbb{E}_D \left [ (f(x; D) - \bar{f}(x))^2 \right] + \mathbb{E}_D \left [ (\bar{f}(x) - y + y - y_D)^2 \right] \\
+&amp;= \mathbb{E}_D \left [ (f(x; D) - \bar{f}(x))^2 \right] + \mathbb{E}_D \left [ (\bar{f}(x) - y)^2 \right] + \mathbb{E}_D \left [ (y - y_D)^2 \right] 
+ + 2\mathbb{E}_D \left [ \bar{f}(x) - y)(y - y_D) \right] \\
+&amp;= \mathbb{E}_D \left [ (f(x; D) - \bar{f}(x))^2 \right] + (\bar{f}(x) - y)^2 + \mathbb{E}_D \left [ (y_D - y)^2 \right] \, 
+\end{aligned}
+\]</div>
+<p>所以，
+$$
+E(f; D)= var<sup>2(x)+bias</sup>2(x)+\epsilon^2
+$$
+即泛化误差可以分解为：方差、偏差、噪声之和；</p>
+<p>其中，偏差度量了学习算法的期望预测与数据集标记的偏离程度，刻画了学习算法本身的拟合能力（因为学习算法的目标是向着数据集的标记靠近）；方差度量了同样大小的训练集的变动导致的学习性能的变化，刻画了数据扰动对算法学习性能的影响；噪声则表达了在当前任务下任何学习算法所能达到的期望泛化误差的下界，即刻画了学习问题本身的难度；</p>
+<p>偏差-方差分解说明，泛化性能是由学习算法的能力、数据的充分性以及学习任务本身的难度共同决定的。</p>
+<p>给定学习任务，为了取得好的泛化性能，则需要使偏差比较小，即能够充分拟合数据，并且使方差小，即使得数据扰动产生的影响小；</p>
+<p><img alt="偏差-方差窘境" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250619211138029.png" /></p>
+<p>图一说明，给定学习任务，假定我们能控制学习算法的训练程度，则在训练不足时，学习器的拟合能力不够强，训练数据的扰动不足以使学习器产生显著变化（也就是同样大小，给我不同的训练集，我的拟合能力比较差，学出来没有什么太大区别，主要是学的太差，和真实答案相距太远），此时偏差主导了泛化错误率；随着训练程度的加深，学习器的拟合能力逐渐增强，训练数据发生的扰动渐渐能被学习器学到，方差逐渐主导了泛化错误率；在训练程度充足后，学习器的拟合能力已非常强，训练数据发生的轻微扰动都会导致学习器发生显著变化，若训练数据自身的、非全局的特性被学习器学到了，则将发生过拟合。</p>
+<h3 id="_4">过拟合与欠拟合<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>过拟合：指的是学习器把训练样本学的“太好了”的时候，很可能已经把训练样本自身的一些独有的特点当作了所有潜在样本都会具有的一般性质，这样就会导致泛化性能的下降；</p>
+<ul>
+<li>优化学习目标，加正则项，抑制模型的复杂程度；</li>
+<li>早停机制，early stop，当出现模型在验证集上误差不降反升时，及时停止训练；</li>
+</ul>
+<p>欠拟合：指的是学习器对训练样本的一般性质尚未学号；</p>
+<ul>
+<li>决策树：拓展分支，增强模型学习能力；</li>
+<li>神经网络：增加训练轮数，加深模型学习程度</li>
+</ul>
+<p><img alt="过拟合、欠拟合的直观类比" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250619211807194.png" /></p>
+<h2 id="_5">评估方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">留出法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>将数据集 D 划分为两个互斥的集合，其中一个集合作为训练集 S，另一个作为测试集 T，即 <span class="arithmatex">\(D=S \cup T\)</span>，<span class="arithmatex">\(S\cap T=\varnothing\)</span>，在 S 上训练出模型后，用 T 来评估其测试误差，作为对泛化误差的估计</p>
+<blockquote>
+<p>训练/测试集的划分要尽可能保持数据分布的一致性，避免因为数据划分过程引入额外的偏差而对最终结果产生影响，解决方式为 <strong>分层采样</strong></p>
+</blockquote>
+<p>注意：</p>
+<p>1、即便在给定训练集/测试集的样本比例下，仍存在多种划分方式对初始训练集 D 进行分割，这些不同的划分将导致不同的训练集/测试集，学习到的模型也就不一样，相应的，模型评估的结果也会有差别，因此单次的留出法得到的结果往往不够稳定可靠，在使用留出法时，一般要采用若干次随机划分、重复进行实验评估后取平均值作为留出法的评估结果；</p>
+<p>2、我们希望评估的是用 D 训练出的模型的性能，但留出法需要划分训练/测试集，这就会导致一个窘境：</p>
+<ul>
+<li>若让训练集 S 包含绝大多数样本，则训练出的模型更接近与用 D 训练出的模型，但由于测试集 T 比较小，评估结果可能不够稳定准确；（从偏差-方差分解角度来看，测试集小时，评估结果的偏差较大）</li>
+<li>若令测试集 T 多包含一些样本，则训练集 S 与 D 差别更大了，被评估的模型与用 D 训练出的模型相比可能有较大差别；（一般而言，测试集至少应包含 30 个样例）</li>
+</ul>
+<h3 id="_7">交叉验证法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>交叉验证法（cross validation）先将数据集 D 划分为 k 个大小相似的互斥子集，即 <span class="arithmatex">\(D=D_1 \cup D_2 \cup \dots \cup D_k\)</span>，<span class="arithmatex">\(D_i \cap D_j=\varnothing\)</span> <span class="arithmatex">\((i \neq j)\)</span>，每个子集 <span class="arithmatex">\(D_i\)</span> 都尽可能保持数据分布的一致性，即从 D 中分层采样得到，然后用其中 k-1 个子集作为训练集，剩下一个子集作为测试集，这样就可以获得 k 组训练集/测试集，从而可以进行 k 次训练和测试，最终返回的是这 k 个测试结果的平均值；</p>
+<p><img alt="10 折交叉验证示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250619213314549.png" /></p>
+<p>假定数据集 <span class="arithmatex">\(D\)</span> 中包含 <span class="arithmatex">\(m\)</span> 个样本，若令 <span class="arithmatex">\(k=m\)</span>，则得到了交叉验证法的一个特例：留一法（Leave-One-Out，简称 LOO）</p>
+<p>留一法的优点：</p>
+<ul>
+<li>实际评估的模型与期望评估的用 <span class="arithmatex">\(D\)</span> 训练出来的模型很相似，因此留一法的评估结果往往被认为比较准确；</li>
+</ul>
+<p>留一法的缺陷：</p>
+<ul>
+<li>数据集比较大时，训练 <span class="arithmatex">\(m\)</span> 个模型的计算开销可能是无法忍受的（例如训练集包含一百万个样本，则需要训练一百万个模型）；</li>
+</ul>
+<h3 id="_8">自助法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>以自助采样（bootstrap sampling）为基础，给定包含 <span class="arithmatex">\(m\)</span> 个样本的数据集 <span class="arithmatex">\(D\)</span>，我们对他进行采样产生数据集 <span class="arithmatex">\(D^\prime\)</span>：每次随机从 <span class="arithmatex">\(D\)</span> 中挑选一个样本，将其拷贝放入 <span class="arithmatex">\(D^\prime\)</span>，然后再将该样本放回初始数据集 <span class="arithmatex">\(D\)</span> 中，使得该样本下次采样时仍有可能被采到；这个过程重复 <span class="arithmatex">\(m\)</span> 次，我们就得到了包含 <span class="arithmatex">\(m\)</span> 个样本的数据集 <span class="arithmatex">\(D^\prime\)</span></p>
+<p>这就是自助采样的过程，显然 <span class="arithmatex">\(D\)</span> 中有一部分样本会在 <span class="arithmatex">\(D^\prime\)</span> 中多次出现，而另一部分样本不出现；从概率视角出发，一个样本在 m 次采样中始终不被采到的概率是 <span class="arithmatex">\((1-\frac{1}{m})^m\)</span>，取极限得到
+$$
+\lim_{m \to \infty}(1-\frac{1}{m})^m \to \frac{1}{e} \approx 0.368
+$$
+也就是通过自助采样，初始数据集 D 中约有 36.8%的样本未出现在采样数据集 <span class="arithmatex">\(D^\prime\)</span> 中，于是可以将 <span class="arithmatex">\(D^\prime\)</span> 作为训练集，<span class="arithmatex">\(D/D^\prime\)</span> 作为测试集；</p>
+<p>应用场景：</p>
+<ul>
+<li>自助法在数据集较小、难以有效划分训练集/测试集时很有用；</li>
+<li>自助采样可以从初始数据集中产生多个不同的训练集，对集成学习有很大的好处；</li>
+</ul>
+<p>缺点：自助法产生的数据集改变了初始数据集的分布，这会引入估计偏差；</p>
+<h2 id="_9">性能度量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>也就是模型的评价标准</p>
+<p>在预测任务中，给定样例集 <span class="arithmatex">\(D={(x_1,y_1),(x_2,y_2),\dots,(x_m,y_m)}\)</span>，其中 <span class="arithmatex">\(y_i\)</span> 是示例 <span class="arithmatex">\(x_i\)</span> 的真实标记，通过比较学习器的预测结果 f(x)与真实标记 y 来评估模型的性能</p>
+<p>对于回归任务，常用均方误差
+$$
+E(f; D)=\frac{1}{m}\sum_{i = 1}<sup>m(f(x_i)-y_i)</sup>2
+$$
+更一般的，对于数据分布 <span class="arithmatex">\(\mathcal{D}\)</span> 和概率密度函数 <span class="arithmatex">\(p(\cdot)\)</span>，均方误差可描述为</p>
+<div class="arithmatex">\[
+E(f; \mathcal{D}) = \int_{x \sim \mathcal{D}} (f(x) - y)^2 p(x) \mathrm{d}x.
+\]</div>
+<h3 id="_10">错误率与精度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>错误率
+$$
+E(f; D) = \frac{1}{m} \sum_{i=1}^{m} \mathbb{I}(f(x_i) \neq y_i)  .
+$$
+精度
+$$
+\begin{aligned}
+\text{acc}(f; D) &amp;= \frac{1}{m} \sum_{i=1}^{m} \mathbb{I}(f(x_i) = y_i) \
+&amp;= 1 - E(f; D) \, .
+\end{aligned}
+$$
+更一般的，对于数据分布 <span class="arithmatex">\(\mathcal{D}\)</span> 和概率密度函数 <span class="arithmatex">\(p(\cdot)\)</span>，错误率与精度可分别描述为</p>
+<div class="arithmatex">\[
+E(f; \mathcal{D}) = \int_{x \sim \mathcal{D}} \mathbb{I}(f(x) \neq y) p(x) \mathrm{d}x 
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{acc}(f; \mathcal{D}) &amp;= \int_{x \sim \mathcal{D}} \mathbb{I}(f(x) = y) p(x) \mathrm{d}x \\
+&amp;= 1 - E(f; \mathcal{D}) \, .
+\end{aligned}
+\]</div>
+<h3 id="f1">查准率、查全率与 F1<a class="headerlink" href="#f1" title="Permanent link">&para;</a></h3>
+<p>查准率亦称“准确率”，指的是查出来的<span style="color:#d59bf6;">有多少是我想要的</span>，<strong>我想要的</strong><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">占</span><strong>你查出来的</strong>多少百分比；(预测为正的样例中真正是正例的样本占多少)</p>
+<p>查全率亦称“召回率”，指的是<span style="color:#d59bf6;">我想要的有多少被查出来了</span>，也就是<strong>你查出来的我想要的</strong><span style="background:#6fe7dd; border-radius:5px; display:inline-block;">占</span><strong>全部我想要的</strong>的百分比；（真正的正例样本有多少被预测出来了）</p>
+<p>根据实际场景的不同，对这两个指标的重视程度也不一样；</p>
+<p>对于二分类问题，可以将样例根据其真实类别与学习器预测的类别，分为真正例（true positive，真阳性，标记为真的同时学习器预测也为真，TP），假正例（false positive，假阳性，标记为假的同时但是学习器预测为真，FP），真反例（true negative，真阴性，标记为假的同时学习器预测也为假），假反例（false negative，假阴性，标记为真的同时但是学习器预测为假），显然有<code>TP+FP+TN+FN=样例总数</code>，可以用混淆矩阵来描述这个结果</p>
+<p><img alt="二分类结果混淆矩阵" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250621094040885.png" /></p>
+<p>根据前面的定义，查准率P和查全率R分别定义为：
+$$
+P=\frac{TP}{TP+FP}  \ \
+R=\frac{TP}{TP+FN}
+$$
+查准率和查全率是一对矛盾的变量；一般来说，查准率高时，查全率往往偏低，而查全率高时，查准率往往偏低；例如，如果希望查准率高，也就是挑选出来的西瓜中好瓜比例尽可能高，则学习器就会只挑选最有把握的瓜，但这样就难免会漏掉不少好瓜，使得查全率比较低；如果希望查全率高，也就是所有的好瓜都尽可能地被选出来，则学习器可以通过增加选瓜地数量地来实现，极端情况就是将所有地瓜都选上，那所有的好瓜自然都被选上了，查全率为100%，但是查准率就比较低了；</p>
+<p>在很多情形下，我们可根据学习器的预测结果对样例进行排序，排在前面的是学习器认为“最可能”是正例的样本，排在最后的则是学习器认为“最不可能”是正例的样本，按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率。</p>
+<p>以查全率为横轴、查准率为纵轴作图，就得到PR曲线</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250621102915213.png" alt="PR曲线与平衡点示意图" style="zoom:80%;" /></p>
+<p>PR图直观的显示出学习器在样本总体上的查全率、查准率；在进行比较时，如果一个学习器的PR曲线被另一个学习器完全“包住”，则可断言后者的性能优于前者，如图中A的性能优于C，可以这么理解，在绘图过程中，我们是按照学习器的预测结果对样例进行排序的，从第一个样本开始，每预测一个样本，如果这个样本预测正确了，则查准率为100%，查全率也从0开始增加到非0，并逐渐增加，如果这个样本预测错误了，则查准率开始下降，而查全率不变，显示在PR图上就是曲线开始下降，因此C下降速度明显比A快，说明C有更多样本预测错误；</p>
+<p>A和B学习器的性能度量就要通过平衡点（Break-Event Point，简称BEP），它是查准率=查全率时的取值，例如图中的学习器C的BEP是0.64，基于BEP的比较，可认为学习器A优于B，但是BEP还是过于简化了，更常用的是F1度量
+$$
+F1=\frac{2\times P\times R}{P+R}=\frac{2\times \frac{TP}{TP+FP}\times \frac{TP}{TP+FN}}{\frac{TP}{TP+FP}+\frac{TP}{TP+FN}}=\frac{2\times TP}{样例总数+TP-TN}
+$$
+在一些应用中，对查准率和查全率的重视程度有所不同，例如在商品推荐系统中，为了尽可能少打扰用户，更希望推荐内容确实是用户感兴趣的，此时查准率更重要（也就是希望推荐内容确实是用户感兴趣的，而不是将用户感兴趣的内容都推荐出来）；而在逃犯信息检索系统中，更希望尽可能少漏掉逃犯，此时查全率更重要；</p>
+<p>F1度量的一般形式<span class="arithmatex">\(F_{\beta}\)</span>，能让我们表达出对查准率/查全率的不同偏好，它定义为
+$$
+F_{\beta}=\frac{(1+\beta^2)\times P \times R}{(\beta^2\times P)+R}
+$$
+其中<span class="arithmatex">\(\beta&gt;0\)</span>度量了查全率对查准率的相对重要性，<span class="arithmatex">\(\beta=1\)</span>退化为标准的F1，<span class="arithmatex">\(\beta&gt;1\)</span>是查全率有更大影响；<span class="arithmatex">\(\beta&lt;1\)</span>时查准率有更大影响</p>
+<p>一种直接的做法是先在各混淆矩阵上分别计算出查准率和查全率，记为 <span class="arithmatex">\((P_1, R_1), (P_2, R_2), \ldots, (P_n, R_n)\)</span>，再计算平均值，这样就得到“宏查准率” (macro-<span class="arithmatex">\(P\)</span>)、“宏查全率” (macro-<span class="arithmatex">\(R\)</span>)，以及相应的“宏<span class="arithmatex">\(F1\)</span>” (macro-<span class="arithmatex">\(F1\)</span>):</p>
+<div class="arithmatex">\[
+\text{macro-}P = \frac{1}{n} \sum_{i=1}^{n} P_i 
+\]</div>
+<div class="arithmatex">\[
+\text{macro-}R = \frac{1}{n} \sum_{i=1}^{n} R_i 
+\]</div>
+<div class="arithmatex">\[
+\text{macro-}F1 = \frac{2 \times \text{macro-}P \times \text{macro-}R}{\text{macro-}P + \text{macro-}R}
+\]</div>
+<p>还可将各混淆矩阵的对应元素进行平均，得到 <span class="arithmatex">\(TP\)</span>、<span class="arithmatex">\(FP\)</span>、<span class="arithmatex">\(TN\)</span>、<span class="arithmatex">\(FN\)</span> 的平均值，分别记为 <span class="arithmatex">\(\overline{TP}\)</span>、<span class="arithmatex">\(\overline{FP}\)</span>、<span class="arithmatex">\(\overline{TN}\)</span>、<span class="arithmatex">\(\overline{FN}\)</span>，再基于这些平均值计算出“微查准率” (micro-<span class="arithmatex">\(P\)</span>)、“微查全率” (micro-<span class="arithmatex">\(R\)</span>) 和“微<span class="arithmatex">\(F1\)</span>” (micro-<span class="arithmatex">\(F1\)</span>):</p>
+<div class="arithmatex">\[
+\text{micro-}P = \frac{\overline{TP}}{\overline{TP} + \overline{FP}} 
+\]</div>
+<div class="arithmatex">\[
+\text{micro-}R = \frac{\overline{TP}}{\overline{TP} + \overline{FN}} 
+\]</div>
+<div class="arithmatex">\[
+\text{micro-}F1 = \frac{2 \times \text{micro-}P \times \text{micro-}R}{\text{micro-}P + \text{micro-}R}
+\]</div>
+<h3 id="roc-auc">ROC 与 AUC<a class="headerlink" href="#roc-auc" title="Permanent link">&para;</a></h3>
+<p>很多学习器是为测试样本产生一个实值或概率预测，然后将这个预测值与一个分类与之（threshold）进行比较，若大于阈值则分为正类，否则为反类；实际上，根据这个实值或者概率预测结果，我们可以将测试样本进行排序，“最可能”是正例的排在最前面，“最不可能”是正例的排在最后面，这样分类过程就相当于在这个排序中以某个截断点将样本分为两个部分，前一部分为正例，后一部分为反例；</p>
+<p>在不同任务中，我们可根据任务需求来采用不同的截断点，如果我们更重视查准率，则我们应该选择排序中靠前的位置来进行截断，如果我们更重视查全率，则我们应该选择排序中靠后的位置进行截断；</p>
+<p>ROC全称是“受试者工作特征”（Receiver Operating Characteristic）曲线，与PR曲线相似，我们根据学习器的预测结果对样例进行排序，按此顺序逐个把样本作为正例进行预测，每次计算出两个重要量的值，分别以它们为横、纵坐标作图，就得到了<strong>ROC曲线图</strong>，其横轴是“假正例率”（False Positive Rate，简称FPR），纵轴是“真正例率”（True Positive Rate，简称TPR）；FPR和TPR定义如下：
+$$
+FPR=\frac{FP}{TN+FP}
+$$
+FP是假阳，也就是将负例样本预测为了正例样本，TN+FP则是总的负样本的数量，因此FPR表示总的负样本中预测错误的比例；
+$$
+TPR=\frac{TP}{TP+FN}
+$$
+TP表示真阳性，也就是将正例样本预测为正例样本，TP+FN则是总的正例样本的数量，因此TPR表示总的正例样本中预测正确的比例；</p>
+<p>绘制出如下图所示的近似ROC曲线。绘图过程很简单：给定 <span class="arithmatex">\(m^+\)</span> 个正例和 <span class="arithmatex">\(m^-\)</span> 个反例，<strong>根据学习器预测结果对样例进行排序</strong>，然后把分类阈值设为最大，即把所有样例均预测为反例，此时真正例率和假正例率均为 0，在坐标 <span class="arithmatex">\((0,0)\)</span> 处标记一个点。然后，将分类阈值依次设为每个样例的预测值，即<strong>依次将每个样例划分为正例</strong>。设前一个标记点坐标为 <span class="arithmatex">\((x,y)\)</span>，当前若为真正例，则对应标记点的坐标为 <span class="arithmatex">\((x, y + \frac{1}{m^+})\)</span>；当前若为假正例，则对应标记点的坐标为 <span class="arithmatex">\((x + \frac{1}{m^-}, y)\)</span>，然后用线段连接相邻点即得。</p>
+<p><img alt="ROC曲线与AUC示意图" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250622122355434.png" /></p>
+<p>如何根据ROC曲线比较学习器性能的优劣？与PR曲线类似，若一个学习器的ROC曲线被另一个学习器的曲线完全包住，则可以断言后者的性能优于前者；若两个学习器的ROC曲线发生交叉，则难以一般性的断言两者孰优孰劣，可以通过比较ROC曲线下的面积，即AUC（Area Under ROC Curve）</p>
+<p>从定义可知，AUC可以通过求ROC曲线下各部分的面积之和得到，相当于求多个梯形的面积之和。
+$$
+AUC=\frac{1}{2}\sum_{i=1}^{m-1}(x_{i+1}-x_i)(y_i+y_{i+1})
+$$
+形式化的看，AUC考虑的是样本预测的排序质量，因此它与排序误差有紧密联系。给定m<sup>+个整理和m</sup>-个反例，令D<sup>+和D</sup>-分别表示正、反例集合，则排序损失定义为：
+$$
+l_{rank}=\frac{1}{m^+ m<sup>-}\sum_{x</sup>+ \in D<sup>+}\sum_{x</sup>- \in D<sup>-}\left(\mathbb{I}\left(f(x</sup>+)&lt;f(x<sup>-)\right)+\frac{1}{2}\mathbb{I}\left(f(x</sup>+)=f(x^-)\right)\right)
+$$
+也就是考虑每一对正、反例，若正例的预测值小于反例，则计一个罚分，若相等，则计0.5个罚分，容易看出，l_{rank}对应的是ROC曲线上方的面积：若一个正例在ROC曲线上对应标记点的坐标为(x,y)，则x恰是排序在其之前的反例所占的比例，即假正例率。因此有
+$$
+AUC=1-\mathscr{l}_{rank}
+$$</p>
+<hr />
+<p>好的，这张图片是来自一本关于机器学习的经典教材（很可能是周志华老师的《机器学习》，俗称“西瓜书”），它讨论了ROC曲线和AUC的定义与计算。</p>
+<p>我会结合图片中的内容，用一个通俗易懂的例子，为你详细解释ROC曲线和AUC的实际意义。</p>
+<h4 id="_11">核心思想：从一个医生的诊断说起<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>想象一下，你开发了一个AI模型，用来帮助医生判断CT影像中是否有肿瘤。这个模型不像人类医生直接说“有”或“没有”，而是输出一个<strong>“可能性”得分</strong>，比如0到1之间的一个数值。得分越高，模型认为有肿瘤的可能性越大。</p>
+<p>现在，医生需要根据这个得分来做最终诊断。他可以设定一个<strong>“阈值（Threshold）”</strong>。</p>
+<ul>
+<li><strong>如果阈值设为0.8：</strong> 只有得分 &gt; 0.8的影像，AI才判定为“有肿瘤”。</li>
+<li><strong>如果阈值设为0.3：</strong> 只要得分 &gt; 0.3的影像，AI就判定为“有肿瘤”。</li>
+</ul>
+<p>你会发现，阈值的选择至关重要，它直接导致了两种我们不希望发生的情况：</p>
+<ol>
+<li><strong>漏诊 (False Negative, FN):</strong> 病人明明有肿瘤，但模型得分低于阈值，被判定为“没有”。这很危险！</li>
+<li><strong>误诊 (False Positive, FP):</strong> 病人很健康，但模型得分高于阈值，被判定为“有肿瘤”。这会给病人带来不必要的恐慌和进一步检查。</li>
+</ol>
+<p><strong>ROC曲线和AUC就是用来评估模型在这种“权衡取舍”下的整体表现的工具。</strong></p>
+<hr />
+<h5 id="roc-receiver-operating-characteristic-curve">第一部分：理解ROC曲线 (Receiver Operating Characteristic Curve)<a class="headerlink" href="#roc-receiver-operating-characteristic-curve" title="Permanent link">&para;</a></h5>
+<p>要理解ROC曲线，我们先要定义它的两个坐标轴：</p>
+<ol>
+<li>
+<p><strong>纵坐标 (Y轴)：真正例率 (True Positive Rate, TPR)</strong></p>
+<ul>
+<li><strong>公式：</strong> TPR = (真正被模型识别为正例的数量) / (所有真正为正例的数量)</li>
+<li><strong>在医生例子中：</strong> <strong>“所有真病人中，被AI正确揪出来的比例”</strong>。也被称为“灵敏度(Sensitivity)”或“召回率(Recall)”。</li>
+<li><strong>我们希望它怎么样？</strong> 当然是越高越好，最好是1 (100%)，代表没有漏诊。</li>
+</ul>
+</li>
+<li>
+<p><strong>横坐标 (X轴)：假正例率 (False Positive Rate, FPR)</strong></p>
+<ul>
+<li><strong>公式：</strong> FPR = (被模型错误识别为正例的负例数量) / (所有真正为负例的数量)</li>
+<li><strong>在医生例子中：</strong> <strong>“所有健康人中，被AI误诊为病人的比例”</strong>。</li>
+<li><strong>我们希望它怎么样？</strong> 当然是越低越好，最好是0，代表没有误诊。</li>
+</ul>
+</li>
+</ol>
+<h5 id="roc">如何绘制ROC曲线？<a class="headerlink" href="#roc" title="Permanent link">&para;</a></h5>
+<p>ROC曲线描绘的是<strong>当阈值从高到低连续变化时，TPR和FPR组成的点所连成的曲线。</strong></p>
+<ol>
+<li><strong>阈值设为最高(比如1.0)：</strong> 模型非常“苛刻”，几乎把所有样本都判为“无肿瘤”。这时TPR和FPR都接近0。（对应ROC图的左下角(0,0)点）</li>
+<li><strong>逐渐降低阈值：</strong> 模型变得越来越“宽松”。<ul>
+<li>一些得分较高的真病人开始被正确识别，TPR上升。</li>
+<li>同时，一些得分较高的健康人也可能被误诊，FPR也开始上升。
+.</li>
+</ul>
+</li>
+<li><strong>阈值设为最低(比如0.0)：</strong> 模型非常“宽松”，把所有样本都判为“有肿瘤”。这时所有真病人都被找出(TPR=1)，同时所有健康人也都被误诊(FPR=1)。（对应ROC图的右上角(1,1)点）</li>
+</ol>
+<p>将阈值变化过程中所有(FPR, TPR)的点连接起来，就构成了这个模型的ROC曲线。</p>
+<h4 id="roc_1">ROC曲线的实际意义<a class="headerlink" href="#roc_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>一个点代表一种策略：</strong> ROC曲线上的每一个点，都对应一个具体的阈值，代表了在该阈值下“漏诊”和“误诊”的一种平衡。</li>
+<li><strong>曲线的形状代表模型的能力：</strong><ul>
+<li><strong>理想模型：</strong> 曲线会无限逼近左上角(0, 1)点。这意味着我们能找到一个阈值，使得TPR为1（没有漏诊），同时FPR为0（没有误诊）。这是完美的分类器。</li>
+<li><strong>随机猜测模型：</strong> 曲线是一条从(0,0)到(1,1)的对角线（y=x）。这意味着，要想多揪出一个真病人，就必须接受多误诊一个健康人。这种模型没有任何诊断价值。</li>
+<li><strong>曲线越靠近左上角，说明模型性能越好。</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h5 id="auc-area-under-the-curve">第二部分：理解AUC (Area Under the Curve)<a class="headerlink" href="#auc-area-under-the-curve" title="Permanent link">&para;</a></h5>
+<p>正如图片中文字所述，当两个模型的ROC曲线发生交叉时，我们很难说哪个模型更好。这时就需要一个定量的指标来衡量模型的整体性能，这就是AUC。</p>
+<p><strong>AUC就是ROC曲线下方的面积。</strong></p>
+<h6 id="auc">AUC的实际意义<a class="headerlink" href="#auc" title="Permanent link">&para;</a></h6>
+<p>AUC的取值范围在0到1之间，其背后有一个非常直观和重要的概率解释，这也是图片中<strong>“AUC考虑的是样本预测的排序质量”</strong>这句话的精髓所在：</p>
+<blockquote>
+<p><strong>AUC的数值，等于从所有正样本（真病人）中随机抽取一个，再从所有负样本（健康人）中随机抽取一个，这个正样本的预测得分高于这个负样本预测得分的概率。</strong></p>
+</blockquote>
+<p>简单来说：</p>
+<ul>
+<li><strong>AUC = 1：</strong> 完美模型。它给所有真病人的打分，都高于所有健康人的打分。</li>
+<li><strong>AUC = 0.8：</strong> 意味着，随机抽取一个真病人和一个健康人，有80%的概率，这个真病人的得分会比健康人高。</li>
+<li><strong>AUC = 0.5：</strong> 随机猜测模型。模型对于真病人和健康人的打分是随机的，排序能力为零。</li>
+<li><strong>AUC &lt; 0.5：</strong> 模型的效果比随机猜测还差，它倾向于把正样本排在负样本后面（比如把真病人普遍打低分，健康人普遍打高分）。</li>
+</ul>
+<p>所以，<strong>AUC衡量的不是模型预测的“准确度”，而是它对正负样本的“区分能力”或“排序能力”。</strong> 一个高AUC的模型，能很好地将正样本排在负样本前面。</p>
+<hr />
+<h6 id="_12">结合教材图片内容解读<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h6>
+<ol>
+<li>
+<p><strong>“若一个学习器的ROC曲线被另一个学习器的曲线完全‘包住’，则可断言后者的性能优于前者”</strong></p>
+<ul>
+<li><strong>解释：</strong> 这意味着模型B（包住别人的）在任何FPR水平下，其TPR都比模型A（被包住的）要高。无论医生选择多么严格或宽松的诊断标准（阈值），B模型的效果总是更好。所以B模型完胜。</li>
+</ul>
+</li>
+<li>
+<p><strong>“若两个学习器的ROC曲线发生交叉，则难以一般性地断言两者孰优孰劣...此时如果一定要进行比较，则较为合理的判据是比较ROC曲线下的面积，即AUC”</strong></p>
+<ul>
+<li><strong>解释：</strong> 交叉意味着在某些FPR区间，A模型更好（TPR更高）；在另一些FPR区间，B模型更好。这时就要看具体应用场景。比如，对于癌症筛查，我们宁愿误诊（高FPR）也不想漏诊（追求高TPR），可能会选择在右侧表现更好的模型。如果无法确定应用场景，就用AUC这个综合指标来评价，AUC大的模型整体区分能力更强。</li>
+</ul>
+</li>
+<li>
+<p><strong>“形式化地看，AUC考虑的是样本预测的排序质量”</strong></p>
+<ul>
+<li><strong>解释：</strong> 这正是我上面强调的AUC的概率解释。它不关心具体的得分值，只关心正样本的得分是否普遍高于负样本的得分。<code>l_rank</code>公式计算的就是“排序损失”（一个正样本排在一个负样本之后的概率），所以<code>AUC = 1 - l_rank</code>。</li>
+</ul>
+</li>
+</ol>
+<h6 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h6>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">ROC曲线</th>
+<th style="text-align: left;">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>形态</strong></td>
+<td style="text-align: left;">一条二维曲线</td>
+<td style="text-align: left;">一个0到1的数值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>核心意义</strong></td>
+<td style="text-align: left;">可视化地展示模型在<strong>所有阈值</strong>下的<strong>性能权衡</strong>（TPR vs. FPR）</td>
+<td style="text-align: left;"><strong>量化</strong>模型的<strong>整体区分能力</strong>或<strong>排序能力</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>优点</strong></td>
+<td style="text-align: left;">直观，能看到模型在不同决策偏好下的表现</td>
+<td style="text-align: left;">单一数值，便于模型间直接比较，且对样本类别不平衡不敏感</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>如何使用</strong></td>
+<td style="text-align: left;">- 看曲线是否靠近左上角<br>- 对比不同模型的曲线（“包住”或“交叉”）<br>- 根据业务需求选择合适的阈值（操作点）</td>
+<td style="text-align: left;">- AUC值越大，模型越好<br>- 作为模型优化的核心指标之一</td>
+</tr>
+</tbody>
+</table>
+<p>希望这个详细的解释能帮助你透彻理解ROC曲线和AUC的实际意义！</p>
+<p>绝佳的问题！这句对AUC的概率解释是理解其<strong>核心价值</strong>的关键。很多人知道AUC是曲线下的面积，但并不清楚这个面积代表的实际意义。</p>
+<p>我们来用一个非常具体、直观的方式来拆解这句话。</p>
+<hr />
+<h6 id="1">1. 创造一个“微型世界”<a class="headerlink" href="#1" title="Permanent link">&para;</a></h6>
+<p>假设我们的AI模型已经对一小批人进行了肿瘤风险打分。这个世界里只有：</p>
+<ul>
+<li><strong>3个真病人 (正样本)</strong></li>
+<li><strong>4个健康人 (负样本)</strong></li>
+</ul>
+<p>模型给出的得分如下（得分越高，模型认为越有可能是病人）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">身份</th>
+<th style="text-align: left;">编号</th>
+<th style="text-align: left;">模型得分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>病人 (P)</strong></td>
+<td style="text-align: left;">P1</td>
+<td style="text-align: left;"><strong>0.9</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">健康人 (H)</td>
+<td style="text-align: left;">H1</td>
+<td style="text-align: left;">0.7</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>病人 (P)</strong></td>
+<td style="text-align: left;">P2</td>
+<td style="text-align: left;"><strong>0.6</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>病人 (P)</strong></td>
+<td style="text-align: left;">P3</td>
+<td style="text-align: left;"><strong>0.5</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">健康人 (H)</td>
+<td style="text-align: left;">H2</td>
+<td style="text-align: left;">0.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">健康人 (H)</td>
+<td style="text-align: left;">H3</td>
+<td style="text-align: left;">0.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">健康人 (H)</td>
+<td style="text-align: left;">H4</td>
+<td style="text-align: left;">0.1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>理想情况：</strong>一个完美的模型，应该给所有病人的得分都高于所有健康人。
+<strong>现实情况：</strong>如上表，模型犯了些错误。比如健康人H1的得分(0.7)就比病人P2(0.6)和P3(0.5)的得分要高。这说明模型的排序能力不是100%完美的。</p>
+<p>AUC衡量的就是这种<strong>排序的“完美程度”</strong>。</p>
+<hr />
+<h6 id="2">2. 玩一个“抽卡配对”游戏<a class="headerlink" href="#2" title="Permanent link">&para;</a></h6>
+<p>现在，我们来严格按照那句话的定义玩一个游戏：</p>
+<blockquote>
+<p>“从所有正样本（病人）中<strong>随机抽取一个</strong>，再从所有负样本（健康人）中<strong>随机抽取一个</strong>，比较他们的得分。”</p>
+</blockquote>
+<p>在我们的微型世界里，有多少种可能的配对组合呢？
+*   病人有3个，健康人有4个。
+*   所以总的配对组合数是 <code>3 × 4 = 12</code> 种。</p>
+<p>我们把这12种组合全部列出来，看看在多少种组合里，<strong>病人的得分 &gt; 健康人的得分</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">病人 (得分)</th>
+<th style="text-align: left;">健康人 (得分)</th>
+<th style="text-align: left;">比较结果 (病人得分 &gt; 健康人得分?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">P1 (<strong>0.9</strong>)</td>
+<td style="text-align: left;">H1 (0.7)</td>
+<td style="text-align: left;"><strong>是</strong> (0.9 &gt; 0.7)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P1 (<strong>0.9</strong>)</td>
+<td style="text-align: left;">H2 (0.4)</td>
+<td style="text-align: left;"><strong>是</strong> (0.9 &gt; 0.4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P1 (<strong>0.9</strong>)</td>
+<td style="text-align: left;">H3 (0.2)</td>
+<td style="text-align: left;"><strong>是</strong> (0.9 &gt; 0.2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P1 (<strong>0.9</strong>)</td>
+<td style="text-align: left;">H4 (0.1)</td>
+<td style="text-align: left;"><strong>是</strong> (0.9 &gt; 0.1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">---</td>
+</tr>
+<tr>
+<td style="text-align: left;">P2 (<strong>0.6</strong>)</td>
+<td style="text-align: left;">H1 (0.7)</td>
+<td style="text-align: left;">否 (0.6 &lt; 0.7)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P2 (<strong>0.6</strong>)</td>
+<td style="text-align: left;">H2 (0.4)</td>
+<td style="text-align: left;"><strong>是</strong> (0.6 &gt; 0.4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P2 (<strong>0.6</strong>)</td>
+<td style="text-align: left;">H3 (0.2)</td>
+<td style="text-align: left;"><strong>是</strong> (0.6 &gt; 0.2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P2 (<strong>0.6</strong>)</td>
+<td style="text-align: left;">H4 (0.1)</td>
+<td style="text-align: left;"><strong>是</strong> (0.6 &gt; 0.1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">---</td>
+<td style="text-align: left;">---</td>
+</tr>
+<tr>
+<td style="text-align: left;">P3 (<strong>0.5</strong>)</td>
+<td style="text-align: left;">H1 (0.7)</td>
+<td style="text-align: left;">否 (0.5 &lt; 0.7)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P3 (<strong>0.5</strong>)</td>
+<td style="text-align: left;">H2 (0.4)</td>
+<td style="text-align: left;"><strong>是</strong> (0.5 &gt; 0.4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P3 (<strong>0.5</strong>)</td>
+<td style="text-align: left;">H3 (0.2)</td>
+<td style="text-align: left;"><strong>是</strong> (0.5 &gt; 0.2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">P3 (<strong>0.5</strong>)</td>
+<td style="text-align: left;">H4 (0.1)</td>
+<td style="text-align: left;"><strong>是</strong> (0.5 &gt; 0.1)</td>
+</tr>
+</tbody>
+</table>
+<p>现在我们来数一下“<strong>是</strong>”的个数：<code>4 + 3 + 3 = 10</code> 个。</p>
+<p>所以，在12次随机配对中，有10次我们会抽到“病人得分高于健康人得分”的情况。</p>
+<p>这个概率就是 <code>10 / 12 ≈ 0.833</code>。</p>
+<p><strong>这个0.833，就是这个模型在这个数据集上的AUC值！</strong></p>
+<hr />
+<h6 id="3">3. 从“配对游戏”到“曲线下面积”<a class="headerlink" href="#3" title="Permanent link">&para;</a></h6>
+<p>你可能会问：这个配对计数的概率，怎么就等于ROC曲线下方的面积了呢？</p>
+<p>这背后的数学联系非常巧妙，可以这样理解：</p>
+<p>绘制ROC曲线时，我们其实是在按得分从高到低排序，然后一个个地处理样本。
+*   每遇到一个<strong>病人（正样本）</strong>，我们就在曲线上向上走一步。
+*   每遇到一个<strong>健康人（负样本）</strong>，我们就在曲线上向右走一步。</p>
+<p>现在，我们聚焦于任何一个<strong>健康人（负样本）</strong>，比如H1(0.7)。当我们在绘图时处理到它，准备向右走一步时，我们已经遇到了多少个病人？
+在我们的例子里，得分比H1(0.7)高的病人只有P1(0.9)。也就是说，我们已经向上走过了一步（代表P1）。此时的“真正例率(TPR)”是 <code>1/3</code>。</p>
+<p>当我们因为H1而向右走一步时，我们在ROC曲线下增加了一块微小的矩形面积。这个矩形的<strong>高度</strong>，恰好就是<strong>得分比H1高的病人的比例（&#8531;）</strong>。这个矩形的<strong>宽度</strong>是 <code>1/（健康人总数）</code>，即<code>1/4</code>。</p>
+<p>把所有因为健康人（负样本）而产生的微小矩形面积加起来，总面积就等于：
+<code>Σ [ (得分比这个健康人高的病人比例) × (1 / 健康人总数) ]</code>
+这个公式经过推导，其结果<strong>完全等价于</strong>我们上面计算的配对概率 <code>10/12</code>。</p>
+<hr />
+<h6 id="_14">总结：为什么这个解释如此重要？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h6>
+<ol>
+<li>
+<p><strong>更直观：</strong> “面积”是一个几何概念，而“概率”是一个统计概念。<strong>“一个模型有多大概率能正确地把病人排在健康人前面”</strong>，这个说法比“曲线下面积是0.83”更容易被业务人员理解。它直接反映了模型的核心任务——区分能力。</p>
+</li>
+<li>
+<p><strong>解释了AUC的本质：</strong> AUC衡量的是<strong>排序质量</strong>，而不是绝对的预测值有多准。即使模型给所有病人的得分都在(0.4, 0.5)之间，给所有健康人的得分都在(0.1, 0.2)之间，这个模型的AUC依然是1.0（完美），因为它完美地将两类样本分开了。</p>
+</li>
+<li>
+<p><strong>解释了为何AUC对类别不平衡不敏感：</strong> 在上面的配对游戏中，即使我们有3个病人和400个健康人，配对的总数会变成<code>3 × 400 = 1200</code>，但计算概率的方式完全一样。它关注的是两类样本之间的相对顺序，而不是某个类别的数量。这使得AUC在处理现实世界中常见的类别不平衡问题（如欺诈检测、罕见病诊断）时，比准确率等指标更为可靠。</p>
+</li>
+</ol>
+<h3 id="_15">代价敏感错误率与代价曲线<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>在现实任务中常会遇到这样的情况，不同类型的错误造成的后果不同，例如在医疗诊断中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了“一次错误”，但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机；再如，门禁系统错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故。为权衡不同类型错误所造成的不同损失，可为错误赋予“非均等代价”(unequal cost)。</p>
+<p><img alt="二分类代价矩阵" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fimage-20250704102530899.png" /></p>
+<p>前面的性能度量大都隐式的假设了均等代价，并没有考虑不同错误会造成不同的后果，在非均等代价下，若将上图中的第0类作为正类，第1类作为反类，令D<sup>+与D</sup>-分别代表样例集D的正例子集和反例子集，则“代价敏感（cost-sensitive）错误率”为：
+$$
+E(f;D;cost)\frac{1}{m}\left(\sum_{x_i \in D^+} \mathbb{I}\left(f(x_i)\neq y_i \right)\times cost_{01}+\sum_{x_i \in D^-} \mathbb{I}\left(f(x_i)\neq y_i\right) \times cost_{10}\right)
+$$
+在非均等代价下，ROC 曲线不能直接反映出学习器的期望总体代价，而“代价曲线”(cost curve) 则可达到该目的。代价曲线图的横轴是取值为 [0, 1] 的正例概率代价</p>
+<div class="arithmatex">\[
+P(+)cost = \frac{p \times cost_{01}}{p \times cost_{01} + (1 - p) \times cost_{10}},
+\]</div>
+<p>其中 <span class="arithmatex">\(p\)</span> 是样例为正例的概率；纵轴是取值为 [0, 1] 的归一化代价</p>
+<div class="arithmatex">\[
+cost_{norm} = \frac{FNR \times p \times cost_{01} + FPR \times (1 - p) \times cost_{10}}{p \times cost_{01} + (1 - p) \times cost_{10}},
+\]</div>
+<p>其中 <span class="arithmatex">\(FPR\)</span> 是式(2.19)定义的假正例率，<span class="arithmatex">\(FNR = 1 - TPR\)</span> 是假反例率。代价曲线的绘制很简单：ROC 曲线上每一点对应了代价平面上的一条线段，设 ROC 曲线上点的坐标为 <span class="arithmatex">\((TPR, FPR)\)</span>，则可相应计算出 <span class="arithmatex">\(FNR\)</span>，然后在代价平面上绘制一条从 <span class="arithmatex">\((0, FPR)\)</span> 到 <span class="arithmatex">\((1, FNR)\)</span> 的线段，线段下的面积即表示了该条件下的期望总体代价；如此将 ROC 曲线上的每个点转化为代价平面上的一条线段，然后取所有线段的下界，围成的面积即为在所有条件下学习器的期望总体代价，如下图所示。</p>
+<p><img alt="代价曲线与期望总体代价" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fimage-20250704225910193.png" /></p>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+    
+  
+
+  <!-- Determine date of creation -->
+  
+    
+  
+
+
+<!-- Source file information -->
+
+  <aside class="md-source-file">
+
+    <!-- Date of last update -->
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 13, 2025 04:42:02 CEST"><span class="timeago" datetime="2025-07-13T04:42:02+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 13, 2025 04:42:02 CEST">2025-07-13</span>
+  </span>
+
+    
+
+    <!-- Date of creation -->
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 13, 2025 04:42:02 CEST"><span class="timeago" datetime="2025-07-13T04:42:02+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 13, 2025 04:42:02 CEST">2025-07-13</span>
+  </span>
+
+    
+
+    <!-- Authors (git-authors plugin) -->
+    
+
+    <!-- Authors (git-committers plugin) -->
+    
+  </aside>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <style>
+  .md-footer {
+      background-color: #f0f0f0;
+  }
+</style>
+
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: K近邻学习与降维"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                K近邻学习与降维
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: 公式测试"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                公式测试
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; gzh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+      <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;color: #000;">
+        本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+        <span id="finicount_views"></span>    &nbsp;|&nbsp;
+        <footer>
+          <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+        </footer>
+      </div>
+      </font>
+
+        <style>
+          .footer-visit-count {
+              height: fit-content;
+              min-height: 55px; /* 根据实际情况调整此高度 */
+              color: #000;
+          }
+          </style>
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" rel="noopener" title="Wechat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/gongzihang" target="_blank" rel="noopener" title="telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ZihangGong28792" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<zihanggong24@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/688234000/lists" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+        
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。 如果你同意,你可以帮助我们让我们的网站更好</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">管理设定</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/config_mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/简历.js"></script>
+      
+    
+  </body>
+</html>

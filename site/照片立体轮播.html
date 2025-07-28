@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生产级 - 3D旋转相册</title>
+
+    <!-- ==================== CSS 样式 ==================== -->
+    <style>
+        /* --- 基础与背景 --- */
+        .carousel-section {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            background-image: radial-gradient(mintcream 0%, lightgray 100%);
+            overflow: hidden; /* 防止旋转时出现滚动条 */
+        }
+
+        .carousel-title {
+             margin-bottom: 2rem;
+             color: #333;
+             font-size: 2.2rem;
+             font-weight: 300;
+        }
+
+        /* --- 轮播容器 (3D舞台) --- */
+        .carousel-container {
+            width: 450px;
+            height: 280px;
+            position: relative;
+            /* perspective 决定了3D效果的深度，值越小越夸张 */
+            perspective: 1000px;
+            margin-bottom: 2.5rem;
+            /* 关键: 禁止用户选中内容，为拖拽提供丝滑体验 */
+            user-select: none;
+            -webkit-user-select: none;
+            /* 提示用户此区域可拖动 */
+            cursor: grab;
+        }
+        .carousel-container:active {
+            cursor: grabbing;
+        }
+
+        /* --- 轮播主体 (旋转体) --- */
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            /* 关键: 开启3D空间，让子元素可以进行3D变换 */
+            transform-style: preserve-3d;
+            /* 默认启动自动旋转动画 */
+            animation: rotation 30s infinite linear;
+            animation-play-state: running;
+        }
+
+        /* 鼠标悬停在容器上时，暂停动画 */
+        .carousel-container:hover .carousel {
+            animation-play-state: paused;
+        }
+
+        /* CSS 自动旋转动画 */
+        @keyframes rotation {
+            from { transform: translateZ(var(--radius)) rotateY(0); }
+            to   { transform: translateZ(var(--radius)) rotateY(360deg); }
+        }
+        
+        /* --- 轮播面板 (图片项) --- */
+        .carousel__cell {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: black;
+            border: solid 4px white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel__cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 关键: 防止图片本身的事件干扰我们的拖拽逻辑 */
+            pointer-events: none;
+            /* 默认灰度滤镜 */
+            filter: grayscale(1);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* 鼠标悬停在单个面板上时，恢复色彩并放大 */
+        .carousel__cell:hover img {
+            filter: grayscale(0);
+            transform: scale(1.15);
+        }
+        
+        /* --- 控制按钮 --- */
+        .carousel-controls {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 2px solid white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carousel-section">
+        <h2 class="carousel-title">我的作品与生活</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel">
+                <!-- 在这里自由增删图片，JS会自动适配 -->
+                <!-- draggable="false" 是防止浏览器默认拖拽行为的关键 -->
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%A6%88%E5%A6%88%E6%9D%AF.jpg" alt="妈妈杯证书" draggable="false"></figure>
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%AD%A3%E5%A4%A7%E6%9D%AF%E5%9B%BD%E5%AE%B6%E4%B8%89%E7%AD%89%E5%A5%96.jpg" alt="正大杯国赛三等奖" draggable="false"></figure>
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%8D%8E%E4%B8%BA%E6%9D%AF%E4%BA%8C%E7%AD%89%E5%A5%96.jpg" alt="华为杯二等奖" draggable="false"></figure>
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD%E4%B8%80%E7%AD%89%E5%A5%96.jpg" alt="英语口语一等奖" draggable="false"></figure>
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B%E4%B8%80%E7%AD%89%E5%A5%96.jpg" alt="数学竞赛一等奖" draggable="false"></figure>
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2022%E4%BC%98%E7%A7%80%E5%9B%A2%E5%91%98.jpg" alt="优秀团员" draggable="false"></figure>
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F2020-2021%E6%9C%AC%E7%A7%91%E4%B8%89%E5%A5%BD%E5%AD%A6%E7%94%9F.jpg" alt="三好学生" draggable="false"></figure>
+                <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E7%BE%8E%E8%B5%9BHM%E5%A5%96" alt="美赛HM奖" draggable="false"></figure>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <button id="carousel-prev-button">‹</button>
+            <button id="carousel-next-button">›</button>
+        </div>
+    </div>
+    
+    <!-- ==================== JavaScript ==================== -->
+    <script>
+        // 使用IIFE（立即执行函数表达式）封装代码，避免污染全局作用域
+        (function() {
+            // --- 1. DOM元素获取 ---
+            const container = document.querySelector('.carousel-container');
+            const carousel = document.querySelector('.carousel');
+            const cells = Array.from(document.querySelectorAll('.carousel__cell'));
+            const prevButton = document.getElementById('carousel-prev-button');
+            const nextButton = document.getElementById('carousel-next-button');
+
+            // --- 2. 初始化检查 ---
+            if (!container || !carousel || cells.length === 0) {
+                console.error("轮播组件初始化失败：缺少必要的DOM元素。");
+                return;
+            }
+
+            // --- 3. 核心参数计算 ---
+            const cellCount = cells.length;
+            const theta = 360 / cellCount;
+            const cellWidth = carousel.offsetWidth;
+            // 计算旋转半径，乘以1.5以拉开面板间距，增强立体感
+            const radius = Math.round((cellWidth / 2) / Math.tan(Math.PI / cellCount)) * 1.5;
+
+            // --- 4. 动态布局与样式设置 ---
+            // 将半径设置为CSS变量，供@keyframes动画使用
+            carousel.style.setProperty('--radius', `-${radius}px`);
+            // 为每个面板设置其在3D空间中的初始位置
+            cells.forEach((cell, index) => {
+                const angle = theta * index;
+                cell.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+            });
+
+            // --- 5. 状态管理变量 ---
+            let selectedIndex = 0;
+            let autoplayTimeout;
+            let isDragging = false;
+            let startX, startAngle;
+
+            // --- 6. 核心状态更新函数 ---
+            function updateCarouselState() {
+                const angle = theta * selectedIndex;
+                
+                // 应用平滑的过渡动画来对齐到目标面板
+                carousel.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
+                
+                // 停止任何正在运行的CSS动画，因为我们正在手动控制
+                carousel.style.animation = 'none';
+
+                // 在用户交互后，计划一个任务来恢复自动旋转
+                clearTimeout(autoplayTimeout);
+                autoplayTimeout = setTimeout(() => {
+                    carousel.style.transition = 'none'; // 为无缝切换到动画做准备
+                    void carousel.offsetWidth; // 强制浏览器重绘，以便重启动画
+                    
+                    // 重新应用CSS动画
+                    carousel.style.animation = `rotation 30s infinite linear`;
+                    // 计算当前角度在整个动画周期中的进度
+                    const progress = (angle % 360) / 360;
+                    // 设置负的动画延迟，使动画从当前位置无缝开始
+                    carousel.style.animationDelay = `${progress * -30}s`;
+                    carousel.style.animationPlayState = 'running';
+                }, 2000); // 用户停止交互2秒后恢复自动旋转
+            }
+
+            // --- 7. 事件监听器 ---
+
+            // 按钮点击
+            // 注意: rotateY中，正角度是逆时针，负角度是顺时针
+            prevButton.addEventListener('click', () => { selectedIndex++; updateCarouselState(); });
+            nextButton.addEventListener('click', () => { selectedIndex--; updateCarouselState(); });
+            
+            // 键盘左右箭头导航
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    selectedIndex++;
+                    updateCarouselState();
+                } else if (e.key === 'ArrowRight') {
+                    selectedIndex--;
+                    updateCarouselState();
+                }
+            });
+
+            // 拖拽开始 (mousedown)
+            container.addEventListener('mousedown', e => {
+                // 关键: 阻止浏览器默认的图片拖拽和文本选中行为
+                e.preventDefault();
+
+                isDragging = true;
+                container.style.cursor = 'grabbing';
+                startX = e.pageX;
+                
+                // 暂停自动旋转
+                carousel.style.animationPlayState = 'paused';
+                clearTimeout(autoplayTimeout);
+                
+                // 获取拖拽开始时的精确旋转角度
+                const computedStyle = window.getComputedStyle(carousel);
+                const transformMatrix = new DOMMatrix(computedStyle.transform);
+                startAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+            });
+            
+            // 拖拽过程 (mousemove)
+            document.addEventListener('mousemove', e => {
+                if (!isDragging) return;
+                const moveX = e.pageX - startX;
+                const dragAngle = (moveX / container.offsetWidth) * 180; // 调整拖动灵敏度
+                
+                // 右滑(正moveX) -> 角度增大 -> 逆时针; 左滑(负moveX) -> 角度减小 -> 顺时针
+                // const newAngle = startAngle - dragAngle;
+                const newAngle = dragAngle - startAngle;
+                
+                carousel.style.transition = 'none'; // 拖动时必须是即时响应的
+                carousel.style.transform = `translateZ(-${radius}px) rotateY(${newAngle}deg)`;
+            });
+
+            // 拖拽结束 (mouseup & mouseleave)
+            function endDrag() {
+                if (!isDragging) return;
+                isDragging = false;
+                container.style.cursor = 'grab';
+                
+                // 获取拖动结束时的角度，计算出最接近的面板索引
+                const computedStyle = window.getComputedStyle(carousel);
+                const transformMatrix = new DOMMatrix(computedStyle.transform);
+                const currentAngle = Math.atan2(transformMatrix.m13, transformMatrix.m11) * (180 / Math.PI);
+                selectedIndex = Math.round(currentAngle / theta);
+
+                // 调用核心函数来对齐面板并计划恢复自动旋转
+                updateCarouselState();
+            }
+
+            document.addEventListener('mouseup', endDrag);
+      
+            // 关键: 修复当鼠标拖出窗口再松开时导致的“粘滞拖动”Bug
+            document.addEventListener('mouseleave', endDrag);
+
+        })();
+    </script>
+
+</body>
+</html>
