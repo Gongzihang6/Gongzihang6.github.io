@@ -84,8 +84,8 @@ nav:
       - Java高级技术: blog/Computer Science/java提高.md
     - Algorithm:
       - 并查集:
-        - blog/Computer Science/Algorithm/算法基础/并查集.md
-        - blog/Computer Science/Algorithm/算法基础/dsu-complexity.md
+        - blog/Computer Science/Algorithm/算法基础/ds/并查集.md
+        - blog/Computer Science/Algorithm/算法基础/ds/dsu-complexity.md
       - blog/Computer Science/排序和查找.md
     - LeetCode热题100:
       - blog/Computer Science/LeetCode热题100/字母异位词分组.md
@@ -174,6 +174,10 @@ nav:
     - blog/每日诗词/桃花庵歌.md
     - blog/每日诗词/渔家傲·反第一次大围剿.md
     - blog/每日诗词/青玉案·元夕.md
+    - blog/每日诗词/浣溪沙·谁念西风独自凉.md
+    - blog/每日诗词/声声慢·寻寻觅觅.md
+    - blog/每日诗词/虞美人·听雨.md
+    - blog/每日诗词/青玉案·凌波不过横塘路.md
   - 发疯:
     - blog/发疯.md
   - 长期主义:
@@ -482,5 +486,4 @@ hooks:
   # - docs/overrides/hooks/ai_summary.pysite_name: gzh
 site_url: https://gongzihang6.github.io/
 site_author: gzh
-# theme:
-#   name: material #主题
+
