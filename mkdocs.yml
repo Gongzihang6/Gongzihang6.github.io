@@ -94,6 +94,7 @@ nav:
       - blog/Computer Science/LeetCode热题100/盛水最多的容器.md
       - blog/Computer Science/LeetCode热题100/三数之和.md
       - blog/Computer Science/LeetCode热题100/无重复字符的最长子串.md
+      - blog/Computer Science/LeetCode热题100/和为K的子数组.md
     - LeetCode:
       - blog/Computer Science/LeetCode/交易逆序对的总数.md
       - blog/Computer Science/LeetCode/单词接龙.md
@@ -152,6 +153,8 @@ nav:
     - blog/随笔/2024年秋招-小米集团-软件开发岗-第一批笔试.md
     - blog\随笔\cmd_powershell_bash.md
     - blog\随笔\正则表达式.md
+    - blog/随笔/对注解Autowired的理解.md
+    - blog/随笔/http状态码含义以及对应解决方案.md
     
   - 每日诗词:
     - blog/每日诗词/虞美人·玉阑干外清江浦.md
@@ -178,6 +181,15 @@ nav:
     - blog/每日诗词/声声慢·寻寻觅觅.md
     - blog/每日诗词/虞美人·听雨.md
     - blog/每日诗词/青玉案·凌波不过横塘路.md
+    - blog/每日诗词/相见欢·林花谢了春红.md
+    - blog/每日诗词/临江仙·梦后楼台高锁.md
+    - blog/每日诗词/题都城南庄.md
+    - blog/每日诗词/浪淘沙令·帘外雨潺潺.md
+    - blog/每日诗词/鹧鸪天·代人赋.md
+    - blog/每日诗词/水仙子·夜雨.md
+    - blog/每日诗词/唐多令·惜别.md
+    - blog/每日诗词/浪淘沙·把酒祝东风.md
+    - blog/每日诗词/临安春雨初霁.md
   - 发疯:
     - blog/发疯.md
   - 长期主义:

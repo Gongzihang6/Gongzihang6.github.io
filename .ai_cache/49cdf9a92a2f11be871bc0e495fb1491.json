@@ -1,7 +1,7 @@
 {
-  "summary": "Java集合框架提供了高效的数据存储与操作方案，主要包括单列集合Collection（List、Set）和双列集合Map。List接口实现类ArrayList（动态数组）和LinkedList（双向链表）分别适用于随机访问和频繁增删场景；Set接口实现类HashSet（哈希表）、LinkedHashSet（有序哈希表）和TreeSet（排序树）保障元素唯一性。文章详细分析了各集合的底层结构（如数组扩容机制、哈希冲突处理）、遍历方式（迭代器/Lambda）及并发修改异常解决方案，并对比了不同数据结构的性能特点与应用场景。",
+  "summary": "Java集合框架提供了核心数据结构实现，包括Collection单列集合和Map键值对集合。重点分析了List（ArrayList/LinkedList）、Set（HashSet/LinkedHashSet）的实现原理：ArrayList基于动态数组（1.5倍扩容），LinkedList使用双向链表；HashSet通过哈希表（数组+链表+红黑树）实现去重。文章详细探讨了集合遍历方式（迭代器、增强for、Lambda）、并发修改异常解决方案，以及String的不可变特性和内存优化机制，为Java开发者提供了实用的集合操作指南。",
   "service": "deepseek",
   "page_title": "Java集合框架与常用API",
-  "timestamp": "2025-07-20T17:35:15.163028",
+  "timestamp": "2025-09-03T10:30:48.436658",
   "language": "zh"
 }
