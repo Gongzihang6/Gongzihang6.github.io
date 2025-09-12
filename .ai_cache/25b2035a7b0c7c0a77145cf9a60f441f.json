@@ -1,0 +1,7 @@
+{
+  "summary": "该问题考察有向加权图中单源最短路径的计算，要求从给定源节点出发，确定信号到达所有其他节点的最大延迟时间。核心解法采用Dijkstra算法（无负权边）或Bellman-Ford算法（含负权边检测），通过优先队列优化实现O(ElogV)时间复杂度。若存在不可达节点或负权环，则返回-1。典型应用于网络路由延迟分析、分布式系统同步等场景。",
+  "service": "deepseek",
+  "page_title": "[743. 网络延迟时间](https://leetcode.cn/problems/network-delay-time/)",
+  "timestamp": "2025-09-12T17:52:20.137456",
+  "language": "zh"
+}

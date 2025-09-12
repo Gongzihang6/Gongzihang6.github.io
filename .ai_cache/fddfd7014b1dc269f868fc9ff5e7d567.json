@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求统计数组中满足\"完全子数组\"条件的连续子序列数目。核心解法通过双指针技术优化，左指针标记子数组起点，右指针扩展至包含所有不同元素时，即可快速计算后续所有有效子数组数量。该方法将时间复杂度从O(n²)优化至O(n)，显著提升效率。适用于需要高效统计特定元素组合的场景，如数据分析或流处理。",
+  "service": "deepseek",
+  "page_title": "[2799. 统计完全子数组的数目](https://leetcode.cn/problems/count-complete-subarrays-in-an-array/)",
+  "timestamp": "2025-09-12T17:49:51.032546",
+  "language": "zh"
+}

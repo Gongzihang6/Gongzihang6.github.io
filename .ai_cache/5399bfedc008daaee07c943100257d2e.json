@@ -1,7 +1,0 @@
-{
-  "summary": "该问题要求在未排序整数数组中找出最长连续数字序列的长度。核心解法利用哈希集合或并查集实现O(n)时间复杂度，通过检查相邻数字是否存在来动态合并序列。并查集方法虽需额外空间，但能直观处理数字连通性，适用于大规模数据。典型应用场景包括数据分析中的连续事件检测和网络节点连通性分析。",
-  "service": "deepseek",
-  "page_title": "[128. 最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/)",
-  "timestamp": "2025-07-20T17:38:40.671802",
-  "language": "zh"
-}

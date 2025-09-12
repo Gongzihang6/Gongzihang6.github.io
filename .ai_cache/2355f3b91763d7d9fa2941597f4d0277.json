@@ -1,7 +1,0 @@
-{
-  "summary": "该文章讨论如何高效计算x的n次幂（Pow(x, n)）。通过分治算法将问题分解为子问题，利用递归或迭代实现O(log n)时间复杂度，避免暴力计算的O(n)复杂度。重点处理n为负数时的倒数转换，以及通过快速幂算法优化计算过程。适用于需要高效幂运算的场景，如密码学和大数计算。",
-  "service": "deepseek",
-  "page_title": "[50. Pow(x, n)](https://leetcode.cn/problems/powx-n/)",
-  "timestamp": "2025-09-03T10:32:16.252106",
-  "language": "zh"
-}

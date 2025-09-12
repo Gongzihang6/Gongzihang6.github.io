@@ -1,7 +1,0 @@
-{
-  "summary": "该问题要求在给定字符串中找出最长回文子序列的长度。回文子序列是通过删除部分字符（可不删除）而不改变剩余字符顺序构成的回文字符串。采用动态规划方法，通过构建二维DP数组记录子问题的解，其中dp[i][j]表示字符串i到j区间内的最长回文子序列长度。算法时间复杂度O(n²)，空间复杂度O(n²)，适用于字符串处理与回文相关场景。",
-  "service": "deepseek",
-  "page_title": "[516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)",
-  "timestamp": "2025-09-03T10:32:06.266080",
-  "language": "zh"
-}

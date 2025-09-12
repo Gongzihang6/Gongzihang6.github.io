@@ -307,13 +307,18 @@ extra:
             Thanks for your feedback! Help us improve this page by
             using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
   # cookies设置（可选）
-  consent:
-    title: Cookie consent
-    description: >-
-      我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
-      如果你同意,你可以帮助我们让我们的网站更好
+  # consent:
+  #   title: Cookie consent
+  #   description: >-
+  #     我们也使用cookies来识别您的重复访问和偏好来衡量我们文档的有效性以及用户是否找到他们要找的东西。
+  #     如果你同意,你可以帮助我们让我们的网站更好
 
 plugins:
+
+  - ai-summary:
+      cache_enabled: true              # 启用缓存
+      cache_expire_days: 300            # 缓存300天
+      clear_cache: false               # 保留现有缓存
   # - exclude:
   #     glob:
   #       - blog/Computer Science/Algorithm/docs/*
@@ -346,35 +351,42 @@ plugins:
         - blog/posts/update.md
         - blog/posts/wkw.md
         - about/link.md
-  - git-revision-date-localized:
-      # enabled: !ENV [CI, false]
-      # type: iso_date
-      # enable_creation_date: false
+  # - git-revision-date-localized:
+  #     # enabled: !ENV [CI, false]
+  #     # type: iso_date
+  #     # enable_creation_date: false
 
-      type: timeago #时间类型
-      custom_format: "%d. %B %Y"  # 时间格式
-      timezone: Europe/Amsterdam #时区
-      locale: en #首选语言
-      fallback_to_build_date: false #许回退到git 不可用时mkdocs build执行的时间
-      enable_creation_date: true #是否启用创建时间
-      exclude:  #排除的页面
-          - index.md
-      enabled: true #是否启用
-      strict: true
+  #     type: timeago #时间类型
+  #     custom_format: "%d. %B %Y"  # 时间格式
+  #     timezone: Europe/Amsterdam #时区
+  #     locale: en #首选语言
+  #     fallback_to_build_date: false #许回退到git 不可用时mkdocs build执行的时间
+  #     enable_creation_date: true #是否启用创建时间
+  #     exclude:  #排除的页面
+  #         - index.md
+  #     enabled: true #是否启用
+  #     strict: true
+  #     exclude:
+  #       # - index.md
+  #       - tag.md
+  #       - liuyanban.md
+  #       - blog/posts/update.md
+  #       - blog/posts/wkw.md
+  #       - about/link.md
+  #       - websitebeauty/linktech.md
+
+  - document-dates:
+      position: top            # 显示位置：top（标题后） bottom（文档末尾），默认：bottom
+      type: date               # 时间类型：date datetime timeago，默认：date
+      locale: zh               # 本地化语言：en zh zh_TW es fr de ar ja ko ru，默认：en
+      date_format: '%Y-%m-%d'  # 日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
+      time_format: '%H:%M:%S'  # 时间格式化字符串（仅在 type=datetime 时有效）
+      exclude:                 # 排除文件列表，默认为空
+        - temp.md              # 排除指定文件
+        - private/*            # 排除 private 目录下所有文件，包括子目录
+      show_author: true        # 是否显示作者信息，默认：true
 
 
-
-
-
-
-      exclude:
-        # - index.md
-        - tag.md
-        - liuyanban.md
-        - blog/posts/update.md
-        - blog/posts/wkw.md
-        - about/link.md
-        - websitebeauty/linktech.md
   - blog: #博客配置
       post_date_format: full #时间
       draft: true

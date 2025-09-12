@@ -1,6 +1,6 @@
-name: ci 
-on:
-  push:
+name: ci    # 定义此工作流的名称
+on: 
+  push:     # 当有 push (推送) 事件发生时触发，限定只有向 master 或 main 分支的推送才会触发
     branches:
       - master 
       - main
@@ -8,30 +8,30 @@ on:
   pull_request:
     types: [closed]
     branches: [main, master]
-permissions:
+permissions:  # 本次工作流运行所使用的 GITHUB_TOKEN 授予权限
   contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          sparse-checkout: |
+jobs:   # 定义工作流中要执行的一系列任务（作业）
+  deploy:   # 定义一个名为 deploy 的 job。你可以任意命名
+    runs-on: ubuntu-latest    # 指定这个 job 在哪种类型的虚拟机上运行。ubuntu-latest 表示使用最新稳定版的 Ubuntu Linux 虚拟机。这是最常用和推荐的选项。
+    steps:                    # 定义 deploy 这个 job 中要按顺序执行的一系列步骤
+      - uses: actions/checkout@v4   # 第一个步骤，使用一个官方预先制作好的 Action (actions/checkout) 来拉取你的仓库代码到虚拟机中
+        with:   # 用于向这个 Action 传递参数
+          fetch-depth: 0    #  拉取完整的 Git 历史记录
+          sparse-checkout: |    # 稀疏检出。这是一个优化项，它告诉 Action 只拉取指定的目录，而不是整个仓库
             docs
             includes
             .ai_cache
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4   # 使用官方的 setup-python Action 来安装和配置 Python 环境
         with:
           python-version: 3.x
       - name: Set cache ID
         run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v3    # 使用官方的 cache Action 来缓存依赖项，避免每次运行都重新下载，从而加速工作流。
         with:
-          key: mkdocs-material-${{ github.run_number }}
-          path: .cache
+          key: mkdocs-material-${{ github.run_number }}   # 定义缓存的唯一键
+          path: .cache    #  指定要缓存的目录。mkdocs-material 可能会使用 .cache 目录来存放一些它自己的缓存文件。
           restore-keys: |
-            mkdocs-material-
+            mkdocs-material-    # 定义一个备用键。如果在当前 key 下找不到缓存，它会尝试寻找以 mkdocs-material- 开头的最新缓存来恢复。
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: pip install mkdocs-git-authors-plugin
       - run: pip install mkdocs-git-committers-plugin-2
@@ -44,7 +44,7 @@ jobs:
       - run: pip install pymdown-extensions
       - run: pip install mkdocs-material 
       - run: pip install --upgrade --force-reinstall mkdocs-material
-      - name: Deploy with AI Summary
+      - name: Deploy with AI Summary    # 核心的构建和部署步骤
         env:
           # AI摘要开关控制
           AI_SUMMARY_CI_ENABLED: 'true'           # CI部署环境启用AI摘要 (true=在CI中为文章生成AI摘要)
@@ -59,7 +59,7 @@ jobs:
       
       # 自动提交新生成的AI缓存文件
       - name: Auto-commit AI cache (if any new files)
-        run: |
+        run: |    # 执行一个多行 shell 脚本
           if [ -d ".ai_cache" ] && [ "$(ls -A .ai_cache 2>/dev/null)" ]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
@@ -75,32 +75,32 @@ jobs:
             echo "ℹ️ 没有找到缓存目录或缓存为空"
           fi
 
-name: ci 
-on:
-  push:
-    branches:
-      - master 
-      - main
-permissions:
-  contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v3
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: pip install mkdocs-material 
-      - run: mkdocs gh-deploy --force
+# name: ci 
+# on:
+#   push:
+#     branches:
+#       - master 
+#       - main
+# permissions:
+#   contents: write
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Configure Git Credentials
+#         run: |
+#           git config user.name github-actions[bot]
+#           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+#       - uses: actions/setup-python@v4
+#         with:
+#           python-version: 3.x
+#       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+#       - uses: actions/cache@v3
+#         with:
+#           key: mkdocs-material-${{ env.cache_id }}
+#           path: .cache
+#           restore-keys: |
+#             mkdocs-material-
+#       - run: pip install mkdocs-material 
+#       - run: mkdocs gh-deploy --force

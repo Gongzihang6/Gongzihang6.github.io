@@ -1,7 +1,0 @@
-{
-  "summary": "该题要求统计两个排列数组中顺序一致的三元组数量。核心是通过位置映射转换问题，利用树状数组或线段树高效计算满足i<j<k且pos1[i]<pos1[j]<pos1[k]的三元组。关键在于将O(n^3)暴力解法优化至O(nlogn)，典型应用包括逆序对问题的扩展。算法涉及离散化处理和动态维护前缀和，适用于大数据量排列匹配场景。",
-  "service": "deepseek",
-  "page_title": "[2179. 统计数组中好三元组数目](https://leetcode.cn/problems/count-good-triplets-in-an-array/)",
-  "timestamp": "2025-09-03T10:31:30.943716",
-  "language": "zh"
-}

@@ -1,0 +1,7 @@
+{
+  "summary": "本文通过势能分析法研究了并查集(DSU)的时间复杂度。核心在于定义阿克曼函数和势函数，分析union和find操作的均摊代价。关键结论是：union操作的时间复杂度为Θ(α(n))，其中α(n)是阿克曼反函数；find操作通过证明至少s-α(n)个节点的势能减少1，同样获得Θ(α(n))的均摊复杂度。该方法利用rank和辅助函数level/iter进行精细分析，适用于需要高效合并查询的场景。",
+  "service": "deepseek",
+  "page_title": "Dsu complexity",
+  "timestamp": "2025-09-12T17:48:52.031895",
+  "language": "zh"
+}

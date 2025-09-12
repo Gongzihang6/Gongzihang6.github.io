@@ -1,7 +1,0 @@
-{
-  "summary": "该问题要求统计整数数组中所有和为k的连续子数组数量。通过前缀和与哈希表优化，将暴力解法$O(n^2)$的时间复杂度降至$O(n)$。核心思路是维护前缀和哈希表，实时检查是否存在`currentSum - k`的键值，从而快速计算满足条件的子数组个数。算法空间复杂度为$O(n)$，适用于大规模数据场景，典型应用包括数据分析与滑动窗口类问题。",
-  "service": "deepseek",
-  "page_title": "[560. 和为 K 的子数组](https://leetcode.cn/problems/subarray-sum-equals-k/)",
-  "timestamp": "2025-09-03T10:33:10.878665",
-  "language": "zh"
-}

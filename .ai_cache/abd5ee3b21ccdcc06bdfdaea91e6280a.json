@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求使用给定面额的无限硬币凑出指定金额的最少硬币数，无法凑出时返回-1。这是一个典型的动态规划问题，通过构建dp数组记录每个子问题的最优解，自底向上求解。其核心在于状态转移方程的设计，适用于金融找零、资源分配等场景。算法时间复杂度O(amount*n)，空间复杂度O(amount)，其中n为硬币种类数。",
+  "service": "deepseek",
+  "page_title": "[322. 零钱兑换](https://leetcode.cn/problems/coin-change/)",
+  "timestamp": "2025-09-12T17:52:29.109090",
+  "language": "zh"
+}

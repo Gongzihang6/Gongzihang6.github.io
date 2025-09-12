@@ -1,7 +1,0 @@
-{
-  "summary": "本文介绍了参与OI Wiki编辑的注意事项，要求贡献者提前阅读参与指南和格式手册。重点提示需在文件头添加GitHub ID，并说明根据Commit Message质量，提交会以Rebase或Squash方式合并，且Squash方式下提交者可能显示为author而非committer。最后提供了编辑入口的JavaScript实现逻辑。",
-  "service": "deepseek",
-  "page_title": "Edit landing",
-  "timestamp": "2025-07-13T11:29:53.583657",
-  "language": "zh"
-}

@@ -1,0 +1,7 @@
+{
+  "summary": "YOLOv5s是一种轻量级目标检测网络，采用Focus模块和C3结构提升特征提取效率。其核心组件包括Conv2d卷积层、BatchNorm2d归一化层和SiLU激活函数，通过Bottleneck结构减少计算量。网络采用多尺度特征融合策略，支持从32到128通道的渐进式特征扩展，适用于实时检测场景。该结构在保持较高精度的同时显著降低了参数量，适合移动端和边缘设备部署。",
+  "service": "deepseek",
+  "page_title": "Yolov5s 网络结构",
+  "timestamp": "2025-09-12T17:53:18.619285",
+  "language": "zh"
+}
