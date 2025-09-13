@@ -2455,6 +2455,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3016,6 +3020,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4547,13 +4597,12 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>正则表达式是一种用于字符串匹配的规则工具，通过定义特定模式从文本中提取或验证目标内容。核心功能包括字符组（如[a-z]）、元字符（如\d）、量词（如X+）以及分组和贪婪/惰性匹配机制。广泛应用于数据验证（手机号、邮箱）、文本处理和信息爬取等场景。其语法简洁高效，支持逻辑运算和预定义字符类，能有效提升字符串处理的准确性和灵活性。</p>
+<p>正则表达式是一种用于匹配和提取字符串中特定模式的规则工具。文章详细介绍了其核心语法，包括字符组、元字符、量词、贪婪/惰性匹配以及分组功能，并提供了验证手机号、邮箱、身份证等常见场景的代码示例。此外还讲解了本地和网络数据爬取中正则的应用，帮助开发者高效处理字符串匹配任务。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>4</strong> 分钟 | 中文字符：<strong>1574</strong> | 有效代码行数：<strong>588</strong></p>
+<p>阅读时间：<strong>4</strong> 分钟 | 中文字符：<strong>1530</strong> | 有效代码行数：<strong>588</strong></p>
 </div>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:37.407315+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-31'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-31T20:44:10.927073+08:00'>2025-07-31</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <h3 id="_1">一、正则表达式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>简单理解正则表达式就是用来匹配一段字符串中自己想要的部分的匹配规则，从一段长字符串中抽取想要的关键信息
 </code></pre></div></td></tr></table></div>
@@ -6133,6 +6182,7 @@ Matcher：文本匹配器，作用按照正则表达式的规则去读取字符�
 <a id="__codelineno-29-11" name="__codelineno-29-11"></a><span class="n">身份证号码</span><span class="err">，</span><span class="n">严格校验</span><span class="err">：</span>
 <a id="__codelineno-29-12" name="__codelineno-29-12"></a><span class="w">        </span><span class="o">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="o">]</span><span class="err">\\</span><span class="n">d</span><span class="p">{</span><span class="mi">5</span><span class="p">}(</span><span class="mi">18</span><span class="o">|</span><span class="mi">19</span><span class="o">|</span><span class="mi">20</span><span class="p">)</span><span class="err">\\</span><span class="n">d</span><span class="p">{</span><span class="mi">2</span><span class="p">}(</span><span class="mi">0</span><span class="o">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="o">]|</span><span class="mi">1</span><span class="o">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">2</span><span class="o">]</span><span class="p">)(</span><span class="mi">0</span><span class="o">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="o">|[</span><span class="mi">12</span><span class="o">]</span><span class="p">)</span><span class="err">\\</span><span class="n">d</span><span class="o">|</span><span class="mi">3</span><span class="o">[</span><span class="mo">01</span><span class="o">]</span><span class="p">)</span><span class="err">\\</span><span class="n">d</span><span class="p">{</span><span class="mi">3</span><span class="p">}</span><span class="o">[</span><span class="err">\\</span><span class="n">dXx</span><span class="o">]</span>
 </code></pre></div></td></tr></table></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:37.407315+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-31'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-31T20:44:10.927073+08:00'>2025-07-31</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

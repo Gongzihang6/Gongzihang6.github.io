@@ -2480,6 +2480,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2738,6 +2742,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -3999,15 +4049,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求统计数组中满足"完全子数组"条件的连续子序列数目。核心解法通过双指针技术优化，左指针标记子数组起点，右指针扩展至包含所有不同元素时，即可快速计算后续所有有效子数组数量。该方法将时间复杂度从O(n²)优化至O(n)，显著提升效率。适用于需要高效统计特定元素组合的场景，如数据分析或流处理。</p>
+<p>该文探讨如何高效统计数组中满足"完全子数组"条件的连续子序列数目。核心解法采用双指针滑动窗口技术，通过维护左右指针动态计算窗口内不同元素数量，当窗口包含全部不同元素时，直接累加剩余可能子数组数目，将时间复杂度优化至O(n)。算法利用哈希表记录元素频率，适用于处理正整数数组的完全子数组统计问题。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>319</strong> | 有效代码行数：<strong>56</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>368</strong> | 有效代码行数：<strong>56</strong></p>
 </div>
 <h1 id="2799"><a href="https://leetcode.cn/problems/count-complete-subarrays-in-an-array/">2799. 统计完全子数组的数目</a><a class="headerlink" href="#2799" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>给你一个由 <strong>正</strong> 整数组成的数组 <code>nums</code> 。</p>
 <p>如果数组中的某个子数组满足下述条件，则称之为 <strong>完全子数组</strong> ：</p>
 <ul>
@@ -4147,6 +4195,7 @@
 <a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="p">};</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

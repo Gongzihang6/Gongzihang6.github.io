@@ -2596,6 +2596,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2854,6 +2858,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4207,15 +4257,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求将N块不同尺寸的矩形巧克力切割成K个相同大小的最大正方形，满足公平分配。核心是通过二分查找算法确定满足条件的最大边长，优化搜索效率。输入包括巧克力数量和尺寸，输出最大可行边长。技术关键在于利用二分法快速定位解，时间复杂度为O(N log(max(H,W)))，适用于大规模数据。</p>
+<p>该问题要求在给定N块不同尺寸的巧克力中，切割出K个相同大小的最大正方形。采用二分查找算法优化求解过程，通过计算每块巧克力在当前边长下可切分的数量总和，动态调整搜索范围以确定最大可行边长。算法时间复杂度为O(NlogM)，其中M为最大可能边长，确保在2秒内处理10^5量级的数据。核心在于高效验证候选边长是否满足需求，适用于资源分配类优化问题。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>279</strong> | 有效代码行数：<strong>66</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>485</strong> | 有效代码行数：<strong>66</strong></p>
 </div>
 <h1 id="_1">分巧克力<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.883417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.883417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <h2 id="_2">问题描述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>儿童节那天有 <span class="arithmatex">\(K\)</span> 位小朋友到小明家做客。小明拿出了珍藏的巧克力招待小朋友们。</p>
 <p>小明一共有 <span class="arithmatex">\(N\)</span> 块巧克力，其中第 <span class="arithmatex">\(i\)</span> 块是 <span class="arithmatex">\(H_i \times W_i\)</span> 的方格组成的长方形。为了公平起见，小明需要从这 <span class="arithmatex">\(N\)</span> 块巧克力中切出 <span class="arithmatex">\(K\)</span> 块巧克力分给小朋友们。切出的巧克力需要满足：</p>
@@ -4403,6 +4451,7 @@
 <a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.883417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.883417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

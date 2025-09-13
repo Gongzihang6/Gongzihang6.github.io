@@ -2602,6 +2602,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2860,6 +2864,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4251,15 +4301,14 @@
 
   <h1>理解YOLO网络结构</h1>
 
-<div class="admonition tip">
-<p class="admonition-title">📝 自动摘要</p>
-<p>本文围绕理解YOLO网络结构展开讨论，介绍了相关的技术概念、应用场景和实践方法。</p>
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>YOLOv5网络结构包含Backbone、Neck和Head三部分。Backbone采用Focus模块切片降维，配合BottleNeck残差结构和C3模块进行特征提取，逐步生成P3、P4等多尺度特征图。Neck部分通过SPP模块融合不同感受野特征，结合上采样和特征拼接实现多尺度信息交互。该设计在保持轻量化的同时提升了目标检测精度，适用于实时检测场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1209</strong> | 有效代码行数：<strong>350</strong></p>
 </div>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2023-04-06'><span class='material-icons' data-icon='doc_created'></span><time datetime='2023-04-06T23:18:00'>2023-04-06</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.901415+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <h3 id="yolo">yolo网络结构详解<a class="headerlink" href="#yolo" title="Permanent link">&para;</a></h3>
 <p>先来放上整个网络结构的示意图，图中所示为yolov5l的网络结构图</p>
 <p><img alt="yolov5l整体网络结构(部分参数不正确，以文中介绍为准)" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fyolov5.jpeg" /></p>
@@ -5023,6 +5072,7 @@
 <a id="__codelineno-12-70" name="__codelineno-12-70"></a>        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">xv</span><span class="p">,</span> <span class="n">yv</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>​       分类和 bbox 检测等都是在同一个卷积的不同通道中完成，预测结果在通道维得到。</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2023-04-06'><span class='material-icons' data-icon='doc_created'></span><time datetime='2023-04-06T23:18:00'>2023-04-06</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.901415+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

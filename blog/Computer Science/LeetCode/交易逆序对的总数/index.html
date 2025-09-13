@@ -2608,6 +2608,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2866,6 +2870,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4231,15 +4281,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该题要求统计股票交易记录中逆序对的总数，即前一日股价高于后一日的情况。推荐使用归并排序解法，在合并过程中统计逆序对，时间复杂度为O(n log n)。树状数组解法同样高效且适合大规模数据，而暴力解法（O(n²)）仅适用于小规模数据。解题关键在于理解逆序对定义，掌握归并排序思想，并注意边界条件处理。</p>
+<p>该题要求统计股票交易记录中所有逆序对（前日股价高于后日）的总数。推荐使用归并排序法，在合并过程中统计逆序对，实现O(n log n)时间复杂度的最优解；树状数组解法通过离散化处理同样高效，适合大规模数据。暴力解法（O(n²)）仅适用于小规模数据。核心在于理解逆序对定义及归并排序的变种应用，需注意边界条件处理。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>380</strong> | 有效代码行数：<strong>97</strong></p>
 </div>
 <h1 id="lcr-170"><a href="https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/">LCR 170. 交易逆序对的总数</a><a class="headerlink" href="#lcr-170" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.882417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.882417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」。请设计一个程序，输入一段时间内的股票交易记录 <code>record</code>，返回其中存在的「交易逆序对」总数。</p>
 <p><strong>示例 1：</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -4516,6 +4564,7 @@
 <li>注意边界条件处理</li>
 </ol>
 <p>希望这个详细的解答能帮助你彻底理解这道题！</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.882417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.882417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

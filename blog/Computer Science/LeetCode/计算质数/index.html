@@ -2473,6 +2473,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2731,6 +2735,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -3992,13 +4042,12 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文探讨了高效计算小于给定整数n的质数数量的算法，重点对比了埃氏筛和线性筛两种方法的处理机制。通过具体示例分析，线性筛通过仅用最小质因数标记合数，避免了重复计算，显著提升了效率。文章还涉及积性函数的相关概念，为深入理解质数分布和筛选算法提供了理论基础。</p>
+<p>该文章介绍了计算小于给定整数n的质数数量的算法。核心方法是埃拉托斯特尼筛法，通过标记非质数来高效统计质数。算法从2开始遍历，将每个质数的倍数标记为非质数，最终统计剩余质数。时间复杂度优化为O(n log log n)，适用于大规模数据计算。示例代码展示了C++实现，包括边界条件处理和空间优化技巧。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>221</strong> | 有效代码行数：<strong>95</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>42</strong> | 有效代码行数：<strong>95</strong></p>
 </div>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.890417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.890417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <p>204.<a href="https://leetcode.cn/problems/count-primes/"> 计数质数</a></p>
 <p>给定整数 <code>n</code> ，返回 <em>所有小于非负整数 <code>n</code> 的质数的数量</em> 。</p>
 <p><strong>示例 1：</strong></p>
@@ -4209,6 +4258,7 @@
 <p>埃氏筛处理过程：i = 2 时，将 24 标记为非质数；i = 3 时，会再次将 24 标记为质数</p>
 <p>线性筛处理过程：<mark>i = 2 时</mark>，primes 中有 [2]，primes.size()= 1，会将 4 标记为质数；然后 for 循环结束，进入 if 然后 break；<mark>i = 3 时</mark>，primes 中有 [2,3]，primes.size()= 2，会将 6、9 标记为非质数，然后 for 循环结束，进入 if 然后 break；<mark>i = 5 时</mark>，primes 中有 [2,3,5]，primes.size()= 3，会将 10、15、25 标记为非质数，然后 for 循环结束，进入 if 然后 break；<mark>i = 7 时</mark>，primes 中有 [2,3,5,7]，primes.size()= 4，会将 14，21，35，49 标记为非质数，然后 for 循环结束，进入 if 然后 break；<mark>i = 8 时</mark>，primes 中有 [2,3,5,7]，primes.size()= 4，会将 16 标记为非质数，进入 if 然后 break；<mark>i = 11 时</mark>，primes 中有 [2,3,5,7,11]，primes.size()= 5，会将 22，33，55，77，121 标记为非质数，然后 for 循环结束，进入 if 然后 break；<mark>i = 12 时</mark>，primes 中有 [2,3,5,7,11]，primes.size()= 5，<strong>会将 24 标记为非质数，进入 if 然后 break；</strong> 此时 24 只会在 i = 12 时被标记为非质数 1 次。</p>
 <p>关于积性函数，https://www.cnblogs.com/zhoushuyu/p/8275530.html</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.890417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.890417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

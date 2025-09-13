@@ -2455,6 +2455,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2807,6 +2811,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4125,19 +4175,15 @@
   
 
 
-<div class="admonition tip">
-<p class="admonition-title">📝 自动摘要</p>
-<p>[代码示例]</p>
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>@Autowired<code>和</code>import<code>在Spring框架中承担不同角色：</code>import<code>在编译阶段解决类路径引用问题，确保编译器识别类型；而</code>@Autowired<code>通过Spring IoC容器实现运行时依赖注入，自动装配Bean实例。前者处理代码层面的类型声明，后者管理对象生命周期与解耦，两者需配合使用才能完成从类定义到实例化的完整流程。典型应用如Controller中通过</code>import<code>引入Service接口，再通过</code>@Autowired`获取其实现类实例。</p>
 </div>
-<p>简单来说，[代码] 和 [代码] 解决了两个完全不同层面的问题：</p>
-<p>1.[代码]: 解决的是 编译时 的 “类型识别” 问题.[代码]: 解决的是 运行时 的 “对象注入” 问题.</p>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>999</strong> | 有效代码行数：<strong>27</strong></p>
 </div>
 <h1 id="autowired-import">@Autowired 和 import 的区别<a class="headerlink" href="#autowired-import" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-09-05'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-09-05T16:41:37.016350+08:00'>2025-09-05</time></span><span data-tippy-content data-tippy-raw='2025-09-05'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-09-05T16:45:17.794195+08:00'>2025-09-05</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>在 Tilas 员工管理系统中，为什么需要@Autowired 这个注解来注解 EmployService 这个接口类呢？import 为什么不够呢？</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -4294,6 +4340,7 @@
 <p>所以，在 Spring 框架中，<code>import</code> 和 <code>@Autowired</code> 必须同时使用：
 *   用 <code>import</code> 告诉编译器 <code>EmployeeService</code> 是什么。
 *   用 <code>@Autowired</code> 告诉 Spring 框架在运行时给我一个 <code>EmployeeService</code> 的实例。</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-09-05'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-09-05T16:41:37.016350+08:00'>2025-09-05</time></span><span data-tippy-content data-tippy-raw='2025-09-05'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-09-05T16:45:17.794195+08:00'>2025-09-05</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

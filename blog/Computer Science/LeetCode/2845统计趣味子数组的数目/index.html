@@ -2539,6 +2539,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2797,6 +2801,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4093,15 +4143,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该题要求统计满足特定条件的子数组数量，称为"趣味子数组"。核心条件是子数组中模运算结果为给定值的元素数量必须满足另一个模运算等式。解题需处理数组的连续子序列，并高效计算符合条件的区间数目。典型解法涉及前缀和与哈希表优化，将问题转化为寻找满足特定差值的前缀统计，时间复杂度可优化至O(n)。适用于处理大规模数组的统计问题。</p>
+<p>该题要求统计数组中满足特定条件的"趣味子数组"数量。核心条件是子数组中满足元素模modulo等于k的索引数，其本身模modulo也等于k。解题采用前缀和与哈希表优化，通过维护模数频率将时间复杂度降至O(n)。典型应用场景涉及大数据量下的快速统计，需注意子数组的连续性和边界处理。算法关键在于将模运算转化为可累计的前缀差值问题。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>130</strong> | 有效代码行数：<strong>81</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>180</strong> | 有效代码行数：<strong>81</strong></p>
 </div>
 <h1 id="2845"><a href="https://leetcode.cn/problems/count-of-interesting-subarrays/">2845. 统计趣味子数组的数目</a><a class="headerlink" href="#2845" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> ，以及整数 <code>modulo</code> 和整数 <code>k</code> 。</p>
 <p>请你找出并统计数组中 <strong>趣味子数组</strong> 的数目。</p>
 <p>如果 <strong>子数组</strong> <code>nums[l..r]</code> 满足下述条件，则称其为 <strong>趣味子数组</strong> ：</p>
@@ -4325,6 +4373,7 @@
 <a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.878418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

@@ -2592,6 +2592,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2850,6 +2854,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4203,13 +4253,12 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文通过势能分析法研究了并查集(DSU)的时间复杂度。核心在于定义阿克曼函数和势函数，分析union和find操作的均摊代价。关键结论是：union操作的时间复杂度为Θ(α(n))，其中α(n)是阿克曼反函数；find操作通过证明至少s-α(n)个节点的势能减少1，同样获得Θ(α(n))的均摊复杂度。该方法利用rank和辅助函数level/iter进行精细分析，适用于需要高效合并查询的场景。</p>
+<p>本文通过势能分析探讨了DSU（并查集）的时间复杂度。定义了阿克曼函数<span class="arithmatex">\(A_k(j)\)</span>及其反函数<span class="arithmatex">\(\alpha(n)\)</span>，引入节点rank和辅助函数<span class="arithmatex">\(level(x)\)</span>、<span class="arithmatex">\(iter(x)\)</span>构建势能模型。关键证明显示每次操作的摊还成本为<span class="arithmatex">\(O(\alpha(n))\)</span>，最终得出DSU的均摊时间复杂度为<span class="arithmatex">\(O(m\alpha(n))\)</span>，其中<span class="arithmatex">\(m\)</span>为操作次数。该分析为并查集的高效性提供了理论依据。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>5</strong> 分钟 | 中文字符：<strong>1864</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>497</strong></p>
 </div>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.715417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.715417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='orzAtalod' data-tippy-content data-tippy-raw='orzAtalod'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <p>本部分内容转载并修改自 <a href="https://www.luogu.com.cn/blog/Atalod/shi-jian-fu-za-du-shi-neng-fen-xi-qian-tan">时间复杂度 - 势能分析浅谈</a>，已取得原作者授权同意。</p>
 <h2 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">阿克曼函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -4300,6 +4349,7 @@ A_k(j)=\left\{
 <p>所以，可以考虑使用 <span class="arithmatex">\(\log_2 siz(x)\)</span> 代替 <span class="arithmatex">\(rnk(x)\)</span>。</p>
 <p>关于第一条性质，由于节点的 <span class="arithmatex">\(siz\)</span> 最多翻倍，所以 <span class="arithmatex">\(\log_2 siz(x)\)</span> 最多上升 1。关于第二三条性质，结论较为显然，这里略去证明。</p>
 <p>所以说，如果不想写按秩合并，就写启发式合并好了，时间复杂度仍旧是 <span class="arithmatex">\(\Theta(m\alpha(n))\)</span>。</p>
+<p><div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.715417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.715417+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='orzAtalod' data-tippy-content data-tippy-raw='orzAtalod'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

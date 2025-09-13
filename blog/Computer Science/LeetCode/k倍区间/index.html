@@ -2521,6 +2521,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2779,6 +2783,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4057,15 +4107,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该文章介绍了如何高效计算数列中所有和为K的倍数的连续子区间（K倍区间）数量。核心算法利用前缀和数组和模运算性质，通过哈希表记录余数出现次数，将时间复杂度优化至O(N)。当两个前缀和对K取模结果相同时，其区间和必为K的倍数。该方法适用于大规模数据（N,K≤10^5），满足严格的时间（2s）和内存（256MB）限制。</p>
+<p>该文介绍了如何高效计算数列中所有和为K倍数的连续子区间数量。通过前缀和数组和模运算性质，将问题转化为统计相同余数出现次数，利用哈希表记录余数频次实现O(N)时间复杂度。算法适用于大规模数据（N,K≤10^5），关键步骤包括前缀和计算、非负余数处理及哈希表动态更新，最终输出满足条件的区间总数。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>431</strong> | 有效代码行数：<strong>27</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>419</strong> | 有效代码行数：<strong>27</strong></p>
 </div>
 <h1 id="k">k 倍区间<a class="headerlink" href="#k" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.880418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.881418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p><strong>题目描述</strong></p>
 <p>给定一个长度为 <span class="arithmatex">\(N\)</span> 的数列，<span class="arithmatex">\(A_1, A_2, \cdots A_N\)</span>，如果其中一段连续的子序列 <span class="arithmatex">\(A_i, A_i + 1, \cdots A_j \ (i \leq j)\)</span> 之和是 <span class="arithmatex">\(K\)</span> 的倍数，我们就称这个区间 <span class="arithmatex">\([i, j]\)</span> 是 <span class="arithmatex">\(K\)</span> 倍区间。</p>
 <p>你能求出数列中总共有多少个 <span class="arithmatex">\(K\)</span> 倍区间吗？</p>
@@ -4188,6 +4236,7 @@
 <li><code>cnt += 2</code>（表示当前前缀和可以和之前 2 个相同余数的前缀和配对，形成 2 个新的满足条件的子序列）。</li>
 <li><code>remainderCount[r]</code> 更新为 3。</li>
 </ol>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.880418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.881418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

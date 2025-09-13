@@ -2530,6 +2530,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2788,6 +2792,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4075,15 +4125,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求统计整数数组中连续子数组和等于给定值k的个数。通过前缀和与哈希表结合的方法，将时间复杂度从暴力解法的O(n<sup>2)优化至O(n)。具体实现中，哈希表记录前缀和出现次数，遍历时检查currentSum-k是否存在，从而快速计算符合条件的子数组数量。该方法高效处理了大规模数据，适用于数组长度达2×10</sup>4的场景。</p>
+<p>该问题要求统计整数数组中连续子数组和等于给定值k的个数。暴力解法需O(n²)时间，而利用前缀和与哈希表可优化至O(n)。核心思路是维护前缀和及其出现次数的映射，通过检查currentSum-k是否存在哈希表中快速计算满足条件的子数组数量，显著提升效率。适用于大规模数组处理，典型应用场景包括数据分析与信号处理。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>114</strong> | 有效代码行数：<strong>52</strong></p>
 </div>
 <h1 id="560-k"><a href="https://leetcode.cn/problems/subarray-sum-equals-k/">560. 和为 K 的子数组</a><a class="headerlink" href="#560-k" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-09-03'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-09-03T09:15:19.573891+08:00'>2025-09-03</time></span><span data-tippy-content data-tippy-raw='2025-09-03'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-09-03T09:54:49.515518+08:00'>2025-09-03</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你统计并返回 <em>该数组中和为 <code>k</code> 的子数组的个数</em> 。</p>
 <p>子数组是数组中元素的连续非空序列。</p>
 <p><strong>示例 1：</strong></p>
@@ -4218,6 +4266,7 @@
 <a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-09-03'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-09-03T09:15:19.573891+08:00'>2025-09-03</time></span><span data-tippy-content data-tippy-raw='2025-09-03'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-09-03T09:54:49.515518+08:00'>2025-09-03</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

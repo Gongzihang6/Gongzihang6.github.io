@@ -2548,6 +2548,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2806,6 +2810,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4111,15 +4161,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求通过动态规划求解按顺序处理考试题目时的最高得分策略。每个题目可选择解决（获得分数但跳过后续若干题）或跳过（保留后续选择权）。采用从后往前的动态规划方法，定义dp[i]为从第i题开始能获得的最大分数，通过比较解决当前题与跳过的最优解来更新状态。算法时间复杂度O(n)，空间复杂度O(n)，适用于需要序列决策优化的场景。</p>
+<p>该问题要求在一系列按顺序排列的题目中，通过动态规划策略选择解决或跳过题目以最大化总分。解决当前题目会获得分数但必须跳过后续指定数量的题目，而跳过则保留后续选择权。采用逆向动态规划，从后向前计算每个位置的最优解，通过比较解决当前题目的收益与跳过后的潜在收益来确定最优策略。典型应用场景包括考试策略优化和资源分配问题。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>270</strong> | 有效代码行数：<strong>46</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>218</strong> | 有效代码行数：<strong>46</strong></p>
 </div>
 <h1 id="2140"><a href="https://leetcode.cn/problems/solving-questions-with-brainpower/">2140. 解决智力问题</a><a class="headerlink" href="#2140" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.874416+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.874416+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>给你一个下标从 <strong>0</strong> 开始的二维整数数组 <code>questions</code> ，其中 <code>questions[i] = [pointsi, brainpoweri]</code> 。</p>
 <p>这个数组表示一场考试里的一系列题目，你需要 <strong>按顺序</strong> （也就是从问题 <code>0</code> 开始依次解决），针对每个问题选择 <strong>解决</strong> 或者 <strong>跳过</strong> 操作。解决问题 <code>i</code> 将让你 <strong>获得</strong> <code>pointsi</code> 的分数，但是你将 <strong>无法</strong> 解决接下来的 <code>brainpoweri</code> 个问题（即只能跳过接下来的 <code>brainpoweri</code> 个问题）。如果你跳过问题 <code>i</code> ，你可以对下一个问题决定使用哪种操作。</p>
 <ul>
@@ -4319,6 +4367,7 @@
 <li>对于每个问题，选择解决或跳过，取最大值。</li>
 </ol>
 <p>这种方法确保了我们在最优子结构的基础上，通过动态规划高效地计算出最大分数。</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.874416+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.874416+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

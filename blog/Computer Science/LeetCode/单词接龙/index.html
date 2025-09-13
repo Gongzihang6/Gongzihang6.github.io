@@ -2480,6 +2480,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2738,6 +2742,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -3999,15 +4049,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求找到从起始词到目标词的最短转换序列，每次只能改变一个字母且中间词必须在给定词典中。典型解法是使用广度优先搜索（BFS）逐层探索可能路径，通过预处理构建邻接关系优化效率。适用于词链搜索、拼写校正等场景，时间复杂度取决于词典规模和词长。</p>
+<p>该问题要求在字典中找出从起始词到目标词的最短转换序列，每次只能改变一个字母且中间词必须存在于字典中。解决方案采用广度优先搜索（BFS）算法，通过队列逐层遍历可能的转换路径，利用哈希集合快速查询字典并避免重复访问。算法时间复杂度为O(M²×N)，其中M为单词长度，N为字典大小，适用于中等规模数据。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>70</strong> | 有效代码行数：<strong>52</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>111</strong> | 有效代码行数：<strong>52</strong></p>
 </div>
 <h1 id="127"><a href="https://leetcode.cn/problems/word-ladder/">127. 单词接龙</a><a class="headerlink" href="#127" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.884418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.885419+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>字典 <code>wordList</code> 中从单词 <code>beginWord</code> 到 <code>endWord</code> 的 <strong>转换序列</strong> 是一个按下述规格形成的序列 <code>beginWord -&gt; s1 -&gt; s2 -&gt; ... -&gt; sk</code>：</p>
 <ul>
 <li>每一对相邻的单词只差一个字母。</li>
@@ -4153,6 +4201,7 @@
 <a id="__codelineno-2-55" name="__codelineno-2-55"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <a id="__codelineno-2-56" name="__codelineno-2-56"></a><span class="p">};</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.884418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.885419+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

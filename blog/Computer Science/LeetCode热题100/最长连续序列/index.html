@@ -2629,6 +2629,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2887,6 +2891,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4273,15 +4323,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在未排序整数数组中找出最长连续数字序列的长度。核心解法利用哈希集合或并查集实现O(n)时间复杂度，通过检查相邻数字是否存在来构建连续序列。并查集方法通过合并相邻数字集合高效求解，但需要额外空间。算法适用于需要快速统计数字连续性的场景，如数据分析或序列检测，平衡了时间效率与实现复杂度。</p>
+<p>该文探讨如何高效求解未排序整数数组中最长连续数字序列的长度。核心解法采用并查集数据结构，通过路径压缩和按秩合并优化，确保算法时间复杂度为O(n)。具体实现中，通过哈希表存储父节点和集合大小，动态合并相邻数字的集合，最终快速获取最大连续序列长度。该方法适用于大规模数据处理，解决了传统排序解法O(nlogn)的时间复杂度瓶颈。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>211</strong> | 有效代码行数：<strong>101</strong></p>
+<p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>449</strong> | 有效代码行数：<strong>101</strong></p>
 </div>
 <h1 id="128"><a href="https://leetcode.cn/problems/longest-consecutive-sequence/">128. 最长连续序列</a><a class="headerlink" href="#128" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.893418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.893418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>给定一个未排序的整数数组 <code>nums</code> ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>
 <p>请你设计并实现时间复杂度为 <code>O(n)</code> 的算法解决此问题。</p>
 <p><strong>示例 1：</strong></p>
@@ -4641,6 +4689,7 @@
 <li>需要额外空间存储并查集结构</li>
 <li>实现相对哈希集合法稍复杂</li>
 </ul>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.893418+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.893418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

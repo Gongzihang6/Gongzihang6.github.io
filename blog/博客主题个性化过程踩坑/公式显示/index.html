@@ -2447,6 +2447,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2705,6 +2709,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4010,13 +4060,12 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>MkDocs通过Markdown扩展在服务端识别和保护LaTeX公式代码，防止其被其他处理器破坏；MathJax则在客户端将受保护的代码渲染为可视化公式。两者协同工作，需正确配置服务端的公式识别规则和客户端的渲染参数，确保LaTeX语法完整传递并正确解析，从而实现精准的数学公式显示。</p>
+<p>MkDocs通过Markdown扩展在服务端识别和保护LaTeX公式代码，生成包含原始公式的HTML文件；MathJax则在客户端动态渲染这些公式为可视化内容。两者需协同配置：Markdown扩展确保公式语法不被破坏，MathJax负责最终呈现。配置不当会导致公式解析错误或渲染失败，需同时优化两端设置以实现完美显示。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1052</strong></p>
 </div>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:37.380638+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:37.380638+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <p>公式显示依赖mkdocs包自带的markdown扩展和mathjax</p>
 <p>这是一个非常好的问题，它触及了 MkDocs 数学公式渲染流程的核心。理解它们的区别和关系，就能明白为什么我们要做那些配置。</p>
 <p>简单来说，它们是<strong>两个不同阶段、负责不同任务的工具</strong>，需要协同工作才能正确显示公式。</p>
@@ -4063,6 +4112,7 @@
 </ul>
 <p><strong>结论</strong>：
 你必须同时正确配置好<strong>服务端（构建时）的 Markdown 扩展</strong>和<strong>客户端（浏览器）的 MathJax 库</strong>，让它们无缝衔接，才能得到完美的数学公式显示效果。我们之前的调试过程，实际上就是在校准这两棒选手的交接动作。</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:37.380638+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:37.380638+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

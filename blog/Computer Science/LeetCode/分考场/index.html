@@ -2650,6 +2650,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2908,6 +2912,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4315,15 +4365,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求将n个考生分配到最少的考场中，确保认识的人不在同一考场，可抽象为图的着色问题。采用回溯法结合贪心优化策略：先用Welsh-Powell算法获取初始上界，再通过回溯搜索进行精确求解，利用邻接矩阵存储关系并实施剪枝优化。该方法在保证结果准确性的同时显著降低时间复杂度，适用于n≤100的规模。核心挑战在于平衡NP难问题的计算复杂度与实时性要求。</p>
+<p>该文探讨了将n个考生分配到最少考场的问题，要求相互认识的考生不在同一考场。问题转化为图的着色问题，需计算图的色数。针对小规模数据(n≤100)，提出回溯法解决方案，使用邻接矩阵存储关系，通过剪枝优化搜索效率。文章还介绍了贪心算法(Welsh-Powell)获取初始上界以加速收敛。最终通过C++代码实现，在1秒时间限制内求解最少考场数。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
-<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>669</strong> | 有效代码行数：<strong>141</strong></p>
+<p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>677</strong> | 有效代码行数：<strong>141</strong></p>
 </div>
 <h1 id="_1">分考场<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.883417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.884418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <h3 id="_2">题目描述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>n 个人参加某项特殊考试。</p>
 <p>为了公平，要求任何两个认识的人不能分在同一个考场。</p>
@@ -4712,6 +4760,7 @@
 <li><strong>回溯法</strong>：最坏情况下仍为指数级，但通过贪心上界剪枝，实际运行时间大幅减少。</li>
 </ul>
 <p>这种方法结合了贪心算法的快速性和回溯法的精确性，能够在较短时间内找到最优解。</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.883417+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.884418+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

@@ -2585,6 +2585,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2843,6 +2847,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4199,13 +4249,12 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>Apriori算法是一种经典的数据挖掘方法，用于从交易数据库中挖掘频繁项集。其核心基于Apriori原则，通过逐层搜索和剪枝策略高效减少计算量。算法通过多次扫描数据库，逐步生成候选集并筛选满足最小支持度的频繁项集。关键优化包括项的字典序排序，确保项集唯一性并避免冗余计算。该算法适用于市场篮子分析等场景，能有效发现商品间的关联规则。</p>
+<p>Apriori算法通过逐层搜索和剪枝策略挖掘频繁项集，其核心是利用Apriori原则（频繁项集的子集必频繁）减少计算量。算法步骤包括：扫描数据库生成候选项集、剪枝非频繁项集、迭代直至无法扩展。关键优化是采用字典序排列项，避免重复计数并确保项集唯一性。该算法适用于市场篮子分析等场景，能有效发现商品间的关联规则。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>3</strong> 分钟 | 中文字符：<strong>1292</strong> | 有效代码行数：<strong>17</strong></p>
 </div>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.899415+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.899415+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <p>[toc]</p>
 <h1 id="_1">关联分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>好的，我们来详细解析一下这张幻灯片所展示的Apriori算法，并根据您的要求，深入讲解其原理、步骤、优化方法，特别是图中强调的“项的字典序”问题。</p>
@@ -4532,6 +4581,7 @@
 1.  <strong>内存消耗:</strong> FP-Tree本身需要存储在内存中。对于非常庞大且稀疏的数据集（例如，有非常多的独立商品），FP-Tree可能会非常大，甚至无法装入内存。
 2.  <strong>实现复杂性:</strong> 相比Apriori，FP-Growth的实现（特别是递归挖掘部分）更为复杂。</p>
 <p>总的来说，FP-Growth通过牺牲一定的空间复杂度和实现复杂度，换取了时间效率上的巨大提升，是发现频繁项集更为主流和高效的方法。</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.899415+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.899415+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

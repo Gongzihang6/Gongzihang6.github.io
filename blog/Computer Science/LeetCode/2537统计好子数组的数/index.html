@@ -2539,6 +2539,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2797,6 +2801,52 @@
   
   <span class="md-ellipsis">
     Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E9%9A%8F%E7%AC%94/SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
     
   </span>
   
@@ -4093,15 +4143,13 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求统计数组中满足至少包含k对相同元素的子数组数量。采用滑动窗口技术，通过维护左右指针和哈希表动态计算当前窗口内的元素对数，当对数达到k时累加有效子数组数目。算法确保每个元素仅被处理两次，实现O(n)时间复杂度，高效解决大规模数据场景下的子数组统计问题。</p>
+<p>该题要求统计数组中满足至少包含k对相同元素的连续子数组数量。采用滑动窗口技术，通过维护左右指针和哈希表动态计算当前窗口内的元素对数，当满足条件时累加有效子数组数目。算法确保每个元素仅被处理两次，实现O(n)时间复杂度，高效解决大规模数据问题。核心在于利用双指针优化暴力枚举，降低计算复杂度。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>89</strong> | 有效代码行数：<strong>37</strong></p>
 </div>
 <h1 id="2537"><a href="https://leetcode.cn/problems/count-the-number-of-good-subarrays/">2537. 统计好子数组的数目</a><a class="headerlink" href="#2537" title="Permanent link">&para;</a></h1>
-<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.877421+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.877421+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
-
 <p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你返回 <code>nums</code> 中 <strong>好</strong> 子数组的数目。</p>
 <p>一个子数组 <code>arr</code> 如果有 <strong>至少</strong> <code>k</code> 对下标 <code>(i, j)</code> 满足 <code>i &lt; j</code> 且 <code>arr[i] == arr[j]</code> ，那么称它是一个 <strong>好</strong> 子数组。</p>
 <p><strong>子数组</strong> 是原数组中一段连续 <strong>非空</strong> 的元素序列。</p>
@@ -4220,6 +4268,7 @@
 <li><strong>结果统计</strong>：每次右指针移动后，<code>left</code> 的位置即为以 <code>right</code> 结尾的满足条件的最小子数组的起始位置。<code>left</code> 左边的所有起始位置到 <code>right</code> 的子数组都满足条件，因此将 <code>left</code> 累加到结果 <code>res</code> 中。</li>
 </ol>
 <p>这种方法确保了每个元素最多被处理两次（左右指针各一次），时间复杂度为 <strong><span class="arithmatex">\(O(n)\)</span></strong>，适用于大规模数据。</p>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-07-26T16:34:36.877421+08:00'>2025-07-26</time></span><span data-tippy-content data-tippy-raw='2025-07-26'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-07-26T16:34:36.877421+08:00'>2025-07-26</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
