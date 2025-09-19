@@ -1,0 +1,5451 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="记录、分享">
+      
+      
+        <meta name="author" content="gzh">
+      
+      
+        <link rel="canonical" href="https://gongzihang6.github.io/blog/%E9%9A%8F%E7%AC%94/HTTP/">
+      
+      
+        <link rel="prev" href="../SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/">
+      
+      
+        <link rel="next" href="../%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA%E6%8A%80%E6%9C%AF/">
+      
+      
+      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>HTTP - Blog of GZH</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra2.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/简历.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/customize.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One&family=LXGW+WenKai+TC&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="../../../assets/document_dates/user.config.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-40HC6RYSR1"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-40HC6RYSR1",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-40HC6RYSR1",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#http" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Blog of GZH" class="md-header__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blog of GZH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HTTP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="关闭自动模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="关闭自动模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 128c0-35.3 28.7-64 64-64h512c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64zm320 0v256h256V128zm-141.7 47.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1.1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4zM160 233.2l19 42.8h-38zM448 164c11 0 20 9 20 20v4h60c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4.9.6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9L467 333.8c-4.5-2.7-8.8-5.5-13.1-8.5-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8L410 286.1c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6.5.5c12.4-13.1 22.5-28.3 29.8-45l-35.2.1h-72c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/Mkdocs-Wcowin/ZH-TW/" hreflang="zh-TW" class="md-select__link">
+              China(TW)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Science/java%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MachineLearning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../latex%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  随笔
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  每日诗词
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%8F%91%E7%96%AF/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  发疯
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/fitness/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  长期主义
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/geren/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Blog of GZH" class="md-nav__button md-logo" aria-label="Blog of GZH" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    Blog of GZH
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Gongzihang6" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Gongzihang6
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Computer Science
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java面向对象基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/%E5%B8%B8%E7%94%A8API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java集合框架与常用API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/java%E6%8F%90%E9%AB%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Java高级技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithm
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            并查集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/ds/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    并查集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/Algorithm/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/ds/dsu-complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dsu complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/%E6%8E%92%E5%BA%8F%E5%92%8C%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    排序和查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode周赛系列
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode周赛系列
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E5%91%A8%E8%B5%9B%E7%B3%BB%E5%88%97/%E7%AC%AC467%E5%9C%BA%E5%91%A8%E8%B5%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第467场周赛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode热题100
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode热题100
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    字母异位词分组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最长连续序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E7%A7%BB%E5%8A%A8%E9%9B%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    移动零
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    盛水最多的容器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    三数之和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    无重复字符的最长子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode%E7%83%AD%E9%A2%98100/%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    和为K的子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LeetCode
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            LeetCode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E4%BA%A4%E6%98%93%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交易逆序对的总数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单词接龙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    岛屿数量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%88%86%E8%80%83%E5%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分考场
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%8B%89%E9%A9%AC%E8%BD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    拉马车
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%88%86%E5%B7%A7%E5%85%8B%E5%8A%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    分巧克力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/k%E5%80%8D%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K倍区间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    编辑距离
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    接雨水
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组合总和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%85%A8%E6%8E%92%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    全排列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    乘积最大子数组
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最长回文子串
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%89%8DK%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    前K个高频元素
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最小栈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/Pow%28x%2Cn%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pow(x,n)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E7%BD%91%E7%BB%9C%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    网络延迟时间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E8%AE%A1%E7%AE%97%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    计算质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E5%AF%B9%E8%A7%92%E7%BA%BF%E4%B8%8A%E7%9A%84%E8%B4%A8%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对角线上的质数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    零钱兑换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/01%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    括号匹配
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/300%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    300最长递增子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    115不同的子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/712%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8FASCII%E5%88%A0%E9%99%A4%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    712两个字符串的最小ASCII删除和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    516最长回文子序列
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    139单词拆分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/221%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    221最大正方形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2845%E7%BB%9F%E8%AE%A1%E8%B6%A3%E5%91%B3%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2845统计趣味子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2799%E7%BB%9F%E8%AE%A1%E5%AE%8C%E5%85%A8%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2799统计完全子数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/1399%E7%BB%9F%E8%AE%A1%E6%9C%80%E5%A4%A7%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1399统计最大组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2338%E7%BB%9F%E8%AE%A1%E7%90%86%E6%83%B3%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2338统计理想数组的数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2179%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%A5%BD%E4%B8%89%E5%85%83%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2179统计数组中好三元组数目
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2537%E7%BB%9F%E8%AE%A1%E5%A5%BD%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2537统计好子数组的数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2140%E8%A7%A3%E5%86%B3%E6%99%BA%E5%8A%9B%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2140解决智力问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Science/LeetCode/2278%E5%AD%97%E6%AF%8D%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2278字母在字符串中的百分比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MachineLearning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MachineLearning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    K近邻学习与降维
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E5%A4%9A%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    模型评估与多分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    公式测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    经典卷积神经网络
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/%E7%90%86%E8%A7%A3YOLO%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    理解YOLO网络结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关联分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持向量机SVM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MachineLearning/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    十大聚类算法介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    随笔
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            随笔
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latex%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Latex入门学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Matlab%E5%9F%BA%E7%A1%80%E9%80%9F%E6%88%90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Matlab基础速成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Matlab%E8%BF%9B%E9%98%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Matlab进阶
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Py-Markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Py Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssh_gitlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ssh gitlab
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2024%E5%B9%B4%E7%A7%8B%E6%8B%9B-%E5%B0%8F%E7%B1%B3%E9%9B%86%E5%9B%A2-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B2%97-%E7%AC%AC%E4%B8%80%E6%89%B9%E7%AC%94%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2024年秋招 小米集团 软件开发岗 第一批笔试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmd_powershell_bash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cmd powershell bash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    正则表达式
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AF%B9%E6%B3%A8%E8%A7%A3Autowired%E7%9A%84%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    对注解Autowired的理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http%E7%8A%B6%E6%80%81%E7%A0%81%E5%90%AB%E4%B9%89%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%BA%94%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Http状态码含义以及对应解决方案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../element-plus%E7%BB%84%E4%BB%B6%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element plus组件理解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringBoot注解总结
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    HTTP
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTTP
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#http-" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一部分：HTTP协议 - 万维网的基石
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一部分：HTTP协议 - 万维网的基石">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTTP是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-http-" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. HTTP的工作流程（请求-响应模型）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HTTP报文结构详解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. HTTP的特点及其致命缺陷
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二部分：HTTPS协议 - 安全的守护神
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：HTTPS协议 - 安全的守护神">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTTPS是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. HTTPS的核心基石
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-httpstlstls-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HTTPS的灵魂：TLS握手过程全解析（以TLS 1.2为例）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三部分：协议的演进 - 为了更快、更强
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：协议的演进 - 为了更快、更强">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http11-1997" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/1.1 (1997)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http2-2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/2 (2015)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http3-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/3 (2022)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四部分：安全层的演进 - TLS版本的更迭
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结：一张图看懂演进之路
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA%E6%8A%80%E6%9C%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    会话跟踪技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Spring-Security%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spring Security登录校验机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SQL%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F%E4%B8%8E%E8%BF%9E%E6%8E%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL外键约束与连接
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Element-Plus%E7%BB%84%E4%BB%B6%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Element Plus组件详细介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringAOP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SpringAOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mermaid%E7%BB%98%E5%9B%BE%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mermaid绘图语法总结
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    每日诗词
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            每日诗词
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E7%8E%89%E9%98%91%E5%B9%B2%E5%A4%96%E6%B8%85%E6%B1%9F%E6%B5%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·玉阑干外清江浦
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%8F%A9%E8%90%A8%E8%9B%AE%C2%B7%E5%9B%9E%E6%96%87%E5%A4%8F%E9%97%BA%E6%80%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    菩萨蛮·回文夏闺怨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%85%E5%B9%B3%E4%B9%90%C2%B7%E5%85%AD%E7%9B%98%E5%B1%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    清平乐·六盘山
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B4%9E%E4%BB%99%E6%AD%8C%C2%B7%E5%92%8F%E6%9F%B3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    洞仙歌·咏柳
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A7%8B%E5%85%B4%E5%85%AB%E9%A6%96%C2%B7%E5%85%B6%E4%B8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    秋兴八首·其一
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%8E%E5%8F%B2%E9%83%8E%E4%B8%AD%E9%92%A6%E5%90%AC%E9%BB%84%E9%B9%A4%E6%A5%BC%E4%B8%8A%E5%90%B9%E7%AC%9B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    与史郎中钦听黄鹤楼上吹笛
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A4%8F%E6%97%A5%E5%8D%97%E4%BA%AD%E6%80%80%E8%BE%9B%E5%A4%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    夏日南亭怀辛大
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%A1%8C%E9%A6%99%E5%AD%90%C2%B7%E7%A7%8B%E4%B8%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    行香子·秋与
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%87%AA%E9%A2%98%E9%87%91%E5%B1%B1%E7%94%BB%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    自题金山画像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E7%BA%A2%E8%97%95%E9%A6%99%E6%AE%8B%E7%8E%89%E7%B0%9F%E7%A7%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    一剪梅·红藕香残玉簟秋
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%88%9D%E5%88%B0%E9%BB%84%E5%B7%9E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    初到黄州
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E9%9B%A8%E9%9C%96%E9%93%83%C2%B7%E5%AF%92%E8%9D%89%E5%87%84%E5%88%87/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    雨霖铃·寒蝉凄切
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%A0%B4%E9%98%B5%E5%AD%90%C2%B7%E5%9B%9B%E5%8D%81%E5%B9%B4%E6%9D%A5%E5%AE%B6%E5%9B%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    破阵子·四十年来家国
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%98%A5%E6%97%A5%E9%86%89%E8%B5%B7%E8%A8%80%E5%BF%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    春日醉起言志
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%B3%A8%E7%9C%89%E5%B1%B1%E6%9C%88%E6%AD%8C%E9%80%81%E8%9C%80%E5%83%A7%E6%99%8F%E5%85%A5%E4%B8%AD%E4%BA%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    峨眉山月歌送蜀僧晏入中京
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%89%E4%BA%94%E4%B8%83%E8%A8%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    三五七言
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%9C%A8%E5%85%B0%E8%8A%B1%C2%B7%E6%8B%9F%E5%8F%A4%E5%86%B3%E7%BB%9D%E8%AF%8D%E6%9F%AC%E5%8F%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    木兰花·拟古决绝词柬友
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%A1%83%E8%8A%B1%E5%BA%B5%E6%AD%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    桃花庵歌
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B8%94%E5%AE%B6%E5%82%B2%C2%B7%E5%8F%8D%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%A4%A7%E5%9B%B4%E5%89%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    渔家傲·反第一次大围剿
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E9%9D%92%E7%8E%89%E6%A1%88%C2%B7%E5%85%83%E5%A4%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    青玉案·元夕
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B5%A3%E6%BA%AA%E6%B2%99%C2%B7%E8%B0%81%E5%BF%B5%E8%A5%BF%E9%A3%8E%E7%8B%AC%E8%87%AA%E5%87%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    浣溪沙·谁念西风独自凉
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%A3%B0%E5%A3%B0%E6%85%A2%C2%B7%E5%AF%BB%E5%AF%BB%E8%A7%85%E8%A7%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    声声慢·寻寻觅觅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%99%9E%E7%BE%8E%E4%BA%BA%C2%B7%E5%90%AC%E9%9B%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    虞美人·听雨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E9%9D%92%E7%8E%89%E6%A1%88%C2%B7%E5%87%8C%E6%B3%A2%E4%B8%8D%E8%BF%87%E6%A8%AA%E5%A1%98%E8%B7%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    青玉案·凌波不过横塘路
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E7%9B%B8%E8%A7%81%E6%AC%A2%C2%B7%E6%9E%97%E8%8A%B1%E8%B0%A2%E4%BA%86%E6%98%A5%E7%BA%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    相见欢·林花谢了春红
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%B4%E6%B1%9F%E4%BB%99%C2%B7%E6%A2%A6%E5%90%8E%E6%A5%BC%E5%8F%B0%E9%AB%98%E9%94%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    临江仙·梦后楼台高锁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E9%A2%98%E9%83%BD%E5%9F%8E%E5%8D%97%E5%BA%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    题都城南庄
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B5%AA%E6%B7%98%E6%B2%99%E4%BB%A4%C2%B7%E5%B8%98%E5%A4%96%E9%9B%A8%E6%BD%BA%E6%BD%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    浪淘沙令·帘外雨潺潺
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E9%B9%A7%E9%B8%AA%E5%A4%A9%C2%B7%E4%BB%A3%E4%BA%BA%E8%B5%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    鹧鸪天·代人赋
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B0%B4%E4%BB%99%E5%AD%90%C2%B7%E5%A4%9C%E9%9B%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    水仙子·夜雨
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E5%94%90%E5%A4%9A%E4%BB%A4%C2%B7%E6%83%9C%E5%88%AB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    唐多令·惜别
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E6%B5%AA%E6%B7%98%E6%B2%99%C2%B7%E6%8A%8A%E9%85%92%E7%A5%9D%E4%B8%9C%E9%A3%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    浪淘沙·把酒祝东风
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E4%B8%B4%E5%AE%89%E6%98%A5%E9%9B%A8%E5%88%9D%E9%9C%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    临安春雨初霁
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/%E8%9D%B6%E6%81%8B%E8%8A%B1%C2%B7%E6%98%A5%E6%99%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    蝶恋花·春景
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    发疯
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            发疯
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8F%91%E7%96%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    发疯
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            长期主义
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/fitness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    长期主义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    关于
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/geren/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    作者个人简介
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/%E7%AE%80%E5%8E%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    个人简历
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/zcw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    支持作者
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    功能测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#http-" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一部分：HTTP协议 - 万维网的基石
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一部分：HTTP协议 - 万维网的基石">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTTP是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-http-" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. HTTP的工作流程（请求-响应模型）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HTTP报文结构详解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. HTTP的特点及其致命缺陷
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二部分：HTTPS协议 - 安全的守护神
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：HTTPS协议 - 安全的守护神">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. HTTPS是什么？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. HTTPS的核心基石
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-httpstlstls-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. HTTPS的灵魂：TLS握手过程全解析（以TLS 1.2为例）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      第三部分：协议的演进 - 为了更快、更强
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：协议的演进 - 为了更快、更强">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http11-1997" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/1.1 (1997)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http2-2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/2 (2015)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http3-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP/3 (2022)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      第四部分：安全层的演进 - TLS版本的更迭
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结：一张图看懂演进之路
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>HTTP协议是万维网的核心应用层协议，采用客户端-服务器模型实现超文本传输。HTTPS通过引入SSL/TLS层提供加密通信，采用混合加密机制（非对称加密交换密钥+对称加密传输数据）和数字证书验证身份。关键演进包括HTTP/1.1的持久连接优化和管道化技术。该协议体系解决了数据传输安全性和效率问题，支撑了现代Web应用的基础通信需求。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">📖 阅读信息</p>
+<p>阅读时间：<strong>6</strong> 分钟 | 中文字符：<strong>2248</strong> | 有效代码行数：<strong>121</strong></p>
+</div>
+<h1 id="http">HTTP演变与总结<a class="headerlink" href="#http" title="Permanent link">&para;</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#http">HTTP演变与总结</a><ul>
+<li><a href="#http-">第一部分：HTTP协议 - 万维网的基石</a><ul>
+<li><a href="#1-http">1. HTTP是什么？</a></li>
+<li><a href="#2-http-">2. HTTP的工作流程（请求-响应模型）</a></li>
+<li><a href="#3-http">3. HTTP报文结构详解</a></li>
+<li><a href="#4-http">4. HTTP的特点及其致命缺陷</a></li>
+</ul>
+</li>
+<li><a href="#https-">第二部分：HTTPS协议 - 安全的守护神</a><ul>
+<li><a href="#1-https">1. HTTPS是什么？</a></li>
+<li><a href="#2-https">2. HTTPS的核心基石</a></li>
+<li><a href="#3-httpstlstls-12">3. HTTPS的灵魂：TLS握手过程全解析（以TLS 1.2为例）</a></li>
+</ul>
+</li>
+<li><a href="#-">第三部分：协议的演进 - 为了更快、更强</a><ul>
+<li><a href="#http11-1997">HTTP/1.1 (1997)</a></li>
+<li><a href="#http2-2015">HTTP/2 (2015)</a></li>
+<li><a href="#http3-2022">HTTP/3 (2022)</a></li>
+</ul>
+</li>
+<li><a href="#-tls">第四部分：安全层的演进 - TLS版本的更迭</a></li>
+<li><a href="#_1">总结：一张图看懂演进之路</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="http-">第一部分：HTTP协议 - 万维网的基石<a class="headerlink" href="#http-" title="Permanent link">&para;</a></h3>
+<h4 id="1-http">1. HTTP是什么？<a class="headerlink" href="#1-http" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>全称</strong>：HyperText Transfer Protocol (超文本传输协议)。</li>
+<li><strong>核心定义</strong>：一个用于从万维网服务器传输超媒体文档（如HTML）到浏览器的、基于TCP协议的<strong>应用层协议</strong>。它是客户端-服务器模型中请求和响应的标准。</li>
+<li><strong>生动的比喻</strong>：想象HTTP是一张<strong>明信片</strong>。<ul>
+<li><strong>内容公开</strong>：你在上面写的内容（请求的网址、发送的数据），邮递员和任何接触到它的人都能看到。</li>
+<li><strong>格式简单</strong>：有固定的格式（收件人地址、发件人地址、正文）。</li>
+<li><strong>无状态</strong>：每张明信片都是独立的，邮递员不会记得你上一张寄给了谁。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-http-">2. HTTP的工作流程（请求-响应模型）<a class="headerlink" href="#2-http-" title="Permanent link">&para;</a></h4>
+<p>整个过程非常直接：</p>
+<ol>
+<li><strong>建立连接</strong>：客户端（通常是浏览器）通过TCP协议与服务器的<strong>80端口</strong>建立一个连接。</li>
+<li><strong>发送请求</strong>：客户端向服务器发送一个HTTP请求报文。</li>
+<li><strong>服务器处理</strong>：服务器接收并解析请求，然后根据请求执行相应的操作（如获取文件、查询数据库）。</li>
+<li><strong>返回响应</strong>：服务器将处理结果打包成一个HTTP响应报文，发送回客户端。</li>
+<li><strong>关闭连接</strong>：服务器发送完响应后，连接被关闭（在HTTP/1.0中是这样，HTTP/1.1有所改进）。</li>
+</ol>
+<h4 id="3-http">3. HTTP报文结构详解<a class="headerlink" href="#3-http" title="Permanent link">&para;</a></h4>
+<p><strong>请求报文 (Request Message)</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>GET /index.html HTTP/1.1       &lt;-- 请求行: 方法(Method) + URI + 协议版本
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Host: www.example.com          &lt;-- 请求头(Header): 键值对，描述请求的元数据
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>User-Agent: Mozilla/5.0
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>Accept-Language: en-US
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>{ &quot;key&quot;: &quot;value&quot; }             &lt;-- 请求体(Body): 可选，通常在POST请求中携带数据
+</code></pre></div></td></tr></table></div>
+<p><strong>响应报文 (Response Message)</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>HTTP/1.1 200 OK                &lt;-- 状态行: 协议版本 + 状态码 + 状态描述
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>Content-Type: text/html        &lt;-- 响应头(Header): 键值对，描述响应的元数据
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Content-Length: 1234
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Date: Mon, 27 Jul 2023 12:28:53 GMT
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>&lt;html&gt;...&lt;/html&gt;              &lt;-- 响应体(Body): 实际返回的数据
+</code></pre></div></td></tr></table></div>
+<h4 id="4-http">4. HTTP的特点及其致命缺陷<a class="headerlink" href="#4-http" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>优点</strong>：<ul>
+<li><strong>简单灵活</strong>：协议文本易于阅读和扩展。</li>
+<li><strong>无状态 (Stateless)</strong>：服务器不需要保存客户端的上下文信息，减轻了服务器负担。但这也意味着需要Cookie等机制来维持会话。</li>
+</ul>
+</li>
+<li><strong>致命缺陷</strong>：<ol>
+<li><strong>明文传输</strong>：所有数据（包括密码、信用卡号）都在网络上以纯文本形式传输，极易被中间人<strong>窃听 (Eavesdropping)</strong>。</li>
+<li><strong>不验证身份</strong>：无法确认通信双方的真实身份，可能遭遇<strong>伪装 (Masquerading)</strong>。你以为在和银行通信，实际上可能是一个钓鱼网站。</li>
+<li><strong>无法保证完整性</strong>：无法验证报文在传输过程中是否被<strong>篡改 (Tampering)</strong>。攻击者可以在你的网页中注入广告或恶意脚本。</li>
+</ol>
+</li>
+</ul>
+<p>为了解决这三大安全问题，HTTPS应运而生。</p>
+<hr />
+<pre class="mermaid"><code>graph TD
+    subgraph "HTTP - 一张公开的明信片 📮"
+        A["&lt;font size=4&gt;&lt;b&gt;HTTP&lt;/b&gt;&lt;/font&gt;&lt;br&gt;HyperText Transfer Protocol"]
+        Defect1["&lt;br&gt;&lt;b&gt;致命缺陷 1: 明文传输&lt;/b&gt;&lt;br&gt;内容可能被&lt;b&gt;窃听&lt;/b&gt;"]
+        Defect2["&lt;br&gt;&lt;b&gt;致命缺陷 2: 无身份验证&lt;/b&gt;&lt;br&gt;通信方可能是&lt;b&gt;伪装&lt;/b&gt;的"]
+        Defect3["&lt;br&gt;&lt;b&gt;致命缺陷 3: 无完整性校验&lt;/b&gt;&lt;br&gt;内容可能被&lt;b&gt;篡改&lt;/b&gt;"]
+        A --&gt; Defect1 &amp; Defect2 &amp; Defect3
+    end
+
+    subgraph "HTTPS - 一个带锁的保险箱 🔒"
+        B["&lt;font size=4&gt;&lt;b&gt;HTTPS&lt;/b&gt;&lt;/font&gt;&lt;br&gt;HTTP + SSL/TLS 安全层"]
+        Core1["&lt;br&gt;&lt;b&gt;核心基石 1: 加密传输&lt;/b&gt;&lt;br&gt;混合加密机制&lt;br&gt;防止窃听"]
+        Core2["&lt;br&gt;&lt;b&gt;核心基石 2: 身份认证&lt;/b&gt;&lt;br&gt;CA 数字证书&lt;br&gt;防止伪装"]
+        Core3["&lt;br&gt;&lt;b&gt;核心基石 3: 完整性保护&lt;/b&gt;&lt;br&gt;消息验证码&lt;br&gt;防止篡改"]
+        B --&gt; Core1 &amp; Core2 &amp; Core3
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style Defect1 fill:#ffcccb,stroke:#333
+    style Defect2 fill:#ffcccb,stroke:#333
+    style Defect3 fill:#ffcccb,stroke:#333
+    style Core1 fill:#d4edda,stroke:#333
+    style Core2 fill:#d4edda,stroke:#333
+    style Core3 fill:#d4edda,stroke:#333</code></pre>
+<h3 id="https-">第二部分：HTTPS协议 - 安全的守护神<a class="headerlink" href="#https-" title="Permanent link">&para;</a></h3>
+<h4 id="1-https">1. HTTPS是什么？<a class="headerlink" href="#1-https" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>全称</strong>：HyperText Transfer Protocol Secure (安全超文本传输协议)。</li>
+<li><strong>核心定义</strong>：HTTPS<strong>并不是一个全新的协议</strong>。它是在HTTP协议的基础上，增加了一个<strong>安全层 (SSL/TLS)</strong> 来对通信进行加密和身份验证。简单来说：<strong>HTTPS = HTTP + SSL/TLS</strong>。</li>
+<li><strong>生动的比喻</strong>：HTTPS是一个<strong>用加密墨水书写、装在带锁的、由可信机构认证的保险箱里的信件</strong>。<ul>
+<li><strong>内容加密</strong>：信件内容（HTTP数据）用特殊墨水（对称加密）书写，只有收信人有解药。</li>
+<li><strong>身份认证</strong>：保险箱上贴着由权威机构（CA）颁发的、无法伪造的身份证明（数字证书）。</li>
+<li><strong>密钥交换安全</strong>：你把打开保险箱的钥匙（对称密钥）放在一个小密码盒（非对称加密）里交给对方，只有对方能打开。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-https">2. HTTPS的核心基石<a class="headerlink" href="#2-https" title="Permanent link">&para;</a></h4>
+<p>HTTPS通过三大技术解决了HTTP的缺陷：</p>
+<ol>
+<li>
+<p><strong>加密 (Encryption)</strong>：使用混合加密机制保证了传输内容的机密性。</p>
+<ul>
+<li><strong>非对称加密 (Asymmetric Encryption)</strong>：<ul>
+<li>有一对密钥：公钥（公开）和私钥（保密）。</li>
+<li>公钥加密的数据，只有对应的私钥才能解密。</li>
+<li><strong>特点</strong>：安全，但计算量大，速度慢。</li>
+<li><strong>用途</strong>：在握手阶段<strong>安全地交换对称加密的密钥</strong>。</li>
+</ul>
+</li>
+<li><strong>对称加密 (Symmetric Encryption)</strong>：<ul>
+<li>加密和解密使用同一个密钥。</li>
+<li><strong>特点</strong>：速度快，效率高。</li>
+<li><strong>用途</strong>：在握手完成后，用它来<strong>加密实际传输的HTTP数据</strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>数字证书 (Digital Certificate)</strong>：解决了身份验证问题。</p>
+<ul>
+<li><strong>是什么</strong>：由一个权威的、可信任的第三方机构——<strong>证书颁发机构 (Certificate Authority, CA)</strong> 颁发的一个“数字身份证”。</li>
+<li><strong>包含内容</strong>：<ul>
+<li>网站的公钥。</li>
+<li>网站的域名、所有者信息。</li>
+<li>CA机构的数字签名（防伪标志）。</li>
+</ul>
+</li>
+<li><strong>工作原理</strong>：浏览器内置了所有受信任的CA机构的“根证书”（包含了CA的公钥）。当收到网站发来的证书时，浏览器会用本地的CA根证书来验证该网站证书的签名是否真实有效。如果验证通过，就证明这个网站确实是它所声称的那个网站，并且可以信任它证书里的公钥。</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-httpstlstls-12">3. HTTPS的灵魂：TLS握手过程全解析（以TLS 1.2为例）<a class="headerlink" href="#3-httpstlstls-12" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    subgraph "通信双方"
+        Client("👤 客户端 (Browser)")
+        Server("🌐 服务器 (Server)")
+    end
+
+    subgraph "第 1 &amp; 2 步: 打招呼与亮明身份"
+        C1["&lt;b&gt;Client Hello&lt;/b&gt;&lt;br&gt;1. 发送 &lt;b&gt;ClientRandom&lt;/b&gt;&lt;br&gt;2. 支持的加密套件列表"]
+        S1["&lt;b&gt;Server Hello&lt;/b&gt;&lt;br&gt;1. 确认加密套件&lt;br&gt;2. 发送 &lt;b&gt;ServerRandom&lt;/b&gt;"]
+        S2["&lt;b&gt;Certificate&lt;/b&gt;&lt;br&gt;亮出'身份证'&lt;br&gt;📜 &lt;b&gt;服务器数字证书&lt;/b&gt;&lt;br&gt;(内含公钥 🔑)"]
+    end
+
+    subgraph "第 3 步: 客户端验证与密钥交换"
+        C2["&lt;b&gt;验证证书&lt;/b&gt;&lt;br&gt;用内置 CA 根证书&lt;br&gt;校验 📜 的合法性"]
+        C3["&lt;b&gt;生成预主密钥&lt;/b&gt;&lt;br&gt;生成第三个随机数&lt;br&gt;&lt;b&gt;Pre-master Secret&lt;/b&gt;"]
+        C4["&lt;b&gt;加密并发送&lt;/b&gt;&lt;br&gt;用服务器的 🔑 &lt;b&gt;公钥&lt;/b&gt; 加密&lt;br&gt;Pre-master Secret"]
+    end
+
+    subgraph "第 4 &amp; 5 步: 协商完成，开始加密通信"
+        S3["&lt;b&gt;解密预主密钥&lt;/b&gt;&lt;br&gt;用自己的 🔐 &lt;b&gt;私钥&lt;/b&gt; 解密&lt;br&gt;得到 Pre-master Secret"]
+        Finished_Key{{"&lt;br&gt;&lt;b&gt;生成会话密钥&lt;/b&gt;&lt;br&gt;双方用相同的算法&lt;br&gt;混合三个随机数&lt;br&gt;&lt;b&gt;ClientRandom&lt;/b&gt;&lt;br&gt;&lt;b&gt;ServerRandom&lt;/b&gt;&lt;br&gt;&lt;b&gt;Pre-master Secret&lt;/b&gt;&lt;br&gt;生成最终的对称密钥 🗝️&lt;br&gt;&lt;b&gt;Session Key&lt;/b&gt;"}}
+        Finished_Comm["&lt;b&gt;握手结束&lt;/b&gt;&lt;br&gt;后续所有 HTTP 数据&lt;br&gt;均使用 🗝️ &lt;b&gt;Session Key&lt;/b&gt;&lt;br&gt;进行对称加密传输"]
+    end
+
+    %% 定义流程
+    Client -- C1 --&gt; Server
+    Server -- S1 --&gt; Client
+    Server -- S2 --&gt; Client
+
+    Client -- C2 --&gt; C3
+    C3 --&gt; C4
+    Client -- C4 --&gt; Server
+
+    Server -- S3 --&gt; Finished_Key
+    Client -- "同时在本地..." --&gt; Finished_Key
+
+    Finished_Key --&gt; Finished_Comm
+
+    style Finished_Key fill:#b2f7b2,stroke:#333,stroke-width:2px
+    style S2 fill:#FFFACD</code></pre>
+<p>这是HTTPS中最复杂也最关键的部分。目标是：<strong>安全地协商出一个用于后续通信的对称密钥</strong>。</p>
+<ol>
+<li>
+<p><strong>Client Hello (客户端问好)</strong></p>
+<ul>
+<li>客户端向服务器发送一个随机数 <code>Client Random</code>。</li>
+<li>告诉服务器自己支持的TLS版本、加密套件（Cipher Suites，即加密算法组合）。</li>
+</ul>
+</li>
+<li>
+<p><strong>Server Hello &amp; Certificate (服务器回应与出示证书)</strong></p>
+<ul>
+<li>服务器从客户端支持的加密套件中选择一个，并确定TLS版本。</li>
+<li>服务器向客户端发送一个随机数 <code>Server Random</code>。</li>
+<li>服务器将自己的<strong>数字证书</strong>发送给客户端。</li>
+</ul>
+</li>
+<li>
+<p><strong>Client Key Exchange &amp; Verification (客户端验证与密钥交换)</strong></p>
+<ul>
+<li><strong>验证证书</strong>：客户端用内置的CA根证书验证服务器证书的合法性。如果不合法，会弹出警告。</li>
+<li><strong>生成预主密钥</strong>：验证通过后，客户端再生成一个随机数，称为 <code>Pre-master Secret</code>。</li>
+<li><strong>加密预主密钥</strong>：客户端用从服务器证书中获取的<strong>公钥</strong>，对这个 <code>Pre-master Secret</code> 进行加密。</li>
+<li>客户端将加密后的 <code>Pre-master Secret</code> 发送给服务器。</li>
+</ul>
+</li>
+<li>
+<p><strong>Server Decryption &amp; Session Key Generation (服务器解密与会话密钥生成)</strong></p>
+<ul>
+<li>服务器收到加密的 <code>Pre-master Secret</code> 后，用自己的<strong>私钥</strong>进行解密，得到原始的 <code>Pre-master Secret</code>。</li>
+<li><strong>至此，客户端和服务器都拥有了三个相同的关键信息</strong>：<code>Client Random</code>, <code>Server Random</code>, <code>Pre-master Secret</code>。</li>
+<li>双方各自使用一个相同的算法，将这三个随机数混合生成一个独一无二的<strong>会话密钥 (Session Key)</strong>。这个密钥就是后续通信要用的<strong>对称密钥</strong>。</li>
+</ul>
+</li>
+<li>
+<p><strong>Finished (握手完成)</strong></p>
+<ul>
+<li>双方都向对方发送一个“Finished”消息，该消息用刚刚生成的会话密钥加密。</li>
+<li>如果对方能成功解密，说明握手成功。</li>
+<li><strong>从此以后，双方的所有HTTP通信都将使用这个会话密钥进行对称加密。</strong></li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="-">第三部分：协议的演进 - 为了更快、更强<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TD
+    subgraph "HTTP/1.1 (1997) - 基础建设"
+        H11["&lt;b&gt;HTTP/1.1&lt;/b&gt;&lt;br&gt;持久连接 &amp; 管道化"]
+        H11_Prob["&lt;b&gt;问题: 队头阻塞 (HOL Blocking)&lt;/b&gt;&lt;br&gt;比喻: 单车道, 前车慢则全堵"]
+        H11 --&gt; H11_Prob
+    end
+
+    subgraph "HTTP/2 (2015) - 提速革命"
+        H2["&lt;b&gt;HTTP/2 on TCP&lt;/b&gt;&lt;br&gt;二进制分帧&lt;br&gt;头部压缩"]
+        H2_Feat["&lt;b&gt;核心特性: 多路复用 (Multiplexing)&lt;/b&gt;&lt;br&gt;在一个连接上并行处理多个请求/响应&lt;br&gt;比喻: 多车道高速公路"]
+        H2_Sol["&lt;b&gt;解决了应用层的队头阻塞&lt;/b&gt;"]
+        H2 --&gt; H2_Feat --&gt; H2_Sol
+        H2_Prob["&lt;b&gt;新问题: TCP 层的队头阻塞&lt;/b&gt;&lt;br&gt;一个数据包丢失, 整个TCP连接暂停"]
+        H2_Sol --&gt; H2_Prob
+    end
+
+    subgraph "HTTP/3 (2022) - 颠覆底层"
+        H3["&lt;b&gt;HTTP/3 on QUIC (UDP)&lt;/b&gt;"]
+        H3_Feat["&lt;b&gt;核心特性: 基于 QUIC 协议&lt;/b&gt;&lt;br&gt;流之间完全独立&lt;br&gt;0-RTT/1-RTT 快速连接"]
+        H3_Sol["&lt;b&gt;彻底解决了传输层的队头阻塞&lt;/b&gt;"]
+        H3 --&gt; H3_Feat --&gt; H3_Sol
+    end
+
+    subgraph "安全层演进 (与 HTTP 演进并行)"
+        TLS12["&lt;b&gt;TLS 1.2&lt;/b&gt;&lt;br&gt;长期主力, 安全性强"]
+        TLS13["&lt;b&gt;TLS 1.3&lt;/b&gt;&lt;br&gt;更快(1-RTT握手)&lt;br&gt;更安全(移除旧算法)"]
+        TLS12 --&gt; TLS13
+    end
+
+    %% 连接各代协议
+    H11_Prob -- "为了解决这个问题" --&gt; H2
+    H2_Prob -- "为了解决这个问题" --&gt; H3
+
+    %% 关联安全层
+    H2 -- "通常搭配" --&gt; TLS12
+    H3 -- "内置并强制要求" --&gt; TLS13
+
+    style H11 fill:#cde4ff
+    style H2 fill:#cde4ff
+    style H3 fill:#cde4ff
+    style H2_Feat fill:#d4edda
+    style H3_Feat fill:#d4edda
+    style H11_Prob fill:#ffcccb
+    style H2_Prob fill:#ffcccb</code></pre>
+<h4 id="http11-1997">HTTP/1.1 (1997)<a class="headerlink" href="#http11-1997" title="Permanent link">&para;</a></h4>
+<p>解决了HTTP/1.0每次请求都要新建TCP连接的低效问题。
+*   <strong>持久连接 (Persistent Connection)</strong>：默认开启 <code>Connection: keep-alive</code>，一个TCP连接可以复用，承载多次HTTP请求和响应。
+*   <strong>管道化 (Pipelining)</strong>：允许客户端在一个TCP连接上连续发送多个请求，而无需等待前一个请求的响应。但服务器必须按顺序响应，如果第一个响应很慢，会阻塞后面的所有响应，这就是<strong>队头阻塞 (Head-of-Line Blocking)</strong>。</p>
+<h4 id="http2-2015">HTTP/2 (2015)<a class="headerlink" href="#http2-2015" title="Permanent link">&para;</a></h4>
+<p>这是对HTTP协议的一次重大升级，核心目标是性能。
+*   <strong>二进制分帧 (Binary Framing)</strong>：将所有传输的信息分割为更小的消息和帧，并采用二进制格式编码。
+*   <strong>多路复用 (Multiplexing)</strong>：<strong>革命性特性</strong>。在一个TCP连接上，可以同时并行地发送和接收多个请求和响应，它们可以交错传输而不会相互阻塞。这彻底解决了HTTP/1.1的队头阻塞问题。
+    *   <strong>比喻</strong>：HTTP/1.1是单车道，一次只能走一辆车。HTTP/2是多车道高速公路，多辆车可以并行行驶。
+*   <strong>头部压缩 (Header Compression)</strong>：使用HPACK算法压缩请求和响应的头部，减少了传输的数据量。
+*   <strong>服务器推送 (Server Push)</strong>：服务器可以主动向客户端推送资源，而无需客户端明确请求。</p>
+<h4 id="http3-2022">HTTP/3 (2022)<a class="headerlink" href="#http3-2022" title="Permanent link">&para;</a></h4>
+<p>HTTP/2虽然解决了应用层的队头阻塞，但它基于的TCP协议本身存在队头阻塞问题（一个数据包丢失，会导致整个TCP连接上的所有流都暂停等待重传）。
+*   <strong>基于QUIC协议</strong>：HTTP/3放弃了TCP，改用了一个基于<strong>UDP</strong>的全新协议——<strong>QUIC (Quick UDP Internet Connections)</strong>。
+*   <strong>解决了TCP队头阻塞</strong>：QUIC实现了自己的流量控制和可靠性传输。它的多个流之间是完全独立的，一个流的数据包丢失不会影响其他流。
+    *   <strong>比喻</strong>：HTTP/2是同一栋大楼里的多个电梯，如果大楼入口（TCP连接）着火了，所有电梯都停运。HTTP/3是多栋独立的大楼，每栋楼有自己的电梯，一栋楼出问题不影响其他楼。
+*   <strong>更快的连接建立</strong>：QUIC集成了TLS握手，大大减少了建立安全连接所需的时间（通常只需1-RTT或0-RTT）。</p>
+<hr />
+<h3 id="-tls">第四部分：安全层的演进 - TLS版本的更迭<a class="headerlink" href="#-tls" title="Permanent link">&para;</a></h3>
+<p>SSL/TLS层本身也在不断进化，以应对新的攻击和提升性能。</p>
+<ul>
+<li><strong>SSL 1.0, 2.0, 3.0</strong>：早期版本，存在严重安全漏洞（如POODLE攻击），现已完全弃用。</li>
+<li><strong>TLS 1.0, 1.1</strong> (1999, 2006)：修复了SSL的一些问题，但仍存在弱点，也已逐渐被弃用。</li>
+<li><strong>TLS 1.2</strong> (2008)：<strong>长期以来的主力</strong>。它引入了更安全的加密算法（如AES-GCM），修复了许多已知漏洞，是过去十年的标准。</li>
+<li><strong>TLS 1.3</strong> (2018)：<strong>现代标准，一次重大飞跃</strong>。<ul>
+<li><strong>更安全</strong>：移除了所有过时和不安全的加密算法。</li>
+<li><strong>更快</strong>：<strong>握手过程大幅简化</strong>。将原来的2-RTT（两次往返）握手减少到了<strong>1-RTT</strong>，甚至支持<strong>0-RTT</strong>（零往返时间）的会话恢复，极大地加快了连接速度。</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="_1">总结：一张图看懂演进之路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>+--------------------------------------------------------------------------------------------------+
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>|                                          Application Layer                                       |
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>+========================================+================================+========================+
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>|             HTTP/1.1                   |           HTTP/2               |         HTTP/3         |
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>|   (Text, Pipelining, HOL Blocking)     | (Binary, Multiplexing)         |    (QUIC Streams)      |
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>+----------------------------------------+--------------------------------+------------------------+
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>|                                        |                                |                        |
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>| &lt;------- HTTPS Security Layer -------&gt; | &lt;------- HTTPS Security ------&gt;| &lt;-- QUIC (integrates)--&gt; |
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>|                                        |                                |                        |
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>+========================================+================================+========================+
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>|      SSL/TLS (v1.2, v1.3, etc.)        |   SSL/TLS (v1.2, v1.3, etc.)   |      QUIC + TLS 1.3    |
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>+========================================+================================+========================+
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>|                                        |                                |                        |
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>| &lt;------------ Transport Layer --------------&gt; | &lt;------ Transport Layer ------&gt;|                        |
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>|                                        |                                |                        |
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>+========================================+================================+========================+
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>|                  TCP                   |               TCP              |          UDP           |
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>+----------------------------------------+--------------------------------+------------------------+
+</code></pre></div></td></tr></table></div>
+<p><strong>核心 takeaways</strong>：</p>
+<ol>
+<li><strong>HTTP</strong>是裸奔的明信片，<strong>HTTPS</strong>是加了密、带认证的保险箱。</li>
+<li>HTTPS的核心在于<strong>TLS/SSL层</strong>，它通过<strong>混合加密</strong>和<strong>数字证书</strong>实现了安全通信。</li>
+<li><strong>TLS握手</strong>是HTTPS建立安全连接的关键，目的是为了安全地协商出一个<strong>对称会话密钥</strong>。</li>
+<li>协议的演进始终围绕两大主题：<strong>安全</strong>和<strong>性能</strong>。<ul>
+<li><strong>HTTP/2</strong>通过<strong>多路复用</strong>解决了应用层队头阻塞。</li>
+<li><strong>HTTP/3</strong>通过<strong>QUIC (on UDP)</strong> 解决了传输层（TCP）的队头阻塞。</li>
+<li><strong>TLS 1.3</strong>通过<strong>简化握手</strong>，大幅提升了HTTPS的连接速度。</li>
+</ul>
+</li>
+</ol>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-09-14'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-09-14T10:50:10.663395+08:00'>2025-09-14</time></span><span data-tippy-content data-tippy-raw='2025-09-18'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-09-18T15:11:53.625877+08:00'>2025-09-18</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' /></div></div></div></div>
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Render date of last update -->
+
+
+<!-- Render date of creation -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render authors -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Render committers from GitHub -->
+
+
+<!-- Render committers from GitLab -->
+
+
+<!-- Render committers -->
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- Determine date of last update -->
+
+  
+
+  <!-- Determine date of creation -->
+  
+
+
+<!-- Source file information -->
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine feedback configuration -->
+
+  
+
+
+<!-- Determine whether to show feedback -->
+
+
+<!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+<!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Comment system -->
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <style>
+  .md-footer {
+      background-color: #f0f0f0;
+  }
+</style>
+
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../SpringBoot%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: SpringBoot注解总结"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                SpringBoot注解总结
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA%E6%8A%80%E6%9C%AF/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: 会话跟踪技术"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                会话跟踪技术
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; gzh
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+   
+      <font color="#B9B9B9">
+      <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;color: #000;">
+        本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
+        <span id="finicount_views"></span>    &nbsp;|&nbsp;
+        <footer>
+          <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
+        </footer>
+      </div>
+      </font>
+
+        <style>
+          .footer-visit-count {
+              height: fit-content;
+              min-height: 55px; /* 根据实际情况调整此高度 */
+              color: #000;
+          }
+          </style>
+        
+          <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" rel="noopener" title="Wechat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M385.2 167.6c6.4 0 12.6.3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154m-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2.1-14.7 14.6-24.4 29.3-24.4m-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2M563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4m-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6m107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3.1 10-9.9 19.6-24.4 19.6"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://t.me/gongzihang" target="_blank" rel="noopener" title="telegram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ZihangGong28792" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<zihanggong24@gmail.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1l172.5 141.6c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16zM48 212.2V384c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0zM0 128c0-35.3 28.7-64 64-64h384c35.3 0 64 28.7 64 64v256c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://space.bilibili.com/688234000/lists" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+</div>
+        
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/config_mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/简历.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="../../../assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="../../../assets/document_dates/core/default.config.js"></script>
+      
+        <script src="../../../assets/document_dates/user.config.js"></script>
+      
+        <script src="../../../assets/document_dates/core/utils.js"></script>
+      
+        <script src="../../../assets/document_dates/core/core.js"></script>
+      
+    
+  </body>
+</html>
