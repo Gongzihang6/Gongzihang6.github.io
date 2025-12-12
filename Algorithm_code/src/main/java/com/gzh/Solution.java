@@ -10,4 +10,5 @@ public class Solution {
         long result = maxTotalValue(nums, k);
         System.out.println(result);
     }
+public class Solution {
 }
