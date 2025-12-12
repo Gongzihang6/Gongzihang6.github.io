@@ -1,4 +1,4 @@
-package com.itheima;
+package com.gzh;
 
 import java.util.Scanner;
 import java.util.HashSet;
