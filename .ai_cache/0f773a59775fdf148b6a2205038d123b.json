@@ -1,0 +1,7 @@
+{
+  "summary": "SQL外键约束通过强制引用完整性确保表间数据一致性，支持ON DELETE/UPDATE级联操作（禁止、级联、置空、设默认值）以处理关联数据变更。JOIN操作则基于外键关系实现跨表查询，包括INNER JOIN（匹配记录）、LEFT/RIGHT JOIN（保留单边记录）和FULL JOIN（全保留），用于灵活组合关联数据。两者共同构建关系型数据库的核心数据关联机制。",
+  "service": "deepseek",
+  "page_title": "SQL外键约束与连接",
+  "timestamp": "2025-09-19T21:49:28.756958",
+  "language": "zh"
+}

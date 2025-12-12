@@ -1,5 +1,10 @@
 {
-  "ai_service": "glm",
+  "default_service": "deepseek",
+  "available_services": [
+    "deepseek",
+    "openai",
+    "gemini"
+  ],
   "summary_language": "zh",
-  "version": "1.2.2"
+  "check_time": "2025-12-12T14:44:37.976426"
 }

@@ -1,0 +1,7 @@
+{
+  "summary": "接雨水\n\n给定 [代码] 个非负整数表示每个宽度为 [代码] 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水.",
+  "service": "fallback",
+  "page_title": "[42. 接雨水](https://leetcode.cn/problems/trapping-rain-water/)",
+  "timestamp": "2025-12-12T12:12:15.970771",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "该题目要求计算字符串中指定字符的出现频率百分比并向下取整。通过遍历字符串统计字符出现次数，再根据总长度计算百分比。核心考察基础字符串操作和数学运算能力，适用于数据处理和统计分析场景。解题需注意整数除法和取整处理，时间复杂度为O(n)。",
+  "service": "deepseek",
+  "page_title": "[2278. 字母在字符串中的百分比](https://leetcode.cn/problems/percentage-of-letter-in-string/)",
+  "timestamp": "2025-09-13T12:13:40.678518",
+  "language": "zh"
+}

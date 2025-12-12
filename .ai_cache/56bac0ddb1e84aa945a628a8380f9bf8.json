@@ -1,0 +1,7 @@
+{
+  "summary": "和为 K 的子数组\n\n给你一个整数数组 [代码] 和一个整数 [代码] ，请你统计并返回 该数组中和为 [代码] 的子数组的个数.子数组是数组中元素的连续非空序列.",
+  "service": "fallback",
+  "page_title": "[560. 和为 K 的子数组](https://leetcode.cn/problems/subarray-sum-equals-k/)",
+  "timestamp": "2025-12-12T12:12:23.521264",
+  "language": "zh"
+}

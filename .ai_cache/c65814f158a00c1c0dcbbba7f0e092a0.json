@@ -1,7 +1,0 @@
-{
-  "summary": "该问题要求统计整数数组中连续子数组和等于给定值k的个数。通过前缀和与哈希表结合的方法，将时间复杂度从暴力解法的O(n^2)优化至O(n)。具体实现中，哈希表记录前缀和出现次数，遍历时检查currentSum-k是否存在，从而快速计算符合条件的子数组数量。该方法高效处理了大规模数据，适用于数组长度达2×10^4的场景。",
-  "service": "deepseek",
-  "page_title": "[560. 和为 K 的子数组](https://leetcode.cn/problems/subarray-sum-equals-k/)",
-  "timestamp": "2025-09-12T17:52:37.769800",
-  "language": "zh"
-}

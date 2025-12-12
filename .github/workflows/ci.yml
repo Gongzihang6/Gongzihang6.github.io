@@ -50,7 +50,7 @@ jobs:   # 定义工作流中要执行的一系列任务（作业）
           AI_SUMMARY_CI_ENABLED: 'true'           # CI部署环境启用AI摘要 (true=在CI中为文章生成AI摘要)
           AI_SUMMARY_CI_ONLY_CACHE: 'true'       # CI部署不生成新摘要 (true=使用本地部署过的摘要缓存，不再重复调用API)
           AI_SUMMARY_CI_FALLBACK: 'true'          # CI部署启用备用摘要 (true=API失败时生成离线基础摘要)
-          AI_SUMMARY_LOCAL_ENABLED: 'true'       # 本地部署环境禁用AI摘要 (true=本地开发时也生成摘要)（不需要管这条）
+          AI_SUMMARY_LOCAL_ENABLED: 'false'       # 本地部署环境禁用AI摘要 (true=本地开发时也生成摘要)（不需要管这条）
           AI_SUMMARY_CACHE_ENABLED: 'true'        # 本地启用缓存功能 (true=缓存摘要避免重复生成)（不需要管这条）
           # API密钥配置
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -75,32 +75,3 @@ jobs:   # 定义工作流中要执行的一系列任务（作业）
             echo "ℹ️ 没有找到缓存目录或缓存为空"
           fi
 
-# name: ci 
-# on:
-#   push:
-#     branches:
-#       - master 
-#       - main
-# permissions:
-#   contents: write
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v4
-#       - name: Configure Git Credentials
-#         run: |
-#           git config user.name github-actions[bot]
-#           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-#       - uses: actions/setup-python@v4
-#         with:
-#           python-version: 3.x
-#       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-#       - uses: actions/cache@v3
-#         with:
-#           key: mkdocs-material-${{ env.cache_id }}
-#           path: .cache
-#           restore-keys: |
-#             mkdocs-material-
-#       - run: pip install mkdocs-material 
-#       - run: mkdocs gh-deploy --force

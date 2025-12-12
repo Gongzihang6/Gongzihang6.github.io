@@ -1,0 +1,7 @@
+{
+  "summary": "解决智力问题\n\n给你一个下标从 0 开始的二维整数数组 [代码] ，其中 [代码].如果你跳过问题 [代码] ，你可以对下一个问题决定使用哪种操作.没有别的办法获得 5 分或者多于 5 分.",
+  "service": "fallback",
+  "page_title": "[2140. 解决智力问题](https://leetcode.cn/problems/solving-questions-with-brainpower/)",
+  "timestamp": "2025-12-12T12:12:00.965019",
+  "language": "zh"
+}

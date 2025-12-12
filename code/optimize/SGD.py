@@ -63,6 +63,6 @@ def update(frame):
 ani = FuncAnimation(fig, update, frames=len(path), interval=1000, blit=False)
 
 # 保存为GIF（可选，需要安装ImageMagick或Pillow）
-ani.save('code\optimize\sgd_animation.gif', writer='pillow', fps=10)
+ani.save('gif\sgd_animation.gif', writer='pillow', fps=10)
 
 plt.show()

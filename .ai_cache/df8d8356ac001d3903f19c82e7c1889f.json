@@ -1,7 +1,0 @@
-{
-  "summary": "Java集合框架提供了高效的数据存储与操作方案，核心包括单列集合Collection和双列集合Map。Collection支持迭代器、增强for循环和Lambda表达式三种遍历方式，但需注意并发修改异常问题。List接口（ArrayList/LinkedList）实现有序可重复集合，Set接口（HashSet/LinkedHashSet/TreeSet）确保元素唯一性。String采用不可变设计并优化内存使用，不同Java版本底层实现各异。各集合类根据底层数据结构（数组、链表、哈希表）特性，在查询、插入、删除等操作上具有显著性能差异。",
-  "service": "deepseek",
-  "page_title": "Java集合框架与常用API",
-  "timestamp": "2025-09-12T17:48:39.745047",
-  "language": "zh"
-}

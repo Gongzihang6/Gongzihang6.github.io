@@ -1,0 +1,7 @@
+{
+  "summary": "最小栈\n\n设计一个支持 [代码] ，[代码] ，[代码] 操作，并能在常数时间内检索到最小元素的栈.实现 [代码] 类:\n\n- [代码] 初始化堆栈对象.- [代码] 将元素val推入堆栈.",
+  "service": "fallback",
+  "page_title": "[155. 最小栈](https://leetcode.cn/problems/min-stack/)",
+  "timestamp": "2025-12-12T12:12:16.801053",
+  "language": "zh"
+}

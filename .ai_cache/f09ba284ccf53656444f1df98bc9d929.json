@@ -1,0 +1,7 @@
+{
+  "summary": "Lighthouse是谷歌开发的网站性能测试工具，集成于Chrome/Edge开发者工具中。通过F12调出面板即可快速检测页面加载速度、SEO等核心指标，帮助开发者定位优化点。其操作简便，一键生成分析报告，适用于各类Web项目的性能评估与改进。",
+  "service": "deepseek",
+  "page_title": "利用Lighthouse测试网站性能",
+  "timestamp": "2025-09-13T12:22:54.219202",
+  "language": "zh"
+}

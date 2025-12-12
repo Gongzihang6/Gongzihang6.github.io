@@ -1,0 +1,7 @@
+{
+  "summary": "单词接龙\n\n字典 [代码] 中从单词 [代码] 到 [代码] 的 转换序列 是一个按下述规格形成的序列 [代码]：\n\n- 每一对相邻的单词只差一个字母.",
+  "service": "fallback",
+  "page_title": "[127. 单词接龙](https://leetcode.cn/problems/word-ladder/)",
+  "timestamp": "2025-12-12T12:12:12.965697",
+  "language": "zh"
+}

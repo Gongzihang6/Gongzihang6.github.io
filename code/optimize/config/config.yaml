@@ -1,0 +1,237 @@
+# 优化算法可视化项目配置文件
+# ========================================
+
+# 项目基本设置
+project:
+  name: "优化算法可视化工具包"
+  version: "1.0.0"
+  author: "Optimization Visualization Team"
+  description: "多种优化算法的可视化和动画生成工具"
+
+# 路径配置
+paths:
+  # 输出目录根路径
+  output_root: "output"
+  
+  # 各算法输出子目录
+  algorithms:
+    gradient_descent: "gradient_descent"
+    sgd: "sgd"
+    adam: "adam"
+    momentum: "momentum"
+    rmsprop: "rmsprop"
+    nesterov: "nesterov"
+    adagrad: "adagrad"
+    newton: "newton"
+    bfgs: "bfgs"
+    
+  # 临时文件目录
+  temp: "temp"
+  
+  # 日志文件目录
+  logs: "logs"
+
+# 可视化设置
+visualization:
+  # 默认图形设置
+  figure:
+    width: 15
+    height: 6
+    dpi: 100
+    
+  # 动画设置
+  animation:
+    interval: 200  # 帧间隔（毫秒）
+    fps: 10       # GIF帧率
+    repeat: true  # 是否循环播放
+    
+  # 字体设置
+  fonts:
+    chinese: ["SimHei", "Microsoft YaHei", "DejaVu Sans"]
+    size:
+      title: 16
+      label: 12
+      text: 10
+      
+  # 颜色主题
+  colors:
+    function_curve: "#1f77b4"      # 函数曲线颜色
+    current_point: "#ff0000"       # 当前点颜色
+    path: "#ff0000"                # 优化路径颜色
+    convergence: "#2ca02c"         # 收敛曲线颜色
+    grid: "#cccccc"                # 网格颜色
+
+# 算法默认参数
+algorithms:
+  # 梯度下降
+  gradient_descent:
+    learning_rate: 0.1
+    max_iterations: 100
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # 随机梯度下降
+  sgd:
+    learning_rate: 0.01
+    max_iterations: 200
+    batch_size: 1
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # Adam优化器
+  adam:
+    learning_rate: 0.001
+    beta1: 0.9
+    beta2: 0.999
+    epsilon: 0.00000001  # 1e-8
+    max_iterations: 100
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # 动量法
+  momentum:
+    learning_rate: 0.01
+    momentum: 0.9
+    max_iterations: 100
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # RMSProp优化器
+  rmsprop:
+    learning_rate: 0.01
+    decay_rate: 0.9
+    epsilon: 0.00000001  # 1e-8
+    max_iterations: 100
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # Nesterov加速梯度法
+  nesterov:
+    learning_rate: 0.01
+    momentum: 0.9
+    max_iterations: 100
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # Adagrad优化器
+  adagrad:
+    learning_rate: 0.1
+    epsilon: 0.00000001  # 1e-8
+    max_iterations: 100
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # 牛顿法
+  newton:
+    max_iterations: 50
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+    
+  # BFGS拟牛顿法
+  bfgs:
+    learning_rate: 1.0
+    max_iterations: 100
+    tolerance: 0.000001  # 1e-6
+    x_range: [-10, 10]
+
+# 测试函数配置
+test_functions:
+  # 简单二次函数
+  quadratic:
+    name: "二次函数"
+    description: "f(x) = (x-2)² + 1"
+    x_range: [-2, 6]
+    optimal_point: 2.0
+    optimal_value: 1.0
+    
+  # 多峰函数
+  multimodal:
+    name: "多峰函数"
+    description: "f(x) = x² + 10sin(x)"
+    x_range: [-8, 6]
+    optimal_point: -1.3  # 近似值
+    optimal_value: -8.7  # 近似值
+    
+  # Rosenbrock类型函数
+  rosenbrock:
+    name: "Rosenbrock类型函数"
+    description: "f(x) = 100(x²-1)² + (x-1)²"
+    x_range: [-2, 3]
+    optimal_point: 1.0
+    optimal_value: 0.0
+    
+  # 复杂函数
+  complex:
+    name: "复杂函数"
+    description: "f(x) = x⁴ - 4x³ + 4x² + 2"
+    x_range: [-1, 4]
+    optimal_point: 2.0  # 近似值
+    optimal_value: 2.0  # 近似值
+
+# 输出文件设置
+output:
+  # 文件命名规则
+  naming:
+    gif: "{algorithm}_{function}_{timestamp}.gif"
+    png: "{algorithm}_{function}_{timestamp}.png"
+    log: "{algorithm}_{function}_{timestamp}.log"
+    data: "{algorithm}_{function}_{timestamp}.json"
+    
+  # 文件格式设置
+  formats:
+    gif:
+      quality: "high"
+      optimize: true
+    png:
+      dpi: 300
+      transparent: false
+    json:
+      indent: 2
+      ensure_ascii: false
+
+# 日志设置
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_rotation: true
+  max_file_size: "10MB"
+  backup_count: 5
+
+# 性能设置
+performance:
+  # 并行处理
+  parallel:
+    enabled: false
+    max_workers: 4
+    
+  # 内存管理
+  memory:
+    max_history_points: 1000
+    cleanup_temp_files: true
+    
+  # 缓存设置
+  cache:
+    enabled: true
+    max_size: "100MB"
+    ttl: 3600  # 秒
+
+# 实验设置
+experiments:
+  # 默认实验参数
+  default:
+    num_runs: 1
+    save_individual_runs: true
+    save_summary: true
+    
+  # 批量实验设置
+  batch:
+    learning_rates: [0.001, 0.01, 0.1, 0.3]
+    starting_points: [-5, -2, 0, 2, 5]
+    functions: ["quadratic", "multimodal", "rosenbrock"]
+    
+# 开发设置
+development:
+  debug: false
+  verbose: true
+  save_intermediate_results: false
+  profile_performance: false

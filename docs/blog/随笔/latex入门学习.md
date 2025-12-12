@@ -573,7 +573,9 @@ $$
 
 {% raw %}
 
-\Bigg( \bigg( \Big( \big((x) \big) \Big) \bigg) \Bigg) $$ \Bigg\{ \bigg\{ \Big\{ \big\{\{x\} \big\} \Big\} \bigg\} \Bigg\}
+`\Bigg( \bigg( \Big( \big((x) \big) \Big) \bigg) \Bigg)` 
+
+ `\Bigg\{ \bigg\{ \Big\{ \big\{\{x\} \big\} \Big\} \bigg\} \Bigg\}`
 
 $\Bigg( \bigg( \Big( \big((x) \big) \Big) \bigg) \Bigg) $
 
@@ -624,7 +626,9 @@ f(x)= 3x^{2}+6(x-2)-1 \quad		\tag{1}
 		
 typora 中单个 `$` 包裹即使用 `equation` 环境也做不到居中，typora 中还是得 ctrl+shift+m，行间公式且自动带编号（偏好设置里加上）。
 
-\begin{equation}\begin{aligned}x =&\left(a+b+c \right. \\&\left. +d+e+f \right)\end{aligned}\end{equation}		两个&标明了换行后对齐的位置
+\begin{equation}\begin{aligned}x =&\left(a+b+c \right. \\&\left. +d+e+f \right)\end{aligned}\end{equation}		
+
+两个&标明了换行后对齐的位置
 
 $\begin{equation}\begin{aligned}x=&\left(a+b+c \right. \\&\left. +d+e+f \right)\end{aligned} \quad \tag{2}\end{equation}$   
 

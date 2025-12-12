@@ -1,0 +1,7 @@
+{
+  "summary": "AlexNet首次采用ReLU激活函数和Dropout正则化，利用GPU并行计算提升训练效率。ZFNet通过改进卷积核参数和可视化技术揭示了CNN特征学习的层次性。VGGNet采用3×3小卷积核级联设计，平衡计算量与特征提取能力。GoogLeNet提出Inception结构和辅助分类器，大幅减少参数量并缓解梯度消失问题。这些经典CNN模型奠定了深度学习在图像识别领域的基础架构。",
+  "service": "deepseek",
+  "page_title": "经典卷积神经网络",
+  "timestamp": "2025-09-13T12:17:54.506845",
+  "language": "zh"
+}

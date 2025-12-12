@@ -1,7 +1,0 @@
-{
-  "summary": "该问题要求设计一个能在O(1)时间复杂度内获取最小值的栈数据结构。关键点在于维护一个辅助栈同步记录当前最小值，确保push、pop、top和getMin操作都保持常数时间复杂度。典型应用场景包括需要快速访问极值的算法优化，如单调栈问题。实现时需注意边界条件处理以保证操作的正确性。",
-  "service": "deepseek",
-  "page_title": "[155. 最小栈](https://leetcode.cn/problems/min-stack/)",
-  "timestamp": "2025-09-12T17:51:59.422341",
-  "language": "zh"
-}

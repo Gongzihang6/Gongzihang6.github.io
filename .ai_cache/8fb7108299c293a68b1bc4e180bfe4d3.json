@@ -1,0 +1,7 @@
+{
+  "summary": "SpringAOP通过面向切面编程解决业务逻辑与横切关注点（如日志、事务、安全）的代码耦合问题。其核心思想是分离关注点，利用切面（Aspect）封装横切逻辑，通过切点（Pointcut）定义拦截位置，并由通知（Advice）实现具体增强逻辑。SpringAOP采用动态代理机制在运行时织入（Weaving）切面，支持五种通知类型，使业务代码保持简洁，同时提升横切功能的复用性和可维护性。",
+  "service": "deepseek",
+  "page_title": "SpringAOP",
+  "timestamp": "2025-09-19T21:49:46.868779",
+  "language": "zh"
+}

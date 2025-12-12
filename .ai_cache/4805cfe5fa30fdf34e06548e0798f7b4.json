@@ -1,0 +1,7 @@
+{
+  "summary": "编辑距离问题通过动态规划求解两个字符串间的最小操作数（插入、删除、替换）。核心采用二维DP数组，状态转移考虑三种操作情况，时间复杂度O(mn)。空间优化版本可将复杂度降至O(min(m,n))，成为大规模输入的最优方案，相比递归和记忆化搜索显著提升效率。该算法广泛应用于拼写检查、DNA序列比对等场景。",
+  "service": "deepseek",
+  "page_title": "[72. 编辑距离](https://leetcode.cn/problems/edit-distance/)",
+  "timestamp": "2025-09-13T12:16:03.362542",
+  "language": "zh"
+}

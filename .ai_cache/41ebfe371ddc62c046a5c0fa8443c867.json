@@ -1,0 +1,7 @@
+{
+  "summary": "本文通过势能分析探讨了DSU（并查集）的时间复杂度。定义了阿克曼函数$A_k(j)$及其反函数$\\alpha(n)$，引入节点rank和辅助函数$level(x)$、$iter(x)$构建势能模型。关键证明显示每次操作的摊还成本为$O(\\alpha(n))$，最终得出DSU的均摊时间复杂度为$O(m\\alpha(n))$，其中$m$为操作次数。该分析为并查集的高效性提供了理论依据。",
+  "service": "deepseek",
+  "page_title": "Dsu complexity",
+  "timestamp": "2025-09-13T12:12:56.313011",
+  "language": "zh"
+}

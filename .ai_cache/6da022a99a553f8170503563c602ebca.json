@@ -1,0 +1,7 @@
+{
+  "summary": "乘积最大子数组\n\n给你一个整数数组 [代码] ，请你找出数组中乘积最大的非空连续 子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积.测试用例的答案是一个 32-位 整数.",
+  "service": "fallback",
+  "page_title": "[152. 乘积最大子数组](https://leetcode.cn/problems/maximum-product-subarray/)",
+  "timestamp": "2025-12-12T12:12:08.656894",
+  "language": "zh"
+}

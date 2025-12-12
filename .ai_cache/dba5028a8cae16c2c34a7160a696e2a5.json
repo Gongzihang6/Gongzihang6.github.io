@@ -1,0 +1,7 @@
+{
+  "summary": "MkDocs通过Markdown扩展在服务端识别和保护LaTeX公式代码，生成包含原始公式的HTML文件；MathJax则在客户端动态渲染这些公式为可视化内容。两者需协同配置：Markdown扩展确保公式语法不被破坏，MathJax负责最终呈现。配置不当会导致公式解析错误或渲染失败，需同时优化两端设置以实现完美显示。",
+  "service": "deepseek",
+  "page_title": "公式显示",
+  "timestamp": "2025-09-13T12:18:01.614816",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "Pow(x, n)\n\n实现 pow(x, n) ，即计算 [代码] 的整数 [代码] 次幂函数（即，[代码] ）.",
+  "service": "fallback",
+  "page_title": "[50. Pow(x, n)](https://leetcode.cn/problems/powx-n/)",
+  "timestamp": "2025-12-12T12:12:07.468569",
+  "language": "zh"
+}

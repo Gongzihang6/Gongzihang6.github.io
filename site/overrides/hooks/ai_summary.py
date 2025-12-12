@@ -136,6 +136,7 @@ class AISummaryGenerator:
                 self._should_run = False
     
     def _check_service_change(self):
+        # print("🔍 检查 AI 服务是否发生变更...")
         """检查AI服务是否发生变更，如有变更则自动清理缓存"""
         # 如果禁用了缓存功能，跳过服务变更检查
         if not self.ci_config['cache_enabled']:

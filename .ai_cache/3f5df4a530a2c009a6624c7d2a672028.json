@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求计算使两个字符串相等所需删除字符的最小ASCII值之和。通过动态规划求解，构建二维状态表处理子问题，初始化时考虑单边字符串为空的情况，状态转移时比较字符匹配与删除操作的代价。核心在于优化删除策略，确保总ASCII和最小，适用于字符串相似性分析和数据对齐场景。时间复杂度为O(mn)，空间复杂度为O(mn)。",
+  "service": "deepseek",
+  "page_title": "[712. 两个字符串的最小 ASCII 删除和](https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/)",
+  "timestamp": "2025-09-13T12:14:10.127079",
+  "language": "zh"
+}

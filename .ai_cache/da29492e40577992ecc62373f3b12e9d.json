@@ -1,0 +1,7 @@
+{
+  "summary": "Spring Security通过过滤器链实现登录校验，核心流程包括请求拦截、认证封装、密码比对及成功/失败处理。采用密码加密（如Bcrypt）、HTTPS传输、CSRF防护等机制保障安全性。支持与JWT集成，通过自定义过滤器实现无状态认证，适用于前后端分离架构。该框架提供高度可定制的身份验证方案，兼顾安全性与灵活性。",
+  "service": "deepseek",
+  "page_title": "Spring Security登录校验机制",
+  "timestamp": "2025-09-19T21:49:35.929779",
+  "language": "zh"
+}

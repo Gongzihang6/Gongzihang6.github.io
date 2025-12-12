@@ -1,0 +1,7 @@
+{
+  "summary": "YOLOv5网络结构包含Backbone、Neck和Head三部分。Backbone采用Focus模块切片降维，配合BottleNeck残差结构和C3模块进行特征提取，逐步生成P3、P4等多尺度特征图。Neck部分通过SPP模块融合不同感受野特征，结合上采样和特征拼接实现多尺度信息交互。该设计在保持轻量化的同时提升了目标检测精度，适用于实时检测场景。",
+  "service": "deepseek",
+  "page_title": "理解YOLO网络结构",
+  "timestamp": "2025-09-13T12:17:50.249248",
+  "language": "zh"
+}

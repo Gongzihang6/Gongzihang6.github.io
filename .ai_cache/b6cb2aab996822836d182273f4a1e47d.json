@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求计算从指定源节点发出的信号到达所有网络节点的最长延迟时间，若无法到达全部节点则返回-1。采用Dijkstra算法求解单源最短路径，适用于有向加权图。关键步骤包括构建邻接表、优先队列优化以及距离数组更新，需处理节点不可达情况。时间复杂度为O(ElogV)，适合中等规模网络延迟分析。",
+  "service": "deepseek",
+  "page_title": "[743. 网络延迟时间](https://leetcode.cn/problems/network-delay-time/)",
+  "timestamp": "2025-09-13T12:16:11.918149",
+  "language": "zh"
+}

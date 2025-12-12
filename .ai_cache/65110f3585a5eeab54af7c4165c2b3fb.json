@@ -1,0 +1,7 @@
+{
+  "summary": "本文详解SSH远程连接的两种验证方式：密码验证与密钥验证。密码验证通过加密通道传输凭证，涉及TCP握手、算法协商、主机验证及Diffie-Hellman密钥交换；密钥验证采用非对称加密技术，客户端用私钥签名挑战串完成认证，避免了密码泄露风险且支持自动化。密钥方式通过预先部署公钥至服务器的authorized_keys文件实现更高安全性，适合GitLab等需频繁认证的场景。",
+  "service": "deepseek",
+  "page_title": "Ssh gitlab",
+  "timestamp": "2025-09-13T12:22:27.069991",
+  "language": "zh"
+}

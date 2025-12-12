@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求实现快速幂算法，高效计算x的n次幂（x^n）。通过分治思想将时间复杂度优化至O(log n)，避免暴力计算的O(n)复杂度。关键点包括处理n为负数时的倒数转换、利用幂的二分性质（x^n = x^(n/2) * x^(n/2)）以及递归/迭代实现。适用于大数幂运算场景，如密码学或数值模拟。",
+  "service": "deepseek",
+  "page_title": "[50. Pow(x, n)](https://leetcode.cn/problems/powx-n/)",
+  "timestamp": "2025-09-13T12:14:14.181882",
+  "language": "zh"
+}

@@ -1,7 +1,0 @@
-{
-  "summary": "该文章介绍了一种解决浮点数精度问题的编程方法，通过实现`isNearlyEqual`函数比较两个浮点数的近似相等性。方法采用相对误差和绝对误差结合的策略，设置可调节的epsilon阈值来平衡精度要求。文章提供了C++代码示例，演示如何避免直接比较浮点数导致的精度误差，适用于需要高精度数值计算的场景。",
-  "service": "deepseek",
-  "page_title": "[2278. 字母在字符串中的百分比](https://leetcode.cn/problems/percentage-of-letter-in-string/)",
-  "timestamp": "2025-09-12T17:49:41.296064",
-  "language": "zh"
-}

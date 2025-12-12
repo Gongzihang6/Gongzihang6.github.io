@@ -1,0 +1,7 @@
+{
+  "summary": "网络延迟时间\n\n有 [代码] 个网络节点，标记为 [代码] 到 [代码].给你一个列表 [代码]，表示信号经过 有向 边的传递时间.",
+  "service": "fallback",
+  "page_title": "[743. 网络延迟时间](https://leetcode.cn/problems/network-delay-time/)",
+  "timestamp": "2025-12-12T12:12:19.582954",
+  "language": "zh"
+}

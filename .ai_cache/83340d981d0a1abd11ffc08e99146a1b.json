@@ -1,7 +1,0 @@
-{
-  "summary": "该题要求统计两个排列数组中顺序一致的三元组数量。核心是通过位置映射转换问题，利用树状数组高效计算满足i<j<k且pos1[i]<pos1[j]<pos1[k]的三元组数目。算法关键在于将三维偏序问题转化为二维处理，时间复杂度优化至O(nlogn)，适用于大规模数据场景。典型应用包括序列比对和逆序数统计。",
-  "service": "deepseek",
-  "page_title": "[2179. 统计数组中好三元组数目](https://leetcode.cn/problems/count-good-triplets-in-an-array/)",
-  "timestamp": "2025-09-12T17:49:28.762327",
-  "language": "zh"
-}

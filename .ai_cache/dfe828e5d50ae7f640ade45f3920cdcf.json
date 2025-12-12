@@ -1,0 +1,7 @@
+{
+  "summary": "该题要求统计数组中满足特定条件的\"趣味子数组\"数量。核心条件是子数组中满足元素模modulo等于k的索引数，其本身模modulo也等于k。解题采用前缀和与哈希表优化，通过维护模数频率将时间复杂度降至O(n)。典型应用场景涉及大数据量下的快速统计，需注意子数组的连续性和边界处理。算法关键在于将模运算转化为可累计的前缀差值问题。",
+  "service": "deepseek",
+  "page_title": "[2845. 统计趣味子数组的数目](https://leetcode.cn/problems/count-of-interesting-subarrays/)",
+  "timestamp": "2025-09-13T12:13:56.039294",
+  "language": "zh"
+}

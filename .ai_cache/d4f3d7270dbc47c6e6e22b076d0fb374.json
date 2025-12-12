@@ -1,0 +1,7 @@
+{
+  "summary": "有效的括号\n\n给定一个只包括 [代码]，[代码]，[代码]，[代码]，[代码]，[代码] 的字符串 [代码] ，判断字符串是否有效.左括号必须用相同类型的右括号闭合.",
+  "service": "fallback",
+  "page_title": "[20. 有效的括号](https://leetcode.cn/problems/valid-parentheses/)",
+  "timestamp": "2025-12-12T12:12:15.457822",
+  "language": "zh"
+}

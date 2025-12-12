@@ -1,0 +1,7 @@
+{
+  "summary": "单词拆分\n\n给你一个字符串 [代码] 和一个字符串列表 [代码] 作为字典.如果可以利用字典中出现的一个或多个单词拼接出 [代码] 则返回 [代码].",
+  "service": "fallback",
+  "page_title": "[139. 单词拆分](https://leetcode.cn/problems/word-break/)",
+  "timestamp": "2025-12-12T12:12:00.312396",
+  "language": "zh"
+}
