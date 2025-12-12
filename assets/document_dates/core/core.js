@@ -1,5 +1,5 @@
 /*
-    1.生成字符头像
+    1.生成头像
 */
 function isLatin(name) {
     return /^[A-Za-z\s]+$/.test(name.trim());
@@ -35,9 +35,7 @@ function generateAvatar() {
         const imgEl = wrapper.querySelector('img.avatar');
         if (imgEl) {
             const src = (imgEl.getAttribute('src') || '').trim();
-            if (src) {
-                imgEl.onerror = () => imgEl.style.display = 'none';
-            } else {
+            if (!src) {
                 imgEl.style.display = 'none';
             }
         }
@@ -52,7 +50,7 @@ function generateAvatar() {
 // 图标键映射表
 const iconKeyMap = {
     doc_created: 'created_time',
-    doc_modified: 'modified_time',
+    doc_updated: 'updated_time',
     doc_author: 'author',
     doc_authors: 'authors'
 };
