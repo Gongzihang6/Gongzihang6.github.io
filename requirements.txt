@@ -1,28 +1,38 @@
-# 核心框架与主题
+# --- 核心框架 ---
 mkdocs>=1.5.0
 mkdocs-material>=9.5.0
 pymdown-extensions>=10.0
 
-# 必需的工具库 (解决版本兼容性问题)
+# --- 兼容性与基础工具 ---
 urllib3<2
 requests>=2.25.0
 python-dateutil>=2.8.2
+# 下面这个是修复您当前报错的关键 (用于 hooks/ai_summary.py)
+python-dotenv
 
-# --- 功能增强插件 ---
+# --- AI 摘要与自定义脚本常用库 (预判性补充) ---
+# 防止 ai_summary.py 接下来报找不到 openai 或解析库的错
+openai
+beautifulsoup4
+regex
+
+# --- 图像处理 (防止 socialmedia 脚本报错) ---
+pillow
+cairosvg
+
+# --- MkDocs 插件全集 ---
+# 时间与作者类
 mkdocs-document-dates
-
-
-# 1. 团队与贡献者信息
 mkdocs-git-revision-date-localized-plugin
 mkdocs-git-authors-plugin
 mkdocs-git-committers-plugin-2
 
-# 2. 媒体与展示优化
+# 媒体与展示类
 mkdocs-glightbox
 mkdocs-minify-plugin
 markdown-callouts
 
-# 3. 功能增强
+# 功能增强类
 mkdocs-rss-plugin
 mkdocs-encryptcontent-plugin
 mkdocs-open-in-new-tab
