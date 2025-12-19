@@ -9,6 +9,8 @@ requests>=2.25.0
 python-dateutil>=2.8.2
 
 # --- 功能增强插件 ---
+mkdocs-document-dates
+
 
 # 1. 团队与贡献者信息
 mkdocs-git-revision-date-localized-plugin
