@@ -1,11 +1,27 @@
-mkdocs
-mkdocs-material
-pymdown-extensions
-mkdocs-encryptcontent-plugin
-mkdocs-minify-plugin
-mkdocs-glightbox
+# 核心框架与主题
+mkdocs>=1.5.0
+mkdocs-material>=9.5.0
+pymdown-extensions>=10.0
+
+# 必需的工具库 (解决版本兼容性问题)
 urllib3<2
-mkdocs-git-committers-plugin-2
-mkdocs-markdownextradata-plugin
+requests>=2.25.0
+python-dateutil>=2.8.2
+
+# --- 功能增强插件 ---
+
+# 1. 团队与贡献者信息
 mkdocs-git-revision-date-localized-plugin
+mkdocs-git-authors-plugin
+mkdocs-git-committers-plugin-2
+
+# 2. 媒体与展示优化
+mkdocs-glightbox
+mkdocs-minify-plugin
+markdown-callouts
+
+# 3. 功能增强
+mkdocs-rss-plugin
+mkdocs-encryptcontent-plugin
 mkdocs-open-in-new-tab
+mkdocs-markdownextradata-plugin

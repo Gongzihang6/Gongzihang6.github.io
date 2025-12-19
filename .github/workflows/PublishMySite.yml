@@ -45,19 +45,11 @@ jobs:
                   restore-keys: |
                       mkdocs-material-
 
-            # 6. 安装依赖（合并了部分命令，更整洁）
-            - name: Install dependencies
-              run: |
-                  pip install mkdocs-git-revision-date-localized-plugin
-                  pip install mkdocs-git-authors-plugin
-                  pip install mkdocs-git-committers-plugin-2
-                  pip install markdown-callouts
-                  pip install mkdocs-rss-plugin
-                  pip install "requests>=2.25.0"
-                  pip install "python-dateutil>=2.8.2"
-                  pip install pymdown-extensions
-                  pip install mkdocs-material
-                  pip install --upgrade --force-reinstall mkdocs-material
+			# 6. 安装依赖（统一使用 requirements.txt，不再手动逐个安装）
+			- name: Install dependencies
+				run: |
+				pip install --upgrade pip
+				pip install -r requirements.txt
 
             # 7. 部署文档
             - name: Deploy with AI Summary
