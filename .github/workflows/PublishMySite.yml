@@ -1,75 +1,76 @@
 name: ci
 
 on:
-    push:
-        branches:
-            - master
-            - main
-    # 禁止从 fork 仓库访问 secrets
-    pull_request:
-        types: [closed]
-        branches: [main, master]
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    types: [closed]
+    branches: [main, master]
 
+# 核心权限配置：允许 Action 推送代码到 gh-pages 分支
 permissions:
-    contents: write
+  contents: write
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            # 1. 拉取代码（移除 sparse-checkout 以防止缺少 mkdocs.yml）
-            - uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 拉取代码 (fetch-depth: 0 确保能获取提交历史，用于生成最后更新时间)
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-            # 2. 配置 Git 用户（提前执行，确保 mkdocs gh-deploy 能用）
-            - name: Configure Git user
-              run: |
-                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
-                  git config --local user.name "github-actions[bot]"
+      # 2. 配置 Git 用户 (这对 mkdocs gh-deploy 至关重要)
+      - name: Configure Git user
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
 
-            # 3. 设置 Python 环境
-            - uses: actions/setup-python@v4
-              with:
-                  python-version: 3.x
+      # 3. 设置 Python 环境
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
 
-            # 4. 设置缓存 ID
-            - name: Set cache ID
-              run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      # 4. 设置缓存 ID (可选优化)
+      - name: Set cache ID
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
 
-            # 5. 恢复缓存
-            - uses: actions/cache@v3
-              with:
-                  key: mkdocs-material-${{ github.run_number }}
-                  path: .cache
-                  restore-keys: |
-                      mkdocs-material-
+      # 5. 恢复缓存 (可选优化)
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ github.run_number }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
 
-			# 6. 安装依赖（统一使用 requirements.txt，不再手动逐个安装）
-			- name: Install dependencies
-				run: |
-					pip install --upgrade pip
-					pip install -r requirements.txt
+      # 6. 安装依赖 (统一使用 requirements.txt)
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
 
-            # 7. 部署文档
-            - name: Deploy with AI Summary
-              env:
-                  # AI摘要开关控制
-                  AI_SUMMARY_CI_ENABLED: "true"
-                  AI_SUMMARY_CI_ONLY_CACHE: "true"
-                  AI_SUMMARY_CI_FALLBACK: "true"
-                  AI_SUMMARY_LOCAL_ENABLED: "true"
-                  AI_SUMMARY_CACHE_ENABLED: "true"
-                  # API密钥配置
-                  DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-                  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-              run: mkdocs gh-deploy --force
+      # 7. 部署文档
+      # 注意：run 命令必须正确缩进，不能混用 Tab 和空格
+      - name: Deploy with AI Summary
+        env:
+          # AI摘要开关控制
+          AI_SUMMARY_CI_ENABLED: "true"
+          AI_SUMMARY_CI_ONLY_CACHE: "true"
+          AI_SUMMARY_CI_FALLBACK: "true"
+          AI_SUMMARY_LOCAL_ENABLED: "true"
+          AI_SUMMARY_CACHE_ENABLED: "true"
+          # API密钥配置 (从 Secrets 获取)
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: mkdocs gh-deploy --force
 
-            # 8. 自动提交新生成的AI缓存文件
-            - name: Auto-commit AI cache (if any new files)
-              run: |
-                  if [ -d ".ai_cache" ] && [ "$(ls -A .ai_cache 2>/dev/null)" ]; then
-                    git add .ai_cache
-                    # 只有在有变化时才提交，避免报错
-                    git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update ai summaries cache [skip ci]" && git push)
-                  fi
+      # 8. 自动提交新生成的AI缓存文件 (如果存在)
+      - name: Auto-commit AI cache (if any new files)
+        run: |
+          if [ -d ".ai_cache" ] && [ "$(ls -A .ai_cache 2>/dev/null)" ]; then
+            git add .ai_cache
+            # 只有在有变化时才提交，避免报错
+            git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update ai summaries cache [skip ci]" && git push)
+          fi
