@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -77,15 +77,15 @@
     
       <link rel="stylesheet" href="../../../../../assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/backdrop.css">
-    
       <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/light.css">
     
       <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/material.css">
     
+      <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/shift-away.css">
+    
       <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/shift-away.css">
+      <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/backdrop.css">
     
       <link rel="stylesheet" href="../../../../../assets/document_dates/tippy/tippy.css">
     
@@ -1946,7 +1946,7 @@
   <span class="md-ellipsis">
     
   
-    最长回文子串
+    5. 最长回文子串
   
 
     
@@ -2866,14 +2866,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MachineLearning/%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../../../MachineLearning/关联分析.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    关联分析
+    None
   
 
     
@@ -2894,14 +2894,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MachineLearning/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/" class="md-nav__link">
+      <a href="../../../../MachineLearning/支持向量机SVM.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    支持向量机SVM
+    None
   
 
     
@@ -2922,14 +2922,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MachineLearning/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/" class="md-nav__link">
+      <a href="../../../../MachineLearning/聚类算法.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    十大聚类算法介绍
+    None
   
 
     
@@ -3479,14 +3479,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cmd_powershell_bash/" class="md-nav__link">
+      <a href="../../../../随笔/cmd_powershell_bash.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cmd powershell bash
+    None
   
 
     
@@ -3507,14 +3507,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../../随笔/正则表达式.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    正则表达式
+    None
   
 
     
@@ -5765,10 +5765,6 @@
   
 
 
-<div class="admonition tip">
-<p class="admonition-title">📝 自动摘要</p>
-<p>本文围绕PointMamba: A Simple State Space Model for Point Cloud Analysis展开讨论，介绍了相关的技术概念、应用场景和实践方法。</p>
-</div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>4</strong> 分钟 | 中文字符：<strong>1723</strong></p>
@@ -6017,7 +6013,7 @@
 <p><strong>作用</strong>：捕捉极局部的上下文信息（类似于 CNN 的感受野），为后续的 SSM 做局部特征准备。</p>
 </li>
 <li>
-<p>激活：卷积后接 SiLU 激活函数。<span class="arithmatex">\(<span class="arithmatex">\(x' = \text{SiLU}(\text{DWConv}(x))\)</span>\)</span></p>
+<p>激活：卷积后接 SiLU 激活函数。$<span class="arithmatex">\(x' = \text{SiLU}(\text{DWConv}(x))\)</span>$</p>
 </li>
 </ul>
 <p><strong>C. 选择性状态空间模型 (Selective SSM - S6) &larr; 核心中的核心</strong></p>
@@ -6077,13 +6073,13 @@
 <p><strong>D. 门控与输出投影 (Gating &amp; Output Projection)</strong></p>
 <ul>
 <li>
-<p>将 SSM 的输出与门控分支的输出进行逐元素相乘：<span class="arithmatex">\(<span class="arithmatex">\(Z_{out} = y_{ssm} \odot z\)</span>\)</span></p>
+<p>将 SSM 的输出与门控分支的输出进行逐元素相乘：$<span class="arithmatex">\(Z_{out} = y_{ssm} \odot z\)</span>$</p>
 </li>
 <li>
 <p>最后通过一个线性层将维度从 <span class="arithmatex">\(E \cdot C\)</span> 降回 <span class="arithmatex">\(C\)</span>。</p>
 </li>
 <li>
-<p>残差连接：加上原始输入 <span class="arithmatex">\(Z_{in}\)</span>。<span class="arithmatex">\(<span class="arithmatex">\(Z_{block\_out} = \text{Linear}(Z_{out}) + Z_{in}\)</span>\)</span></p>
+<p>残差连接：加上原始输入 <span class="arithmatex">\(Z_{in}\)</span>。$<span class="arithmatex">\(Z_{block\_out} = \text{Linear}(Z_{out}) + Z_{in}\)</span>$</p>
 </li>
 </ul>
 <h4 id="7-task-head"><strong>7. 任务头 (Task Head)</strong><a class="headerlink" href="#7-task-head" title="Permanent link">&para;</a></h4>
@@ -6109,7 +6105,7 @@
 <hr />
 <p>代码主体网络模型架构在models/point_mamba_scan.py中定义，封装套娃结构如下：</p>
 <p>PointMambaScan（核心类，定义网络模型架构）<strong>····》</strong>MixerModel（Mamba主干网络，串联多个Mamba块）<strong>····》</strong>self.layers（定义串联的多个Mamba块） <strong>····》</strong>creat_block <strong>····》</strong>Block <strong>····》</strong>mixer_cls <strong>····》</strong>Mamba（这才到了Mamba块的源代码，在编译下载好的mamba_ssm包中的mamba_simple.py）<strong>····》</strong>selective_scan_fn <strong>····》</strong>SelectiveScanFn.apply/forward</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><span data-tippy-content data-tippy-raw='2025-11-22'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-11-22T10:03:59.767292+08:00'>2025-11-22</time></span><span data-tippy-content data-tippy-raw='2025-11-28'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2025-11-28T21:05:31.971829+08:00'>2025-11-28</time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/Gongzihang6' onerror="this.style.display='none'" /></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2025-12-19'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-12-19T02:36:56.746825+00:00'>2025-12-19</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2025-12-19'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2025-12-19T02:36:56.746825+00:00'>2025-12-19</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' src='' onerror="this.style.display='none'" /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6431,10 +6427,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["announce.dismiss", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../../../../javascripts/extra.js"></script>
       
