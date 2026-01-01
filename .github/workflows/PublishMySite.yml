@@ -8,6 +8,14 @@ on:
   pull_request:
     types: [closed]
     branches: [main, master]
+  # ✅ 新增：允许手动触发，并带一个开关
+  workflow_dispatch:
+    inputs:
+      force_ai_summary:
+        description: '强制重新生成所有 AI 摘要'
+        required: false
+        default: false
+        type: boolean
 
 # 核心权限配置：允许 Action 推送代码到 gh-pages 分支
 permissions:
@@ -52,17 +60,23 @@ jobs:
           pip install -r requirements.txt
 
 
-      # 新增步骤：通过 Commit Message 判断是否强制刷新 AI
+      # 修改判断逻辑：同时检测 Commit Message 或 手动开关
       - name: Check for AI Force Update
         id: check_ai
         run: |
-          # 检测提交信息中是否包含 [force-ai]
-          if [[ "${{ github.event.head_commit.message }}" == *"[force-ai]"* ]]; then
+          # 1. 检查 Commit Message (防止合并提交覆盖，我们检查最近的提交历史)
+          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          
+          # 2. 检查手动触发的开关 (inputs.force_ai_summary)
+          IS_MANUAL_FORCE="${{ inputs.force_ai_summary }}"
+          
+          # 逻辑：如果 Commit包含[force-ai] 或者 手动开启了强制模式
+          if [[ "$COMMIT_MSG" == *"[force-ai]"* ]] || [[ "$IS_MANUAL_FORCE" == "true" ]]; then
             echo "AI_CACHE_MODE=false" >> $GITHUB_ENV
-            echo "🚀 Detected [force-ai] tag: Forcing regeneration of summaries."
+            echo "🚀 Force Update Detected!"
           else
             echo "AI_CACHE_MODE=true" >> $GITHUB_ENV
-            echo "📦 Standard commit: Using cache for existing summaries."
+            echo "📦 Standard Mode: Using cache."
           fi
 
       # 7. 部署文档
