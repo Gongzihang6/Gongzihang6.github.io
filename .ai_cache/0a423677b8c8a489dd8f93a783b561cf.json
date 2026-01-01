@@ -1,0 +1,7 @@
+{
+  "summary": "前 K 个高频元素\n\n给你一个整数数组 [代码] 和一个整数 [代码] ，请你返回其中出现频率前 [代码] 高的元素.",
+  "service": "fallback",
+  "page_title": "[347. 前 K 个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/)",
+  "timestamp": "2026-01-01T11:24:25.551810",
+  "language": "zh"
+}

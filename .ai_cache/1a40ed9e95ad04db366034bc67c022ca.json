@@ -1,0 +1,7 @@
+{
+  "summary": "1 文件夹，里面就有编译好的 PCL 库可以直接使用；如何在 VS2022 中使用.setInputCloud(cloud_downsampled); // 输入是下采样后的点云\nsor.",
+  "service": "fallback",
+  "page_title": "Point Cloud Library（PCL）点云处理库总结",
+  "timestamp": "2026-01-01T11:24:39.325909",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "会话跟踪 (Session Tracking) 就是为了解决这个问题，让无状态的 HTTP 协议能够“记住”用户的状态.Cookie、Session 和 Token 就是实现这一目标的三种主流技术.",
+  "service": "fallback",
+  "page_title": "会话跟踪技术",
+  "timestamp": "2026-01-01T11:24:38.335038",
+  "language": "zh"
+}

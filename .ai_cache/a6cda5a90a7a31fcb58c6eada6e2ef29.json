@@ -1,0 +1,7 @@
+{
+  "summary": "矩阵置零\n\n给定一个 [代码] 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0.",
+  "service": "fallback",
+  "page_title": "[73. 矩阵置零](https://leetcode.cn/problems/set-matrix-zeroes/)",
+  "timestamp": "2026-01-01T11:24:28.591956",
+  "language": "zh"
+}

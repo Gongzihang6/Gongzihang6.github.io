@@ -1,0 +1,7 @@
+{
+  "summary": "以下面例子为例，在循环遍历数组的过程中，对数组中元素进行删除操作就可能导致并发异常.",
+  "service": "fallback",
+  "page_title": "Java集合框架与常用API",
+  "timestamp": "2026-01-01T11:24:22.378159",
+  "language": "zh"
+}

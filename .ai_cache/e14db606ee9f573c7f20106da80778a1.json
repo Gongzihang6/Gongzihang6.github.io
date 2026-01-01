@@ -1,0 +1,7 @@
+{
+  "summary": "合并区间\n\n以数组 [代码] 表示若干个区间的集合，其中单个区间为 [代码].请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间.",
+  "service": "fallback",
+  "page_title": "[56. 合并区间](https://leetcode.cn/problems/merge-intervals/)",
+  "timestamp": "2026-01-01T11:24:27.659342",
+  "language": "zh"
+}

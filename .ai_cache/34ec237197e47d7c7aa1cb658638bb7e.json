@@ -1,0 +1,7 @@
+{
+  "summary": "这种方法确保了每个元素最多被处理两次（左右指针各一次），时间复杂度为 $O(n)$，适用于大规模数据.",
+  "service": "fallback",
+  "page_title": "[2537. 统计好子数组的数目](https://leetcode.cn/problems/count-the-number-of-good-subarrays/)",
+  "timestamp": "2026-01-01T11:24:24.006864",
+  "language": "zh"
+}

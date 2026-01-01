@@ -1,0 +1,7 @@
+{
+  "summary": "移动零\n\n给定一个数组 [代码]，编写一个函数将所有 [代码] 移动到数组的末尾，同时保持非零元素的相对顺序.请注意 ，必须在不复制数组的情况下原地对数组进行操作.",
+  "service": "fallback",
+  "page_title": "[283. 移动零](https://leetcode.cn/problems/move-zeroes/)",
+  "timestamp": "2026-01-01T11:24:28.717176",
+  "language": "zh"
+}

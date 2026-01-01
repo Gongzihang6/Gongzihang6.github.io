@@ -1,0 +1,7 @@
+{
+  "summary": "两个字符串的最小 ASCII 删除和\n\n给定两个字符串 [代码] 和 [代码]，返回 ==使两个字符串相等所需删除字符的 ASCII 值的最小和==.",
+  "service": "fallback",
+  "page_title": "[712. 两个字符串的最小 ASCII 删除和](https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/)",
+  "timestamp": "2026-01-01T11:24:24.581571",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "找到字符串中所有字母异位词\n\n给定两个字符串 [代码] 和 [代码]，找到 [代码] 中所有 [代码] 的 异位词 的子串，返回这些子串的起始索引.",
+  "service": "fallback",
+  "page_title": "[438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)",
+  "timestamp": "2026-01-01T11:24:27.997664",
+  "language": "zh"
+}
