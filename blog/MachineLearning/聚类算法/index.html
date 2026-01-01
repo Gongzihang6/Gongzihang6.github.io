@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://gongzihang6.github.io/blog/MachineLearning/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/">
       
       
+        <link rel="prev" href="../%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/">
+      
+      
+        <link rel="next" href="../yolov5s%20%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/">
       
       
         
@@ -376,10 +380,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../K%E8%BF%91%E9%82%BB%E5%AD%A6%E4%B9%A0%E4%B8%8E%E9%99%8D%E7%BB%B4/" class="md-tabs__link">
           
   
@@ -2771,8 +2777,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2792,25 +2800,28 @@
       
         
       
+        
+      
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -2828,7 +2839,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2986,14 +2997,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../关联分析.md" class="md-nav__link">
+      <a href="../%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    关联分析
   
 
     
@@ -3014,14 +3025,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../支持向量机SVM.md" class="md-nav__link">
+      <a href="../%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    支持向量机SVM
   
 
     
@@ -3039,17 +3050,748 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../聚类算法.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    十大聚类算法介绍
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    None
+    十大聚类算法介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-Means
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="K-Means">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式推导
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        层次聚类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="层次聚类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        距离计算公式（欧几里得距离）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        聚类间距离（链接方法）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推导
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dbscan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DBSCAN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DBSCAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dbscan_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DBSCAN 原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式和推导
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mean-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mean-Shift
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mean-Shift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        公式推导
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        高斯混合模型
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高斯混合模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心思想
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        案例分析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spectral-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectral Clustering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spectral Clustering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spectral-clustering_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectral Clustering 原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式及推导
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心公式及推导">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 拉普拉斯矩阵的性质：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 归一化拉普拉斯矩阵：
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 特征分解的意义：
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPTICS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPTICS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPTICS 原理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPTICS 原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法步骤：
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#affinity-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Affinity Propagation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Affinity Propagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#birch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Birch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Birch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#birch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Birch核心原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#som" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SOM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#som_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SOM核心原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整案例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="完整案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yolov5s%20%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yolov5s 网络结构
   
 
     
@@ -7907,7 +8649,7 @@ h_{ci}(t) = \exp\left(-\frac{d^2(c, i)}{2\sigma(t)^2}\right)
 <p><strong>1. 数据映射图</strong>：直观展示了高维数据在SOM二维网格上的映射结果。不同类别的数据点在网格上的分布，可以看出聚类效果。</p>
 <p><strong>2. 神经元权重分布图</strong>：展示了SOM中神经元权重在数据空间中的分布。可以观察权重的覆盖范围和分布密度，验证SOM的训练效果。</p>
 <hr />
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2025-02-28'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-02-28T00:00:00'>2025-02-28</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T11:23:51.817845+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2025-02-28'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-02-28T00:00:00'>2025-02-28</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T11:39:37.629150+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -8116,6 +8858,61 @@ h_{ci}(t) = \exp\left(-\frac{d^2(c, i)}{2\sigma(t)^2}\right)
 
   <!-- Link to previous and/or next page -->
   
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="页脚"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="../%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BASVM/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="上一页: 支持向量机SVM"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                支持向量机SVM
+              </div>
+            </div>
+            
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../yolov5s%20%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="下一页: Yolov5s 网络结构"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Yolov5s 网络结构
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
 
