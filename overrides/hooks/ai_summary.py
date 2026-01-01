@@ -9,6 +9,7 @@ from pathlib import Path
 from datetime import datetime
 import os
 import shutil
+import time
 
 class AISummaryGenerator:
     def __init__(self):
@@ -46,10 +47,10 @@ class AISummaryGenerator:
         self.ai_services = {
             # 魔搭社区AI
             'deepseek': {
-                'url': 'https://api-inference.modelscope.cn/v1/chat/completions',
-                'model': 'deepseek-ai/DeepSeek-V3.2',
+                'url': 'https://api.siliconflow.cn/v1/chat/completions',
+                'model': 'Pro/deepseek-ai/DeepSeek-V3.2',
                 'api_key': os.getenv('DEEPSEEK_API_KEY', ),
-                'max_tokens': 150,
+                'max_tokens': 15000,
                 'temperature': 0.3
             },
             'openai': {
@@ -558,7 +559,7 @@ Please generate bilingual summary:"""
                 url,
                 headers=headers,
                 json=payload,
-                timeout=30
+                timeout=300
             )
             
             if response.status_code == 200:
@@ -572,6 +573,8 @@ Please generate bilingual summary:"""
                     summary = re.sub(r'^\s*总结[：:]\s*', '', summary)
                     summary = re.sub(r'^\s*Summary[：:]\s*', '', summary)
                     summary = re.sub(r'^\s*Abstract[：:]\s*', '', summary)
+                    # ✅ 在成功获取 response 后，return 之前，加上这行：
+                    time.sleep(2) # 强制休息2秒，避免 CI 跑得太快把 API 冲垮
                     return summary
                 
             else:
@@ -844,7 +847,7 @@ Please generate bilingual summary:"""
             summary = cached_summary.get('summary', '')
             ai_service = cached_summary.get('service', 'cached')
             env_desc = '(CI)' if is_ci else '(本地)'
-            print(f"✅ 使用缓存摘要 {env_desc}: {page.file.src_path}")
+            print(f"force_update变量为{self.force_update}✅ 使用缓存摘要 {env_desc}: {page.file.src_path}")
         else:
             # 如果在 CI 环境中且配置为只使用缓存，直接跳过摘要生成
             if is_ci and self.ci_config['ci_only_cache']:
