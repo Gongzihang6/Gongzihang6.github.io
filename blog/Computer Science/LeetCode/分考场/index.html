@@ -6238,12 +6238,10 @@
   
 
 
-<div class="admonition tip">
-<p class="admonition-title">📝 自动摘要</p>
-<p>分考场</p>
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>该文探讨如何将n个考生分配到最少的考场中，确保相互认识的人不在同一考场。问题被抽象为图的着色问题，采用回溯法求解最小色数，并通过邻接矩阵存储认识关系。算法使用剪枝优化效率，并引入贪心策略(Welsh-Powell)获取初始上界以加速收敛。适用于n≤100的小规模数据，满足1秒时间限制。核心在于平衡准确性和计算效率，典型应用于考试安排等场景。</p>
 </div>
-<p>题目描述</p>
-<p>n 个人参加某项特殊考试.为了公平，要求任何两个认识的人不能分在同一个考场.求最少需要分几个考场才能满足条件.</p>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>2</strong> 分钟 | 中文字符：<strong>677</strong> | 有效代码行数：<strong>141</strong></p>
@@ -6637,7 +6635,7 @@
 <li><strong>回溯法</strong>：最坏情况下仍为指数级，但通过贪心上界剪枝，实际运行时间大幅减少。</li>
 </ul>
 <p>这种方法结合了贪心算法的快速性和回溯法的精确性，能够在较短时间内找到最优解。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T13:48:42.807282+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T13:48:42.807282+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T14:00:57.386307+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T14:00:57.386307+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

@@ -6373,9 +6373,9 @@
   
 
 
-<div class="admonition tip">
-<p class="admonition-title">📝 自动摘要</p>
-<p>本文围绕PointMamba: A Simple State Space Model for Point Cloud Analysis展开讨论，介绍了相关的技术概念、应用场景和实践方法。</p>
+<div class="admonition info">
+<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
+<p>PointMamba提出了一种基于状态空间模型(SSM)的点云分析方法，通过线性复杂度替代传统Transformer的二次计算复杂度，显著提升了运算效率。该模型采用最远点采样和空间填充曲线序列化策略，将无序点云转换为1D序列进行处理，在长序列场景下推理速度提升30.2倍，显存占用降低24.9倍，有效解决了点云数量增加时的计算瓶颈问题。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6717,7 +6717,7 @@
 <hr />
 <p>代码主体网络模型架构在models/point_mamba_scan.py中定义，封装套娃结构如下：</p>
 <p>PointMambaScan（核心类，定义网络模型架构）<strong>····》</strong>MixerModel（Mamba主干网络，串联多个Mamba块）<strong>····》</strong>self.layers（定义串联的多个Mamba块） <strong>····》</strong>creat_block <strong>····》</strong>Block <strong>····》</strong>mixer_cls <strong>····》</strong>Mamba（这才到了Mamba块的源代码，在编译下载好的mamba_ssm包中的mamba_simple.py）<strong>····》</strong>selective_scan_fn <strong>····》</strong>SelectiveScanFn.apply/forward</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T13:48:43.055287+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T13:48:43.055287+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T14:00:57.634309+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T14:00:57.634309+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
