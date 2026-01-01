@@ -99,6 +99,10 @@ nav:
       - blog/Computer Science/LeetCode热题100/三数之和.md
       - blog/Computer Science/LeetCode热题100/无重复字符的最长子串.md
       - blog/Computer Science/LeetCode热题100/和为K的子数组.md
+      - blog/Computer Science/LeetCode热题100/合并区间.md
+      - blog/Computer Science/LeetCode热题100/矩阵置零.md
+      - blog/Computer Science/LeetCode热题100/螺旋矩阵.md
+      - blog/Computer Science/LeetCode热题100/旋转图像.md
     - LeetCode:
       - blog/Computer Science/LeetCode/交易逆序对的总数.md
       - blog/Computer Science/LeetCode/单词接龙.md
@@ -153,6 +157,10 @@ nav:
       - blog/随笔/科研/摄像机成像模型.md
       - blog/随笔/科研/求解两个坐标系的相对旋转和平移矩阵.md
       - blog/随笔/科研/多相机同步采集数据.md
+      - blog/随笔/科研/PCL库总结.md
+      - 文献阅读: 
+        - blog/随笔/科研/文献阅读/PointMamba.md
+        - blog/随笔/科研/文献阅读/swin3d.md
     - 优化:
       - blog/随笔/优化/Levenberg-Marquardt算法.md
     - blog/随笔/latex入门学习.md
