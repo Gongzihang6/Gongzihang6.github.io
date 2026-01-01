@@ -44,10 +44,10 @@ class AISummaryGenerator:
         
         # 🤖 多AI服务配置
         self.ai_services = {
-            # 硅基流动AI
+            # 魔搭社区AI
             'deepseek': {
-                'url': 'https://api.siliconflow.cn/v1/chat/completions',
-                'model': 'deepseek-ai/DeepSeek-V3',
+                'url': 'https://api-inference.modelscope.cn/v1/chat/completions',
+                'model': 'deepseek-ai/DeepSeek-V3.2',
                 'api_key': os.getenv('DEEPSEEK_API_KEY', ),
                 'max_tokens': 150,
                 'temperature': 0.3
@@ -69,7 +69,7 @@ class AISummaryGenerator:
             'gemini': {
                 'url': 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',
                 'model': 'gemini-pro',
-                'api_key': os.getenv('GOOGLE_API_KEY', 'AIzaSyDwWgffCCyVFZVsRasX3B3arWFaCT1PzNI'),
+                'api_key': os.getenv('GOOGLE_API_KEY', ),
                 'max_tokens': 150,
                 'temperature': 0.3
             }
