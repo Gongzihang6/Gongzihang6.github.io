@@ -113,7 +113,9 @@ class AISummaryGenerator:
         
         # 检查服务变更并处理缓存
         self._check_service_change()
-    
+
+        # ✅ 新增：读取强制更新开关
+        self.force_update = os.getenv('AI_SUMMARY_FORCE_UPDATE', 'false').lower() == 'true'
     def _check_environment(self):
         """初始化时检查环境"""
         is_ci = self.is_ci_environment()
@@ -838,7 +840,7 @@ Please generate bilingual summary:"""
         
         # 检查缓存
         cached_summary = self.get_cached_summary(content_hash)
-        if cached_summary:
+        if not self.force_update and cached_summary:
             summary = cached_summary.get('summary', '')
             ai_service = cached_summary.get('service', 'cached')
             env_desc = '(CI)' if is_ci else '(本地)'

@@ -60,29 +60,34 @@ jobs:
           pip install -r requirements.txt
 
 
-      # 修改判断逻辑：同时检测 Commit Message 或 手动开关
+      # 1. 【修改】检查是否需要强制更新的步骤
       - name: Check for AI Force Update
         id: check_ai
         run: |
-          # 1. 检查 Commit Message (防止合并提交覆盖，我们检查最近的提交历史)
-          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          # 获取本次 Push 包含的所有提交信息的 JSON 字符串
+          ALL_COMMITS_JSON='${{ toJson(github.event.commits) }}'
           
-          # 2. 检查手动触发的开关 (inputs.force_ai_summary)
+          # 获取手动触发的状态
           IS_MANUAL_FORCE="${{ inputs.force_ai_summary }}"
           
-          # 逻辑：如果 Commit包含[force-ai] 或者 手动开启了强制模式
-          if [[ "$COMMIT_MSG" == *"[force-ai]"* ]] || [[ "$IS_MANUAL_FORCE" == "true" ]]; then
+          # 逻辑升级：
+          # 1. 如果 JSON 中包含 "[force-ai]" (说明本次推送的历史里有这个标签)
+          # 2. 或者 是手动触发且勾选了 true
+          if echo "$ALL_COMMITS_JSON" | grep -q "\[force-ai\]" || [[ "$IS_MANUAL_FORCE" == "true" ]]; then
+            echo "🚀 检测到 [force-ai] 标签或手动强制指令！"
             echo "AI_CACHE_MODE=false" >> $GITHUB_ENV
-            echo "🚀 Force Update Detected!"
+            echo "AI_FORCE_UPDATE=true" >> $GITHUB_ENV
           else
-            echo "AI_CACHE_MODE=true" >> $GITHUB_ENV
-            echo "📦 Standard Mode: Using cache."
+            echo "📦 未检测到强制标签，使用标准缓存模式。"
+            echo "AI_CACHE_MODE=false" >> $GITHUB_ENV 
+            echo "AI_FORCE_UPDATE=false" >> $GITHUB_ENV
           fi
 
       # 7. 部署文档
       # 注意：run 命令必须正确缩进，不能混用 Tab 和空格
       - name: Deploy with AI Summary
         env:
+          AI_SUMMARY_FORCE_UPDATE: ${{ env.AI_FORCE_UPDATE }}
           # AI摘要开关控制
           AI_SUMMARY_CI_ENABLED: "true"
           AI_SUMMARY_CI_ONLY_CACHE: ${{ env.AI_CACHE_MODE }}
