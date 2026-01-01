@@ -149,9 +149,10 @@ nav:
     - blog/MachineLearning/公式测试.md
     - blog/MachineLearning/经典卷积神经网络.md
     - blog/MachineLearning/理解YOLO网络结构.md
-    - blog\MachineLearning\关联分析.md
-    - blog\MachineLearning\支持向量机SVM.md
-    - blog\MachineLearning\聚类算法.md
+    - blog/MachineLearning/关联分析.md
+    - blog/MachineLearning/支持向量机SVM.md
+    - blog/MachineLearning/聚类算法.md
+    - blog/MachineLearning/yolov5s 网络结构.md
   - 随笔:
     - 科研:
       - blog/随笔/科研/摄像机成像模型.md
