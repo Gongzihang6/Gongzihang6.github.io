@@ -27,7 +27,7 @@ class AISummaryGenerator:
             'enabled_in_local': os.getenv('AI_SUMMARY_LOCAL_ENABLED', 'false').lower() == 'true',
             
             # CI部署仅缓存模式(不用管，只在ci.yml中设置有效)
-            'ci_only_cache': os.getenv('AI_SUMMARY_CI_ONLY_CACHE', 'false').lower() == 'true',
+            'ci_only_cache': os.getenv('AI_SUMMARY_CI_ONLY_CACHE', 'true').lower() == 'true',
             
             # 本地部署缓存功能开关 (true=启用缓存避免重复生成, false=总是生成新摘要)
             'cache_enabled': os.getenv('AI_SUMMARY_CACHE_ENABLED', 'true').lower() == 'true',
@@ -443,7 +443,7 @@ Please generate bilingual summary:"""
         else:  # 默认中文
             prompt = f"""请为以下技术文章生成一个高质量的摘要，要求：
 
-1. **长度控制**：严格控制在80-120字以内
+1. **长度控制**：严格控制在500字以内
 2. **内容要求**：
    - 准确概括文章的核心主题和关键要点
    - 突出技术特点、应用场景或解决的问题

@@ -51,13 +51,27 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+
+      # 新增步骤：通过 Commit Message 判断是否强制刷新 AI
+      - name: Check for AI Force Update
+        id: check_ai
+        run: |
+          # 检测提交信息中是否包含 [force-ai]
+          if [[ "${{ github.event.head_commit.message }}" == *"[force-ai]"* ]]; then
+            echo "AI_CACHE_MODE=false" >> $GITHUB_ENV
+            echo "🚀 Detected [force-ai] tag: Forcing regeneration of summaries."
+          else
+            echo "AI_CACHE_MODE=true" >> $GITHUB_ENV
+            echo "📦 Standard commit: Using cache for existing summaries."
+          fi
+
       # 7. 部署文档
       # 注意：run 命令必须正确缩进，不能混用 Tab 和空格
       - name: Deploy with AI Summary
         env:
           # AI摘要开关控制
           AI_SUMMARY_CI_ENABLED: "true"
-          AI_SUMMARY_CI_ONLY_CACHE: "false"
+          AI_SUMMARY_CI_ONLY_CACHE: ${{ env.AI_CACHE_MODE }}
           AI_SUMMARY_CI_FALLBACK: "true"
           AI_SUMMARY_LOCAL_ENABLED: "true"
           AI_SUMMARY_CACHE_ENABLED: "true"
