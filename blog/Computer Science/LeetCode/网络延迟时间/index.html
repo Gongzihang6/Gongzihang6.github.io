@@ -6184,7 +6184,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求计算从给定源节点发出的信号到达所有网络节点的最长延迟时间，若存在无法到达的节点则返回-1。采用Dijkstra算法求解单源最短路径，适用于有向加权图。关键步骤包括优先队列优化、距离数组初始化及松弛操作，时间复杂度为O(ElogV)。需注意处理节点不可达情况，适用于网络路由延迟分析等场景。</p>
+<p>该问题要求计算从指定源节点出发，信号到达所有网络节点的最长延迟时间，若存在无法到达的节点则返回-1。采用Dijkstra算法求解单源最短路径，适用于有向加权图且无负权边的情况。核心是通过优先队列优化路径选择，遍历所有节点获取最大延迟值。时间复杂度为O(ElogV)，其中E为边数，V为节点数，适用于中等规模网络延迟分析场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -7406,7 +7406,7 @@
 <li>判断是否为空使用<code>empty()</code></li>
 </ol>
 <h3 id="_6"><strong>检测负权环：</strong><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T14:00:57.386307+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T14:00:57.386307+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.234131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.234131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

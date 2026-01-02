@@ -5857,7 +5857,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>牛顿法是一种迭代算法，用于求解无约束最优化问题，通过二阶泰勒展开近似目标函数，利用海塞矩阵和梯度信息快速收敛到极小点。其核心迭代公式通过求解海塞矩阵逆与梯度的乘积更新参数，但计算复杂度较高。拟牛顿法则通过近似海塞矩阵或其逆矩阵来降低计算量。该方法适用于具有二阶连续偏导数的目标函数，在优化问题中具有广泛的应用价值。</p>
+<p>牛顿法是一种迭代算法，用于求解无约束最优化问题，通过二阶泰勒展开逼近目标函数极小值点。其核心是利用海塞矩阵及其逆矩阵计算迭代方向，具有二次收敛速度快的优势，但海塞矩阵计算复杂度高。拟牛顿法通过正定矩阵近似海塞矩阵或其逆矩阵来降低计算量。该方法适用于目标函数二阶连续可导且海塞矩阵正定的场景，广泛应用于机器学习优化等领域。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -5920,7 +5920,7 @@ H_k p_k = -g_k
 $$</p>
 <p>(5) 置 <span class="arithmatex">\(x^{(k+1)} = x^{(k)} + p_k\)</span>。</p>
 <h2 id="_2">拟牛顿法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T14:00:57.584308+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T14:00:57.584308+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.433131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.433131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

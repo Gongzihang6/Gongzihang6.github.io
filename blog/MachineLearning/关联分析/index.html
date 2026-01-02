@@ -6101,7 +6101,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>Apriori算法是一种经典的关联分析算法，通过逐层搜索和剪枝策略高效发现频繁项集。其核心基于Apriori原则：若项集非频繁，则其超集必然非频繁，从而大幅减少计算量。算法通过多次扫描数据库，逐步生成候选集并筛选满足最小支持度的频繁项集。关键优化包括字典序排序以确保项集唯一性，避免重复计数。该算法适用于购物篮分析等场景，能有效挖掘商品间的关联规则。</p>
+<p>Apriori算法通过逐层搜索和剪枝策略挖掘频繁项集，其核心是利用Apriori原则（频繁项集的子集必频繁）减少计算量。算法步骤包括：扫描数据库生成候选项集、剪枝非频繁项集、迭代直至无法扩展。关键优化是采用字典序排列项，避免重复计数并确保项集唯一性。该算法适用于市场篮子分析等场景，能高效发现商品间的关联规则。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6433,7 +6433,7 @@
 1.  <strong>内存消耗:</strong> FP-Tree本身需要存储在内存中。对于非常庞大且稀疏的数据集（例如，有非常多的独立商品），FP-Tree可能会非常大，甚至无法装入内存。
 2.  <strong>实现复杂性:</strong> 相比Apriori，FP-Growth的实现（特别是递归挖掘部分）更为复杂。</p>
 <p>总的来说，FP-Growth通过牺牲一定的空间复杂度和实现复杂度，换取了时间效率上的巨大提升，是发现频繁项集更为主流和高效的方法。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T14:00:57.389307+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T14:00:57.389307+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.237131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.237131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

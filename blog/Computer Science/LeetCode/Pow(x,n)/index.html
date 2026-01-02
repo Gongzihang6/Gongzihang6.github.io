@@ -6272,7 +6272,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求实现快速计算x的n次幂的算法，其中n为整数。核心挑战在于高效处理大指数情况，避免直接连乘的时间复杂度O(n)。典型解法采用分治策略，通过递归将问题分解为子问题（如x^n = x^(n/2) * x^(n/2)），将时间复杂度优化至O(log n)。需特殊处理负数指数（转换为倒数）和边界条件（如n=0）。适用于科学计算、密码学等需要高效幂运算的场景。</p>
+<p>该问题要求实现快速计算x的n次幂的算法，其中n为整数。核心挑战在于高效处理大指数情况，避免直接连乘的时间复杂度O(n)。典型解法采用分治策略，通过递归将问题分解为子问题（如x^n = x^(n/2) * x^(n/2)），将时间复杂度优化至O(log n)。需特别注意处理负指数（x^n = 1/x^(-n)）和边界条件（如n为最小负整数时）。适用于数值计算、密码学等场景。</p>
 </div>
 <h1 id="50-powx-n"><a href="https://leetcode.cn/problems/powx-n/">50. Pow(x, n)</a><a class="headerlink" href="#50-powx-n" title="Permanent link">&para;</a></h1>
 <p>实现 <a href="https://www.cplusplus.com/reference/valarray/pow/">pow(<em>x</em>, <em>n</em>)</a> ，即计算 <code>x</code> 的整数 <code>n</code> 次幂函数（即，<code>xn</code> ）。</p>

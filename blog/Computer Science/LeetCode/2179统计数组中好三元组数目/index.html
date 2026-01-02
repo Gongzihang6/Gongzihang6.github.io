@@ -5863,7 +5863,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该题要求统计两个排列数组中顺序一致的三元组数目。核心解法利用Fenwick树（二叉索引树）高效计算前后缀关系：首先记录元素位置映射，然后通过两次遍历分别计算每个元素左侧较小值和右侧较大值的数量，最终累加满足条件的组合数。算法时间复杂度为O(n log n)，适用于大规模数据，典型应用包括序列比对和逆序数统计。</p>
+<p>该题要求统计两个排列数组中顺序一致的三元组数目。核心解法利用坐标映射和树状数组，通过预处理将问题转化为查询元素左侧较小值和右侧较大值的数量。算法首先建立位置映射关系，然后使用两次树状数组遍历分别计算每个元素的左右贡献值，最终通过累加乘积得到结果。该方法将时间复杂度优化至O(n log n)，适用于大规模数据场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6023,7 +6023,7 @@
 <a id="__codelineno-2-61" name="__codelineno-2-61"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-2-62" name="__codelineno-2-62"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T14:00:57.385307+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T14:00:57.385307+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

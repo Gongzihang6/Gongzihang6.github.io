@@ -6183,7 +6183,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>三维坐标系变换需要求解6自由度参数（3旋转+3平移）。至少需要3个非共线点才能唯一确定相对旋转矩阵R和平移向量t：1个点仅能确定平移，2个点保留1个旋转自由度，3个点完全约束变换。基于SVD的闭式解法通过去中心化处理分离参数，利用质心差计算平移，并通过奇异值分解最小化对应点误差求得最优旋转矩阵。该方法广泛应用于机器人定位、三维重建等领域。</p>
+<p>本文探讨了三维空间中两个坐标系相对旋转和平移矩阵的求解方法。核心结论表明，至少需要3个非共线的对应点才能唯一确定6个自由度的变换参数（3个旋转+3个平移）。文章详细分析了不同点数对解的影响，并介绍了基于SVD的闭式解法，通过质心去耦和最小二乘优化来求解最优旋转矩阵R和平移向量t。该方法在机器人定位、三维重建等领域具有重要应用价值。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6342,7 +6342,7 @@ $$
 <li><strong>计算旋转矩阵</strong>：计算旋转矩阵 <span class="arithmatex">\(R = U V^T\)</span>。检查 <span class="arithmatex">\(det(R)\)</span>，如果为-1，则通过翻转 <span class="arithmatex">\(U\)</span> 的最后一列来修正 <span class="arithmatex">\(R\)</span>（即 <span class="arithmatex">\(R = U \text{diag}(1, 1, -1) V^T\)</span>）。</li>
 <li><strong>计算平移向量</strong>：使用公式 <span class="arithmatex">\(t = \mu_{p'} - R \mu_p\)</span> 计算平移向量。</li>
 </ol>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-01T14:00:57.634309+00:00'>2026-01-01</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-01'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-01T14:00:57.634309+00:00'>2026-01-01</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.483131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.483131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
