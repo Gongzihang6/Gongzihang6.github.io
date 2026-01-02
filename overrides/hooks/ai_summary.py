@@ -593,7 +593,6 @@ Please generate bilingual summary:"""
                     
             except requests.exceptions.RequestException as e:
                 print(f"{service_name} API请求异常: {e}")
-                return None
             except Exception as e:
                 print(f"{service_name} 摘要生成异常: {e}")
                 return None
