@@ -73,7 +73,8 @@ jobs:
           # 逻辑升级：
           # 1. 如果 JSON 中包含 "[force-ai]" (说明本次推送的历史里有这个标签)
           # 2. 或者 是手动触发且勾选了 true
-          if echo "$ALL_COMMITS_JSON" | grep -q "\[force-ai\]" || [[ "$IS_MANUAL_FORCE" == "true" ]]; then
+          # if echo "$ALL_COMMITS_JSON" | grep -q "\[force-ai\]" || [[ "$IS_MANUAL_FORCE" == "true" ]]; then
+          if [[ "$IS_MANUAL_FORCE" == "true" ]]; then
             echo "🚀 检测到 [force-ai] 标签或手动强制指令！"
             echo "AI_CACHE_MODE=false" >> $GITHUB_ENV
             echo "AI_FORCE_UPDATE=true" >> $GITHUB_ENV
@@ -95,7 +96,8 @@ jobs:
           AI_SUMMARY_LOCAL_ENABLED: "true"
           AI_SUMMARY_CACHE_ENABLED: "true"
           # API密钥配置 (从 Secrets 获取)
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.ModelScope }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # --- 修改点 2: 解决 git-committers 403 报错 ---
           # 插件会自动读取这个变量。GITHUB_TOKEN 是 Action 自带的，无需手动设置 Secret
