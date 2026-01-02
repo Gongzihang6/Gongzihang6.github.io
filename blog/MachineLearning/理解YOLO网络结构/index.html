@@ -6159,9 +6159,9 @@
 
   <h1>理解YOLO网络结构</h1>
 
-<div class="admonition info">
-<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文详细解析了YOLOv5的网络结构，重点介绍了Backbone中的核心模块。Focus模块通过切片操作降低图像分辨率并扩展通道数；BottleNeck模块结合1×1和3×3卷积保持特征图尺寸；C3模块通过分支结构和通道拼接实现特征复用。文章还阐述了特征图从P3到P4的转换过程，展示了SPP和多尺度特征融合机制，为理解YOLO的高效目标检测提供了技术细节。</p>
+<div class="admonition tip">
+<p class="admonition-title">📝 自动摘要</p>
+<p>本文围绕理解YOLO网络结构展开讨论，介绍了相关的技术概念、应用场景和实践方法。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6930,7 +6930,7 @@
 <a id="__codelineno-12-70" name="__codelineno-12-70"></a>        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">xv</span><span class="p">,</span> <span class="n">yv</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>​       分类和 bbox 检测等都是在同一个卷积的不同通道中完成，预测结果在通道维得到。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2023-04-06'><span class='material-icons' data-icon='doc_created'></span><time datetime='2023-04-06T23:18:00'>2023-04-06</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T09:12:54.101314+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2023-04-06'><span class='material-icons' data-icon='doc_created'></span><time datetime='2023-04-06T23:18:00'>2023-04-06</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T09:15:40.373293+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

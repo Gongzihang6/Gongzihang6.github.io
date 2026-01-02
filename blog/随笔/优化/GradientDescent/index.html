@@ -5866,10 +5866,12 @@
   
 
 
-<div class="admonition info">
-<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>批量梯度下降(BGD)通过全数据集计算精确梯度，收敛稳定但计算成本高；随机梯度下降(SGD)每次随机选取单个样本更新参数，速度快但方向不稳定；小批量梯度下降(MBGD)折中二者优势，采用小批量样本实现计算效率与稳定性的平衡。学习率选择需适中，过大导致震荡，过小影响收敛速度。这三种优化算法在机器学习模型训练中各具特点，需根据数据规模和计算资源灵活选用。</p>
+<div class="admonition tip">
+<p class="admonition-title">📝 自动摘要</p>
+<p>机器学习之最优化算法</p>
 </div>
+<p>BGD（Batch Gradient Descent）</p>
+<p>批量梯度下降法是一种常用的优化算法，用于求解函数的最小值或最大值.它通过迭代地更新参数的方式来逐步接近最优解.</p>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>4</strong> 分钟 | 中文字符：<strong>1411</strong> | 有效代码行数：<strong>85</strong></p>
@@ -6139,7 +6141,7 @@ g_t = \nabla L_i(w_{t-1}, x_i, y_i) （i 是随机选的）
 <p>需要注意的是，MBGD 的选择要根据具体问题的需求来确定。较小的批次大小可能会导致更快的收敛速度，但也可能陷入局部最优解。较大的批次大小可能导致计算变慢，但可能会获得更稳定的解。</p>
 <p>因此，在实践中，我们通常需要根据数据集的规模、模型的复杂度和计算资源的限制等因素来选择适当的批次大小。</p>
 <p>综上所述，MBGD 是在 SGD 和 BGD 之间取得折中的一种优化算法，它在计算效率、稳定性、鲁棒性和泛化能力等方面都具有一定的优势。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T09:12:54.295313+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T09:12:54.295313+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T09:15:40.580277+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T09:15:40.580277+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
