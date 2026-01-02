@@ -6503,7 +6503,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文探讨机器学习模型的评估方法，重点分析泛化性能及其误差分解。通过偏差-方差分解框架，将泛化误差拆解为偏差（算法拟合能力）、方差（数据扰动影响）和噪声（任务固有难度）三部分。指出优化模型需平衡偏差与方差：在保证足够拟合能力的同时降低对数据扰动的敏感性。该分析为评估和改进分类模型性能提供了理论基础。</p>
+<p>本文探讨了机器学习模型评估的核心问题，重点分析了泛化性能的误差分解。通过偏差-方差分解框架，揭示了泛化误差由方差、偏差和噪声三部分组成：偏差反映模型拟合能力，方差表征数据扰动敏感性，噪声体现任务固有难度。文章指出优化泛化性能需平衡偏差与方差，并强调了数据充分性和任务复杂度对模型性能的影响，为模型选择提供了理论依据。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -7089,7 +7089,7 @@ cost_{norm} = \frac{FNR \times p \times cost_{01} + FPR \times (1 - p) \times co
 \]</div>
 <p>其中 <span class="arithmatex">\(FPR\)</span> 是式(2.19)定义的假正例率，<span class="arithmatex">\(FNR = 1 - TPR\)</span> 是假反例率。代价曲线的绘制很简单：ROC 曲线上每一点对应了代价平面上的一条线段，设 ROC 曲线上点的坐标为 <span class="arithmatex">\((TPR, FPR)\)</span>，则可相应计算出 <span class="arithmatex">\(FNR\)</span>，然后在代价平面上绘制一条从 <span class="arithmatex">\((0, FPR)\)</span> 到 <span class="arithmatex">\((1, FNR)\)</span> 的线段，线段下的面积即表示了该条件下的期望总体代价；如此将 ROC 曲线上的每个点转化为代价平面上的一条线段，然后取所有线段的下界，围成的面积即为在所有条件下学习器的期望总体代价，如下图所示。</p>
 <p><img alt="代价曲线与期望总体代价" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F07%2Fimage-20250704225910193.png" /></p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.238131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.238131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.376619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.376619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

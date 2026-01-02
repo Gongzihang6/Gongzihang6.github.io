@@ -6084,8 +6084,9 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在由0和1组成的二维矩阵中寻找仅含1的最大正方形面积。采用动态规划方法，通过构建比原矩阵大一圈的DP数组，记录每个位置能构成的最大正方形边长。算法时间复杂度为O(mn)，空间复杂度为O(mn)，适用于图像处理、模式识别等场景。关键点在于状态转移方程：dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1。</p>
+<p>该问题要求在由0和1组成的二维矩阵中寻找仅包含1的最大正方形面积。采用动态规划方法，通过构建比表世界大一圈的dp数组记录异常状态，状态转移方程为dp[i]=max(dp[i-1],dp[i-2]+nums[i])。时间复杂度O(n)，空间复杂度O(1)。</p>
 </div>
+<p>（你正在店里摸鱼打游戏，忽然一阵阴风刮过，你抬头一看）呦，稀客啊</p>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>77</strong> | 有效代码行数：<strong>51</strong></p>
@@ -6319,7 +6320,7 @@
 <li>能拼的大小取决于周围最小的那个方块组合</li>
 </ul>
 <p>这个状态转移方程就是在模拟这个拼图过程，找出每个位置能拼出的最大正方形。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

@@ -5863,7 +5863,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在给定的单词字典中，找到从起始词到目标词的最短转换序列，每次只能改变一个字母且中间词必须在字典中。解决方案采用广度优先搜索（BFS）算法，通过队列逐层遍历可能的转换路径，利用哈希集合快速查找和去重。核心在于通过BFS保证首次找到的路径即为最短路径，时间复杂度为O(M^2×N)，其中M为单词长度，N为字典大小。</p>
+<p>该问题要求在给定的单词字典中，找到从起始词到目标词的最短转换序列，每次只能改变一个字母且中间词必须存在于字典中。解决方案采用广度优先搜索（BFS）算法，通过队列逐层遍历可能的转换路径，利用哈希集合快速查找和去重，确保高效找到最短路径或返回无解结果。典型应用于拼写检查、基因序列分析等场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6015,7 +6015,7 @@
 <a id="__codelineno-2-55" name="__codelineno-2-55"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <a id="__codelineno-2-56" name="__codelineno-2-56"></a><span class="p">};</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.234131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.234131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.372619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.372619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

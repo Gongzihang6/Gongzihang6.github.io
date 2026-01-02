@@ -6009,7 +6009,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>YOLOv5s采用轻量化网络结构，核心模块包括Focus、Conv、C3和Bottleneck。Focus模块通过切片操作减少计算量，Conv层使用SiLU激活函数和批量归一化，C3模块整合多尺度特征。该模型通过堆叠卷积层和下采样实现高效特征提取，适用于实时目标检测任务，具有参数量少、推理速度快的特点。</p>
+<p>YOLOv5s采用轻量化网络结构，核心模块包括Focus、Conv、C3和Bottleneck。通过堆叠卷积层（Conv2d）与批归一化（BatchNorm2d），配合SiLU激活函数实现高效特征提取。C3模块整合多尺度特征，Bottleneck结构降低计算量。该网络支持从32到128通道的渐进式特征扩展，适用于实时目标检测任务，在保持精度的同时优化了计算效率。</p>
 </div>
 <h5 id="yolov5s">yolov5s 网络结构<a class="headerlink" href="#yolov5s" title="Permanent link">&para;</a></h5>
 <p>Parameter name: epoch    Parameter value:-1
@@ -6603,7 +6603,7 @@ model.24.m.2.bias        torch.Size([21])</p>
 │    │    └─Conv: 3-52                        [1, 512, 20, 20]          (262,656)
 │    └─Detect: 2-25                           [1, 25200, 7]             --</p>
 <h6 id="modulelist-3-53-18879">│    │    └─ModuleList: 3-53                  --                        (18,879)<a class="headerlink" href="#modulelist-3-53-18879" title="Permanent link">&para;</a></h6>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.237131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.237131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.375619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.375619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

@@ -5863,7 +5863,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求判断给定字符串能否由字典中的单词拼接而成。采用动态规划解法，定义dp数组记录子串是否可拆分，通过遍历字符串和字典单词进行状态转移。时间复杂度为O(n*m)，其中n为字符串长度，m为字典大小。适用于文本处理、自然语言分词等场景，允许单词重复使用且不强制使用所有字典词。</p>
+<p>该问题要求判断给定字符串能否由字典中的单词拼接而成。采用动态规划解法，通过构建布尔数组记录子串匹配状态，从前往后逐步验证各位置是否可拆分。算法时间复杂度为O(n^2)，适用于字符串匹配和分词场景，允许字典单词重复使用且不强制全部使用。典型应用包括文本处理和自然语言处理中的分词任务。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -5965,7 +5965,7 @@
 <a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

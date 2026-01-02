@@ -5996,7 +5996,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在一系列按顺序排列的智力题中，通过动态规划策略最大化得分。每解决一个问题会获得相应分数，但必须跳过后续指定数量的问题。解决方案采用逆向动态规划，从后向前计算每个位置的最优解，通过比较"解决当前题"和"跳过当前题"两种选择来更新状态数组。时间复杂度为O(n)，空间复杂度可优化至O(1)，适用于需要序列决策优化的场景。</p>
+<p>该问题描述了一个动态规划场景：给定二维数组表示考试题目（分数和跳过题数），需顺序解题并最大化总分。解题时选择"解决"会获得分数但需跳过后续指定数量的题目，选择"跳过"则可继续处理下一题。通过逆向动态规划，每个状态记录从该题开始能获得的最大分数，状态转移方程为max(解决当前题+跳过后的最大分, 跳过当前题的最大分)。典型应用场景包括资源分配优化和决策路径规划。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6202,7 +6202,7 @@
 <li>对于每个问题，选择解决或跳过，取最大值。</li>
 </ol>
 <p>这种方法确保了我们在最优子结构的基础上，通过动态规划高效地计算出最大分数。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

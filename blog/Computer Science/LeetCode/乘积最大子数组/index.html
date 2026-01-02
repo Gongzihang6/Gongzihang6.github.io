@@ -5863,7 +5863,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在整数数组中寻找乘积最大的连续子数组。关键在于处理负数乘积时最大值会变为最小值的情况。动态规划解法通过维护当前最大值和最小值，在O(n)时间内解决问题。算法初始化时处理边界条件，遍历时根据当前值动态更新极值，适用于包含正负数和零的数组。相比暴力枚举的O(n²)复杂度，该方法显著提升了效率。</p>
+<p>该问题要求在整数数组中寻找乘积最大的连续子数组。由于乘积可能因负数和正数交替而波动，传统动态规划需同时维护当前最大值和最小值。算法通过遍历数组，实时更新这三个值，最终得到全局最大乘积。时间复杂度为O(n)，空间复杂度O(1)，适用于处理包含正负数的数组场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6057,7 +6057,7 @@
 <a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T05:45:00.233131+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
