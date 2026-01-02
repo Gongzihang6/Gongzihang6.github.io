@@ -104,9 +104,6 @@ jobs:
 
       # 8. 优化后的自动提交步骤：更安全的检查机制
       - name: Auto-commit AI cache
-        # 给予写权限
-        permissions:
-          contents: write
         run: |
           # 1. 检查是否存在缓存目录
           if [ -d ".ai_cache" ]; then
