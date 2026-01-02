@@ -546,48 +546,64 @@ Please generate bilingual summary:"""
             print(f"{service_name} API密钥未配置")
             return None
         
-        try:
-            headers = self.build_headers(service_config)
-            payload = self.build_payload(service_name, service_config, content, page_title)
-            
-            # 对于Google API，添加API密钥到URL
-            url = service_config['url']
-            if service_name == 'gemini':
-                url = f"{url}?key={service_config['api_key']}"
-            
-            response = requests.post(
-                url,
-                headers=headers,
-                json=payload,
-                timeout=300
-            )
-            
-            if response.status_code == 200:
-                result = response.json()
-                summary = self.extract_response_content(service_name, result)
+        # ✅ 新增：重试机制配置
+        max_retries = 3  # 最大重试 3 次
+        base_delay = 10   # 基础等待 10 秒
+        for attempt in range(max_retries):
+            try:
+                # 打印当前尝试次数
+                if attempt > 0:
+                    print(f"🔄 第 {attempt + 1} 次重试生成: {page_title} ...")
+
+                headers = self.build_headers(service_config)
+                payload = self.build_payload(service_name, service_config, content, page_title)
                 
-                if summary:
-                    # 清理可能的格式问题
-                    summary = re.sub(r'^["""''`]+|["""''`]+$', '', summary.strip())
-                    summary = re.sub(r'^\s*摘要[：:]\s*', '', summary)
-                    summary = re.sub(r'^\s*总结[：:]\s*', '', summary)
-                    summary = re.sub(r'^\s*Summary[：:]\s*', '', summary)
-                    summary = re.sub(r'^\s*Abstract[：:]\s*', '', summary)
-                    # ✅ 在成功获取 response 后，return 之前，加上这行：
-                    time.sleep(2) # 强制休息2秒，避免 CI 跑得太快把 API 冲垮
-                    return summary
+                # 对于Google API，添加API密钥到URL
+                url = service_config['url']
+                if service_name == 'gemini':
+                    url = f"{url}?key={service_config['api_key']}"
                 
-            else:
-                print(f"{service_name} API请求失败: {response.status_code} - {response.text}")
+                response = requests.post(
+                    url,
+                    headers=headers,
+                    json=payload,
+                    timeout=60
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    summary = self.extract_response_content(service_name, result)
+                    
+                    if summary:
+                        # 清理可能的格式问题
+                        summary = re.sub(r'^["""''`]+|["""''`]+$', '', summary.strip())
+                        summary = re.sub(r'^\s*摘要[：:]\s*', '', summary)
+                        summary = re.sub(r'^\s*总结[：:]\s*', '', summary)
+                        summary = re.sub(r'^\s*Summary[：:]\s*', '', summary)
+                        summary = re.sub(r'^\s*Abstract[：:]\s*', '', summary)
+                        # ✅ 在成功获取 response 后，return 之前，加上这行：
+                        time.sleep(2) # 强制休息2秒，避免 CI 跑得太快把 API 冲垮
+                        return summary
+                    
+                else:
+                    print(f"⚠️ API 错误 (状态码 {response.status_code}): {response.text}")
+                    # 如果是 429 (Too Many Requests)，多睡一会儿
+                    if response.status_code == 429:
+                        time.sleep(10)
+                    
+            except requests.exceptions.RequestException as e:
+                print(f"{service_name} API请求异常: {e}")
                 return None
-                
-        except requests.exceptions.RequestException as e:
-            print(f"{service_name} API请求异常: {e}")
-            return None
-        except Exception as e:
-            print(f"{service_name} 摘要生成异常: {e}")
-            return None
-    
+            except Exception as e:
+                print(f"{service_name} 摘要生成异常: {e}")
+                return None
+            # 如果没成功，进入下一次循环前等待
+            if attempt < max_retries - 1:
+                sleep_time = base_delay * (attempt + 1) # 线性退避：5s, 10s, 15s...
+                time.sleep(sleep_time)
+        # 如果循环结束还没返回，说明彻底失败
+        print(f"❌ {page_title} 摘要生成最终失败，跳过。")
+        return None
     def generate_ai_summary(self, content, page_title=""):
         """生成AI摘要（支持CI环境策略）"""
         is_ci = self.is_ci_environment()

@@ -102,11 +102,26 @@ jobs:
           MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.GITHUB_TOKEN }}
         run: mkdocs gh-deploy --force
 
-      # 8. 自动提交新生成的AI缓存文件 (如果存在)
-      - name: Auto-commit AI cache (if any new files)
+      # 8. 优化后的自动提交步骤：更安全的检查机制
+      - name: Auto-commit AI cache
+        # 给予写权限
+        permissions:
+          contents: write
         run: |
-          if [ -d ".ai_cache" ] && [ "$(ls -A .ai_cache 2>/dev/null)" ]; then
+          # 1. 检查是否存在缓存目录
+          if [ -d ".ai_cache" ]; then
+            # 2. 强制添加缓存目录到暂存区
             git add .ai_cache
-            # 只有在有变化时才提交，避免报错
-            git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update ai summaries cache [skip ci]" && git push)
+            
+            # 3. 关键修改：只检查【暂存区】是否有变化 (--cached)
+            # 只有当 .ai_cache 确实有新内容被 add 进去时，才执行 commit
+            if ! git diff --cached --quiet; then
+              echo "📝 发现 AI 摘要更新，正在提交..."
+              git commit -m "chore: update ai summaries cache [skip ci]"
+              git push
+            else
+              echo "✅ AI 摘要无变化，跳过提交。"
+            fi
+          else
+            echo "⚠️ 未找到 .ai_cache 目录"
           fi
