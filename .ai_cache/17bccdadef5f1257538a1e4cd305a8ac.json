@@ -1,0 +1,7 @@
+{
+  "summary": "SQL外键约束通过建立表间引用关系确保数据完整性和一致性，支持级联操作（CASCADE/SET NULL）自动同步关联数据。JOIN操作利用外键关系实现跨表查询：INNER JOIN获取匹配记录，LEFT/RIGHT JOIN保留单边全部数据，FULL JOIN返回所有记录。两者共同构建关系型数据库的核心数据关联机制，适用于需要严格数据约束和复杂查询的业务场景。",
+  "service": "deepseek",
+  "page_title": "SQL外键约束与连接",
+  "timestamp": "2026-01-02T07:52:53.242822",
+  "language": "zh"
+}

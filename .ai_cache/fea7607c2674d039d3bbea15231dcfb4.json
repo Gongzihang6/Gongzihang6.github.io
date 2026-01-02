@@ -1,0 +1,7 @@
+{
+  "summary": "Java集合框架提供了高效的数据存储与操作方案，包含Collection（单列）和Map（键值对）两大体系。核心实现类包括ArrayList（动态数组查询快）、LinkedList（双向链表增删快）、HashSet（哈希表去重）等，各具适用场景。文章详解了集合遍历方式（迭代器、Lambda）、并发修改异常解决方案，以及String的不可变特性和内存优化机制。针对不同数据结构，分析了底层实现原理（如HashSet的哈希碰撞处理）及性能特点，为开发者选择合适集合类型提供技术依据。",
+  "service": "deepseek",
+  "page_title": "Java集合框架与常用API",
+  "timestamp": "2026-01-02T07:33:12.321154",
+  "language": "zh"
+}

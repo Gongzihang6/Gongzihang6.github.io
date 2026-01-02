@@ -1,0 +1,7 @@
+{
+  "summary": "本文系统总结了SpringBoot开发中的核心注解，按功能模块分类解析其作用、使用场景和实现原理。涵盖Lombok简化代码、IoC/DI容器、自动配置、Web控制层、数据持久化等关键技术点，详细说明如@Autowired依赖注入、@RestController定义API等典型注解的配置参数和底层机制，为开发者提供全面的注解应用参考。",
+  "service": "deepseek",
+  "page_title": "SpringBoot注解总结",
+  "timestamp": "2026-01-02T07:53:22.535270",
+  "language": "zh"
+}

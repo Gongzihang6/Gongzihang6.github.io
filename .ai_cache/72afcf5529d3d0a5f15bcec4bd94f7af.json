@@ -1,0 +1,7 @@
+{
+  "summary": "本文深入解析Java Web开发中HttpServletRequest的核心作用与应用场景。作为Servlet API的关键接口，HttpServletRequest封装HTTP请求的全部信息，包括请求行、头、参数及会话数据，但存在强耦合局限。文章通过对比分层架构痛点，引入Spring的RequestContextHolder作为解耦方案，实现线程安全的全局请求访问，并详细阐述其底层ThreadLocal机制及最佳实践，为构建高内聚低耦合的后端系统提供指导。",
+  "service": "deepseek",
+  "page_title": "JavaHttpServeletRequest",
+  "timestamp": "2026-01-02T07:51:23.099996",
+  "language": "zh"
+}

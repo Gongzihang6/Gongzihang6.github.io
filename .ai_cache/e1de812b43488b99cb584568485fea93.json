@@ -1,0 +1,7 @@
+{
+  "summary": "Orbbec SDK库为femto bolt相机提供二次开发支持，核心功能包括设备连接管理与参数配置。通过创建全局context实现设备通信，调用queryDeviceList()获取连接设备列表并检测状态。支持手动配置相机参数如自动曝光等，适用于计算机视觉和深度感知应用场景。该SDK简化了硬件操作流程，提升了开发效率。",
+  "service": "deepseek",
+  "page_title": "Orbbec SDK库总结",
+  "timestamp": "2026-01-02T07:56:37.403445",
+  "language": "zh"
+}

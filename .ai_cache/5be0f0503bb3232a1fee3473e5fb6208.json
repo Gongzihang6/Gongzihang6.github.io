@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求在由0和1组成的二维矩阵中寻找全为1的最大正方形面积。采用动态规划方法，定义dp数组存储以每个位置为右下角的正方形最大边长，通过状态转移方程dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1计算。时间复杂度为O(mn)，空间复杂度为O(mn)，适用于图像处理、模式识别等场景。",
+  "service": "deepseek",
+  "page_title": "[221. 最大正方形](https://leetcode.cn/problems/maximal-square/)",
+  "timestamp": "2026-01-02T07:35:09.328054",
+  "language": "zh"
+}

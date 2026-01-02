@@ -1,0 +1,7 @@
+{
+  "summary": "该题目要求计算给定字符串中特定字符出现的百分比并向下取整。核心是通过遍历字符串统计字符出现次数，再根据公式（出现次数/字符串长度×100）计算结果。主要考察基础字符串操作和数学运算能力，适用于入门级编程练习，常用于数据处理和统计分析场景。",
+  "service": "deepseek",
+  "page_title": "[2278. 字母在字符串中的百分比](https://leetcode.cn/problems/percentage-of-letter-in-string/)",
+  "timestamp": "2026-01-02T07:35:17.166326",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "该算法解决合并重叠区间的问题，输入为区间集合，输出为不重叠且覆盖所有原始区间的新集合。核心步骤包括按区间起始点排序，然后遍历并合并相邻重叠区间。适用于时间调度、资源分配等需要消除重叠的场景，时间复杂度为O(nlogn)，主要消耗在排序阶段。",
+  "service": "deepseek",
+  "page_title": "[56. 合并区间](https://leetcode.cn/problems/merge-intervals/)",
+  "timestamp": "2026-01-02T07:40:32.719157",
+  "language": "zh"
+}

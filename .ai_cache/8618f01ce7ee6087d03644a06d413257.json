@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求找出整数数组中出现频率前K高的元素。解决方案主要采用快速选择算法或桶排序方法：快速选择通过分区操作高效定位TopK元素，时间复杂度接近O(n)；桶排序则通过频率分桶实现O(n)时间复杂度。两种方法均需先统计元素频率，适用于大数据量场景，其中快速选择更适合原址排序，桶排序则保证稳定输出。",
+  "service": "deepseek",
+  "page_title": "[347. 前 K 个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/)",
+  "timestamp": "2026-01-02T07:37:14.126576",
+  "language": "zh"
+}

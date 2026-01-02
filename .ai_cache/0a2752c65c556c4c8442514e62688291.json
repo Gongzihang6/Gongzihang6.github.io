@@ -1,0 +1,7 @@
+{
+  "summary": "该题要求统计两个排列数组中顺序一致的三元组数目。核心解法利用坐标映射和树状数组，通过预处理将问题转化为查询元素左侧较小值和右侧较大值的组合。算法首先建立位置映射，然后使用两次树状数组遍历分别计算每个元素的前后符合条件数目，最终累加得到结果。时间复杂度为O(n log n)，适用于大规模数据。",
+  "service": "deepseek",
+  "page_title": "[2179. 统计数组中好三元组数目](https://leetcode.cn/problems/count-good-triplets-in-an-array/)",
+  "timestamp": "2026-01-02T07:34:53.212616",
+  "language": "zh"
+}

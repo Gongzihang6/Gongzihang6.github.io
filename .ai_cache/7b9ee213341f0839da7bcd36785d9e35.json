@@ -1,0 +1,7 @@
+{
+  "summary": "岛屿数量\n\n给你一个由 [代码]（陆地）和 [代码]（水）组成的的二维网格，请你计算网格中岛屿的数量.岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成.",
+  "service": "fallback",
+  "page_title": "[200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/)",
+  "timestamp": "2026-01-02T07:37:59.147470",
+  "language": "zh"
+}

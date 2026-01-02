@@ -1,0 +1,7 @@
+{
+  "summary": "@Autowired和import在Java Spring中解决不同层面的问题：import在编译时确保类型识别，告知编译器类的定义位置；@Autowired则在运行时由Spring IoC容器自动完成依赖注入，动态提供已实例化的Bean对象。前者解决代码编译问题，后者实现对象解耦与自动装配，两者需配合使用以确保类型安全与运行时依赖管理。",
+  "service": "deepseek",
+  "page_title": "@Autowired 和 import 的区别",
+  "timestamp": "2026-01-02T07:55:31.973848",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "PointMamba提出了一种基于状态空间模型(SSM)的点云分析方法，通过线性复杂度替代传统Transformer的二次计算复杂度，显著提升了运算效率。该方法采用最远点采样和空间填充曲线序列化策略，将无序点云转化为1D序列处理，在长序列场景下推理速度提升30倍，显存占用降低24.9倍，有效解决了点云数量增加时的计算瓶颈问题。",
+  "service": "deepseek",
+  "page_title": "PointMamba: A Simple State Space Model for Point Cloud Analysis",
+  "timestamp": "2026-01-02T07:58:50.834549",
+  "language": "zh"
+}
