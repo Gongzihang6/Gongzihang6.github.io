@@ -5857,7 +5857,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在字符串s中找出所有p的字母异位词子串并返回起始索引。核心解法采用滑动窗口和哈希计数优化，通过维护固定长度的字符频率数组来高效比较。时间复杂度优化至O(n)，避免了暴力解法的O(mn)复杂度。关键点包括：预处理p的字符频率，滑动窗口动态维护s的子串频率，以及通过数组快速比较实现常数时间判断。适用于字符串匹配、数据流分析等场景。</p>
+<p>该问题要求在字符串s中查找所有p的字母异位词子串，返回起始索引。核心解法采用滑动窗口配合哈希表统计字符频率，通过比较固定长度窗口内字符频率与目标p的频率来判断异位词。优化后的算法使用固定长度数组替代哈希表，时间复杂度降至O(n)，适用于大规模字符串。典型应用场景包括文本匹配和生物信息学中的序列分析。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6077,7 +6077,7 @@
 <a id="__codelineno-3-51" name="__codelineno-3-51"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.373619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.373619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.271253+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.271253+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

@@ -6120,7 +6120,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求以顺时针螺旋顺序遍历二维矩阵并返回所有元素。核心解法是通过设定上下左右边界，逐层向内收缩遍历，依次处理顶层、右列、底层和左列的元素。需注意边界条件处理以避免重复访问，适用于矩阵数据提取、图像处理等场景。时间复杂度为O(mn)，空间复杂度为O(1)。</p>
+<p>该问题要求以顺时针螺旋顺序遍历二维矩阵并返回所有元素。核心解法通过模拟螺旋路径，依次处理矩阵的上下左右边界，逐步向内收缩。关键点包括边界条件控制、方向切换和循环终止判断，适用于图像处理、矩阵运算等场景。算法需注意处理奇数行列矩阵的中心元素，时间复杂度为O(mn)。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6363,7 +6363,7 @@
 <li><strong>处理单行/单列</strong>：如果只有一行，执行完“从左向右”后，<code>top</code> 增加，<code>top &gt; bottom</code> 成立，直接退出，完全正确。</li>
 <li><strong>可读性</strong>：逻辑符合人类直觉（转圈圈），不需要计算 <code>n - 2*k</code> 这种复杂的数学公式。</li>
 </ol>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.374619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.374619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.272253+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.272253+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

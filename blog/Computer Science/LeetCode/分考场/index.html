@@ -6240,7 +6240,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求将n个考生分配到最少的考场中，确保相互认识的考生不在同一考场。通过将问题抽象为图的着色问题，使用邻接矩阵表示认识关系，并采用回溯法结合剪枝策略寻找最小色数。优化方案引入贪心算法（Welsh-Powell）获取初始上界，减少搜索空间。算法时间复杂度较高，但适用于小规模数据（n≤100），满足1秒时间限制。</p>
+<p>该文探讨了将n个考生分配到最少考场的问题，要求认识的人不能同考场。问题可转化为图的着色问题，通过回溯法寻找最小色数。采用邻接矩阵存储认识关系，回溯时进行剪枝优化，并使用贪心算法获取初始上界以加速求解。适用于n≤100的小规模数据，满足1秒时间限制。核心是通过颜色分配和冲突检测实现考场最小化。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6635,7 +6635,7 @@
 <li><strong>回溯法</strong>：最坏情况下仍为指数级，但通过贪心上界剪枝，实际运行时间大幅减少。</li>
 </ul>
 <p>这种方法结合了贪心算法的快速性和回溯法的精确性，能够在较短时间内找到最优解。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.372619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.372619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.270253+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.270253+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

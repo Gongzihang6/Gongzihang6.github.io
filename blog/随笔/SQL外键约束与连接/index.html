@@ -6183,7 +6183,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>SQL外键约束通过建立表间引用关系确保数据完整性，支持ON DELETE/UPDATE级联操作控制数据同步行为，包括严格限制、级联更新/删除、置空或设为默认值等策略。JOIN操作则利用外键关系实现跨表查询，INNER JOIN返回匹配记录，LEFT/RIGHT JOIN保留单边全量数据，FULL JOIN获取并集结果，为复杂数据关联分析提供基础支持。</p>
+<p>SQL外键约束通过建立表间引用关系确保数据完整性和一致性，支持级联操作（CASCADE/SET NULL）自动同步关联数据。JOIN操作利用外键关系实现跨表查询：INNER JOIN获取匹配记录，LEFT/RIGHT JOIN保留单边全部数据，FULL JOIN返回所有记录。两者共同构建关系型数据库的核心数据关联机制，适用于需要严格数据约束和复杂查询的业务场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6709,7 +6709,7 @@
 <li><strong>性能</strong>: 在用于 JOIN 的列（尤其是外键列）上<strong>创建索引</strong>是提升查询性能的<strong>最关键</strong>步骤。没有索引，JOIN 操作会导致全表扫描，数据量大时会极其缓慢。</li>
 <li><strong><code>USING</code> 关键字</strong>: 如果两个表用于连接的列名完全相同（例如都是 <code>dept_id</code>），你可以使用 <code>USING(dept_id)</code> 来替代 <code>ON e.dept_id = d.dept_id</code>，使语法更简洁。</li>
 </ul>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.572620+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.572620+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.467254+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.467254+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

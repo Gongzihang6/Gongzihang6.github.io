@@ -5974,7 +5974,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该题要求统计数组中满足特定条件的"趣味子数组"数量。核心条件是子数组中满足nums[i] ≡ k (mod modulo)的元素数量本身也满足模运算条件。解题关键在于利用前缀和与哈希表优化计算，将问题转化为寻找满足(sum[j] - sum[i]) ≡ k (mod modulo)的区间对。算法通过O(n)时间复杂度高效统计结果，适用于大规模数组处理。</p>
+<p>该问题要求统计满足特定条件的子数组数量，其中子数组需满足模运算结果为定值。核心解法通过前缀和与哈希表优化计算，将时间复杂度降至O(n)。关键在于维护一个记录前缀和出现次数的哈希表，实时计算符合条件的子数组数目。适用于处理大规模数组的模运算统计问题，典型应用场景包括数据分析和密码学领域。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6204,7 +6204,7 @@
 <a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.371619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.269253+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.269253+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

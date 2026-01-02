@@ -6359,7 +6359,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>K近邻（kNN）是一种监督学习方法，通过计算测试样本与训练集中最近k个样本的距离进行分类或回归预测。为提高效率，可采用Kd-Tree和Ball-Tree数据结构优化搜索：Kd-Tree适用于低维数据，通过超矩形划分空间；Ball-Tree利用超球面划分，更适合高维场景。两种方法均通过剪枝策略减少计算量，但维度接近样本数时效率会下降。kNN计算开销大，适合训练样本远多于维度的场景。</p>
+<p>K近邻（kNN）是一种监督学习方法，通过计算测试样本与训练集中最近k个样本的距离进行分类或回归预测。为提高效率，可采用Kd-Tree（适用于低维数据）和Ball-Tree（适用于高维数据）优化搜索过程。Kd-Tree通过坐标轴划分空间，Ball-Tree利用超球面划分，两者均通过剪枝策略减少计算量。kNN计算开销较大，但适用于训练样本远多于维度的场景，分类时采用投票法，回归时采用平均法。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6795,7 +6795,7 @@ M = (I - W)^T(I - W) \, , \tag{10.30}
 <h4 id="lelaplacian-eigenmap">LE（Laplacian Eigenmap）<a class="headerlink" href="#lelaplacian-eigenmap" title="Permanent link">&para;</a></h4>
 <p>Laplacian Eigenmap (LE ) 希望保持流形的近邻关系 : 将原始空间中相近的点映射成目标空间中相近的点。</p>
 <p><img alt="image-20250625120829043" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/image-20250625120829043.png" /></p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.375619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.375619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.274253+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.274253+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

@@ -6102,10 +6102,12 @@
 
   <h1>Dsu complexity</h1>
 
-<div class="admonition info">
-<p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文分析了并查集(DSU)的时间复杂度，通过势能法证明其操作均摊时间为<span class="arithmatex">\(O(\alpha(n))\)</span>。关键点包括：定义基于阿克曼函数的<span class="arithmatex">\(\alpha(n)\)</span>增长度量，建立节点rank与辅助函数<span class="arithmatex">\(level(x)\)</span>、<span class="arithmatex">\(iter(x)\)</span>的关系，并构造势函数<span class="arithmatex">\(\Phi(x)\)</span>。证明过程中区分三种操作情况，最终得出find操作的复杂度上界为<span class="arithmatex">\(O(\alpha(n))\)</span>，合并操作类似。</p>
+<div class="admonition tip">
+<p class="admonition-title">📝 自动摘要</p>
+<p>本部分内容转载并修改自 时间复杂度 - 势能分析浅谈，已取得原作者授权同意.定义</p>
 </div>
+<p>阿克曼函数</p>
+<p>这里，先给出 <span class="arithmatex">\(\alpha(n)\)</span> 的定义.为了给出这个定义，先给出 <span class="arithmatex">\(A_k(j)\)</span> 的定义.</p>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
 <p>阅读时间：<strong>1</strong> 分钟 | 中文字符：<strong>497</strong></p>
@@ -6200,7 +6202,7 @@ A_k(j)=\left\{
 <p>所以，可以考虑使用 <span class="arithmatex">\(\log_2 siz(x)\)</span> 代替 <span class="arithmatex">\(rnk(x)\)</span>。</p>
 <p>关于第一条性质，由于节点的 <span class="arithmatex">\(siz\)</span> 最多翻倍，所以 <span class="arithmatex">\(\log_2 siz(x)\)</span> 最多上升 1。关于第二三条性质，结论较为显然，这里略去证明。</p>
 <p>所以说，如果不想写按秩合并，就写启发式合并好了，时间复杂度仍旧是 <span class="arithmatex">\(\Theta(m\alpha(n))\)</span>。</p>
-<p><div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.324619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.324619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div></p>
+<p><div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.221253+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.221253+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

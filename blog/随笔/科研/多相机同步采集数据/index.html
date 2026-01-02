@@ -7037,7 +7037,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该文章详细介绍了基于Orbbec SDK的多相机同步采集技术方案。通过硬件时钟同步和软件帧同步机制，解决多设备数据采集时的时序漂移问题。关键点包括：主从设备通过同步端口实现硬件触发对齐，主机统一校准各相机时钟；采用指针复用优化处理效率，同时避免数据覆盖；针对深度帧处理耗时特点设计了异步保存策略。该方案适用于需要高精度时空同步的3D视觉应用场景。</p>
+<p>该文章详细介绍了多相机同步采集数据的技术方案，通过Orbbec SDK实现硬件时钟同步和软件帧同步。硬件层面利用主从设备模式及同步集线器统一触发信号，软件层面通过时间戳校准和数据缓冲管理解决帧丢失问题。重点阐述了深度帧与彩色帧的差异化处理策略，以及点云数据的高效保存机制，适用于需要高精度时间对齐的多相机视觉系统。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -7901,7 +7901,7 @@
 <a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointCloud</span><span class="o">&lt;</span><span class="n">pcl</span><span class="o">::</span><span class="n">PointXYZRGB</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">rgbdCloud</span><span class="p">;</span><span class="w">   </span><span class="c1">// 彩色点云</span>
 <a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.623620+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.623620+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.518254+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.518254+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

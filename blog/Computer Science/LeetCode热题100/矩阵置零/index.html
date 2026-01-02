@@ -5930,7 +5930,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求将矩阵中零元素所在的行和列全部置零，并要求使用原地算法以节省空间。核心解法包括两种：一是使用额外集合记录零元素位置，空间复杂度O(m+n)；二是利用矩阵首行首列作为标记位，实现O(1)空间复杂度。后者通过两次遍历先标记后置零，需特殊处理首行首列。适用于图像处理等需要高效修改矩阵的场景。</p>
+<p>该问题要求对给定矩阵进行原地修改，当元素为0时将其所在行和列全部置零。关键挑战在于避免额外空间使用，可通过标记首行首列来存储状态信息。两种解法分别展示了使用额外集合记录和使用矩阵自身标记的技术方案，后者通过巧妙利用首行首列作为标记空间实现O(1)空间复杂度。适用于图像处理等需要批量修改矩阵数据的场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6179,7 +6179,7 @@
 <a id="__codelineno-3-64" name="__codelineno-3-64"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-65" name="__codelineno-3-65"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T06:18:06.373619+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T06:18:06.373619+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-02T07:32:15.272253+00:00'>2026-01-02</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-02'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-02T07:32:15.272253+00:00'>2026-01-02</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
