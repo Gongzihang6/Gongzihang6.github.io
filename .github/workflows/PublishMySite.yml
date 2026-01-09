@@ -94,7 +94,7 @@ jobs:
           AI_SUMMARY_CI_ONLY_CACHE: ${{ env.AI_CACHE_MODE }}
           AI_SUMMARY_CI_FALLBACK: "true"
           AI_SUMMARY_LOCAL_ENABLED: "true"
-          AI_SUMMARY_CACHE_ENABLED: "false"
+          AI_SUMMARY_CACHE_ENABLED: "true"
           # API密钥配置 (从 Secrets 获取)
           # DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.ModelScope }}

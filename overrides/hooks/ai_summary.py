@@ -48,7 +48,7 @@ class AISummaryGenerator:
             # 魔搭社区AI
             'deepseek': {
                 # 'url': 'https://api.siliconflow.cn/v1/chat/completions',
-                'url': 'https://api-inference.modelscope.cn/v1',
+                'url': 'https://api-inference.modelscope.cn/v1/chat/completions',
                 'model': 'Pro/deepseek-ai/DeepSeek-V3.2',
                 'api_key': os.getenv('DEEPSEEK_API_KEY', ),
                 'max_tokens': 15000,

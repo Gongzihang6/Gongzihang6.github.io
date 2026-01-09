@@ -1015,3 +1015,48 @@ div.highlight:not(.code-collapsed) .code-fold-button:hover .button-text {
 
 
 
+/* ==========================================================================
+   6. 列表排版修复 (仿 Typora 紧凑风格)
+   ========================================================================== */
+
+/* 1. 全局收紧列表的左边距 */
+.md-typeset ul, 
+.md-typeset ol {
+    /* Material 主题默认缩进很大 (约 2.5em)，这里强制改为 1.5em，让列表更紧凑 */
+    padding-left: 1.5em !important; 
+    
+    /* 消除多余的外边距，防止整体向右偏移 */
+    margin-left: 0 !important;
+}
+
+/* 2. 针对嵌套列表进一步微调 */
+.md-typeset ul ul, 
+.md-typeset ul ol, 
+.md-typeset ol ul, 
+.md-typeset ol ol {
+    /* 确保嵌套层级也保持紧凑 */
+    padding-left: 1.5em !important; 
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* 3. 强制消除列表项内部的“首行缩进” */
+/* 你的第2部分配置了 p {text-indent: 2em}，这会导致列表里的文字也被向右推，造成“缩进很大”的错觉 */
+.md-typeset li,
+.md-typeset li p {
+    text-indent: 0 !important; /* 强制归零 */
+    
+    /* 稍微调整行间距，让列表项之间不那么挤，但也不像默认那么散 */
+    margin-top: 0.25em !important;
+    margin-bottom: 0.25em !important;
+}
+
+/* 4. 微调列表标记 (Bullet) 与文字的距离 */
+.md-typeset li {
+    /* 稍微拉近一点点文字和圆点的距离 */
+    padding-left: 0.1em; 
+}
+
+
+
+
