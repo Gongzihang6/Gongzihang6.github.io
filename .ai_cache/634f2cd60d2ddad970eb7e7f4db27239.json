@@ -1,0 +1,7 @@
+{
+  "summary": "支持向量机（Support Vector Machine，SVM）\n\nSVM是特征空间上的间隔最大的线性二分类器，其学习策略是间隔最大化，最终可转化为一个凸二次规划问题求解，因此SVM的解是全局最优解.",
+  "service": "fallback",
+  "page_title": "支持向量机（Support Vector Machine，SVM）",
+  "timestamp": "2026-01-09T14:03:27.650714",
+  "language": "zh"
+}

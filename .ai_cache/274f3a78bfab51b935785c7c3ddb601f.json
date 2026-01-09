@@ -1,0 +1,7 @@
+{
+  "summary": "计数质数\n\n给定整数 [代码] ，返回 所有小于非负整数 [代码] 的质数的数量.",
+  "service": "fallback",
+  "page_title": "计算质数",
+  "timestamp": "2026-01-09T14:03:10.181604",
+  "language": "zh"
+}

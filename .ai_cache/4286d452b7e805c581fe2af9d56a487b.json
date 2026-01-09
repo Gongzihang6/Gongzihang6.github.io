@@ -1,0 +1,7 @@
+{
+  "summary": "请你设计并实现时间复杂度为 [代码] 的算法解决此问题.最长连续序列\n\n给定一个未排序的整数数组 [代码] ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度.",
+  "service": "fallback",
+  "page_title": "[128. 最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/)",
+  "timestamp": "2026-01-09T14:03:19.673273",
+  "language": "zh"
+}

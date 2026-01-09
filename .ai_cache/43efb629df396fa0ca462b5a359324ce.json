@@ -1,0 +1,7 @@
+{
+  "summary": "—— 从一个“混乱”的业务方法谈起\n\n[代码示例]\n\n想象一下，你正在编写一个核心的银行业务方法：[代码]（转账）.[代码示例]\n\n这个实现看起来很完美.[toc]\n\n引言：为什么需要 AOP.",
+  "service": "fallback",
+  "page_title": "SpringAOP",
+  "timestamp": "2026-01-09T14:04:18.370245",
+  "language": "zh"
+}

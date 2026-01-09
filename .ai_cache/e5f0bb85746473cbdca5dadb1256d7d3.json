@@ -1,0 +1,7 @@
+{
+  "summary": "统计数组中好三元组数目\n\n给你两个下标从 0 开始且长度为 [代码] 的整数数组 [代码] 和 [代码] ，两者都是 [代码] 的 排列.",
+  "service": "fallback",
+  "page_title": "[2179. 统计数组中好三元组数目](https://leetcode.cn/problems/count-good-triplets-in-an-array/)",
+  "timestamp": "2026-01-09T14:02:45.323679",
+  "language": "zh"
+}

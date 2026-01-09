@@ -1,0 +1,7 @@
+{
+  "summary": "机器学习之最优化算法\n\nBGD（Batch Gradient Descent）\n\n批量梯度下降法是一种常用的优化算法，用于求解函数的最小值或最大值.它通过迭代地更新参数的方式来逐步接近最优解.",
+  "service": "fallback",
+  "page_title": "机器学习之最优化算法",
+  "timestamp": "2026-01-09T14:04:30.495124",
+  "language": "zh"
+}

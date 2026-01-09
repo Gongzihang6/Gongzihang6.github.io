@@ -1,0 +1,7 @@
+{
+  "summary": "字母在字符串中的百分比\n\n给你一个字符串 [代码] 和一个字符 [代码] ，返回在 [代码] 中等于 [代码] 字符所占的 百分比 ，向下取整到最接近的百分比.",
+  "service": "fallback",
+  "page_title": "[2278. 字母在字符串中的百分比](https://leetcode.cn/problems/percentage-of-letter-in-string/)",
+  "timestamp": "2026-01-09T14:02:47.046965",
+  "language": "zh"
+}

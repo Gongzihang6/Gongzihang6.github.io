@@ -1,0 +1,7 @@
+{
+  "summary": "排序和查找算法总结\n\n一、比较排序算法\n\n通过元素间的比较确定顺序，时间复杂度通常下限为 $O(n \\log n)$.",
+  "service": "fallback",
+  "page_title": "排序和查找算法总结",
+  "timestamp": "2026-01-09T14:02:39.046475",
+  "language": "zh"
+}

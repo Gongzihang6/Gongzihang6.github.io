@@ -1,0 +1,7 @@
+{
+  "summary": "示例 2:\n\n输入: [代码]\n\n输出: [代码]\n\n示例 3:\n\n输入: [代码]\n\n输出: [代码]\n\n提示：\n\n-   [代码]``\n\n复杂度分析\n\n- 时间复杂度：$O(n(k + ))$.",
+  "service": "fallback",
+  "page_title": "[49. 字母异位词分组](https://leetcode.cn/problems/group-anagrams/)",
+  "timestamp": "2026-01-09T14:03:16.217902",
+  "language": "zh"
+}
