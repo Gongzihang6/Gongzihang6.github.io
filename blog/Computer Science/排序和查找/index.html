@@ -6111,40 +6111,52 @@
    - 稳定性：稳定<br />
    - 描述：双向冒泡排序，交替方向遍历。</p>
 <p>10、 <strong>侏儒排序 (Gnome Sort)</strong><br />
-    - 时间复杂度：<span class="arithmatex">\(O(n^2)\)</span><br />
-    - 稳定性：稳定<br />
-    - 描述：类似插入排序，通过交换相邻元素逐步前移。</p>
-<p>11、 <strong>循环排序 (Cycle Sort)</strong><br />
-    - 时间复杂度：<span class="arithmatex">\(O(n^2)\)</span><br />
-    - 稳定性：不稳定<br />
-    - 描述：通过循环分解排列减少写操作次数。</p>
-<p>12、 <strong>内省排序 (Introsort)</strong><br />
-    - 时间复杂度：<span class="arithmatex">\(O(n \log n)\)</span><br />
-    - 稳定性：不稳定<br />
-    - 描述：混合快速排序、堆排序和插入排序。</p>
-<p>13、 <strong>奇偶排序 (Odd-Even Sort)</strong><br />
-    - 时间复杂度：<span class="arithmatex">\(O(n^2)\)</span><br />
-    - 稳定性：稳定<br />
-    - 描述：并行算法基础，交替比较奇偶索引元素。</p>
+- 时间复杂度：<span class="arithmatex">\(O(n^2)\)</span><br />
+- 稳定性：稳定<br />
+- 描述：类似插入排序，通过交换相邻元素逐步前移。</p>
+<p>11、 <strong>循环排序 (Cycle Sort)</strong>  </p>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(n^2)\)</span>  </li>
+<li>稳定性：不稳定  </li>
+<li>描述：通过循环分解排列减少写操作次数。</li>
+</ul>
+<p>12、 <strong>内省排序 (Introsort)</strong>  </p>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(n \log n)\)</span>  </li>
+<li>稳定性：不稳定  </li>
+<li>描述：混合快速排序、堆排序和插入排序。</li>
+</ul>
+<p>13、 <strong>奇偶排序 (Odd-Even Sort)</strong>  </p>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(n^2)\)</span>  </li>
+<li>稳定性：稳定  </li>
+<li>描述：并行算法基础，交替比较奇偶索引元素。</li>
+</ul>
 <p>14、 <strong>梳排序 (Comb Sort)</strong><br />
-    - 时间复杂度：<span class="arithmatex">\(O(n^2)\)</span>，优化后接近 <span class="arithmatex">\(O(n \log n)\)</span><br />
-    - 稳定性：不稳定<br />
-    - 描述：改进冒泡排序，以递减步长比较元素。</p>
-<p>15、 <strong>图书馆排序 (Library Sort)</strong><br />
-    - 时间复杂度：<span class="arithmatex">\(O(n \log n)\)</span><br />
-    - 稳定性：稳定<br />
-    - 描述：插入排序优化，预留间隙加速插入。</p>
+- 时间复杂度：<span class="arithmatex">\(O(n^2)\)</span>，优化后接近 <span class="arithmatex">\(O(n \log n)\)</span><br />
+- 稳定性：不稳定<br />
+- 描述：改进冒泡排序，以递减步长比较元素。</p>
+<p>15、 <strong>图书馆排序 (Library Sort)</strong>  </p>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(n \log n)\)</span>  </li>
+<li>稳定性：稳定  </li>
+<li>描述：插入排序优化，预留间隙加速插入。</li>
+</ul>
 <hr />
 <h3 id="_3">二、非比较排序算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>利用数据特性（如范围、分布）排序，突破比较排序下限。</p>
-<p>1、 <strong>计数排序 (Counting Sort)</strong><br />
-   - 时间复杂度：<span class="arithmatex">\(O(n + k)\)</span>（<span class="arithmatex">\(k\)</span> 为数据范围）<br />
-   - 稳定性：稳定<br />
-   - 描述：统计元素频率后累加输出。</p>
-<p>2、 <strong>基数排序 (Radix Sort)</strong><br />
-   - 时间复杂度：<span class="arithmatex">\(O(n \cdot k)\)</span>（<span class="arithmatex">\(k\)</span> 为最大位数）<br />
-   - 稳定性：稳定（通常基于计数排序实现）<br />
-   - 描述：按位分配收集，从低位到高位排序。</p>
+<p>1、<strong>计数排序 (Counting Sort)</strong>  </p>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(n + k)\)</span>（<span class="arithmatex">\(k\)</span> 为数据范围）  </li>
+<li>稳定性：稳定  </li>
+<li>描述：统计元素频率后累加输出。</li>
+</ul>
+<p>2、<strong>基数排序 (Radix Sort)</strong>  </p>
+<ul>
+<li>时间复杂度：<span class="arithmatex">\(O(n \cdot k)\)</span>（<span class="arithmatex">\(k\)</span> 为最大位数）  </li>
+<li>稳定性：稳定（通常基于计数排序实现）  </li>
+<li>描述：按位分配收集，从低位到高位排序。</li>
+</ul>
 <p>3、 <strong>桶排序 (Bucket Sort)</strong><br />
    - 时间复杂度：<span class="arithmatex">\(O(n + k)\)</span>（理想情况下）<br />
    - 稳定性：稳定<br />
@@ -6165,12 +6177,14 @@
 <hr />
 <h3 id="_5">四、低效或理论性排序<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>实际应用少，但具有理论意义或趣味性。</p>
-<p>1、 <strong>Bogo 排序 (Bogo Sort)</strong><br />
-   - 时间复杂度：平均 <span class="arithmatex">\(O(n \cdot n!)\)</span><br />
-   - 描述：随机打乱序列直到有序。</p>
+<p>1、 <strong>Bogo 排序 (Bogo Sort)</strong>  </p>
+<ul>
+<li>时间复杂度：平均 <span class="arithmatex">\(O(n \cdot n!)\)</span>  </li>
+<li>描述：随机打乱序列直到有序。</li>
+</ul>
 <p>2、 <strong>慢排序 (Slow Sort)</strong><br />
-   - 时间复杂度：<span class="arithmatex">\(O(n^{\log n})\)</span><br />
-   - 描述：递归故意低效，证明分治法不总高效。</p>
+-   时间复杂度：<span class="arithmatex">\(O(n^{\log n})\)</span><br />
+-   描述：递归故意低效，证明分治法不总高效。</p>
 <p>3、 <strong>珠排序 (Bead Sort)</strong><br />
    - 时间复杂度：<span class="arithmatex">\(O(n \sqrt{n})\)</span><br />
    - 描述：利用重力模拟珠子下落排序。</p>
@@ -8823,7 +8837,7 @@
 <li>鸡尾酒排序实现更简单</li>
 </ol>
 <p>鸡尾酒排序适合教学目的和小规模数据排序，实际应用中更高效的排序算法（如快速排序、归并排序）通常更为常用。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-09'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-09T13:39:51.318293+00:00'>2026-01-09</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-09'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-09T13:39:51.318293+00:00'>2026-01-09</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-09'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-09T14:02:04.261281+00:00'>2026-01-09</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-09'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-09T14:02:04.261281+00:00'>2026-01-09</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
