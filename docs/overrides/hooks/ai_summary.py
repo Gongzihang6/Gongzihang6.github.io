@@ -818,7 +818,15 @@ Please generate bilingual summary:"""
                 print(f"📦 发现根目录缓存 {env_desc}，共 {len(cache_files)} 个缓存文件")
     
     def process_page(self, markdown, page, config):
-        """处理页面，生成AI摘要（支持CI环境检测）"""
+        """
+        功能：处理 MkDocs 传入的单个 markdown 页面，决定是否并在开头插入 AI 摘要。
+        实现逻辑：
+        1. 检查当前环境是否允许运行，以及当前文章是否满足生成条件。
+        2. 清理文章内容，计算 Hash 匹配缓存。
+        3. 检查缓存类型：如果是真正的 AI 生成（非 fallback），且 force_update 为 False，则直接使用缓存。
+        4. 如果缓存是 fallback（自动摘要），则抛弃缓存，重新发起 AI 接口请求生成。
+        5. 请求成功后，新生成的 AI 摘要会覆盖写入相同 Hash 的缓存文件中。
+        """
         # 检查是否应该在当前环境运行
         if not self.should_run_in_current_environment():
             return markdown
@@ -837,38 +845,58 @@ Please generate bilingual summary:"""
         page_title = getattr(page, 'title', '')
         is_ci = self.is_ci_environment()
         
-        # 检查缓存
+        # 获取现有的缓存
         cached_summary = self.get_cached_summary(content_hash)
+        
+        # === 核心修改逻辑：判断缓存是否为真正的AI摘要 ===
+        is_real_ai_cache = False
         if cached_summary:
+            cached_service = cached_summary.get('service', 'cached')
+            # 只要不是备用摘要(fallback)和仅缓存标识，就认定为真正的AI模型（如 deepseek, openai 等）生成的摘要
+            if cached_service not in ['fallback', 'ci_cache_only']:
+                is_real_ai_cache = True
+
+        # 判断：如果不强制更新 + 存在缓存 + 且是真正的AI缓存，则直接复用
+        if not self.force_update and cached_summary and is_real_ai_cache:
             summary = cached_summary.get('summary', '')
             ai_service = cached_summary.get('service', 'cached')
             env_desc = '(CI)' if is_ci else '(本地)'
-            print(f"✅ 使用缓存摘要 {env_desc}: {page.file.src_path}")
+            print(f"✅ 匹配到真实 AI 缓存 ({ai_service})，直接复用 {env_desc}: {page.file.src_path}")
+        
+        # 否则，发起生成流程（没有缓存，或者缓存是 fallback）
         else:
-            # 如果在 CI 环境中且配置为只使用缓存，直接跳过摘要生成
+            if cached_summary and not is_real_ai_cache:
+                print(f"♻️ 发现现有缓存为普通自动摘要({cached_summary.get('service', '未知')})，将重新调用 AI 接口覆盖: {page.file.src_path}")
+                
+            # 如果在 CI 环境中且配置了极端严格的【只使用缓存】模式（我们前面默认值已改为了 false）
             if is_ci and self.ci_config['ci_only_cache']:
-                print(f"📦 CI 环境仅使用缓存模式，无缓存可用，跳过摘要生成: {page.file.src_path}")
+                print(f"📦 CI 环境配置为【仅缓存模式】，跳过 API 请求: {page.file.src_path}")
+                # 如果有旧的 fallback 缓存就继续用旧的兜底，不至于页面空着
+                if cached_summary:
+                    summary = cached_summary.get('summary', '')
+                    ai_service = cached_summary.get('service', 'cached')
+                    return self.format_summary(summary, ai_service) + '\n\n' + markdown
                 return markdown
             
-            # 生成新摘要
+            # 正式生成新摘要
             lang_desc = {'zh': '中文', 'en': '英文', 'both': '双语'}
             env_desc = '(CI)' if is_ci else '(本地)'
-            print(f"🤖 正在生成{lang_desc.get(self.summary_language, '中文')}AI摘要 {env_desc}: {page.file.src_path}")
+            print(f"🤖 正在调用模型生成{lang_desc.get(self.summary_language, '中文')}AI摘要 {env_desc}: {page.file.src_path}")
             summary, ai_service = self.generate_ai_summary(clean_content, page_title)
             
             if not summary:
-                # 尝试生成备用摘要
+                # API 请求彻底失败后，降级尝试生成备用普通摘要
                 summary = self.generate_fallback_summary(clean_content, page_title)
                 if summary:
                     ai_service = 'fallback'
-                    print(f"📝 使用备用摘要 {env_desc}: {page.file.src_path}")
+                    print(f"📝 接口请求失败，使用备用普通摘要兜底 {env_desc}: {page.file.src_path}")
                 else:
-                    print(f"❌ 无法生成摘要 {env_desc}: {page.file.src_path}")
+                    print(f"❌ 无法生成任何摘要 {env_desc}: {page.file.src_path}")
                     return markdown
             else:
                 print(f"✅ AI摘要生成成功 ({ai_service}) {env_desc}: {page.file.src_path}")
             
-            # 保存到缓存
+            # 保存到缓存（如果是 fallback 重新生成的 AI 摘要，这里会将新的 AI 结果写入并覆盖旧的 fallback 缓存）
             if summary:
                 self.save_summary_cache(content_hash, {
                     'summary': summary,
@@ -876,7 +904,7 @@ Please generate bilingual summary:"""
                     'page_title': page_title
                 })
         
-        # 添加摘要到页面最上面
+        # 将生成的摘要格式化并追加到 Markdown 文本的最上方
         if summary:
             summary_html = self.format_summary(summary, ai_service)
             return summary_html + '\n\n' + markdown
