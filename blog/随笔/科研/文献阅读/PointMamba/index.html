@@ -30,7 +30,7 @@
         
       
       
-      <link rel="icon" href="https://s2.loli.net/2025/02/12/aE5ovtzAlNTd9Uh.png">
+      <link rel="icon" href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
@@ -6867,7 +6867,7 @@
 <hr />
 <p>代码主体网络模型架构在models/point_mamba_scan.py中定义，封装套娃结构如下：</p>
 <p>PointMambaScan（核心类，定义网络模型架构）<strong>····》</strong>MixerModel（Mamba主干网络，串联多个Mamba块）<strong>····》</strong>self.layers（定义串联的多个Mamba块） <strong>····》</strong>creat_block <strong>····》</strong>Block <strong>····》</strong>mixer_cls <strong>····》</strong>Mamba（这才到了Mamba块的源代码，在编译下载好的mamba_ssm包中的mamba_simple.py）<strong>····》</strong>selective_scan_fn <strong>····》</strong>SelectiveScanFn.apply/forward</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T12:41:38.539314+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T12:41:38.539314+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:34:22.469026+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:34:22.469026+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
