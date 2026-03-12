@@ -1,7 +1,7 @@
 {
-  "summary": "Orbbec SDK库总结\n\nfemto bolt官方提供了一套SDK，用于操作相机，实现二次开发.下面对使用相机SDK过程中，用到的方法进行总结.",
-  "service": "fallback",
+  "summary": "Orbbec SDK库提供了操作相机的开发接口，支持二次开发。核心功能包括通过全局上下文（context）查询连接设备列表，检测相机连接状态，并支持手动配置相机参数如自动曝光等。该SDK简化了与Orbbec硬件设备的交互流程，适用于需要深度相机集成的应用场景。",
+  "service": "deepseek",
   "page_title": "Orbbec SDK库总结",
-  "timestamp": "2026-03-12T12:27:58.735310",
+  "timestamp": "2026-03-12T13:06:23.299738",
   "language": "zh"
 }

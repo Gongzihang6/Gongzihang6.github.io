@@ -1,7 +1,7 @@
 {
-  "summary": "本文将对 Java Stream 的方法和技巧进行全面而详细的总结.一、 Stream API 核心概念\n\n1.",
-  "service": "fallback",
+  "summary": "Java Stream API是Java 8引入的声明式数据处理框架，通过函数式编程简化集合操作。其核心特性包括惰性求值、内部迭代和不修改数据源，支持链式中间操作和终端操作。Stream可从集合、数组或生成器创建，提供filter、map、reduce等丰富方法，并支持并行处理。该技术显著提升代码简洁性和可读性，适用于大数据量处理和函数式编程场景。",
+  "service": "deepseek",
   "page_title": "JavaStream流式处理方法",
-  "timestamp": "2026-03-12T12:25:33.592992",
+  "timestamp": "2026-03-12T12:42:06.488827",
   "language": "zh"
 }

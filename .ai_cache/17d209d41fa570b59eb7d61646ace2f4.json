@@ -1,7 +1,7 @@
 {
-  "summary": "本文围绕Yolov5s 网络结构展开讨论，介绍了相关的技术概念、应用场景和实践方法。",
-  "service": "fallback",
+  "summary": "YOLOv5s采用轻量化网络结构，核心模块包括Focus、Conv、C3和Bottleneck。Focus模块通过切片操作减少计算量，Conv层使用SiLU激活函数和批量归一化提升特征提取能力，C3模块结合多尺度特征增强检测性能。网络通过堆叠卷积层和下采样实现高效目标检测，适用于实时场景。模型参数显示最佳适应度为0.65574，体现了其平衡精度与速度的优势。",
+  "service": "deepseek",
   "page_title": "Yolov5s 网络结构",
-  "timestamp": "2026-03-12T12:26:40.077030",
+  "timestamp": "2026-03-12T12:52:46.465543",
   "language": "zh"
 }

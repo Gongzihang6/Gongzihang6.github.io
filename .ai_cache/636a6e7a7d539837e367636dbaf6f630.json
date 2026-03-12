@@ -1,7 +1,7 @@
 {
-  "summary": "1 文件夹，里面就有编译好的 PCL 库可以直接使用；如何在 VS2022 中使用.setInputCloud(cloud_downsampled); // 输入是下采样后的点云\nsor.",
-  "service": "fallback",
+  "summary": "PCL是一个基于C++的开源点云处理库，提供滤波、降采样、特征提取、配准和可视化等核心功能。支持通过CMake快速集成到VS2022项目，简化依赖管理。其模块化设计包含统计离群点移除、RANSAC平面分割、欧几里得聚类和ICP配准等算法，适用于三维视觉、机器人导航等领域。代码示例展示了典型处理流程，具有高效性和易用性特点。",
+  "service": "deepseek",
   "page_title": "Point Cloud Library（PCL）点云处理库总结",
-  "timestamp": "2026-03-12T12:27:59.711340",
+  "timestamp": "2026-03-12T13:06:29.594218",
   "language": "zh"
 }

@@ -1,7 +1,7 @@
 {
-  "summary": "以下面例子为例，在循环遍历数组的过程中，对数组中元素进行删除操作就可能导致并发异常.",
-  "service": "fallback",
+  "summary": "Java集合框架提供了高效的数据存储与操作方案，核心包括Collection（单列）和Map（键值对）两大体系。List接口实现类（ArrayList/LinkedList）支持有序可重复数据，分别基于动态数组和双向链表实现；Set接口（HashSet/LinkedHashSet/TreeSet）确保元素唯一性，采用哈希表或树结构。文章详解了集合遍历方式（迭代器、Lambda）、并发修改异常解决方案，并分析了String的不可变特性及内存优化机制。不同集合类的底层实现差异直接影响其查询、插入性能及适用场景。",
+  "service": "deepseek",
   "page_title": "Java集合框架与常用API",
-  "timestamp": "2026-03-12T12:25:37.578204",
+  "timestamp": "2026-03-12T12:42:38.196785",
   "language": "zh"
 }

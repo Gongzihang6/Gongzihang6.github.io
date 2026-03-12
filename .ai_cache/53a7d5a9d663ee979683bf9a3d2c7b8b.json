@@ -1,7 +1,7 @@
 {
-  "summary": "[toc]\n\n概览\n\nElement Plus 是一套为开发者、设计师和产品经理准备的基于 Vue 3.一、 布局组件 (Layout)\n\n这类组件用于构建页面的基本结构.",
-  "service": "fallback",
+  "summary": "Element Plus是基于Vue 3.0的桌面端组件库，提供丰富的布局、表单和表格组件。其栅格系统支持24列响应式布局，表单组件包含数据绑定、验证和重置功能，表格组件支持数据绑定、自定义列渲染和分页。这些组件通过清晰的API设计和灵活的配置选项，帮助开发者快速构建功能完善的企业级后台界面。",
+  "service": "deepseek",
   "page_title": "Element Plus组件详细介绍",
-  "timestamp": "2026-03-12T12:27:31.378576",
+  "timestamp": "2026-03-12T13:01:56.133109",
   "language": "zh"
 }

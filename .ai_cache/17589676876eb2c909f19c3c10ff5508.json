@@ -1,7 +1,7 @@
 {
-  "summary": "[代码示例]\n\n简单来说，[代码] 和 [代码] 解决了两个完全不同层面的问题：\n\n1.[代码]: 解决的是 编译时 的 “类型识别” 问题.[代码]: 解决的是 运行时 的 “对象注入” 问题.",
-  "service": "fallback",
+  "summary": "@Autowired和import在Java Spring中解决不同层面的问题。import仅在编译时引入类型定义，确保代码通过编译；而@Autowired实现运行时依赖注入，由Spring IoC容器自动装配Bean实例。前者解决类型识别，后者处理对象实例化，二者需配合使用以实现解耦的组件管理。典型应用场景包括Spring Boot中的服务层注入。",
+  "service": "deepseek",
   "page_title": "@Autowired 和 import 的区别",
-  "timestamp": "2026-03-12T12:27:52.767043",
+  "timestamp": "2026-03-12T13:05:36.078300",
   "language": "zh"
 }

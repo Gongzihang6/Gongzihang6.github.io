@@ -1,7 +1,7 @@
 {
-  "summary": "[toc]\n\n引言：什么是 Shell（外壳）.在理解这些工具之前，首先要明白什么是“Shell”.Shell（外殼） 是操作系统提供给用户的一个接口，用于与操作系统的内核（Kernel）进行交互.",
-  "service": "fallback",
+  "summary": "Shell是操作系统与用户交互的接口，分为CLI和GUI两种形式。本文重点对比了Windows平台的CMD和PowerShell两种CLI工具：CMD基于文本处理，简单快速但功能有限；PowerShell采用面向对象设计，支持结构化数据处理和强大脚本能力，适用于复杂系统管理。两者在输出处理、脚本功能和应用场景上存在显著差异，PowerShell更适合现代自动化任务。",
+  "service": "deepseek",
   "page_title": "Cmd powershell bash",
-  "timestamp": "2026-03-12T12:27:45.232509",
+  "timestamp": "2026-03-12T13:04:06.118467",
   "language": "zh"
 }

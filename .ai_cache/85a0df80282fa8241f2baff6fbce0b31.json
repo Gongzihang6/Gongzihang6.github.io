@@ -1,7 +1,7 @@
 {
-  "summary": "前 K 个高频元素\n\n给你一个整数数组 [代码] 和一个整数 [代码] ，请你返回其中出现频率前 [代码] 高的元素.",
-  "service": "fallback",
+  "summary": "该文介绍了两种高效算法（快速选择和桶排序）解决TopK高频元素问题。快速选择算法通过统计频率后分区处理，时间复杂度接近O(n)；桶排序则利用频率作为桶下标实现O(n)复杂度。两种方法均能快速获取出现频率前K的元素，适用于大数据量场景，其中桶排序代码更简洁但空间消耗略高。",
+  "service": "deepseek",
   "page_title": "[347. 前 K 个高频元素](https://leetcode.cn/problems/top-k-frequent-elements/)",
-  "timestamp": "2026-03-12T12:26:04.498327",
+  "timestamp": "2026-03-12T12:47:34.592381",
   "language": "zh"
 }

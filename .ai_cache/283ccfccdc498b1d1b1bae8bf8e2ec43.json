@@ -1,7 +1,7 @@
 {
-  "summary": "当用户提交登录请求时，该请求会经过一系列的过滤器，每个过滤器都承担着特定的职责.",
-  "service": "fallback",
+  "summary": "Spring Security通过过滤器链实现登录校验，核心流程包括请求拦截、认证封装、密码比对及成功/失败处理。它采用Bcrypt加密密码、强制HTTPS传输及CSRF防护等机制保障安全性，并支持与JWT集成实现无状态认证。该框架为Java Web应用提供了高度可定制的身份验证和访问控制解决方案。",
+  "service": "deepseek",
   "page_title": "Spring Security登录校验机制",
-  "timestamp": "2026-03-12T12:27:40.143061",
+  "timestamp": "2026-03-12T13:02:59.610519",
   "language": "zh"
 }

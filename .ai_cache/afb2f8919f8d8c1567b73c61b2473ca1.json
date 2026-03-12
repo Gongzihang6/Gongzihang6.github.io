@@ -1,7 +1,7 @@
 {
-  "summary": "info\n原文地址:Git 实用技巧{target=\"_blank\"}\n\nGit 实用技巧\n一、基本操作\n1.新建 git 仓库\n[代码示例]\n\n[图片：]  \n\n[代码示例]\n\n2.",
-  "service": "fallback",
+  "summary": "本文总结了Git版本控制的核心操作与实用技巧，涵盖仓库创建、分支管理、冲突解决等基础功能，并重点介绍了stash临时存储、rebase/merge策略选择、cherry-pick热修复等高级用法。通过具体代码示例演示了如何高效处理代码提交历史修改、文件变更撤销等常见开发场景，帮助开发者优化Git工作流。",
+  "service": "deepseek",
   "page_title": "Git 实用技巧",
-  "timestamp": "2026-03-12T12:28:08.348350",
+  "timestamp": "2026-03-12T13:07:52.381232",
   "language": "zh"
 }

@@ -1,7 +1,7 @@
 {
-  "summary": "二叉树的最大深度\n\n给定一个二叉树 [代码] ，返回其最大深度.二叉树的 最大深度 是指从根节点到最远叶子节点的最长路径上的节点数.",
-  "service": "fallback",
+  "summary": "该问题要求计算二叉树的最大深度，即从根节点到最远叶子节点的最长路径包含的节点数。通过递归或迭代（如广度优先搜索）算法可实现，时间复杂度为O(n)。适用于树结构遍历、层次分析等场景，是基础算法训练和面试常见题型。",
+  "service": "deepseek",
   "page_title": "[104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)",
-  "timestamp": "2026-03-12T12:26:22.705495",
+  "timestamp": "2026-03-12T12:50:41.413658",
   "language": "zh"
 }

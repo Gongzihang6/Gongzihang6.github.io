@@ -1,7 +1,7 @@
 {
-  "summary": "本文围绕理解YOLO网络结构展开讨论，介绍了相关的技术概念、应用场景和实践方法。",
-  "service": "fallback",
+  "summary": "本文详细解析了YOLOv5的网络结构，重点介绍了Backbone中的关键模块。Focus模块通过切片操作减少图像尺寸并增加通道数；BottleNeck模块结合1×1和3×3卷积保持特征图尺寸；C3模块通过分支处理和通道拼接实现特征融合。文章还阐述了特征图从P3到P4的转换过程，展示了YOLOv5高效处理多尺度目标检测任务的核心技术架构。",
+  "service": "deepseek",
   "page_title": "理解YOLO网络结构",
-  "timestamp": "2026-03-12T12:26:45.282055",
+  "timestamp": "2026-03-12T12:53:59.616824",
   "language": "zh"
 }

@@ -1,7 +1,7 @@
 {
-  "summary": "会话跟踪 (Session Tracking) 就是为了解决这个问题，让无状态的 HTTP 协议能够“记住”用户的状态.Cookie、Session 和 Token 就是实现这一目标的三种主流技术.",
-  "service": "fallback",
+  "summary": "HTTP协议的无状态特性要求通过会话跟踪技术维持用户状态。主流技术包括：Cookie（客户端存储简单数据，易用但安全性低）、Session（服务端存储敏感信息，安全但扩展性差）和Token（无状态加密令牌，适合分布式系统）。三者分别通过客户端存储、服务端会话管理和加密验证解决状态保持问题，适用于不同安全性和扩展性需求的场景。",
+  "service": "deepseek",
   "page_title": "会话跟踪技术",
-  "timestamp": "2026-03-12T12:27:51.759379",
+  "timestamp": "2026-03-12T13:05:21.329075",
   "language": "zh"
 }

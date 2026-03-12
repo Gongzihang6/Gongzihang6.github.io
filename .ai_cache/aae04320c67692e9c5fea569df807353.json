@@ -1,7 +1,7 @@
 {
-  "summary": "Element Plus 是一套为开发者、设计师和产品经理准备的基于 Vue 3.一、 布局组件 (Layout)\n\n这类组件用于构建页面的基本结构.",
-  "service": "fallback",
+  "summary": "Element Plus是基于Vue 3.0的桌面端组件库，提供丰富的UI组件帮助开发者快速构建响应式界面。核心组件包括栅格布局系统（Row/Column）、表单验证（Form/FormItem）、输入控件（Input）、选择器（Select/Option）、日期选择器（DatePicker）和文件上传（Upload）。这些组件支持灵活配置、响应式设计和丰富的交互功能，适用于各类企业级应用开发。组件库强调易用性，提供详细的属性控制和事件钩子，同时支持自定义插槽扩展功能。",
+  "service": "deepseek",
   "page_title": "Element plus组件理解",
-  "timestamp": "2026-03-12T12:27:46.285815",
+  "timestamp": "2026-03-12T13:04:24.929962",
   "language": "zh"
 }

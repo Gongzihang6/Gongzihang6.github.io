@@ -1,7 +1,7 @@
 {
-  "summary": "理解它们的区别和关系，就能明白为什么我们要做那些配置.MkDocs 的 Markdown 扩展 (如 [代码])\n\n这是在服务端 (或构建时) 运行的 Python 程序.",
-  "service": "fallback",
+  "summary": "MkDocs通过Markdown扩展在服务端识别和保护LaTeX公式代码，避免构建时被其他处理器破坏；MathJax则在客户端动态渲染受保护的公式为可视化矢量图形。两者需协同配置：Markdown扩展确保语法正确性，MathJax负责最终呈现。配置不当会导致公式解析失败或渲染异常，需同步优化两端设置以实现完美显示。",
+  "service": "deepseek",
   "page_title": "公式显示",
-  "timestamp": "2026-03-12T12:26:48.317691",
+  "timestamp": "2026-03-12T12:54:24.199730",
   "language": "zh"
 }

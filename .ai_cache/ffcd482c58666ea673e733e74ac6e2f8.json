@@ -1,7 +1,7 @@
 {
-  "summary": "而 [代码] 是一个为 Python-Markdown（MkDocs 的核心）准备的功能扩展包，它定义了大量非标准但功能强大的语法，这些语法需要在“构建”阶段被处理成最终的 HTML.",
-  "service": "fallback",
+  "summary": "Py Markdown是Python-Markdown的功能扩展包，提供大量非标准但强大的语法（如特殊格式标记、任务列表、表情符号等），需在构建阶段处理为HTML。与Typora等通用Markdown编辑器不同，它专为MkDocs等静态网站生成工具设计，通过预处理实现丰富排版效果。建议结合VS Code等工具实现写作与最终效果的实时同步。",
+  "service": "deepseek",
   "page_title": "Py Markdown",
-  "timestamp": "2026-03-12T12:27:37.165356",
+  "timestamp": "2026-03-12T13:02:43.014154",
   "language": "zh"
 }

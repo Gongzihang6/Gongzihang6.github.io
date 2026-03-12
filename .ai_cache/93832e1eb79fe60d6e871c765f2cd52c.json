@@ -1,7 +1,7 @@
 {
-  "summary": "Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建.Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档.",
-  "service": "fallback",
+  "summary": "Markdown是一种轻量级标记语言，支持纯文本编写并转换为多种格式文档。文章系统介绍了其核心语法：标题分级、文本样式（斜体/粗体/高亮）、列表（有序/无序/任务列表）、表格、链接/图片插入、代码块及HTML内联等特性，同时推荐了各平台常用编辑工具。该语法通过简单符号实现富文本排版，适用于技术文档编写和内容创作。",
+  "service": "deepseek",
   "page_title": "Markdown语法学习 精简版",
-  "timestamp": "2026-03-12T12:28:11.447853",
+  "timestamp": "2026-03-12T13:08:13.705757",
   "language": "zh"
 }
