@@ -2,6 +2,6 @@
   "summary": "编辑距离\n\n给你两个单词 [代码] 和 [代码]， 请返回将 [代码] 转换成 [代码] 所使用的最少操作数.",
   "service": "fallback",
   "page_title": "[72. 编辑距离](https://leetcode.cn/problems/edit-distance/)",
-  "timestamp": "2026-03-12T12:11:53.802439",
+  "timestamp": "2026-03-12T12:26:14.508011",
   "language": "zh"
 }

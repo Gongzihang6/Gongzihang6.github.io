@@ -2,6 +2,6 @@
   "summary": "底层异常层层往上抛出，最外层捕获异常，记录下异常信息，并响应适合用户观看的信息进行提示；\n2.",
   "service": "fallback",
   "page_title": "Java提高",
-  "timestamp": "2026-03-12T12:11:22.970328",
+  "timestamp": "2026-03-12T12:25:36.179571",
   "language": "zh"
 }
