@@ -1,0 +1,7 @@
+{
+  "summary": "轮转数组\n\n给定一个整数数组 [代码]，将数组中的元素向右轮转 [代码] 个位置，其中 [代码] 是非负数.",
+  "service": "fallback",
+  "page_title": "[189. 轮转数组](https://leetcode.cn/problems/rotate-array/)",
+  "timestamp": "2026-03-12T11:33:35.862054",
+  "language": "zh"
+}
