@@ -604,7 +604,7 @@ comments: true
 ---
 
 <center>
-<a href="../算法方向.pdf" target="_blank" class="md-button">下载简历</a>
+<a href="../overrides/龚子航_SLAM算法工程师_简历.pdf" target="_blank" class="md-button">下载简历</a>
 </center>  
 
 ## 个人简介
