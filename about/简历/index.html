@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <meta property="og:title" content="龚子航的在线简历 - 算法工程师 (SLAM/C++)">
+    <meta property="og:description" content="华中农业大学数学硕士 | 专注于三维感知、多传感器融合与 C++ 底层系统开发。">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg">
+    <meta property="og:url" content="https://gzhpb.top/about/简历/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人简历</title>
+    <title>龚子航 | 3D视觉与SLAM算法研发 </title>
     
     <!-- 引入 Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -166,8 +170,8 @@
         .stat-card {
             flex: 1;
             padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border: 2px solid #8fd0ee;
+            border-radius: 12px;
             text-align: center;
         }
         .stat-number {
@@ -200,9 +204,11 @@
         }
         .skill-card {
             background: var(--bg-white);
-            padding: 1.5rem;
+            padding: 1rem;
             border: 1px solid var(--border-color);
             border-radius: 12px;
+            display: flex;
+            flex-direction: column;
         }
         .skill-icon {
             font-size: 1.5rem;
@@ -229,11 +235,12 @@
             color: var(--text-light);
             margin: 0;
             flex-grow: 1; /* 让描述部分占据多余空间，确保标签在底部对齐 */
+            margin-bottom: 0.75rem;
         }
 
         /* --- 【新增】项目标签样式 --- */
         .project-tags {
-            margin-top: 1rem;
+            margin-top: 0;
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
@@ -463,6 +470,61 @@
             padding-right: 1rem;
         }
 
+        /* 该代码的作用：适配浏览器的打印/导出 PDF 功能。
+        功能：当用户使用 Ctrl+P 打印该网页时，自动隐藏不必要的交互元素，重置排版。
+        实现了什么：确保导出的 PDF 简历排版干净、不被截断、无多余的网页装饰。
+        怎么实现的：利用 @media print 媒体查询，隐藏导航栏、3D相册、动效类，将页面背景设为纯白，防止卡片在打印时跨页断裂。
+        */
+        @media print {
+            /* 隐藏不需要打印的元素 */
+            .resume-header, 
+            .carousel-section, 
+            #hobbies, 
+            .flip-container:hover img,
+            .carousel-controls {
+                display: none !important;
+            }
+            
+            body { background-color: white; font-size: 11pt; }
+            .resume-section { padding: 1rem 0; page-break-inside: avoid; }
+            .skill-card, .project-card { border: 1px solid #ccc; break-inside: avoid; page-break-inside: avoid; }
+            
+            /* 确保在 PDF 中链接可以点击，或者显示出 URL */
+            a[href^="http"]::after {
+                content: " (" attr(href) ")";
+                font-size: 90%;
+                color: #666;
+            }
+        }
+
+        /* --- 联系方式胶囊样式 --- */
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 999px; /* 圆角胶囊 */
+            color: var(--text-medium);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-pill:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .wechat-pill {
+            cursor: default; /* 微信文字不可点击，只需展示 */
+        }
+
 
 
 
@@ -476,7 +538,6 @@
             <div class="header-logo">个人简介</div>
             <nav class="header-nav">
                 <a href="#about" class="active">关于我</a>
-                <a href="#education">教育背景</a>
                 <a href="#skills">核心技能</a>
                 <a href="#projects">代表项目</a>
                 <a href="#hobbies">兴趣爱好</a>
@@ -504,11 +565,33 @@
                 <div class="hero-content">
                     <!-- 填写您的姓名 -->
                     <h1>龚子航</h1>
+                    <a href="龚子航_SLAM算法工程师_简历.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #4361ee; color: white; border-radius: 6px; text-decoration: none; font-weight: bold; transition: background 0.3s;">
+                        <i class="fas fa-download"></i> PDF简历下载
+                    </a>
                     <!-- 填写您的标签 -->
-                    <p class="tagline">计算机视觉研究者 · 算法工程师 · 开源爱好者</p>
+                    <p class="tagline">计算机视觉研究者 · 算法工程师 · C++ / SLAM 意向</p>
+                    <div class="education-badges" style="margin-bottom: 1rem; display: flex; gap: 0.8rem;">
+                        <span style="background: #eef2ff; color: #4361ee; padding: 4px 12px; border-radius: 4px; font-size: 0.9rem; font-weight: 500;">
+                            <i class="fas fa-graduation-cap"></i> 华中农业大学 · 数学 硕士 (2024-2027)
+                        </span>
+                        <span style="background: #f8fafc; color: #64748b; padding: 4px 12px; border-radius: 4px; font-size: 0.9rem;">
+                            设施农业科学与工程 学士 (2020-2024)
+                        </span>
+                    </div>
+                    <div class="hero-contact" style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="mailto:601049742@qq.com" class="contact-pill">
+                            <i class="fas fa-envelope"></i> 601049742@qq.com
+                        </a>
+                        <a href="https://github.com/Gongzihang6" target="_blank" class="contact-pill">
+                            <i class="fab fa-github"></i> GitHub 首页
+                        </a>
+                        <div class="contact-pill wechat-pill">
+                            <i class="fab fa-weixin"></i> 微信: gzh601049742
+                        </div>
+                    </div>
                         <!-- 填写您的简介 -->
                         <p class="description">
-                            "观史知今，当思进退，读书明志可识春秋"
+                            "观史知今，当思进退，读书明志，可识春秋"
                             <br>
                             "对技术充满热情，坚信技术的温度蕴藏在解决实际问题的细节里。"
                         </p>
@@ -535,66 +618,72 @@
                     <!-- 课程证书卡片1 -->
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h3>深度学习</h3>
-                        <p>系统学习神经网络原理及PyTorch框架应用，完成图像分类、目标检测等实战项目；</p>
+                        <h3>视觉与多传感器融合SLAM</h3>
+                        <p>深入理解 <strong>VSLAM</strong> 与 <strong>Lidar SLAM</strong> 框架。掌握 <strong>VIO/LIO前端特征提取</strong> 与 <strong>里程计推算</strong>，熟练运用<strong>图优化</strong>机制进行后端非线性优化。熟悉 <strong>FAST-LIO2</strong> 等主流开源框架的源码架构与理论推导。</p>
                         <div class="project-tags">
-                            <span>DeepLearning.AI</span>
-                            <span>2023</span>
+                            <span>VIO / LIO</span>
+                            <span>前端里程计</span>
+                            <span>后端优化</span>
                         </div>
                     </div>
                     
                     <!-- 课程证书卡片2 -->
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
-                        <h3>Python高级编程</h3>
-                        <p>掌握Python高级特性、设计模式及性能优化技巧，完成并发编程和算法优化实践；</p>
+                        <h3>C++与系统编程</h3>
+                        <p>熟练掌握现代 C++ (C++11/14) 特性与 STL，具备良好的面向对象设计与底层内存管理能力。熟悉 Linux (Ubuntu/WSL) 开发环境，熟练使用 CMake 进行工程构建与依赖管理。</p>
                         <div class="project-tags">
-                            <span>Coursera</span>
-                            <span>2023</span>
+                            <span>Modern C++</span>
+                            <span>CMake/Linux</span>
+                            <span>ROS2</span>
                         </div>
                     </div>
                     
                     <!-- 课程证书卡片3 -->
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                        <h3>机器学习（西瓜书、统计学习方法）</h3>
-                        <p>学习各种常用机器学习算法原理及应用，如聚类、SVM、集成学习、关联分析、决策树等；</p>
+                        <h3>三维几何与非线性优化</h3>
+                        <p>扎实的线性代数、李群与李代数及多视图几何基础。熟练使用 Eigen 库进行高维矩阵与位姿变换运算。掌握高斯牛顿法、L-M 算法，能使用 Ceres 和 g2o 等库构建并求解 Bundle Adjustment (BA) 问题。</p>
                         <div class="project-tags">
-                            <span>Udacity</span>
-                            <span>2024</span>
+                            <span>李群/李代数</span>
+                            <span>Ceres/g2o</span>
+                            <span>优化理论</span>
                         </div>
                     </div>
                     
                     <!-- 课程证书卡片4 -->
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
-                        <h3>计算机408四大件</h3>
-                        <p>深入理解经典算法实现，完成LeetCode 300+题目训练，掌握时间/空间复杂度优化方法；</p>
+                        <h3>三维视觉与传感器处理</h3>
+                        <p>熟悉多相机系统的宽基线标定与联合部署方案。熟练使用 PCL 与 OpenCV 进行 3D 点云的滤波、配准（ICP/NDT）及三维重建。具备 RGB-D 相机及深度传感器实战处理经验。</p>
                         <div class="project-tags">
-                            <span>edX</span>
-                            <span>2024</span>
+                            <span>PCL</span>
+                            <span>OpenCV</span>
+                            <span>多相机标定</span>
                         </div>
                     </div>
                     
                     <!-- 课程证书卡片5 -->
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>矩阵计算</h3>
-                        <p>矩阵范数、矩阵分析、矩阵函数、矩阵分解（LDU分解、QR分解、满秩分解、SVD分解）；</p>
+                        <h3>计算机基础与数据结构</h3>
+                        <p>深入理解操作系统概念与多线程/并发编程模型。具备扎实的数据结构与算法功底，完成 LeetCode 300+ 训练，在实际 C++ 代码中注重时间与空间复杂度的极致优化。</p>
                         <div class="project-tags">
-                            <span>阿里云认证</span>
-                            <span>2025</span>
+                            <span>数据结构</span>
+                            <span>多线程</span>
+                            <span>算法优化</span>
                         </div>
                     </div>
                     
                     <!-- 课程证书卡片6 -->
                     <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <h3>JAVA</h3>
-                        <p>熟练掌握java基础语法、面向对象、多线程编程、网络编程、反射、注解等；</p>
+                        <h3>深度学习与工具链</h3>
+                        <p>了解深度学习在计算机视觉中的应用（目标检测/语义分割）。熟练使用 Python 及先进的包管理工具（如uv）进行数据预处理、算法原型验证与自动化脚本编写。</p>
                         <div class="project-tags">
-                            <span>Cloudera</span>
-                            <span>2025</span>
+                            <span>Python/C++</span>
+                            <span>PyTorch</span>
+                            <span>2D/3D语义分割</span>
                         </div>
                     </div>
                 </div>
@@ -603,37 +692,6 @@
 
 
 
-
-        <!-- Section: Education -->
-        <section id="education" class="resume-section fade-in-up">
-            <div class="section-wrapper">
-                <h2 class="section-title">教育背景</h2>
-                <span class="title-underline"></span>
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="timeline-card">
-                            <h3>华中农业大学</h3>
-                            <p class="subtitle">数学硕士 (规划)</p>
-                            <div class="date"><i class="fas fa-calendar-alt"></i> 2024 - 2027</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-card">
-                            <h3>华中农业大学</h3>
-                            <p class="subtitle">设施农业科学与工程学士</p>
-                            <div class="date"><i class="fas fa-calendar-alt"></i> 2020 - 2024</div>
-                        </div>
-                    </div>
-                    <!-- <div class="timeline-item">
-                        <div class="timeline-card">
-                            <h3>汉川一中</h3>
-                            <p class="subtitle">平凡普通的三年</p>
-                            <div class="date"><i class="fas fa-calendar-alt"></i> 2017 - 2020</div>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </section>
 
         <!-- Section: Skills -->
         <section id="skills" class="resume-section fade-in-up">
@@ -641,24 +699,29 @@
                 <h2 class="section-title">核心技能</h2>
                 <span class="title-underline"></span>
                 <div class="skills-grid">
+                    
                     <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                        <h3>深度学习</h3>
-                        <p>熟练掌握 PyTorch，能灵活搭建与实现各类CV算法，对模型优化有深入理解。</p>
+                        <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>算法工程化与高性能计算</h3>
+                        <p>具备将复杂数学理论转化为高可靠现代 C++ 代码的能力。熟练运用面向对象设计与设计模式，掌握 Linux/WSL 环境下的 CMake 跨平台构建、内存管理及多线程并发。</p>
                     </div>
+
                     <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-code"></i></div>
-                        <h3>编程与算法</h3>
-                        <p>熟练掌握 Python、C++，及 NumPy, Pandas, OpenCV 等库，数据结构与算法基础扎实。</p>
+                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>状态估计与多传感器融合</h3>
+                        <p>深刻理解 VIO/LIO 系统的运行机制。发挥应用数学优势，擅长处理复杂状态估计问题，熟悉相机与 IMU/LiDAR 的时空同步与联合标定，能熟练运用图优化（基于 Ceres/g2o）与滤波算法提升定位与建图精度。</p>
                     </div>
+
                     <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
-                        <h3>问题解决</h3>
-                        <p>具备优秀的逻辑思维和分析能力，擅长从复杂的实际问题中抽象建模，并找到创新解决方案。</p>
+                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                        <h3>三维感知与复杂场景建模</h3>
+                        <p>具备处理真实物理世界传感器数据的丰富实战经验。能高效运用 OpenCV 与 PCL 处理大规模 3D 点云（去噪、ICP/NDT配准），解决弱纹理与低重叠率场景下的匹配难题。熟悉 ROS2 机器人操作系统的基本通信机制，具备跨语言（C++/Python）节点混合编程与 RViz 3D 可视化调试经验。</p>
                     </div>
+
                 </div>
             </div>
         </section>
+
 
         <!-- Section: Projects (更新后的内容) -->
         <section id="projects" class="resume-section fade-in-up">
@@ -667,7 +730,7 @@
                 <span class="title-underline"></span>
                 <div class="skills-grid">
                     <!-- 项目一 -->
-                    <div class="skill-card">
+                    <!-- <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-seedling"></i></div>
                         <h3>基于YOLO的番茄识别与计数</h3>
                         <p>开发了一种基于YOLO（v5/v8）算法的自动番茄识别与计数系统，结合ByteTrack和Bot-SORT跟踪算法，实现精准的番茄计数。收集和处理多样化的数据集，通过数据增强技术提升模型鲁棒性。通过该项目，增强了对Torch、OpenCV等库的掌握，深入理解计算机视觉中的目标检测和分类算法。实验显示YOLOv8在复杂环境下表现优越，显著提升工作效率，为智能农业发展提供解决方案。</p>
@@ -677,21 +740,22 @@
                             <span>OpenCV</span>
                             <span>目标跟踪</span>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- 项目二 -->
                     <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-cube"></i></div>
-                        <h3>猪体三维重建与精准测量系统</h3>
-                        <p>针对传统养殖行业动物体尺测量痛点，设计并实现了一套创新的点云三维重建系统。通过多机位深度相机阵列，使用PCL库和ICP算法实现多视角点云精确配准，并结合基于PointNet++的深度学习点云语义分割模型，实现猪体各部位（头部、躯干、四肢）精准分割。项目构建了厘米级体尺测量方案，相比传统人工测量，有效降低动物应激反应，为精准养殖提供数据支持。</p>
+                        <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>多相机 3D 感知与测量系统</h3>
+                        <p>独立设计并开发端到端的多视角 3D 感知软件系统。采集端基于 <strong>C++17</strong> 与 <strong>Qt</strong>，实现 5 台深度相机的<strong>硬件级时间戳同步</strong>，运用多线程与无锁队列构建异步 I/O 流水线，保障彩色图、深度图、点云等多模态数据零延迟落盘。处理端基于 <strong>PCL</strong> 实现海量点云的滤波、欧式聚类与 <strong>ICP/NDT 多视角高精度配准</strong>。创新性采用 C/S 架构解耦前端渲染与后端深度学习推理，打通了从底层硬件驱动拉流到 3D 几何特征提取的完整感知链路。</p>
                         <div class="project-tags">
-                            <span>三维重建</span>
-                            <span>点云处理</span>
-                            <span>PointNet++</span>
-                            <span>PCL</span>
+                            <span>C++17 / Qt</span>
+                            <span>硬件时间同步</span>
+                            <span>PCL/点云算法</span>
+                            <span>多线程与异步IO</span>
+                            <span>3D点云深度学习</span>
                         </div>
                     </div>
                     <!-- 项目三 -->
-                    <div class="skill-card">
+                    <!-- <div class="skill-card">
                         <div class="skill-icon"><i class="fas fa-cube"></i></div>
                         <h3>磁芯损耗建模与优化</h3>
                         <p>研究了数据驱动下磁性元件的磁芯损耗建模问题，构建了基于随机森林和XGBoost的励磁波形分类模型，以温度、励磁波形和磁芯材料为因素，提升预测精度。应用非线性最小二乘法对斯坦麦茨方程进行修正，优化温度影响。进行了非参数方差分析，探究不同因素对损耗的影响，并运用遗传算法和模拟退火算法实现磁芯损耗最小化与磁能最大化的目标函数优化。掌握了机器学习技术和数据建模技能。</p>
@@ -700,6 +764,17 @@
                             <span>数学建模</span>
                             <span>数据分析</span>
                             <span>智能优化</span>
+                        </div>
+                    </div> -->
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-car-side"></i></div>
+                        <h3>动态场景语义激光惯性建图系统</h3>
+                        <p>面向自动驾驶真值(GT)生成需求，在 Linux (WSL) 环境下构建了基于语义先验的高精度离线建图流水线。基于 PyTorch 训练 PointTransformer 系列点云大模型以精准分割并滤除高动态物体点云，通过 <strong>C++ 与 PCL</strong> 重构底层点云预处理模块，将清洗后的纯静态点云与高频 IMU 数据对齐并输入 <strong>FAST-LIO2</strong> 进行位姿解算。基于 SemanticKITTI 开展量化验证，熟练使用 <strong>evo</strong> 工具进行轨迹对比，成功减少全局点云地图“末端漂移”问题，绝对轨迹误差(ATE)较基准算法明显下降。</p>
+                        <div class="project-tags">
+                            <span>FAST-LIO2 (C++)</span>
+                            <span>点云语义分割</span>
+                            <span>evo 轨迹评估</span>
+                            <span>数据闭环流水线</span>
                         </div>
                     </div>
                 </div>
@@ -750,6 +825,16 @@
         <div class="carousel-section" id="honors-carousel">
             <h2 class="carousel-title">荣誉证书</h2>
             <span class="carousel-subtitle-underline"></span>
+            <div class="honors-text-overview" style="max-width: 800px; margin: 0 auto 2rem auto; text-align: center;">
+                <div class="project-tags" style="justify-content: center; gap: 0.8rem;">
+                    <span style="background: #f0fdf4; color: #16a34a; border: 1px solid #86efac;">🏅 华为杯国家二等奖</span>
+                    <span style="background: #fff1f2; color: #e11d48; border: 1px solid #fda4af;">🏆 正大杯国家级三等奖</span>
+                    <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe;">美赛 (MCM/ICM) HM奖</span>
+                    <span style="background: #f8fafc; color: #17a4e6; border: 1px solid #a6ebeb;">全国大学生数学竞赛一等奖</span>
+                    <span style="background: #f8fafc; color: #e680f3; border: 1px solid #e680f3;">英语口语一等奖</span>
+                    <span style="background: #f8fafc; color: #5d6a8d; border: 1px solid #e680f3;">Mathor Cup省级三等奖</span>
+                    </div>
+            </div>
             <div class="carousel-container">
                 <div class="carousel">
                     <figure class="carousel__cell"><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2F%E5%A6%88%E5%A6%88%E6%9D%AF.jpg" alt="妈妈杯证书" draggable="false"></figure>
@@ -851,22 +936,22 @@
 
         
         <!-- (可选) 如果你还想显示 简历.md 文件里写的内容，可以加上下面这行 -->
-        <div class="resume-section">
+        <!-- <div class="resume-section">
             <div class="section-wrapper">
-                <div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-09'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-01-09T14:02:04.201281+00:00'>2026-01-09</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-01-09'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-01-09T14:02:04.201281+00:00'>2026-01-09</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+                <div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T11:32:17.437276+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T11:32:17.437276+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
             </div>
-        </div>
+        </div> -->
 
     </main>
 
     <!-- START: 新增页脚 -->
     <footer class="resume-footer">
         <div class="footer-wrapper">
-            <p>© 2025 gzh</p>
+            <p>© 2026 gzh</p>
             <p>清醒，知趣，明得失，知进退</p>
-            <p style="margin-top: 1.5rem; opacity: 0.7;">
+            <!-- <p style="margin-top: 1.5rem; opacity: 0.7;">
                 <i class="fa-solid fa-comment-dots"></i> 我电话号码的MD5码: 7037F514864088F907CC921687B670EE (破解有奖 吗)
-            </p>
+            </p> -->
         </div>
     </footer>
     <!-- END: 新增页脚 -->
