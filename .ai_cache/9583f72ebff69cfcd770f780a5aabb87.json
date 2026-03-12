@@ -2,6 +2,6 @@
   "summary": "除了自身以外数组的乘积\n\n给你一个整数数组 [代码]，返回 数组 [代码] ，其中 [代码] 等于 [代码] 中除了 [代码] 之外其余各元素的乘积.",
   "service": "fallback",
   "page_title": "[238. 除了自身以外数组的乘积](https://leetcode.cn/problems/product-of-array-except-self/)",
-  "timestamp": "2026-03-12T11:33:36.688138",
+  "timestamp": "2026-03-12T12:12:12.297028",
   "language": "zh"
 }

@@ -2,6 +2,6 @@
   "summary": "请设计一个程序，输入一段时间内的股票交易记录 [代码]，返回其中存在的「交易逆序对」总数.交易逆序对的总数\n\n在股票交易中，如果前一天的股价高于后一天的股价，则可以认为存在一个「交易逆序对」.",
   "service": "fallback",
   "page_title": "[LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)",
-  "timestamp": "2026-03-12T11:33:04.889655",
+  "timestamp": "2026-03-12T12:11:41.941629",
   "language": "zh"
 }

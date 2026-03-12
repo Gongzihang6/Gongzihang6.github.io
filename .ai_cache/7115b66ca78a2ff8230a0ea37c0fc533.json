@@ -2,6 +2,6 @@
   "summary": "翻转二叉树\n\n给你一棵二叉树的根节点 [代码] ，翻转这棵二叉树，并返回其根节点.",
   "service": "fallback",
   "page_title": "[226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)",
-  "timestamp": "2026-03-12T11:33:34.165922",
+  "timestamp": "2026-03-12T12:12:09.919109",
   "language": "zh"
 }

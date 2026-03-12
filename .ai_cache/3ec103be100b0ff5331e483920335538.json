@@ -2,6 +2,6 @@
   "summary": "统计趣味子数组的数目\n\n给你一个下标从 0 开始的整数数组 [代码] ，以及整数 [代码] 和整数 [代码].请你找出并统计数组中 趣味子数组 的数目.",
   "service": "fallback",
   "page_title": "[2845. 统计趣味子数组的数目](https://leetcode.cn/problems/count-of-interesting-subarrays/)",
-  "timestamp": "2026-03-12T11:32:58.778912",
+  "timestamp": "2026-03-12T12:11:35.315232",
   "language": "zh"
 }
