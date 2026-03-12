@@ -113,6 +113,8 @@ class AISummaryGenerator:
         
         # 检查服务变更并处理缓存
         self._check_service_change()
+
+        self.force_update = os.getenv('AI_SUMMARY_FORCE_UPDATE', 'false').lower() == 'true'
     
     def _check_environment(self):
         """初始化时检查环境"""
