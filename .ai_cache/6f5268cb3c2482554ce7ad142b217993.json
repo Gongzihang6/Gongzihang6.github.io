@@ -1,0 +1,7 @@
+{
+  "summary": "Levenberg-Marquardt（LM）算法是一种融合梯度下降和高斯-牛顿法的非线性最小二乘优化方法。它通过动态调整阻尼参数，在高斯-牛顿法失效时转为梯度下降，兼具收敛速度和稳定性。核心思想是利用雅可比矩阵近似Hessian矩阵，适用于曲线拟合、参数估计等场景。该算法能有效解决病态矩阵问题，是科学计算和工程优化中广泛使用的迭代方法。",
+  "service": "deepseek",
+  "page_title": "Levenberg Marquardt算法",
+  "timestamp": "2026-03-13T08:00:16.907495",
+  "language": "zh"
+}

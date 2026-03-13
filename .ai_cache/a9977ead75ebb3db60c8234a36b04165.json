@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求在给定字符串中找出最长回文子序列的长度。回文子序列指字符顺序对称但不要求连续的序列。典型解法采用动态规划，通过构建二维状态数组记录子串的最长回文长度，状态转移方程根据首尾字符是否相等分情况处理。算法时间复杂度O(n²)，空间复杂度O(n²)，适用于中等规模字符串处理，是经典序列型DP问题的代表。",
+  "service": "deepseek",
+  "page_title": "[516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)",
+  "timestamp": "2026-03-13T07:38:29.343800",
+  "language": "zh"
+}

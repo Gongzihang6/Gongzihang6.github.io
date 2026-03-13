@@ -1,0 +1,7 @@
+{
+  "summary": "该文介绍了二叉树中序遍历的实现方法，要求给定根节点后返回节点值的中序序列。中序遍历顺序为左子树-根节点-右子树，适用于需要按升序获取二叉搜索树节点的场景。文章提供了多个代码示例，并提示节点数量范围和边界条件处理，是二叉树基础算法的重要实践。",
+  "service": "deepseek",
+  "page_title": "[94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)",
+  "timestamp": "2026-03-13T07:43:50.184821",
+  "language": "zh"
+}

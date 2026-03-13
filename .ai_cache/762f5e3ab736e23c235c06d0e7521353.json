@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求递归或迭代地翻转二叉树，即交换每个节点的左右子树。核心算法通过深度优先遍历实现，时间复杂度为O(n)，空间复杂度取决于树的高度。典型应用场景包括镜像树生成、对称性判断等二叉树操作，是理解递归和树遍历的基础练习题。",
+  "service": "deepseek",
+  "page_title": "[226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)",
+  "timestamp": "2026-03-13T07:46:04.926403",
+  "language": "zh"
+}

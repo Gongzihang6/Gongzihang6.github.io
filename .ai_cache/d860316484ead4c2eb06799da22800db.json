@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求计算二叉树的最大深度，即从根节点到最远叶子节点的最长路径上的节点数。通过递归或迭代方法遍历二叉树，比较左右子树的深度并取最大值加1。适用于树结构分析、算法训练等场景，时间复杂度为O(n)。提示指出节点数量范围在[0, 10^4]之间。",
+  "service": "deepseek",
+  "page_title": "[104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)",
+  "timestamp": "2026-03-13T07:43:58.582152",
+  "language": "zh"
+}

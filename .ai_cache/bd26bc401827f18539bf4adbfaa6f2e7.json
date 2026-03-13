@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求在给定字符串中找出最长的回文子串。回文子串指正读反读相同的连续字符序列。典型解法包括中心扩展法和动态规划法，时间复杂度分别为O(n²)和O(n²)，适用于处理中等长度字符串。该算法在文本处理、DNA序列分析等场景有重要应用，需平衡时间效率与空间复杂度。",
+  "service": "deepseek",
+  "page_title": "[5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)",
+  "timestamp": "2026-03-13T07:42:00.015243",
+  "language": "zh"
+}

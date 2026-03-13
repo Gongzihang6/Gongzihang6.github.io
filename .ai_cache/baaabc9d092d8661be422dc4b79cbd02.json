@@ -1,0 +1,7 @@
+{
+  "summary": "本文对比了三种主流命令行Shell工具（CMD、PowerShell、Bash）的核心特性与适用场景。CMD基于文本处理，简单但功能有限；PowerShell采用面向对象设计，支持结构化数据处理和复杂脚本，适合系统管理；Bash作为Linux默认Shell，提供强大的脚本功能和灵活性。文章重点分析了各工具的设计哲学、技术优势及典型应用场景，帮助用户根据需求选择合适的命令行环境。",
+  "service": "deepseek",
+  "page_title": "Cmd powershell bash",
+  "timestamp": "2026-03-13T07:58:51.739258",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "YOLOv5s采用轻量级网络结构，包含Focus模块、Conv卷积层和C3模块，使用SiLU激活函数和BatchNorm2d归一化。其核心组件C3模块通过多分支结构和Bottleneck设计提升特征提取效率，支持不同尺度的特征融合。该结构通过堆叠卷积层实现下采样，适用于实时目标检测任务，具有参数少、计算量小的特点。",
+  "service": "deepseek",
+  "page_title": "Yolov5s 网络结构",
+  "timestamp": "2026-03-13T07:47:07.039902",
+  "language": "zh"
+}

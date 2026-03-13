@@ -1,0 +1,7 @@
+{
+  "summary": "Swin3D是一种基于Transformer的预训练骨干网络，专为3D室内场景理解设计。它将2D Swin Transformer适配到3D点云数据，通过优化注意力机制实现线性内存复杂度，并解决点云位置不确定性问题。采用分层结构和移动窗口注意力，网络包含5个阶段的层级特征提取器，支持多尺度体素特征输出。创新性引入上下文相对信号编码(cRSE)，融合空间位置、颜色和法向量差异，显著提升3D场景理解能力。该方法在保持高效计算的同时，有效处理了不规则点云数据。",
+  "service": "deepseek",
+  "page_title": "Swin3D: A Pretrained Transformer Backbone",
+  "timestamp": "2026-03-13T08:02:35.246432",
+  "language": "zh"
+}

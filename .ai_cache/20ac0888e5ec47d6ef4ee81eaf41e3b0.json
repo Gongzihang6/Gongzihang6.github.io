@@ -1,0 +1,7 @@
+{
+  "summary": "Python的argparse模块是处理命令行参数的标准工具，通过ArgumentParser类定义参数规则。支持位置参数和可选参数，可设置参数名称、动作类型、参数数量、默认值及类型转换等功能。该模块简化了命令行界面开发，适用于脚本参数解析、自动化工具等场景，是构建用户友好CLI应用的核心解决方案。",
+  "service": "deepseek",
+  "page_title": "Python命令行参数解析",
+  "timestamp": "2026-03-13T07:57:16.255935",
+  "language": "zh"
+}

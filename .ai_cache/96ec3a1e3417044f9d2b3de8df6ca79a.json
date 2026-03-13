@@ -1,0 +1,7 @@
+{
+  "summary": "Java集合框架提供了多种数据结构实现，包括单列的Collection接口（List、Set）和双列的Map接口。List有序可重复，包含ArrayList（动态数组）和LinkedList（双向链表）；Set无序唯一，包含HashSet（哈希表）、LinkedHashSet（有序哈希表）和TreeSet（排序树）。文章详细分析了各集合的底层原理、特性及适用场景，如ArrayList的1.5倍扩容机制、HashSet的去重原理，并介绍了迭代器遍历、增强for循环等集合操作方法及并发修改异常的解决方案。",
+  "service": "deepseek",
+  "page_title": "Java集合框架与常用API",
+  "timestamp": "2026-03-13T07:36:06.443438",
+  "language": "zh"
+}

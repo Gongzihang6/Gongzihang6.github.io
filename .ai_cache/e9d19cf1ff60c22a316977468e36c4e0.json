@@ -1,0 +1,7 @@
+{
+  "summary": "本文深入解析了SpringBoot的核心机制，重点阐述IoC容器与依赖注入原理。通过@Configuration和@Bean注解实现组件注册，详细说明了Bean的生命周期管理、作用域控制及条件装配机制。特别分析了自动配置原理，包括@Conditional系列注解和spring.factories文件的运作方式，并介绍了事件发布和国际化等扩展功能。这些机制共同构成了SpringBoot简化企业级应用开发的基础架构。",
+  "service": "deepseek",
+  "page_title": "SpringBoot原理篇",
+  "timestamp": "2026-03-13T07:58:06.891138",
+  "language": "zh"
+}

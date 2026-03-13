@@ -1,0 +1,7 @@
+{
+  "summary": "Orbbec SDK库为开发者提供了操作相机的工具集，支持二次开发。通过创建全局上下文context实现设备通信，使用queryDeviceList()获取连接设备列表并检测设备状态。该SDK支持手动配置相机参数（如自动曝光），适用于需要深度相机控制的场景，为计算机视觉应用提供基础开发接口。",
+  "service": "deepseek",
+  "page_title": "Orbbec SDK库总结",
+  "timestamp": "2026-03-13T08:00:58.455660",
+  "language": "zh"
+}
