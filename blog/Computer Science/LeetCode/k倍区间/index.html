@@ -6080,7 +6080,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该文介绍了如何高效计算数列中所有和为K倍数的连续子区间（K倍区间）数量。核心思路是利用前缀和数组结合模运算性质，通过哈希表记录前缀和余数的出现次数。当两个前缀和对K取模结果相同时，其间的子区间和必为K的倍数。该方法将时间复杂度优化至O(N)，适用于大规模数据（N,K≤10^5），满足2秒的运行时限制。</p>
+<p>该文章探讨如何高效计算数列中所有和为K倍数的连续子区间数量。核心思路是利用前缀和数组结合模运算性质：若两个前缀和对K取模结果相同，则对应子区间和必为K的倍数。通过哈希表动态记录余数出现次数，可在O(N)时间复杂度内完成统计，适用于大规模数据（N,K≤10^5）。算法显著优化了暴力枚举的O(N²)复杂度，典型应用于数论和组合计数问题。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6209,7 +6209,7 @@
 <li><code>cnt += 2</code>（表示当前前缀和可以和之前 2 个相同余数的前缀和配对，形成 2 个新的满足条件的子序列）。</li>
 <li><code>remainderCount[r]</code> 更新为 3。</li>
 </ol>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:42:02.149225+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:42:02.149225+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.654860+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.654860+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

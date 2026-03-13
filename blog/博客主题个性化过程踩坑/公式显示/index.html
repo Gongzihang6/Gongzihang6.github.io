@@ -6029,7 +6029,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>MkDocs通过Markdown扩展在服务端识别和保护LaTeX公式代码，避免构建时被其他处理器破坏；MathJax则在客户端动态渲染受保护的公式为可视化矢量图形。两者需协同配置：Markdown扩展确保语法正确性，MathJax负责最终呈现。配置不当会导致公式解析失败或渲染异常，需同步优化两端设置以实现完美显示。</p>
+<p>MkDocs通过Markdown扩展在服务端识别和保护LaTeX公式代码，生成包含原始公式的HTML文件；MathJax则在客户端解析这些受保护的代码并渲染为可视化公式。两者协同工作，需正确配置服务端的公式识别规则和客户端的渲染参数，确保公式从Markdown到最终显示的完整流程无误。配置不当会导致公式解析错误或渲染失败。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6081,7 +6081,7 @@
 </ul>
 <p><strong>结论</strong>：
 你必须同时正确配置好<strong>服务端（构建时）的 Markdown 扩展</strong>和<strong>客户端（浏览器）的 MathJax 库</strong>，让它们无缝衔接，才能得到完美的数学公式显示效果。我们之前的调试过程，实际上就是在校准这两棒选手的交接动作。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:42:02.343800+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:42:02.343800+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.847861+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.847861+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

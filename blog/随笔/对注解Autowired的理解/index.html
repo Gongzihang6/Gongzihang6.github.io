@@ -6171,7 +6171,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>@Autowired和import在Java Spring中解决不同层面的问题。import仅在编译时引入类型定义，确保代码通过编译；而@Autowired实现运行时依赖注入，由Spring IoC容器自动装配Bean实例。前者解决类型识别，后者处理对象实例化，二者需配合使用以实现解耦的组件管理。典型应用场景包括Spring Boot中的服务层注入。</p>
+<p>@Autowired和import在Spring框架中承担不同角色：import解决编译时的类型识别问题，确保编译器能找到类定义；@Autowired实现运行时的依赖注入，由Spring IoC容器自动装配Bean实例。前者仅引入类声明，后者负责对象实例化，二者协同工作实现解耦的组件管理。典型应用场景是Controller层通过@Autowired获取Service实例，避免手动创建对象导致的紧耦合问题。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6334,7 +6334,7 @@
 <p>所以，在 Spring 框架中，<code>import</code> 和 <code>@Autowired</code> 必须同时使用：
 *   用 <code>import</code> 告诉编译器 <code>EmployeeService</code> 是什么。
 *   用 <code>@Autowired</code> 告诉 Spring 框架在运行时给我一个 <code>EmployeeService</code> 的实例。</p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:42:02.351582+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:42:02.351582+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.855861+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.855861+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

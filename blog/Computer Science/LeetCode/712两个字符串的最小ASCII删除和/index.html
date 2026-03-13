@@ -6080,7 +6080,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求计算使两个字符串相等所需删除字符的最小ASCII值之和。通过动态规划求解，构建二维状态表处理子问题，初始化时考虑单边字符串为空的情况。核心在于状态转移方程：当字符匹配时继承左上方状态，否则取左或上方状态加上当前字符ASCII值的较小值。时间复杂度O(mn)，空间复杂度O(mn)，适用于字符串相似性分析等场景。</p>
+<p>该问题要求计算使两个字符串相等所需删除字符的最小ASCII值之和，本质上是动态规划经典编辑距离问题的变种。通过构建二维DP数组，分别处理字符串为空的情况，再递推计算不同字符组合时的最小删除代价。核心解法利用空间优化策略，时间复杂度O(mn)，适用于字符串相似度比较等场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6199,7 +6199,7 @@
 <a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="p">};</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:42:02.149225+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:42:02.149225+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.653860+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.653860+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

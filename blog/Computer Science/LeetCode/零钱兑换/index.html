@@ -6013,7 +6013,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求在无限硬币供应下，用给定面额组合凑出指定金额的最少硬币数。采用动态规划方法，通过构建金额从0到目标值的解数组，逐步求解每个子问题的最优解。核心在于状态转移方程：dp[i] = min(dp[i], dp[i-coin]+1)。时间复杂度O(amount*n)，适用于货币兑换、资源分配等场景。若无解则返回-1。</p>
+<p>该问题要求使用给定面额的无限硬币凑出指定金额的最少硬币数量，属于典型的动态规划问题。通过构建dp数组记录每个子问题的最优解，自底向上递推求解。其核心在于状态转移方程的设计，时间复杂度为O(amount*n)，适用于金融找零、资源分配等场景。若无法凑出目标金额则返回-1，需注意边界条件处理。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6202,7 +6202,7 @@
 <a id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
 <a id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:42:02.149801+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:42:02.149801+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.656860+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.656860+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

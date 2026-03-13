@@ -6254,7 +6254,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文分析了并查集(DSU)的时间复杂度，通过势能法证明了其接近常数级的性能。核心内容包括阿克曼函数的递归定义及其反函数α(n)的引入，用于描述树合并操作中rank的增长约束。关键点在于定义了辅助函数level(x)和iter(x)来量化节点势能变化，并通过三种操作情形证明势能单调递减，最终得出单次操作均摊时间复杂度为O(α(n))的结论。</p>
+<p>本文分析了并查集(DSU)的时间复杂度，通过阿克曼函数和势能方法进行论证。定义了rank、level和iter等关键概念，建立了势函数模型，证明了对非根节点的操作最多使势函数增加α(n)。核心结论是DSU的单次操作均摊时间复杂度为O(α(n))，其中α(n)是增长极慢的阿克曼反函数。该分析适用于包括查找在内的各类并查集操作。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6350,7 +6350,7 @@ A_k(j)=\left\{
 <p>所以，可以考虑使用 <span class="arithmatex">\(\log_2 siz(x)\)</span> 代替 <span class="arithmatex">\(rnk(x)\)</span>。</p>
 <p>关于第一条性质，由于节点的 <span class="arithmatex">\(siz\)</span> 最多翻倍，所以 <span class="arithmatex">\(\log_2 siz(x)\)</span> 最多上升 1。关于第二三条性质，结论较为显然，这里略去证明。</p>
 <p>所以说，如果不想写按秩合并，就写启发式合并好了，时间复杂度仍旧是 <span class="arithmatex">\(\Theta(m\alpha(n))\)</span>。</p>
-<p><div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:42:02.107359+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:42:02.107359+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div></p>
+<p><div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.602382+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.602382+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 

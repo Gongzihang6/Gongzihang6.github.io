@@ -6013,7 +6013,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>该问题要求统计数组中满足"子数组不同元素数等于原数组不同元素数"的完全子数组数目。核心解法采用滑动窗口优化，通过双指针动态维护窗口内元素频率，当窗口满足条件时快速计算后续有效子数组数量，避免暴力枚举。算法将时间复杂度从O(n²)优化至O(n)，利用哈希表记录元素频次，通过左右指针移动高效统计完全子数组。</p>
+<p>该问题要求统计数组中满足"不同元素数等于整个数组不同元素数"的连续子数组数目。核心解法采用滑动窗口优化，通过双指针动态维护窗口内元素频次：右指针扩展窗口直至满足条件，此时右指针右侧所有位置均构成有效子数组；左指针收缩窗口以寻找新解。算法将时间复杂度从O(n²)优化至O(n)，利用哈希表记录元素频次实现高效统计。适用于需要统计特定特征子数组的场景。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6159,7 +6159,7 @@
 <a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="p">};</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-12T13:42:02.149225+00:00'>2026-03-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-12T13:42:02.149225+00:00'>2026-03-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.653860+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.653860+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
