@@ -304,13 +304,12 @@ class AISummaryGenerator:
             try:
                 with open(cache_file, 'r', encoding='utf-8') as f:
                     cache_data = json.load(f)
-                    # 检查缓存是否过期（7天）
-                    cache_time = datetime.fromisoformat(cache_data.get('timestamp', '1970-01-01'))
-                    if (datetime.now() - cache_time).days < 365:
-                        return cache_data
+                    # 🚀 修复：只要内容没变（Hash能对上），就永远使用缓存，不再判断时间过期
+                    return cache_data
             except:
                 pass
         return None
+
     
     def save_summary_cache(self, content_hash, summary_data):
         """保存摘要到缓存"""
@@ -329,7 +328,8 @@ class AISummaryGenerator:
     
     def clean_content_for_ai(self, markdown):
         """清理内容，提取主要文本用于AI处理"""
-        content = markdown
+        # 🚀 修复：强制统一换行符为 \n，防止 Windows 和 Linux 算出的 Hash 不一致
+        content = markdown.replace('\r\n', '\n')
         
         # 移除YAML front matter
         content = re.sub(r'^---.*?---\s*', '', content, flags=re.DOTALL)
