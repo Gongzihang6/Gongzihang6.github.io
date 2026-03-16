@@ -6199,7 +6199,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>本文详解SSH远程连接与密钥认证原理。首先阐述基于密码的SSH连接流程，包括TCP握手、加密协商、主机验证及Diffie-Hellman密钥交换。随后重点分析更安全的SSH密钥认证，通过非对称加密技术实现免密登录，对比了公钥（公开部署）与私钥（本地保管）的运作机制。两种方式均建立加密通道，但密钥认证避免了密码泄露风险，更适合自动化场景。</p>
+<p>本文详细解析了SSH远程连接的两种验证方式：密码验证与密钥验证。密码验证通过TCP握手、加密协商、主机验证和会话密钥生成等步骤建立安全通道，但存在密码泄露风险。密钥验证采用非对称加密技术，客户端生成公私钥对，公钥存储在服务器，私钥用于身份验证，安全性更高且支持自动化操作。两种方式均保障了网络通信的安全性，但密钥验证在便捷性和防护能力上更具优势。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6498,7 +6498,7 @@
 </li>
 </ol>
 <p><strong>总结来说，GitLab 通过“组的层级结构”实现了权限的继承，通过“角色”定义了权限的集合，再结合“最高权限原则”和保护分支等高级功能，构建了一套既强大又灵活的权限管理体系，能够轻松应对从小型团队到数万员工的超大型企业的复杂需求。</strong></p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-13T07:34:30.854861+00:00'>2026-03-13</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-13'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-13T07:34:30.854861+00:00'>2026-03-13</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-16'><span class='material-icons' data-icon='doc_created'></span><time datetime='2026-03-16T10:31:23.864311+00:00'>2026-03-16</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-03-16'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-03-16T10:31:23.864311+00:00'>2026-03-16</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='gzh' data-tippy-content data-tippy-raw='gzh'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
