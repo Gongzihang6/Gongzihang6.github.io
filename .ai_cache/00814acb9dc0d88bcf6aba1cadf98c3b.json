@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求计算二维网格中由相邻陆地（水平或垂直方向）组成的岛屿数量，其中网格由'1'（陆地）和'0'（水域）构成。通过深度优先搜索（DFS）或广度优先搜索（BFS）算法遍历网格，标记已访问的陆地以避免重复计数。该算法时间复杂度为O(M×N)，适用于图像处理、地图分析等场景。",
+  "service": "deepseek",
+  "page_title": "[200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/)",
+  "timestamp": "2026-03-16T10:37:03.268468",
+  "language": "zh"
+}

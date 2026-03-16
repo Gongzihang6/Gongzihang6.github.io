@@ -1,0 +1,7 @@
+{
+  "summary": "该题要求统计股票交易记录中逆序对的数量，即前一日股价高于后一日的情况。推荐使用归并排序法，在合并过程中高效统计逆序对，时间复杂度为O(n log n)。也可采用树状数组离散化解法处理大规模数据，而暴力解法仅适用于小规模场景。核心在于理解逆序对定义及归并排序的变种应用，需注意边界条件处理。",
+  "service": "deepseek",
+  "page_title": "[LCR 170. 交易逆序对的总数](https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)",
+  "timestamp": "2026-03-16T10:36:12.552577",
+  "language": "zh"
+}

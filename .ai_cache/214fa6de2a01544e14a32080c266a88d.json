@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求在一系列有序题目中选择解决或跳过以最大化总分，解决当前题目会获得分数但必须跳过后续指定数量的题目。采用动态规划方法，从后向前遍历数组，通过比较解决当前题目与跳过时的累计分数来决策。时间复杂度为O(n)，空间复杂度可优化至O(1)，适用于需要最优决策的场景如考试策略或资源分配。",
+  "service": "deepseek",
+  "page_title": "[2140. 解决智力问题](https://leetcode.cn/problems/solving-questions-with-brainpower/)",
+  "timestamp": "2026-03-16T10:33:25.161620",
+  "language": "zh"
+}

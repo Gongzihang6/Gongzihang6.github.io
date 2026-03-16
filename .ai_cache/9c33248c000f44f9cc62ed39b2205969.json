@@ -1,0 +1,7 @@
+{
+  "summary": "@Autowired和import在Spring框架中承担不同职责：import解决编译时的类型识别问题，确保编译器能定位类定义；@Autowired实现运行时的依赖注入，由Spring IoC容器自动装配Bean实例。前者仅声明类型，后者完成对象实例化，二者协同工作实现解耦。典型应用场景中，import引入类路径，@Autowired动态获取已管理的Bean，避免手动创建对象导致的紧耦合问题。",
+  "service": "deepseek",
+  "page_title": "@Autowired 和 import 的区别",
+  "timestamp": "2026-03-16T10:49:15.254374",
+  "language": "zh"
+}

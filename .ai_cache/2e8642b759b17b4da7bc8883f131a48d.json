@@ -1,0 +1,7 @@
+{
+  "summary": "本文深入解析SpringBoot的核心机制，重点阐述IoC容器与Bean管理原理。通过控制反转(IoC)和依赖注入(DI)实现对象解耦，详细说明@Configuration、@Bean等注解的运作机制，以及Bean生命周期管理、作用域控制和条件装配等特性。文章还涉及自动配置原理，展示SpringBoot如何基于约定优于配置简化开发，为理解Spring生态奠定基础。",
+  "service": "deepseek",
+  "page_title": "SpringBoot原理篇",
+  "timestamp": "2026-03-16T10:48:12.615506",
+  "language": "zh"
+}

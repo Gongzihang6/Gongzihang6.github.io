@@ -1,0 +1,7 @@
+{
+  "summary": "本文系统总结了SpringBoot开发中的核心注解及其应用，涵盖Lombok简化代码、IoC/DI容器、自动配置、Web控制层、数据持久化等模块。详细解析了各注解的核心功能、使用场景、参数配置及实现原理，如@Autowired实现依赖注入、@ConditionalOnClass条件装配等。通过编译时处理（如Lombok）和运行时机制，这些注解显著提升了开发效率，适用于企业级应用构建。",
+  "service": "deepseek",
+  "page_title": "SpringBoot注解总结",
+  "timestamp": "2026-03-16T10:48:19.401569",
+  "language": "zh"
+}

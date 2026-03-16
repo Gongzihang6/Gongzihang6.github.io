@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求在给定字符串中找出最长的回文子串。回文子串指正读反读相同的连续字符序列。典型解法包括动态规划和中心扩展法，动态规划通过状态转移记录子串回文性，中心扩展法则从每个字符向两侧扩展寻找最长回文。算法需处理奇偶长度情况，时间复杂度优化至O(n²)。适用于字符串处理、模式匹配等场景。",
+  "service": "deepseek",
+  "page_title": "[5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)",
+  "timestamp": "2026-03-16T10:37:42.831578",
+  "language": "zh"
+}

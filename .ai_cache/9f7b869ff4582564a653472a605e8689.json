@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求在给定高度数组中找到两条垂线，使其与x轴构成的容器能盛放最多水。核心解法采用双指针法，通过比较左右指针对应的高度并移动较小值指针来逐步逼近最大面积，时间复杂度为O(n)。适用于优化类场景，如资源分配或空间利用率计算，是典型的数组双指针应用范例。",
+  "service": "deepseek",
+  "page_title": "[11. 盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/)",
+  "timestamp": "2026-03-16T10:39:56.135149",
+  "language": "zh"
+}

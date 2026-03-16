@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求将升序排列的整数数组转换为高度平衡的二叉搜索树（BST）。核心解法采用分治策略，通过递归选取数组中间元素作为根节点，确保左右子树节点数相近以实现平衡。时间复杂度为O(n)，空间复杂度为O(log n)（递归栈开销）。典型应用场景包括构建高效查询的数据结构，如数据库索引或内存中的有序存储系统。",
+  "service": "deepseek",
+  "page_title": "[108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)",
+  "timestamp": "2026-03-16T10:39:27.890335",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "该题要求统计数组中满足至少k对相同元素的好子数组数目。采用滑动窗口技术，通过维护左右指针和频率哈希表动态计算当前窗口内的元素对数。当对数达到k时，累加所有有效子数组组合。算法时间复杂度为O(n)，空间复杂度O(n)，高效处理大规模数据，适用于元素频率统计类问题。",
+  "service": "deepseek",
+  "page_title": "[2537. 统计好子数组的数目](https://leetcode.cn/problems/count-the-number-of-good-subarrays/)",
+  "timestamp": "2026-03-16T10:34:59.284211",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求在给定字符串中找出不含重复字符的最长子串长度。典型解法采用滑动窗口技术，通过哈希集合动态维护无重复字符的窗口，右指针扩展窗口，左指针在遇到重复字符时收缩。算法时间复杂度为O(n)，空间复杂度为O(字符集大小)，适用于处理字符串匹配和去重场景。",
+  "service": "deepseek",
+  "page_title": "[3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)",
+  "timestamp": "2026-03-16T10:39:42.804393",
+  "language": "zh"
+}

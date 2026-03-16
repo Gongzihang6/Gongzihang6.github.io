@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求使用给定面额的无限硬币凑出指定金额的最少硬币数量，若无解则返回-1。典型动态规划应用，通过构建dp数组记录子问题最优解，状态转移方程为dp[i]=min(dp[i], dp[i-coin]+1)。时间复杂度O(amount*n)，空间复杂度O(amount)，适用于金融找零、资源分配等场景。",
+  "service": "deepseek",
+  "page_title": "[322. 零钱兑换](https://leetcode.cn/problems/coin-change/)",
+  "timestamp": "2026-03-16T10:38:12.391901",
+  "language": "zh"
+}

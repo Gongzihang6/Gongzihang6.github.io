@@ -1,0 +1,7 @@
+{
+  "summary": "Py Markdown是Python-Markdown的功能扩展包，提供大量非标准但强大的语法（如++ctrl++、^^text^^等），需在构建阶段转换为HTML。与Typora等标准Markdown编辑器不同，它专为MkDocs设计，支持复杂文档处理和现代化网站生成。最佳实践是结合VS Code等工具实现写作与最终效果的实时同步。",
+  "service": "deepseek",
+  "page_title": "Py Markdown",
+  "timestamp": "2026-03-16T10:47:38.045363",
+  "language": "zh"
+}

@@ -1,0 +1,7 @@
+{
+  "summary": "该问题要求统计整数数组中所有和为k的连续子数组数量。核心解法利用前缀和与哈希表优化，通过存储前缀和的出现次数，在遍历时检查currentSum-k是否存在哈希表中，将时间复杂度从暴力解法的O(n²)降至O(n)。这种方法类似两数之和的扩展，适用于处理大规模数组（长度≤2×10⁴），是典型的空间换时间优化策略。",
+  "service": "deepseek",
+  "page_title": "[560. 和为 K 的子数组](https://leetcode.cn/problems/subarray-sum-equals-k/)",
+  "timestamp": "2026-03-16T10:39:11.954320",
+  "language": "zh"
+}

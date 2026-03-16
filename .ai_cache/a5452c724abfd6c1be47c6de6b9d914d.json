@@ -1,0 +1,7 @@
+{
+  "summary": "Python的argparse模块是处理命令行参数的标准工具，通过ArgumentParser类实现灵活解析。核心参数包括name/flags（定义位置/可选参数）、action（触发操作）、nargs（参数数量）、const（常量值）、default（默认值）和type（值类型转换）。该模块支持位置参数强制输入和可选参数灵活配置，能自动生成帮助信息，适用于构建用户友好的CLI程序。开发者可通过类型检查和默认值设置确保参数有效性。",
+  "service": "deepseek",
+  "page_title": "Python命令行参数解析",
+  "timestamp": "2026-03-16T10:47:45.362712",
+  "language": "zh"
+}

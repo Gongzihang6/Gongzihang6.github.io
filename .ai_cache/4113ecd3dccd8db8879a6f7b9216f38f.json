@@ -1,0 +1,7 @@
+{
+  "summary": "SpringAOP通过面向切面编程解决代码混乱和分散问题，将日志、事务等横切关注点从核心业务逻辑中剥离。其核心思想是关注点分离，利用切面(Aspect)、连接点(Join Point)、切点(Pointcut)和通知(Advice)等机制，动态地将非业务功能织入目标方法。SpringAOP支持五种通知类型，包括前置、后置、返回、异常和环绕通知，通过切入点表达式实现精准拦截，提升代码可维护性和复用性。",
+  "service": "deepseek",
+  "page_title": "SpringAOP",
+  "timestamp": "2026-03-16T10:48:07.889540",
+  "language": "zh"
+}

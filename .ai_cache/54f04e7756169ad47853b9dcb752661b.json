@@ -1,0 +1,7 @@
+{
+  "summary": "该题要求统计数组中满足特定条件的\"趣味子数组\"数量。核心条件是子数组中满足nums[i] ≡ k (mod modulo)的元素数量本身也满足模运算条件。解题关键在于利用前缀和与哈希表优化计算，将问题转化为寻找满足(sum[j] - sum[i]) ≡ k (mod modulo)的区间对。典型应用场景涉及大数据量下的高效统计，时间复杂度可优化至O(n)。",
+  "service": "deepseek",
+  "page_title": "[2845. 统计趣味子数组的数目](https://leetcode.cn/problems/count-of-interesting-subarrays/)",
+  "timestamp": "2026-03-16T10:35:28.654431",
+  "language": "zh"
+}
