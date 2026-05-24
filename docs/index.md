@@ -604,7 +604,7 @@ comments: true
 ---
 
 <center>
-<a href="../龚子航_SLAM算法工程师_简历.pdf" target="_blank" class="md-button">下载简历</a>
+<a href="about/files/slam-resume.pdf" target="_blank" class="md-button">下载简历</a>
 </center>  
 
 ## 个人简介
@@ -813,13 +813,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="file-title">个人简历</div>
 <div class="file-meta">2025-02-14</div>
 </div>
-<a class="down-button" target="_blank" href="../个人简历.pdf" markdown="1">:fontawesome-solid-download: 下载</a>
+<a class="down-button" target="_blank" href="about/files/personal-resume.pdf" markdown="1">:fontawesome-solid-download: 下载</a>
 </div> -->
 
 <hr />
 <h2 id="_3">我的履历<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 
-<p><link rel="stylesheet" href="../sty/portfolio.css"></p>
+<p><link rel="stylesheet" href="stylesheets/resume.css"></p>
 
 <!-- 增大字号 -->
 <div class="qualification__tabs">

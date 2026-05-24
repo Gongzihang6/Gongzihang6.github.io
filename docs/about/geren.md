@@ -378,7 +378,7 @@ status: new
 ---
 
 <center>
-<a href="../算法方向.pdf" target="_blank" class="md-button">下载简历</a>
+<a href="../files/algorithm-resume.pdf" target="_blank" class="md-button">下载简历</a>
 </center>  
 
 ## 个人简介
@@ -402,13 +402,13 @@ status: new
 <div class="file-title">个人简历</div>
 <div class="file-meta">2025-02-14</div>
 </div>
-<a class="down-button" target="_blank" href="../个人简历.pdf" markdown="1">:fontawesome-solid-download: 下载</a>
+<a class="down-button" target="_blank" href="../files/personal-resume.pdf" markdown="1">:fontawesome-solid-download: 下载</a>
 </div> -->
 
 <hr />
 <h2 id="_3">我的履历<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 
-<p><link rel="stylesheet" href="../sty/portfolio.css"></p>
+<p><link rel="stylesheet" href="../stylesheets/resume.css"></p>
 
 <!-- 增大字号 -->
 <div class="qualification__tabs">

@@ -63,213 +63,207 @@ theme:
     repo: fontawesome/brands/github #右上角图标
     logo: logo
     previous: fontawesome/solid/angle-left
-    # top: fontawesome/solid/angles-up
-    alternate: fontawesome/solid/language
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
-repo_url: https://github.com/Gongzihang6 # 右上角点击跳转的链接
-repo_name: Gongzihang6 # 右上角的名字
+repo_url: https://github.com/Gongzihang6/Gongzihang6.github.io # 右上角点击跳转的链接
+repo_name: Gongzihang6.github.io # 右上角的名字
 
 # [Navigtion]
 # 下面的.md文件以docs为根目录确定路径
 nav:
+  # 首页
   - 主页: index.md
 
-  ################################################################################################
-  # - 技术:
-  #   # - index: 
-  - Computer Science: 
+  # 技术专题
+  - Computer Science:
     - Java:
       - Java面向对象基础: blog/Computer Science/java基础.md
       - Java集合框架与常用API: blog/Computer Science/常用API.md
       - Java提高: blog/Computer Science/java提高.md
-      - blog/Computer Science/JavaStream流式处理方法.md
+      - JavaStream流式处理方法: blog/Computer Science/JavaStream流式处理方法.md
     - Algorithm:
       - 并查集:
-        - blog/Computer Science/Algorithm/算法基础/ds/并查集.md
-        - blog/Computer Science/Algorithm/算法基础/ds/dsu-complexity.md
-      - blog/Computer Science/排序和查找.md
+        - 并查集基础: blog/Computer Science/Algorithm/算法基础/ds/并查集.md
+        - 并查集复杂度分析: blog/Computer Science/Algorithm/算法基础/ds/dsu-complexity.md
+      - 排序和查找: blog/Computer Science/排序和查找.md
     - LeetCode周赛系列:
-      - blog/Computer Science/LeetCode周赛系列/第467场周赛.md
-      - blog/Computer Science/LeetCode周赛系列/第468场周赛.md
+      - 第467场周赛: blog/Computer Science/LeetCode周赛系列/第467场周赛.md
+      - 第468场周赛: blog/Computer Science/LeetCode周赛系列/第468场周赛.md
     - LeetCode热题100:
-      - blog/Computer Science/LeetCode热题100/字母异位词分组.md
-      - blog/Computer Science/LeetCode热题100/最长连续序列.md
-      - blog/Computer Science/LeetCode热题100/移动零.md
-      - blog/Computer Science/LeetCode热题100/盛水最多的容器.md
-      - blog/Computer Science/LeetCode热题100/三数之和.md
-      - blog/Computer Science/LeetCode热题100/无重复字符的最长子串.md
-      - blog/Computer Science/LeetCode热题100/和为K的子数组.md
-      - blog/Computer Science/LeetCode热题100/合并区间.md
-      - blog/Computer Science/LeetCode热题100/矩阵置零.md
-      - blog/Computer Science/LeetCode热题100/螺旋矩阵.md
-      - blog/Computer Science/LeetCode热题100/旋转图像.md
-      - blog/Computer Science/LeetCode热题100/轮转数组.md
-      - blog/Computer Science/LeetCode热题100/除了自身以外数组的乘积.md
-      - blog/Computer Science/LeetCode热题100/二叉树的中序遍历.md
-      - blog/Computer Science/LeetCode热题100/二叉树的最大深度.md
-      - blog/Computer Science/LeetCode热题100/翻转二叉树.md
-      - blog/Computer Science/LeetCode热题100/对称二叉树.md
-      - blog/Computer Science/LeetCode热题100/二叉树的直径.md
-      - blog/Computer Science/LeetCode热题100/二叉树的层序遍历.md
-      - blog/Computer Science/LeetCode热题100/二叉树的最近公共祖先.md
-      - blog/Computer Science/LeetCode热题100/验证二叉搜索树.md
-      - blog/Computer Science/LeetCode热题100/二叉搜索树中第k小的元素.md
-      - blog/Computer Science/LeetCode热题100/二叉树的右视图.md
-      - blog/Computer Science/LeetCode热题100/二叉树展开为链表.md
-      - blog/Computer Science/LeetCode热题100/从前序与中序遍历序列构造二叉树.md
-      - blog/Computer Science/LeetCode热题100/路径总和III.md
-      - blog/Computer Science/LeetCode热题100/回文链表.md
+      - 字母异位词分组: blog/Computer Science/LeetCode热题100/字母异位词分组.md
+      - 最长连续序列: blog/Computer Science/LeetCode热题100/最长连续序列.md
+      - 移动零: blog/Computer Science/LeetCode热题100/移动零.md
+      - 盛水最多的容器: blog/Computer Science/LeetCode热题100/盛水最多的容器.md
+      - 三数之和: blog/Computer Science/LeetCode热题100/三数之和.md
+      - 无重复字符的最长子串: blog/Computer Science/LeetCode热题100/无重复字符的最长子串.md
+      - 找到字符串中所有字母异位词: blog/Computer Science/LeetCode热题100/找到字符串中所有字母异位词.md
+      - 和为K的子数组: blog/Computer Science/LeetCode热题100/和为K的子数组.md
+      - 合并区间: blog/Computer Science/LeetCode热题100/合并区间.md
+      - 矩阵置零: blog/Computer Science/LeetCode热题100/矩阵置零.md
+      - 螺旋矩阵: blog/Computer Science/LeetCode热题100/螺旋矩阵.md
+      - 旋转图像: blog/Computer Science/LeetCode热题100/旋转图像.md
+      - 轮转数组: blog/Computer Science/LeetCode热题100/轮转数组.md
+      - 除了自身以外数组的乘积: blog/Computer Science/LeetCode热题100/除了自身以外数组的乘积.md
+      - 二叉树的中序遍历: blog/Computer Science/LeetCode热题100/二叉树的中序遍历.md
+      - 二叉树的最大深度: blog/Computer Science/LeetCode热题100/二叉树的最大深度.md
+      - 翻转二叉树: blog/Computer Science/LeetCode热题100/翻转二叉树.md
+      - 对称二叉树: blog/Computer Science/LeetCode热题100/对称二叉树.md
+      - 二叉树的直径: blog/Computer Science/LeetCode热题100/二叉树的直径.md
+      - 二叉树的层序遍历: blog/Computer Science/LeetCode热题100/二叉树的层序遍历.md
+      - 验证二叉搜索树: blog/Computer Science/LeetCode热题100/验证二叉搜索树.md
+      - 二叉搜索树中第k小的元素: blog/Computer Science/LeetCode热题100/二叉搜索树中第k小的元素.md
+      - 将有序数组转换为二叉搜索树: blog/Computer Science/LeetCode热题100/将有序数组转换为二叉搜索树.md
+      - 二叉树的右视图: blog/Computer Science/LeetCode热题100/二叉树的右视图.md
+      - 二叉树展开为链表: blog/Computer Science/LeetCode热题100/二叉树展开为链表.md
+      - 从前序与中序遍历序列构造二叉树: blog/Computer Science/LeetCode热题100/从前序与中序遍历序列构造二叉树.md
+      - 路径总和III: blog/Computer Science/LeetCode热题100/路径总和III.md
+      - 回文链表: blog/Computer Science/LeetCode热题100/回文链表.md
     - LeetCode:
-      - blog/Computer Science/LeetCode/交易逆序对的总数.md
-      - blog/Computer Science/LeetCode/单词接龙.md
-      - blog/Computer Science/LeetCode/岛屿数量.md
-      - blog/Computer Science/LeetCode/分考场.md
-      - blog/Computer Science/LeetCode/拉马车.md
-      - blog/Computer Science/LeetCode/分巧克力.md
-      - blog/Computer Science/LeetCode/k倍区间.md
-      - blog/Computer Science/LeetCode/编辑距离.md
-      - blog/Computer Science/LeetCode/接雨水.md
-      - blog/Computer Science/LeetCode/组合总和.md
-      - blog/Computer Science/LeetCode/全排列.md
-      - blog/Computer Science/LeetCode/乘积最大子数组.md
-      - blog/Computer Science/LeetCode/最长回文子串.md
-      - blog/Computer Science/LeetCode/前K个高频元素.md
-      - blog/Computer Science/LeetCode/最小栈.md
-      - blog/Computer Science/LeetCode/Pow(x,n).md
-      - blog/Computer Science/LeetCode/网络延迟时间.md
-      - blog/Computer Science/LeetCode/计算质数.md
-      - blog/Computer Science/LeetCode/对角线上的质数.md
-      - blog/Computer Science/LeetCode/零钱兑换.md
-      - blog/Computer Science/LeetCode/01矩阵.md
-      - blog/Computer Science/LeetCode/二分查找.md
-      - blog/Computer Science/LeetCode/括号匹配.md
-      - blog/Computer Science/LeetCode/300最长递增子序列.md
-      - blog/Computer Science/LeetCode/115不同的子序列.md
-      - blog/Computer Science/LeetCode/712两个字符串的最小ASCII删除和.md
-      - blog/Computer Science/LeetCode/516最长回文子序列.md
-      - blog/Computer Science/LeetCode/139单词拆分.md
-      - blog/Computer Science/LeetCode/221最大正方形.md
-      - blog/Computer Science/LeetCode/2845统计趣味子数组的数目.md
-      - blog/Computer Science/LeetCode/2799统计完全子数组的数目.md
-      - blog/Computer Science/LeetCode/1399统计最大组的数目.md
-      - blog/Computer Science/LeetCode/2338统计理想数组的数目.md
-      - blog/Computer Science/LeetCode/2179统计数组中好三元组数目.md
-      - blog/Computer Science/LeetCode/2537统计好子数组的数.md
-      - blog/Computer Science/LeetCode/2140解决智力问题.md
-      - blog/Computer Science/LeetCode/2278字母在字符串中的百分比.md
+      - 交易逆序对的总数: blog/Computer Science/LeetCode/交易逆序对的总数.md
+      - 单词接龙: blog/Computer Science/LeetCode/单词接龙.md
+      - 岛屿数量: blog/Computer Science/LeetCode/岛屿数量.md
+      - 分考场: blog/Computer Science/LeetCode/分考场.md
+      - 拉马车: blog/Computer Science/LeetCode/拉马车.md
+      - 分巧克力: blog/Computer Science/LeetCode/分巧克力.md
+      - k倍区间: blog/Computer Science/LeetCode/k倍区间.md
+      - 编辑距离: blog/Computer Science/LeetCode/编辑距离.md
+      - 接雨水: blog/Computer Science/LeetCode/接雨水.md
+      - 组合总和: blog/Computer Science/LeetCode/组合总和.md
+      - 全排列: blog/Computer Science/LeetCode/全排列.md
+      - 乘积最大子数组: blog/Computer Science/LeetCode/乘积最大子数组.md
+      - 最长回文子串: blog/Computer Science/LeetCode/最长回文子串.md
+      - 前K个高频元素: blog/Computer Science/LeetCode/前K个高频元素.md
+      - 最小栈: blog/Computer Science/LeetCode/最小栈.md
+      - Pow(x,n): blog/Computer Science/LeetCode/Pow(x,n).md
+      - 网络延迟时间: blog/Computer Science/LeetCode/网络延迟时间.md
+      - 计算质数: blog/Computer Science/LeetCode/计算质数.md
+      - 对角线上的质数: blog/Computer Science/LeetCode/对角线上的质数.md
+      - 零钱兑换: blog/Computer Science/LeetCode/零钱兑换.md
+      - 01矩阵: blog/Computer Science/LeetCode/01矩阵.md
+      - 二分查找: blog/Computer Science/LeetCode/二分查找.md
+      - 括号匹配: blog/Computer Science/LeetCode/括号匹配.md
+      - 300最长递增子序列: blog/Computer Science/LeetCode/300最长递增子序列.md
+      - 115不同的子序列: blog/Computer Science/LeetCode/115不同的子序列.md
+      - 712两个字符串的最小ASCII删除和: blog/Computer Science/LeetCode/712两个字符串的最小ASCII删除和.md
+      - 516最长回文子序列: blog/Computer Science/LeetCode/516最长回文子序列.md
+      - 139单词拆分: blog/Computer Science/LeetCode/139单词拆分.md
+      - 221最大正方形: blog/Computer Science/LeetCode/221最大正方形.md
+      - 2845统计趣味子数组的数目: blog/Computer Science/LeetCode/2845统计趣味子数组的数目.md
+      - 2799统计完全子数组的数目: blog/Computer Science/LeetCode/2799统计完全子数组的数目.md
+      - 1399统计最大组的数目: blog/Computer Science/LeetCode/1399统计最大组的数目.md
+      - 2338统计理想数组的数目: blog/Computer Science/LeetCode/2338统计理想数组的数目.md
+      - 2179统计数组中好三元组数目: blog/Computer Science/LeetCode/2179统计数组中好三元组数目.md
+      - 2537统计好子数组的数: blog/Computer Science/LeetCode/2537统计好子数组的数.md
+      - 2140解决智力问题: blog/Computer Science/LeetCode/2140解决智力问题.md
+      - 2278字母在字符串中的百分比: blog/Computer Science/LeetCode/2278字母在字符串中的百分比.md
 
+  - MachineLearning:
+    - 2D图像深度学习: blog/MachineLearning/2D图像深度学习.md
+    - K近邻学习与降维: blog/MachineLearning/K近邻学习与降维.md
+    - 模型评估与多分类: blog/MachineLearning/模型评估与多分类.md
+    - 公式测试: blog/MachineLearning/公式测试.md
+    - 经典卷积神经网络: blog/MachineLearning/经典卷积神经网络.md
+    - 理解YOLO网络结构: blog/MachineLearning/理解YOLO网络结构.md
+    - yolov5s 网络结构: blog/MachineLearning/yolov5s 网络结构.md
+    - 关联分析: blog/MachineLearning/关联分析.md
+    - 支持向量机SVM: blog/MachineLearning/支持向量机SVM.md
+    - 聚类算法: blog/MachineLearning/聚类算法.md
 
-  - MachineLearning: 
-    - blog/MachineLearning/K近邻学习与降维.md
-    - blog/MachineLearning/模型评估与多分类.md
-    - blog/MachineLearning/公式测试.md
-    - blog/MachineLearning/经典卷积神经网络.md
-    - blog/MachineLearning/理解YOLO网络结构.md
-    - blog/MachineLearning/关联分析.md
-    - blog/MachineLearning/支持向量机SVM.md
-    - blog/MachineLearning/聚类算法.md
-    - blog/MachineLearning/yolov5s 网络结构.md
+  # 随笔与研究
   - 随笔:
     - 科研:
-      - blog/随笔/科研/摄像机成像模型.md
-      - blog/随笔/科研/求解两个坐标系的相对旋转和平移矩阵.md
-      - blog/随笔/科研/多相机同步采集数据.md
-      - blog/随笔/科研/PCL库总结.md
-      - 文献阅读: 
-        - blog/随笔/科研/文献阅读/PointMamba.md
-        - blog/随笔/科研/文献阅读/swin3d.md
+      - 摄像机成像模型: blog/随笔/科研/摄像机成像模型.md
+      - 求解两个坐标系的相对旋转和平移矩阵: blog/随笔/科研/求解两个坐标系的相对旋转和平移矩阵.md
+      - 多相机同步采集数据: blog/随笔/科研/多相机同步采集数据.md
+      - 点云关键点预测: blog/随笔/科研/点云关键点预测.md
+      - PCL库总结: blog/随笔/科研/PCL库总结.md
+      - OrbbecSDK库总结: blog/随笔/科研/OrbbecSDK库总结.md
+      - 体尺测量方案: blog/随笔/科研/体尺测量方案.md
+      - 文献阅读:
+        - PointMamba: blog/随笔/科研/文献阅读/PointMamba.md
+        - swin3d: blog/随笔/科研/文献阅读/swin3d.md
     - 优化:
-      - blog/随笔/优化/Levenberg-Marquardt算法.md
-    - blog/随笔/latex入门学习.md
-    - blog/随笔/Matlab基础速成.md
-    - blog/随笔/Matlab进阶.md
-    - blog/随笔/Py-Markdown.md
-    - blog/随笔/ssh_gitlab.md
-    - blog/随笔/2024年秋招-小米集团-软件开发岗-第一批笔试.md
-    - blog/随笔/cmd_powershell_bash.md
-    - blog/随笔/正则表达式.md
-    - blog/随笔/对注解Autowired的理解.md
-    - blog/随笔/http状态码含义以及对应解决方案.md
-    - blog/随笔/element-plus组件理解.md
-    - blog/随笔/SpringBoot注解总结.md
-    - blog/随笔/HTTP.md
-    - blog/随笔/会话跟踪技术.md
-    - blog/随笔/Spring-Security登录校验机制.md
-    - blog/随笔/SQL外键约束与连接.md
-    - blog/随笔/Element-Plus组件详细介绍.md
-    - blog/随笔/SpringAOP.md
-    - blog/随笔/mermaid绘图语法总结.md
-    - blog/随笔/Transformer.md
-    - blog/随笔/SpringBoot原理篇.md
-    - blog/随笔/JavaHttpServeletRequest.md
-      
-    
-  - 每日诗词:
-    - blog/每日诗词/虞美人·玉阑干外清江浦.md
-    - blog/每日诗词/菩萨蛮·回文夏闺怨.md
-    - blog/每日诗词/清平乐·六盘山.md
-    - blog/每日诗词/洞仙歌·咏柳.md
-    - blog/每日诗词/秋兴八首·其一.md
-    - blog/每日诗词/与史郎中钦听黄鹤楼上吹笛.md
-    - blog/每日诗词/夏日南亭怀辛大.md
-    - blog/每日诗词/行香子·秋与.md
-    - blog/每日诗词/自题金山画像.md
-    - blog/每日诗词/一剪梅·红藕香残玉簟秋.md
-    - blog/每日诗词/初到黄州.md
-    - blog/每日诗词/雨霖铃·寒蝉凄切.md
-    - blog/每日诗词/破阵子·四十年来家国.md
-    - blog/每日诗词/春日醉起言志.md
-    - blog/每日诗词/峨眉山月歌送蜀僧晏入中京.md
-    - blog/每日诗词/三五七言.md
-    - blog/每日诗词/木兰花·拟古决绝词柬友.md
-    - blog/每日诗词/桃花庵歌.md
-    - blog/每日诗词/渔家傲·反第一次大围剿.md
-    - blog/每日诗词/青玉案·元夕.md
-    - blog/每日诗词/浣溪沙·谁念西风独自凉.md
-    - blog/每日诗词/声声慢·寻寻觅觅.md
-    - blog/每日诗词/虞美人·听雨.md
-    - blog/每日诗词/青玉案·凌波不过横塘路.md
-    - blog/每日诗词/相见欢·林花谢了春红.md
-    - blog/每日诗词/临江仙·梦后楼台高锁.md
-    - blog/每日诗词/题都城南庄.md
-    - blog/每日诗词/浪淘沙令·帘外雨潺潺.md
-    - blog/每日诗词/鹧鸪天·代人赋.md
-    - blog/每日诗词/水仙子·夜雨.md
-    - blog/每日诗词/唐多令·惜别.md
-    - blog/每日诗词/浪淘沙·把酒祝东风.md
-    - blog/每日诗词/临安春雨初霁.md
-    - blog/每日诗词/蝶恋花·春景.md
-    - blog/每日诗词/喜迁莺·梅雨霁.md
-    - blog/每日诗词/梅花引·荆溪阻雪.md
-  - 发疯:
-    - blog/发疯.md
-  - 长期主义:
-    - about/fitness.md
+      - GradientDescent: blog/随笔/优化/GradientDescent.md
+      - Momentum: blog/随笔/优化/Momentum.md
+      - 牛顿法: blog/随笔/优化/牛顿法.md
+      - Levenberg-Marquardt算法: blog/随笔/优化/Levenberg-Marquardt算法.md
+    - latex入门学习: blog/随笔/latex入门学习.md
+    - Matlab基础速成: blog/随笔/Matlab基础速成.md
+    - Matlab进阶: blog/随笔/Matlab进阶.md
+    - Py-Markdown: blog/随笔/Py-Markdown.md
+    - ssh_gitlab: blog/随笔/ssh_gitlab.md
+    - 2024年秋招-小米集团-软件开发岗-第一批笔试: blog/随笔/2024年秋招-小米集团-软件开发岗-第一批笔试.md
+    - cmd_powershell_bash: blog/随笔/cmd_powershell_bash.md
+    - 正则表达式: blog/随笔/正则表达式.md
+    - 对注解Autowired的理解: blog/随笔/对注解Autowired的理解.md
+    - http状态码含义以及对应解决方案: blog/随笔/http状态码含义以及对应解决方案.md
+    - element-plus组件理解: blog/随笔/element-plus组件理解.md
+    - SpringBoot注解总结: blog/随笔/SpringBoot注解总结.md
+    - HTTP: blog/随笔/HTTP.md
+    - 会话跟踪技术: blog/随笔/会话跟踪技术.md
+    - Spring-Security登录校验机制: blog/随笔/Spring-Security登录校验机制.md
+    - SQL外键约束与连接: blog/随笔/SQL外键约束与连接.md
+    - Element-Plus组件详细介绍: blog/随笔/Element-Plus组件详细介绍.md
+    - SpringAOP: blog/随笔/SpringAOP.md
+    - mermaid绘图语法总结: blog/随笔/mermaid绘图语法总结.md
+    - Transformer: blog/随笔/Transformer.md
+    - SpringBoot原理篇: blog/随笔/SpringBoot原理篇.md
+    - JavaHttpServeletRequest: blog/随笔/JavaHttpServeletRequest.md
 
+  # 诗词摘录
+  - 每日诗词:
+    - 虞美人·玉阑干外清江浦: blog/每日诗词/虞美人·玉阑干外清江浦.md
+    - 菩萨蛮·回文夏闺怨: blog/每日诗词/菩萨蛮·回文夏闺怨.md
+    - 清平乐·六盘山: blog/每日诗词/清平乐·六盘山.md
+    - 洞仙歌·咏柳: blog/每日诗词/洞仙歌·咏柳.md
+    - 秋兴八首·其一: blog/每日诗词/秋兴八首·其一.md
+    - 与史郎中钦听黄鹤楼上吹笛: blog/每日诗词/与史郎中钦听黄鹤楼上吹笛.md
+    - 夏日南亭怀辛大: blog/每日诗词/夏日南亭怀辛大.md
+    - 行香子·秋与: blog/每日诗词/行香子·秋与.md
+    - 自题金山画像: blog/每日诗词/自题金山画像.md
+    - 一剪梅·红藕香残玉簟秋: blog/每日诗词/一剪梅·红藕香残玉簟秋.md
+    - 初到黄州: blog/每日诗词/初到黄州.md
+    - 雨霖铃·寒蝉凄切: blog/每日诗词/雨霖铃·寒蝉凄切.md
+    - 破阵子·四十年来家国: blog/每日诗词/破阵子·四十年来家国.md
+    - 春日醉起言志: blog/每日诗词/春日醉起言志.md
+    - 峨眉山月歌送蜀僧晏入中京: blog/每日诗词/峨眉山月歌送蜀僧晏入中京.md
+    - 三五七言: blog/每日诗词/三五七言.md
+    - 木兰花·拟古决绝词柬友: blog/每日诗词/木兰花·拟古决绝词柬友.md
+    - 桃花庵歌: blog/每日诗词/桃花庵歌.md
+    - 渔家傲·反第一次大围剿: blog/每日诗词/渔家傲·反第一次大围剿.md
+    - 青玉案·元夕: blog/每日诗词/青玉案·元夕.md
+    - 浣溪沙·谁念西风独自凉: blog/每日诗词/浣溪沙·谁念西风独自凉.md
+    - 声声慢·寻寻觅觅: blog/每日诗词/声声慢·寻寻觅觅.md
+    - 虞美人·听雨: blog/每日诗词/虞美人·听雨.md
+    - 青玉案·凌波不过横塘路: blog/每日诗词/青玉案·凌波不过横塘路.md
+    - 相见欢·林花谢了春红: blog/每日诗词/相见欢·林花谢了春红.md
+    - 临江仙·梦后楼台高锁: blog/每日诗词/临江仙·梦后楼台高锁.md
+    - 题都城南庄: blog/每日诗词/题都城南庄.md
+    - 浪淘沙令·帘外雨潺潺: blog/每日诗词/浪淘沙令·帘外雨潺潺.md
+    - 鹧鸪天·代人赋: blog/每日诗词/鹧鸪天·代人赋.md
+    - 水仙子·夜雨: blog/每日诗词/水仙子·夜雨.md
+    - 唐多令·惜别: blog/每日诗词/唐多令·惜别.md
+    - 浪淘沙·把酒祝东风: blog/每日诗词/浪淘沙·把酒祝东风.md
+    - 临安春雨初霁: blog/每日诗词/临安春雨初霁.md
+    - 蝶恋花·春景: blog/每日诗词/蝶恋花·春景.md
+    - 喜迁莺·梅雨霁: blog/每日诗词/喜迁莺·梅雨霁.md
+    - 梅花引·荆溪阻雪: blog/每日诗词/梅花引·荆溪阻雪.md
+
+  # 单页
+  - 发疯: blog/发疯.md
+  - 长期主义: about/fitness.md
+
+  # 关于
   - 关于:
-      - 作者个人简介: about/geren.md
-      - 个人简历: about/resume.md
-      - 支持作者: about/zcw.md
-      - 功能测试: about/test.md
+    - 作者个人简介: about/geren.md
+    - 个人简历: about/resume.md
+    - 支持作者: about/zcw.md
+    - 功能测试: about/test.md
 
 
 copyright: Copyright &copy; gzh # 左下角的版权声明
 
 extra:
   mathjax: true
-  alternate:
-    - name: 简体中文
-      link: /
-      # https://wcowin-work.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp
-      lang: zh   
-    - name: English
-      link: /Mkdocs-Wcowin/en/
-      # https://wcowin-work.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp
-      lang: en
-    - name: China(TW)
-      link: /Mkdocs-Wcowin/ZH-TW/
-      # https://wcowin-work.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=zh-TW&_x_tr_hl=zh-CN&_x_tr_pto=wapp
-      lang: zh-TW
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
     - icon: fontawesome/brands/weixin
@@ -289,7 +283,7 @@ extra:
       link: https://space.bilibili.com/688234000/lists
   analytics:
     provider: google #谷歌分析
-    property: G-40HC6RYSR1 ##如果你 clone 了my模板，请将这个修改为你的
+    property: G-40HC6RYSR1
 
     # 网页底部反馈
     feedback:
@@ -314,66 +308,13 @@ extra:
   #     如果你同意,你可以帮助我们让我们的网站更好
 
 plugins:
-
-  # - ai-summary:
-  #     cache_enabled: true              # 启用缓存
-  #     cache_expire_days: 300            # 缓存300天
-  #     clear_cache: false               # 保留现有缓存
-  # - exclude:
-  #     glob:
-  #       - blog/Computer Science/Algorithm/docs/*
   - search #搜索配置
-  # - glightbox:
-  #     enabled: !ENV [glightbox, false]
-  #     touchNavigation: true
-  #     loop: false
-  #     effect: fade
-  #     slide_effect: slide
-  #     width: 100%
-  #     height: auto
-  #     zoomable: true
-  #     draggable: true
-  #     skip_classes:
-  #       - custom-skip-class-name
-  #     auto_caption: false
-  #     caption_position: bottom
-  #     background: white
-  #     shadow: true
-  #     manual: false
   - git-committers:
       enabled: !ENV [CI, false]
-      repository: Gongzihang6/Discussion
+      repository: Gongzihang6/Gongzihang6.github.io
       branch: main
       exclude:
         - index.md
-        - tag.md
-        - liuyanban.md
-        - blog/posts/update.md
-        - blog/posts/wkw.md
-        - about/link.md
-  # - git-revision-date-localized:
-  #     # enabled: !ENV [CI, false]
-  #     # type: iso_date
-  #     # enable_creation_date: false
-
-  #     type: timeago #时间类型
-  #     custom_format: "%d. %B %Y"  # 时间格式
-  #     timezone: Europe/Amsterdam #时区
-  #     locale: en #首选语言
-  #     fallback_to_build_date: false #许回退到git 不可用时mkdocs build执行的时间
-  #     enable_creation_date: true #是否启用创建时间
-  #     exclude:  #排除的页面
-  #         - index.md
-  #     enabled: true #是否启用
-  #     strict: true
-  #     exclude:
-  #       # - index.md
-  #       - tag.md
-  #       - liuyanban.md
-  #       - blog/posts/update.md
-  #       - blog/posts/wkw.md
-  #       - about/link.md
-  #       - websitebeauty/linktech.md
 
   - document-dates:
       position: bottom            # 显示位置：top（标题后） bottom（文档末尾），默认：bottom
@@ -382,8 +323,7 @@ plugins:
       date_format: '%Y-%m-%d'  # 日期格式化字符串，例如：%Y年%m月%d日、%b %d, %Y
       time_format: '%H:%M:%S'  # 时间格式化字符串（仅在 type=datetime 时有效）
       exclude:                 # 排除文件列表，默认为空
-        - temp.md              # 排除指定文件
-        - private/*            # 排除 private 目录下所有文件，包括子目录
+        - index.md             # 首页不显示文档日期
       show_author: true        # 是否显示作者信息，默认：true
 
 
@@ -394,9 +334,6 @@ plugins:
       post_readtime: true
       post_readtime_words_per_minute: 265 #计算帖子的阅读时间时读者每分钟预计阅读的字数
       post_url_format: "{date}/{slug}"
-      # categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
-      #   kwds:
-      #     case: lower
       pagination_url_format: "page/{page}"
       authors_file: "{blog}/.authors.yml" #作者信息
   - tags
@@ -437,21 +374,11 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  # - markdown.extensions.toc:
-  #     slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
-  #     permalink: "\ue157"
-
-  - admonition
-  - pymdownx.details
-
   - pymdownx.arithmatex: # latex支持
       generic: true
-      
-      # block_tag: 'div'  # 强制行间公式用div包裹
       block_syntax:
         - dollar  # 用于 $$...$$
         - begin_end # 用于 \begin{}...\end{}
-      # preview: false  # 禁用预览模式避免冲突
   - pymdownx.superfences:
       custom_fences:
         - name: math
@@ -460,54 +387,30 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
 
         - name: raw_html
           class: raw-html
-          # format: !!python/name:pymdownx.superfences.fence_raw_format
 
 
         - name: mermaid
           class: mermaid
           format:
             !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
-        # - pymdownx.tabbed:
-        #     alternate_style: true
 
 extra_javascript:
   - javascripts/extra.js
   - javascripts/config_mathjax.js  # 确保此文件正确配置了 MathJax
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/简历.js
 extra_css:
   - stylesheets/extra.css
   - stylesheets/extra2.css
-  - stylesheets/简历.css
-  # - https://cdn.jsdelivr.net/gh/Wcowin/Mkdocs-Wcowin@main/docs/stylesheets/extra.css
-  # - stylesheets/link.css #友链配置
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css  #友链CDN
   - stylesheets/customize.css # 搜索圆角优化
-  # - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/customize.css  #按钮圆角化CDN
-  # - assets/stylesheets/portfolio.css
-  # - stylesheets/video.css #播放器可选配置
-  # - https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.css #gitalk支持
-  # - ckplayer/css/ckplayer.css   #播放器配置
-  # - https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css # font-awesome表情支持
-  # - https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css  #分享支持
   - https://fonts.googleapis.com/css2?family=Klee+One&family=LXGW+WenKai+TC&display=swap
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css #字体
-  # - https://static.zeoseven.com/zsft/292/main/result.css #字体
-  # - stylesheets/ziti.css  #字体
 
   - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap
   - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css
-  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css #字体
-  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css  #字体
-  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css  #字体
-
-
 hooks:
-  - docs/overrides/hooks/socialmedia.py
-  - docs/overrides/hooks/reading_time.py
-  - docs/overrides/hooks/ai_summary.py
-  # - docs/overrides/hooks/ai_summary.pysite_name: gzh
-site_url: https://gongzihang6.github.io/
-site_author: gzh
+  - scripts/mkdocs_hooks/socialmedia.py
+  - scripts/mkdocs_hooks/reading_time.py
+  - scripts/mkdocs_hooks/ai_summary.py
 

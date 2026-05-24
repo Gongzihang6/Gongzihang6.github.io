@@ -6,6 +6,16 @@
 
 # MkDocs 构建输出目录
 site/
+.cache/
+
+# Python 缓存与编译产物
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE 工程文件
+.idea/
 
 # AI 摘要缓存目录（项目根目录）- 需要被提交
 !.ai_cache/

@@ -1,5 +1,7 @@
 # Point Cloud Library（PCL）点云处理库总结
 
+相关附件： [下载 PDF 版本](files/PCL库总结.pdf)
+
 PCL 是一款专门用于三维点云处理的 C++第三方库，内置了三维点云处理的常见方法，如点云的滤波去噪、降采样、高效搜索、关键点特征提取、配准、可视化等等，可以说是点云处理的首选库。
 
 使用方式，下载 Github 官方的 AllInone 安装包，[安装链接](https://github.com/PointCloudLibrary/pcl/releases)，然后安装即可，安装后就会有一个 PCL 1.14.1 文件夹，里面就有编译好的 PCL 库可以直接使用；如何在 VS2022 中使用？推荐使用 CMake 来构建 VS 项目，在 CMakeLists.txt 文件中指定 PCL 库的安装位置，或者设置一个系统环境变量 PCL_ROOT，将变量值设置为 PCL 的安装路径，以后就可以在任意地方使用${PCL_ROOT}来表示 PCL 的安装路径，CMake 就会自动根据 PCL 的安装路径，构建好 PCL 的依赖，而不需要自己手动的在 VS 的项目属性中添加 PCL 的依赖项，简单高效不易出错。
