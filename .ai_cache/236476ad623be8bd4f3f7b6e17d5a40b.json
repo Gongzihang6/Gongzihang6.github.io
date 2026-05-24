@@ -1,7 +1,7 @@
 {
-  "summary": "本文围绕经典卷积神经网络展开讨论，介绍了相关的技术概念、应用场景和实践方法。",
-  "service": "fallback",
+  "summary": "本文系统介绍了AlexNet、ZFNet、VGGNet和GoogLeNet等经典CNN模型的核心创新与技术特点。AlexNet首次采用ReLU激活函数和Dropout正则化；ZFNet通过特征可视化揭示了CNN的层次化特征学习机制；VGGNet通过堆叠3×3小卷积核实现高效特征提取；GoogLeNet则提出Inception模块和辅助分类器解决梯度消失问题。这些模型在ImageNet等任务中取得突破，奠定了现代CNN的基础架构设计范式。",
+  "service": "deepseek",
   "page_title": "经典卷积神经网络",
-  "timestamp": "2025-12-12T12:12:30.848058",
+  "timestamp": "2026-05-24T15:58:04.799537",
   "language": "zh"
 }

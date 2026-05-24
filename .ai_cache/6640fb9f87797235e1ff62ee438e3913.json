@@ -1,7 +1,7 @@
 {
-  "summary": "编辑距离\n\n给你两个单词 [代码] 和 [代码]， 请返回将 [代码] 转换成 [代码] 所使用的最少操作数.",
-  "service": "fallback",
-  "page_title": "[72. 编辑距离](https://leetcode.cn/problems/edit-distance/)",
-  "timestamp": "2025-12-12T12:12:18.984450",
+  "summary": "编辑距离用于计算两个字符串转换所需的最少操作数（插入、删除或替换字符）。基于动态规划，通过构建二维状态表记录子问题解，时间复杂度为O(mn)。空间优化版本可将复杂度降至O(min(m,n))，成为大规模输入的最优方案。该算法广泛应用于拼写检查、DNA序列比对等场景。",
+  "service": "deepseek",
+  "page_title": "编辑距离",
+  "timestamp": "2026-05-24T15:54:15.085179",
   "language": "zh"
 }

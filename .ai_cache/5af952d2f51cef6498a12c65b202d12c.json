@@ -1,0 +1,7 @@
+{
+  "summary": "PCL（Point Cloud Library）是专用于三维点云处理的C++开源库，提供滤波、降采样、特征提取、配准和可视化等核心功能。支持通过CMake构建项目，简化依赖管理。典型应用包括统计离群点移除、RANSAC平面分割、欧几里得聚类和ICP配准算法，适用于机器人、自动驾驶等领域的点云数据处理与分析。",
+  "service": "deepseek",
+  "page_title": "PCL库总结",
+  "timestamp": "2026-05-24T16:06:30.636840",
+  "language": "zh"
+}

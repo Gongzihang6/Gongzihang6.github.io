@@ -1,0 +1,7 @@
+{
+  "summary": "本文介绍了2D图像深度学习的三种Transformer架构：VIT将Transformer应用于图像分类，DETR实现端到端目标检测，Deformable DETR通过可变形注意力机制提升检测性能。这些方法突破了传统CNN的限制，利用自注意力机制处理全局依赖关系，在计算机视觉任务中展现出优越的准确性和效率，适用于复杂场景下的图像分析与理解。",
+  "service": "deepseek",
+  "page_title": "2D图像深度学习",
+  "timestamp": "2026-05-24T15:57:10.634141",
+  "language": "zh"
+}

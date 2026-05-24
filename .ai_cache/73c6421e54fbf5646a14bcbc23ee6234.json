@@ -1,0 +1,7 @@
+{
+  "summary": "Java Stream API是Java 8引入的函数式数据处理框架，通过声明式编程简化集合操作。其核心特性包括惰性求值、不修改数据源、支持并行处理，并提供丰富的中间操作（如filter、map）和终端操作（如collect、reduce）。Stream可从集合、数组或生成器创建，适用于数据转换、筛选和聚合等场景，显著提升代码简洁性和可读性。",
+  "service": "deepseek",
+  "page_title": "JavaStream流式处理方法",
+  "timestamp": "2026-05-24T15:50:28.710560",
+  "language": "zh"
+}

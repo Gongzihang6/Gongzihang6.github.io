@@ -1,0 +1,7 @@
+{
+  "summary": "Spring AOP通过面向切面编程解决代码混乱与分散问题，将日志、事务等横切关注点从核心业务逻辑中剥离。其核心思想是关注点分离，通过切面(Aspect)、连接点(Join Point)、切点(Pointcut)和通知(Advice)等机制实现功能模块化。五种通知类型（前置/后置/返回/异常/环绕）可在方法执行不同阶段动态织入逻辑，提升代码可维护性。Spring AOP采用运行时代理技术，主要基于方法拦截实现横切功能的无侵入集成。",
+  "service": "deepseek",
+  "page_title": "SpringAOP",
+  "timestamp": "2026-05-24T16:04:36.488436",
+  "language": "zh"
+}

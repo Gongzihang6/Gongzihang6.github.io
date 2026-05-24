@@ -1,7 +1,7 @@
 {
-  "summary": "统计趣味子数组的数目\n\n给你一个下标从 0 开始的整数数组 [代码] ，以及整数 [代码] 和整数 [代码].请你找出并统计数组中 趣味子数组 的数目.",
-  "service": "fallback",
-  "page_title": "[2845. 统计趣味子数组的数目](https://leetcode.cn/problems/count-of-interesting-subarrays/)",
-  "timestamp": "2025-12-12T12:12:04.571154",
+  "summary": "该文章讨论如何统计满足特定条件的\"趣味子数组\"数量。给定整数数组、模数modulo和整数k，趣味子数组需满足子数组中模modulo等于k的元素数目也模modulo等于k。解决方案采用前缀和与哈希表技术，通过维护前缀和计数来高效计算符合条件的子数组数量。算法时间复杂度为O(n)，适用于大规模数组处理。",
+  "service": "deepseek",
+  "page_title": "2845统计趣味子数组的数目",
+  "timestamp": "2026-05-24T15:51:50.161425",
   "language": "zh"
 }

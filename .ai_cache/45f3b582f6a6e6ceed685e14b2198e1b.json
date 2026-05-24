@@ -1,7 +1,7 @@
 {
-  "summary": "统计数组中好三元组数目\n\n给你两个下标从 0 开始且长度为 [代码] 的整数数组 [代码] 和 [代码] ，两者都是 [代码] 的 排列.",
-  "service": "fallback",
-  "page_title": "[2179. 统计数组中好三元组数目](https://leetcode.cn/problems/count-good-triplets-in-an-array/)",
-  "timestamp": "2025-12-12T12:12:01.648756",
+  "summary": "该文提出了一种统计数组中好三元组数目的算法，要求三元组在两个排列数组中保持相同顺序。通过结合Fenwick树（二叉索引树）高效处理动态前缀和，分别计算每个元素左侧较小值和右侧较大值的数量，最终以O(n log n)时间复杂度求解。算法适用于需要快速统计排列序列中顺序一致性三元组的场景。",
+  "service": "deepseek",
+  "page_title": "2179统计数组中好三元组数目",
+  "timestamp": "2026-05-24T15:51:23.879131",
   "language": "zh"
 }

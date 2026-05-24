@@ -1,7 +1,7 @@
 {
-  "summary": "最长回文子串\n\n给你一个字符串 [代码]，找到 [代码] 中最长的 回文 子串.",
-  "service": "fallback",
-  "page_title": "[5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)",
-  "timestamp": "2025-12-12T12:12:17.462220",
+  "summary": "该文探讨如何高效查找给定字符串中的最长回文子串，重点介绍了动态规划和中心扩展两种经典算法。动态规划通过构建状态表记录子串回文状态，时间复杂度O(n²)；中心扩展算法则通过枚举所有可能的中心点向两侧扩展，空间复杂度更优。文章通过代码示例演示实现细节，适用于字符串处理、数据压缩等需要快速定位对称结构的场景。",
+  "service": "deepseek",
+  "page_title": "最长回文子串",
+  "timestamp": "2026-05-24T15:54:05.526227",
   "language": "zh"
 }

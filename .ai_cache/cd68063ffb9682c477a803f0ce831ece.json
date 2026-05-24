@@ -1,0 +1,7 @@
+{
+  "summary": "Spring Security是一个基于过滤器链的Java安全框架，核心功能包括登录校验和权限控制。其认证流程涵盖用户名密码提取、封装认证对象、密码加密比对及成功/失败处理，支持多种安全机制如Bcrypt加密、CSRF防护和HTTPS传输。在前后端分离架构中，可通过自定义JWT令牌过滤器实现无状态认证，替代传统Session机制。该框架提供高度可定化的安全解决方案，适用于各类Web应用场景。",
+  "service": "deepseek",
+  "page_title": "Spring-Security登录校验机制",
+  "timestamp": "2026-05-24T16:04:29.062093",
+  "language": "zh"
+}

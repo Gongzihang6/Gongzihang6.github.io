@@ -1,0 +1,7 @@
+{
+  "summary": "本文深入解析了Spring Boot的核心机制，重点阐述了IoC容器和Bean管理原理。通过控制反转(IoC)和依赖注入(DI)的设计模式，Spring Boot实现了对象的自动装配与管理。文章详细介绍了@Configuration、@Bean等注解的使用方法，以及Bean的生命周期、作用域和条件装配机制，并说明了自动配置(@EnableAutoConfiguration)的实现原理。这些机制共同构成了Spring生态系统的基石，显著提升了开发效率和代码可维护性。",
+  "service": "deepseek",
+  "page_title": "SpringBoot原理篇",
+  "timestamp": "2026-05-24T16:04:43.538872",
+  "language": "zh"
+}

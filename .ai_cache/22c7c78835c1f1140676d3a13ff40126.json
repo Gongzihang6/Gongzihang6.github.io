@@ -1,7 +1,7 @@
 {
-  "summary": "[代码示例]\n\n简单来说，[代码] 和 [代码] 解决了两个完全不同层面的问题：\n\n1.[代码]: 解决的是 编译时 的 “类型识别” 问题.[代码]: 解决的是 运行时 的 “对象注入” 问题.",
-  "service": "fallback",
-  "page_title": "@Autowired 和 import 的区别",
-  "timestamp": "2025-12-12T12:13:01.258869",
+  "summary": "@Autowired注解用于Spring框架的依赖注入，解决运行时对象实例化问题，而import仅处理编译时的类型识别。通过IoC容器，@Autowired自动装配已管理的Bean实例，实现松耦合。例如在员工管理系统中，@Autowired确保EmployService接口在运行时被正确注入，避免空指针异常。两者协同工作，分别处理编译和运行时的依赖需求。",
+  "service": "deepseek",
+  "page_title": "对注解Autowired的理解",
+  "timestamp": "2026-05-24T16:05:52.431324",
   "language": "zh"
 }
