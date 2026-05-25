@@ -24,7 +24,7 @@
         
       
       
-      <link rel="icon" href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg">
+      <link rel="icon" href="../../../../assets/profile/avatar-front.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -47,29 +47,13 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
       <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="../../../../stylesheets/extra2.css">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css">
-    
       <link rel="stylesheet" href="../../../../stylesheets/customize.css">
-    
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One&family=LXGW+WenKai+TC&display=swap">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
-    
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
     
       <link rel="stylesheet" href="../../../../assets/document_dates/fonts/material-icons.css">
     
@@ -544,13 +528,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--new"></span>
-  
-
   
 
       </a>
@@ -6422,8 +6399,6 @@
       
         
       
-        
-      
     
     
     
@@ -6561,34 +6536,6 @@
     <span class="md-status md-status--new"></span>
   
 
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../about/test/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    功能测试
-  
-
-    
-  </span>
-  
   
 
       </a>
@@ -6895,7 +6842,7 @@
 
 <div class="admonition info">
 <p class="admonition-title">💾 AI智能摘要 (DeepSeek)</p>
-<p>文章阐述了摄像机成像的几何原理，从小孔成像模型出发，解释了光线通过针孔在胶片上形成倒像的机制，并推导了基于相似三角形的投影公式。通过分析光圈大小对成像亮度和清晰度的影响，进一步引入透镜优化方案，说明其聚光原理及焦距计算公式，同时指出透镜成像存在特定聚焦距离的限制。最后讨论了相平面到像素平面的坐标转换问题，比较了不同坐标系原点的技术背景与应用场景。</p>
+<p>文章阐述了摄像机成像的几何原理，重点分析了小孔成像模型及其数学表达，通过相似三角形推导出三维点到二维平面的投影公式。针对小孔成像亮度不足的问题，引入透镜聚光优化方案，并讨论其焦距限制导致的失焦问题。最后解释了相平面到像素平面的坐标转换机制，对比了不同坐标系（左下角与左上角）的历史成因及应用场景，涉及光学、几何与计算机图形学的交叉领域。</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">📖 阅读信息</p>
@@ -6912,17 +6859,17 @@
 <p><img alt="针孔摄像机成像原理" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F09%2Fimage-20250926191148784.png" /></p>
 <p>针孔摄像机成像的数学原理如下：</p>
 <p><img alt="数学原理" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F09%2Fimage-20250926191332507.png" /></p>
-<p>摄像机坐标系的原点 <span class="arithmatex">\(O\)</span> 可以理解为成像的小孔，针孔摄像机成像成的是倒像，但成像和原始物体相似，成比例；以摄像机小孔为原点，右侧为 x 轴，向上为 y 轴，垂直向前为 z 轴，得到摄像机坐标系。在 kOj 平面也就是 yOz 平面中的一点 P 坐标为 <span class="arithmatex">\((y,z)\)</span>，投影到摄像机的相平面上的坐标为 <span class="arithmatex">\((y’,f)\)</span>，<span class="arithmatex">\(f\)</span> 为相机的焦距，可以看作一个固定值，根据相似三角形，
-$$
+<p>摄像机坐标系的原点 <span class="arithmatex">\(O\)</span> 可以理解为成像的小孔，针孔摄像机成像成的是倒像，但成像和原始物体相似，成比例；以摄像机小孔为原点，右侧为 x 轴，向上为 y 轴，垂直向前为 z 轴，得到摄像机坐标系。在 kOj 平面也就是 yOz 平面中的一点 P 坐标为 <span class="arithmatex">\((y,z)\)</span>，投影到摄像机的相平面上的坐标为 <span class="arithmatex">\((y’,f)\)</span>，<span class="arithmatex">\(f\)</span> 为相机的焦距，可以看作一个固定值，根据相似三角形，</p>
+<div class="arithmatex">\[
 \frac{y'}{f} = \frac{y}{z} \quad \Rightarrow \quad y' = f \frac{y}{z}
-$$
-这里没有考虑正负，只考虑了绝对值，相应的，焦距 <span class="arithmatex">\(f=z\frac{y’}{y}\)</span>，其中 z 为物体上一点 P 到小孔平面的距离</p>
-<p>同样的，在 iOk 平面也就是 xOz 平面上的点 P 坐标为 <span class="arithmatex">\((x,z)\)</span>，投影到摄像机的相平面上的坐标为 <span class="arithmatex">\((x’,f)\)</span>，根据相似三角形，
-$$
+\]</div>
+<p>这里没有考虑正负，只考虑了绝对值，相应的，焦距 <span class="arithmatex">\(f=z\frac{y’}{y}\)</span>，其中 z 为物体上一点 P 到小孔平面的距离</p>
+<p>同样的，在 iOk 平面也就是 xOz 平面上的点 P 坐标为 <span class="arithmatex">\((x,z)\)</span>，投影到摄像机的相平面上的坐标为 <span class="arithmatex">\((x’,f)\)</span>，根据相似三角形，</p>
+<div class="arithmatex">\[
 \frac{x'}{f} = \frac{x}{z} \quad \Rightarrow \quad x' = f \frac{x}{z}
-$$
-所以三维世界中的一个点 P(x, y, z)就通过针孔摄像机投影到了二维的相平面上，相平面上对应点 P’坐标为(x’, y’)
-$$
+\]</div>
+<p>所以三维世界中的一个点 P(x, y, z)就通过针孔摄像机投影到了二维的相平面上，相平面上对应点 P’坐标为(x’, y’)</p>
+<p>$$
 P = \begin{bmatrix} x \ y \ z \end{bmatrix} \rightarrow P' = \begin{bmatrix} x' \ y' \end{bmatrix}</p>
 <p>\qquad
 \text{其中}
@@ -6930,27 +6877,25 @@ P = \begin{bmatrix} x \ y \ z \end{bmatrix} \rightarrow P' = \begin{bmatrix} x' 
 x' = f \frac{x}{z} \
 y' = f \frac{y}{z}
 \end{cases}
-$$
-<img alt="光圈大小与成像" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F09%2Fimage-20250926194442242.png" /></p>
+$$</p>
+<p><img alt="光圈大小与成像" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F09%2Fimage-20250926194442242.png" /></p>
 <p>显然，光圈越大，胶片上接收到的光越多，整体越亮，但同时，胶片上同一个点会有更多物体上的点反射的光束打到上面，导致越模糊。反之，则相对暗，但更清晰。</p>
 <p>如下图所示，我们可以利用透镜聚光的原理，将物体表面上同一点发射出的多条光线汇聚到胶片上同一点附近，可以增加照片的亮度。</p>
 <p><img alt="使用透镜优化成像" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F09%2Fimage-20250926210202730.png" /></p>
 <p>使用透镜来代替小孔成像的挡板，模型原理如下：</p>
 <p><img alt="近轴折射模型" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/2025%5C09%5Cimage-20250926215149798.png" /></p>
 <p>根据折射定律：<span class="arithmatex">\(f=\frac{R}{2(n-1)}\)</span>，其中 R 为透镜球面半径，n 为透镜折射系数，f 为透镜的焦距；</p>
-<p>所以同样根据相似三角形原理：<span class="arithmatex">\(\frac{z}{f+z_0}=\frac{x}{x’}\)</span>    <span class="arithmatex">\(\frac{z}{f+z_0}=\frac{y}{y’}\)</span></p>
-<p>所以 <span class="arithmatex">\(x’=(f+z_0)\frac{x}{z}\)</span>  <span class="arithmatex">\(y’=(f+z_0)\frac{y}{z}\)</span></p>
+<p>所以同样根据相似三角形原理：<span class="arithmatex">\(\frac{z}{f+z_0}=\frac{x}{x’}\)</span> <span class="arithmatex">\(\frac{z}{f+z_0}=\frac{y}{y’}\)</span></p>
+<p>所以 <span class="arithmatex">\(x’=(f+z_0)\frac{x}{z}\)</span> <span class="arithmatex">\(y’=(f+z_0)\frac{y}{z}\)</span></p>
 <p>也就是三维世界中一点 <span class="arithmatex">\(P(x,y,z)\)</span>，投影到摄像机的焦平面上的坐标就是 <span class="arithmatex">\(P’(x’,y’)\)</span></p>
 <p>使用透镜聚光的缺点是：1、物体聚焦有特定距离（焦距），拍摄的物体、透镜、相平面之间的距离需满足特定条件，否则可能会失焦导致模糊；</p>
 <p><img alt="失焦" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/2025%5C09%5Cimage-20250929204822754.png" /></p>
 <p>从相平面到像素平面的转换，相平面是以胶片矩形的中心为坐标原点，而一般的数字图像则以左下角为坐标原点。（这里和绝大多数数字图像处理的应用和库（如 OpenCV, Pillow/PIL）中的以左上角为坐标原点不一致）</p>
 <p><strong>为什么通常数字图像以“左上角”为原点？</strong></p>
 <p>这种约定主要源于历史和技术原因：</p>
-<ul>
-<li></li>
-<li><strong>扫描方式</strong>：早期的显示设备（如 CRT 显示器）和电视系统采用光栅扫描的方式，电子束从屏幕的左上角开始，从左到右扫描，然后换行从上到下进行。</li>
-<li><strong>内存布局</strong>：在计算机内存中，图像数据通常被存储为一个二维数组。程序读取这个数组时，也是从第 0 行第 0 列开始，这自然地对应了图像的左上角像素。[<a href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHniacisqIiPEjQ2rv-uYsBSt1k7MXeFPolF0lkG2BSBnQ4qGLmZAfbaym7CgSe1PVTGCNfqkmrx7au5Z5bT_1RCTGjezoPCgmj9TxQVwbiM5EK92cs36RB3ZQEAHxwcXyiJfE%3D">1</a>]</li>
-</ul>
+<p>-
+- <strong>扫描方式</strong>：早期的显示设备（如 CRT 显示器）和电视系统采用光栅扫描的方式，电子束从屏幕的左上角开始，从左到右扫描，然后换行从上到下进行。
+- <strong>内存布局</strong>：在计算机内存中，图像数据通常被存储为一个二维数组。程序读取这个数组时，也是从第 0 行第 0 列开始，这自然地对应了图像的左上角像素。[<a href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHniacisqIiPEjQ2rv-uYsBSt1k7MXeFPolF0lkG2BSBnQ4qGLmZAfbaym7CgSe1PVTGCNfqkmrx7au5Z5bT_1RCTGjezoPCgmj9TxQVwbiM5EK92cs36RB3ZQEAHxwcXyiJfE%3D">1</a>]</p>
 <p>因此，在数字图像处理、文件格式（如 JPEG, PNG）以及大多数二维图形界面（GUI）系统中，左上角作为原点是最直观和普遍的约定。</p>
 <p><strong>为什么图示中使用“左下角”为原点？</strong></p>
 <p>图中的表达方式更侧重于从三维空间到二维图像的 <strong>几何和数学推导</strong>，这种情况下使用左下角坐标系有其合理性：</p>
@@ -6964,28 +6909,28 @@ $$
 <p>相平面也就是胶片所在平面，也就是直接成像所在的平面，通常坐标单位为毫米 mm；而像素平面的坐标单位通常是像素单位，所以由相平面转换到像素平面，需要乘以一个 <strong>固定伸缩系数 <span class="arithmatex">\(k\)</span>，类似于分辨率</strong>，再加上坐标原点的平移，就得到了如图所示的变换公式，其中 <span class="arithmatex">\(c_x\)</span> 和 <span class="arithmatex">\(c_y\)</span> 是像素平面宽、高的一半，表示了平移属性。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/2025%5C09%5Cimage-20250929225409023.png" alt="原始坐标与齐次坐标的相互转换" style="zoom:80%;" /></p>
 <p>齐次坐标，可以简单理解为在原有空间坐标下增加一维，形成的新坐标。通过引入齐次坐标，可以使得旋转、平移、缩放等所有重要的几何变换都统一成一种运算——矩阵乘法。</p>
-<p>透镜折射成像模型下，三维空间中一点 P(x,y,z)，投影到像素平面上的点P’
-$$
+<p>透镜折射成像模型下，三维空间中一点 P(x,y,z)，投影到像素平面上的点P’</p>
+<div class="arithmatex">\[
 P = (x, y, z) \rightarrow P' = \left( \alpha \frac{x}{z} + c_x, \beta \frac{y}{z} + c_y \right)
-$$</p>
-<p>用齐次坐标来表示就是：
-$$
+\]</div>
+<p>用齐次坐标来表示就是：</p>
+<div class="arithmatex">\[
 P_h = (x, y, z, 1) \rightarrow P_h' = \left( \alpha \frac{x}{z} + c_x, \beta \frac{y}{z} + c_y, 1 \right) = \left(\alpha x +c_x z , \beta y + c_y z, z\right)
-$$
-所以这个投影变换就可以用矩阵乘法来表示：
-$$</p>
-<p>P' = \begin{bmatrix}
-\alpha &amp; 0 &amp; c_x &amp; 0 \
-0 &amp; \beta &amp; c_y &amp; 0 \
+\]</div>
+<p>所以这个投影变换就可以用矩阵乘法来表示：</p>
+<div class="arithmatex">\[
+P' = \begin{bmatrix}
+\alpha &amp; 0 &amp; c_x &amp; 0 \\
+0 &amp; \beta &amp; c_y &amp; 0 \\
 0 &amp; 0 &amp; 1 &amp; 0
 \end{bmatrix}
 \begin{bmatrix}
-x \
-y \
-z \
+x \\
+y \\
+z \\
 1
-\end{bmatrix} = MP</p>
-<p>$$</p>
+\end{bmatrix} = MP
+\]</div>
 <p>在现代高质量的数码相机中，偏斜几乎为零，可以忽略不计。[<a href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHIBPCGypKd8eeqmKZliPvUUjjpYfp_VdLmsl2BKHNGrjH_cS9S5VHUdVqy13F51H4XuDjRN6YPd-JMKkAEzciMSilcbzQ3VbZZDPHPXgDGbGcNuet_P7QhQSNm-G6g6iQuE8ABPLtt08_Wkdiyc47Zsw%3D%3D">1</a>] 这是因为传感器（CCD或CMOS）的制造工艺非常精确。然而，在某些特定或旧式的情况下，偏斜可能会变得显著：</p>
 <ul>
 <li><strong>制造缺陷</strong>：传感器阵列本身的物理缺陷。</li>
@@ -7001,15 +6946,23 @@ z \
 <p>让我们来剖析这个微妙的区别。</p>
 <hr />
 <h3 id="1">1. 您的思路（逻辑上很自然，但与标准定义不符）<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>您的思路是把整个过程分解为两个独立的步骤：
-1. <strong>第一步：理想投影</strong>。一个三维点 <span class="arithmatex">\((X, Y, Z)\)</span> 通过一个<strong>理想的、无偏斜的</strong>相机内参矩阵 <span class="arithmatex">\(K_{\text{ideal}}\)</span>，投影到一个理想的正交像素坐标 <span class="arithmatex">\((x_c, y_c)\)</span>。
-    * <span class="arithmatex">\(K_{\text{ideal}} = \begin{bmatrix} \alpha &amp; 0 &amp; c_x \\ 0 &amp; \beta &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span>
-    * 这一步实际上完成了：
-        * 透视投影 <span class="arithmatex">\(\left(\frac{X}{Z}, \frac{Y}{Z}\right)\)</span>
-        * 焦距转像素 <span class="arithmatex">\((\alpha \cdot \ldots, \beta \cdot \ldots)\)</span>
-        * 主点平移 <span class="arithmatex">\((+c_x, +c_y)\)</span></p>
+<p>您的思路是把整个过程分解为两个独立的步骤：</p>
 <ol>
-<li><strong>第二步：应用偏斜</strong>。将理想坐标 <span class="arithmatex">\((x_c, y_c)\)</span> 通过一个<strong>偏斜变换矩阵 <span class="arithmatex">\(M_{\text{skew}}\)</span></strong> 转换为最终的实际坐标 <span class="arithmatex">\((x_p, y_p)\)</span>。<ul>
+<li>
+<p><strong>第一步：理想投影</strong>。一个三维点 <span class="arithmatex">\((X, Y, Z)\)</span> 通过一个<strong>理想的、无偏斜的</strong>相机内参矩阵 <span class="arithmatex">\(K_{\text{ideal}}\)</span>，投影到一个理想的正交像素坐标 <span class="arithmatex">\((x_c, y_c)\)</span>。</p>
+<ul>
+<li><span class="arithmatex">\(K_{\text{ideal}} = \begin{bmatrix} \alpha &amp; 0 &amp; c_x \\ 0 &amp; \beta &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></li>
+<li>这一步实际上完成了：<ul>
+<li>透视投影 <span class="arithmatex">\(\left(\frac{X}{Z}, \frac{Y}{Z}\right)\)</span></li>
+<li>焦距转像素 <span class="arithmatex">\((\alpha \cdot \ldots, \beta \cdot \ldots)\)</span></li>
+<li>主点平移 <span class="arithmatex">\((+c_x, +c_y)\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>第二步：应用偏斜</strong>。将理想坐标 <span class="arithmatex">\((x_c, y_c)\)</span> 通过一个<strong>偏斜变换矩阵 <span class="arithmatex">\(M_{\text{skew}}\)</span></strong> 转换为最终的实际坐标 <span class="arithmatex">\((x_p, y_p)\)</span>。</p>
+<ul>
 <li><span class="arithmatex">\(M_{\text{skew}} = \begin{bmatrix} 1 &amp; -\cot(\theta) &amp; 0 \\ 0 &amp; \frac{1}{\sin(\theta)} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></li>
 <li>您正确地推导出了这个矩阵。</li>
 </ul>
@@ -7057,11 +7010,11 @@ z \
 </ul>
 </li>
 <li>
-<p><strong>写成矩阵形式</strong>：将上面的方程组写成齐次坐标的矩阵形式：
-    $$
-    \begin{bmatrix} u' \ v' \ w' \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\alpha \cot(\theta) &amp; c_x \ 0 &amp; \frac{\beta}{\sin(\theta)} &amp; c_y \ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} \frac{X_c}{Z_c} \ \frac{Y_c}{Z_c} \ 1 \end{bmatrix}
-    $$
-    这正是PPT上给出的标准内参矩阵 <span class="arithmatex">\(K\)</span>！</p>
+<p><strong>写成矩阵形式</strong>：将上面的方程组写成齐次坐标的矩阵形式：</p>
+<div class="arithmatex">\[
+\begin{bmatrix} u' \\ v' \\ w' \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\alpha \cot(\theta) &amp; c_x \\ 0 &amp; \frac{\beta}{\sin(\theta)} &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} \frac{X_c}{Z_c} \\ \frac{Y_c}{Z_c} \\ 1 \end{bmatrix}
+\]</div>
+<p>这正是PPT上给出的标准内参矩阵 <span class="arithmatex">\(K\)</span>！</p>
 </li>
 </ol>
 <h3 id="_3">结论<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -7072,10 +7025,12 @@ z \
 </ul>
 <p>简而言之，PPT上的矩阵是一个<strong>整体定义</strong>的产物，而不是几个更简单的矩阵相乘的结果。您通过自己的推导发现的这个“矛盾”，恰恰揭示了这个模型定义中最深刻和最容易误解的部分。这是一个非常棒的发现！</p>
 <p>我们来将PPT中给出的标准相机内参矩阵 <span class="arithmatex">\(K\)</span> 分解为<strong>平移 (Translation)</strong>、<strong>偏斜 (Skew)</strong> 和 <strong>缩放 (Scaling)</strong> 矩阵的乘积。</p>
-<p>一个清晰且符合几何直觉的分解顺序是：
-1.  首先对归一化坐标进行<strong>缩放</strong>。
-2.  然后进行<strong>偏斜</strong>变换。
-3.  最后<strong>平移</strong>原点到主点位置。</p>
+<p>一个清晰且符合几何直觉的分解顺序是：</p>
+<ol>
+<li>首先对归一化坐标进行<strong>缩放</strong>。</li>
+<li>然后进行<strong>偏斜</strong>变换。</li>
+<li>最后<strong>平移</strong>原点到主点位置。</li>
+</ol>
 <p>因此，我们的目标是将矩阵 <span class="arithmatex">\(K\)</span> 表示为：
 <span class="arithmatex">\(K = M_{\text{平移}} \cdot M_{\text{偏斜}} \cdot M_{\text{缩放}}\)</span></p>
 <hr />
@@ -7083,38 +7038,38 @@ z \
 <p>我们首先定义三个基础变换矩阵。</p>
 <ul>
 <li>
-<p><strong>平移矩阵 (<span class="arithmatex">\(M_{\text{平移}}\)</span>)</strong>：将原点平移到主点 <span class="arithmatex">\((c_x, c_y)\)</span>。
-    $$
-    M_{\text{平移}} = \begin{bmatrix} 1 &amp; 0 &amp; c_x \ 0 &amp; 1 &amp; c_y \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</p>
+<p><strong>平移矩阵 (<span class="arithmatex">\(M_{\text{平移}}\)</span>)</strong>：将原点平移到主点 <span class="arithmatex">\((c_x, c_y)\)</span>。</p>
+<div class="arithmatex">\[
+M_{\text{平移}} = \begin{bmatrix} 1 &amp; 0 &amp; c_x \\ 0 &amp; 1 &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
 </li>
 <li>
-<p><strong>缩放矩阵 (<span class="arithmatex">\(M_{\text{缩放}}\)</span>)</strong>：将 x 和 y 方向的坐标分别进行缩放。这里的缩放因子我们暂时设为 <span class="arithmatex">\(s_x\)</span> 和 <span class="arithmatex">\(s_y\)</span>。
-    $$
-    M_{\text{缩放}} = \begin{bmatrix} s_x &amp; 0 &amp; 0 \ 0 &amp; s_y &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</p>
+<p><strong>缩放矩阵 (<span class="arithmatex">\(M_{\text{缩放}}\)</span>)</strong>：将 x 和 y 方向的坐标分别进行缩放。这里的缩放因子我们暂时设为 <span class="arithmatex">\(s_x\)</span> 和 <span class="arithmatex">\(s_y\)</span>。</p>
+<div class="arithmatex">\[
+M_{\text{缩放}} = \begin{bmatrix} s_x &amp; 0 &amp; 0 \\ 0 &amp; s_y &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
 </li>
 <li>
-<p><strong>偏斜矩阵 (<span class="arithmatex">\(M_{\text{偏斜}}\)</span>)</strong>：将 x 坐标根据 y 坐标进行偏移，偏移因子为 <span class="arithmatex">\(s\)</span>。
-    $$
-    M_{\text{偏斜}} = \begin{bmatrix} 1 &amp; s &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</p>
+<p><strong>偏斜矩阵 (<span class="arithmatex">\(M_{\text{偏斜}}\)</span>)</strong>：将 x 坐标根据 y 坐标进行偏移，偏移因子为 <span class="arithmatex">\(s\)</span>。</p>
+<div class="arithmatex">\[
+M_{\text{偏斜}} = \begin{bmatrix} 1 &amp; s &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
 </li>
 </ul>
 <h3 id="2_1">2. 进行矩阵乘法<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <p>现在，我们按照 <span class="arithmatex">\(M_{\text{平移}} \cdot M_{\text{偏斜}} \cdot M_{\text{缩放}}\)</span> 的顺序将它们相乘，得到一个通用的变换矩阵。</p>
 <ul>
 <li>
-<p><strong>第一步：<span class="arithmatex">\(M_{\text{偏斜}} \cdot M_{\text{缩放}}\)</span></strong>
-    $$
-    \begin{bmatrix} 1 &amp; s &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} s_x &amp; 0 &amp; 0 \ 0 &amp; s_y &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} s_x &amp; s \cdot s_y &amp; 0 \ 0 &amp; s_y &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</p>
+<p><strong>第一步：<span class="arithmatex">\(M_{\text{偏斜}} \cdot M_{\text{缩放}}\)</span></strong></p>
+<div class="arithmatex">\[
+\begin{bmatrix} 1 &amp; s &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} s_x &amp; 0 &amp; 0 \\ 0 &amp; s_y &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} s_x &amp; s \cdot s_y &amp; 0 \\ 0 &amp; s_y &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
 </li>
 <li>
-<p><strong>第二步：<span class="arithmatex">\(M_{\text{平移}} \cdot (\text{上一步结果})\)</span></strong>
-    $$
-    \begin{bmatrix} 1 &amp; 0 &amp; c_x \ 0 &amp; 1 &amp; c_y \ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} s_x &amp; s \cdot s_y &amp; 0 \ 0 &amp; s_y &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} s_x &amp; s \cdot s_y &amp; c_x \ 0 &amp; s_y &amp; c_y \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</p>
+<p><strong>第二步：<span class="arithmatex">\(M_{\text{平移}} \cdot (\text{上一步结果})\)</span></strong></p>
+<div class="arithmatex">\[
+\begin{bmatrix} 1 &amp; 0 &amp; c_x \\ 0 &amp; 1 &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} s_x &amp; s \cdot s_y &amp; 0 \\ 0 &amp; s_y &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} s_x &amp; s \cdot s_y &amp; c_x \\ 0 &amp; s_y &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
 </li>
 </ul>
 <h3 id="3">3. 对比与求解<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
@@ -7122,42 +7077,56 @@ z \
 <div class="arithmatex">\[
 \begin{bmatrix} s_x &amp; s \cdot s_y &amp; c_x \\ 0 &amp; s_y &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = K = \begin{bmatrix} \alpha &amp; -\alpha\cot\theta &amp; c_x \\ 0 &amp; \beta/\sin\theta &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
 \]</div>
-<p>通过对比，我们可以清晰地得到以下关系：
-*   <strong>x方向缩放因子 <span class="arithmatex">\(s_x\)</span></strong>:
-    $$
-    s_x = \alpha
-    $$
-*   <strong>y方向缩放因子 <span class="arithmatex">\(s_y\)</span></strong>:
-    $$
-    s_y = \frac{\beta}{\sin\theta}
-    $$
-*   <strong>偏斜因子 <span class="arithmatex">\(s\)</span></strong>:
-    $$
-    s \cdot s_y = -\alpha\cot\theta \quad \implies \quad s = \frac{-\alpha\cot\theta}{s_y} = \frac{-\alpha\cot\theta}{\beta/\sin\theta}
-    $$
-    $$
-    s = -\frac{\alpha \sin\theta \cot\theta}{\beta} = -\frac{\alpha \cos\theta}{\beta}
-    $$</p>
+<p>通过对比，我们可以清晰地得到以下关系：</p>
+<ul>
+<li>
+<p><strong>x方向缩放因子 <span class="arithmatex">\(s_x\)</span></strong>:</p>
+<div class="arithmatex">\[
+s_x = \alpha
+\]</div>
+</li>
+<li>
+<p><strong>y方向缩放因子 <span class="arithmatex">\(s_y\)</span></strong>:</p>
+<div class="arithmatex">\[
+s_y = \frac{\beta}{\sin\theta}
+\]</div>
+</li>
+<li>
+<p><strong>偏斜因子 <span class="arithmatex">\(s\)</span></strong>:</p>
+<div class="arithmatex">\[
+s \cdot s_y = -\alpha\cot\theta \quad \implies \quad s = \frac{-\alpha\cot\theta}{s_y} = \frac{-\alpha\cot\theta}{\beta/\sin\theta}
+\]</div>
+<div class="arithmatex">\[
+s = -\frac{\alpha \sin\theta \cot\theta}{\beta} = -\frac{\alpha \cos\theta}{\beta}
+\]</div>
+</li>
+</ul>
 <h3 id="_4">结论：分解结果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>因此，PPT中的相机内参矩阵 <span class="arithmatex">\(K\)</span> 可以被精确地分解为以下三个基础变换矩阵的乘积：</p>
 <ol>
-<li><strong>缩放矩阵</strong>：
-    $$
-    M_{\text{缩放}} = \begin{bmatrix} \alpha &amp; 0 &amp; 0 \ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</li>
-<li><strong>偏斜矩阵</strong>：
-    $$
-    M_{\text{偏斜}} = \begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</li>
-<li><strong>平移矩阵</strong>：
-    $$
-    M_{\text{平移}} = \begin{bmatrix} 1 &amp; 0 &amp; c_x \ 0 &amp; 1 &amp; c_y \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-    $$</li>
+<li>
+<p><strong>缩放矩阵</strong>：</p>
+<div class="arithmatex">\[
+M_{\text{缩放}} = \begin{bmatrix} \alpha &amp; 0 &amp; 0 \\ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+</li>
+<li>
+<p><strong>偏斜矩阵</strong>：</p>
+<div class="arithmatex">\[
+M_{\text{偏斜}} = \begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+</li>
+<li>
+<p><strong>平移矩阵</strong>：</p>
+<div class="arithmatex">\[
+M_{\text{平移}} = \begin{bmatrix} 1 &amp; 0 &amp; c_x \\ 0 &amp; 1 &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+</li>
 </ol>
-<p>最终，我们验证了：
-$$
+<p>最终，我们验证了：</p>
+<div class="arithmatex">\[
 \Large K = M_{\text{平移}} \cdot M_{\text{偏斜}} \cdot M_{\text{缩放}}
-$$</p>
+\]</div>
 <p><span class="arithmatex">\(M_{缩放}\)</span>包含了偏斜引起的缩放，<span class="arithmatex">\(M_{偏斜}\)</span>仅包含剪切操作，然后才是平移操作。</p>
 <p>这个分解过程清晰地揭示了集成在一个矩阵中的复杂变换是如何由一系列更简单、更符合几何直觉的基础变换构成的。</p>
 <hr />
@@ -7174,14 +7143,14 @@ $$</p>
 <li>设 <span class="arithmatex">\(k_x\)</span> 为 x 轴方向每毫米对应的像素数。</li>
 <li>设 <span class="arithmatex">\(k_y\)</span> 为 y 轴方向每毫米对应的像素数。</li>
 </ul>
-<p>缩放矩阵 <span class="arithmatex">\(M_{\text{S}}\)</span> 将归一化坐标 <span class="arithmatex">\((x_n, y_n)\)</span> 转换为具有像素单位的坐标 <span class="arithmatex">\((x_s, y_s)\)</span>。
-$$
+<p>缩放矩阵 <span class="arithmatex">\(M_{\text{S}}\)</span> 将归一化坐标 <span class="arithmatex">\((x_n, y_n)\)</span> 转换为具有像素单位的坐标 <span class="arithmatex">\((x_s, y_s)\)</span>。</p>
+<div class="arithmatex">\[
 x_s = k_x \cdot f \cdot x_n = \alpha \cdot x_n
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 y_s = k_y \cdot f \cdot y_n = \beta \cdot y_n
-$$
-（其中 <span class="arithmatex">\(\alpha = f \cdot k_x, \beta = f \cdot k_y\)</span>）</p>
+\]</div>
+<p>（其中 <span class="arithmatex">\(\alpha = f \cdot k_x, \beta = f \cdot k_y\)</span>）</p>
 <div class="arithmatex">\[
 M_{\text{S}} = \begin{bmatrix} \alpha &amp; 0 &amp; 0 \\ 0 &amp; \beta &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
 \]</div>
@@ -7191,48 +7160,54 @@ M_{\text{S}} = \begin{bmatrix} \alpha &amp; 0 &amp; 0 \\ 0 &amp; \beta &amp; 0 \
 <p>如之前所分析，标准的偏斜模型假设<strong>x 轴保持正交</strong>，<strong>y 轴是倾斜的</strong>（即 <span class="arithmatex">\(y\)</span> 轴相对于 <span class="arithmatex">\(x\)</span> 轴产生了一个剪切 <span class="arithmatex">\(s\)</span>）。</p>
 <ul>
 <li><strong>几何关系</strong>：在标准模型中，y轴倾斜，它在 x 轴上的投影系数是 <span class="arithmatex">\(\cos\theta\)</span>。因此，y轴上每 <span class="arithmatex">\(y_s\)</span> 个单位，都会在 x 轴上引入 <span class="arithmatex">\(y_s \cdot \cos\theta\)</span> 的偏移。</li>
-<li><strong>数学简化</strong>：在矩阵中，我们通常使用<strong>剪切因子 <span class="arithmatex">\(s\)</span></strong> 来表示这种偏斜，它定义了 y 对 x 的影响比例。
-    $$
-    x_{sk} = x_s + s \cdot y_s
-    $$
-    $$
-    y_{sk} = y_s
-    $$
-    这里，<span class="arithmatex">\(s = -\cot(\theta)\)</span>。</li>
+<li>
+<p><strong>数学简化</strong>：在矩阵中，我们通常使用<strong>剪切因子 <span class="arithmatex">\(s\)</span></strong> 来表示这种偏斜，它定义了 y 对 x 的影响比例。</p>
+<div class="arithmatex">\[
+x_{sk} = x_s + s \cdot y_s
+\]</div>
+<div class="arithmatex">\[
+y_{sk} = y_s
+\]</div>
+<p>这里，<span class="arithmatex">\(s = -\cot(\theta)\)</span>。</p>
+</li>
 </ul>
 <p><strong>注意</strong>：在标准 <span class="arithmatex">\(K\)</span> 矩阵的定义中，为了保持 <code>α</code> 和 <code>β</code> 作为焦距缩放的纯粹定义，偏斜的引入方式略有不同。偏斜项是 <span class="arithmatex">\(-\alpha \cot\theta\)</span>。</p>
-<p>我们先使用一个<strong>理想的偏斜矩阵</strong> <span class="arithmatex">\(M_{\text{Skew\_ideal}}\)</span>，其中偏斜因子为 <span class="arithmatex">\(s = -\cot\theta\)</span>。
-$$
-M_{\text{Skew_ideal}} = \begin{bmatrix} 1 &amp; -\cot\theta &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-$$</p>
-<p><strong>连乘结果 <span class="arithmatex">\(M_{\text{Skew\_ideal}} \cdot M_{\text{S}}\)</span></strong>：
-$$
-M_{\text{S/Skew_ideal}} = \begin{bmatrix} 1 &amp; -\cot\theta &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} \alpha &amp; 0 &amp; 0 \ 0 &amp; \beta &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\beta\cot\theta &amp; 0 \ 0 &amp; \beta &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-$$
-您会发现，<strong>这个结果中是 <span class="arithmatex">\(-\beta\cot\theta\)</span></strong>，这仍然与PPT中的标准 <span class="arithmatex">\(K\)</span> 矩阵（<span class="arithmatex">\(-\alpha\cot\theta\)</span>）不符。</p>
+<p>我们先使用一个<strong>理想的偏斜矩阵</strong> <span class="arithmatex">\(M_{\text{Skew\_ideal}}\)</span>，其中偏斜因子为 <span class="arithmatex">\(s = -\cot\theta\)</span>。</p>
+<div class="arithmatex">\[
+M_{\text{Skew\_ideal}} = \begin{bmatrix} 1 &amp; -\cot\theta &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+<p><strong>连乘结果 <span class="arithmatex">\(M_{\text{Skew\_ideal}} \cdot M_{\text{S}}\)</span></strong>：</p>
+<div class="arithmatex">\[
+M_{\text{S/Skew\_ideal}} = \begin{bmatrix} 1 &amp; -\cot\theta &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} \alpha &amp; 0 &amp; 0 \\ 0 &amp; \beta &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\beta\cot\theta &amp; 0 \\ 0 &amp; \beta &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+<p>您会发现，<strong>这个结果中是 <span class="arithmatex">\(-\beta\cot\theta\)</span></strong>，这仍然与PPT中的标准 <span class="arithmatex">\(K\)</span> 矩阵（<span class="arithmatex">\(-\alpha\cot\theta\)</span>）不符。</p>
 <p><strong>这证实了：标准 <span class="arithmatex">\(K\)</span> 矩阵的定义并没有遵循这种简单的“理想缩放”和“理想偏斜”的分解序列！</strong> 它是将<strong>偏斜和缩放组合在一起</strong>定义的。</p>
 <hr />
 <h3 id="3-sintheta">3. 正确的物理和几何分解（引入 <span class="arithmatex">\(\sin\theta\)</span> 补偿）<a class="headerlink" href="#3-sintheta" title="Permanent link">&para;</a></h3>
 <p>要正向推导出 <span class="arithmatex">\(K\)</span>，我们必须在第二步就引入 <span class="arithmatex">\(\sin\theta\)</span> 补偿，因为<strong>y方向的缩放 <span class="arithmatex">\(k_y \cdot f\)</span> 必须通过 <span class="arithmatex">\(\sin\theta\)</span> 来抵消y轴倾斜带来的垂直损失</strong>。</p>
-<p>我们重新定义 <span class="arithmatex">\(M_{\text{S}}\)</span> 为一个<strong>补偿缩放矩阵</strong> <span class="arithmatex">\(M_{\text{S\_Comp}}\)</span>：
-*   x轴缩放因子：<span class="arithmatex">\(\alpha\)</span>
-*   y轴缩放因子：<span class="arithmatex">\(\boldsymbol{\beta / \sin\theta}\)</span> (引入 <span class="arithmatex">\(\sin\theta\)</span> 进行补偿)</p>
+<p>我们重新定义 <span class="arithmatex">\(M_{\text{S}}\)</span> 为一个<strong>补偿缩放矩阵</strong> <span class="arithmatex">\(M_{\text{S\_Comp}}\)</span>：</p>
+<ul>
+<li>x轴缩放因子：<span class="arithmatex">\(\alpha\)</span></li>
+<li>y轴缩放因子：<span class="arithmatex">\(\boldsymbol{\beta / \sin\theta}\)</span> (引入 <span class="arithmatex">\(\sin\theta\)</span> 进行补偿)</li>
+</ul>
 <div class="arithmatex">\[
 M_{\text{S\_Comp}} = \begin{bmatrix} \alpha &amp; 0 &amp; 0 \\ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
 \]</div>
-<p>现在，我们引入一个<strong>仅用于剪切的偏斜矩阵</strong> <span class="arithmatex">\(M_{\text{Skew\_Pure}}\)</span>：
-*   <strong>注意</strong>：偏斜本身产生的剪切是 <span class="arithmatex">\(-\frac{\cos\theta}{\sin\theta} = -\cot\theta\)</span>。但在这个 <span class="arithmatex">\(M_{\text{S\_Comp}}\)</span> 之后，我们还需要一个剪切矩阵 <span class="arithmatex">\(M_{\text{Skew\_Pure}}\)</span> 来引入 <span class="arithmatex">\(x\)</span> 对 <span class="arithmatex">\(y\)</span> 的最终干扰。</p>
-<p>我们使用<strong>第一问</strong>推导出来的分解序列：
-$$
-M_{\text{Skew_Pure}} = \begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-$$</p>
-<p><strong>连乘结果 <span class="arithmatex">\(M_{\text{Skew\_Pure}} \cdot M_{\text{S\_Comp}}\)</span></strong>：
-$$
-\begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} \alpha &amp; 0 &amp; 0 \ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\frac{\alpha \cos\theta}{\beta} \cdot \frac{\beta}{\sin\theta} &amp; 0 \ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-$$
-$$
-= \begin{bmatrix} \alpha &amp; -\alpha \frac{\cos\theta}{\sin\theta} &amp; 0 \ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\alpha\cot\theta &amp; 0 \ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-$$</p>
+<p>现在，我们引入一个<strong>仅用于剪切的偏斜矩阵</strong> <span class="arithmatex">\(M_{\text{Skew\_Pure}}\)</span>：</p>
+<ul>
+<li><strong>注意</strong>：偏斜本身产生的剪切是 <span class="arithmatex">\(-\frac{\cos\theta}{\sin\theta} = -\cot\theta\)</span>。但在这个 <span class="arithmatex">\(M_{\text{S\_Comp}}\)</span> 之后，我们还需要一个剪切矩阵 <span class="arithmatex">\(M_{\text{Skew\_Pure}}\)</span> 来引入 <span class="arithmatex">\(x\)</span> 对 <span class="arithmatex">\(y\)</span> 的最终干扰。</li>
+</ul>
+<p>我们使用<strong>第一问</strong>推导出来的分解序列：</p>
+<div class="arithmatex">\[
+M_{\text{Skew\_Pure}} = \begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+<p><strong>连乘结果 <span class="arithmatex">\(M_{\text{Skew\_Pure}} \cdot M_{\text{S\_Comp}}\)</span></strong>：</p>
+<div class="arithmatex">\[
+\begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} \alpha &amp; 0 &amp; 0 \\ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\frac{\alpha \cos\theta}{\beta} \cdot \frac{\beta}{\sin\theta} &amp; 0 \\ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{bmatrix} \alpha &amp; -\alpha \frac{\cos\theta}{\sin\theta} &amp; 0 \\ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} \alpha &amp; -\alpha\cot\theta &amp; 0 \\ 0 &amp; \frac{\beta}{\sin\theta} &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
 <hr />
 <h3 id="4-translation">步骤 4：平移 (Translation)<a class="headerlink" href="#4-translation" title="Permanent link">&para;</a></h3>
 <p>最后一步是平移，将坐标原点从图像主点 <span class="arithmatex">\((0, 0)\)</span> 移动到最终像素坐标原点 <span class="arithmatex">\((c_x, c_y)\)</span>。</p>
@@ -7255,31 +7230,33 @@ K = \begin{bmatrix} 1 &amp; 0 &amp; c_x \\ 0 &amp; 1 &amp; c_y \\ 0 &amp; 0 &amp
 <p>通过引入<strong>补偿缩放</strong> <span class="arithmatex">\(M_{\text{S\_Comp}}\)</span>（其中包含 <span class="arithmatex">\(\beta/\sin\theta\)</span>）和<strong>纯粹剪切</strong> <span class="arithmatex">\(M_{\text{Skew\_Pure}}\)</span>（其中包含 <span class="arithmatex">\(\alpha \cos\theta/\beta\)</span>），我们成功地从基础几何变换正向推导出了PPT中给出的标准相机内参矩阵 <span class="arithmatex">\(K\)</span>。这个过程确认了 <span class="arithmatex">\(\beta/\sin\theta\)</span> 必须在偏斜应用<strong>之前</strong>进行，以<strong>补偿y轴倾斜带来的垂直尺度损失</strong>。</p>
 <hr />
 <p>这是一个非常棒的问题，它触及了矩阵分解为何有时显得反直觉的核心。让我们从相机变换的正向原理出发，从头开始构建 <code>M_Skew_Pure</code> 矩阵。</p>
-<p>我们的目标是推导出进入该矩阵的<strong>纯剪切因子</strong>，我们称之为 <span class="arithmatex">\(s\)</span>：
-$$
-M_{\text{Skew_Pure}} = \begin{bmatrix} 1 &amp; s &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-$$</p>
+<p>我们的目标是推导出进入该矩阵的<strong>纯剪切因子</strong>，我们称之为 <span class="arithmatex">\(s\)</span>：</p>
+<div class="arithmatex">\[
+M_{\text{Skew\_Pure}} = \begin{bmatrix} 1 &amp; s &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
 <h3 id="1_2">1. 背景：该矩阵的输入是什么？<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
 <p>“正向”推导意味着我们必须精确知道在该矩阵应用<em>之前</em>我们处于什么状态。在我们的序列中，该矩阵是在“补偿缩放”矩阵 <span class="arithmatex">\(M_{\text{S\_Comp}}\)</span> <strong>之后</strong>应用的。</p>
-<p>因此，我们纯剪切矩阵的输入是向量 <span class="arithmatex">\(P_s = (x_s, y_s, 1)^T\)</span>，其中：
-*   <span class="arithmatex">\(x_s = \alpha \cdot x_n = (f \cdot k_x) \cdot (X_c/Z_c)\)</span>
-*   <span class="arithmatex">\(y_s = \frac{\beta}{\sin\theta} \cdot y_n = \frac{f \cdot k_y}{\sin\theta} \cdot (Y_c/Z_c)\)</span></p>
+<p>因此，我们纯剪切矩阵的输入是向量 <span class="arithmatex">\(P_s = (x_s, y_s, 1)^T\)</span>，其中：</p>
+<ul>
+<li><span class="arithmatex">\(x_s = \alpha \cdot x_n = (f \cdot k_x) \cdot (X_c/Z_c)\)</span></li>
+<li><span class="arithmatex">\(y_s = \frac{\beta}{\sin\theta} \cdot y_n = \frac{f \cdot k_y}{\sin\theta} \cdot (Y_c/Z_c)\)</span></li>
+</ul>
 <p>这里，<span class="arithmatex">\(x_s\)</span> 和 <span class="arithmatex">\(y_s\)</span> 不再是简单的物理距离；它们是<strong>已经缩放过的、无量纲的坐标</strong>。</p>
 <h3 id="2_2">2. 纯剪切矩阵的目标<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
 <p>该矩阵的唯一目的是基于 y 坐标添加一个水平偏移，以模拟 y 轴不与 x 轴垂直这一事实。</p>
-<p>变换定义为：
-$$
+<p>变换定义为：</p>
+<div class="arithmatex">\[
 x_{sk} = x_s + s \cdot y_s
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 y_{sk} = y_s
-$$
-我们的全部任务就是找到剪切因子 <span class="arithmatex">\(s\)</span> 的正确表达式。</p>
+\]</div>
+<p>我们的全部任务就是找到剪切因子 <span class="arithmatex">\(s\)</span> 的正确表达式。</p>
 <h3 id="3-s">3. 剪切因子 <span class="arithmatex">\(s\)</span> 的推导<a class="headerlink" href="#3-s" title="Permanent link">&para;</a></h3>
-<p>剪切因子 <span class="arithmatex">\(s\)</span> 是（缩放坐标系中的）水平偏移量与（同样在缩放坐标系中的）输入 y 坐标的比值。
-$$
+<p>剪切因子 <span class="arithmatex">\(s\)</span> 是（缩放坐标系中的）水平偏移量与（同样在缩放坐标系中的）输入 y 坐标的比值。</p>
+<div class="arithmatex">\[
 s = \frac{\text{水平偏移量}}{\text{输入 } y_s}
-$$</p>
+\]</div>
 <p>让我们分别从基本原理推导分子和分母。</p>
 <h4 id="3a">步骤 3a: 计算水平偏移量<a class="headerlink" href="#3a" title="Permanent link">&para;</a></h4>
 <ol>
@@ -7287,57 +7264,57 @@ $$</p>
 <p><strong>物理垂直距离：</strong> 考虑传感器上的一个点。其物理垂直距离（以毫米为单位）为 <span class="arithmatex">\(y'_{\text{phys}} = f \cdot y_n\)</span>。</p>
 </li>
 <li>
-<p><strong>物理水平偏移：</strong> 由于 y 轴相对于垂直方向倾斜了一个角度 <span class="arithmatex">\(\theta\)</span>，这个物理垂直距离 <span class="arithmatex">\(y'_{\text{phys}}\)</span> 会导致一个物理水平偏移（以毫米为单位）<span class="arithmatex">\(\Delta x'_{\text{phys}}\)</span>。根据轴的几何关系，这个偏移是：
-    $$
-    \Delta x'<em _text_phys="\text{phys">{\text{phys}} = -y'</em> \cdot \cot\theta = -(f \cdot y_n) \cdot \cot\theta
-    $$
-    }<em>（负号表示对于一个正的 <span class="arithmatex">\(y\)</span>，在标准模型中偏移是朝向 x 轴的负方向）</em>。</p>
+<p><strong>物理水平偏移：</strong> 由于 y 轴相对于垂直方向倾斜了一个角度 <span class="arithmatex">\(\theta\)</span>，这个物理垂直距离 <span class="arithmatex">\(y'_{\text{phys}}\)</span> 会导致一个物理水平偏移（以毫米为单位）<span class="arithmatex">\(\Delta x'_{\text{phys}}\)</span>。根据轴的几何关系，这个偏移是：</p>
+<div class="arithmatex">\[
+\Delta x'_{\text{phys}} = -y'_{\text{phys}} \cdot \cot\theta = -(f \cdot y_n) \cdot \cot\theta
+\]</div>
+<p><em>（负号表示对于一个正的 <span class="arithmatex">\(y\)</span>，在标准模型中偏移是朝向 x 轴的负方向）</em>。</p>
 </li>
 <li>
-<p><strong>缩放后的水平偏移：</strong> 我们的坐标系不是以毫米为单位；它被像素密度缩放了。为了找到在我们缩放系统中的偏移量，我们必须将物理偏移乘以 x 方向的像素密度 <span class="arithmatex">\(k_x\)</span>。
-    $$
-    \text{水平偏移量} = k_x \cdot \Delta x'_{\text{phys}} = k_x \cdot (-f \cdot y_n \cdot \cot\theta)
-    $$
-    由于我们定义了 <span class="arithmatex">\(\alpha = f \cdot k_x\)</span>，这可以简化为：
-    $$
-    \text{水平偏移量} = -\alpha \cdot y_n \cdot \cot\theta
-    $$</p>
+<p><strong>缩放后的水平偏移：</strong> 我们的坐标系不是以毫米为单位；它被像素密度缩放了。为了找到在我们缩放系统中的偏移量，我们必须将物理偏移乘以 x 方向的像素密度 <span class="arithmatex">\(k_x\)</span>。</p>
+<div class="arithmatex">\[
+\text{水平偏移量} = k_x \cdot \Delta x'_{\text{phys}} = k_x \cdot (-f \cdot y_n \cdot \cot\theta)
+\]</div>
+<p>由于我们定义了 <span class="arithmatex">\(\alpha = f \cdot k_x\)</span>，这可以简化为：</p>
+<div class="arithmatex">\[
+\text{水平偏移量} = -\alpha \cdot y_n \cdot \cot\theta
+\]</div>
 </li>
 </ol>
 <h4 id="3b-y">步骤 3b: 识别输入的 y 坐标<a class="headerlink" href="#3b-y" title="Permanent link">&para;</a></h4>
-<p>如步骤 1 所述，此变换的输入 y 坐标是 <span class="arithmatex">\(y_s\)</span>：
-$$
+<p>如步骤 1 所述，此变换的输入 y 坐标是 <span class="arithmatex">\(y_s\)</span>：</p>
+<div class="arithmatex">\[
 \text{输入 } y_s = \frac{\beta}{\sin\theta} \cdot y_n
-$$</p>
+\]</div>
 <h4 id="3c-s">步骤 3c: 计算比值 <span class="arithmatex">\(s\)</span><a class="headerlink" href="#3c-s" title="Permanent link">&para;</a></h4>
-<p>现在我们可以将步骤 3a 的结果除以步骤 3b 的结果来计算剪切因子 <span class="arithmatex">\(s\)</span>。
-$$
+<p>现在我们可以将步骤 3a 的结果除以步骤 3b 的结果来计算剪切因子 <span class="arithmatex">\(s\)</span>。</p>
+<div class="arithmatex">\[
 s = \frac{\text{水平偏移量}}{\text{输入 } y_s} = \frac{-\alpha \cdot y_n \cdot \cot\theta}{\frac{\beta}{\sin\theta} \cdot y_n}
-$$
-代表底层归一化坐标的 <span class="arithmatex">\(y_n\)</span> 项完美地抵消了。这至关重要，因为它表明变换是线性的。
-$$
+\]</div>
+<p>代表底层归一化坐标的 <span class="arithmatex">\(y_n\)</span> 项完美地抵消了。这至关重要，因为它表明变换是线性的。</p>
+<div class="arithmatex">\[
 s = \frac{-\alpha \cdot \cot\theta}{\beta/\sin\theta}
-$$
-现在，代入 <span class="arithmatex">\(\cot\theta = \cos\theta/\sin\theta\)</span>：
-$$
+\]</div>
+<p>现在，代入 <span class="arithmatex">\(\cot\theta = \cos\theta/\sin\theta\)</span>：</p>
+<div class="arithmatex">\[
 s = \frac{-\alpha \cdot (\cos\theta/\sin\theta)}{\beta/\sin\theta}
-$$
-分子分母中的 <span class="arithmatex">\(\sin\theta\)</span> 项也相互抵消，剩下：
-$$
+\]</div>
+<p>分子分母中的 <span class="arithmatex">\(\sin\theta\)</span> 项也相互抵消，剩下：</p>
+<div class="arithmatex">\[
 \Large s = -\frac{\alpha \cos\theta}{\beta}
-$$</p>
+\]</div>
 <h3 id="_6">结论<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>我们成功地从零开始推导出了剪切因子 <span class="arithmatex">\(s\)</span>。这个因子代表了对于<strong>补偿后的、缩放的 y 坐标 (<span class="arithmatex">\(y_s\)</span>)</strong> 的每一个单位，所引入的精确的水平“污染”量。</p>
-<p>因此，纯剪切矩阵必须是：
-$$
-M_{\text{Skew_Pure}} = \begin{bmatrix} 1 &amp; s &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \ 0 &amp; 1 &amp; 0 \ 0 &amp; 0 &amp; 1 \end{bmatrix}
-$$
-这个正向推导确认了为什么矩阵会采用这种特定形式。它不是任意的；当整体变换被分解为<strong>补偿缩放</strong>、然后是<strong>纯剪切</strong>、最后是<strong>平移</strong>的序列时，这是剪切分量必需的形式。</p>
+<p>因此，纯剪切矩阵必须是：</p>
+<div class="arithmatex">\[
+M_{\text{Skew\_Pure}} = \begin{bmatrix} 1 &amp; s &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; -\frac{\alpha \cos\theta}{\beta} &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}
+\]</div>
+<p>这个正向推导确认了为什么矩阵会采用这种特定形式。它不是任意的；当整体变换被分解为<strong>补偿缩放</strong>、然后是<strong>纯剪切</strong>、最后是<strong>平移</strong>的序列时，这是剪切分量必需的形式。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/2025%2F09%2Fimage-20250926215732440.png" alt="image-20250926215732440" style="zoom:80%;" /></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/2025%5C09%5Cimage-20250930140828240.png" alt="完整的摄像机模型" style="zoom:80%;" /></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/2025%5C09%5Cimage-20250926215921851.png" alt="image-20250926215921851" style="zoom:80%;" /></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/2025%5C09%5Cimage-20250926220234346.png" alt="image-20250926220234346" style="zoom:80%;" /></p>
-<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2025-12-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-12-12T06:47:51+00:00'>2025-12-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2025-12-12'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2025-12-12T06:47:51+00:00'>2025-12-12</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Gongzihang6' data-tippy-content data-tippy-raw='<a href="mailto:601049742@qq.com">Gongzihang6</a>'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='601049742@qq.com' /></div></div></div></div></div>
+<div class='document-dates-plugin-wrapper document-dates-bottom'><div class='document-dates-plugin' locale='zh'><div class='dd-left'><span class='dd-item' data-tippy-content data-tippy-raw='2025-12-12'><span class='material-icons' data-icon='doc_created'></span><time datetime='2025-12-12T06:47:51+00:00'>2025-12-12</time></span><span class='dd-item' data-tippy-content data-tippy-raw='2026-05-25'><span class='material-icons' data-icon='doc_updated'></span><time datetime='2026-05-25T10:59:06+00:00'>2026-05-25</time></span></div><div class='dd-right'><span class='material-icons' data-icon='doc_author'></span><div class='author-group'><div class='avatar-wrapper' data-name='Gongzihang6' data-tippy-content data-tippy-raw='<a href="mailto:601049742@qq.com">Gongzihang6</a>'><span class='avatar-text'></span><img class='avatar' data-src='' data-email='601049742@qq.com' /></div></div></div></div></div>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -7769,10 +7746,6 @@ $$
         <script src="../../../../javascripts/extra.js"></script>
       
         <script src="../../../../javascripts/config_mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="../../../../assets/document_dates/tippy/popper.min.js"></script>
       

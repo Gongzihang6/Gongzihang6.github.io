@@ -1,0 +1,271 @@
+/*
+ * 文件说明：
+ * 本文件专门服务于首页 `docs/index.md`。
+ *
+ * 主要职责：
+ * 1. 承载首页 Hero 区、精选内容区、代表专题区和快速入口区的样式；
+ * 2. 与 `profile-common.css` 配合，复用诗词卡片与头像翻转等共用视觉元素；
+ * 3. 将首页从页面内联样式中解耦，降低后续维护成本。
+ *
+ * 设计目标：
+ * 1. 让首页更像博客门面页与内容入口页；
+ * 2. 保持卡片式内容入口的吸引力与可读性；
+ * 3. 让首页的样式组织方式与 `geren.md` 更统一。
+ */
+
+.home-hero {
+  max-width: 960px;
+  margin: 1.5rem auto 3rem auto;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(74, 108, 253, 0.08), rgba(255, 255, 255, 0.96));
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.hero-eyebrow {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4a6cfd;
+  font-weight: 700;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.25;
+  color: #111827;
+}
+
+.hero-lead {
+  margin: 1rem 0 0 0;
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: #4b5563;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(74, 108, 253, 0.1);
+  color: #3353d1;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.75rem;
+}
+
+.home-section-intro {
+  margin: -0.25rem 0 1.5rem 0;
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.home-card {
+  display: block;
+  padding: 1.4rem;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
+  border-color: rgba(74, 108, 253, 0.35);
+}
+
+.home-card__meta {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(74, 108, 253, 0.08);
+  color: #4a6cfd;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.home-card__title {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.home-card__desc {
+  margin: 0.85rem 0 0 0;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+.home-card__cta {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #4a6cfd;
+  font-weight: 700;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.topic-card {
+  padding: 1.5rem;
+  border-radius: 22px;
+  border: 1px solid #e5e7eb;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.topic-card__title {
+  margin: 0.2rem 0 0.8rem 0;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.topic-card__desc {
+  margin: 0;
+  line-height: 1.85;
+  color: #4b5563;
+}
+
+.topic-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.topic-links a {
+  color: #3353d1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.topic-links a:hover {
+  text-decoration: underline;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0 0;
+}
+
+.quick-card {
+  padding: 1.3rem;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.1);
+}
+
+.quick-card h3 {
+  margin: 0 0 0.7rem 0;
+  color: #111827;
+}
+
+.quick-card p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .home-grid,
+  .topic-grid,
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    margin-bottom: 2.2rem;
+    padding: 1.25rem;
+    border-radius: 18px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-lead,
+  .home-section-intro,
+  .home-card__desc,
+  .topic-card__desc,
+  .quick-card p {
+    line-height: 1.75;
+    font-size: 0.96rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .md-button {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero-tags {
+    gap: 0.55rem;
+  }
+
+  .hero-tag {
+    font-size: 0.86rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .home-card,
+  .topic-card,
+  .quick-card {
+    padding: 1.1rem;
+    border-radius: 16px;
+  }
+}

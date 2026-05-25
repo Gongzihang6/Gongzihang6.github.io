@@ -1,21 +1,37 @@
-// Wrap every letter in a span
-var textWrapper = document.querySelector('.ml3');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+/*
+ * 文件说明：
+ * 本文件承载站点的轻量前端增强逻辑。
+ *
+ * 本次补充优化：
+ * 1. 为首页标题逐字动画增加空节点与依赖存在性判断；
+ * 2. 避免脚本在不包含 `.ml3` 的页面上抛出异常；
+ * 3. 确保后续代码折叠等通用逻辑不会因为前置报错而失效。
+ */
 
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml3 .letter',
-    opacity: [0,1],
-    easing: "easeInOutQuad",
-    duration: 2250,
-    delay: (el, i) => 150 * (i+1)
-  }).add({
-    targets: '.ml3',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
+// 仅在页面真实存在 `.ml3` 且已加载 `anime` 时启用逐字动画。
+var textWrapper = document.querySelector(".ml3");
+if (textWrapper && window.anime && typeof window.anime.timeline === "function") {
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+  window.anime
+    .timeline({ loop: true })
+    .add({
+      targets: ".ml3 .letter",
+      opacity: [0, 1],
+      easing: "easeInOutQuad",
+      duration: 2250,
+      delay: function (_el, i) {
+        return 150 * (i + 1);
+      }
+    })
+    .add({
+      targets: ".ml3",
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 1000
+    });
+}
 
 
 //全屏视频

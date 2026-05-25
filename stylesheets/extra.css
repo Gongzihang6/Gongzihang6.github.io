@@ -1,4 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
+@font-face {
+  font-family: "PingFangYingFeng";
+  src: url("../assets/fonts/blog/平方迎风体.ttf") format("truetype");
+  font-display: swap;
+}
+
+/*
+ * 文件补充说明：
+ * 本次在不改动站点主体视觉结构的前提下，进一步收敛全站字体加载策略。
+ *
+ * 优化思路：
+ * 1. 取消对远程 Google Fonts 与第三方字体样式表的强依赖；
+ * 2. 全站正文与代码字体优先走系统字体栈，减少额外网络请求；
+ * 3. 仅在诗词等特殊视觉模块中继续使用已经本地化的中文字体资源。
+ */
+
+:root {
+  --site-text-font-stack: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB",
+    "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+  --site-code-font-stack: "Cascadia Code", "Consolas", "JetBrains Mono",
+    "SFMono-Regular", monospace;
+}
 
 :root > * {
   --md-primary-fg-color:        #4c94cb;
@@ -22,21 +43,22 @@
 
 
 button.md-top {
-  font-family: LXGW WenKai; /* 修改字体 */
+  font-family: var(--site-text-font-stack); /* 使用系统字体栈，减少远程字体依赖 */
   font-size: 16px; /* 修改字体大小 */
   font-weight: lighter;/* 修改字体粗细 */
   color: #518FC1; /* 修改字体颜色 */
 }
 
 :root {
---md-text-font: "LXGW WenKai"; 
+--md-text-font: var(--site-text-font-stack);
+--md-code-font: var(--site-code-font-stack);
 } /* 字体 */
 
 
 .ml3 {
 font-weight: 900;
 font-size: 30px;
-font-family: LXGW WenKai;
+font-family: var(--site-text-font-stack);
 }
 
 
@@ -686,7 +708,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     border-radius: 12px;
     border: 1px solid #e5e7eb;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fssyjt.jpg');
+    background-image: url('../assets/profile/poem-bg.jpg');
     background-size: cover;
     background-position: center;
     transition: all 0.3s ease;
@@ -700,7 +722,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 /* --- 自适应诗词内容 --- */
 .poem-content-adaptive {
     writing-mode: vertical-rl;
-    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif !important;
+    font-family: "PingFangYingFeng", 'Noto Serif SC', serif !important;
     color: #333;
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
     text-align: center;
@@ -744,7 +766,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
     /* --- 字体和颜色 --- */
     /* 建议为印章使用更硬朗的字体，如仿宋(FangSong)或黑体(SimHei) */
-    font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif !important;
+    font-family: "PingFangYingFeng", 'Noto Serif SC', serif !important;
     font-size: 1.1rem;          /* 控制印章文字大小，进而控制印章整体大小 */
     color: white;
     
