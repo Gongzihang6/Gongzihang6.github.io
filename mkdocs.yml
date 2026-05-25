@@ -6,13 +6,11 @@ site_author: gzh # your name
 #[UI]
 theme:
   name: material
-  font:
-    text: Roboto
-    code: Roboto Mono
+  font: false
   custom_dir: docs/overrides #覆写路径
   # logo: assets/favicon.png #左上角logo，可插入图片链接
 
-  favicon: https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg # 网页icon
+  favicon: assets/profile/avatar-front.jpg # 网页icon，改为本地资源以减少外部请求
 
   palette:
     - media: "(prefers-color-scheme)"
@@ -257,7 +255,6 @@ nav:
     - 作者个人简介: about/geren.md
     - 个人简历: about/resume.md
     - 支持作者: about/zcw.md
-    - 功能测试: about/test.md
 
 
 copyright: Copyright &copy; gzh # 左下角的版权声明
@@ -396,19 +393,11 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
 
 extra_javascript:
   - javascripts/extra.js
-  - javascripts/config_mathjax.js  # 确保此文件正确配置了 MathJax
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/config_mathjax.js  # 仅在存在公式内容时按需加载 MathJax
 extra_css:
   - stylesheets/extra.css
   - stylesheets/extra2.css
-  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/link.css  #友链CDN
   - stylesheets/customize.css # 搜索圆角优化
-  - https://fonts.googleapis.com/css2?family=Klee+One&family=LXGW+WenKai+TC&display=swap
-  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css #字体
-
-  - https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap
-  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css
 hooks:
   - scripts/mkdocs_hooks/socialmedia.py
   - scripts/mkdocs_hooks/reading_time.py

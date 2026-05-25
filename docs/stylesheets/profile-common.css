@@ -1,0 +1,177 @@
+/*
+ * 文件说明：
+ * 本文件用于沉淀首页 `docs/index.md` 与作者个人简介页 `docs/about/geren.md`
+ * 共用的视觉样式，当前主要包含：
+ * 1. 今日诗词卡片样式；
+ * 2. 头像翻转卡片样式；
+ * 3. 页面共用的主题色变量。
+ *
+ * 这样做的目的：
+ * 1. 保持首页与个人简介页的视觉语言一致；
+ * 2. 让两页在后续继续拆分内容模块时，仍能复用同一套基础样式；
+ * 3. 为后续进一步抽取可复用 HTML 片段打基础。
+ */
+
+@font-face {
+  font-family: "PingFangYingFeng";
+  src: url("../assets/fonts/blog/平方迎风体.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --profile-primary-color: #4a6cfd;
+  --profile-title-color: #1f2937;
+  --profile-text-color: #6b7280;
+  --profile-card-bg: #ffffff;
+  --profile-border-color: #e5e7eb;
+}
+
+/* 共用诗词卡片：用于页面首屏建立视觉气质。 */
+.poem-card {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--profile-border-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  background-image: url("../assets/profile/poem-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: luminosity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.poem-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+#jinrishici-container {
+  font-family: "PingFangYingFeng", "Noto Serif SC", serif;
+  font-size: 1.65rem;
+  font-weight: normal;
+  color: #374151;
+  line-height: 2.2;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.poem-card:hover #jinrishici-container {
+  transform: scale(1.03);
+  color: #111111;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.poem-seal {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: #c93c3c;
+  border: 2px solid #a63232;
+  border-radius: 4px;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.poem-seal:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.poem-seal::after {
+  content: '雅';
+  font-family: "PingFangYingFeng", "Noto Serif SC", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 共用头像翻转卡：保留个人主页的辨识度。 */
+.flip-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 10px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.image-container {
+  position: relative;
+  width: 290px;
+  height: 290px;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(14, 30, 37, 0.15);
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+.image-container img:first-child {
+  z-index: 1;
+}
+
+.image-container img:last-child {
+  z-index: 0;
+  transform: rotateY(180deg);
+}
+
+.image-container:hover img:first-child {
+  transform: rotateY(180deg);
+  z-index: 2;
+}
+
+.image-container:hover img:last-child {
+  transform: rotateY(0deg);
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .poem-card {
+    min-height: 160px;
+    padding: 1.6rem 1.2rem;
+  }
+
+  #jinrishici-container {
+    font-size: 1.1rem;
+    line-height: 1.9;
+  }
+
+  .flip-container {
+    width: 240px;
+    height: 240px;
+  }
+
+  .image-container {
+    width: 240px;
+    height: 240px;
+  }
+
+  .poem-seal {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

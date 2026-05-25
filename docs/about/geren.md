@@ -1,5 +1,5 @@
----
-title: 关于我
+﻿---
+title: 作者个人简介
 hide:
 #   - navigation
 #   - toc
@@ -8,701 +8,366 @@ hide:
 status: new
 ---
 
+<link rel="stylesheet" href="../stylesheets/profile-common.css">
+<link rel="stylesheet" href="../stylesheets/profile-page.css">
 
-
-
-
-<!-- ## 关于我 -->
-<!-- # <span id="jinrishici-sentence">今日诗词</span> -->
-
-<!-- 新的、统一的今日诗词 HTML 结构 -->
+<!-- 个人主页首屏：保留诗词卡片与头像翻转，延续站点整体气质。 -->
 <div class="poem-card">
     <div class="poem-seal"></div>
-    <div id="jinrishici-container">
-        <!-- 今日诗词 SDK 会自动将内容填入这里 -->
-    </div>
+    <div id="jinrishici-container">正在载入今日诗词...</div>
 </div>
-
-
 
 <div class="flip-container">
-<div class="image-container">
-    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg" alt="Front Image">
-    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/3f58b6cea54d446e22107fde739e843.jpg" alt="Back Image">
-</div>
-</div>
-<style>
-
-    @import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap');
-/* --- 变量定义，方便修改主题 --- */
-    :root {
-        --primary-color: #4a6cfd;      /* 主题蓝色 */
-        --gradient-start-color: #a5b4fc; /* 渐变起始色 (底部) */
-        --title-color: #1f2937;
-        --text-color: #6b7280;
-        --body-bg-color: #f9fafb;  /* 页面背景色 */
-        --card-bg-color: #ffffff;  /* 卡片背景白色 */
-        --border-color: #e5e7eb;   /* 边框颜色 */
-    }
-
-    /* --- 区域和标题样式 --- */
-    .qualification-section {
-        padding: 4rem 1rem;
-        background-color: var(--body-bg-color);
-        text-align: center;
-    }
-    
-    .section__title {
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: var(--title-color);
-        margin-bottom: 0.5rem;
-    }
-    
-    .section__subtitle-underline {
-        display: block;
-        width: 60px;
-        height: 4px;
-        background-color: var(--primary-color);
-        margin: 0 auto 3.5rem auto;
-        border-radius: 2px;
-    }
-    
-    /* --- 时间线容器：这是关键！--- */
-    .qualification__container {
-        max-width: 800px;
-        margin: 0 auto;
-        position: relative; /* 【最关键的属性】为伪元素提供定位锚点 */
-        padding-top: 2rem;  /* 为顶部的箭头留出空间 */
-    }
-    
-    /* --- 生成单根、连续、贯穿全场的垂直线 --- */
-    .qualification__container::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        transform: translateX(-50%);
-        width: 4px; /* 线的粗细 */
-        z-index: 0; /* 确保线在最底层 */
-        background: linear-gradient(to top, var(--gradient-start-color), var(--primary-color));
-    }
-    
-    /* --- 网格布局 --- */
-    .qualification__data {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        column-gap: 1.5rem;
-        position: relative; /* 确保内容在 z-index 堆叠中 */
-        z-index: 1;
-    }
-    
-    /* --- 内容卡片样式（包含居中）--- */
-    .qualification__content {
-        background-color: var(--card-bg-color);
-        border: 1px solid var(--border-color);
-        padding: 1.5rem;
-        border-radius: 0.75rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        
-        /* 【新增】Flexbox 居中样式 */
-        min-height: 150px; /* 设定最小高度以实现垂直居中 */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .qualification__content h3, 
-    .qualification__content span,
-    .qualification__content div {
-      text-align: center; /* 确保多行文本也能居中 */
-    }
-
-
-    /* --- 【重要】隐藏掉旧的、分散的线 --- */
-    .qualification__line {
-        display: none;
-    }
-    
-    /* --- 时间点圆圈样式 --- */
-    .qualification__rounder {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-color: var(--primary-color);
-        border: 4px solid var(--body-bg-color);
-        border-radius: 50%;
-    }
-    
-    /* --- 手绘 SVG 箭头 --- */
-    .qualification__container .qualification__data > div:nth-child(2)::before {
-        content: '';
-        position: absolute;
-        top: -30px; 
-        left: 50%;
-        transform: translateX(-50%);
-        width: 30px;
-        height: 30px;
-        /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a6cfd' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'%3E%3C/polyline%3E%3C/svg%3E"); */
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='1.5' d='M7.91 20.889c8.302 0 12.845-6.885 12.845-12.845c0-.193 0-.387-.009-.58A9.2 9.2 0 0 0 23 5.121a9.2 9.2 0 0 1-2.597.713a4.54 4.54 0 0 0 1.99-2.5a9 9 0 0 1-2.87 1.091A4.5 4.5 0 0 0 16.23 3a4.52 4.52 0 0 0-4.516 4.516c0 .352.044.696.114 1.03a12.82 12.82 0 0 1-9.305-4.718a4.526 4.526 0 0 0 1.4 6.03a4.6 4.6 0 0 1-2.043-.563v.061a4.524 4.524 0 0 0 3.62 4.428a4.4 4.4 0 0 1-1.189.159q-.435 0-.845-.08a4.51 4.51 0 0 0 4.217 3.135a9.05 9.05 0 0 1-5.608 1.936A9 9 0 0 1 1 18.873a12.84 12.84 0 0 0 6.91 2.016Z'/%3E%3C/svg%3E");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        /* (可选) 添加一个微妙的动画，让它更生动 */
-        transition: transform 0.3s ease;
-    }
-    /* (可选) 添加一个简单的悬停动效，让箭头轻微上浮 */
-    .qualification__data:hover > div:nth-child(2)::before {
-        transform: translateX(-50%) translateY(-3px);
-    }
-    /* --- 其他文本和图标样式 --- */
-    .qualification__title { font-size: 1.125rem; font-weight: 600; color: var(--title-color); margin: 0 0 0.25rem 0; }
-    .qualification__subtitle { display: inline-block; font-size: 0.9rem; color: var(--text-color); margin-bottom: 1rem; }
-    .qualification__calendar { display: flex; align-items: center; font-size: 0.875rem; color: var(--text-color); }
-    .qualification__calendar iconify-icon { font-size: 1.2rem; margin-right: 0.5rem; }
-    
-    /* --- 响应式设计 --- */
-    @media screen and (max-width: 768px) {
-        .qualification__data { grid-template-columns: auto 1fr; column-gap: 1rem; }
-        .qualification__data > div:first-child:empty { display: none; }
-    }
-
-
-
-
-
-
-
-    .flip-container {
-        position: relative;
-        width: 280px;
-        height: 280px;
-        margin: 10px auto;
-        display: flex;
-        align-items: flex-start;
-        /* 对齐顶部 */
-        justify-content: flex-end;
-        /* 将文字放置右上角 */
-    }
-    .image-container {
-        position: relative;
-        position: relative;
-        width: 290px;
-        height: 290px;
-    }
-    .image-container img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;    /* 图片填满容器 */
-        border-radius: 50%;
-        border: 4px solid #ffffff; /* 白色边框 */
-        box-shadow: 0 8px 24px rgba(14, 30, 37, 0.15); /* 阴影 */
-        backface-visibility: hidden; /* 隐藏背面 */
-        transition: transform 0.6s ease-in-out; /* 仅对transform过渡 */
-    }
-    .image-container img:first-child {
-        z-index: 1;
-        backface-visibility: hidden;
-    }
-    .image-container img:last-child {
-        z-index: 0;
-        transform: rotateY(180deg);
-        backface-visibility: hidden;
-    }
-    .image-container:hover img:first-child {
-        transform: rotateY(180deg);
-        z-index: 2;
-    }
-    .image-container:hover img:last-child {
-        transform: rotateY(0deg);
-        z-index: 3;
-    }
-
-
-    .qualification__button {
-        font-size: 1.2rem;
-        padding: 0.6rem 1rem; /* 可选：增加按钮内边距 */
-    }
-    
-    .qualification__icon {
-        font-size: 1.5rem;
-        width: 1.8rem;
-        height: 1.8rem;
-        margin-right: 0.5rem;
-        vertical-align: middle;
-    }
-
-
-
-
-
-
-    /* --- 全新的“山水意境卡片”样式 --- */
-    
-    /* 1. 【核心】修改卡片主容器，使其成为一个 Flex 容器 */
-    .poem-card {
-        max-width: 700px;
-        margin: 2.5rem auto;
-        padding: 2rem; /* 可以适当调整内边距 */
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid #e5e7eb;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        background-color: #f9fafb;
-        background-image: url('https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fssyjt.jpg');
-        background-size: cover;
-        background-position: center;
-        background-blend-mode: luminosity;
-    
-        /* --- 新增 Flexbox 属性以实现完美居中 --- */
-        display: flex;
-        align-items: center;    /* 垂直居中 */
-        justify-content: center; /* 水平居中 */
-        min-height: 200px;       /* 确保卡片有足够的高度来居中，可自行调整 */
-    }
-    
-    /* 悬停效果保持不变 */
-    .poem-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    }
-    
-    /* 2. 简化诗词容器的样式 */
-    #jinrishici-container {
-        font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-        font-size: 1.8rem;  /*  诗词字体大小 */
-        font-weight: normal;
-        color: #374151;
-        line-height: 2.2;
-        text-align: center;
-        
-        /* 以下属性不再需要，可以删除或注释掉 */
-        /* display: inline-block; */
-        /* position: relative; */
-        /* padding: 0; */
-        /* margin: 0 1rem; */
-    
-        transition: all 0.3s ease;
-    }
-    
-    /* 悬停效果保持不变 */
-    .poem-card:hover #jinrishici-container {
-        transform: scale(1.03); /* 可以换成轻微放大的效果 */
-        color: #111;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    }
-
-
-
-
-    /* 6. 装饰性元素：红色印章 */
-    .poem-seal {
-        position: absolute;
-        
-        /* 关键修改：将 top 改为 bottom，实现右下角定位 */
-        bottom: 1.5rem; /* 从顶部移动到底部 */
-        right: 1.5rem;  /* 右侧位置保持不变 */
-        
-        /* 其他样式保持不变... */
-        width: 40px;
-        height: 40px;
-        background-color: #c93c3c;
-        border: 2px solid #a63232;
-        border-radius: 4px;
-        opacity: 0.85; /* 可以稍微调高一点不透明度 */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease; /* 为悬停效果添加过渡 */
-    }
-    
-    /* (可选) 为印章添加悬停效果 */
-    .poem-seal:hover {
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    
-    /* 2. 印章文字：统一字体 */
-    .poem-seal::after {
-        content: '雅'; /* 您可以改成任何想要的字 */
-        
-        /* 关键修改：使用和诗词一样的字体 */
-        font-family: 'Zhi Mang Xing', 'Noto Serif SC', serif;
-        
-        /* 调整字号以适应书法字体，使其清晰可辨 */
-        font-size: 1.2rem; 
-    
-        /* 保留并优化其他样式 */
-        font-weight: 600; /* 对于书法字体，600比700可能更自然 */
-        color: white; /* 确保文字是白色的 */
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* 7. 响应式设计，在小屏幕上调整内边距 */
-    @media (max-width: 768px) {
-        .poem-card {
-            padding: 2rem 1.5rem;
-        }
-        #jinrishici-container {
-            font-size: 1.1rem;
-        }
-    }
-
-
-
-
-
-</style>
-
-
-
-
-
-
-
-<br>
-<center><font size=6rem color= #757575>
-      永远保持谦逊  
-<br>
-
-			--gzh </font></center>  
-
----
-
-<center>
-<a href="../files/algorithm-resume.pdf" target="_blank" class="md-button">下载简历</a>
-</center>  
-
-## 个人简介
-
-<!-- <p style="text-align: center; font-size: 25px; margin: 0px;"><strong>𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩</strong></p> -->
-
-!!! pied-piper1 "About me"
-    - [x] Hey, I'm [gzh](https://github.com/Gongzihang6){target=“_blank”}~
-        - [x] 偶发的强迫症 
-        - [x] 热爱(xiā)折腾技术/数学
-        - [x] 读书明志;诗词爱好者;擅长羽毛球
-        - [x] 清醒知趣，明得失，知进退 
-
-
-
-
-
-<!-- <div class="card2 file-block" markdown="1">
-<div class="file-icon"><img src="https://pic4.zhimg.com/80/v2-98f918276ecbc6d549fa6a5d1238e713_1440w.webp" style="height: 3em;"></div>
-<div class="file-body">
-<div class="file-title">个人简历</div>
-<div class="file-meta">2025-02-14</div>
-</div>
-<a class="down-button" target="_blank" href="../files/personal-resume.pdf" markdown="1">:fontawesome-solid-download: 下载</a>
-</div> -->
-
-<hr />
-<h2 id="_3">我的履历<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-
-<p><link rel="stylesheet" href="../stylesheets/resume.css"></p>
-
-<!-- 增大字号 -->
-<div class="qualification__tabs">
-    <div class="qualification__button qualification__active" data-target='#education'>
-        <iconify-icon icon="fluent:hat-graduation-12-regular" class="qualification__icon"></iconify-icon>
-        来时路
+    <div class="image-container">
+        <img src="../assets/profile/avatar-front.jpg" alt="龚子航头像正面" width="290" height="290" decoding="async" fetchpriority="high">
+        <img src="../assets/profile/avatar-back.jpg" alt="龚子航头像背面" width="290" height="290" decoding="async" loading="lazy">
     </div>
 </div>
-<!-- 放置在您页面的主体部分 -->
-<section class="qualification-section">
-    <h2 class="section__title">教育背景</h2>
-    <span class="section__subtitle-underline"></span>
 
-    <div class="qualification__container">
-        
-        <!-- 未来规划 (最顶端) -->
-        <div class="qualification__data">
-            <div></div> 
-            <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span> <!-- 这个会被CSS隐藏 -->
-            </div>
-            <div class="qualification__content">
-                <h3 class="qualification__title">未完待续</h3>
-                <span class="qualification__subtitle">于道各努力，千里自同风</span>
-                <div class="qualification__calendar">
-                    <iconify-icon icon="tabler:calendar-time"></iconify-icon>
-                    <span>未来</span>
-                </div>
-            </div>
-        </div>
-    
-        <!-- 硕士 (中间) -->
-        <div class="qualification__data">
-            <div class="qualification__content">
-                <h3 class="qualification__title">HZAU (华中农业大学)</h3>
-                <span class="qualification__subtitle">数学硕士</span>
-                <div class="qualification__calendar">
-                    <iconify-icon icon="tabler:calendar"></iconify-icon>
-                    <span>2024 - 2027 (规划)</span>
-                </div>
-            </div>
-            <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span> <!-- 这个会被CSS隐藏 -->
-            </div>
-        </div>
-    
-        <!-- 学士 (中间) -->
-        <div class="qualification__data">
-            <div></div>
-            <div>
-                <span class="qualification__rounder"></span>
-                <span class="qualification__line"></span> <!-- 这个会被CSS隐藏 -->
-            </div>
-            <div class="qualification__content">
-                <h3 class="qualification__title">HZAU (华中农业大学)</h3>
-                <span class="qualification__subtitle">设施农业科学与工程学士</span>
-                <div class="qualification__calendar">
-                    <iconify-icon icon="tabler:calendar"></iconify-icon>
-                    <span>2020 - 2024</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 高中 (最底端) -->
-        <div class="qualification__data">
-            <div class="qualification__content">
-                <h3 class="qualification__title">汉川一中</h3>
-                <span class="qualification__subtitle">平凡普通的三年</span>
-                <div class="qualification__calendar">
-                    <iconify-icon icon="tabler:calendar"></iconify-icon>
-                    <span>2017 - 2020</span>
-                </div>
-            </div>
-            <div>
-                <span class="qualification__rounder"></span>
-            </div>
-        </div>
-    
+<!-- 作者主页名片区：负责快速建立身份定位、研究方向与行动入口。 -->
+<div class="profile-hero">
+    <p class="profile-hero__eyebrow">GZH | About Me | Algorithm | 3D Vision</p>
+    <h1 class="profile-hero__title">龚子航</h1>
+    <p class="profile-hero__subtitle">数学硕士在读 | 关注三维视觉、点云处理、算法工程与机器学习实践</p>
+    <p class="profile-hero__desc">
+        你好，我是龚子航。
+        这页不再只是简单的关于我，而是我在这个博客里的完整作者主页。
+        我希望把数学直觉、工程实现、科研整理和长期主义连接起来，用持续写作去沉淀自己的学习路径、研究兴趣与问题解决方式。
+    </p>
+    <div class="profile-chip-list">
+        <span class="profile-chip">点云处理</span>
+        <span class="profile-chip">三维视觉</span>
+        <span class="profile-chip">算法基础</span>
+        <span class="profile-chip">机器学习</span>
+        <span class="profile-chip">科研写作</span>
+        <span class="profile-chip">长期主义</span>
     </div>
-</section>
+    <div class="profile-actions">
+        <a href="files/slam-resume.pdf" target="_blank" class="md-button md-button--primary">下载简历</a>
+        <a href="../index.md" class="md-button">返回主页</a>
+        <a href="https://github.com/Gongzihang6" target="_blank" class="md-button">查看 GitHub</a>
+    </div>
+    <div class="profile-metrics">
+        <div class="profile-metric">
+            <div class="profile-metric__value">研究方向</div>
+            <div class="profile-metric__label">三维视觉、点云理解、视觉测量与算法落地</div>
+        </div>
+        <div class="profile-metric">
+            <div class="profile-metric__value">内容主线</div>
+            <div class="profile-metric__label">算法、科研笔记、机器学习、工程复盘</div>
+        </div>
+        <div class="profile-metric">
+            <div class="profile-metric__value">当前状态</div>
+            <div class="profile-metric__label">持续学习、持续写作、持续完善个人作品集</div>
+        </div>
+        <div class="profile-metric">
+            <div class="profile-metric__value">关键词</div>
+            <div class="profile-metric__label">PCL、Python、C++、数学、问题拆解</div>
+        </div>
+    </div>
+</div>
 
+## 专业摘要
 
+<p class="profile-section-intro">
+这一部分回答三个最关键的问题：我是谁、我在关注什么、我希望把什么事情做得更专业。
+相比过去那种偏感性、信息密度较低的自我介绍，现在的表达会更贴近真正的作者主页与专业主页。
+</p>
 
+<div class="profile-grid-3">
+    <div class="profile-card">
+        <span class="profile-card__tag">Who I Am</span>
+        <h3 class="profile-card__title">我是怎样的人</h3>
+        <p class="profile-card__desc">
+            我目前在华中农业大学攻读数学硕士，前置背景来自设施农业科学与工程。
+            这让我在看待问题时，既会从抽象建模和算法逻辑出发，也会考虑问题能否落到真实场景与真实数据上。
+        </p>
+    </div>
+    <div class="profile-card">
+        <span class="profile-card__tag">What I Focus On</span>
+        <h3 class="profile-card__title">我在关注什么</h3>
+        <p class="profile-card__desc">
+            目前重点关注三维视觉、点云处理、关键点预测、算法基础与机器学习表达。
+            我尤其在意如何把复杂问题讲清楚、做扎实、留下可复用的知识资产。
+        </p>
+    </div>
+    <div class="profile-card">
+        <span class="profile-card__tag">What I Value</span>
+        <h3 class="profile-card__title">我希望做到什么</h3>
+        <p class="profile-card__desc">
+            我希望把博客逐步建设成自己的长期作品集：既能承载学习与研究过程，也能让读者快速判断我的方向、能力边界和思考方式。
+        </p>
+    </div>
+</div>
+
+## 研究兴趣与近期目标
+
+<p class="profile-section-intro">
+这一部分用来说明我当前真正持续投入的主题，而不是泛泛地罗列“我会什么”。
+相比简历式表述，我更希望把研究兴趣、内容积累方向和接下来想补齐的能力边界说明白。
+</p>
+
+<div class="profile-grid-3">
+    <div class="profile-card">
+        <span class="profile-card__tag">Research Interest</span>
+        <h3 class="profile-card__title">三维视觉与点云理解</h3>
+        <p class="profile-card__desc">
+            我对点云关键点预测、PCL 工具链、相机模型、视觉测量和多传感器数据组织这类问题比较有持续兴趣。
+            这些方向既有数学与建模的挑战，也能落到真实数据与真实场景中。
+        </p>
+    </div>
+    <div class="profile-card">
+        <span class="profile-card__tag">Content Direction</span>
+        <h3 class="profile-card__title">把博客做成可复用知识资产</h3>
+        <p class="profile-card__desc">
+            我不希望博客只是发散记录，而是希望它逐渐形成算法题解、科研笔记、模型理解和工程复盘这几条稳定主线。
+            每写一篇文章，目标都不仅是“记下来”，而是尽量留下以后还能反复使用的结构化资产。
+        </p>
+    </div>
+    <div class="profile-card">
+        <span class="profile-card__tag">Near-term Goal</span>
+        <h3 class="profile-card__title">近期想补齐的能力</h3>
+        <p class="profile-card__desc">
+            近期会继续完善个人博客的作品集属性，补充更成体系的专题内容，并逐步增加更贴近真实问题的研究型文章、实验记录与项目说明。
+        </p>
+    </div>
+</div>
+
+## 能力地图
+
+<p class="profile-section-intro">
+这里不想做成一份空泛的技能清单，而是尽量把我当前相对稳定的能力结构与工作方式展示出来。
+你可以把它理解为我的知识组织方式和问题处理偏好。
+</p>
+
+<div class="profile-skill-groups">
+    <div class="profile-skill-group">
+        <h3>技术与工具</h3>
+        <div class="profile-skill-tags">
+            <span>Python</span>
+            <span>C++</span>
+            <span>PCL</span>
+            <span>机器学习</span>
+            <span>Mathematics</span>
+            <span>Markdown / MkDocs</span>
+            <span>GitHub</span>
+            <span>科研写作</span>
+        </div>
+    </div>
+    <div class="profile-skill-group">
+        <h3>做事方式</h3>
+        <div class="profile-skill-tags">
+            <span>问题拆解</span>
+            <span>结构化表达</span>
+            <span>从原理到实现</span>
+            <span>持续复盘</span>
+            <span>长期积累</span>
+            <span>偏爱可解释性</span>
+            <span>偏爱可复用资产</span>
+            <span>愿意反复打磨细节</span>
+        </div>
+    </div>
+</div>
+
+## 我正在持续建设什么
+
+<p class="profile-section-intro">
+如果把这整个站点看成一个长期项目，那么我并不是只在写单篇文章，而是在持续建设几类能够代表自己能力与兴趣的内容资产。
+</p>
+
+<div class="profile-grid-3">
+    <div class="profile-card">
+        <span class="profile-card__tag">Topic Building</span>
+        <h3 class="profile-card__title">算法与题解专题</h3>
+        <p class="profile-card__desc">
+            通过 LeetCode 热题、算法基础与优化方法整理，把“刷题”逐渐转成“方法与思路的结构化沉淀”。
+        </p>
+    </div>
+    <div class="profile-card">
+        <span class="profile-card__tag">Research Notes</span>
+        <h3 class="profile-card__title">科研问题与实验型笔记</h3>
+        <p class="profile-card__desc">
+            围绕点云处理、体尺测量、相机成像模型、多相机同步采集等问题，逐步把零散经验整理成更系统的研究笔记。
+        </p>
+    </div>
+    <div class="profile-card">
+        <span class="profile-card__tag">Portfolio</span>
+        <h3 class="profile-card__title">个人作品集表达</h3>
+        <p class="profile-card__desc">
+            除了写文章，我也在持续打磨这个博客本身的结构、呈现方式与内容组织，希望它越来越像一份真正能代表自己的长期作品集。
+        </p>
+    </div>
+</div>
+
+## 代表内容
+
+<p class="profile-section-intro">
+如果你想快速判断我到底在写什么、擅长把什么内容讲清楚，可以先从这些文章开始。
+它们比一句我会什么更有说服力，也更能代表这个博客当前的质量方向。
+</p>
+
+<div class="profile-links-grid">
+    <a class="profile-link-card" href="../blog/随笔/科研/点云关键点预测.md">
+        <span class="profile-card__tag">Research / 3D Vision</span>
+        <h3 class="profile-link-card__title">点云关键点预测</h3>
+        <p class="profile-link-card__desc">偏研究型内容，能体现我对三维视觉、数据表达和实际问题建模的关注。</p>
+        <span class="profile-link-card__cta">查看文章</span>
+    </a>
+    <a class="profile-link-card" href="../blog/随笔/科研/PCL库总结.md">
+        <span class="profile-card__tag">Point Cloud / Engineering</span>
+        <h3 class="profile-link-card__title">PCL 库总结</h3>
+        <p class="profile-link-card__desc">偏工程型内容，适合快速了解我在点云处理工具链和知识整理上的积累。</p>
+        <span class="profile-link-card__cta">查看文章</span>
+    </a>
+    <a class="profile-link-card" href="../blog/MachineLearning/理解YOLO网络结构.md">
+        <span class="profile-card__tag">Deep Learning</span>
+        <h3 class="profile-link-card__title">理解 YOLO 网络结构</h3>
+        <p class="profile-link-card__desc">偏模型理解与知识表达，适合感受我如何把复杂内容讲得更清楚。</p>
+        <span class="profile-link-card__cta">查看文章</span>
+    </a>
+    <a class="profile-link-card" href="../blog/Computer%20Science/LeetCode热题100/回文链表.md">
+        <span class="profile-card__tag">Algorithm / LeetCode</span>
+        <h3 class="profile-link-card__title">回文链表</h3>
+        <p class="profile-link-card__desc">偏算法基础与题解复盘，适合快速看到我在数据结构与思路拆解方面的输出方式。</p>
+        <span class="profile-link-card__cta">查看文章</span>
+    </a>
+</div>
+
+## 专题导览
+
+<p class="profile-section-intro">
+如果你不是想看单篇文章，而是想更快理解我博客当前几条主要主线，可以直接从下面这些专题入口进入。
+</p>
+
+<div class="profile-grid-2">
+    <div class="profile-card">
+        <span class="profile-card__tag">Research Trail</span>
+        <h3 class="profile-card__title">科研与视觉方向</h3>
+        <p class="profile-card__desc">
+            这一组内容更贴近我当前真正持续投入的问题域，包括点云关键点预测、PCL 库整理、体尺测量方案、相机成像模型和多相机数据采集等。
+        </p>
+        <p class="profile-card__desc">
+            推荐入口：
+            <a href="../blog/随笔/科研/点云关键点预测.md">点云关键点预测</a>、
+            <a href="../blog/随笔/科研/体尺测量方案.md">体尺测量方案</a>、
+            <a href="../blog/随笔/科研/摄像机成像模型.md">摄像机成像模型</a>
+        </p>
+    </div>
+    <div class="profile-card">
+        <span class="profile-card__tag">Algorithm Trail</span>
+        <h3 class="profile-card__title">算法与机器学习方向</h3>
+        <p class="profile-card__desc">
+            这一组内容更强调基础能力与模型理解，包括算法题解、优化方法、YOLO 网络结构和 2D 图像深度学习等主题。
+        </p>
+        <p class="profile-card__desc">
+            推荐入口：
+            <a href="../blog/随笔/优化/GradientDescent.md">Gradient Descent</a>、
+            <a href="../blog/MachineLearning/理解YOLO网络结构.md">理解 YOLO 网络结构</a>、
+            <a href="../blog/Computer%20Science/LeetCode热题100/找到字符串中所有字母异位词.md">找到字符串中所有字母异位词</a>
+        </p>
+    </div>
+</div>
+
+## 成长路径
+
+<p class="profile-section-intro">
+我不想把履历只写成在哪里读过书，而是希望更明确地呈现每一个阶段对我能力结构的影响。
+所以这里保留时间线，但让它更贴近成长路径而不是纯时间表。
+</p>
+
+<div class="profile-timeline">
+    <div class="profile-timeline-item">
+        <div class="profile-timeline-card">
+            <span class="profile-timeline-time">2024 - 2027（进行中）</span>
+            <h3 class="profile-timeline-title">华中农业大学  数学硕士</h3>
+            <p class="profile-timeline-desc">
+                逐步把兴趣从学会某个技术转向能否从原理、建模、实验和表达几个层面把问题做完整。
+                当前重点关注三维视觉、点云处理、关键点预测与机器学习相关内容。
+            </p>
+        </div>
+    </div>
+    <div class="profile-timeline-item">
+        <div class="profile-timeline-card">
+            <span class="profile-timeline-time">2020 - 2024</span>
+            <h3 class="profile-timeline-title">华中农业大学  设施农业科学与工程学士</h3>
+            <p class="profile-timeline-desc">
+                在这个阶段逐渐形成了工程问题也需要抽象能力的意识。
+                也正是在这个过程中，我开始越来越系统地接触算法、编程、数据处理和科研表达。
+            </p>
+        </div>
+    </div>
+    <div class="profile-timeline-item">
+        <div class="profile-timeline-card">
+            <span class="profile-timeline-time">2017 - 2020</span>
+            <h3 class="profile-timeline-title">汉川一中</h3>
+            <p class="profile-timeline-desc">
+                这段经历本身很普通，但也让我形成了后来一直保留的习惯：愿意和问题较劲、愿意慢慢打磨、愿意接受长期积累的价值。
+            </p>
+        </div>
+    </div>
+    <div class="profile-timeline-item">
+        <div class="profile-timeline-card">
+            <span class="profile-timeline-time">未来</span>
+            <h3 class="profile-timeline-title">继续把博客与作品集做成长期资产</h3>
+            <p class="profile-timeline-desc">
+                我希望未来这个站点不仅是记录学习过程的地方，也能成为更完整的个人作品集，持续沉淀内容、项目、表达与个人风格。
+            </p>
+        </div>
+    </div>
+</div>
 
 ## 人生态度
 
-<p style="text-align: center; font-size: 25px; margin: 0px;"><strong>𝘿𝙤𝙣'𝙩 𝙘𝙖𝙧𝙚 𝙖𝙗𝙤𝙪𝙩 𝙬𝙤𝙧𝙡𝙙𝙡𝙮 𝙚𝙮𝙚𝙨 𝙩𝙤 𝙥𝙪𝙧𝙨𝙪𝙚 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙡𝙞𝙜𝙝𝙩</strong></p>
+<p class="profile-section-intro">
+我依然希望这页保留一点个人气质。
+专业并不意味着只剩下冷冰冰的履历，真正能长期做下去的事情，往往来自热爱、耐心和对生活的感受力。
+</p>
 
-<!-- <img class="img1" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/IMG_20250626_101151.webp"> -->
-![IMG_20250626_101151](https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/IMG_20250626_101151.webp)
-
-
-<!-- <head>
-  <style>
-    @media (min-width: 768px) {
-      .mobile-only {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <a href="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" target="_blank" class="mobile-only">
-
-   <center>
-    <img class="img1" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" style="width: 450px; height: auto;">
-      <div style="color:orange; 
-      color: #999;
-      padding: 2px;">我的Wechat</div>
-    </center>  
-
-  </a>  
-
-  <a href="https://t.me/gongzihang" target="_blank" class="mobile-only">
-   <center>
-    <img class="img1" src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/tg.jpg" style="width: 450px; height: auto;">
-      <div style="color:orange; 
-      color: #999;
-      padding: 2px;">我的TG</div>
-    </center>  
-
-
-  </a>
-</body>
-
-<style>
-@media (max-width: 768px) { /* 移动端隐藏 */
-  .desktop-only {
-    display: none !important;
-  }
-}
-</style>
-
-<div class="grid desktop-only" style="display: grid;grid-template-columns: 35% 65%" markdown>
-<div class="grid cards" markdown>
-
--   <center>![WeChat](https://picx.zhimg.com/80/v2-21045fd6f42e98fb136c6d7d0958f2f1_1440w.webp#only-light){ .lg .middle style="width: 50px; height: 50px;"} ![WeChat](https://img.icons8.com/?size=100&id=19977&format=png&color=000000#only-dark){ .lg .middle style="width: 50px; height: 50px;"}</center>
-
-    ---
-    
-    <center><font  color= #757575 size=6>WeChat</font>  
-    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" style="width: auto; height: auto;">
-    <font color= #999 >扫一扫上面的二维码图案<br>
-    加我为朋友</font></center>
-
+<div class="profile-quote">
+    <strong>Don't care about worldly eyes to pursue your own light.</strong><br>
+    我认同长期主义，也认同谦逊、克制与持续打磨的价值。
+    比起短期的声量，我更在意能否留下真正值得回看、值得复用、值得自己认同的内容与成长轨迹。
 </div>
 
-<div class="grid cards" style="display: grid; grid-template-columns: 1fr;" markdown>
-
-
-
--   <center>![](https://pic4.zhimg.com/v2-e996df5a7696237b6f924ace7044cd97_1440w.jpg#only-light){ .lg .middle style="width: 50px; height: 50px;"}![](https://img.icons8.com/?size=100&id=3AYCSzCO85Qw&format=png&color=000000#only-dark){ .lg .middle style="width: 50px; height: 50px;"} </center>
-
-    ---
-
-    <center><font  color= #757575 size=6>Email</font>
-[发送电子邮件 :fontawesome-solid-paper-plane:](mailto:<zihanggong24@gmail.com>){.md-button}</center>
-
-<div class="grid cards" style="display:grid; grid-template-columns: 49% 49% !important;" markdown>
-
-
--   <center>![](https://pica.zhimg.com/v2-61b4731957dba61e9960436dbd06306a_1440w.jpg#only-light){ .lg .middle style="width: 50px; height: 50px;" } ![WeChat](https://img.icons8.com/?size=100&id=63306&format=png&color=000000#only-dark){ .lg .middle style="width: 50px; height: 50px;"}</center>
-
-    ---
-
-    <center><font  color= #757575 size=6>Telegram</font>
-    [Let's Chat :fontawesome-brands-telegram:](https://t.me/gongzihang){.md-button} </center>
-
--   <center>![](https://pic3.zhimg.com/80/v2-aa11d437a377f1a0deac132eb800b306_1440w.webp#only-light){ .lg .middle style="width: 50px; height: 50px;"} ![WeChat](https://img.icons8.com/?size=100&id=13963&format=png&color=000000#only-dark){ .lg .middle style="width: 50px; height: 50px;"}</center>
-
-    ---
-    
-    <center><font  color= #757575 size=6>Twitter</font>  
-    [@Wcowin :material-twitter:](https://twitter.com/ZihangGong28792){.md-button}</center>
-
-</div>
-</div>
-</div> -->
-
+<img class="profile-attitude-image" src="../assets/profile/attitude.webp" alt="人生态度配图" width="900" height="507" decoding="async" loading="lazy">
 
 ## 联系我
 
-=== "💬 微信"
-    <center>
-    <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/%E6%88%91%E7%9A%84%E5%BE%AE%E4%BF%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png" style="width: 280px; height: auto; border-radius: 12px; border: 3px solid white;">
-    <br>
-    扫一扫上面的二维码图案<br>
-    加我为朋友
-    </center>
+<p class="profile-section-intro">
+如果你希望交流技术、讨论问题、寻求合作，或者只是单纯想认识一下，也欢迎通过下面这些方式联系我。
+这一部分会继续保留在作者主页，而不再回到首页重复展示。
+</p>
 
-=== "📧 邮箱"
-    <div style="text-align: center; padding: 20px 0px;">
-        <div style="font-size: 16px; color: #757575; margin-bottom: 25px;">
-            您可以直接复制我的邮箱地址：<br>
-            <code style="background-color: #f0f0f0; padding: 4px 8px; border-radius: 6px; font-size: 17px; color: var(--primary-color, #4a6cfd); user-select: all;">zihanggong24@gmail.com</code>
-        </div>
-        <a href="mailto:zihanggong24@gmail.com?subject=你好，来自你的个人网站" class="md-button md-button--primary" style="font-size: 16px; padding: 12px 30px; border-radius: 25px;">
-            :fontawesome-solid-paper-plane:   或点击此处快速发送
-        </a>
-        <div style="margin-top: 30px;">
-            <div style="font-size: 16px; color: #999; margin-top: 5px;">
-                💡 24小时内回复，请耐心等待
-            </div>
-        </div>
+<div class="profile-contact-grid">
+    <div class="profile-contact-card">
+        <h3>微信</h3>
+        <p>如果你更习惯微信沟通，可以直接扫描下面的二维码加我。备注来意会更方便我快速识别与回复。</p>
+        <img src="../assets/profile/wechat-qr.png" alt="微信二维码" width="260" height="260" decoding="async" loading="lazy">
     </div>
-
-=== "🌐 社交"
-    <div class="contact-tab-container">
-        <div class="contact-tab-content" style="text-align: center; padding: 0px 0;">
-            <div style="margin-bottom: 25px;">
-                <p style="font-size: 16px; color: var(--md-default-fg-color--light); margin-bottom: 20px;">
-                    关注我的社交媒体，获取最新动态
-                </p>
-            </div>
-            <!-- 修改按钮布局 - 移动端也保持左右排列 -->
-            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 25px; min-height: 50px; align-items: center;">
-                <a href="https://t.me/gongzihang" class="md-button md-button--primary"
-                   style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 25px; background: linear-gradient(135deg, #0088cc, #0066aa); color: white; text-decoration: none; font-size: 14px; min-width: 120px; justify-content: center;" target="_blank">
-                    :fontawesome-brands-telegram: Telegram
-                </a>
-                <a href="https://twitter.com/ZihangGong28792_" class="md-button md-button--primary"
-                   style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 25px; background: linear-gradient(135deg, #1da1f2, #0d8bd9); color: white; text-decoration: none; font-size: 14px; min-width: 120px; justify-content: center;" target="_blank">
-                    :fontawesome-brands-twitter: Twitter
-                </a>
-            </div>
-            <div style="max-width: 500px; margin: 0 auto;">
-                <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/tg.jpg" 
-                     style="width: 100%; height: auto; border-radius: 10px;">
-            </div>
+    <div class="profile-contact-card">
+        <h3>邮箱与简历</h3>
+        <p>如果你想聊学习、科研、项目合作或职业机会，邮箱会是更高效的联系方式。</p>
+        <div class="profile-contact-actions">
+            <a href="mailto:zihanggong24@gmail.com?subject=你好，来自你的个人网站" class="md-button md-button--primary">发送邮件</a>
+            <a href="files/slam-resume.pdf" target="_blank" class="md-button">查看简历</a>
+        </div>
+        <div class="profile-contact-note">
+            邮箱：<code>zihanggong24@gmail.com</code><br>
+            一般会尽快回复，但也请给我一点时间。
         </div>
     </div>
-
-=== "📍 其他"
-    <div style="text-align: center; padding: 0px 0px;">
-    <div style="margin-bottom: 30px;">
-        <p style="font-size: 15px; color: var(--md-default-fg-color--light);">
-        通过下列平台了解我的更多工作和项目经历
-        </p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 700px; margin: 0 auto;">
-        <!-- GitHub -->
-        <div style="padding: 20px; border-radius: 16px; background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lightest); box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s;"
-            onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.08)'"
-            onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)'">
-        <div style="font-size: 26px; margin-bottom: 12px;">🌟</div>
-        <h4 style="margin: 0 0 10px 0; color: var(--md-primary-fg-color); font-size: 17px;">GitHub</h4>
-        <a href="https://github.com/Gongzihang6" class="md-button" style="font-size: 14px;" target="_blank">
-            :fontawesome-brands-github: 查看 GitHub
-        </a>
+    <div class="profile-contact-card">
+        <h3>社交与项目</h3>
+        <p>如果你想持续关注我的内容、代码或动态，可以直接从这些入口继续了解我。</p>
+        <div class="profile-contact-actions">
+            <a href="https://github.com/Gongzihang6" target="_blank" class="md-button">GitHub</a>
+            <a href="https://t.me/gongzihang" target="_blank" class="md-button">Telegram</a>
+            <a href="https://twitter.com/ZihangGong28792_" target="_blank" class="md-button">Twitter</a>
         </div>
-        <!-- LinkedIn -->
-        <div style="padding: 20px; border-radius: 16px; background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lightest); box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s;"
-            onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.08)'"
-            onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.05)'">
-        <div style="font-size: 26px; margin-bottom: 12px;">💼</div>
-        <h4 style="margin: 0 0 10px 0; color: var(--md-primary-fg-color); font-size: 17px;">LinkedIn</h4>
-        <a href="https://www.linkedin.com/in/wcowin/" class="md-button" style="font-size: 14px;" target="_blank">
-            :fontawesome-brands-linkedin: 查看档案
-        </a>
+        <div class="profile-contact-note">
+            如果你只是第一次来到这里，也可以先回首页看看我推荐的代表内容入口。
         </div>
     </div>
-    <!-- 底部强调卡片 -->
-    <div style="margin-top: 40px; padding: 20px; border-radius: 12px; background: linear-gradient(135deg, var(--md-primary-fg-color--light), var(--md-primary-fg-color)); color: white; box-shadow: 0 6px 15px rgba(0,0,0,0.1);">
-        <p style="margin: 0; font-size: 16px; font-weight: 600;">
-        随时欢迎联系我合作或交流！
-        </p>
-        <p style="margin: 10px 0 0 0; font-size: 14px; opacity: 0.9;">
-        无论是技术探讨、学习交流还是职业机会，我都乐意听见你的声音 😄
-        </p>
-    </div>
-    </div>
+</div>
 
-
-
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
-<!-- 放在 .poem-card 的后面 -->
-<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-<script type="text/javascript">
-jinrishici.load(function(result) {
-    // 这个函数会在成功获取诗词后执行
-    var container = document.getElementById("jinrishici-container");
-    if (container) {
-        // 我们手动将诗词内容填充到指定的 div 中
-        container.innerHTML = result.data.content;
-    }
-});
-</script>
-
-
-
-
-
-
-
+<script src="../javascripts/poem-loader.js"></script>
