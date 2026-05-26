@@ -544,7 +544,7 @@ comments: true
   }
 
   .github-tooltip {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     min-width: 168px;
     max-width: 240px;
@@ -1091,10 +1091,9 @@ comments: true
           tooltip.textContent = formatDate(date) + "：" + countText + " 次贡献";
           tooltip.classList.add("is-visible");
 
-          var wrapRect = chartContainer.parentElement.getBoundingClientRect();
           var rect = cell.getBoundingClientRect();
-          tooltip.style.left = rect.left - wrapRect.left + rect.width / 2 + "px";
-          tooltip.style.top = rect.top - wrapRect.top + "px";
+          tooltip.style.left = rect.left + rect.width / 2 + "px";
+          tooltip.style.top = rect.top + "px";
         }
 
         function hideTooltip() {
