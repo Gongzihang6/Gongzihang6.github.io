@@ -9,10 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>龚子航 | 3D视觉与SLAM算法研发 </title>
     
+    <!--
+        文件说明：
+        本模板用于渲染独立的简历页面。
+        本次补充本地字体声明，让该模板页与博客正文的主字体统一为「霞鹜文楷」，
+        同时避免继续依赖远程字体样式表。
+    -->
+
     <!-- 引入 Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css">
     <style>
+        @font-face {
+            font-family: "LXGWWenKaiScreen";
+            src: url("/assets/fonts/lxgw/LXGWWenKaiScreen.ttf") format("truetype");
+            font-display: swap;
+        }
+
         /* --- 全局样式与变量 --- */
         :root {
             --primary-color: #4361ee; /* 一个现代、活力的蓝色 */
@@ -23,17 +35,16 @@
             --bg-white: #ffffff;
             --border-color: #e2e8f0;
         }
-        @import url('https://fontsapi.zeoseven.com/292/main/result.css');
         body {
             margin: 0;
-            font-family: "LXGW WenKai";
+            font-family: "LXGWWenKaiScreen", "Microsoft YaHei", "PingFang SC", sans-serif;
             font-weight: normal;
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
         }
         button.md-top {
-            font-family: LXGW WenKai;
+            font-family: "LXGWWenKaiScreen", "Microsoft YaHei", "PingFang SC", sans-serif;
             font-size: 16px;
             font-weight: lighter;
         }
