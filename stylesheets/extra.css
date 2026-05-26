@@ -1116,6 +1116,10 @@ body:has(.home-shell) .giscus {
   background: #ffffff !important;
 }
 
+.md-footer-meta {
+  background-color: #ffffff !important;
+}
+
 .md-footer * {
   color: #000 !important;
 }
