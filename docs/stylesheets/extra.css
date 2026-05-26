@@ -1108,6 +1108,14 @@ body:has(.home-shell) .giscus {
   color: #000 !important;
 }
 
+.md-footer-meta,
+.md-footer-meta__inner,
+.md-footer-nav,
+.md-footer-nav__inner,
+.md-footer__inner {
+  background: #ffffff !important;
+}
+
 .md-footer * {
   color: #000 !important;
 }
@@ -1117,6 +1125,8 @@ body:has(.home-shell) .giscus {
 }
 
 /* 首页去掉下一页区域 */
+body:has(.home-shell) .md-footer-nav,
+body:has(.home-shell) .md-footer__inner,
 body:has(.home-shell) .md-content__inner > nav[aria-label="footer"] {
   display: none !important;
 }
