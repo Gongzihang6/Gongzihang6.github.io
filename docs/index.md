@@ -366,8 +366,8 @@ comments: true
   #jinrishici-container {
     font-family: "Zhi Mang Xing", "Noto Serif SC", serif;
     color: #283449;
-    font-size: 1.45rem;
-    line-height: 1.85;
+    font-size: 1.3rem;
+    line-height: 1.8;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
     white-space: pre-line;
     word-break: keep-all;
@@ -559,7 +559,7 @@ comments: true
 
   .github-tooltip {
     position: fixed;
-    z-index: 99999;
+    z-index: 2147483647;
     min-width: 150px;
     max-width: 320px;
     padding: 0.46rem 0.72rem;
@@ -685,7 +685,7 @@ comments: true
   .contact-board {
     margin-top: 1rem;
     padding: 1.25rem 1.25rem 1.3rem;
-    max-width: 72vw;
+    max-width: 68vw;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1090,6 +1090,10 @@ comments: true
     var totalNode = document.getElementById("github-total-count");
     var username = "Gongzihang6";
 
+    if (tooltip && tooltip.parentElement !== document.body) {
+      document.body.appendChild(tooltip);
+    }
+
     function formatDate(dateText) {
       var date = new Date(dateText + "T00:00:00");
       if (Number.isNaN(date.getTime())) {
@@ -1115,6 +1119,8 @@ comments: true
 
     function bindTooltip(nodes) {
       nodes.forEach(function(cell) {
+        cell.setAttribute("type", "button");
+
         function showTooltip() {
           var date = cell.getAttribute("data-date");
           var countText = cell.getAttribute("data-count") || "0";
@@ -1133,6 +1139,8 @@ comments: true
         cell.addEventListener("mouseenter", showTooltip);
         cell.addEventListener("mousemove", showTooltip);
         cell.addEventListener("mouseleave", hideTooltip);
+        cell.addEventListener("focus", showTooltip);
+        cell.addEventListener("blur", hideTooltip);
       });
     }
 
