@@ -54,7 +54,7 @@
 }
 
 #jinrishici-container {
-  font-family: "PingFangYingFeng", "Noto Serif SC", serif;
+  font-family: "PingFangYingFeng", "LXGWWenKaiScreen", serif;
   font-size: 1.65rem;
   font-weight: normal;
   color: #374151;
@@ -92,7 +92,7 @@
 
 .poem-seal::after {
   content: '雅';
-  font-family: "PingFangYingFeng", "Noto Serif SC", serif;
+  font-family: "PingFangYingFeng", "LXGWWenKaiScreen", serif;
   font-size: 1.2rem;
   font-weight: 600;
   color: #ffffff;

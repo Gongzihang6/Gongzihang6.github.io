@@ -1,22 +1,31 @@
+/*
+ * 文件说明：
+ * 本文件是站点级全局样式入口，负责：
+ * 1. 主题主色、正文排版与基础组件的全站覆盖；
+ * 2. 博客正文、导航、按钮、提示框、代码块等公共视觉规则；
+ * 3. 本地字体的统一注册与全站文字气质控制。
+ *
+ * 本轮重点调整：
+ * 1. 将博客正文主字体切换为本地化的「霞鹜文楷 Screen」；
+ * 2. 保留「平方迎风体」作为诗词、印章等少量装饰型文字的专用字体；
+ * 3. 继续使用本地字体与系统回退字体组合，兼顾视觉效果与可用性。
+ */
+
+@font-face {
+  font-family: "LXGWWenKaiScreen";
+  src: url("../assets/fonts/lxgw/LXGWWenKaiScreen.ttf") format("truetype");
+  font-display: swap;
+}
+
 @font-face {
   font-family: "PingFangYingFeng";
   src: url("../assets/fonts/blog/平方迎风体.ttf") format("truetype");
   font-display: swap;
 }
 
-/*
- * 文件补充说明：
- * 本次在不改动站点主体视觉结构的前提下，进一步收敛全站字体加载策略。
- *
- * 优化思路：
- * 1. 取消对远程 Google Fonts 与第三方字体样式表的强依赖；
- * 2. 全站正文与代码字体优先走系统字体栈，减少额外网络请求；
- * 3. 仅在诗词等特殊视觉模块中继续使用已经本地化的中文字体资源。
- */
-
 :root {
-  --site-text-font-stack: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB",
-    "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+  --site-text-font-stack: "LXGWWenKaiScreen", "Microsoft YaHei", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
   --site-code-font-stack: "Cascadia Code", "Consolas", "JetBrains Mono",
     "SFMono-Regular", monospace;
 }
@@ -43,7 +52,7 @@
 
 
 button.md-top {
-  font-family: var(--site-text-font-stack); /* 使用系统字体栈，减少远程字体依赖 */
+  font-family: var(--site-text-font-stack); /* 使用本地文楷 + 系统回退字体栈 */
   font-size: 16px; /* 修改字体大小 */
   font-weight: lighter;/* 修改字体粗细 */
   color: #518FC1; /* 修改字体颜色 */
