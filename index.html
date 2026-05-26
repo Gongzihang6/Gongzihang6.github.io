@@ -27,7 +27,7 @@
     
     
       
-        <title>关于我 - Blog of GZH</title>
+        <title>Blog of GZH</title>
       
     
     
@@ -46,6 +46,8 @@
     
       
     
+    
+      <link rel="stylesheet" href="stylesheets/home-page.css">
     
       <link rel="stylesheet" href="stylesheets/extra.css">
     
@@ -104,7 +106,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#-footer" class="md-skip">
           跳转至
         </a>
       
@@ -143,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              关于我
+              主页
             
           </span>
         </div>
@@ -465,8 +467,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -519,6 +519,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -533,13 +535,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--new"></span>
-  
-
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -559,13 +554,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--new"></span>
-  
-
-  
 
       </a>
       
@@ -574,6 +562,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -6348,8 +6338,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -6358,6 +6346,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -6413,15 +6403,169 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-  <h1>主页</h1>
+<p>﻿---
+title: 关于我
+hide:
+  - navigation
+  - toc
+  - feedback</p>
+<h1 id="-footer">- footer<a class="headerlink" href="#-footer" title="Permanent link">&para;</a></h1>
+<p>status: new
+comments: true</p>
+<hr />
+<!--
+文件说明：
+1. 本段为首页新增的博客门户区，只做增量补充，不删除原有首页内容。
+2. 新区域用于模拟博客主页风格，突出中间主体内容，并提供 GitHub 贡献图与分类推荐格子。
+3. 原有“关于我 / 履历 / 联系我”等内容保持完整保留在下方，便于后续继续沿用或再分拆页面。
+-->
+
+<section class="blog-home-shell">
+  <div class="blog-home-hero">
+    <div class="blog-home-hero__main">
+      <p class="blog-home-hero__eyebrow">GZH BLOG HOME</p>
+      <h1 class="blog-home-hero__title">把首页改成更像博客门面的内容聚合页</h1>
+      <p class="blog-home-hero__desc">
+        这里放的是博客首页模板骨架，整体参考你给出的那种“中间主体聚焦”的风格：
+        不再依赖两侧目录，而是用内容卡片、贡献图和分类推荐来承担首页信息密度。
+        你后续只需要继续替换分类名、文章链接和说明文案即可。
+      </p>
+      <div class="blog-home-hero__tags">
+        <span>技术记录</span>
+        <span>科研笔记</span>
+        <span>机器学习</span>
+        <span>算法题解</span>
+        <span>诗词摘录</span>
+      </div>
+      <div class="blog-home-hero__actions">
+        <a href="blog/" class="md-button md-button--primary">进入博客</a>
+        <a href="about/resume/" class="md-button">查看简历</a>
+        <a href="about/geren/" class="md-button">关于我</a>
+      </div>
+    </div>
+    <div class="blog-home-hero__side">
+      <p class="blog-home-panel__label">主页说明</p>
+      <h2>当前首页已切成博客风格入口</h2>
+      <p>
+        左右目录隐藏后，主体区域会更宽。首页上方先展示推荐内容，
+        原本的个人介绍与联系方式仍保留在下方，不会丢失。
+      </p>
+      <div class="blog-home-panel__meta">
+        <span>保留旧内容</span>
+        <span>新增模板层</span>
+        <span>后续可定制</span>
+      </div>
+      <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener">GitHub / Gongzihang6</a>
+    </div>
+  </div>
+
+  <div class="blog-home-section">
+    <div class="blog-home-section__head">
+      <p class="blog-home-section__eyebrow">GitHub</p>
+      <h2 class="blog-home-section__title">最近一年贡献图</h2>
+      <p class="blog-home-section__desc">
+        这里先用现成热力图服务做模板占位，后续你如果想换成交互式组件，再单独替换即可。
+      </p>
+    </div>
+    <div class="blog-home-github-card">
+      <div class="blog-home-github-card__top">
+        <div>
+          <h3>Contribution Graph</h3>
+          <p>展示 `Gongzihang6` 的年度活跃情况</p>
+        </div>
+        <a href="https://github.com/Gongzihang6" target="_blank" rel="noopener">查看 GitHub</a>
+      </div>
+      <img
+        src="https://ghchart.rshah.org/4a6cfd/Gongzihang6"
+        alt="Gongzihang6 GitHub 贡献图"
+      >
+    </div>
+  </div>
+
+  <div class="blog-home-section">
+    <div class="blog-home-section__head">
+      <p class="blog-home-section__eyebrow">Recommend</p>
+      <h2 class="blog-home-section__title">按分类推荐文章</h2>
+      <p class="blog-home-section__desc">
+        这里故意做成多个独立推荐格子，方便你后面继续增加更多专题卡片。
+      </p>
+    </div>
+
+    <div class="blog-home-grid">
+      <article class="blog-home-card">
+        <div class="blog-home-card__badge">Computer Science</div>
+        <h3>编程基础与算法</h3>
+        <p>适合长期挂在首页的基础内容，方便第一次进入博客的读者快速建立印象。</p>
+        <ul>
+          <li><a href="blog/Computer%20Science/java基础/">Java面向对象基础</a></li>
+          <li><a href="blog/Computer%20Science/排序和查找/">排序和查找</a></li>
+          <li><a href="blog/Computer%20Science/LeetCode/二分查找/">二分查找</a></li>
+        </ul>
+      </article>
+
+      <article class="blog-home-card">
+        <div class="blog-home-card__badge">Machine Learning</div>
+        <h3>机器学习与视觉</h3>
+        <p>把深度学习、模型理解和基础机器学习文章放到一个明显入口里。</p>
+        <ul>
+          <li><a href="blog/MachineLearning/经典卷积神经网络/">经典卷积神经网络</a></li>
+          <li><a href="blog/MachineLearning/理解YOLO网络结构/">理解YOLO网络结构</a></li>
+          <li><a href="blog/MachineLearning/K近邻学习与降维/">K近邻学习与降维</a></li>
+        </ul>
+      </article>
+
+      <article class="blog-home-card">
+        <div class="blog-home-card__badge">Research</div>
+        <h3>科研笔记与工程实践</h3>
+        <p>突出你在科研方向上的持续积累，让首页不只是泛技术文章列表。</p>
+        <ul>
+          <li><a href="blog/随笔/科研/摄像机成像模型/">摄像机成像模型</a></li>
+          <li><a href="blog/随笔/科研/PCL库总结/">PCL库总结</a></li>
+          <li><a href="blog/随笔/科研/多相机同步采集数据/">多相机同步采集数据</a></li>
+        </ul>
+      </article>
+
+      <article class="blog-home-card">
+        <div class="blog-home-card__badge">Optimization</div>
+        <h3>优化算法专题</h3>
+        <p>把零散的优化相关文章收成一个专题块，首页会更像真正的知识门户。</p>
+        <ul>
+          <li><a href="blog/随笔/优化/GradientDescent/">GradientDescent</a></li>
+          <li><a href="blog/随笔/优化/Momentum/">Momentum</a></li>
+          <li><a href="blog/随笔/优化/Levenberg-Marquardt算法/">Levenberg-Marquardt算法</a></li>
+        </ul>
+      </article>
+
+      <article class="blog-home-card">
+        <div class="blog-home-card__badge">Java / Web</div>
+        <h3>后端与框架随笔</h3>
+        <p>保留开发类内容的曝光位，方便后续扩成 Spring / Web 专题区。</p>
+        <ul>
+          <li><a href="blog/随笔/SpringBoot注解总结/">SpringBoot注解总结</a></li>
+          <li><a href="blog/随笔/HTTP/">HTTP</a></li>
+          <li><a href="blog/随笔/Element-Plus组件详细介绍/">Element-Plus组件详细介绍</a></li>
+        </ul>
+      </article>
+
+      <article class="blog-home-card">
+        <div class="blog-home-card__badge">Poetry</div>
+        <h3>诗词与摘录</h3>
+        <p>除了技术文章，也保留一块更轻的人文入口，让首页的气质更完整。</p>
+        <ul>
+          <li><a href="blog/每日诗词/青玉案·元夕/">青玉案·元夕</a></li>
+          <li><a href="blog/每日诗词/蝶恋花·春景/">蝶恋花·春景</a></li>
+          <li><a href="blog/每日诗词/临安春雨初霁/">临安春雨初霁</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- ## 关于我 -->
 <!-- # <span id="jinrishici-sentence">今日诗词</span> -->
@@ -7624,12 +7768,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Determine whether to show feedback -->
 
-  
-    
-  
-
 
 <!-- Was this page helpful? -->
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+
+        <!-- Feedback ratings -->
+        <div class="md-feedback__list">
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page was helpful"
+              data-md-value="1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button
+              class="md-feedback__icon md-icon"
+              type="submit"
+              title="This page could be improved"
+              data-md-value="0"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+
+        <!-- Feedback rating notes (shown after submission) -->
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              谢谢你的反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+
+              <!-- Determine title -->
+              
+                
+              
+
+              <!-- Replace {url} and {title} placeholders in note -->
+              Thanks for your feedback! Help us improve this page by using our <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
 
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
@@ -7658,60 +7860,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-  <h2 id="__comments">评论</h2>
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-      data-repo="Gongzihang6/Discussion"
-      data-repo-id="R_kgDOPLkWUA"
-      data-category="Announcements"
-      data-category-id="DIC_kwDOPLkWUM4Cs35N"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="preferred_color_scheme"
-      data-lang="zh-CN"
-      data-loading="lazy"
-      crossorigin="anonymous"
-      async>
-  </script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-  </script>
 
                 
               </article>
@@ -7744,8 +7892,6 @@ document.addEventListener('DOMContentLoaded', () => {
   <!-- Link to previous and/or next page -->
   
     
-      
-        
       
       <nav
         class="md-footer__inner md-grid"
