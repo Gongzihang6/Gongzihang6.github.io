@@ -1088,6 +1088,44 @@ div.highlight:not(.code-collapsed) .code-fold-button:hover .button-text {
     padding-left: 0.1em; 
 }
 
+/* 首页和评论区宽度控制 */
+.home-shell {
+  max-width: 85vw;
+  margin: 0 auto;
+}
+
+body:has(.home-shell) #__comments,
+body:has(.home-shell) #__comments .giscus,
+body:has(.home-shell) .giscus {
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 首页底部和页脚更高对比度 */
+.md-footer {
+  background: #ffffff !important;
+  color: #000 !important;
+}
+
+.md-footer * {
+  color: #000 !important;
+}
+
+.md-footer-nav {
+  background: #ffffff !important;
+}
+
+/* 首页去掉下一页区域 */
+body:has(.home-shell) .md-content__inner > nav[aria-label="footer"] {
+  display: none !important;
+}
+
+/* 首页更柔和的链接与列表 */
+.home-shell a {
+  text-underline-offset: 0.18em;
+}
+
 
 
 
