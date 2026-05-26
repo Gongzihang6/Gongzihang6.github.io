@@ -6416,6 +6416,14 @@
     gap: 0.95rem;
   }
 
+  .top-row {
+    display: grid;
+    grid-template-columns: 172px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+
   .avatar-glow {
     position: relative;
     width: 172px;
@@ -6561,8 +6569,16 @@
     gap: 0.75rem;
   }
 
+  .contact-pills {
+    display: none;
+  }
+
   .hero-actions {
     margin-top: 0.05rem;
+  }
+
+  .contact-pills {
+    display: none;
   }
 
   .home-btn,
@@ -6596,7 +6612,7 @@
 
   .poem-card {
     width: 100%;
-    padding: 1.35rem 1.25rem;
+    padding: 1.12rem 1.15rem 0.98rem;
     border-radius: 24px;
     border: 1px solid rgba(199, 209, 228, 0.85);
     background:
@@ -6735,7 +6751,7 @@
 
   .github-chart-wrap {
     position: relative;
-    padding: 1rem 1rem 0.9rem;
+    padding: 0.9rem 0.9rem 0.72rem;
     border-radius: 24px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(242, 247, 252, 0.95));
     border: 1px solid rgba(201, 211, 227, 0.85);
@@ -6744,7 +6760,7 @@
 
   .github-chart {
     width: 100%;
-    min-height: 224px;
+    min-height: 190px;
     overflow: hidden;
   }
 
@@ -6783,18 +6799,18 @@
 
   .github-grid {
     display: grid;
-    grid-template-columns: repeat(53, 14px);
-    grid-template-rows: repeat(7, 14px);
-    gap: 4px;
-    overflow-x: auto;
+    grid-template-columns: repeat(53, 12px);
+    grid-template-rows: repeat(7, 12px);
+    gap: 3px;
+    overflow-x: hidden;
     padding: 2px 2px 2px 0;
     align-content: start;
     justify-content: start;
   }
 
   .contrib-cell {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 4px;
     background: #eef7ef;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.95);
@@ -6889,7 +6905,7 @@
 
   .reading-list li {
     position: relative;
-    padding: 0.9rem 0 0.9rem 1.5rem;
+    padding: 0.9rem 0 0.9rem 0.82rem;
     border-bottom: 1px dashed rgba(186, 199, 221, 0.6);
     transition: transform 0.25s ease, padding-left 0.25s ease;
   }
@@ -6902,7 +6918,7 @@
   .reading-list li::before {
     content: "";
     position: absolute;
-    left: 0.3rem;
+    left: 0;
     top: 1.45rem;
     width: 8px;
     height: 8px;
@@ -6913,7 +6929,7 @@
 
   .reading-list li:hover {
     transform: translateX(6px);
-    padding-left: 1.75rem;
+    padding-left: 0.96rem;
   }
 
   .reading-list a {
@@ -7099,6 +7115,12 @@
       text-align: center;
     }
 
+    .top-row {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
+
     .intro-copy,
     .bio-card {
       text-align: left;
@@ -7148,27 +7170,36 @@
   <section class="hero-layout">
     <div class="profile-panel surface-card">
       <div class="profile-stack">
-        <div class="avatar-glow">
-          <div class="flip-container">
-            <div class="image-container">
-              <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg" alt="gzh avatar front">
-              <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/3f58b6cea54d446e22107fde739e843.jpg" alt="gzh avatar back">
+        <div class="top-row">
+          <div class="avatar-glow">
+            <div class="flip-container">
+              <div class="image-container">
+                <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/gzh.jpg" alt="gzh avatar front">
+                <img src="https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/3f58b6cea54d446e22107fde739e843.jpg" alt="gzh avatar back">
+              </div>
             </div>
+          </div>
+
+          <div class="poem-card">
+            <div class="poem-meta">
+              <span class="poem-seal"></span>
+            </div>
+            <div id="jinrishici-container">正在载入今日诗词...</div>
           </div>
         </div>
 
         <div class="intro-copy">
           <span class="eyebrow">GZH · Research / Code / Writing</span>
-          <h1>子航 / gzh</h1>
+          <h1>gzh</h1>
           <p class="lead">
             专注计算机视觉、三维感知与工程实现，持续记录技术学习、科研笔记和折腾过程。
           </p>
         </div>
 
         <div class="tag-cloud">
-          <span>计算机视觉</span>
-          <span>3D 感知</span>
-          <span>科研笔记</span>
+          <span>SLAM</span>
+          <span>3D 视觉</span>
+          <span>自动驾驶</span>
           <span>工程复盘</span>
           <span>诗词与阅读</span>
         </div>
@@ -7178,24 +7209,10 @@
           <a class="home-btn" href="about/files/slam-resume.pdf" target="_blank" rel="noopener">下载简历</a>
         </div>
 
-        <div class="poem-card">
-          <div class="poem-meta">
-            <span class="poem-seal"></span>
-          </div>
-          <div id="jinrishici-container">正在载入今日诗词...</div>
-        </div>
-
         <div class="bio-card">
           <div class="section-kicker">个人简介</div>
           <p>偶发强迫症，长期热衷于技术、数学与把东西真正做出来这件事。偏爱能反复打磨的工作，也愿意把学习过程整理成别人能直接使用的文字。</p>
           <p>这里会持续沉淀视觉感知、算法理解、工具实践，以及一些不那么功利但能长期滋养人的内容。</p>
-        </div>
-
-        <div class="contact-pills">
-          <a class="pill" href="mailto:zihanggong24@gmail.com">Email</a>
-          <a class="pill" href="https://t.me/gongzihang" target="_blank" rel="noopener">Telegram</a>
-          <a class="pill" href="https://twitter.com/ZihangGong28792_" target="_blank" rel="noopener">Twitter</a>
-          <a class="pill" href="https://www.linkedin.com/in/%E5%AD%90%E8%88%AA-%E9%BE%9A-74a0a1372/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -7205,7 +7222,7 @@
         <div class="card-head">
           <div class="github-title">
             <strong>GitHub</strong>
-            <span class="github-summary"><span id="github-summary-text">过去一年</span> <b id="github-total-count">--</b> 次贡献</span>
+            <span class="github-summary"><span id="github-summary-text">gzh 过去一年</span> <b id="github-total-count">--</b> 次贡献</span>
           </div>
           <div class="contrib-legend">
             <em>少</em>
@@ -7406,10 +7423,11 @@
       var monthLabels = [];
       var cells = [];
       var current = new Date(startDate);
+      var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
       for (var week = 0; week < 53; week++) {
         if (week === 0 || current.getDate() <= 7) {
-          monthLabels.push("<span>" + (current.getMonth() + 1) + "月</span>");
+          monthLabels.push("<span>" + monthNames[current.getMonth()] + "</span>");
         } else {
           monthLabels.push("<span></span>");
         }
