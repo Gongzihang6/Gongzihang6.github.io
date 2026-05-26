@@ -10,6 +10,7 @@ comments: true
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap");
 
   :root {
     --home-page-width: min(85vw, 1380px);
@@ -111,17 +112,20 @@ comments: true
     display: grid;
     grid-template-columns: minmax(360px, 0.92fr) minmax(440px, 1.08fr);
     gap: 1.1rem;
-    align-items: start;
+    align-items: stretch;
   }
 
   .profile-panel {
     padding: 1.1rem 1.15rem 1.2rem;
+    height: 100%;
   }
 
   .profile-stack {
     display: grid;
     justify-items: start;
     gap: 0.95rem;
+    height: 100%;
+    align-content: start;
   }
 
   .top-row {
@@ -222,6 +226,10 @@ comments: true
   .intro-copy h1 {
     margin: 0.15rem 0 0.35rem;
     color: var(--home-text);
+    font-family: "Cormorant Garamond", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.03em;
     font-size: clamp(2.3rem, 5vw, 3.3rem);
     line-height: 1.04;
   }
@@ -327,12 +335,14 @@ comments: true
       linear-gradient(0deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.22)),
       url("https://cdn.jsdelivr.net/gh/Gongzihang6/Pictures@main/Medias/medias%2F2025%2F06%2Fssyjt.jpg") center/cover no-repeat;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
   }
 
   .poem-meta {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 0.2rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 0.9rem;
+    margin: 0;
   }
 
   .poem-seal {
@@ -347,7 +357,7 @@ comments: true
   }
 
   .poem-seal::after {
-    content: "雅";
+    content: "gzh";
     color: #fff;
     font-size: 1rem;
     font-family: "Zhi Mang Xing", "Noto Serif SC", serif;
@@ -359,6 +369,9 @@ comments: true
     font-size: 1.45rem;
     line-height: 1.85;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
+    white-space: pre-line;
+    word-break: keep-all;
+    padding-right: 3rem;
   }
 
   .bio-card {
@@ -390,6 +403,7 @@ comments: true
   .dashboard-panel {
     display: grid;
     gap: 1rem;
+    min-height: 100%;
   }
 
   .github-card {
@@ -545,21 +559,23 @@ comments: true
 
   .github-tooltip {
     position: fixed;
-    z-index: 10;
-    min-width: 168px;
-    max-width: 240px;
-    padding: 0.7rem 0.9rem;
-    border-radius: 14px;
-    background: rgba(30, 31, 35, 0.92);
-    color: #fff;
-    font-size: 0.92rem;
-    line-height: 1.45;
+    z-index: 99999;
+    min-width: 150px;
+    max-width: 320px;
+    padding: 0.46rem 0.72rem;
+    border-radius: 12px;
+    border: 1px solid rgba(190, 201, 219, 0.9);
+    background: rgba(255, 255, 255, 0.98);
+    color: #1f2937;
+    font-size: 0.82rem;
+    line-height: 1.2;
+    white-space: nowrap;
     pointer-events: none;
     opacity: 0;
     transform: translate(-50%, calc(-100% - 14px)) scale(0.96);
     transform-origin: bottom center;
     transition: opacity 0.18s ease, transform 0.18s ease;
-    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.24);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
   }
 
   .github-tooltip::after {
@@ -569,7 +585,9 @@ comments: true
     bottom: -7px;
     width: 14px;
     height: 14px;
-    background: rgba(30, 31, 35, 0.92);
+    background: rgba(255, 255, 255, 0.98);
+    border-right: 1px solid rgba(190, 201, 219, 0.9);
+    border-bottom: 1px solid rgba(190, 201, 219, 0.9);
     transform: translateX(-50%) rotate(45deg);
   }
 
@@ -608,7 +626,7 @@ comments: true
   .reading-list {
     margin: 0.75rem 0 0;
     padding: 0;
-    list-style: none;
+    list-style: none !important;
   }
 
   .reading-list li {
@@ -616,6 +634,11 @@ comments: true
     padding: 0.9rem 0 0.9rem 0.82rem;
     border-bottom: 1px dashed rgba(186, 199, 221, 0.6);
     transition: transform 0.25s ease, padding-left 0.25s ease;
+    list-style: none !important;
+  }
+
+  .reading-list li::marker {
+    content: "";
   }
 
   .reading-list li:last-child {
@@ -662,6 +685,9 @@ comments: true
   .contact-board {
     margin-top: 1rem;
     padding: 1.25rem 1.25rem 1.3rem;
+    max-width: 72vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .contact-board .card-subtitle {
@@ -1048,7 +1074,11 @@ comments: true
   jinrishici.load(function(result) {
     var container = document.getElementById("jinrishici-container");
     if (container && result && result.data) {
-      container.textContent = result.data.content;
+      var poem = String(result.data.content || "")
+        .replace(/([，。！？；])/g, "$1\n")
+        .replace(/\n+/g, "\n")
+        .trim();
+      container.textContent = poem;
     }
   });
 </script>
